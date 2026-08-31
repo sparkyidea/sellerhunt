@@ -1,0 +1,21 @@
+# Secrets — untracked .env files hold real credentials; images must never
+# contain them (runtime env comes from the control plane).
+**/.env
+**/.env.*
+!**/.env.example
+
+# Host installs and build output — the image installs its own (linux).
+**/node_modules
+**/dist
+**/.next
+.turbo
+**/.turbo
+*.tsbuildinfo
+
+# Not needed in images
+.git
+.github
+.context
+.claude
+.agents
+docker-compose.test.yml

@@ -1,0 +1,1446 @@
+enum inspection_outcome {
+  new
+  open_box
+  used
+  damaged
+  defective
+  missing_items
+  wrong_item_returned
+}
+
+enum issue_resolution {
+  refunded
+  replaced
+  repaired
+  denied
+  credited
+  cancelled
+}
+
+enum issue_status {
+  open
+  under_review
+  approved
+  rejected
+  resolved
+  escalated
+}
+
+enum issue_type {
+  cancellation
+  return
+  refund
+  replacement
+  warranty
+  claim
+}
+
+enum label_status {
+  waiting
+  queued
+  success
+  error
+  refunded
+  refund_pending
+  refund_rejected
+}
+
+enum listing_status {
+  active
+  inactive
+  out_of_stock
+  draft
+  sold
+  ended
+}
+
+enum mobile_profile_status {
+  active
+  dead
+}
+
+enum order_event_type {
+  comment
+  tracking
+  system
+}
+
+enum order_line_status {
+  pending
+  unfulfilled
+  partially_fulfilled
+  fulfilled
+  completed
+  canceled
+  returned
+  refunded
+}
+
+enum order_status {
+  pending
+  unfulfilled
+  partially_fulfilled
+  fulfilled
+  completed
+  canceled
+  returned
+  refunded
+}
+
+enum measurement_unit {
+  cm
+  m
+  mm
+  in
+  ft_in
+}
+
+enum weight_unit {
+  kg
+  g
+  lbs
+  lbs_oz
+}
+
+enum sync_domain {
+  orders
+  listings
+  shipments
+  tracking
+  channels
+}
+
+enum tracking_status {
+  pre_transit
+  transit
+  delivered
+  returned
+  failure
+  unknown
+}
+
+enum tracking_substatus {
+  information_received
+  address_issue
+  contact_carrier
+  delayed
+  delivery_attempted
+  delivery_rescheduled
+  delivery_scheduled
+  location_inaccessible
+  notice_left
+  out_for_delivery
+  package_accepted
+  package_arrived
+  package_damaged
+  package_departed
+  package_forwarded
+  package_held
+  package_processed
+  package_processing
+  pickup_available
+  reschedule_delivery
+  delivered
+  return_to_sender
+  package_unclaimed
+  package_undeliverable
+  package_disposed
+  package_lost
+  other
+}
+
+enum transaction_type {
+  receive
+  reserve
+  fulfill
+  release
+  adjust
+  return
+}
+
+table account {
+  id text [pk, not null]
+  account_id text [not null]
+  provider_id text [not null]
+  user_id text [not null]
+  access_token text
+  refresh_token text
+  id_token text
+  access_token_expires_at timestamp
+  refresh_token_expires_at timestamp
+  scope text
+  password text
+  created_at timestamp [not null, default: `now()`]
+  updated_at timestamp [not null]
+
+  indexes {
+    user_id [name: 'account_userId_idx']
+  }
+}
+
+table category {
+  id text [pk, not null]
+  parent_id text
+  name text [not null]
+  full_name text [not null]
+  level integer [not null]
+  leaf boolean [not null, default: false]
+  created_at timestamp [not null, default: `now()`]
+  updated_at timestamp [not null, default: `now()`]
+}
+
+table channel {
+  id text [pk, not null]
+  organization_id text [not null]
+  created_by_user_id text
+  marketplace_id text [not null]
+  country_id text
+  reference text [not null]
+  display_name text [not null]
+  connected boolean
+  connected_at timestamp
+  connection_generation uuid [not null, default: `gen_random_uuid()`]
+  enabled boolean [not null, default: true]
+  created_at timestamp [not null, default: `now()`]
+  updated_at timestamp [not null, default: `now()`]
+  archived boolean [not null, default: false]
+
+  indexes {
+    organization_id [name: 'channel_organization_id_idx']
+    marketplace_id [name: 'channel_marketplace_id_idx']
+    archived [name: 'channel_archived_idx']
+    (marketplace_id, reference) [name: 'channel_marketplace_reference_unique', unique]
+  }
+}
+
+table channel_sync_state {
+  id text [pk, not null]
+  organization_id text [not null]
+  channel_id text [not null]
+  domain sync_domain [not null]
+  status text
+  error text
+  synced_at timestamp
+  last_run_at timestamp
+  created_at timestamp [not null, default: `now()`]
+  updated_at timestamp [not null, default: `now()`]
+
+  indexes {
+    (channel_id, domain) [name: 'channel_sync_state_channel_domain_unique', unique]
+    organization_id [name: 'channel_sync_state_organization_id_idx']
+    (domain, synced_at) [name: 'channel_sync_state_domain_synced_at_idx']
+  }
+}
+
+table channel_token {
+  id text [pk, not null]
+  channel_id text [not null, unique]
+  access_token text [not null]
+  refresh_token text [not null]
+  access_token_expires_at timestamp [not null]
+  refresh_token_expires_at timestamp [not null]
+  created_at timestamp [not null, default: `now()`]
+  updated_at timestamp [not null, default: `now()`]
+}
+
+table channel_webhook_subscription {
+  id uuid [pk, not null, default: `gen_random_uuid()`]
+  channel_id text [not null]
+  topic text [not null]
+  subscription_id text [not null]
+  destination_id text
+  status text [not null, default: 'enabled']
+  error text
+  created_at timestamp [not null, default: `now()`]
+  updated_at timestamp [not null, default: `now()`]
+
+  indexes {
+    (channel_id, topic) [name: 'channel_webhook_subscription_channel_topic_unique', unique]
+  }
+}
+
+table city {
+  id text [pk, not null]
+  country_id text [not null]
+  state_id text
+  name text [not null]
+  latitude "double precision"
+  longitude "double precision"
+
+  indexes {
+    (country_id, state_id, name) [name: 'city_country_state_name_unique', unique]
+    (country_id, state_id) [name: 'city_country_state_idx']
+    name [name: 'city_name_idx']
+  }
+}
+
+table country {
+  id text [pk, not null]
+  name text [not null]
+  code text [not null]
+  emoji text [not null]
+  emoji_unicode text [not null]
+  currency text [not null]
+  currency_code text [not null]
+  latitude "double precision"
+  longitude "double precision"
+
+  indexes {
+    code [name: 'country_code_unique', unique]
+  }
+}
+
+table invitation {
+  id text [pk, not null]
+  organization_id text [not null]
+  email text [not null]
+  role text
+  status text [not null, default: 'pending']
+  expires_at timestamp [not null]
+  created_at timestamp [not null, default: `now()`]
+  inviter_id text [not null]
+
+  indexes {
+    organization_id [name: 'invitation_organizationId_idx']
+    email [name: 'invitation_email_idx']
+  }
+}
+
+table issue {
+  id text [pk, not null]
+  organization_id text [not null]
+  created_by_user_id text
+  channel_id text
+  order_id text [not null]
+  order_line_id text
+  reference text
+  type issue_type [not null]
+  status issue_status [not null, default: 'open']
+  resolution issue_resolution
+  reason text
+  reason_code text
+  customer_note text
+  seller_note text
+  refund_amount integer
+  opened_at timestamp [not null, default: `now()`]
+  resolved_at timestamp
+  created_at timestamp [not null, default: `now()`]
+  updated_at timestamp [not null, default: `now()`]
+
+  indexes {
+    (order_id, type) [name: 'issue_order_id_type_unique', unique]
+    organization_id [name: 'issue_organization_id_idx']
+    channel_id [name: 'issue_channel_id_idx']
+    order_id [name: 'issue_order_id_idx']
+    type [name: 'issue_type_idx']
+    status [name: 'issue_status_idx']
+    reference [name: 'issue_reference_idx']
+  }
+}
+
+table listing {
+  id text [pk, not null]
+  organization_id text [not null]
+  created_by_user_id text
+  product_id text
+  channel_id text
+  marketplace_category_id text
+  reference text
+  title text [not null]
+  sub_title text
+  description text
+  description_html text
+  type text [not null]
+  url text [not null]
+  brand text
+  manufacturer text
+  condition text [not null]
+  condition_note text
+  image_urls text[]
+  watch_count integer
+  view_count integer
+  duration text
+  status listing_status [not null]
+  variant boolean [not null, default: false]
+  offer boolean [default: false]
+  offer_accept_price integer
+  offer_decline_price integer
+  domestic_return boolean [not null, default: false]
+  domestic_return_window integer
+  domestic_return_paid_by text
+  international_return boolean [not null, default: false]
+  international_return_window integer
+  international_return_paid_by text
+  restocking_fee integer
+  local_pickup boolean [not null, default: false]
+  handling_time integer [not null]
+  handling_fee integer
+  domestic_shipping boolean [not null, default: false]
+  domestic_shipping_type text
+  domestic_shipping_base_fee integer
+  domestic_shipping_additional_fee integer
+  international_shipping boolean [not null, default: false]
+  international_shipping_type text
+  international_shipping_base_fee integer
+  international_shipping_additional_fee integer
+  started_at timestamp [not null]
+  ended_at timestamp
+  synced_at timestamp
+  sync_status text
+  sync_error text
+  source_version_at timestamp
+  last_observed_at timestamp
+  created_at timestamp [not null, default: `now()`]
+  updated_at timestamp [not null, default: `now()`]
+  archived boolean [not null, default: false]
+  archived_at timestamp
+  search tsvector
+
+  indexes {
+    (organization_id, channel_id, reference) [name: 'listing_organization_id_channel_id_reference_unique', unique]
+    organization_id [name: 'listing_organization_id_idx']
+    product_id [name: 'listing_product_id_idx']
+    channel_id [name: 'listing_channel_id_idx']
+    reference [name: 'listing_reference_idx']
+    status [name: 'listing_status_idx']
+    created_at [name: 'listing_created_at_idx']
+    search [name: 'listing_search_idx']
+    marketplace_category_id [name: 'listing_marketplace_category_id_idx']
+  }
+}
+
+table listing_variant {
+  id text [pk, not null]
+  organization_id text [not null]
+  listing_id text [not null]
+  product_variant_id text
+  reference text [not null]
+  sku text
+  model text
+  upc text
+  ean text
+  isbn text
+  gtin text
+  attributes jsonb
+  price integer [not null]
+  quantity integer [not null]
+  sold integer [not null, default: 0]
+  length integer [not null]
+  width integer [not null]
+  height integer [not null]
+  weight integer [not null]
+  image_urls text[]
+  created_at timestamp [not null, default: `now()`]
+  updated_at timestamp [not null, default: `now()`]
+
+  indexes {
+    (listing_id, reference) [name: 'listing_variant_listing_id_reference_unique', unique]
+    organization_id [name: 'listing_variant_organization_id_idx']
+    listing_id [name: 'listing_variant_listing_id_idx']
+    product_variant_id [name: 'listing_variant_product_variant_id_idx']
+    sku [name: 'listing_variant_sku_idx']
+    reference [name: 'listing_variant_reference_idx']
+  }
+}
+
+table marketplace {
+  id text [pk, not null]
+  name text [not null]
+  logo_url text
+  enabled boolean [not null, default: true]
+  created_at timestamp [not null, default: `now()`]
+  updated_at timestamp [not null, default: `now()`]
+  archived boolean [not null, default: false]
+}
+
+table marketplace_category {
+  id text [pk, not null]
+  marketplace_id text [not null]
+  site_id text
+  reference text [not null]
+  category_id text
+  name text [not null]
+  full_name text
+  parent_reference text
+  leaf boolean [not null, default: false]
+  mapping_confidence real
+  mapping_source text
+  created_at timestamp [not null, default: `now()`]
+  updated_at timestamp [not null, default: `now()`]
+
+  indexes {
+    (marketplace_id, site_id, reference) [name: 'mc_marketplace_site_reference_unique', unique]
+    marketplace_id [name: 'mc_marketplace_id_idx']
+    category_id [name: 'mc_category_id_idx']
+  }
+}
+
+table member {
+  id text [pk, not null]
+  organization_id text [not null]
+  user_id text [not null]
+  role text [not null, default: 'member']
+  created_at timestamp [not null]
+
+  indexes {
+    organization_id [name: 'member_organizationId_idx']
+    user_id [name: 'member_userId_idx']
+  }
+}
+
+table mobile_profile {
+  id text [pk, not null]
+  app text [not null]
+  label text
+  credentials text [not null]
+  access_token text
+  access_token_expires_at timestamp
+  refresh_token text
+  refresh_token_expires_at timestamp
+  status mobile_profile_status [not null, default: 'active']
+  last_used_at timestamp
+  last_success_at timestamp
+  failed_at timestamp
+  failure_reason text
+  failure_count integer [not null, default: 0]
+  cooldown_until timestamp
+  created_at timestamp [not null, default: `now()`]
+  updated_at timestamp [not null, default: `now()`]
+
+  indexes {
+    (app, status) [name: 'mobile_profile_app_status_idx']
+    last_used_at [name: 'mobile_profile_last_used_at_idx']
+    cooldown_until [name: 'mobile_profile_cooldown_until_idx']
+  }
+}
+
+table order {
+  id text [pk, not null]
+  organization_id text [not null]
+  created_by_user_id text
+  channel_id text
+  reference text
+  order_number text
+  customer_username text
+  billing_name text
+  billing_company text
+  billing_email text
+  billing_phone text
+  billing_address_1 text
+  billing_address_2 text
+  billing_city text
+  billing_state text
+  billing_zip_code text
+  billing_country text
+  subtotal integer
+  shipping_cost integer
+  discount integer
+  tax integer
+  total integer
+  currency text [not null, default: 'USD']
+  shipping_name text
+  shipping_company text
+  shipping_email text
+  shipping_phone text
+  shipping_address_1 text
+  shipping_address_2 text
+  shipping_city text
+  shipping_state text
+  shipping_zip_code text
+  shipping_country text
+  ordered_at timestamp
+  status order_status
+  status_date timestamp
+  fulfillment_status text
+  fulfillment_strategy text
+  multi_warehouse boolean [not null, default: false]
+  auto_fulfill boolean [not null, default: false]
+  fulfillment_hold_reason text
+  refund integer
+  payment_method text
+  paid_at timestamp
+  ship_by timestamp
+  shipped_at timestamp
+  requested_shipping_carrier text
+  requested_shipping_method text
+  customer_note text
+  seller_note text
+  deliver_by timestamp
+  delivered_at timestamp
+  source_version_at timestamp
+  remote_missing_at timestamp
+  created_at timestamp [not null, default: `now()`]
+  updated_at timestamp [not null, default: `now()`]
+  archived boolean [not null, default: false]
+  parent_order_id text
+  search tsvector
+
+  indexes {
+    (organization_id, channel_id, reference) [name: 'order_organization_id_channel_id_reference_unique', unique]
+    organization_id [name: 'order_organization_id_idx']
+    order_number [name: 'order_number_idx']
+    channel_id [name: 'order_channel_id_idx']
+    ordered_at [name: 'order_ordered_at_idx']
+    status [name: 'order_status_idx']
+    archived [name: 'order_archived_idx']
+    parent_order_id [name: 'order_parent_order_id_idx']
+    search [name: 'order_search_idx']
+  }
+}
+
+table order_event {
+  id text [pk, not null]
+  order_id text [not null]
+  organization_id text [not null]
+  created_by_user_id text
+  shipment_id text
+  type order_event_type [not null]
+  title text [not null]
+  description text
+  occurred_at timestamp [not null]
+  created_at timestamp [not null, default: `now()`]
+  updated_at timestamp [not null, default: `now()`]
+
+  indexes {
+    order_id [name: 'order_event_order_id_idx']
+    organization_id [name: 'order_event_organization_id_idx']
+    occurred_at [name: 'order_event_occurred_at_idx']
+  }
+}
+
+table order_line {
+  id text [pk, not null]
+  organization_id text [not null]
+  order_id text
+  listing_variant_id text
+  product_variant_id text
+  listing_variant_reference text
+  reference text
+  title text
+  image_url text
+  quantity integer
+  sku text
+  unit_price integer
+  discount integer
+  tax integer
+  total integer
+  quantity_fulfilled integer
+  status order_line_status
+  warehouse_id text
+  cancel_reason text
+  fulfillment_priority integer [not null, default: 100]
+  created_at timestamp [not null, default: `now()`]
+  updated_at timestamp [not null, default: `now()`]
+
+  indexes {
+    (order_id, reference) [name: 'order_line_order_id_reference_unique', unique]
+    organization_id [name: 'order_line_organization_id_idx']
+    listing_variant_id [name: 'order_line_listing_variant_id_idx']
+    listing_variant_reference [name: 'order_line_unresolved_reference_idx']
+  }
+}
+
+table order_line_inventory_state {
+  order_line_id text [pk, not null]
+  stock_id text [not null]
+  organization_id text [not null]
+  applied_reserved_quantity integer [not null, default: 0]
+  applied_fulfilled_quantity integer [not null, default: 0]
+  applied_released_quantity integer [not null, default: 0]
+  applied_restocked_quantity integer [not null, default: 0]
+  created_at timestamp [not null, default: `now()`]
+  updated_at timestamp [not null, default: `now()`]
+
+  indexes {
+    stock_id [name: 'order_line_inventory_state_stock_id_idx']
+    organization_id [name: 'order_line_inventory_state_organization_id_idx']
+    
+    
+    
+    
+  }
+}
+
+table organization {
+  id text [pk, not null]
+  name text [not null]
+  slug text [not null, unique]
+  logo text
+  created_at timestamp [not null]
+  metadata text
+
+  indexes {
+    slug [name: 'organization_slug_uidx', unique]
+  }
+}
+
+table package_preset {
+  id text [pk, not null]
+  organization_id text
+  name text [not null]
+  length numeric
+  width numeric
+  height numeric
+  weight numeric
+  provider_template text
+  archived boolean [not null, default: false]
+  created_at timestamp [not null, default: `now()`]
+  updated_at timestamp [not null, default: `now()`]
+
+  indexes {
+    organization_id [name: 'package_preset_organization_id_idx']
+  }
+}
+
+table product {
+  id text [pk, not null]
+  organization_id text [not null]
+  created_by_user_id text
+  category_id text
+  title text [not null]
+  description text
+  brand text
+  manufacturer text
+  condition text [not null]
+  condition_note text
+  image_urls text[]
+  variant boolean [not null, default: false]
+  created_at timestamp [not null, default: `now()`]
+  updated_at timestamp [not null, default: `now()`]
+  archived boolean [not null, default: false]
+  search tsvector
+
+  indexes {
+    organization_id [name: 'product_organization_id_idx']
+    category_id [name: 'product_category_id_idx']
+    created_at [name: 'product_created_at_idx']
+    search [name: 'product_search_idx']
+  }
+}
+
+table product_variant {
+  id text [pk, not null]
+  organization_id text [not null]
+  product_id text [not null]
+  sku text
+  model text
+  upc text
+  ean text
+  isbn text
+  gtin text
+  attributes jsonb
+  unit_cost integer
+  price integer [not null]
+  length integer [not null]
+  width integer [not null]
+  height integer [not null]
+  weight integer [not null]
+  image_urls text[]
+  created_at timestamp [not null, default: `now()`]
+  updated_at timestamp [not null, default: `now()`]
+
+  indexes {
+    organization_id [name: 'product_variant_organization_id_idx']
+    product_id [name: 'product_variant_product_id_idx']
+    sku [name: 'product_variant_sku_idx']
+    upc [name: 'product_variant_upc_idx']
+    ean [name: 'product_variant_ean_idx']
+    isbn [name: 'product_variant_isbn_idx']
+    gtin [name: 'product_variant_gtin_idx']
+  }
+}
+
+table return_line {
+  id text [pk, not null]
+  organization_id text [not null]
+  return_id text [not null]
+  order_line_id text
+  quantity integer [not null]
+  quantity_received integer [not null, default: 0]
+  unit_refund integer
+  inspection_outcome inspection_outcome
+  note text
+  restockable boolean [not null, default: true]
+  restocked_at timestamp
+  created_at timestamp [not null, default: `now()`]
+  updated_at timestamp [not null, default: `now()`]
+
+  indexes {
+    return_id [name: 'return_line_return_id_idx']
+    order_line_id [name: 'return_line_order_line_id_idx']
+    organization_id [name: 'return_line_organization_id_idx']
+  }
+}
+
+table return {
+  id text [pk, not null]
+  organization_id text [not null]
+  created_by_user_id text
+  channel_id text [not null]
+  order_id text [not null]
+  issue_id text
+  shipment_id text
+  warehouse_id text
+  reference text
+  seller_note text
+  refund_amount integer
+  restocking_fee integer
+  shipping_refund integer
+  total_refund integer
+  refunded boolean [not null, default: false]
+  refunded_at timestamp
+  requested_at timestamp [not null, default: `now()`]
+  received_at timestamp
+  inspected_at timestamp
+  inspected_by_user_id text
+  created_at timestamp [not null, default: `now()`]
+  updated_at timestamp [not null, default: `now()`]
+
+  indexes {
+    organization_id [name: 'return_organization_id_idx']
+    channel_id [name: 'return_channel_id_idx']
+    order_id [name: 'return_order_id_idx']
+    issue_id [name: 'return_issue_id_idx']
+    shipment_id [name: 'return_shipment_id_idx']
+    reference [name: 'return_reference_idx']
+  }
+}
+
+table scan_config {
+  marketplace text [pk, not null]
+  enabled boolean [not null, default: true]
+  keyword_rescan_after integer [not null, default: 1440]
+  seller_rescan_after integer [not null, default: 1440]
+  listing_rescan_after integer [not null, default: 1440]
+  max_search_pages integer [not null, default: 10]
+  max_listing_pages integer [not null, default: 50]
+  min_item_sold integer [not null, default: 0]
+  min_price_cents integer [not null, default: 0]
+  max_price_cents integer
+  min_sold_last_24h integer
+  keyword_batch_size integer [not null, default: 20]
+  seller_batch_size integer [not null, default: 20]
+  listing_batch_size integer [not null, default: 50]
+  listing_scan_batch_size integer [not null, default: 20]
+  listing_scan_concurrency integer [not null, default: 1]
+  listing_scan_delay_min_ms integer [not null, default: 200]
+  listing_scan_delay_max_ms integer [not null, default: 800]
+  created_at timestamp [not null, default: `now()`]
+  updated_at timestamp [not null, default: `now()`]
+}
+
+table scan_keyword {
+  marketplace text [not null]
+  keyword text [not null]
+  source text [not null]
+  first_seen_at timestamp [not null, default: `now()`]
+  last_seen_at timestamp [not null, default: `now()`]
+  last_scanned_at timestamp
+  dead_at timestamp
+  created_at timestamp [not null, default: `now()`]
+  updated_at timestamp [not null, default: `now()`]
+
+  indexes {
+    (marketplace, keyword) [pk]
+    (marketplace, last_scanned_at) [name: 'scan_keyword_marketplace_last_scanned_at_idx']
+  }
+}
+
+table scan_listing {
+  id text [pk, not null]
+  marketplace text [not null]
+  reference text [not null]
+  seller_id text
+  title text [not null]
+  description text
+  condition text
+  marketplace_category_reference text
+  category_path text[]
+  image_urls text[]
+  url text
+  variant boolean [not null, default: false]
+  good_till_cancelled boolean
+  started_at timestamp
+  ended_at timestamp
+  price integer
+  currency text
+  item_sold integer
+  sold_last_24h integer
+  sold_last_30_days integer
+  monitored boolean [not null, default: false]
+  last_scanned_at timestamp
+  created_at timestamp [not null, default: `now()`]
+  updated_at timestamp [not null, default: `now()`]
+
+  indexes {
+    (marketplace, reference) [name: 'scan_listing_marketplace_reference_unique', unique]
+    seller_id [name: 'scan_listing_seller_id_idx']
+    item_sold [name: 'scan_listing_item_sold_idx']
+    sold_last_24h [name: 'scan_listing_sold_last_24h_idx']
+    sold_last_30_days [name: 'scan_listing_sold_last_30_days_idx']
+    last_scanned_at [name: 'scan_listing_last_scanned_at_idx']
+    marketplace_category_reference [name: 'scan_listing_marketplace_category_reference_idx']
+    (marketplace, last_scanned_at) [name: 'scan_listing_marketplace_last_scanned_at_idx']
+  }
+}
+
+table scan_listing_snapshot {
+  id text [pk, not null]
+  listing_id text [not null]
+  scanned_at timestamp [not null, default: `now()`]
+  price integer
+  item_sold integer
+  sold_last_24h integer
+  sold_last_30_days integer
+
+  indexes {
+    (listing_id, scanned_at) [name: 'scan_listing_snapshot_listing_id_scanned_at_idx']
+  }
+}
+
+table scan_listing_variant {
+  id text [pk, not null]
+  listing_id text [not null]
+  reference text [not null]
+  attributes jsonb
+  image_urls text[]
+  price integer
+  last_scanned_at timestamp
+  created_at timestamp [not null, default: `now()`]
+  updated_at timestamp [not null, default: `now()`]
+
+  indexes {
+    (listing_id, reference) [name: 'scan_listing_variant_listing_id_reference_unique', unique]
+    listing_id [name: 'scan_listing_variant_listing_id_idx']
+    last_scanned_at [name: 'scan_listing_variant_last_scanned_at_idx']
+  }
+}
+
+table scan_seller {
+  id text [pk, not null]
+  marketplace text [not null]
+  reference text [not null]
+  display_name text
+  logo_url text
+  feedback_score integer
+  feedback_percent "numeric(5, 4)"
+  total_items_sold integer
+  monitored boolean [not null, default: false]
+  last_scanned_at timestamp
+  created_at timestamp [not null, default: `now()`]
+  updated_at timestamp [not null, default: `now()`]
+
+  indexes {
+    (marketplace, reference) [name: 'scan_seller_marketplace_reference_unique', unique]
+    feedback_score [name: 'scan_seller_feedback_score_idx']
+    last_scanned_at [name: 'scan_seller_last_scanned_at_idx']
+    (marketplace, last_scanned_at) [name: 'scan_seller_marketplace_last_scanned_at_idx']
+  }
+}
+
+table session {
+  id text [pk, not null]
+  expires_at timestamp [not null]
+  token text [not null, unique]
+  created_at timestamp [not null, default: `now()`]
+  updated_at timestamp [not null]
+  ip_address text
+  user_agent text
+  user_id text [not null]
+  impersonated_by text
+  active_organization_id text
+
+  indexes {
+    user_id [name: 'session_userId_idx']
+  }
+}
+
+table setting {
+  id text [pk, not null]
+  unit_of_measurement measurement_unit
+  unit_of_weight weight_unit
+  created_at timestamp [not null, default: `now()`]
+  updated_at timestamp [not null, default: `now()`]
+}
+
+table shipment {
+  id text [pk, not null]
+  organization_id text [not null]
+  created_by_user_id text
+  order_id text
+  ship_from_name text
+  ship_from_company text
+  ship_from_email text
+  ship_from_phone text
+  ship_from_address_1 text
+  ship_from_address_2 text
+  ship_from_city text
+  ship_from_state text
+  ship_from_zipcode text
+  ship_from_country text
+  ship_from_latitude "double precision"
+  ship_from_longitude "double precision"
+  ship_to_name text
+  ship_to_company text
+  ship_to_email text
+  ship_to_phone text
+  ship_to_address_1 text
+  ship_to_address_2 text
+  ship_to_city text
+  ship_to_state text
+  ship_to_zipcode text
+  ship_to_country text
+  ship_to_latitude "double precision"
+  ship_to_longitude "double precision"
+  reference text
+  carrier text
+  method text
+  tracking text
+  warehouse_id text
+  shipping_cost integer
+  package_preset_id text
+  weight numeric
+  package_name text
+  package_length numeric
+  package_width numeric
+  package_height numeric
+  provider text
+  provider_shipment_id text
+  provider_transaction_id text
+  provider_rate_id text
+  label_status label_status
+  label_purchased_at timestamp
+  label_url text
+  pick_list_url text
+  manifest_id text
+  shipped_at timestamp
+  source text [not null, default: 'local']
+  created_at timestamp [not null, default: `now()`]
+  updated_at timestamp [not null, default: `now()`]
+
+  indexes {
+    organization_id [name: 'shipment_organization_id_idx']
+    (order_id, reference) [name: 'shipment_order_reference_idx', unique]
+  }
+}
+
+table shipment_line {
+  id text [pk, not null]
+  organization_id text [not null]
+  shipment_id text [not null]
+  order_line_id text [not null]
+  quantity integer [not null]
+  created_at timestamp [not null, default: `now()`]
+  updated_at timestamp [not null, default: `now()`]
+
+  indexes {
+    (shipment_id, order_line_id) [name: 'shipment_line_shipment_order_line_unique', unique]
+    order_line_id [name: 'shipment_line_order_line_id_idx']
+    organization_id [name: 'shipment_line_organization_id_idx']
+  }
+}
+
+table state {
+  id text [pk, not null]
+  country_id text [not null]
+  code text [not null]
+  name text [not null]
+  latitude "double precision" [not null]
+  longitude "double precision" [not null]
+
+  indexes {
+    (country_id, code) [name: 'state_country_code_unique', unique]
+  }
+}
+
+table stock {
+  id text [pk, not null]
+  organization_id text [not null]
+  warehouse_id text [not null]
+  product_variant_id text [not null]
+  quantity integer [not null, default: 0]
+  reserved_quantity integer [not null, default: 0]
+  seed_basis text
+  seed_observed_at timestamp
+  seed_observed_upper_at timestamp
+  created_at timestamp [not null, default: `now()`]
+  updated_at timestamp [not null, default: `now()`]
+
+  indexes {
+    organization_id [name: 'stock_organization_id_idx']
+    warehouse_id [name: 'stock_warehouse_id_idx']
+    (product_variant_id, warehouse_id) [name: 'stock_product_variant_warehouse_unique', unique]
+  }
+}
+
+table stock_transaction {
+  id text [pk, not null]
+  organization_id text [not null]
+  created_by_user_id text
+  stock_id text [not null]
+  order_line_id text
+  type transaction_type [not null]
+  quantity integer [not null]
+  note text
+  effect_ref text
+  created_at timestamp [not null, default: `now()`]
+  updated_at timestamp [not null, default: `now()`]
+
+  indexes {
+    organization_id [name: 'stock_transaction_organization_id_idx']
+    stock_id [name: 'stock_transaction_stock_id_idx']
+    order_line_id [name: 'stock_transaction_order_line_id_idx']
+    type [name: 'stock_transaction_type_idx']
+    created_at [name: 'stock_transaction_created_at_idx']
+  }
+}
+
+table sync_outbox {
+  id uuid [pk, not null, default: `gen_random_uuid()`]
+  organization_id text [not null]
+  channel_id text [not null]
+  entity_type text [not null]
+  entity_id uuid [not null]
+  action text [not null]
+  payload jsonb [not null]
+  source_id uuid
+  status text [not null, default: 'pending']
+  error text
+  attempts integer [not null, default: 0]
+  claimed_by_job text
+  claim_generation integer [not null, default: 0]
+  external_ref text
+  correlation_method text
+  remote_snapshot jsonb
+  reconciled_at timestamp
+  idempotency_key text
+  created_at timestamp [not null, default: `now()`]
+  updated_at timestamp [not null, default: `now()`]
+  pushed_at timestamp
+  confirmed_at timestamp
+
+  indexes {
+    organization_id [name: 'sync_outbox_organization_id_idx']
+    (entity_type, entity_id) [name: 'sync_outbox_entity_blocker_idx', unique]
+    (entity_type, entity_id, status) [name: 'sync_outbox_in_flight_idx']
+    (status, updated_at) [name: 'sync_outbox_status_updated_at_idx']
+  }
+}
+
+table tax_rate {
+  id text [pk, not null]
+  zip_id text [not null]
+  rate "numeric(8, 6)" [not null]
+  created_at timestamp [not null, default: `now()`]
+  updated_at timestamp [not null, default: `now()`]
+
+  indexes {
+    zip_id [name: 'tax_rate_zip_unique', unique]
+  }
+}
+
+table tracking {
+  id text [pk, not null]
+  organization_id text [not null]
+  shipment_id text [not null]
+  provider text [not null]
+  tracking_number text [not null]
+  service_level_token text
+  service_level_name text
+  metadata text
+  original_eta timestamp
+  eta timestamp
+  status tracking_status [not null, default: 'unknown']
+  created_at timestamp [not null, default: `now()`]
+  updated_at timestamp [not null, default: `now()`]
+
+  indexes {
+    (organization_id, tracking_number) [name: 'tracking_organization_number_idx', unique]
+    shipment_id [name: 'tracking_shipment_id_idx']
+    status [name: 'tracking_status_idx']
+  }
+}
+
+table tracking_event {
+  id text [pk, not null]
+  organization_id text [not null]
+  tracking_id text [not null]
+  reference text [not null]
+  status tracking_status [not null]
+  substatus tracking_substatus
+  status_details text
+  status_date timestamp [not null]
+  location_city text
+  location_state text
+  location_zip text
+  location_country text
+  location text
+  latitude "double precision"
+  longitude "double precision"
+  created_at timestamp [not null, default: `now()`]
+
+  indexes {
+    (tracking_id, reference) [name: 'tracking_event_tracking_reference_idx', unique]
+    status_date [name: 'tracking_event_status_date_idx']
+  }
+}
+
+table user {
+  id text [pk, not null]
+  name text [not null]
+  email text [not null, unique]
+  email_verified boolean [not null, default: false]
+  image text
+  created_at timestamp [not null, default: `now()`]
+  updated_at timestamp [not null, default: `now()`]
+  role text
+  banned boolean [default: false]
+  ban_reason text
+  ban_expires timestamp
+}
+
+table verification {
+  id text [pk, not null]
+  identifier text [not null]
+  value text [not null]
+  expires_at timestamp [not null]
+  created_at timestamp [not null, default: `now()`]
+  updated_at timestamp [not null, default: `now()`]
+
+  indexes {
+    identifier [name: 'verification_identifier_idx']
+  }
+}
+
+table warehouse {
+  id text [pk, not null]
+  organization_id text [not null]
+  created_by_user_id text
+  address_1 text [not null]
+  address_2 text
+  city text [not null]
+  state text [not null]
+  zipcode text [not null]
+  country text
+  latitude "double precision"
+  longitude "double precision"
+  archived boolean [not null, default: false]
+  created_at timestamp [not null, default: `now()`]
+  updated_at timestamp [not null, default: `now()`]
+}
+
+table webhook_delivery {
+  id uuid [pk, not null, default: `gen_random_uuid()`]
+  marketplace text [not null]
+  delivery_id text [not null]
+  topic text [not null]
+  event_type text [not null]
+  resource_id text
+  channel_id text
+  outcome text [not null]
+  attempts integer [not null, default: 1]
+  payload jsonb
+  received_at timestamp [not null, default: `now()`]
+  last_seen_at timestamp [not null, default: `now()`]
+
+  indexes {
+    (marketplace, delivery_id) [name: 'webhook_delivery_marketplace_delivery_unique', unique]
+  }
+}
+
+table zip {
+  id text [pk, not null]
+  city_id text [not null]
+  code text [not null]
+  latitude "double precision"
+  longitude "double precision"
+
+  indexes {
+    (city_id, code) [name: 'zip_city_code_unique', unique]
+    code [name: 'zip_code_idx']
+  }
+}
+
+ref account_user_id_user_id_fk: account.user_id > user.id [delete: cascade, update: no action]
+
+ref category_parent_id_category_id_fk: category.parent_id > category.id [delete: cascade, update: no action]
+
+ref channel_organization_id_organization_id_fk: channel.organization_id > organization.id [delete: cascade, update: no action]
+
+ref channel_created_by_user_id_user_id_fk: channel.created_by_user_id > user.id [delete: set null, update: no action]
+
+ref channel_marketplace_id_marketplace_id_fk: channel.marketplace_id > marketplace.id [delete: cascade, update: no action]
+
+ref channel_country_id_country_id_fk: channel.country_id > country.id [delete: restrict, update: no action]
+
+ref channel_sync_state_organization_id_organization_id_fk: channel_sync_state.organization_id > organization.id [delete: cascade, update: no action]
+
+ref channel_sync_state_channel_id_channel_id_fk: channel_sync_state.channel_id > channel.id [delete: cascade, update: no action]
+
+ref channel_token_channel_id_channel_id_fk: channel_token.channel_id > channel.id [delete: cascade, update: no action]
+
+ref channel_webhook_subscription_channel_id_channel_id_fk: channel_webhook_subscription.channel_id > channel.id [delete: cascade, update: no action]
+
+ref city_country_id_country_id_fk: city.country_id > country.id [delete: cascade, update: no action]
+
+ref city_state_id_state_id_fk: city.state_id > state.id [delete: set null, update: no action]
+
+ref invitation_organization_id_organization_id_fk: invitation.organization_id > organization.id [delete: cascade, update: no action]
+
+ref invitation_inviter_id_user_id_fk: invitation.inviter_id > user.id [delete: cascade, update: no action]
+
+ref issue_organization_id_organization_id_fk: issue.organization_id > organization.id [delete: cascade, update: no action]
+
+ref issue_created_by_user_id_user_id_fk: issue.created_by_user_id > user.id [delete: set null, update: no action]
+
+ref issue_channel_id_channel_id_fk: issue.channel_id > channel.id [delete: cascade, update: no action]
+
+ref issue_order_id_order_id_fk: issue.order_id > order.id [delete: cascade, update: no action]
+
+ref issue_order_line_id_order_line_id_fk: issue.order_line_id > order_line.id [delete: set null, update: no action]
+
+ref listing_organization_id_organization_id_fk: listing.organization_id > organization.id [delete: cascade, update: no action]
+
+ref listing_created_by_user_id_user_id_fk: listing.created_by_user_id > user.id [delete: set null, update: no action]
+
+ref listing_product_id_product_id_fk: listing.product_id > product.id [delete: no action, update: no action]
+
+ref listing_channel_id_channel_id_fk: listing.channel_id > channel.id [delete: cascade, update: no action]
+
+ref listing_marketplace_category_id_marketplace_category_id_fk: listing.marketplace_category_id > marketplace_category.id [delete: set null, update: no action]
+
+ref listing_variant_organization_id_organization_id_fk: listing_variant.organization_id > organization.id [delete: cascade, update: no action]
+
+ref listing_variant_listing_id_listing_id_fk: listing_variant.listing_id > listing.id [delete: cascade, update: no action]
+
+ref listing_variant_product_variant_id_product_variant_id_fk: listing_variant.product_variant_id > product_variant.id [delete: set null, update: no action]
+
+ref marketplace_category_marketplace_id_marketplace_id_fk: marketplace_category.marketplace_id > marketplace.id [delete: cascade, update: no action]
+
+ref marketplace_category_category_id_category_id_fk: marketplace_category.category_id > category.id [delete: no action, update: no action]
+
+ref member_organization_id_organization_id_fk: member.organization_id > organization.id [delete: cascade, update: no action]
+
+ref member_user_id_user_id_fk: member.user_id > user.id [delete: cascade, update: no action]
+
+ref order_organization_id_organization_id_fk: order.organization_id > organization.id [delete: cascade, update: no action]
+
+ref order_created_by_user_id_user_id_fk: order.created_by_user_id > user.id [delete: set null, update: no action]
+
+ref order_channel_id_channel_id_fk: order.channel_id > channel.id [delete: cascade, update: no action]
+
+ref order_parent_order_id_order_id_fk: order.parent_order_id > order.id [delete: set null, update: no action]
+
+ref order_event_order_id_order_id_fk: order_event.order_id > order.id [delete: cascade, update: no action]
+
+ref order_event_organization_id_organization_id_fk: order_event.organization_id > organization.id [delete: cascade, update: no action]
+
+ref order_event_created_by_user_id_user_id_fk: order_event.created_by_user_id > user.id [delete: set null, update: no action]
+
+ref order_line_organization_id_organization_id_fk: order_line.organization_id > organization.id [delete: cascade, update: no action]
+
+ref order_line_order_id_order_id_fk: order_line.order_id > order.id [delete: cascade, update: no action]
+
+ref order_line_listing_variant_id_listing_variant_id_fk: order_line.listing_variant_id > listing_variant.id [delete: set null, update: no action]
+
+ref order_line_product_variant_id_product_variant_id_fk: order_line.product_variant_id > product_variant.id [delete: set null, update: no action]
+
+ref order_line_inventory_state_order_line_id_order_line_id_fk: order_line_inventory_state.order_line_id > order_line.id [delete: cascade, update: no action]
+
+ref order_line_inventory_state_stock_id_stock_id_fk: order_line_inventory_state.stock_id > stock.id [delete: restrict, update: no action]
+
+ref order_line_inventory_state_organization_id_organization_id_fk: order_line_inventory_state.organization_id > organization.id [delete: cascade, update: no action]
+
+ref package_preset_organization_id_organization_id_fk: package_preset.organization_id > organization.id [delete: cascade, update: no action]
+
+ref product_organization_id_organization_id_fk: product.organization_id > organization.id [delete: cascade, update: no action]
+
+ref product_created_by_user_id_user_id_fk: product.created_by_user_id > user.id [delete: set null, update: no action]
+
+ref product_category_id_category_id_fk: product.category_id > category.id [delete: no action, update: no action]
+
+ref product_variant_organization_id_organization_id_fk: product_variant.organization_id > organization.id [delete: cascade, update: no action]
+
+ref product_variant_product_id_product_id_fk: product_variant.product_id > product.id [delete: cascade, update: no action]
+
+ref return_line_organization_id_organization_id_fk: return_line.organization_id > organization.id [delete: cascade, update: no action]
+
+ref return_line_return_id_return_id_fk: return_line.return_id > return.id [delete: cascade, update: no action]
+
+ref return_line_order_line_id_order_line_id_fk: return_line.order_line_id > order_line.id [delete: set null, update: no action]
+
+ref return_organization_id_organization_id_fk: return.organization_id > organization.id [delete: cascade, update: no action]
+
+ref return_created_by_user_id_user_id_fk: return.created_by_user_id > user.id [delete: set null, update: no action]
+
+ref return_channel_id_channel_id_fk: return.channel_id > channel.id [delete: cascade, update: no action]
+
+ref return_order_id_order_id_fk: return.order_id > order.id [delete: cascade, update: no action]
+
+ref return_issue_id_issue_id_fk: return.issue_id > issue.id [delete: set null, update: no action]
+
+ref return_shipment_id_shipment_id_fk: return.shipment_id > shipment.id [delete: set null, update: no action]
+
+ref return_warehouse_id_warehouse_id_fk: return.warehouse_id > warehouse.id [delete: set null, update: no action]
+
+ref return_inspected_by_user_id_user_id_fk: return.inspected_by_user_id > user.id [delete: set null, update: no action]
+
+ref scan_listing_seller_id_scan_seller_id_fk: scan_listing.seller_id > scan_seller.id [delete: set null, update: no action]
+
+ref scan_listing_snapshot_listing_id_scan_listing_id_fk: scan_listing_snapshot.listing_id > scan_listing.id [delete: cascade, update: no action]
+
+ref scan_listing_variant_listing_id_scan_listing_id_fk: scan_listing_variant.listing_id > scan_listing.id [delete: cascade, update: no action]
+
+ref session_user_id_user_id_fk: session.user_id > user.id [delete: cascade, update: no action]
+
+ref setting_id_organization_id_fk: setting.id > organization.id [delete: cascade, update: no action]
+
+ref shipment_organization_id_organization_id_fk: shipment.organization_id > organization.id [delete: cascade, update: no action]
+
+ref shipment_created_by_user_id_user_id_fk: shipment.created_by_user_id > user.id [delete: set null, update: no action]
+
+ref shipment_order_id_order_id_fk: shipment.order_id > order.id [delete: cascade, update: no action]
+
+ref shipment_warehouse_id_warehouse_id_fk: shipment.warehouse_id > warehouse.id [delete: set null, update: no action]
+
+ref shipment_package_preset_id_package_preset_id_fk: shipment.package_preset_id > package_preset.id [delete: set null, update: no action]
+
+ref shipment_line_organization_id_organization_id_fk: shipment_line.organization_id > organization.id [delete: cascade, update: no action]
+
+ref shipment_line_shipment_id_shipment_id_fk: shipment_line.shipment_id > shipment.id [delete: cascade, update: no action]
+
+ref shipment_line_order_line_id_order_line_id_fk: shipment_line.order_line_id > order_line.id [delete: cascade, update: no action]
+
+ref state_country_id_country_id_fk: state.country_id > country.id [delete: cascade, update: no action]
+
+ref stock_organization_id_organization_id_fk: stock.organization_id > organization.id [delete: cascade, update: no action]
+
+ref stock_warehouse_id_warehouse_id_fk: stock.warehouse_id > warehouse.id [delete: cascade, update: no action]
+
+ref stock_product_variant_id_product_variant_id_fk: stock.product_variant_id > product_variant.id [delete: cascade, update: no action]
+
+ref stock_transaction_organization_id_organization_id_fk: stock_transaction.organization_id > organization.id [delete: cascade, update: no action]
+
+ref stock_transaction_created_by_user_id_user_id_fk: stock_transaction.created_by_user_id > user.id [delete: set null, update: no action]
+
+ref stock_transaction_stock_id_stock_id_fk: stock_transaction.stock_id > stock.id [delete: cascade, update: no action]
+
+ref stock_transaction_order_line_id_order_line_id_fk: stock_transaction.order_line_id > order_line.id [delete: set null, update: no action]
+
+ref sync_outbox_organization_id_organization_id_fk: sync_outbox.organization_id > organization.id [delete: cascade, update: no action]
+
+ref tax_rate_zip_id_zip_id_fk: tax_rate.zip_id > zip.id [delete: cascade, update: no action]
+
+ref tracking_organization_id_organization_id_fk: tracking.organization_id > organization.id [delete: cascade, update: no action]
+
+ref tracking_shipment_id_shipment_id_fk: tracking.shipment_id > shipment.id [delete: cascade, update: no action]
+
+ref tracking_event_organization_id_organization_id_fk: tracking_event.organization_id > organization.id [delete: cascade, update: no action]
+
+ref tracking_event_tracking_id_tracking_id_fk: tracking_event.tracking_id > tracking.id [delete: cascade, update: no action]
+
+ref warehouse_organization_id_organization_id_fk: warehouse.organization_id > organization.id [delete: cascade, update: no action]
+
+ref warehouse_created_by_user_id_user_id_fk: warehouse.created_by_user_id > user.id [delete: set null, update: no action]
+
+ref zip_city_id_city_id_fk: zip.city_id > city.id [delete: cascade, update: no action]

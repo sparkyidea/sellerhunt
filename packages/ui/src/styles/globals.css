@@ -1,0 +1,523 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "./typography.css";
+@import "./animations.css";
+@import "./tiptap.css";
+@import "maplibre-gl/dist/maplibre-gl.css";
+@source "../../../apps/**/*.{ts,tsx}";
+@source "../../../*/src/**/*.{ts,tsx}";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --radius: 0.625rem;
+
+  --background: var(--color-white);
+  --foreground: var(--color-neutral-950);
+  --card: var(--color-white);
+  --card-foreground: var(--color-neutral-950);
+  --popover: var(--color-white);
+  --popover-foreground: var(--color-neutral-950);
+  --primary: var(--color-neutral-900);
+  --primary-foreground: var(--color-neutral-50);
+  --secondary: var(--color-neutral-100);
+  --secondary-foreground: var(--color-neutral-900);
+  --muted: var(--color-neutral-100);
+  --muted-foreground: var(--color-neutral-500);
+  --accent: var(--color-neutral-100);
+  --accent-foreground: var(--color-neutral-900);
+  --destructive: var(--color-red-600);
+  --border: var(--color-neutral-200);
+  --input: var(--color-neutral-200);
+  --ring: var(--color-neutral-400);
+
+  /* Chart - Colorful */
+  --chart-colorful-1: var(--color-orange-600);
+  --chart-colorful-2: var(--color-teal-600);
+  --chart-colorful-3: var(--color-cyan-900);
+  --chart-colorful-4: var(--color-amber-400);
+  --chart-colorful-5: var(--color-amber-500);
+
+  /* Chart - Colorless (stone) */
+  --chart-colorless-1: var(--color-stone-300);
+  --chart-colorless-2: var(--color-stone-500);
+  --chart-colorless-3: var(--color-stone-600);
+  --chart-colorless-4: var(--color-stone-700);
+  --chart-colorless-5: var(--color-stone-800);
+
+  /* Chart - Blue */
+  --chart-blue-1: var(--color-blue-300);
+  --chart-blue-2: var(--color-blue-500);
+  --chart-blue-3: var(--color-blue-600);
+  --chart-blue-4: var(--color-blue-700);
+  --chart-blue-5: var(--color-blue-800);
+
+  /* Chart - Purple */
+  --chart-purple-1: var(--color-purple-300);
+  --chart-purple-2: var(--color-purple-500);
+  --chart-purple-3: var(--color-purple-600);
+  --chart-purple-4: var(--color-purple-700);
+  --chart-purple-5: var(--color-purple-800);
+
+  /* Chart - Yellow (amber scale) */
+  --chart-yellow-1: var(--color-amber-300);
+  --chart-yellow-2: var(--color-amber-500);
+  --chart-yellow-3: var(--color-amber-600);
+  --chart-yellow-4: var(--color-amber-700);
+  --chart-yellow-5: var(--color-amber-800);
+
+  /* Chart - Orange */
+  --chart-orange-1: var(--color-orange-300);
+  --chart-orange-2: var(--color-orange-500);
+  --chart-orange-3: var(--color-orange-600);
+  --chart-orange-4: var(--color-orange-700);
+  --chart-orange-5: var(--color-orange-800);
+
+  /* Chart - Red (rose scale) */
+  --chart-red-1: var(--color-rose-300);
+  --chart-red-2: var(--color-rose-500);
+  --chart-red-3: var(--color-rose-600);
+  --chart-red-4: var(--color-rose-700);
+  --chart-red-5: var(--color-rose-800);
+
+  /* Chart - Pink */
+  --chart-pink-1: var(--color-pink-300);
+  --chart-pink-2: var(--color-pink-400);
+  --chart-pink-3: var(--color-pink-500);
+  --chart-pink-4: var(--color-pink-600);
+  --chart-pink-5: var(--color-pink-700);
+
+  /* Chart - Green */
+  --chart-green-1: var(--color-green-300);
+  --chart-green-2: var(--color-green-500);
+  --chart-green-3: var(--color-green-600);
+  --chart-green-4: var(--color-green-700);
+  --chart-green-5: var(--color-green-800);
+
+  /* Chart - Teal */
+  --chart-teal-1: var(--color-teal-300);
+  --chart-teal-2: var(--color-teal-500);
+  --chart-teal-3: var(--color-teal-600);
+  --chart-teal-4: var(--color-teal-700);
+  --chart-teal-5: var(--color-teal-800);
+
+  --sidebar-background: var(--color-neutral-100);
+  --sidebar-foreground: var(--color-neutral-950);
+  --sidebar-primary: var(--color-white);
+  --sidebar-primary-foreground: var(--color-neutral-950);
+  --sidebar-accent: var(--color-neutral-100);
+  --sidebar-accent-foreground: var(--color-neutral-900);
+  --sidebar-border: var(--color-neutral-200);
+  --sidebar-ring: var(--color-neutral-400);
+
+  --header-background: var(--color-neutral-900);
+  --header-foreground: var(--color-neutral-50);
+  --header-primary: var(--color-white);
+  --header-primary-foreground: var(--color-neutral-900);
+  --header-accent: var(--color-neutral-100);
+  --header-accent-foreground: var(--color-neutral-800);
+  --header-border: var(--color-neutral-200);
+  --header-ring: var(--color-neutral-400);
+
+  /* Badge */
+  --badge-gray: var(--color-neutral-400);
+  --badge-gray-foreground: var(--color-neutral-50);
+  --badge-gray-subtle: var(--color-neutral-200);
+  --badge-gray-subtle-foreground: var(--color-neutral-900);
+
+  --badge-blue: var(--color-blue-600);
+  --badge-blue-foreground: var(--color-white);
+  --badge-blue-subtle: var(--color-blue-50);
+  --badge-blue-subtle-foreground: var(--color-blue-600);
+
+  --badge-purple: var(--color-purple-600);
+  --badge-purple-foreground: var(--color-white);
+  --badge-purple-subtle: var(--color-purple-50);
+  --badge-purple-subtle-foreground: var(--color-purple-700);
+
+  --badge-yellow: var(--color-amber-400);
+  --badge-yellow-foreground: var(--color-black);
+  --badge-yellow-subtle: var(--color-amber-100);
+  --badge-yellow-subtle-foreground: var(--color-amber-700);
+
+  --badge-orange: var(--color-orange-600);
+  --badge-orange-foreground: var(--color-white);
+  --badge-orange-subtle: var(--color-orange-100);
+  --badge-orange-subtle-foreground: var(--color-orange-700);
+
+  --badge-red: var(--color-red-500);
+  --badge-red-foreground: var(--color-white);
+  --badge-red-subtle: var(--color-rose-100);
+  --badge-red-subtle-foreground: var(--color-red-600);
+
+  --badge-pink: var(--color-pink-500);
+  --badge-pink-foreground: var(--color-white);
+  --badge-pink-subtle: var(--color-pink-100);
+  --badge-pink-subtle-foreground: var(--color-pink-700);
+
+  --badge-green: var(--color-green-600);
+  --badge-green-foreground: var(--color-white);
+  --badge-green-subtle: var(--color-green-100);
+  --badge-green-subtle-foreground: var(--color-green-700);
+
+  --badge-teal: var(--color-teal-500);
+  --badge-teal-foreground: var(--color-white);
+  --badge-teal-subtle: var(--color-teal-100);
+  --badge-teal-subtle-foreground: var(--color-teal-700);
+}
+
+.dark {
+  --background: var(--color-olive-950);
+  --foreground: var(--color-neutral-50);
+  --card: var(--color-neutral-900);
+  --card-foreground: var(--color-neutral-50);
+  --popover: var(--color-neutral-900);
+  --popover-foreground: var(--color-neutral-50);
+  --primary: var(--color-neutral-200);
+  --primary-foreground: var(--color-neutral-900);
+  --secondary: var(--color-neutral-800);
+  --secondary-foreground: var(--color-neutral-50);
+  --muted: var(--color-neutral-800);
+  --muted-foreground: var(--color-neutral-400);
+  --accent: var(--color-neutral-800);
+  --accent-foreground: var(--color-neutral-50);
+  --destructive: var(--color-red-400);
+  --border: color-mix(in oklab, var(--color-white) 10%, transparent);
+  --input: color-mix(in oklab, var(--color-white) 15%, transparent);
+  --ring: var(--color-neutral-500);
+
+  /* Chart - Colorful */
+  --chart-colorful-1: var(--color-blue-700);
+  --chart-colorful-2: var(--color-emerald-500);
+  --chart-colorful-3: var(--color-amber-500);
+  --chart-colorful-4: var(--color-purple-500);
+  --chart-colorful-5: var(--color-rose-500);
+
+  /* Chart - Colorless (stone) */
+  --chart-colorless-1: var(--color-stone-300);
+  --chart-colorless-2: var(--color-stone-500);
+  --chart-colorless-3: var(--color-stone-600);
+  --chart-colorless-4: var(--color-stone-700);
+  --chart-colorless-5: var(--color-stone-800);
+
+  /* Chart - Blue */
+  --chart-blue-1: var(--color-blue-300);
+  --chart-blue-2: var(--color-blue-500);
+  --chart-blue-3: var(--color-blue-600);
+  --chart-blue-4: var(--color-blue-700);
+  --chart-blue-5: var(--color-blue-800);
+
+  /* Chart - Purple */
+  --chart-purple-1: var(--color-purple-300);
+  --chart-purple-2: var(--color-purple-500);
+  --chart-purple-3: var(--color-purple-600);
+  --chart-purple-4: var(--color-purple-700);
+  --chart-purple-5: var(--color-purple-800);
+
+  /* Chart - Yellow (amber scale) */
+  --chart-yellow-1: var(--color-amber-300);
+  --chart-yellow-2: var(--color-amber-500);
+  --chart-yellow-3: var(--color-amber-600);
+  --chart-yellow-4: var(--color-amber-700);
+  --chart-yellow-5: var(--color-amber-800);
+
+  /* Chart - Orange */
+  --chart-orange-1: var(--color-orange-300);
+  --chart-orange-2: var(--color-orange-500);
+  --chart-orange-3: var(--color-orange-600);
+  --chart-orange-4: var(--color-orange-700);
+  --chart-orange-5: var(--color-orange-800);
+
+  /* Chart - Red (rose scale) */
+  --chart-red-1: var(--color-rose-300);
+  --chart-red-2: var(--color-rose-500);
+  --chart-red-3: var(--color-rose-600);
+  --chart-red-4: var(--color-rose-700);
+  --chart-red-5: var(--color-rose-800);
+
+  /* Chart - Pink */
+  --chart-pink-1: var(--color-pink-300);
+  --chart-pink-2: var(--color-pink-400);
+  --chart-pink-3: var(--color-pink-500);
+  --chart-pink-4: var(--color-pink-600);
+  --chart-pink-5: var(--color-pink-700);
+
+  /* Chart - Green */
+  --chart-green-1: var(--color-green-300);
+  --chart-green-2: var(--color-green-500);
+  --chart-green-3: var(--color-green-600);
+  --chart-green-4: var(--color-green-700);
+  --chart-green-5: var(--color-green-800);
+
+  /* Chart - Teal */
+  --chart-teal-1: var(--color-teal-300);
+  --chart-teal-2: var(--color-teal-500);
+  --chart-teal-3: var(--color-teal-600);
+  --chart-teal-4: var(--color-teal-700);
+  --chart-teal-5: var(--color-teal-800);
+
+  --sidebar-background: var(--color-neutral-900);
+  --sidebar-foreground: var(--color-neutral-50);
+  --sidebar-primary: var(--color-neutral-800);
+  --sidebar-primary-foreground: var(--color-neutral-50);
+  --sidebar-accent: var(--color-neutral-800);
+  --sidebar-accent-foreground: var(--color-neutral-50);
+  --sidebar-border: color-mix(in oklab, var(--color-white) 10%, transparent);
+  --sidebar-ring: var(--color-neutral-500);
+
+  --header-background: var(--color-neutral-950);
+  --header-foreground: var(--color-neutral-50);
+  --header-primary: var(--color-neutral-800);
+  --header-primary-foreground: var(--color-neutral-50);
+  --header-accent: var(--color-neutral-800);
+  --header-accent-foreground: var(--color-neutral-50);
+  --header-border: color-mix(in oklab, var(--color-white) 10%, transparent);
+  --header-ring: var(--color-neutral-500);
+
+  /* Badge */
+  --badge-gray: var(--color-neutral-400);
+  --badge-gray-foreground: var(--color-neutral-50);
+  --badge-gray-subtle: var(--color-neutral-800);
+  --badge-gray-subtle-foreground: var(--color-neutral-100);
+
+  --badge-blue: var(--color-blue-600);
+  --badge-blue-foreground: var(--color-neutral-50);
+  --badge-blue-subtle: var(--color-blue-950);
+  --badge-blue-subtle-foreground: var(--color-blue-400);
+
+  --badge-purple: var(--color-purple-600);
+  --badge-purple-foreground: var(--color-neutral-50);
+  --badge-purple-subtle: var(--color-purple-950);
+  --badge-purple-subtle-foreground: var(--color-purple-400);
+
+  --badge-yellow: var(--color-amber-400);
+  --badge-yellow-foreground: var(--color-black);
+  --badge-yellow-subtle: var(--color-amber-950);
+  --badge-yellow-subtle-foreground: var(--color-amber-500);
+
+  --badge-orange: var(--color-orange-600);
+  --badge-orange-foreground: var(--color-neutral-50);
+  --badge-orange-subtle: var(--color-orange-950);
+  --badge-orange-subtle-foreground: var(--color-orange-400);
+
+  --badge-red: var(--color-red-500);
+  --badge-red-foreground: var(--color-neutral-50);
+  --badge-red-subtle: var(--color-red-950);
+  --badge-red-subtle-foreground: var(--color-red-400);
+
+  --badge-pink: var(--color-pink-500);
+  --badge-pink-foreground: var(--color-neutral-50);
+  --badge-pink-subtle: var(--color-pink-950);
+  --badge-pink-subtle-foreground: var(--color-pink-400);
+
+  --badge-green: var(--color-green-600);
+  --badge-green-foreground: var(--color-neutral-50);
+  --badge-green-subtle: var(--color-green-950);
+  --badge-green-subtle-foreground: var(--color-green-500);
+
+  --badge-teal: var(--color-teal-600);
+  --badge-teal-foreground: var(--color-neutral-50);
+  --badge-teal-subtle: var(--color-teal-950);
+  --badge-teal-subtle-foreground: var(--color-teal-400);
+}
+
+/* ─── Theme utilities (semantic → Tailwind utility tokens) ──────────────── */
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--sans), sans-serif;
+  --font-colorless: var(--font-geist-colorless);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-background: var(--sidebar-background);
+
+  --color-header-ring: var(--header-ring);
+  --color-header-border: var(--header-border);
+  --color-header-accent-foreground: var(--header-accent-foreground);
+  --color-header-accent: var(--header-accent);
+  --color-header-primary-foreground: var(--header-primary-foreground);
+  --color-header-primary: var(--header-primary);
+  --color-header-foreground: var(--header-foreground);
+  --color-header-background: var(--header-background);
+
+  /* Chart - Colorful */
+  --color-chart-colorful-1: var(--chart-colorful-1);
+  --color-chart-colorful-2: var(--chart-colorful-2);
+  --color-chart-colorful-3: var(--chart-colorful-3);
+  --color-chart-colorful-4: var(--chart-colorful-4);
+  --color-chart-colorful-5: var(--chart-colorful-5);
+
+  /* Chart - Colorless */
+  --color-chart-colorless-1: var(--chart-colorless-1);
+  --color-chart-colorless-2: var(--chart-colorless-2);
+  --color-chart-colorless-3: var(--chart-colorless-3);
+  --color-chart-colorless-4: var(--chart-colorless-4);
+  --color-chart-colorless-5: var(--chart-colorless-5);
+
+  /* Chart - Blue */
+  --color-chart-blue-1: var(--chart-blue-1);
+  --color-chart-blue-2: var(--chart-blue-2);
+  --color-chart-blue-3: var(--chart-blue-3);
+  --color-chart-blue-4: var(--chart-blue-4);
+  --color-chart-blue-5: var(--chart-blue-5);
+
+  /* Chart - Purple */
+  --color-chart-purple-1: var(--chart-purple-1);
+  --color-chart-purple-2: var(--chart-purple-2);
+  --color-chart-purple-3: var(--chart-purple-3);
+  --color-chart-purple-4: var(--chart-purple-4);
+  --color-chart-purple-5: var(--chart-purple-5);
+
+  /* Chart - Yellow */
+  --color-chart-yellow-1: var(--chart-yellow-1);
+  --color-chart-yellow-2: var(--chart-yellow-2);
+  --color-chart-yellow-3: var(--chart-yellow-3);
+  --color-chart-yellow-4: var(--chart-yellow-4);
+  --color-chart-yellow-5: var(--chart-yellow-5);
+
+  /* Chart - Orange */
+  --color-chart-orange-1: var(--chart-orange-1);
+  --color-chart-orange-2: var(--chart-orange-2);
+  --color-chart-orange-3: var(--chart-orange-3);
+  --color-chart-orange-4: var(--chart-orange-4);
+  --color-chart-orange-5: var(--chart-orange-5);
+
+  /* Chart - Red */
+  --color-chart-red-1: var(--chart-red-1);
+  --color-chart-red-2: var(--chart-red-2);
+  --color-chart-red-3: var(--chart-red-3);
+  --color-chart-red-4: var(--chart-red-4);
+  --color-chart-red-5: var(--chart-red-5);
+
+  /* Chart - Pink */
+  --color-chart-pink-1: var(--chart-pink-1);
+  --color-chart-pink-2: var(--chart-pink-2);
+  --color-chart-pink-3: var(--chart-pink-3);
+  --color-chart-pink-4: var(--chart-pink-4);
+  --color-chart-pink-5: var(--chart-pink-5);
+
+  /* Chart - Green */
+  --color-chart-green-1: var(--chart-green-1);
+  --color-chart-green-2: var(--chart-green-2);
+  --color-chart-green-3: var(--chart-green-3);
+  --color-chart-green-4: var(--chart-green-4);
+  --color-chart-green-5: var(--chart-green-5);
+
+  /* Chart - Teal */
+  --color-chart-teal-1: var(--chart-teal-1);
+  --color-chart-teal-2: var(--chart-teal-2);
+  --color-chart-teal-3: var(--chart-teal-3);
+  --color-chart-teal-4: var(--chart-teal-4);
+  --color-chart-teal-5: var(--chart-teal-5);
+
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --color-badge-gray: var(--badge-gray);
+  --color-badge-gray-foreground: var(--badge-gray-foreground);
+  --color-badge-gray-subtle: var(--badge-gray-subtle);
+  --color-badge-gray-subtle-foreground: var(--badge-gray-subtle-foreground);
+
+  --color-badge-blue: var(--badge-blue);
+  --color-badge-blue-foreground: var(--badge-blue-foreground);
+  --color-badge-blue-subtle: var(--badge-blue-subtle);
+  --color-badge-blue-subtle-foreground: var(--badge-blue-subtle-foreground);
+
+  --color-badge-purple: var(--badge-purple);
+  --color-badge-purple-foreground: var(--badge-purple-foreground);
+  --color-badge-purple-subtle: var(--badge-purple-subtle);
+  --color-badge-purple-subtle-foreground: var(--badge-purple-subtle-foreground);
+
+  --color-badge-yellow: var(--badge-yellow);
+  --color-badge-yellow-foreground: var(--badge-yellow-foreground);
+  --color-badge-yellow-subtle: var(--badge-yellow-subtle);
+  --color-badge-yellow-subtle-foreground: var(--badge-yellow-subtle-foreground);
+
+  --color-badge-orange: var(--badge-orange);
+  --color-badge-orange-foreground: var(--badge-orange-foreground);
+  --color-badge-orange-subtle: var(--badge-orange-subtle);
+  --color-badge-orange-subtle-foreground: var(--badge-orange-subtle-foreground);
+
+  --color-badge-red: var(--badge-red);
+  --color-badge-red-foreground: var(--badge-red-foreground);
+  --color-badge-red-subtle: var(--badge-red-subtle);
+  --color-badge-red-subtle-foreground: var(--badge-red-subtle-foreground);
+
+  --color-badge-pink: var(--badge-pink);
+  --color-badge-pink-foreground: var(--badge-pink-foreground);
+  --color-badge-pink-subtle: var(--badge-pink-subtle);
+  --color-badge-pink-subtle-foreground: var(--badge-pink-subtle-foreground);
+
+  --color-badge-green: var(--badge-green);
+  --color-badge-green-foreground: var(--badge-green-foreground);
+  --color-badge-green-subtle: var(--badge-green-subtle);
+  --color-badge-green-subtle-foreground: var(--badge-green-subtle-foreground);
+
+  --color-badge-teal: var(--badge-teal);
+  --color-badge-teal-foreground: var(--badge-teal-foreground);
+  --color-badge-teal-subtle: var(--badge-teal-subtle);
+  --color-badge-teal-subtle-foreground: var(--badge-teal-subtle-foreground);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    overscroll-behavior: none;
+  }
+  button:not([disabled]),
+  [role="button"]:not([disabled]) {
+    cursor: pointer;
+  }
+  .maplibregl-popup-content {
+    @apply bg-transparent! shadow-none! p-0! rounded-none!;
+  }
+  .maplibregl-popup-tip {
+    @apply hidden!;
+  }
+  .maplibregl-ctrl-attrib.maplibregl-compact,
+  .maplibregl-ctrl-attrib {
+    @apply bg-background! text-muted-foreground!;
+  }
+  .maplibregl-ctrl-attrib a,
+  .maplibregl-ctrl-attrib a:hover {
+    @apply text-muted-foreground!;
+  }
+  .dark .maplibregl-ctrl-attrib-button {
+    filter: invert(1);
+  }
+  .maplibregl-ctrl-attrib-button:focus,
+  .maplibregl-ctrl-attrib-button:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+}

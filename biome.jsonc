@@ -1,0 +1,16 @@
+{
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "extends": ["ultracite/biome/core", "ultracite/biome/next"],
+  "files": {
+    // The Better Auth UI layer is shadcn registry output
+    // (better-auth-ui.com/r/base-nova/*). Excluding it from lint + format keeps
+    // it byte-faithful to upstream so re-scaffolding on the next version bump
+    // produces a clean diff. tsc still covers these paths — see
+    // packages/auth/README.md. Excludes lint/format only, not type-checking.
+    "includes": [
+      "!packages/taxonomy/data",
+      "!packages/auth/src/components/auth",
+      "!packages/auth/src/lib/auth"
+    ]
+  }
+}

@@ -1,0 +1,71 @@
+/* Palette consumed by the color/highlight picker in color-and-highlight.tsx.
+   Content styling lives in styles/typography.css (imported via globals.css). */
+:root {
+  --editor-text-default: hsl(240 10% 3.9%);
+  --editor-text-gray: hsl(240 3.8% 46.1%);
+  --editor-text-brown: hsl(25 95% 53%);
+  --editor-text-orange: hsl(24 95% 53%);
+  --editor-text-yellow: hsl(48 96% 53%);
+  --editor-text-green: hsl(142 71% 45%);
+  --editor-text-blue: hsl(221 83% 53%);
+  --editor-text-purple: hsl(269 97% 85%);
+  --editor-text-pink: hsl(336 80% 58%);
+  --editor-text-red: hsl(0 84% 60%);
+
+  --editor-highlight-default: hsl(0 0% 98%);
+  --editor-highlight-gray: hsl(240 5% 96%);
+  --editor-highlight-brown: hsl(43 96% 96%);
+  --editor-highlight-orange: hsl(33 100% 96%);
+  --editor-highlight-yellow: hsl(54 100% 96%);
+  --editor-highlight-green: hsl(142 71% 96%);
+  --editor-highlight-blue: hsl(217 91% 96%);
+  --editor-highlight-purple: hsl(269 97% 96%);
+  --editor-highlight-pink: hsl(336 80% 96%);
+  --editor-highlight-red: hsl(0 84% 96%);
+}
+
+.dark {
+  --editor-text-default: hsl(0 0% 98%);
+  --editor-text-gray: hsl(240 5% 64.9%);
+
+  --editor-highlight-default: hsl(240 3.7% 15.9%);
+  --editor-highlight-gray: hsl(240 5% 26%);
+  --editor-highlight-brown: hsl(43 96% 10%);
+  --editor-highlight-orange: hsl(33 100% 10%);
+  --editor-highlight-yellow: hsl(54 100% 10%);
+  --editor-highlight-green: hsl(142 71% 10%);
+  --editor-highlight-blue: hsl(217 91% 10%);
+  --editor-highlight-purple: hsl(269 97% 10%);
+  --editor-highlight-pink: hsl(336 80% 10%);
+  --editor-highlight-red: hsl(0 84% 10%);
+}
+
+/* Editor chrome (selection, focus outline). Content styling lives in .typography. */
+.ProseMirror {
+  position: relative;
+  caret-color: currentColor;
+  outline: none;
+}
+
+.ProseMirror:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.ProseMirror .selection,
+.ProseMirror *::selection {
+  background-color: oklch(0.6 0.1 250 / 40%);
+}
+
+.dark .ProseMirror .selection,
+.dark .ProseMirror *::selection {
+  background-color: oklch(0.7 0.1 250 / 35%);
+}
+
+.ProseMirror .is-editor-empty::before {
+  float: left;
+  height: 0;
+  color: var(--editor-text-gray);
+  pointer-events: none;
+  content: attr(data-placeholder);
+}

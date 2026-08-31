@@ -1,0 +1,24 @@
+{
+  "name": "@dashseller/env",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./server": "./src/server.ts",
+    "./db": "./src/db.ts",
+    "./trigger-scan": "./src/trigger-scan.ts",
+    "./app": "./src/app.ts"
+  },
+  "scripts": {
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@t3-oss/env-core": "catalog:",
+    "@t3-oss/env-nextjs": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@dashseller/config": "workspace:*",
+    "typescript": "catalog:"
+  }
+}

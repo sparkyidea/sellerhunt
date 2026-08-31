@@ -1,0 +1,9 @@
+{
+  "clientId": "eBayInc00-0000-0000-0000-000000000000",
+  "hmacKey": "<128-hex-char CCHmac key captured via Frida>",
+  "device4pp": "<device4pp header from a live curl>",
+  "idfa": "00000000-0000-0000-0000-000000000000",
+  "idfv": "00000000-0000-0000-0000-000000000000",
+  "deviceId": "<deviceId from a live curl>",
+  "guid": "<guid from a live curl>"
+}

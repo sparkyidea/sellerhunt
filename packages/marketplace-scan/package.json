@@ -1,0 +1,30 @@
+{
+  "name": "@dashseller/marketplace-scan",
+  "type": "module",
+  "exports": {
+    ".": {
+      "default": "./src/index.ts"
+    },
+    "./types": {
+      "default": "./src/types.ts"
+    },
+    "./errors": {
+      "default": "./src/errors.ts"
+    }
+  },
+  "scripts": {
+    "check-types": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "html-to-text": "catalog:"
+  },
+  "devDependencies": {
+    "@dashseller/config": "workspace:*",
+    "@types/html-to-text": "catalog:",
+    "dotenv": "catalog:",
+    "typescript": "catalog:",
+    "vitest": "catalog:"
+  }
+}

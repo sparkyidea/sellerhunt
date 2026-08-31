@@ -1,0 +1,29 @@
+name: dashseller-dev
+
+# Local development Postgres. Persistent named volume — unlike
+# docker-compose.test.yml, which is ephemeral by design and owned by the
+# integration tests. Both stacks can run at the same time (distinct ports).
+#
+#   bun docker:up       start (waits for healthy)
+#   bun docker:down     stop, data survives
+#   bun db:clone              copy the remote dev DB into local
+#   docker compose -f docker-compose.dev.yml down -v   full reset
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: dashseller
+      POSTGRES_PASSWORD: dashseller
+      POSTGRES_DB: dashseller
+    ports:
+      - "54320:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U dashseller -d dashseller"]
+      interval: 2s
+      timeout: 3s
+      retries: 15
+
+volumes:
+  pgdata:

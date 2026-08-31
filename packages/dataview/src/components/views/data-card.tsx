@@ -1,0 +1,197 @@
+"use client";
+
+import { ImageIcon } from "lucide-react";
+import Image from "next/image";
+import { cn } from "../../lib/utils";
+import type { DataViewProperty } from "../../types/property.type";
+import { isPropertyValueEmpty } from "../../utils/is-property-value-empty";
+import { Card, CardContent } from "../ui/card";
+import { DataCell } from "./data-cell";
+
+export type CardLayout = "list" | "compact";
+
+export interface DataCardProps<TData> {
+  /**
+   * All property schema - required for formula properties
+   */
+  allProperties?: readonly DataViewProperty<TData>[];
+
+  /**
+   * Card layout mode
+   * - "list": Properties stack vertically, one per line (flex-col)
+   * - "compact": Properties flow in a wrapping row (flex-wrap)
+   * @default "list"
+   */
+  cardLayout?: CardLayout;
+
+  /**
+   * Card preview property ID (references property.id, not data key)
+   */
+  cardPreview?: string;
+
+  /**
+   * Additional className
+   */
+  className?: string;
+
+  /**
+   * Property schema for display
+   */
+  displayProperties: DataViewProperty<TData>[];
+
+  /**
+   * Fit image (object-cover) or contain (object-contain)
+   * @default true
+   */
+  fitMedia?: boolean;
+
+  /**
+   * Image height in pixels
+   */
+  imageHeight: number;
+  /**
+   * Item data to display
+   */
+  item: TData;
+
+  /**
+   * Card click handler
+   */
+  onCardClick?: (item: TData) => void;
+
+  /**
+   * Global default for showing property names.
+   * Each property's `showName` overrides this.
+   */
+  showPropertyNames?: boolean;
+
+  /**
+   * Wrap all properties
+   */
+  wrapAllProperties?: boolean;
+}
+
+/**
+ * DataCard - Shared card component for gallery and board views
+ * Renders a single card with optional image preview and property values
+ */
+export function DataCard<TData>({
+  item,
+  displayProperties,
+  allProperties,
+  cardLayout = "list",
+  cardPreview,
+  imageHeight,
+  fitMedia = true,
+  wrapAllProperties = false,
+  showPropertyNames = false,
+  onCardClick,
+  className,
+}: DataCardProps<TData>) {
+  const isCompact = cardLayout === "compact";
+  // Handle cardPreview - resolve through property.id for correct data access
+  const previewProperty = cardPreview
+    ? (allProperties ?? displayProperties).find((p) => p.id === cardPreview)
+    : undefined;
+  const previewId = previewProperty?.id ?? cardPreview;
+  const previewValue = previewId
+    ? (item as Record<string, unknown>)[previewId]
+    : null;
+  const imageUrl = Array.isArray(previewValue)
+    ? previewValue[0]
+    : (previewValue as string);
+
+  return (
+    <Card
+      className={cn(
+        "gap-0 overflow-hidden py-0 transition-all hover:shadow-md",
+        onCardClick && "cursor-pointer",
+        className
+      )}
+      onClick={() => onCardClick?.(item)}
+    >
+      {/* Image Preview - only show if cardPreview is provided */}
+      {cardPreview && (
+        <div className="relative bg-muted" style={{ height: imageHeight }}>
+          {imageUrl ? (
+            <Image
+              alt={String(
+                (item as Record<string, unknown>).title ??
+                  (item as Record<string, unknown>).name ??
+                  "Preview image"
+              )}
+              className={cn(
+                "transition-opacity",
+                fitMedia ? "object-contain" : "object-cover"
+              )}
+              fill
+              loading="lazy"
+              sizes="(min-width: 1280px) 20vw, (min-width: 768px) 33vw, 100vw"
+              src={imageUrl}
+            />
+          ) : (
+            <div className="flex h-full items-center justify-center">
+              <ImageIcon className="h-12 w-12 text-muted-foreground/30" />
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* Card Content */}
+      <CardContent
+        className={cn(
+          "flex gap-2 p-3",
+          isCompact ? "flex-wrap items-start" : "flex-col"
+        )}
+      >
+        {displayProperties.map((property, propIndex) => {
+          const value = (item as Record<string, unknown>)[property.id];
+          const isFirst = propIndex === 0;
+          const resolvedShowName = property.showName ?? showPropertyNames;
+          const resolvedWrap = property.wrap ?? wrapAllProperties;
+
+          if (isPropertyValueEmpty(property, value, item)) {
+            return null;
+          }
+
+          return (
+            <div
+              className={cn(
+                "flex min-w-0 flex-col items-start",
+                isCompact
+                  ? cn("shrink-0", isFirst && "w-full basis-full")
+                  : "w-full",
+                isFirst && "font-medium",
+                (property.type === "select" ||
+                  property.type === "multiSelect" ||
+                  property.type === "status" ||
+                  property.type === "filesMedia") &&
+                  "gap-1"
+              )}
+              key={String(property.id)}
+              style={
+                isCompact && !isFirst && property.size
+                  ? { width: property.size }
+                  : undefined
+              }
+            >
+              {resolvedShowName && (
+                <span className="text-muted-foreground text-xs">
+                  {property.name ?? String(property.id)}
+                </span>
+              )}
+              <DataCell
+                allProperties={allProperties}
+                item={item}
+                property={property}
+                showPropertyNames={showPropertyNames}
+                value={value}
+                wrap={resolvedWrap}
+              />
+            </div>
+          );
+        })}
+      </CardContent>
+    </Card>
+  );
+}
