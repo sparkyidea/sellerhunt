@@ -21,7 +21,7 @@ const INCLUDED_ENV_VARS = new Set([
 ]);
 
 export default defineConfig({
-  project: "proj_jtxdtdkuxfpuykkwwtxe",
+  project: "proj_lnuxkvphsvonjfezqcfe",
   runtime: "node",
   logLevel: "info",
   maxDuration: 3600,
