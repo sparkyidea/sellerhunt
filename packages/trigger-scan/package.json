@@ -14,10 +14,10 @@
   "dependencies": {
     "@dashseller/db": "workspace:*",
     "@dashseller/env": "workspace:*",
-    "@dashseller/marketplace": "workspace:*",
     "@dashseller/marketplace-scan": "workspace:*",
     "@trigger.dev/sdk": "catalog:",
-    "drizzle-orm": "catalog:"
+    "drizzle-orm": "catalog:",
+    "jose": "catalog:"
   },
   "devDependencies": {
     "@dashseller/config": "workspace:*",

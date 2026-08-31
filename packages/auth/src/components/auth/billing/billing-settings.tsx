@@ -471,22 +471,3 @@ export function UserBillingSettings(
   )
 }
 
-export function OrganizationBillingSettings({
-  organizationId,
-  organizationSlug,
-  ...props
-}: Omit<BillingSettingsProps, "adapter" | "scope"> & {
-  organizationId: string
-  organizationSlug: string
-}) {
-  const { adapter } = useAuthPlugin(billingPlugin)
-  if (!organizationId || !organizationSlug) return null
-
-  return (
-    <BillingSettings
-      {...props}
-      adapter={adapter}
-      scope={{ type: "organization", organizationId, organizationSlug }}
-    />
-  )
-}

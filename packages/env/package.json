@@ -5,15 +5,9 @@
   "type": "module",
   "exports": {
     "./server": "./src/server.ts",
-    "./marketplace": "./src/marketplace.ts",
     "./db": "./src/db.ts",
-    "./geo": "./src/geo.ts",
-    "./tracking": "./src/tracking.ts",
-    "./trigger-sync": "./src/trigger-sync.ts",
     "./trigger-scan": "./src/trigger-scan.ts",
-    "./web": "./src/web.ts",
-    "./app": "./src/app.ts",
-    "./worker": "./src/worker.ts"
+    "./app": "./src/app.ts"
   },
   "scripts": {
     "check-types": "tsc --noEmit"

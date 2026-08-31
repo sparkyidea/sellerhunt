@@ -42,8 +42,6 @@ import type {
 } from "@dashseller/db/schema";
 import { mobileProfile } from "@dashseller/db/schema";
 import { env } from "@dashseller/env/trigger-scan";
-import { decryptSecret } from "@dashseller/marketplace/utils/decrypt-secret";
-import { encryptSecret } from "@dashseller/marketplace/utils/encrypt-secret";
 import { createScanClient, getScanToken } from "@dashseller/marketplace-scan";
 import { ScanRequestError } from "@dashseller/marketplace-scan/errors";
 import type {
@@ -54,6 +52,7 @@ import type {
 import { logger } from "@trigger.dev/sdk";
 import { and, asc, eq, isNull, lt, or, sql } from "drizzle-orm";
 import { getBoxName, parseWorkerLabel } from "./box-name";
+import { decryptSecret, encryptSecret } from "./secret-crypto";
 
 /** Default consecutive soft failures before promoting a profile to `dead`. */
 const DEFAULT_DEAD_THRESHOLD = 3;

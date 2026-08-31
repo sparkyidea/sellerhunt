@@ -6,10 +6,7 @@ import {
 import { CreditCard } from "lucide-react"
 import { createElement } from "react"
 
-import {
-  OrganizationBillingSettings,
-  UserBillingSettings
-} from "@dashseller/auth/components/auth/billing/billing-settings"
+import { UserBillingSettings } from "@dashseller/auth/components/auth/billing/billing-settings"
 
 const billingLabel = (label: string) =>
   createElement(
@@ -32,18 +29,6 @@ export const billingPlugin = createAuthPlugin(
                 view: "billing" as const,
                 label: billingLabel(core.localization.billing),
                 component: UserBillingSettings
-              }
-            ]
-          }
-        : {}),
-      ...(core.organization
-        ? {
-            organizationTabs: [
-              {
-                id: "billing",
-                path: core.viewPaths.settings.billing,
-                label: billingLabel(core.localization.billing),
-                component: OrganizationBillingSettings
               }
             ]
           }

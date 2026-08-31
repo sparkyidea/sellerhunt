@@ -47,9 +47,8 @@
  *
  * Encryption: `credentials`, `accessToken`, and `refreshToken` are all
  * encrypted JWE strings produced by `encryptSecret()` from
- * `@dashseller/marketplace/utils/encrypt-secret`. Decrypt at read time
- * with `decryptSecret()`. The encryption key is `env.ENCRYPTION_SECRET`
- * (same key used for `channel_token`).
+ * `packages/trigger-scan/src/utils/secret-crypto`. Decrypt at read time
+ * with `decryptSecret()`. The encryption key is `env.ENCRYPTION_SECRET`.
  */
 import type { InferSelectModel } from "drizzle-orm";
 import {

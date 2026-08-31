@@ -11,8 +11,7 @@ One folder per unit of work. **Each folder is deleted by the PR that ships it.**
 ## This is not the backlog
 
 The backlog is **GitHub Issues**. A checked-in queue file conflicts on every
-branch, so it stops getting updated, so it starts lying. We had one; it was four
-months stale and half its "open" items had already shipped.
+branch, so it stops getting updated, so it starts lying.
 
 `ls .plan/` is the index. Nothing else.
 
@@ -28,24 +27,13 @@ conflict. Structurally, not by discipline.
 its PR is a bug. `.plan/` on `main` should trend toward empty; if it grows, work
 is shipping without cleanup.
 
-**Durable findings move to [`.domain/`](../.domain/), not into a plan file that
-lingers.** If the plan taught you something true about the product, that fact
-belongs in `.domain/` before the plan is deleted. Decisions with a real
-alternative get an ADR.
-
 ## The loop
 
-1. **Capture** → GitHub Issue
-2. **Shape** → touch `.domain/` first. Can't name the entity, flow, or invariant
-   that changes? Not ready to plan.
-3. **Plan** → new worktree + branch, write `.plan/<slug>/`
-4. **Build** → in that worktree only
-5. **Land** → PR = code **+** `.domain/` update **+** `rm -r .plan/<slug>/`
-6. **Decide** → real alternative considered? Add `.domain/decisions/NNNN-*.md`
+1. **Capture** → GitHub Issue.
+2. **Plan** → new branch, write `.plan/<slug>/`.
+3. **Build** → on that branch only.
+4. **Land** → PR = code **+** `rm -r .plan/<slug>/`.
 
 ## Currently in flight
 
-| Slug | What | Status |
-| --- | --- | --- |
-| `clean-break-initial-sync/` | Wipe + rollout runbook for the initial-sync rework | **User-executed.** Wipe must run BEFORE migration `0004`. Never run by an agent. See [ADR 0004](../.domain/decisions/0004-clean-break-initial-sync.md). |
-| `outbox-listings/` | Price + quantity write-back through the outbox | Not started. Second worked example of the four-piece pattern after shipments. |
+_None._

@@ -11,9 +11,6 @@
     "./components/*": {
       "default": "./src/components/*.tsx"
     },
-    "./lib/auth/organization-plugin": {
-      "default": "./src/lib/auth/organization-plugin.tsx"
-    },
     "./styles.css": "./src/style.css"
   },
   "scripts": {

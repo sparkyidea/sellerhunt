@@ -7,7 +7,6 @@ import { TRPCReactProvider } from "@/lib/utils/trpc/client";
 import { TailwindIndicator } from "../tailwind-indicator";
 import { BetterAuthProviders } from "./wrappers/better-auth-providers";
 import { ThemeProvider } from "./wrappers/theme-provider";
-import { WidgetProvider } from "./wrappers/widget-provider";
 
 export function ClientProviders({ children }: { children: React.ReactNode }) {
   return (
@@ -20,7 +19,6 @@ export function ClientProviders({ children }: { children: React.ReactNode }) {
     >
       <TRPCReactProvider>
         <BetterAuthProviders>
-          <WidgetProvider />
           <NavigationGuardProvider>{children}</NavigationGuardProvider>
         </BetterAuthProviders>
         {/* <ReactQueryDevtools /> */}

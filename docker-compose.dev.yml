@@ -1,6 +1,6 @@
 name: dashseller-dev
 
-# Local development Postgres + Redis. Persistent named volumes — unlike
+# Local development Postgres. Persistent named volume — unlike
 # docker-compose.test.yml, which is ephemeral by design and owned by the
 # integration tests. Both stacks can run at the same time (distinct ports).
 #
@@ -25,21 +25,5 @@ services:
       timeout: 3s
       retries: 15
 
-  redis:
-    image: redis:7-alpine
-    # Same flags production requires for BullMQ: eviction would silently
-    # drop jobs; AOF persists queued jobs across restarts.
-    command: redis-server --maxmemory-policy noeviction --appendonly yes
-    ports:
-      - "63790:6379"
-    volumes:
-      - redisdata:/data
-    healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
-      interval: 2s
-      timeout: 3s
-      retries: 15
-
 volumes:
   pgdata:
-  redisdata:

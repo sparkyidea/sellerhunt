@@ -4,15 +4,10 @@ import { create } from "zustand";
 // carries the minimum data needed for both the route fallback (mobile) and
 // the in-place preview render (desktop) — see use-open-preview.ts and
 // preview-host.tsx.
-export type Preview =
-  | { kind: "issue"; id: string }
-  | { kind: "listing"; id: string }
-  | { kind: "listing-variant"; id: string; listingId: string }
-  | { kind: "product"; id: string }
-  | { kind: "product-variant"; id: string; productId: string }
-  | { kind: "order"; id: string }
-  | { kind: "scan-listing"; id: string }
-  | { kind: "shipment"; id: string };
+export interface Preview {
+  id: string;
+  kind: "scan-listing";
+}
 
 interface PreviewStore {
   close: () => void;

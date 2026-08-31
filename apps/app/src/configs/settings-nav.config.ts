@@ -15,19 +15,9 @@ export function useSettingsNavConfig(): SettingsNavConfig {
         icon: Icons.security,
       },
       {
-        title: "Organizations",
-        href: "/settings/organizations",
-        icon: Icons.organization,
-      },
-      {
         title: "Appearance",
         href: "/settings/appearance",
         icon: Icons.settings,
-      },
-      {
-        title: "Channels",
-        href: "/settings/channels",
-        icon: Icons.store,
       },
     ],
   };

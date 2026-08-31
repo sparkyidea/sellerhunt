@@ -26,49 +26,36 @@ Workflow:
 packages/db/
   drizzle.config.ts             — reads DATABASE_URL from apps/api/.env
   src/
-    index.ts                    — db client export
+    index.ts                    — env-validated db singleton
+    client.ts                   — env-free createDbClient(connectionString)
+    testing.ts                  — migrateTestDb + TEST_DATABASE_URL
     schema/
-      auth.ts                   — better-auth tables
-      category.ts
-      channel.ts
-      channel-sync-state.ts
-      inventory.ts
-      issue.ts
-      listing.ts
-      marketplace.ts
-      marketplace-category.ts
-      order.ts
-      product.ts
-      return.ts
-      setting.ts
-      shipment.ts
-      shipment-relations.ts
-      sync-outbox.ts
-      tax-rate.ts
-      tracking.ts
-      warehouse.ts
-      webhook.ts
-      world.ts
+      auth.ts                   — better-auth tables (user, session, account,
+                                  verification, passkey, two_factor). No orgs.
+      mobile-profile.ts         — scan persona pool (encrypted credentials/bearers)
+      scan.ts                   — scan_config / scan_keyword / scan_seller /
+                                  scan_listing (+ snapshot, variant)
+    seed/
+      scan.ts, mobile-profile.ts
     migrations/                 — GENERATED. Don't hand-edit.
 ```
 
 ## Schema conventions
 
 - One file per entity (or tightly-related cluster).
-- Business tables carry `organizationId` — the organization is the tenant. `createdByUserId` is attribution only, never isolation. See rule `TEN-001` in `.domain/tenancy/rules.md`.
 - Relations defined alongside the entity table.
-- Composite indexes on business tables lead with `organization_id` (`TEN-002`).
-- Outbox pattern (`sync-outbox.ts`) for eventual consistency between local DB and marketplace state — see `.domain/sync/outbox.md` and rules `SYN-001..003`.
+- Scan tables are **not** FK-linked to any auth table; `marketplace` is a plain
+  text discriminator and `category` a stored text path — the explorer stack is
+  intentionally standalone.
+- Don't put business logic in schema files — schema is structural only.
 
 ## Querying
 
-- All queries scope by `ctx.organizationId` via `orgProcedure` — never `ctx.user.id`. See `TEN-001`.
-- Repository-style helpers belong in `packages/trpc/src/routers/<entity>.ts`, not in the schema package.
-- Don't put business logic in schema files — schema is structural only.
+- The `scanListing` router is `publicProcedure` — scan reads need no session.
+- Repository-style helpers belong in `packages/trpc/src/routers/<entity>.ts`,
+  not in the schema package.
 
 ## See also
 
-- `.domain/tenancy/rules.md` — isolation invariants (`TEN-001`, `TEN-002`).
-- `.agents/skills/dashseller-domain` — writing domain rules for schema invariants.
 - `.agents/knowledge-base.md` — "Database operations".
 - `.agents/rules/reference-generated-files.md` — generated paths to avoid editing.

@@ -20,19 +20,5 @@
       "Bash(npx drizzle-kit migrate:*)",
       "Bash(npx drizzle-kit drop:*)"
     ]
-  },
-  "hooks": {
-    "PreToolUse": [
-      {
-        "matcher": "Edit|Write|MultiEdit",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "bun \"$CLAUDE_PROJECT_DIR/.claude/hooks/domain-rules.ts\"",
-            "timeout": 10
-          }
-        ]
-      }
-    ]
   }
 }

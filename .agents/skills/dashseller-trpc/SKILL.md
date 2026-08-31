@@ -9,46 +9,31 @@ description: Use when adding, modifying, or calling tRPC procedures in the dashs
 
 ```
 packages/trpc/src/
-  index.ts              — exports `router`, `publicProcedure`, `protectedProcedure`, `orgProcedure`
-  context.ts            — createContext taking an injected `SessionReader` (ADR 0001)
+  index.ts              — exports `router`, `publicProcedure`, `protectedProcedure`
+  context.ts            — createContext taking an injected `SessionReader`
   routers/
-    index.ts            — appRouter aggregator (register new routers here)
-    category.ts
-    channel.ts
-    issue.ts
-    listing.ts
-    listing-variant.ts
-    marketplace.ts
-    marketplace-category.ts
-    order.ts
-    order-line.ts
-    product.ts
-    product-variant.ts
-    scan-listing.ts
-    shipment.ts
-    stock.ts
-    stock-transaction.ts
-    sync.ts
-    warehouse.ts
-    context-search.ts
+    index.ts            — appRouter aggregator: { healthCheck, scanListing }
+    scan-listing.ts     — the explorer read API (get / getMany / getGroup)
+  lib/                  — build-filter/group/rollup/search/sort, schemas
 ```
 
 ### Adding a procedure
 
 1. Pick the right router file (or create `<entity>.ts` and register in `routers/index.ts`).
-2. Use **`orgProcedure`** for anything touching business data — it resolves and exposes `ctx.organizationId`. `protectedProcedure` only when you need a session but no tenant (account-level operations). `publicProcedure` only for unauthenticated reads (rare).
+2. Choose the procedure: `publicProcedure` for unauthenticated reads (the
+   explorer's `scanListing` is public); `protectedProcedure` when you need a
+   session. There is **no** organization/tenant scoping — orgs were removed.
 3. Validate inputs with Zod.
-4. For listing/table endpoints, accept dataview filter/cursor inputs from `packages/dataview/src/validators/`.
-5. Scope every query by `ctx.organizationId`. The organization is the tenant; `ctx.userId` is for `createdByUserId` attribution only, never isolation — rule `TEN-001`.
-6. For `getOne` query shape, see `.agents/rules/patterns-trpc-getone-fetching.md`.
+4. For listing/table endpoints, accept dataview filter/cursor inputs from
+   `packages/dataview/src/validators/`.
+5. For `getOne` query shape, see `.agents/rules/patterns-trpc-getone-fetching.md`.
 
 ### Auth in context
 
 `context.ts` must **not** import the auth server at runtime — it takes a
-`SessionReader` the app supplies. `apps/api` passes its in-process reader;
-`apps/app` passes one that fetches over HTTP. This is load-bearing: a runtime
-import re-expands `apps/app`'s required env surface. See
-[ADR 0001](../../../.domain/decisions/0001-app-reads-session-over-http.md).
+`SessionReader` the app supplies. `apps/api` passes its in-process reader
+(`authServer.api.getSession`). This is load-bearing: a runtime import re-expands
+the required env surface of any Next.js caller.
 
 ```ts
 // packages/trpc/src/context.ts
@@ -60,8 +45,7 @@ export async function createContext(headers: Headers, getSession: SessionReader)
 }
 ```
 
-`orgProcedure` then resolves `ctx.organizationId` — the tenant key every
-business query scopes on (`TEN-001`).
+`protectedProcedure` throws `UNAUTHORIZED` when `ctx.session` is null.
 
 ## Client (`apps/app/src/lib/utils/trpc/client.tsx`)
 
@@ -79,11 +63,11 @@ business query scopes on (`TEN-001`).
 
 ## Where the server runs
 
-The Hono server in `apps/api/` mounts tRPC at `/trpc`. The Next.js apps (`apps/app`, `apps/web`) talk to it over HTTP — they do **not** mount tRPC themselves.
+The Hono server in `apps/api/` mounts tRPC at `/trpc`. `apps/app` talks to it
+over HTTP — it does **not** mount tRPC itself.
 
 ## Don't
 
 - Don't import `@dashseller/trpc` types into `packages/ui` — UI must stay framework-free.
 - Don't add new procedures without input validation.
-- Don't bypass `orgProcedure` for business data — `protectedProcedure` alone has no tenant scope (`TEN-001`).
-- Don't import `@dashseller/auth/auth-server` at runtime from `packages/trpc` or `apps/app` (ADR 0001).
+- Don't import `@dashseller/auth/auth-server` at runtime from `packages/trpc` or `apps/app` (type-only).

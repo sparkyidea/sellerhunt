@@ -4,7 +4,6 @@ import { AuthProvider } from "@dashseller/auth/components/auth/auth-provider";
 import { adminPlugin } from "@dashseller/auth/lib/auth/admin-plugin";
 import { deleteUserPlugin } from "@dashseller/auth/lib/auth/delete-user-plugin";
 import { emailOtpPlugin } from "@dashseller/auth/lib/auth/email-otp-plugin";
-import { organizationPlugin } from "@dashseller/auth/lib/auth/organization-plugin";
 import { passkeyPlugin } from "@dashseller/auth/lib/auth/passkey-plugin";
 import { twoFactorPlugin } from "@dashseller/auth/lib/auth/two-factor-plugin";
 import { env } from "@dashseller/env/app";
@@ -27,7 +26,6 @@ export function BetterAuthProviders({ children }: { children: ReactNode }) {
   return (
     <AuthProvider
       authClient={authClient}
-      basePaths={{ organization: "/settings/organizations" }}
       baseURL={env.NEXT_PUBLIC_APP_URL}
       emailAndPassword={{
         requireEmailVerification: true,
@@ -37,7 +35,6 @@ export function BetterAuthProviders({ children }: { children: ReactNode }) {
         replace ? router.replace(to as Route) : router.push(to as Route)
       }
       plugins={[
-        organizationPlugin(),
         deleteUserPlugin({ sendDeleteAccountVerification: true }),
         adminPlugin(),
         emailOtpPlugin({

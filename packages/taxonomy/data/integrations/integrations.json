@@ -1,9 +1,0 @@
-{
-  "integrations": [
-    {
-      "name": "ebay",
-      "available_versions": ["ebay/134"],
-      "site": "EBAY_US"
-    }
-  ]
-}

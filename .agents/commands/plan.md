@@ -88,5 +88,5 @@ files touched, conflicts with other in-flight slugs. Split steps into
 
 Create the folder ON THE CURRENT BRANCH, never on main. One slug = one
 branch = one worktree = one PR. The PR that ships this work DELETES the
-folder and updates .domain/ — see .plan/README.md."
+folder — see .plan/README.md."
 ```

@@ -14,26 +14,6 @@ permissions:
   contents: read
 
 jobs:
-  domain:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-        with:
-          fetch-depth: 0
-
-      - name: Setup tools
-        uses: ./.github/actions/setup-tools
-
-      # Rule ids are unique, cited paths exist, critical rules have tests,
-      # and no source file references a rule that no longer exists.
-      - name: Validate domain rules
-        run: bun .github/scripts/check-domain.ts
-
-      # Guarded code changed => the diff must cite a rule id or change rules.md.
-      - name: Check domain coverage
-        run: bun .github/scripts/check-domain-coverage.ts ${{ github.event_name == 'pull_request' && format('origin/{0}', github.base_ref) || 'origin/main' }}
-
   lint:
     runs-on: ubuntu-latest
 
@@ -78,15 +58,6 @@ jobs:
           --health-interval 5s
           --health-timeout 5s
           --health-retries 10
-      redis:
-        image: redis:7-alpine
-        ports:
-          - 63799:6379
-        options: >-
-          --health-cmd "redis-cli ping"
-          --health-interval 5s
-          --health-timeout 5s
-          --health-retries 10
 
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
@@ -103,7 +74,7 @@ jobs:
         run: bun run test:integration
 
   status:
-    needs: [domain, lint, build, integration]
+    needs: [lint, build, integration]
     if: ${{ always() }}
     uses: ./.github/workflows/workflow-check.yml
     with:

@@ -10,22 +10,15 @@
     "start": "bun run dist/index.mjs"
   },
   "dependencies": {
-    "@aws-sdk/client-s3": "catalog:",
     "@dashseller/trpc": "workspace:*",
-    "@dashseller/marketplace": "workspace:*",
     "@dashseller/auth": "workspace:*",
     "@dashseller/db": "workspace:*",
     "@dashseller/env": "workspace:*",
-    "drizzle-orm": "catalog:",
-    "jose": "catalog:",
     "@hono/trpc-server": "catalog:",
     "@trpc/server": "catalog:",
     "better-auth": "catalog:",
     "hono": "catalog:",
-    "zod": "catalog:",
-    "@dashseller/job-client": "workspace:*",
-    "@dashseller/sync": "workspace:*",
-    "@dashseller/geo": "workspace:*"
+    "zod": "catalog:"
   },
   "devDependencies": {
     "@dashseller/config": "workspace:*",

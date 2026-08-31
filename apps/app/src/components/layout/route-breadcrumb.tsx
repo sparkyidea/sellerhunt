@@ -14,26 +14,6 @@ interface RootSegment {
 }
 
 const ROOT_SEGMENTS: Record<string, RootSegment> = {
-  products: {
-    href: "/products",
-    icon: <Icons.product className="size-4" />,
-    label: "Products",
-  },
-  listings: {
-    href: "/listings",
-    icon: <Icons.listing className="size-4" />,
-    label: "Listings",
-  },
-  orders: {
-    href: "/orders",
-    icon: <Icons.order className="size-4" />,
-    label: "Orders",
-  },
-  shipments: {
-    href: "/shipments",
-    icon: <Icons.shipping className="size-4" />,
-    label: "Shipments",
-  },
   explorer: {
     href: "/explorer/listings",
     icon: <Icons.radar className="size-4" />,

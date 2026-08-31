@@ -6,12 +6,9 @@ import { env } from "@dashseller/env/server";
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { APIError, createAuthMiddleware } from "better-auth/api";
-import { admin, emailOTP, organization, twoFactor } from "better-auth/plugins";
+import { admin, emailOTP, twoFactor } from "better-auth/plugins";
 import { createElement } from "react";
-import { createDefaultWarehouse } from "./actions/create-default-warehouse";
-import { createPersonalOrganization } from "./actions/create-personal-organization";
 import { DeleteAccountVerificationEmail } from "./components/auth/email/delete-account-verification";
-import { OrganizationInvitationEmail } from "./components/auth/email/organization-invitation";
 import { OtpEmail } from "./components/auth/email/otp-email";
 import { sendEmail } from "./lib/send-email";
 
@@ -109,27 +106,6 @@ export const authServer = betterAuth({
   },
   plugins: [
     admin(),
-    organization({
-      sendInvitationEmail: async ({ email, organization: org, inviter }) => {
-        await sendEmail({
-          to: email,
-          subject: `You've been invited to join ${org.name}`,
-          react: createElement(OrganizationInvitationEmail, {
-            email,
-            inviterName: inviter.user.name || inviter.user.email,
-            organizationName: org.name,
-            url: `${env.APP_URL}/settings/organizations`,
-          }),
-        });
-      },
-      organizationHooks: {
-        afterCreateOrganization: async ({
-          organization: createdOrganization,
-        }) => {
-          await createDefaultWarehouse(createdOrganization.id);
-        },
-      },
-    }),
     emailOTP({
       // OTP is a passwordless sign-in for existing accounts only; sign-up stays
       // on the email+password path. Prevents OTP from silently creating accounts
@@ -185,37 +161,5 @@ export const authServer = betterAuth({
         throw new APIError("NOT_FOUND");
       }
     }),
-  },
-  databaseHooks: {
-    user: {
-      create: {
-        after: async (user) => {
-          // Every signup gets a personal org (the tenant), then a default
-          // warehouse owned by that org.
-          const organizationId = await createPersonalOrganization(user);
-          if (organizationId) {
-            await createDefaultWarehouse(organizationId);
-          }
-        },
-      },
-    },
-    session: {
-      create: {
-        before: async (session) => {
-          // Populate the active organization so request context always has a
-          // tenant to scope by.
-          const membership = await db.query.member.findFirst({
-            where: (m, { eq }) => eq(m.userId, session.userId),
-            columns: { organizationId: true },
-          });
-          return {
-            data: {
-              ...session,
-              activeOrganizationId: membership?.organizationId ?? null,
-            },
-          };
-        },
-      },
-    },
   },
 });

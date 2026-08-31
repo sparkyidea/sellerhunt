@@ -16,61 +16,12 @@ export function useOpenPreview() {
   const open = usePreviewStore((s) => s.open);
 
   return {
-    issue: (id: string) => {
-      if (isMobile) {
-        router.push(`/issues/${id}`);
-        return;
-      }
-      open({ kind: "issue", id });
-    },
-    listing: (id: string) => {
-      if (isMobile) {
-        router.push(`/listings/${id}`);
-        return;
-      }
-      open({ kind: "listing", id });
-    },
-    listingVariant: (id: string, listingId: string) => {
-      if (isMobile) {
-        router.push(`/listings/${listingId}/variants/${id}`);
-        return;
-      }
-      open({ kind: "listing-variant", id, listingId });
-    },
-    product: (id: string) => {
-      if (isMobile) {
-        router.push(`/products/${id}`);
-        return;
-      }
-      open({ kind: "product", id });
-    },
-    productVariant: (id: string, productId: string) => {
-      if (isMobile) {
-        router.push(`/products/${productId}/variants/${id}`);
-        return;
-      }
-      open({ kind: "product-variant", id, productId });
-    },
-    order: (id: string) => {
-      if (isMobile) {
-        router.push(`/orders/${id}`);
-        return;
-      }
-      open({ kind: "order", id });
-    },
     scanListing: (id: string) => {
       if (isMobile) {
         router.push(`/explorer/listings/${id}`);
         return;
       }
       open({ kind: "scan-listing", id });
-    },
-    shipment: (id: string) => {
-      if (isMobile) {
-        router.push(`/shipments/${id}`);
-        return;
-      }
-      open({ kind: "shipment", id });
     },
   };
 }
