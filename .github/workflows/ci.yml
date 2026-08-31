@@ -1,0 +1,111 @@
+name: CI
+
+on:
+  push:
+    branches: [main, dev]
+  pull_request:
+    branches: [main, dev]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref_name }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  domain:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: 0
+
+      - name: Setup tools
+        uses: ./.github/actions/setup-tools
+
+      # Rule ids are unique, cited paths exist, critical rules have tests,
+      # and no source file references a rule that no longer exists.
+      - name: Validate domain rules
+        run: bun .github/scripts/check-domain.ts
+
+      # Guarded code changed => the diff must cite a rule id or change rules.md.
+      - name: Check domain coverage
+        run: bun .github/scripts/check-domain-coverage.ts ${{ github.event_name == 'pull_request' && format('origin/{0}', github.base_ref) || 'origin/main' }}
+
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup tools
+        uses: ./.github/actions/setup-tools
+
+      - name: Run Check (Lint + Format)
+        run: bun run check
+
+      - name: Run Type Check
+        run: bun run check-types
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup tools
+        uses: ./.github/actions/setup-tools
+
+      - name: Build
+        run: bun run build
+
+  integration:
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:17-alpine
+        env:
+          POSTGRES_USER: dashseller
+          POSTGRES_PASSWORD: dashseller
+          POSTGRES_DB: dashseller_test
+        ports:
+          - 54329:5432
+        options: >-
+          --health-cmd "pg_isready -U dashseller -d dashseller_test"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+      redis:
+        image: redis:7-alpine
+        ports:
+          - 63799:6379
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup tools
+        uses: ./.github/actions/setup-tools
+
+      - name: Run Unit Tests
+        run: bun run test
+
+      # Suites apply packages/db/src/migrations to the service DB themselves
+      # (migrateTestDb) and run serialized — they share one database.
+      - name: Run Integration Tests
+        run: bun run test:integration
+
+  status:
+    needs: [domain, lint, build, integration]
+    if: ${{ always() }}
+    uses: ./.github/workflows/workflow-check.yml
+    with:
+      json-needs: ${{ toJSON(needs) }}
+      error-message: "One or more of the CI jobs have failed. Please view the jobs for this workflow run for more details."

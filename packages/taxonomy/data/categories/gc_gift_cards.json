@@ -1,0 +1,13 @@
+{
+  "version": "2026-05-unstable",
+  "categories": [
+    {
+      "id": "gc",
+      "level": 0,
+      "name": "Gift Cards",
+      "full_name": "Gift Cards",
+      "parent_id": null,
+      "children": []
+    }
+  ]
+}

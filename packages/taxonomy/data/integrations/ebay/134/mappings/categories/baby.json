@@ -1,0 +1,1385 @@
+{
+  "ebayCategory": "Baby",
+  "shopifyCategories": ["Baby & Toddler"],
+  "totalMapped": 172,
+  "highConfidence": 141,
+  "lowConfidence": 2,
+  "mappings": [
+    {
+      "ebayId": "2984",
+      "ebayFullName": "Baby",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "1261",
+      "ebayFullName": "Baby > Other Baby",
+      "shopifyCategoryId": "fr-1-1",
+      "shopifyFullName": "Furniture > Baby & Toddler Furniture > Baby & Toddler Furniture Sets",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "19068",
+      "ebayFullName": "Baby > Toys for Baby",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "20394",
+      "ebayFullName": "Baby > Bathing & Grooming",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "20400",
+      "ebayFullName": "Baby > Feeding",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "20416",
+      "ebayFullName": "Baby > Nursery Bedding",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "20422",
+      "ebayFullName": "Baby > Nursery Furniture",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "20433",
+      "ebayFullName": "Baby > Baby Safety & Health",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "37631",
+      "ebayFullName": "Baby > Potty Training",
+      "shopifyCategoryId": "bt-11-1",
+      "shopifyFullName": "Baby & Toddler > Potty Training > Potties",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "45455",
+      "ebayFullName": "Baby > Diapering",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "48757",
+      "ebayFullName": "Baby > Wholesale Lots",
+      "shopifyCategoryId": "bt-2",
+      "shopifyFullName": "Baby & Toddler > Baby Gift Sets",
+      "confidence": 0.5,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "66692",
+      "ebayFullName": "Baby > Car Safety Seats",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "66697",
+      "ebayFullName": "Baby > Nursery Décor",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "66698",
+      "ebayFullName": "Baby > Strollers & Accessories",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "100223",
+      "ebayFullName": "Baby > Baby Gear",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "100982",
+      "ebayFullName": "Baby > Carriers, Slings & Backpacks",
+      "shopifyCategoryId": "bt-6-2-1",
+      "shopifyFullName": "Baby & Toddler > Baby Transport > Baby Carriers > Backpack Carriers",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "117388",
+      "ebayFullName": "Baby > Keepsakes & Baby Announcements",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "117389",
+      "ebayFullName": "Baby > Keepsakes & Baby Announcements > Baby Books & Albums",
+      "shopifyCategoryId": "bt-5-1-2",
+      "shopifyFullName": "Baby & Toddler > Baby Toys & Activity Equipment > Alphabet Toys > Alphabet Books",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "117390",
+      "ebayFullName": "Baby > Keepsakes & Baby Announcements > Baby Boxes",
+      "shopifyCategoryId": "fr-4-13-2",
+      "shopifyFullName": "Furniture > Cabinets & Storage > Storage Chests > Toy Chests",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "117391",
+      "ebayFullName": "Baby > Keepsakes & Baby Announcements > Birth Announcements & Cards",
+      "shopifyCategoryId": "ae-3-1-6-2",
+      "shopifyFullName": "Arts & Entertainment > Party & Celebration > Gift Giving > Greeting & Note Cards > Greeting Cards",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "117392",
+      "ebayFullName": "Baby > Keepsakes & Baby Announcements > Baby Picture Frames",
+      "shopifyCategoryId": "bt-5-1-5",
+      "shopifyFullName": "Baby & Toddler > Baby Toys & Activity Equipment > Alphabet Toys > Alphabet Puzzles",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "146532",
+      "ebayFullName": "Baby > Keepsakes & Baby Announcements > Other Baby Keepsakes",
+      "shopifyCategoryId": "bt-2",
+      "shopifyFullName": "Baby & Toddler > Baby Gift Sets",
+      "confidence": 0.6,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "162037",
+      "ebayFullName": "Baby > Keepsakes & Baby Announcements > Handprint Kits",
+      "shopifyCategoryId": "fr-1-1",
+      "shopifyFullName": "Furniture > Baby & Toddler Furniture > Baby & Toddler Furniture Sets",
+      "confidence": 0.6,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "162038",
+      "ebayFullName": "Baby > Keepsakes & Baby Announcements > Tooth Fairy Pillows",
+      "shopifyCategoryId": "fr-1-1",
+      "shopifyFullName": "Furniture > Baby & Toddler Furniture > Baby & Toddler Furniture Sets",
+      "confidence": 0.6,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "2988",
+      "ebayFullName": "Baby > Baby Gear > Playpens & Play Yards",
+      "shopifyCategoryId": "bt-5-10",
+      "shopifyFullName": "Baby & Toddler > Baby Toys & Activity Equipment > Play Yards",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "2990",
+      "ebayFullName": "Baby > Baby Gear > Baby Swings",
+      "shopifyCategoryId": "bt-5-4-2",
+      "shopifyFullName": "Baby & Toddler > Baby Toys & Activity Equipment > Baby Jumpers & Swings > Baby Swings",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "20413",
+      "ebayFullName": "Baby > Baby Gear > Activity Centers",
+      "shopifyCategoryId": "bt-5-2-1",
+      "shopifyFullName": "Baby & Toddler > Baby Toys & Activity Equipment > Baby Activity Toys > Activity Centers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "100224",
+      "ebayFullName": "Baby > Baby Gear > Other Baby Gear",
+      "shopifyCategoryId": "fr-1-1",
+      "shopifyFullName": "Furniture > Baby & Toddler Furniture > Baby & Toddler Furniture Sets",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "117032",
+      "ebayFullName": "Baby > Baby Gear > Baby Jumping Exercisers",
+      "shopifyCategoryId": "bt-5-4-1",
+      "shopifyFullName": "Baby & Toddler > Baby Toys & Activity Equipment > Baby Jumpers & Swings > Baby Jumpers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "117033",
+      "ebayFullName": "Baby > Baby Gear > Play Shades & Tents",
+      "shopifyCategoryId": "bt-7-3-6",
+      "shopifyFullName": "Baby & Toddler > Baby Transport Accessories > Baby Stroller Accessories > Stroller Sunshades",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "117034",
+      "ebayFullName": "Baby > Baby Gear > Bouncers & Vibrating Chairs",
+      "shopifyCategoryId": "bt-5-3-1",
+      "shopifyFullName": "Baby & Toddler > Baby Toys & Activity Equipment > Baby Bouncers & Rockers > Baby Bouncers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "134282",
+      "ebayFullName": "Baby > Baby Gear > Walkers",
+      "shopifyCategoryId": "bt-5-8-1",
+      "shopifyFullName": "Baby & Toddler > Baby Toys & Activity Equipment > Baby Walkers & Entertainers > Baby Walkers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "2989",
+      "ebayFullName": "Baby > Strollers & Accessories > Other Strollers",
+      "shopifyCategoryId": "bt-6-3-1",
+      "shopifyFullName": "Baby & Toddler > Baby Transport > Baby Strollers > Convertible Strollers",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "66700",
+      "ebayFullName": "Baby > Strollers & Accessories > Strollers",
+      "shopifyCategoryId": "bt-6-3-3",
+      "shopifyFullName": "Baby & Toddler > Baby Transport > Baby Strollers > Full-Sized Strollers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "121634",
+      "ebayFullName": "Baby > Strollers & Accessories > Stroller Parts",
+      "shopifyCategoryId": "bt-8",
+      "shopifyFullName": "Baby & Toddler > Baby Transport Replacement Parts",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "180911",
+      "ebayFullName": "Baby > Strollers & Accessories > Stroller Accessories",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "112378",
+      "ebayFullName": "Baby > Strollers & Accessories > Stroller Accessories > Stroller Boards",
+      "shopifyCategoryId": "bt-7-3-1",
+      "shopifyFullName": "Baby & Toddler > Baby Transport Accessories > Baby Stroller Accessories > Stroller Cup Holders",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "116553",
+      "ebayFullName": "Baby > Strollers & Accessories > Stroller Accessories > Footmuffs",
+      "shopifyCategoryId": "bt-7-3-2",
+      "shopifyFullName": "Baby & Toddler > Baby Transport Accessories > Baby Stroller Accessories > Stroller Footmuffs",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "116554",
+      "ebayFullName": "Baby > Strollers & Accessories > Stroller Accessories > Covers, Canopies & Umbrellas",
+      "shopifyCategoryId": "bt-7-3-5",
+      "shopifyFullName": "Baby & Toddler > Baby Transport Accessories > Baby Stroller Accessories > Stroller Rain Covers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "180912",
+      "ebayFullName": "Baby > Strollers & Accessories > Stroller Accessories > Bassinets",
+      "shopifyCategoryId": "fr-1-3-2",
+      "shopifyFullName": "Furniture > Baby & Toddler Furniture > Bassinets & Cradles > Bassinets",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "180913",
+      "ebayFullName": "Baby > Strollers & Accessories > Stroller Accessories > Cup Holders & Snack Trays",
+      "shopifyCategoryId": "bt-7-3-1",
+      "shopifyFullName": "Baby & Toddler > Baby Transport Accessories > Baby Stroller Accessories > Stroller Cup Holders",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "180914",
+      "ebayFullName": "Baby > Strollers & Accessories > Stroller Accessories > Hooks",
+      "shopifyCategoryId": "bt-7-3-3",
+      "shopifyFullName": "Baby & Toddler > Baby Transport Accessories > Baby Stroller Accessories > Stroller Hooks",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "180915",
+      "ebayFullName": "Baby > Strollers & Accessories > Stroller Accessories > Organizers & Nets",
+      "shopifyCategoryId": "bt-7-3-4",
+      "shopifyFullName": "Baby & Toddler > Baby Transport Accessories > Baby Stroller Accessories > Stroller Organizers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "180916",
+      "ebayFullName": "Baby > Strollers & Accessories > Stroller Accessories > Seat Liners",
+      "shopifyCategoryId": "bt-7-3-4",
+      "shopifyFullName": "Baby & Toddler > Baby Transport Accessories > Baby Stroller Accessories > Stroller Organizers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "180917",
+      "ebayFullName": "Baby > Strollers & Accessories > Stroller Accessories > Other Stroller Accessories",
+      "shopifyCategoryId": "bt-7-3-4",
+      "shopifyFullName": "Baby & Toddler > Baby Transport Accessories > Baby Stroller Accessories > Stroller Organizers",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "20428",
+      "ebayFullName": "Baby > Nursery Décor > Lamps & Shades",
+      "shopifyCategoryId": "bt-5-7-1",
+      "shopifyFullName": "Baby & Toddler > Baby Toys & Activity Equipment > Baby Soothers > Night Lights",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "20429",
+      "ebayFullName": "Baby > Nursery Décor > Mobiles",
+      "shopifyCategoryId": "bt-5-6-2",
+      "shopifyFullName": "Baby & Toddler > Baby Toys & Activity Equipment > Baby Mobiles > Crib Mobiles",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "20431",
+      "ebayFullName": "Baby > Nursery Décor > Window Treatments",
+      "shopifyCategoryId": "hg-3-74-1-1",
+      "shopifyFullName": "Home & Garden > Decor > Window Treatments > Curtains & Drapes > Curtains",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "33235",
+      "ebayFullName": "Baby > Nursery Décor > Picture Frames",
+      "shopifyCategoryId": "bt-5-1-5",
+      "shopifyFullName": "Baby & Toddler > Baby Toys & Activity Equipment > Alphabet Toys > Alphabet Puzzles",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "37632",
+      "ebayFullName": "Baby > Nursery Décor > Mats & Rugs",
+      "shopifyCategoryId": "bt-5-9-2",
+      "shopifyFullName": "Baby & Toddler > Baby Toys & Activity Equipment > Play Mats & Gyms > Play Mats",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "37633",
+      "ebayFullName": "Baby > Nursery Décor > Wall Décor",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "98473",
+      "ebayFullName": "Baby > Nursery Décor > Other Nursery Décor",
+      "shopifyCategoryId": "fr-1-1",
+      "shopifyFullName": "Furniture > Baby & Toddler Furniture > Baby & Toddler Furniture Sets",
+      "confidence": 0.5,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "117398",
+      "ebayFullName": "Baby > Nursery Décor > Boxes & Storage",
+      "shopifyCategoryId": "fr-4-13-2",
+      "shopifyFullName": "Furniture > Cabinets & Storage > Storage Chests > Toy Chests",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "121153",
+      "ebayFullName": "Baby > Nursery Décor > Night Lights",
+      "shopifyCategoryId": "bt-5-7-1",
+      "shopifyFullName": "Baby & Toddler > Baby Toys & Activity Equipment > Baby Soothers > Night Lights",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "146534",
+      "ebayFullName": "Baby > Nursery Décor > Wall Letters",
+      "shopifyCategoryId": "fr-7-11",
+      "shopifyFullName": "Furniture > Chairs > Slipper Chairs",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "20430",
+      "ebayFullName": "Baby > Nursery Décor > Wall Décor > Other Nursery Wall Décor",
+      "shopifyCategoryId": "fr-7-11",
+      "shopifyFullName": "Furniture > Chairs > Slipper Chairs",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "37634",
+      "ebayFullName": "Baby > Nursery Décor > Wall Décor > Art & Prints",
+      "shopifyCategoryId": "hg-3-4-2-4",
+      "shopifyFullName": "Home & Garden > Decor > Artwork > Posters, Prints, & Visual Artwork > Paintings",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "37635",
+      "ebayFullName": "Baby > Nursery Décor > Wall Décor > Wall Hangings",
+      "shopifyCategoryId": "hg-3-17-4",
+      "shopifyFullName": "Home & Garden > Decor > Clocks > Wall Clocks",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "37636",
+      "ebayFullName": "Baby > Nursery Décor > Wall Décor > Wallpaper Borders",
+      "shopifyCategoryId": "hg-3-68-2",
+      "shopifyFullName": "Home & Garden > Decor > Wallpaper > Wallpaper Borders",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "180505",
+      "ebayFullName": "Baby > Nursery Décor > Wall Décor > Wall Decals & Vinyl Art",
+      "shopifyCategoryId": "fr-1-1",
+      "shopifyFullName": "Furniture > Baby & Toddler Furniture > Baby & Toddler Furniture Sets",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "66693",
+      "ebayFullName": "Baby > Car Safety Seats > Car Seat Accessories",
+      "shopifyCategoryId": "bt-7-1-5",
+      "shopifyFullName": "Baby & Toddler > Baby Transport Accessories > Baby & Toddler Car Seat Accessories > Car Seat Protectors",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "66694",
+      "ebayFullName": "Baby > Car Safety Seats > Booster to 80lbs",
+      "shopifyCategoryId": "bt-6-1-1",
+      "shopifyFullName": "Baby & Toddler > Baby Transport > Baby & Toddler Car Seats > Booster Seats",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "66695",
+      "ebayFullName": "Baby > Car Safety Seats > Convertible Car Seat 5-40lbs",
+      "shopifyCategoryId": "bt-6-1-3",
+      "shopifyFullName": "Baby & Toddler > Baby Transport > Baby & Toddler Car Seats > Convertible Car Seats",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "66696",
+      "ebayFullName": "Baby > Car Safety Seats > Infant Car Seat 5-20 lbs",
+      "shopifyCategoryId": "bt-6-1-4",
+      "shopifyFullName": "Baby & Toddler > Baby Transport > Baby & Toddler Car Seats > Infant Car Seats",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "15558",
+      "ebayFullName": "Baby > Diapering > Diaper Bags",
+      "shopifyCategoryId": "bt-9-5-1",
+      "shopifyFullName": "Baby & Toddler > Diapering > Diaper Kits > Diaper Bag Kits",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "15559",
+      "ebayFullName": "Baby > Diapering > Disposable Diapers",
+      "shopifyCategoryId": "bt-9-12-2",
+      "shopifyFullName": "Baby & Toddler > Diapering > Diapers > Disposable Diapers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "20397",
+      "ebayFullName": "Baby > Diapering > Diaper Disposal",
+      "shopifyCategoryId": "bt-9-9-1",
+      "shopifyFullName": "Baby & Toddler > Diapering > Diaper Pails > Diaper Disposal Systems",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "20399",
+      "ebayFullName": "Baby > Diapering > Other Diapering",
+      "shopifyCategoryId": "bt-9-12-1",
+      "shopifyFullName": "Baby & Toddler > Diapering > Diapers > Cloth Diapers",
+      "confidence": 0.6,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "26267",
+      "ebayFullName": "Baby > Diapering > Diaper Covers",
+      "shopifyCategoryId": "bt-9-12-4",
+      "shopifyFullName": "Baby & Toddler > Diapering > Diapers > Pull-Up Diapers",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "45456",
+      "ebayFullName": "Baby > Diapering > Baby Wipes",
+      "shopifyCategoryId": "bt-9-2-2",
+      "shopifyFullName": "Baby & Toddler > Diapering > Baby Wipes > Disposable Baby Wipes",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "66674",
+      "ebayFullName": "Baby > Diapering > Changing Pads & Covers",
+      "shopifyCategoryId": "bt-9-4-3",
+      "shopifyFullName": "Baby & Toddler > Diapering > Changing Mats & Trays > Diaper Changing Pads",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "100222",
+      "ebayFullName": "Baby > Diapering > Swim Diapers",
+      "shopifyCategoryId": "bt-9-12-5",
+      "shopifyFullName": "Baby & Toddler > Diapering > Diapers > Swim Diapers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "117017",
+      "ebayFullName": "Baby > Diapering > Baby Wipe Warmers",
+      "shopifyCategoryId": "bt-9-1-2",
+      "shopifyFullName": "Baby & Toddler > Diapering > Baby Wipe Dispensers & Warmers > Baby Wipe Warmers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "117018",
+      "ebayFullName": "Baby > Diapering > Diaper Cakes",
+      "shopifyCategoryId": "bt-9-5-1",
+      "shopifyFullName": "Baby & Toddler > Diapering > Diaper Kits > Diaper Bag Kits",
+      "confidence": 0.6,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "134758",
+      "ebayFullName": "Baby > Diapering > Diaper Stackers",
+      "shopifyCategoryId": "bt-9-7-3",
+      "shopifyFullName": "Baby & Toddler > Diapering > Diaper Organizers > Diaper Stackers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "146531",
+      "ebayFullName": "Baby > Diapering > Cloth Diapers",
+      "shopifyCategoryId": "bt-9-12-1",
+      "shopifyFullName": "Baby & Toddler > Diapering > Diapers > Cloth Diapers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "162036",
+      "ebayFullName": "Baby > Diapering > Diaper Coupons",
+      "shopifyCategoryId": "fr-1-1",
+      "shopifyFullName": "Furniture > Baby & Toddler Furniture > Baby & Toddler Furniture Sets",
+      "confidence": 0.3,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "20435",
+      "ebayFullName": "Baby > Baby Safety & Health > Baby Monitors",
+      "shopifyCategoryId": "bt-4-3-1",
+      "shopifyFullName": "Baby & Toddler > Baby Safety > Baby Monitors > Audio & Video Baby Monitors",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "20436",
+      "ebayFullName": "Baby > Baby Safety & Health > Other Baby Safety & Health",
+      "shopifyCategoryId": "bt-4-5-1",
+      "shopifyFullName": "Baby & Toddler > Baby Safety > Baby Safety Locks & Guards > Cabinet Locks",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73470",
+      "ebayFullName": "Baby > Baby Safety & Health > Shopping Cart Covers",
+      "shopifyCategoryId": "bt-7-5",
+      "shopifyFullName": "Baby & Toddler > Baby Transport Accessories > Shopping Cart & High Chair Covers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "117026",
+      "ebayFullName": "Baby > Baby Safety & Health > Baby Thermometers",
+      "shopifyCategoryId": "bt-3-1",
+      "shopifyFullName": "Baby & Toddler > Baby Health > Baby Health & Grooming Kits",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "117029",
+      "ebayFullName": "Baby > Baby Safety & Health > Safety Gates",
+      "shopifyCategoryId": "bt-4-2-3",
+      "shopifyFullName": "Baby & Toddler > Baby Safety > Baby & Pet Gates > Walk Through Gates",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "134761",
+      "ebayFullName": "Baby > Baby Safety & Health > Toddler Safety Harnesses",
+      "shopifyCategoryId": "bt-4-4-1",
+      "shopifyFullName": "Baby & Toddler > Baby Safety > Baby Safety Harnesses & Leashes > Harnesses",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "134762",
+      "ebayFullName": "Baby > Baby Safety & Health > Car Window Signs & Decals",
+      "shopifyCategoryId": "vp-1-6-4-1",
+      "shopifyFullName": "Vehicles & Parts > Vehicle Parts & Accessories > Vehicle Safety & Security > Vehicle Safety Equipment > Car Window Nets",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "162183",
+      "ebayFullName": "Baby > Baby Safety & Health > Bed Rails",
+      "shopifyCategoryId": "bt-4-6-1",
+      "shopifyFullName": "Baby & Toddler > Baby Safety > Baby Safety Rails > Bed Safety Rails",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "184339",
+      "ebayFullName": "Baby > Baby Safety & Health > Baby Proofing",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "184343",
+      "ebayFullName": "Baby > Baby Safety & Health > Hearing Protection Earmuffs",
+      "shopifyCategoryId": "el-2-2-7-2-3",
+      "shopifyFullName": "Electronics > Audio > Audio Components > Headphones & Headsets > Headsets > Hearing Protection Headsets",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "20434",
+      "ebayFullName": "Baby > Baby Safety & Health > Baby Proofing > Other Baby Proofing",
+      "shopifyCategoryId": "bt-4-5-1",
+      "shopifyFullName": "Baby & Toddler > Baby Safety > Baby Safety Locks & Guards > Cabinet Locks",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "106803",
+      "ebayFullName": "Baby > Baby Safety & Health > Baby Proofing > Stove Guards",
+      "shopifyCategoryId": "bt-4-5-1",
+      "shopifyFullName": "Baby & Toddler > Baby Safety > Baby Safety Locks & Guards > Cabinet Locks",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "117027",
+      "ebayFullName": "Baby > Baby Safety & Health > Baby Proofing > Baby Locks & Latches",
+      "shopifyCategoryId": "bt-4-5-1",
+      "shopifyFullName": "Baby & Toddler > Baby Safety > Baby Safety Locks & Guards > Cabinet Locks",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "134764",
+      "ebayFullName": "Baby > Baby Safety & Health > Baby Proofing > Outlet Covers",
+      "shopifyCategoryId": "bt-4-5-5",
+      "shopifyFullName": "Baby & Toddler > Baby Safety > Baby Safety Locks & Guards > Outlet Covers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "162184",
+      "ebayFullName": "Baby > Baby Safety & Health > Baby Proofing > Corner & Edge Cushions",
+      "shopifyCategoryId": "bt-4-5-2",
+      "shopifyFullName": "Baby & Toddler > Baby Safety > Baby Safety Locks & Guards > Corner Guards",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "2985",
+      "ebayFullName": "Baby > Nursery Furniture > Cribs",
+      "shopifyCategoryId": "fr-1-6-10",
+      "shopifyFullName": "Furniture > Baby & Toddler Furniture > Cribs & Toddler Beds > Standard Cribs",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "20423",
+      "ebayFullName": "Baby > Nursery Furniture > Bassinets & Cradles",
+      "shopifyCategoryId": "fr-1-3-2",
+      "shopifyFullName": "Furniture > Baby & Toddler Furniture > Bassinets & Cradles > Bassinets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "20424",
+      "ebayFullName": "Baby > Nursery Furniture > Changing Tables",
+      "shopifyCategoryId": "fr-1-4",
+      "shopifyFullName": "Furniture > Baby & Toddler Furniture > Changing Tables",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "20425",
+      "ebayFullName": "Baby > Nursery Furniture > Nursery Furniture Sets",
+      "shopifyCategoryId": "fr-1-1",
+      "shopifyFullName": "Furniture > Baby & Toddler Furniture > Baby & Toddler Furniture Sets",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "20426",
+      "ebayFullName": "Baby > Nursery Furniture > Other Nursery Furniture",
+      "shopifyCategoryId": "fr-1-1",
+      "shopifyFullName": "Furniture > Baby & Toddler Furniture > Baby & Toddler Furniture Sets",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "66690",
+      "ebayFullName": "Baby > Nursery Furniture > Rockers, Gliders",
+      "shopifyCategoryId": "bt-5-3-2",
+      "shopifyFullName": "Baby & Toddler > Baby Toys & Activity Equipment > Baby Bouncers & Rockers > Baby Rockers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "94931",
+      "ebayFullName": "Baby > Nursery Furniture > Moses Baskets",
+      "shopifyCategoryId": "fr-1-1",
+      "shopifyFullName": "Furniture > Baby & Toddler Furniture > Baby & Toddler Furniture Sets",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "117035",
+      "ebayFullName": "Baby > Nursery Furniture > Crib Mattresses",
+      "shopifyCategoryId": "fr-1-1",
+      "shopifyFullName": "Furniture > Baby & Toddler Furniture > Baby & Toddler Furniture Sets",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "121152",
+      "ebayFullName": "Baby > Nursery Furniture > Bedside Sleepers",
+      "shopifyCategoryId": "fr-1-3-3",
+      "shopifyFullName": "Furniture > Baby & Toddler Furniture > Bassinets & Cradles > Bedside Bassinets",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "134279",
+      "ebayFullName": "Baby > Nursery Furniture > Baby Dressers",
+      "shopifyCategoryId": "fr-4-5",
+      "shopifyFullName": "Furniture > Cabinets & Storage > Dressers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "3081",
+      "ebayFullName": "Baby > Nursery Bedding > Blankets & Throws",
+      "shopifyCategoryId": "bt-12-1",
+      "shopifyFullName": "Baby & Toddler > Swaddling & Receiving Blankets > Receiving Blankets",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "18646",
+      "ebayFullName": "Baby > Nursery Bedding > Duvet Inserts",
+      "shopifyCategoryId": "ae-2-1-2-8-10-6",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Embellishments & Trims > Ribbons & Trim > Pom-Pom Trim",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "20417",
+      "ebayFullName": "Baby > Nursery Bedding > Mesh Liners",
+      "shopifyCategoryId": "fr-1-5-1-1",
+      "shopifyFullName": "Furniture > Baby & Toddler Furniture > Crib & Toddler Bed Accessories > Crib Bumpers & Liners > Crib Liners",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "20421",
+      "ebayFullName": "Baby > Nursery Bedding > Other Nursery Bedding",
+      "shopifyCategoryId": "ae-2-1-2-8-10-6",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Embellishments & Trims > Ribbons & Trim > Pom-Pom Trim",
+      "confidence": 0.6,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "52345",
+      "ebayFullName": "Baby > Nursery Bedding > Cribskirts & Dust Ruffles",
+      "shopifyCategoryId": "fr-1-5-1-3",
+      "shopifyFullName": "Furniture > Baby & Toddler Furniture > Crib & Toddler Bed Accessories > Crib Bumpers & Liners > Crib Skirts",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "100989",
+      "ebayFullName": "Baby > Nursery Bedding > Sleeping Bags & Sleepsacks",
+      "shopifyCategoryId": "bt-10-14",
+      "shopifyFullName": "Baby & Toddler > Nursing & Feeding > Nursing Pillows",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "124327",
+      "ebayFullName": "Baby > Nursery Bedding > Pillowcases & Shams",
+      "shopifyCategoryId": "hg-10-6-11-9-1",
+      "shopifyFullName": "Home & Garden > Household Supplies > Household Cleaning Supplies > Household Cleaning Products > Glass & Surface Cleaners > Glass Cleaners",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "134278",
+      "ebayFullName": "Baby > Nursery Bedding > Duvet Covers & Sets",
+      "shopifyCategoryId": "hg-9-3-4-3",
+      "shopifyFullName": "Home & Garden > Household Appliances > Floor & Steam Cleaners > Floor Scrubbers > Grout & Tile Floor Scrubbers",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "162040",
+      "ebayFullName": "Baby > Nursery Bedding > Nursery Bedding Sets",
+      "shopifyCategoryId": "ae-2-1-2-8-10-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Embellishments & Trims > Ribbons & Trim > Beaded Trim",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "162041",
+      "ebayFullName": "Baby > Nursery Bedding > Mattress Pads & Covers",
+      "shopifyCategoryId": "ae-2-1-2-8-10-8",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Embellishments & Trims > Ribbons & Trim > Satin Ribbons",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "180905",
+      "ebayFullName": "Baby > Nursery Bedding > Canopies & Netting",
+      "shopifyCategoryId": "fr-1-1",
+      "shopifyFullName": "Furniture > Baby & Toddler Furniture > Baby & Toddler Furniture Sets",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "180906",
+      "ebayFullName": "Baby > Nursery Bedding > Decorative Nursery Pillows",
+      "shopifyCategoryId": "hg-3-20",
+      "shopifyFullName": "Home & Garden > Decor > Decorative Bottles",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "180907",
+      "ebayFullName": "Baby > Nursery Bedding > Bed Pillows",
+      "shopifyCategoryId": "bi-25-9",
+      "shopifyFullName": "Business & Industrial > Work Safety Protective Gear > Safety Knee Pads",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "180908",
+      "ebayFullName": "Baby > Nursery Bedding > Quilts & Coverlets",
+      "shopifyCategoryId": "hg-15-1-10",
+      "shopifyFullName": "Home & Garden > Linens & Bedding > Bedding > Quilts & Comforters",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "180909",
+      "ebayFullName": "Baby > Nursery Bedding > Sheets & Sets",
+      "shopifyCategoryId": "ae-2-1-2-8-9-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Embellishments & Trims > Rhinestones & Flatbacks > Self-Adhesive Rhinestones",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "2986",
+      "ebayFullName": "Baby > Feeding > High Chairs",
+      "shopifyCategoryId": "bt-7-5",
+      "shopifyFullName": "Baby & Toddler > Baby Transport Accessories > Shopping Cart & High Chair Covers",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "20404",
+      "ebayFullName": "Baby > Feeding > Bottle & Food Warmers",
+      "shopifyCategoryId": "bt-10-6-1-1",
+      "shopifyFullName": "Baby & Toddler > Nursing & Feeding > Bottle Warmers & Sterilizers > Bottle Warmers > Electric Bottle Warmers",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "20405",
+      "ebayFullName": "Baby > Feeding > Other Baby Feeding",
+      "shopifyCategoryId": "bt-10-16-1",
+      "shopifyFullName": "Baby & Toddler > Nursing & Feeding > Feeding Essentials > Feeding Bowls",
+      "confidence": 0.6,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "20408",
+      "ebayFullName": "Baby > Feeding > Baby Bibs & Burp Cloths",
+      "shopifyCategoryId": "bt-10-16-7",
+      "shopifyFullName": "Baby & Toddler > Nursing & Feeding > Feeding Essentials > Bibs",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "23590",
+      "ebayFullName": "Baby > Feeding > Breastfeeding/Nursing",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "32866",
+      "ebayFullName": "Baby > Feeding > Food Grinders & Blenders",
+      "shopifyCategoryId": "hg-11-7-16-1",
+      "shopifyFullName": "Home & Garden > Kitchen & Dining > Kitchen Appliances > Food Grinders & Mills > Food Grinders",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "32872",
+      "ebayFullName": "Baby > Feeding > Pacifiers & Soothers",
+      "shopifyCategoryId": "bt-3-5-1",
+      "shopifyFullName": "Baby & Toddler > Baby Health > Pacifiers & Teethers > Pacifiers",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "121627",
+      "ebayFullName": "Baby > Feeding > Teethers",
+      "shopifyCategoryId": "bt-3-5-2",
+      "shopifyFullName": "Baby & Toddler > Baby Health > Pacifiers & Teethers > Teethers",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "134276",
+      "ebayFullName": "Baby > Feeding > Booster Chairs",
+      "shopifyCategoryId": "bt-6-1-1",
+      "shopifyFullName": "Baby & Toddler > Baby Transport > Baby & Toddler Car Seats > Booster Seats",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "157325",
+      "ebayFullName": "Baby > Feeding > Cups, Dishes & Utensils",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "162032",
+      "ebayFullName": "Baby > Feeding > Pacifier Clips & Cases",
+      "shopifyCategoryId": "bt-3-3",
+      "shopifyFullName": "Baby & Toddler > Baby Health > Pacifier Clips & Holders",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "162034",
+      "ebayFullName": "Baby > Feeding > Baby Food",
+      "shopifyCategoryId": "bt-10-1-3",
+      "shopifyFullName": "Baby & Toddler > Nursing & Feeding > Baby & Toddler Food > Baby Food",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "184344",
+      "ebayFullName": "Baby > Feeding > Bottle Feeding",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "20402",
+      "ebayFullName": "Baby > Feeding > Bottle Feeding > Baby Bottles",
+      "shopifyCategoryId": "bt-10-16-6-2",
+      "shopifyFullName": "Baby & Toddler > Nursing & Feeding > Feeding Essentials > Baby Bottles > Standard Bottles",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "20403",
+      "ebayFullName": "Baby > Feeding > Bottle Feeding > Formula",
+      "shopifyCategoryId": "bt-10-1-4-1",
+      "shopifyFullName": "Baby & Toddler > Nursing & Feeding > Baby & Toddler Food > Baby Formula > Dairy Formula",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "82228",
+      "ebayFullName": "Baby > Feeding > Bottle Feeding > Formula Coupons",
+      "shopifyCategoryId": "bt-10-16-1",
+      "shopifyFullName": "Baby & Toddler > Nursing & Feeding > Feeding Essentials > Feeding Bowls",
+      "confidence": 0.4,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "106777",
+      "ebayFullName": "Baby > Feeding > Bottle Feeding > Bottle Bags",
+      "shopifyCategoryId": "bt-7-1-6",
+      "shopifyFullName": "Baby & Toddler > Baby Transport Accessories > Baby & Toddler Car Seat Accessories > Car Seat Travel Bags",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "106789",
+      "ebayFullName": "Baby > Feeding > Bottle Feeding > Bottle Sterilizers",
+      "shopifyCategoryId": "bt-10-6-2-1",
+      "shopifyFullName": "Baby & Toddler > Nursing & Feeding > Bottle Warmers & Sterilizers > Sterilizers > Electric Steam Sterilizers",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "162035",
+      "ebayFullName": "Baby > Feeding > Bottle Feeding > Bottle Nipples",
+      "shopifyCategoryId": "bt-10-16-5-2-1",
+      "shopifyFullName": "Baby & Toddler > Nursing & Feeding > Feeding Essentials > Baby Bottle Nipples & Liners > Baby Bottle Nipples > Orthodontic Nipples",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "184345",
+      "ebayFullName": "Baby > Feeding > Bottle Feeding > Bottle Brushes",
+      "shopifyCategoryId": "bt-10-8-3",
+      "shopifyFullName": "Baby & Toddler > Nursing & Feeding > Breast Pump Accessories > Cleaning Brushes & Wipes",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "184346",
+      "ebayFullName": "Baby > Feeding > Bottle Feeding > Bottle Drying Racks",
+      "shopifyCategoryId": "bt-10-8-3",
+      "shopifyFullName": "Baby & Toddler > Nursing & Feeding > Breast Pump Accessories > Cleaning Brushes & Wipes",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "184347",
+      "ebayFullName": "Baby > Feeding > Bottle Feeding > Formula Dispensers",
+      "shopifyCategoryId": "bt-10-1-4-1",
+      "shopifyFullName": "Baby & Toddler > Nursing & Feeding > Baby & Toddler Food > Baby Formula > Dairy Formula",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "184348",
+      "ebayFullName": "Baby > Feeding > Bottle Feeding > Sterilizing/Cleaning Supplies",
+      "shopifyCategoryId": "bt-10-8-3",
+      "shopifyFullName": "Baby & Toddler > Nursing & Feeding > Breast Pump Accessories > Cleaning Brushes & Wipes",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "184349",
+      "ebayFullName": "Baby > Feeding > Bottle Feeding > Other Bottle Feeding",
+      "shopifyCategoryId": "bt-10-16-1",
+      "shopifyFullName": "Baby & Toddler > Nursing & Feeding > Feeding Essentials > Feeding Bowls",
+      "confidence": 0.6,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "106776",
+      "ebayFullName": "Baby > Feeding > Cups, Dishes & Utensils > Other Baby Dishes",
+      "shopifyCategoryId": "bt-10-16-1",
+      "shopifyFullName": "Baby & Toddler > Nursing & Feeding > Feeding Essentials > Feeding Bowls",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "117385",
+      "ebayFullName": "Baby > Feeding > Cups, Dishes & Utensils > Utensils",
+      "shopifyCategoryId": "bt-10-16-4",
+      "shopifyFullName": "Baby & Toddler > Nursing & Feeding > Feeding Essentials > Flatware Sets",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "117386",
+      "ebayFullName": "Baby > Feeding > Cups, Dishes & Utensils > Feeding Sets",
+      "shopifyCategoryId": "bt-10-16-1",
+      "shopifyFullName": "Baby & Toddler > Nursing & Feeding > Feeding Essentials > Feeding Bowls",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "117387",
+      "ebayFullName": "Baby > Feeding > Cups, Dishes & Utensils > Sippy Cups & Mugs",
+      "shopifyCategoryId": "bt-10-16-8",
+      "shopifyFullName": "Baby & Toddler > Nursing & Feeding > Feeding Essentials > Sippy Cups",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "184341",
+      "ebayFullName": "Baby > Feeding > Cups, Dishes & Utensils > Bowls & Plates",
+      "shopifyCategoryId": "bt-10-16-1",
+      "shopifyFullName": "Baby & Toddler > Nursing & Feeding > Feeding Essentials > Feeding Bowls",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "19732",
+      "ebayFullName": "Baby > Feeding > Breastfeeding/Nursing > Other Breastfeeding Supplies",
+      "shopifyCategoryId": "bt-10-11",
+      "shopifyFullName": "Baby & Toddler > Nursing & Feeding > Nursing Covers",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "23591",
+      "ebayFullName": "Baby > Feeding > Breastfeeding/Nursing > Electric Breast Pumps",
+      "shopifyCategoryId": "bt-10-9-2",
+      "shopifyFullName": "Baby & Toddler > Nursing & Feeding > Breast Pumps > Electric Breast Pumps",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "106766",
+      "ebayFullName": "Baby > Feeding > Breastfeeding/Nursing > Nursing Pads",
+      "shopifyCategoryId": "bt-10-12-1",
+      "shopifyFullName": "Baby & Toddler > Nursing & Feeding > Nursing Pads & Shields > Disposable Nursing Pads",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "157253",
+      "ebayFullName": "Baby > Feeding > Breastfeeding/Nursing > Manual Breast Pumps",
+      "shopifyCategoryId": "bt-10-9-3",
+      "shopifyFullName": "Baby & Toddler > Nursing & Feeding > Breast Pumps > Manual Breast Pumps",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "160065",
+      "ebayFullName": "Baby > Feeding > Breastfeeding/Nursing > Feeding Pillows & Covers",
+      "shopifyCategoryId": "bt-10-14",
+      "shopifyFullName": "Baby & Toddler > Nursing & Feeding > Nursing Pillows",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "168751",
+      "ebayFullName": "Baby > Feeding > Breastfeeding/Nursing > Breast Milk Storage",
+      "shopifyCategoryId": "bt-10-7",
+      "shopifyFullName": "Baby & Toddler > Nursing & Feeding > Breast Milk Storage Containers",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "168752",
+      "ebayFullName": "Baby > Feeding > Breastfeeding/Nursing > Nipple Shields/Protectors",
+      "shopifyCategoryId": "bt-10-12-3",
+      "shopifyFullName": "Baby & Toddler > Nursing & Feeding > Nursing Pads & Shields > Breast Shields",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "184340",
+      "ebayFullName": "Baby > Feeding > Breastfeeding/Nursing > Nursing Covers/Blankets",
+      "shopifyCategoryId": "bt-10-11",
+      "shopifyFullName": "Baby & Toddler > Nursing & Feeding > Nursing Covers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "184350",
+      "ebayFullName": "Baby > Feeding > Breastfeeding/Nursing > Breast Pump Parts",
+      "shopifyCategoryId": "bt-10-8-4",
+      "shopifyFullName": "Baby & Toddler > Nursing & Feeding > Breast Pump Accessories > Connectors & Adapters",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "20398",
+      "ebayFullName": "Baby > Bathing & Grooming > Skin Care",
+      "shopifyCategoryId": "bt-3-1",
+      "shopifyFullName": "Baby & Toddler > Baby Health > Baby Health & Grooming Kits",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "45452",
+      "ebayFullName": "Baby > Bathing & Grooming > Health & Grooming",
+      "shopifyCategoryId": "bt-3-1",
+      "shopifyFullName": "Baby & Toddler > Baby Health > Baby Health & Grooming Kits",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "45453",
+      "ebayFullName": "Baby > Bathing & Grooming > Towels & Washcloths",
+      "shopifyCategoryId": "bt-12-2",
+      "shopifyFullName": "Baby & Toddler > Swaddling & Receiving Blankets > Swaddling Blankets",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "45454",
+      "ebayFullName": "Baby > Bathing & Grooming > Other Baby Bathing & Grooming",
+      "shopifyCategoryId": "bt-3-1",
+      "shopifyFullName": "Baby & Toddler > Baby Health > Baby Health & Grooming Kits",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "82563",
+      "ebayFullName": "Baby > Bathing & Grooming > Shampoos & Soaps",
+      "shopifyCategoryId": "bt-3-1",
+      "shopifyFullName": "Baby & Toddler > Baby Health > Baby Health & Grooming Kits",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "100221",
+      "ebayFullName": "Baby > Bathing & Grooming > Bathing Accessories",
+      "shopifyCategoryId": "bt-3-1",
+      "shopifyFullName": "Baby & Toddler > Baby Health > Baby Health & Grooming Kits",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "113814",
+      "ebayFullName": "Baby > Bathing & Grooming > Bath Tubs",
+      "shopifyCategoryId": "bt-1-1-4",
+      "shopifyFullName": "Baby & Toddler > Baby Bathing > Baby Bathtubs & Bath Seats > Bathtubs",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "117016",
+      "ebayFullName": "Baby > Bathing & Grooming > Baby Scales",
+      "shopifyCategoryId": "bt-3-1",
+      "shopifyFullName": "Baby & Toddler > Baby Health > Baby Health & Grooming Kits",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "134756",
+      "ebayFullName": "Baby > Bathing & Grooming > Gift Sets",
+      "shopifyCategoryId": "bt-2",
+      "shopifyFullName": "Baby & Toddler > Baby Gift Sets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "162024",
+      "ebayFullName": "Baby > Bathing & Grooming > Bath Tub Seats & Rings",
+      "shopifyCategoryId": "bt-1-1-2",
+      "shopifyFullName": "Baby & Toddler > Baby Bathing > Baby Bathtubs & Bath Seats > Bath Seats",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "100225",
+      "ebayFullName": "Baby > Toys for Baby > Blocks & Sorters",
+      "shopifyCategoryId": "bt-5-12",
+      "shopifyFullName": "Baby & Toddler > Baby Toys & Activity Equipment > Sorting & Stacking Toys",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "100226",
+      "ebayFullName": "Baby > Toys for Baby > Crib Toys",
+      "shopifyCategoryId": "bt-5-6-2",
+      "shopifyFullName": "Baby & Toddler > Baby Toys & Activity Equipment > Baby Mobiles > Crib Mobiles",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "100227",
+      "ebayFullName": "Baby > Toys for Baby > Developmental Baby Toys",
+      "shopifyCategoryId": "bt-5-2-1",
+      "shopifyFullName": "Baby & Toddler > Baby Toys & Activity Equipment > Baby Activity Toys > Activity Centers",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "131081",
+      "ebayFullName": "Baby > Toys for Baby > Rattles",
+      "shopifyCategoryId": "bt-5-2-3",
+      "shopifyFullName": "Baby & Toddler > Baby Toys & Activity Equipment > Baby Activity Toys > Rattles",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "131082",
+      "ebayFullName": "Baby > Toys for Baby > Baby Gyms, Play Mats & Jigsaw Mats",
+      "shopifyCategoryId": "bt-5-9-1",
+      "shopifyFullName": "Baby & Toddler > Baby Toys & Activity Equipment > Play Mats & Gyms > Play Gyms",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "131084",
+      "ebayFullName": "Baby > Toys for Baby > Plush Baby Toys",
+      "shopifyCategoryId": "bt-5-7-2",
+      "shopifyFullName": "Baby & Toddler > Baby Toys & Activity Equipment > Baby Soothers > Plush Toys",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179013",
+      "ebayFullName": "Baby > Toys for Baby > Other Toys for Baby",
+      "shopifyCategoryId": "bt-5-4-1",
+      "shopifyFullName": "Baby & Toddler > Baby Toys & Activity Equipment > Baby Jumpers & Swings > Baby Jumpers",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    }
+  ]
+}

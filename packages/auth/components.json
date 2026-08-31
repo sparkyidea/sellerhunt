@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "style": "base-nova",
+  "rsc": true,
+  "tsx": true,
+  "tailwind": {
+    "config": "",
+    "css": "src/style.css",
+    "baseColor": "neutral",
+    "cssVariables": true,
+    "prefix": ""
+  },
+  "iconLibrary": "lucide",
+  "rtl": false,
+  "menuColor": "default",
+  "menuAccent": "subtle",
+  "aliases": {
+    "components": "@dashseller/auth/components",
+    "ui": "@sparkyidea/ui/components",
+    "utils": "@sparkyidea/ui/lib/utils",
+    "lib": "@dashseller/auth/lib",
+    "hooks": "@dashseller/auth/hooks"
+  },
+  "registries": {
+    "@better-auth-ui": "https://better-auth-ui.com/r/base-nova/{name}.json"
+  }
+}

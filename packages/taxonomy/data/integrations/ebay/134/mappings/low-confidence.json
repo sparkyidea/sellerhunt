@@ -1,0 +1,482 @@
+{
+  "generatedAt": "2026-04-17T23:49:34.704Z",
+  "threshold": 0.7,
+  "stats": {
+    "categories": 34,
+    "lowConfidence": 0,
+    "total": 15125,
+    "uncategorized": 0,
+    "unmapped": 52,
+    "needsReview": 52
+  },
+  "entries": [
+    {
+      "reason": "unmapped",
+      "ebayCategory": "Collectibles",
+      "ebayId": "10902",
+      "ebayFullName": "Collectibles > Kitchen & Home > Barware > Ice Buckets & Coolers",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0
+    },
+    {
+      "reason": "unmapped",
+      "ebayCategory": "Sporting Goods",
+      "ebayId": "71167",
+      "ebayFullName": "Sporting Goods > Water Sports > Surfing > Accessories > Other Surfing Accessories",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0
+    },
+    {
+      "reason": "unmapped",
+      "ebayCategory": "Sporting Goods",
+      "ebayId": "1300",
+      "ebayFullName": "Sporting Goods > Water Sports > Scuba & Snorkeling > Other Scuba & Snorkeling",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0
+    },
+    {
+      "reason": "unmapped",
+      "ebayCategory": "Sporting Goods",
+      "ebayId": "16057",
+      "ebayFullName": "Sporting Goods > Water Sports > Scuba & Snorkeling > Tanks",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0
+    },
+    {
+      "reason": "unmapped",
+      "ebayCategory": "Sporting Goods",
+      "ebayId": "47353",
+      "ebayFullName": "Sporting Goods > Water Sports > Scuba & Snorkeling > Spear Guns",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0
+    },
+    {
+      "reason": "unmapped",
+      "ebayCategory": "Sporting Goods",
+      "ebayId": "73999",
+      "ebayFullName": "Sporting Goods > Water Sports > Scuba & Snorkeling > Flags & Markers",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0
+    },
+    {
+      "reason": "unmapped",
+      "ebayCategory": "Sporting Goods",
+      "ebayId": "74000",
+      "ebayFullName": "Sporting Goods > Water Sports > Scuba & Snorkeling > Gauges",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0
+    },
+    {
+      "reason": "unmapped",
+      "ebayCategory": "Sporting Goods",
+      "ebayId": "91567",
+      "ebayFullName": "Sporting Goods > Water Sports > Scuba & Snorkeling > Underwater Photography",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0
+    },
+    {
+      "reason": "unmapped",
+      "ebayCategory": "Sporting Goods",
+      "ebayId": "114236",
+      "ebayFullName": "Sporting Goods > Water Sports > Scuba & Snorkeling > Sea Scooters",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0
+    },
+    {
+      "reason": "unmapped",
+      "ebayCategory": "Sporting Goods",
+      "ebayId": "184372",
+      "ebayFullName": "Sporting Goods > Outdoor Sports > Skydiving, Para & Hang Gliding > Other Air Sports Equipment",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0
+    },
+    {
+      "reason": "unmapped",
+      "ebayCategory": "Sporting Goods",
+      "ebayId": "184375",
+      "ebayFullName": "Sporting Goods > Outdoor Sports > Skydiving, Para & Hang Gliding > Wings",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0
+    },
+    {
+      "reason": "unmapped",
+      "ebayCategory": "Sporting Goods",
+      "ebayId": "184376",
+      "ebayFullName": "Sporting Goods > Outdoor Sports > Skydiving, Para & Hang Gliding > Airframes",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0
+    },
+    {
+      "reason": "unmapped",
+      "ebayCategory": "Sporting Goods",
+      "ebayId": "184378",
+      "ebayFullName": "Sporting Goods > Outdoor Sports > Skydiving, Para & Hang Gliding > Harnesses & Flight Suits",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0
+    },
+    {
+      "reason": "unmapped",
+      "ebayCategory": "Sporting Goods",
+      "ebayId": "184379",
+      "ebayFullName": "Sporting Goods > Outdoor Sports > Skydiving, Para & Hang Gliding > Cable & Rigging",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0
+    },
+    {
+      "reason": "unmapped",
+      "ebayCategory": "Sporting Goods",
+      "ebayId": "184380",
+      "ebayFullName": "Sporting Goods > Outdoor Sports > Skydiving, Para & Hang Gliding > Secure Containers",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0
+    },
+    {
+      "reason": "unmapped",
+      "ebayCategory": "Sporting Goods",
+      "ebayId": "178887",
+      "ebayFullName": "Sporting Goods > Outdoor Sports > Air Guns & Slingshots > Air Pistols",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0
+    },
+    {
+      "reason": "unmapped",
+      "ebayCategory": "Sporting Goods",
+      "ebayId": "178888",
+      "ebayFullName": "Sporting Goods > Outdoor Sports > Air Guns & Slingshots > Air Rifles",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0
+    },
+    {
+      "reason": "unmapped",
+      "ebayCategory": "Sporting Goods",
+      "ebayId": "178889",
+      "ebayFullName": "Sporting Goods > Outdoor Sports > Air Guns & Slingshots > BBs & Pellets",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0
+    },
+    {
+      "reason": "unmapped",
+      "ebayCategory": "Sporting Goods",
+      "ebayId": "178890",
+      "ebayFullName": "Sporting Goods > Outdoor Sports > Air Guns & Slingshots > Accessories",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0
+    },
+    {
+      "reason": "unmapped",
+      "ebayCategory": "Sporting Goods",
+      "ebayId": "178891",
+      "ebayFullName": "Sporting Goods > Outdoor Sports > Air Guns & Slingshots > Other Air Guns & Slingshots",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0
+    },
+    {
+      "reason": "unmapped",
+      "ebayCategory": "Sporting Goods",
+      "ebayId": "149941",
+      "ebayFullName": "Sporting Goods > Outdoor Sports > Geocaching > Geocoins",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0
+    },
+    {
+      "reason": "unmapped",
+      "ebayCategory": "Sporting Goods",
+      "ebayId": "159046",
+      "ebayFullName": "Sporting Goods > Outdoor Sports > Geocaching > Caches",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0
+    },
+    {
+      "reason": "unmapped",
+      "ebayCategory": "Sporting Goods",
+      "ebayId": "159047",
+      "ebayFullName": "Sporting Goods > Outdoor Sports > Geocaching > Other Geocaching",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0
+    },
+    {
+      "reason": "unmapped",
+      "ebayCategory": "Sporting Goods",
+      "ebayId": "184361",
+      "ebayFullName": "Sporting Goods > Outdoor Sports > Geocaching > Geocaching Tools of the Trade",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0
+    },
+    {
+      "reason": "unmapped",
+      "ebayCategory": "Sporting Goods",
+      "ebayId": "184362",
+      "ebayFullName": "Sporting Goods > Outdoor Sports > Geocaching > Geo Tagging Equipment",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0
+    },
+    {
+      "reason": "unmapped",
+      "ebayCategory": "Sporting Goods",
+      "ebayId": "184363",
+      "ebayFullName": "Sporting Goods > Outdoor Sports > Geocaching > Geocaching Pathtags",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0
+    },
+    {
+      "reason": "unmapped",
+      "ebayCategory": "Sporting Goods",
+      "ebayId": "184365",
+      "ebayFullName": "Sporting Goods > Outdoor Sports > Geocaching > Cache Hiding Gear > Geocaching Containers",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0
+    },
+    {
+      "reason": "unmapped",
+      "ebayCategory": "Sporting Goods",
+      "ebayId": "184366",
+      "ebayFullName": "Sporting Goods > Outdoor Sports > Geocaching > Cache Hiding Gear > Geocaching Logbooks",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0
+    },
+    {
+      "reason": "unmapped",
+      "ebayCategory": "Sporting Goods",
+      "ebayId": "184367",
+      "ebayFullName": "Sporting Goods > Outdoor Sports > Geocaching > Cache Hiding Gear > Geocaching Labels & Decals",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0
+    },
+    {
+      "reason": "unmapped",
+      "ebayCategory": "Sporting Goods",
+      "ebayId": "184368",
+      "ebayFullName": "Sporting Goods > Outdoor Sports > Geocaching > Cache Hiding Gear > Geocaching Magnets",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0
+    },
+    {
+      "reason": "unmapped",
+      "ebayCategory": "Sporting Goods",
+      "ebayId": "159081",
+      "ebayFullName": "Sporting Goods > Outdoor Sports > Backyard Games > Other Backyard Games",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0
+    },
+    {
+      "reason": "unmapped",
+      "ebayCategory": "Sporting Goods",
+      "ebayId": "40152",
+      "ebayFullName": "Sporting Goods > Outdoor Sports > Go-Karts (Recreational) > Other Go-Karts (Recreational)",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0
+    },
+    {
+      "reason": "unmapped",
+      "ebayCategory": "Sporting Goods",
+      "ebayId": "64656",
+      "ebayFullName": "Sporting Goods > Outdoor Sports > Go-Karts (Recreational) > Complete Go-Karts & Frames",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0
+    },
+    {
+      "reason": "unmapped",
+      "ebayCategory": "Sporting Goods",
+      "ebayId": "64657",
+      "ebayFullName": "Sporting Goods > Outdoor Sports > Go-Karts (Recreational) > Parts & Accessories",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0
+    },
+    {
+      "reason": "unmapped",
+      "ebayCategory": "Sporting Goods",
+      "ebayId": "159029",
+      "ebayFullName": "Sporting Goods > Outdoor Sports > Go-Karts (Recreational) > Clothing & Protective Gear",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0
+    },
+    {
+      "reason": "unmapped",
+      "ebayCategory": "Sporting Goods",
+      "ebayId": "114226",
+      "ebayFullName": "Sporting Goods > Outdoor Sports > Equestrian > Rodeo & Roping Equipment",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0
+    },
+    {
+      "reason": "unmapped",
+      "ebayCategory": "Sporting Goods",
+      "ebayId": "112953",
+      "ebayFullName": "Sporting Goods > Outdoor Sports > Equestrian > Lunging & Training Equipment > Horse Jumps",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0
+    },
+    {
+      "reason": "unmapped",
+      "ebayCategory": "Sporting Goods",
+      "ebayId": "183422",
+      "ebayFullName": "Sporting Goods > Outdoor Sports > Equestrian > Lunging & Training Equipment > Lunge Cavessons",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0
+    },
+    {
+      "reason": "unmapped",
+      "ebayCategory": "Sporting Goods",
+      "ebayId": "183423",
+      "ebayFullName": "Sporting Goods > Outdoor Sports > Equestrian > Lunging & Training Equipment > Lunge Lines",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0
+    },
+    {
+      "reason": "unmapped",
+      "ebayCategory": "Sporting Goods",
+      "ebayId": "183424",
+      "ebayFullName": "Sporting Goods > Outdoor Sports > Equestrian > Lunging & Training Equipment > Lunging & Vaulting Rollers",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0
+    },
+    {
+      "reason": "unmapped",
+      "ebayCategory": "Sporting Goods",
+      "ebayId": "183425",
+      "ebayFullName": "Sporting Goods > Outdoor Sports > Equestrian > Lunging & Training Equipment > Roller Pads",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0
+    },
+    {
+      "reason": "unmapped",
+      "ebayCategory": "Sporting Goods",
+      "ebayId": "183426",
+      "ebayFullName": "Sporting Goods > Outdoor Sports > Equestrian > Lunging & Training Equipment > Other Training Equipment",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0
+    },
+    {
+      "reason": "unmapped",
+      "ebayCategory": "Sporting Goods",
+      "ebayId": "77696",
+      "ebayFullName": "Sporting Goods > Outdoor Sports > Equestrian > Horse Care & Grooming > Other Horse Care & Grooming",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0
+    },
+    {
+      "reason": "unmapped",
+      "ebayCategory": "Sporting Goods",
+      "ebayId": "183396",
+      "ebayFullName": "Sporting Goods > Outdoor Sports > Equestrian > Horse Care & Grooming > Braiding & Show Accessories",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0
+    },
+    {
+      "reason": "unmapped",
+      "ebayCategory": "Sporting Goods",
+      "ebayId": "183398",
+      "ebayFullName": "Sporting Goods > Outdoor Sports > Equestrian > Horse Care & Grooming > Fly & Insect Repellents",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0
+    },
+    {
+      "reason": "unmapped",
+      "ebayCategory": "Sporting Goods",
+      "ebayId": "183402",
+      "ebayFullName": "Sporting Goods > Outdoor Sports > Equestrian > Horse Care & Grooming > Hoof Oil & Moisturizer",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0
+    },
+    {
+      "reason": "unmapped",
+      "ebayCategory": "Sporting Goods",
+      "ebayId": "183403",
+      "ebayFullName": "Sporting Goods > Outdoor Sports > Equestrian > Horse Care & Grooming > Hoof Picks",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0
+    },
+    {
+      "reason": "unmapped",
+      "ebayCategory": "Sporting Goods",
+      "ebayId": "183404",
+      "ebayFullName": "Sporting Goods > Outdoor Sports > Equestrian > Horse Care & Grooming > Hoof Rasps & Farrier Tools",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0
+    },
+    {
+      "reason": "unmapped",
+      "ebayCategory": "Sporting Goods",
+      "ebayId": "183407",
+      "ebayFullName": "Sporting Goods > Outdoor Sports > Equestrian > Horse Care & Grooming > Shampoo & Conditioner",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0
+    },
+    {
+      "reason": "unmapped",
+      "ebayCategory": "Sporting Goods",
+      "ebayId": "183408",
+      "ebayFullName": "Sporting Goods > Outdoor Sports > Equestrian > Horse Care & Grooming > Sweat Scrapers",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0
+    },
+    {
+      "reason": "unmapped",
+      "ebayCategory": "Sporting Goods",
+      "ebayId": "183409",
+      "ebayFullName": "Sporting Goods > Outdoor Sports > Equestrian > Horse Care & Grooming > Tail Extensions",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0
+    },
+    {
+      "reason": "unmapped",
+      "ebayCategory": "Sporting Goods",
+      "ebayId": "77695",
+      "ebayFullName": "Sporting Goods > Outdoor Sports > Equestrian > Horse Feed & Supplements > Other Horse Feed",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0
+    }
+  ]
+}

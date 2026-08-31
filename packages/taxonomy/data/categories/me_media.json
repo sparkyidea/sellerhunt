@@ -1,0 +1,405 @@
+{
+  "version": "2026-05-unstable",
+  "categories": [
+    {
+      "id": "me",
+      "level": 0,
+      "name": "Media",
+      "full_name": "Media",
+      "parent_id": null,
+      "children": [
+        {
+          "id": "me-8",
+          "name": "Academic Papers & Studies"
+        },
+        {
+          "id": "me-1",
+          "name": "Books"
+        },
+        {
+          "id": "me-2",
+          "name": "Magazines & Newspapers"
+        },
+        {
+          "id": "me-3",
+          "name": "Music & Sound Recordings"
+        },
+        {
+          "id": "me-4",
+          "name": "Podcasts & Live Streams"
+        },
+        {
+          "id": "me-5",
+          "name": "Product Manuals"
+        },
+        {
+          "id": "me-6",
+          "name": "Sheet Music"
+        },
+        {
+          "id": "me-7",
+          "name": "Videos"
+        }
+      ]
+    },
+    {
+      "id": "me-8",
+      "level": 1,
+      "name": "Academic Papers & Studies",
+      "full_name": "Media > Academic Papers & Studies",
+      "parent_id": "me",
+      "children": []
+    },
+    {
+      "id": "me-1",
+      "level": 1,
+      "name": "Books",
+      "full_name": "Media > Books",
+      "parent_id": "me",
+      "children": [
+        {
+          "id": "me-1-1",
+          "name": "Audiobooks"
+        },
+        {
+          "id": "me-1-2",
+          "name": "E-Books"
+        },
+        {
+          "id": "me-1-3",
+          "name": "Print Books"
+        }
+      ]
+    },
+    {
+      "id": "me-1-1",
+      "level": 2,
+      "name": "Audiobooks",
+      "full_name": "Media > Books > Audiobooks",
+      "parent_id": "me-1",
+      "children": []
+    },
+    {
+      "id": "me-1-2",
+      "level": 2,
+      "name": "E-Books",
+      "full_name": "Media > Books > E-Books",
+      "parent_id": "me-1",
+      "children": []
+    },
+    {
+      "id": "me-1-3",
+      "level": 2,
+      "name": "Print Books",
+      "full_name": "Media > Books > Print Books",
+      "parent_id": "me-1",
+      "children": []
+    },
+    {
+      "id": "me-2",
+      "level": 1,
+      "name": "Magazines & Newspapers",
+      "full_name": "Media > Magazines & Newspapers",
+      "parent_id": "me",
+      "children": [
+        {
+          "id": "me-2-1",
+          "name": "Magazines"
+        },
+        {
+          "id": "me-2-2",
+          "name": "Newspapers"
+        }
+      ]
+    },
+    {
+      "id": "me-2-1",
+      "level": 2,
+      "name": "Magazines",
+      "full_name": "Media > Magazines & Newspapers > Magazines",
+      "parent_id": "me-2",
+      "children": [
+        {
+          "id": "me-2-1-1",
+          "name": "Consumer Magazines"
+        },
+        {
+          "id": "me-2-1-2",
+          "name": "In-House Magazines"
+        },
+        {
+          "id": "me-2-1-3",
+          "name": "Professional Magazines"
+        }
+      ]
+    },
+    {
+      "id": "me-2-1-1",
+      "level": 3,
+      "name": "Consumer Magazines",
+      "full_name": "Media > Magazines & Newspapers > Magazines > Consumer Magazines",
+      "parent_id": "me-2-1",
+      "children": []
+    },
+    {
+      "id": "me-2-1-2",
+      "level": 3,
+      "name": "In-House Magazines",
+      "full_name": "Media > Magazines & Newspapers > Magazines > In-House Magazines",
+      "parent_id": "me-2-1",
+      "children": []
+    },
+    {
+      "id": "me-2-1-3",
+      "level": 3,
+      "name": "Professional Magazines",
+      "full_name": "Media > Magazines & Newspapers > Magazines > Professional Magazines",
+      "parent_id": "me-2-1",
+      "children": []
+    },
+    {
+      "id": "me-2-2",
+      "level": 2,
+      "name": "Newspapers",
+      "full_name": "Media > Magazines & Newspapers > Newspapers",
+      "parent_id": "me-2",
+      "children": [
+        {
+          "id": "me-2-2-1",
+          "name": "International Newspapers"
+        },
+        {
+          "id": "me-2-2-2",
+          "name": "Local Newspapers"
+        },
+        {
+          "id": "me-2-2-3",
+          "name": "National Newspapers"
+        }
+      ]
+    },
+    {
+      "id": "me-2-2-1",
+      "level": 3,
+      "name": "International Newspapers",
+      "full_name": "Media > Magazines & Newspapers > Newspapers > International Newspapers",
+      "parent_id": "me-2-2",
+      "children": []
+    },
+    {
+      "id": "me-2-2-2",
+      "level": 3,
+      "name": "Local Newspapers",
+      "full_name": "Media > Magazines & Newspapers > Newspapers > Local Newspapers",
+      "parent_id": "me-2-2",
+      "children": []
+    },
+    {
+      "id": "me-2-2-3",
+      "level": 3,
+      "name": "National Newspapers",
+      "full_name": "Media > Magazines & Newspapers > Newspapers > National Newspapers",
+      "parent_id": "me-2-2",
+      "children": []
+    },
+    {
+      "id": "me-3",
+      "level": 1,
+      "name": "Music & Sound Recordings",
+      "full_name": "Media > Music & Sound Recordings",
+      "parent_id": "me",
+      "children": [
+        {
+          "id": "me-3-1",
+          "name": "Digital Music Downloads"
+        },
+        {
+          "id": "me-3-3",
+          "name": "Music CDs"
+        },
+        {
+          "id": "me-3-2",
+          "name": "Music Cassette Tapes"
+        },
+        {
+          "id": "me-3-4",
+          "name": "Records & LPs"
+        },
+        {
+          "id": "me-3-5",
+          "name": "Spoken Word & Field Recordings"
+        },
+        {
+          "id": "me-3-6",
+          "name": "Vinyl"
+        }
+      ]
+    },
+    {
+      "id": "me-3-1",
+      "level": 2,
+      "name": "Digital Music Downloads",
+      "full_name": "Media > Music & Sound Recordings > Digital Music Downloads",
+      "parent_id": "me-3",
+      "children": []
+    },
+    {
+      "id": "me-3-3",
+      "level": 2,
+      "name": "Music CDs",
+      "full_name": "Media > Music & Sound Recordings > Music CDs",
+      "parent_id": "me-3",
+      "children": []
+    },
+    {
+      "id": "me-3-2",
+      "level": 2,
+      "name": "Music Cassette Tapes",
+      "full_name": "Media > Music & Sound Recordings > Music Cassette Tapes",
+      "parent_id": "me-3",
+      "children": []
+    },
+    {
+      "id": "me-3-4",
+      "level": 2,
+      "name": "Records & LPs",
+      "full_name": "Media > Music & Sound Recordings > Records & LPs",
+      "parent_id": "me-3",
+      "children": []
+    },
+    {
+      "id": "me-3-5",
+      "level": 2,
+      "name": "Spoken Word & Field Recordings",
+      "full_name": "Media > Music & Sound Recordings > Spoken Word & Field Recordings",
+      "parent_id": "me-3",
+      "children": []
+    },
+    {
+      "id": "me-3-6",
+      "level": 2,
+      "name": "Vinyl",
+      "full_name": "Media > Music & Sound Recordings > Vinyl",
+      "parent_id": "me-3",
+      "children": []
+    },
+    {
+      "id": "me-4",
+      "level": 1,
+      "name": "Podcasts & Live Streams",
+      "full_name": "Media > Podcasts & Live Streams",
+      "parent_id": "me",
+      "children": [
+        {
+          "id": "me-4-1",
+          "name": "Live Streams"
+        },
+        {
+          "id": "me-4-2",
+          "name": "Podcasts"
+        },
+        {
+          "id": "me-4-3",
+          "name": "Radio Shows"
+        }
+      ]
+    },
+    {
+      "id": "me-4-1",
+      "level": 2,
+      "name": "Live Streams",
+      "full_name": "Media > Podcasts & Live Streams > Live Streams",
+      "parent_id": "me-4",
+      "children": []
+    },
+    {
+      "id": "me-4-2",
+      "level": 2,
+      "name": "Podcasts",
+      "full_name": "Media > Podcasts & Live Streams > Podcasts",
+      "parent_id": "me-4",
+      "children": []
+    },
+    {
+      "id": "me-4-3",
+      "level": 2,
+      "name": "Radio Shows",
+      "full_name": "Media > Podcasts & Live Streams > Radio Shows",
+      "parent_id": "me-4",
+      "children": []
+    },
+    {
+      "id": "me-5",
+      "level": 1,
+      "name": "Product Manuals",
+      "full_name": "Media > Product Manuals",
+      "parent_id": "me",
+      "children": []
+    },
+    {
+      "id": "me-6",
+      "level": 1,
+      "name": "Sheet Music",
+      "full_name": "Media > Sheet Music",
+      "parent_id": "me",
+      "children": []
+    },
+    {
+      "id": "me-7",
+      "level": 1,
+      "name": "Videos",
+      "full_name": "Media > Videos",
+      "parent_id": "me",
+      "children": [
+        {
+          "id": "me-7-1",
+          "name": "Blu-ray"
+        },
+        {
+          "id": "me-7-3",
+          "name": "DVDs"
+        },
+        {
+          "id": "me-7-2",
+          "name": "Digital Downloads"
+        },
+        {
+          "id": "me-7-4",
+          "name": "VHS Tapes"
+        }
+      ]
+    },
+    {
+      "id": "me-7-1",
+      "level": 2,
+      "name": "Blu-ray",
+      "full_name": "Media > Videos > Blu-ray",
+      "parent_id": "me-7",
+      "children": []
+    },
+    {
+      "id": "me-7-3",
+      "level": 2,
+      "name": "DVDs",
+      "full_name": "Media > Videos > DVDs",
+      "parent_id": "me-7",
+      "children": []
+    },
+    {
+      "id": "me-7-2",
+      "level": 2,
+      "name": "Digital Downloads",
+      "full_name": "Media > Videos > Digital Downloads",
+      "parent_id": "me-7",
+      "children": []
+    },
+    {
+      "id": "me-7-4",
+      "level": 2,
+      "name": "VHS Tapes",
+      "full_name": "Media > Videos > VHS Tapes",
+      "parent_id": "me-7",
+      "children": []
+    }
+  ]
+}

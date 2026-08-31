@@ -1,0 +1,57 @@
+{
+  "ebayCategory": "Gift Cards & Coupons",
+  "shopifyCategories": ["Gift Cards"],
+  "totalMapped": 6,
+  "highConfidence": 5,
+  "lowConfidence": 1,
+  "mappings": [
+    {
+      "ebayId": "172008",
+      "ebayFullName": "Gift Cards & Coupons",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "31411",
+      "ebayFullName": "Gift Cards & Coupons > Gift Certificates",
+      "shopifyCategoryId": "gc",
+      "shopifyFullName": "Gift Cards",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "172009",
+      "ebayFullName": "Gift Cards & Coupons > Gift Cards",
+      "shopifyCategoryId": "gc",
+      "shopifyFullName": "Gift Cards",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "172010",
+      "ebayFullName": "Gift Cards & Coupons > Coupons",
+      "shopifyCategoryId": "gc",
+      "shopifyFullName": "Gift Cards",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "172036",
+      "ebayFullName": "Gift Cards & Coupons > eBay Gift Cards",
+      "shopifyCategoryId": "gc",
+      "shopifyFullName": "Gift Cards",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "176950",
+      "ebayFullName": "Gift Cards & Coupons > Digital Gifts",
+      "shopifyCategoryId": "gc",
+      "shopifyFullName": "Gift Cards",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    }
+  ]
+}

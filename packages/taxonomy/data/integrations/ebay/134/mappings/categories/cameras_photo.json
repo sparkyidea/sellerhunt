@@ -1,0 +1,1337 @@
+{
+  "ebayCategory": "Cameras & Photo",
+  "shopifyCategories": ["Cameras & Optics"],
+  "totalMapped": 166,
+  "highConfidence": 142,
+  "lowConfidence": 1,
+  "mappings": [
+    {
+      "ebayId": "625",
+      "ebayFullName": "Cameras & Photo",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "3326",
+      "ebayFullName": "Cameras & Photo > Vintage Movie & Photography",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "4684",
+      "ebayFullName": "Cameras & Photo > Camera Manuals & Guides",
+      "shopifyCategoryId": "me-5",
+      "shopifyFullName": "Media > Product Manuals",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "11724",
+      "ebayFullName": "Cameras & Photo > Camcorders",
+      "shopifyCategoryId": "co-2-7-4",
+      "shopifyFullName": "Cameras & Optics > Cameras > Video Cameras > Camcorders",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "15200",
+      "ebayFullName": "Cameras & Photo > Camera, Drone & Photo Accessories",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "21162",
+      "ebayFullName": "Cameras & Photo > Video Production & Editing",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "27432",
+      "ebayFullName": "Cameras & Photo > Other Cameras & Photo",
+      "shopifyCategoryId": "co-2-7-7",
+      "shopifyFullName": "Cameras & Optics > Cameras > Video Cameras > Drone Video Cameras",
+      "confidence": 0.5,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "28179",
+      "ebayFullName": "Cameras & Photo > Binoculars & Telescopes",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "30078",
+      "ebayFullName": "Cameras & Photo > Lighting & Studio",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "30090",
+      "ebayFullName": "Cameras & Photo > Tripods & Supports",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "31388",
+      "ebayFullName": "Cameras & Photo > Digital Cameras",
+      "shopifyCategoryId": "co-2-2-5",
+      "shopifyFullName": "Cameras & Optics > Cameras > Digital Cameras > Digital Single-Lens Reflex (DSLR) Cameras",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "45089",
+      "ebayFullName": "Cameras & Photo > Mixed Lots",
+      "shopifyCategoryId": "co-2-7-7",
+      "shopifyFullName": "Cameras & Optics > Cameras > Video Cameras > Drone Video Cameras",
+      "confidence": 0.4,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "64353",
+      "ebayFullName": "Cameras & Photo > Flashes & Flash Accessories",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "69323",
+      "ebayFullName": "Cameras & Photo > Film Photography",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "78997",
+      "ebayFullName": "Cameras & Photo > Lenses & Filters",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "150044",
+      "ebayFullName": "Cameras & Photo > Digital Photo Frames",
+      "shopifyCategoryId": "hg-3-52-1",
+      "shopifyFullName": "Home & Garden > Decor > Picture Frames > Digital Photo Frames",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179697",
+      "ebayFullName": "Cameras & Photo > Camera Drones",
+      "shopifyCategoryId": "co-2-7-7",
+      "shopifyFullName": "Cameras & Optics > Cameras > Video Cameras > Drone Video Cameras",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182074",
+      "ebayFullName": "Cameras & Photo > Replacement Parts & Tools",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "30038",
+      "ebayFullName": "Cameras & Photo > Replacement Parts & Tools > Film Camera Parts",
+      "shopifyCategoryId": "co-1-4-3",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Camera Parts & Accessories > Camera Body Replacement Panels & Doors",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "64352",
+      "ebayFullName": "Cameras & Photo > Replacement Parts & Tools > Digital Camera Parts",
+      "shopifyCategoryId": "co-1-4-3",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Camera Parts & Accessories > Camera Body Replacement Panels & Doors",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "172513",
+      "ebayFullName": "Cameras & Photo > Replacement Parts & Tools > Camcorder Parts",
+      "shopifyCategoryId": "co-1-4-3",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Camera Parts & Accessories > Camera Body Replacement Panels & Doors",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "172514",
+      "ebayFullName": "Cameras & Photo > Replacement Parts & Tools > Camera Tools & Repair Kits",
+      "shopifyCategoryId": "co-1-4-1",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Camera Parts & Accessories > Camera Accessory Sets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260144",
+      "ebayFullName": "Cameras & Photo > Replacement Parts & Tools > Camera Drone Parts",
+      "shopifyCategoryId": "co-1-4-3",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Camera Parts & Accessories > Camera Body Replacement Panels & Doors",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "3323",
+      "ebayFullName": "Cameras & Photo > Lenses & Filters > Lenses",
+      "shopifyCategoryId": "co-1-2-1",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Camera & Video Camera Lenses > Camera Lenses",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "15216",
+      "ebayFullName": "Cameras & Photo > Lenses & Filters > Filters",
+      "shopifyCategoryId": "co-1-3-5",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Camera Lens Accessories > Lens Filters",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "30040",
+      "ebayFullName": "Cameras & Photo > Lenses & Filters > Filter Rings & Holders",
+      "shopifyCategoryId": "co-1-3-1",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Camera Lens Accessories > Lens & Filter Adapter Rings",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "30059",
+      "ebayFullName": "Cameras & Photo > Lenses & Filters > Lens Adapters, Mounts & Tubes",
+      "shopifyCategoryId": "co-1-3-1",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Camera Lens Accessories > Lens & Filter Adapter Rings",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "78999",
+      "ebayFullName": "Cameras & Photo > Lenses & Filters > Lens Hoods",
+      "shopifyCategoryId": "co-1-3-6",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Camera Lens Accessories > Lens Hoods",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "79000",
+      "ebayFullName": "Cameras & Photo > Lenses & Filters > Other Lenses & Filters",
+      "shopifyCategoryId": "co-1-2-1",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Camera & Video Camera Lenses > Camera Lenses",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "79001",
+      "ebayFullName": "Cameras & Photo > Lenses & Filters > Lens Caps",
+      "shopifyCategoryId": "co-1-3-3",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Camera Lens Accessories > Lens Caps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "80390",
+      "ebayFullName": "Cameras & Photo > Lenses & Filters > Auxiliary/Conversion Lenses",
+      "shopifyCategoryId": "co-1-3-4",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Camera Lens Accessories > Lens Converters",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "4201",
+      "ebayFullName": "Cameras & Photo > Film Photography > Film",
+      "shopifyCategoryId": "co-1-4-5-2",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Camera Parts & Accessories > Camera Film > Color Negative Film",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "4689",
+      "ebayFullName": "Cameras & Photo > Film Photography > Movie Cameras",
+      "shopifyCategoryId": "co-2-7-5",
+      "shopifyFullName": "Cameras & Optics > Cameras > Video Cameras > Cinema Video Cameras",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "4690",
+      "ebayFullName": "Cameras & Photo > Film Photography > Movie Camera Accessories",
+      "shopifyCategoryId": "co-1-4-1",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Camera Parts & Accessories > Camera Accessory Sets",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "4790",
+      "ebayFullName": "Cameras & Photo > Film Photography > Movie Editing Equipment",
+      "shopifyCategoryId": "el-17-6-1",
+      "shopifyFullName": "Electronics > Video > Video Editing Hardware & Production Equipment > Video Processors & Scalers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "15230",
+      "ebayFullName": "Cameras & Photo > Film Photography > Film Cameras",
+      "shopifyCategoryId": "co-2-4-6",
+      "shopifyFullName": "Cameras & Optics > Cameras > Film Cameras > SLR Film Cameras",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "15250",
+      "ebayFullName": "Cameras & Photo > Film Photography > Slide & Movie Projection",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "29965",
+      "ebayFullName": "Cameras & Photo > Film Photography > Rangefinder Units & Accs",
+      "shopifyCategoryId": "co-1-5-3",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Optic Accessories > Rangefinder Accessories",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "29970",
+      "ebayFullName": "Cameras & Photo > Film Photography > Motor Drives & Winders",
+      "shopifyCategoryId": "co-1-4-9",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Camera Parts & Accessories > Camera Gears",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "29973",
+      "ebayFullName": "Cameras & Photo > Film Photography > Film Backs & Holders",
+      "shopifyCategoryId": "co-1-4-9",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Camera Parts & Accessories > Camera Gears",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "29980",
+      "ebayFullName": "Cameras & Photo > Film Photography > Lens Boards",
+      "shopifyCategoryId": "co-1-4-9",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Camera Parts & Accessories > Camera Gears",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "43479",
+      "ebayFullName": "Cameras & Photo > Film Photography > Other Film Photography",
+      "shopifyCategoryId": "co-2-4-1",
+      "shopifyFullName": "Cameras & Optics > Cameras > Film Cameras > Compact Film Cameras",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "170066",
+      "ebayFullName": "Cameras & Photo > Film Photography > Digital Camera Backs",
+      "shopifyCategoryId": "co-1-4-4",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Camera Parts & Accessories > Camera Digital Backs",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182077",
+      "ebayFullName": "Cameras & Photo > Film Photography > Darkroom & Developing",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "629",
+      "ebayFullName": "Cameras & Photo > Film Photography > Darkroom & Developing > Other Darkroom & Developing",
+      "shopifyCategoryId": "co-4-1-1-5",
+      "shopifyFullName": "Cameras & Optics > Photography > Darkroom > Developing & Processing Equipment > Retouching Equipment & Supplies",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "15226",
+      "ebayFullName": "Cameras & Photo > Film Photography > Darkroom & Developing > Photographic Paper",
+      "shopifyCategoryId": "co-4-1-4",
+      "shopifyFullName": "Cameras & Optics > Photography > Darkroom > Photographic Paper",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "29983",
+      "ebayFullName": "Cameras & Photo > Film Photography > Darkroom & Developing > Film Development Chemicals",
+      "shopifyCategoryId": "co-4-1-3-2",
+      "shopifyFullName": "Cameras & Optics > Photography > Darkroom > Photographic Chemicals > Film Developers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "29985",
+      "ebayFullName": "Cameras & Photo > Film Photography > Darkroom & Developing > Enlargement Equipment",
+      "shopifyCategoryId": "co-4-1-2-5",
+      "shopifyFullName": "Cameras & Optics > Photography > Darkroom > Enlarging Equipment > Photographic Enlargers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "29986",
+      "ebayFullName": "Cameras & Photo > Film Photography > Darkroom & Developing > Enlarging Lenses",
+      "shopifyCategoryId": "co-4-1-2-4",
+      "shopifyFullName": "Cameras & Optics > Photography > Darkroom > Enlarging Equipment > Photographic Analyzers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "29990",
+      "ebayFullName": "Cameras & Photo > Film Photography > Darkroom & Developing > Safelights & Bulbs",
+      "shopifyCategoryId": "co-4-1-5",
+      "shopifyFullName": "Cameras & Optics > Photography > Darkroom > Safelights",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "29991",
+      "ebayFullName": "Cameras & Photo > Film Photography > Darkroom & Developing > Darkroom Timers",
+      "shopifyCategoryId": "co-4-1-2-2",
+      "shopifyFullName": "Cameras & Optics > Photography > Darkroom > Enlarging Equipment > Darkroom Timers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "29993",
+      "ebayFullName": "Cameras & Photo > Film Photography > Darkroom & Developing > Processing & Finishing Equip",
+      "shopifyCategoryId": "co-4-1-1-5",
+      "shopifyFullName": "Cameras & Optics > Photography > Darkroom > Developing & Processing Equipment > Retouching Equipment & Supplies",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "162048",
+      "ebayFullName": "Cameras & Photo > Film Photography > Darkroom & Developing > Easels & Negative Carriers",
+      "shopifyCategoryId": "co-4-1-2-1",
+      "shopifyFullName": "Cameras & Optics > Photography > Darkroom > Enlarging Equipment > Darkroom Easels",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "15251",
+      "ebayFullName": "Cameras & Photo > Film Photography > Slide & Movie Projection > Projector Bulbs & Lamps",
+      "shopifyCategoryId": "el-17-5-3-5",
+      "shopifyFullName": "Electronics > Video > Video Accessories > Projector Accessories > Projector Replacement Lamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "15252",
+      "ebayFullName": "Cameras & Photo > Film Photography > Slide & Movie Projection > Movie Projectors",
+      "shopifyCategoryId": "el-17-2-4",
+      "shopifyFullName": "Electronics > Video > Projectors > Film Projectors",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "15256",
+      "ebayFullName": "Cameras & Photo > Film Photography > Slide & Movie Projection > Slide Projectors",
+      "shopifyCategoryId": "el-17-2-3",
+      "shopifyFullName": "Electronics > Video > Projectors > Slide Projectors",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "15257",
+      "ebayFullName": "Cameras & Photo > Film Photography > Slide & Movie Projection > Other Slide & Movie Projection",
+      "shopifyCategoryId": "el-17-2-3",
+      "shopifyFullName": "Electronics > Video > Projectors > Slide Projectors",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "30089",
+      "ebayFullName": "Cameras & Photo > Film Photography > Slide & Movie Projection > Projection Screens & Material",
+      "shopifyCategoryId": "el-17-5-3-3",
+      "shopifyFullName": "Electronics > Video > Video Accessories > Projector Accessories > Projection Screens",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "83874",
+      "ebayFullName": "Cameras & Photo > Film Photography > Slide & Movie Projection > Projection Lenses",
+      "shopifyCategoryId": "co-1-2-1",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Camera & Video Camera Lenses > Camera Lenses",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "83876",
+      "ebayFullName": "Cameras & Photo > Film Photography > Slide & Movie Projection > Slide Trays & Carousels",
+      "shopifyCategoryId": "el-17-5-3-7",
+      "shopifyFullName": "Electronics > Video > Video Accessories > Projector Accessories > Projector Cases & Bags",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "83877",
+      "ebayFullName": "Cameras & Photo > Film Photography > Slide & Movie Projection > Slide Viewers",
+      "shopifyCategoryId": "co-4-4",
+      "shopifyFullName": "Cameras & Optics > Photography > Photo Negative & Slide Storage",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "48515",
+      "ebayFullName": "Cameras & Photo > Flashes & Flash Accessories > Flashes",
+      "shopifyCategoryId": "co-1-4-7",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Camera Parts & Accessories > Camera Flashes",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "64354",
+      "ebayFullName": "Cameras & Photo > Flashes & Flash Accessories > Other Flashes & Flash Accs",
+      "shopifyCategoryId": "co-1-4-6",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Camera Parts & Accessories > Camera Flash Accessories",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "69573",
+      "ebayFullName": "Cameras & Photo > Flashes & Flash Accessories > Flash Adapters",
+      "shopifyCategoryId": "co-1-4-20",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Camera Parts & Accessories > Flash Brackets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "89161",
+      "ebayFullName": "Cameras & Photo > Flashes & Flash Accessories > Flash Brackets",
+      "shopifyCategoryId": "co-1-4-20",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Camera Parts & Accessories > Flash Brackets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "121464",
+      "ebayFullName": "Cameras & Photo > Flashes & Flash Accessories > Flash Diffusers",
+      "shopifyCategoryId": "co-4-2-5-1",
+      "shopifyFullName": "Cameras & Optics > Photography > Lighting & Studio > Studio Lighting Controls > Flash Diffusers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "155823",
+      "ebayFullName": "Cameras & Photo > Flashes & Flash Accessories > Sync Cords",
+      "shopifyCategoryId": "co-1-4-6",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Camera Parts & Accessories > Camera Flash Accessories",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "30093",
+      "ebayFullName": "Cameras & Photo > Tripods & Supports > Tripods & Monopods",
+      "shopifyCategoryId": "co-1-7-10",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Tripods & Monopods > Video Tripods",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "30095",
+      "ebayFullName": "Cameras & Photo > Tripods & Supports > Tripod Heads",
+      "shopifyCategoryId": "co-1-6-2",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Tripod & Monopod Accessories > Tripod & Monopod Heads",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "30097",
+      "ebayFullName": "Cameras & Photo > Tripods & Supports > Other Tripods & Supports",
+      "shopifyCategoryId": "co-1-7-1",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Tripods & Monopods > Boom Stands",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "172511",
+      "ebayFullName": "Cameras & Photo > Tripods & Supports > Stabilizers",
+      "shopifyCategoryId": "co-1-4-17",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Camera Parts & Accessories > Camera Stabilizers & Supports",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "19590",
+      "ebayFullName": "Cameras & Photo > Lighting & Studio > Continuous Lighting",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "21198",
+      "ebayFullName": "Cameras & Photo > Lighting & Studio > Stock Photo Collections",
+      "shopifyCategoryId": "so-2-6",
+      "shopifyFullName": "Software > Digital Goods & Currency > Stock Photographs & Video Footage",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "30085",
+      "ebayFullName": "Cameras & Photo > Lighting & Studio > Props & Stage Equipment",
+      "shopifyCategoryId": "bi-6-2",
+      "shopifyFullName": "Business & Industrial > Film & Television > Film & Television Props",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "30088",
+      "ebayFullName": "Cameras & Photo > Lighting & Studio > Other Lighting & Studio",
+      "shopifyCategoryId": "co-4-2-6",
+      "shopifyFullName": "Cameras & Optics > Photography > Lighting & Studio > Studio Lights & Flashes",
+      "confidence": 0.6,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "79003",
+      "ebayFullName": "Cameras & Photo > Lighting & Studio > Background Material",
+      "shopifyCategoryId": "co-4-2-3",
+      "shopifyFullName": "Cameras & Optics > Photography > Lighting & Studio > Studio Backgrounds",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "79007",
+      "ebayFullName": "Cameras & Photo > Lighting & Studio > Light Controls & Modifiers",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "88665",
+      "ebayFullName": "Cameras & Photo > Lighting & Studio > Light Stands & Booms",
+      "shopifyCategoryId": "co-4-2-8-7",
+      "shopifyFullName": "Cameras & Optics > Photography > Lighting & Studio > Studio Stands & Mounts > Light Stands",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "88667",
+      "ebayFullName": "Cameras & Photo > Lighting & Studio > Light Stand & Boom Accessories",
+      "shopifyCategoryId": "co-4-2-7",
+      "shopifyFullName": "Cameras & Optics > Photography > Lighting & Studio > Studio Stand & Mount Accessories",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "88668",
+      "ebayFullName": "Cameras & Photo > Lighting & Studio > Light Meters",
+      "shopifyCategoryId": "co-4-2-2",
+      "shopifyFullName": "Cameras & Optics > Photography > Lighting & Studio > Light Meters",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "124848",
+      "ebayFullName": "Cameras & Photo > Lighting & Studio > Flash Lighting",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "151226",
+      "ebayFullName": "Cameras & Photo > Lighting & Studio > Shooting Tables & Light Tents",
+      "shopifyCategoryId": "co-4-2-5-4",
+      "shopifyFullName": "Cameras & Optics > Photography > Lighting & Studio > Studio Lighting Controls > Softboxes",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "30086",
+      "ebayFullName": "Cameras & Photo > Lighting & Studio > Flash Lighting > Slaves & Trigger Systems",
+      "shopifyCategoryId": "co-4-2-4",
+      "shopifyFullName": "Cameras & Optics > Photography > Lighting & Studio > Studio Light & Flash Accessories",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "30087",
+      "ebayFullName": "Cameras & Photo > Lighting & Studio > Flash Lighting > Other Flash Lighting",
+      "shopifyCategoryId": "co-4-2-6",
+      "shopifyFullName": "Cameras & Optics > Photography > Lighting & Studio > Studio Lights & Flashes",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "87635",
+      "ebayFullName": "Cameras & Photo > Lighting & Studio > Flash Lighting > Flash Lighting Kits",
+      "shopifyCategoryId": "co-4-2-6",
+      "shopifyFullName": "Cameras & Optics > Photography > Lighting & Studio > Studio Lights & Flashes",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "87637",
+      "ebayFullName": "Cameras & Photo > Lighting & Studio > Flash Lighting > Monolight Flashes",
+      "shopifyCategoryId": "co-4-2-6",
+      "shopifyFullName": "Cameras & Optics > Photography > Lighting & Studio > Studio Lights & Flashes",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "124850",
+      "ebayFullName": "Cameras & Photo > Lighting & Studio > Flash Lighting > Flash Heads & Power Supplies",
+      "shopifyCategoryId": "co-4-2-6",
+      "shopifyFullName": "Cameras & Optics > Photography > Lighting & Studio > Studio Lights & Flashes",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "155817",
+      "ebayFullName": "Cameras & Photo > Lighting & Studio > Flash Lighting > Flash Bulbs & Tubes",
+      "shopifyCategoryId": "co-1-4-6",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Camera Parts & Accessories > Camera Flash Accessories",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "30082",
+      "ebayFullName": "Cameras & Photo > Lighting & Studio > Light Controls & Modifiers > Studio Reflectors",
+      "shopifyCategoryId": "co-4-2-8-8",
+      "shopifyFullName": "Cameras & Optics > Photography > Lighting & Studio > Studio Stands & Mounts > Reflector Holders",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "79008",
+      "ebayFullName": "Cameras & Photo > Lighting & Studio > Light Controls & Modifiers > Softboxes & Diffusers",
+      "shopifyCategoryId": "co-4-2-5-4",
+      "shopifyFullName": "Cameras & Optics > Photography > Lighting & Studio > Studio Lighting Controls > Softboxes",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "79009",
+      "ebayFullName": "Cameras & Photo > Lighting & Studio > Light Controls & Modifiers > Studio Umbrellas",
+      "shopifyCategoryId": "co-1-1-1",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Camera & Optic Replacement Cables > Component Video Cables",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "79010",
+      "ebayFullName": "Cameras & Photo > Lighting & Studio > Light Controls & Modifiers > Other Light Controls & Mods",
+      "shopifyCategoryId": "co-4-2-5-3",
+      "shopifyFullName": "Cameras & Optics > Photography > Lighting & Studio > Studio Lighting Controls > Lighting Filters & Gobos",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "3860",
+      "ebayFullName": "Cameras & Photo > Lighting & Studio > Continuous Lighting > Other Continuous Lighting",
+      "shopifyCategoryId": "co-4-2-6",
+      "shopifyFullName": "Cameras & Optics > Photography > Lighting & Studio > Studio Lights & Flashes",
+      "confidence": 0.6,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "19591",
+      "ebayFullName": "Cameras & Photo > Lighting & Studio > Continuous Lighting > Lighting Kits",
+      "shopifyCategoryId": "co-4-2-6",
+      "shopifyFullName": "Cameras & Optics > Photography > Lighting & Studio > Studio Lights & Flashes",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "69341",
+      "ebayFullName": "Cameras & Photo > Lighting & Studio > Continuous Lighting > Lighting Units",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "172516",
+      "ebayFullName": "Cameras & Photo > Lighting & Studio > Continuous Lighting > Light Bulbs & Tubes",
+      "shopifyCategoryId": "hg-13-7-4",
+      "shopifyFullName": "Home & Garden > Lighting > Light Bulbs > LED Light Bulbs",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "74922",
+      "ebayFullName": "Cameras & Photo > Binoculars & Telescopes > Telescope Parts & Accessories",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "74927",
+      "ebayFullName": "Cameras & Photo > Binoculars & Telescopes > Telescopes",
+      "shopifyCategoryId": "co-3-4-2-5",
+      "shopifyFullName": "Cameras & Optics > Optics > Scopes > Telescopes > Refractor Telescopes",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "83880",
+      "ebayFullName": "Cameras & Photo > Binoculars & Telescopes > Binoculars & Monoculars",
+      "shopifyCategoryId": "co-3-1",
+      "shopifyFullName": "Cameras & Optics > Optics > Binoculars",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "162044",
+      "ebayFullName": "Cameras & Photo > Binoculars & Telescopes > Other Binoculars & Telescopes",
+      "shopifyCategoryId": "co-1-5-1",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Optic Accessories > Binocular & Monocular Accessories",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "162485",
+      "ebayFullName": "Cameras & Photo > Binoculars & Telescopes > Binocular Cases & Accessories",
+      "shopifyCategoryId": "co-1-5-2-2",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Optic Accessories > Optics Bags & Cases > Binocular Cases",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "29954",
+      "ebayFullName": "Cameras & Photo > Binoculars & Telescopes > Telescope Parts & Accessories > Telescope Eyepieces & Lenses",
+      "shopifyCategoryId": "co-1-5-5",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Optic Accessories > Telescope Accessories",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "32943",
+      "ebayFullName": "Cameras & Photo > Binoculars & Telescopes > Telescope Parts & Accessories > Telescope Cases & Bags",
+      "shopifyCategoryId": "co-1-5-2-10",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Optic Accessories > Optics Bags & Cases > Telescope Bags",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "74923",
+      "ebayFullName": "Cameras & Photo > Binoculars & Telescopes > Telescope Parts & Accessories > Telescope Filters",
+      "shopifyCategoryId": "co-1-5-5",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Optic Accessories > Telescope Accessories",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "74925",
+      "ebayFullName": "Cameras & Photo > Binoculars & Telescopes > Telescope Parts & Accessories > Telescope Mirrors & Prisms",
+      "shopifyCategoryId": "co-1-5-5",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Optic Accessories > Telescope Accessories",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "74926",
+      "ebayFullName": "Cameras & Photo > Binoculars & Telescopes > Telescope Parts & Accessories > Other Telescope Parts",
+      "shopifyCategoryId": "co-1-5-5",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Optic Accessories > Telescope Accessories",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "151236",
+      "ebayFullName": "Cameras & Photo > Binoculars & Telescopes > Telescope Parts & Accessories > Telescope Adapters",
+      "shopifyCategoryId": "co-1-5-5",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Optic Accessories > Telescope Accessories",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "167938",
+      "ebayFullName": "Cameras & Photo > Binoculars & Telescopes > Telescope Parts & Accessories > Telescope Mounts",
+      "shopifyCategoryId": "co-1-6-3",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Tripod & Monopod Accessories > Tripod Collars & Mounts",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "3319",
+      "ebayFullName": "Cameras & Photo > Video Production & Editing > Other Production & Editing",
+      "shopifyCategoryId": "el-17-6-2",
+      "shopifyFullName": "Electronics > Video > Video Editing Hardware & Production Equipment > Video Switchers & Mixers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "21168",
+      "ebayFullName": "Cameras & Photo > Video Production & Editing > Video Recorders & Players",
+      "shopifyCategoryId": "el-17-8-2-1",
+      "shopifyFullName": "Electronics > Video > Video Players & Recorders > DVD & Blu-ray Players > Portable DVD Players",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "21169",
+      "ebayFullName": "Cameras & Photo > Video Production & Editing > Distribution Switchers & Routers",
+      "shopifyCategoryId": "el-17-6-2",
+      "shopifyFullName": "Electronics > Video > Video Editing Hardware & Production Equipment > Video Switchers & Mixers",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "21517",
+      "ebayFullName": "Cameras & Photo > Video Production & Editing > Video Monitors",
+      "shopifyCategoryId": "co-1-4-21",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Camera Parts & Accessories > On-Camera Monitors",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "33513",
+      "ebayFullName": "Cameras & Photo > Video Production & Editing > Lighting for Video Production",
+      "shopifyCategoryId": "co-1-4-25",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Camera Parts & Accessories > Video Camera Lights",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "51541",
+      "ebayFullName": "Cameras & Photo > Video Production & Editing > Video Production Accessories",
+      "shopifyCategoryId": "el-17-6-1",
+      "shopifyFullName": "Electronics > Video > Video Editing Hardware & Production Equipment > Video Processors & Scalers",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "100501",
+      "ebayFullName": "Cameras & Photo > Video Production & Editing > Audio for Video",
+      "shopifyCategoryId": "el-1-6",
+      "shopifyFullName": "Electronics > Arcade Equipment > Video Game Arcade Cabinets",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "184620",
+      "ebayFullName": "Cameras & Photo > Video Production & Editing > Video Servers & Streaming Dev.",
+      "shopifyCategoryId": "el-17-9",
+      "shopifyFullName": "Electronics > Video > Video Servers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "184622",
+      "ebayFullName": "Cameras & Photo > Video Production & Editing > Signal Generators",
+      "shopifyCategoryId": "el-7-18-4",
+      "shopifyFullName": "Electronics > Electronics Accessories > Signal Jammers > Drone Jammers",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "184623",
+      "ebayFullName": "Cameras & Photo > Video Production & Editing > Production Switchers",
+      "shopifyCategoryId": "co-1-4-17",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Camera Parts & Accessories > Camera Stabilizers & Supports",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "184648",
+      "ebayFullName": "Cameras & Photo > Video Production & Editing > Converters, Scalers & Processors",
+      "shopifyCategoryId": "co-1-4-17",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Camera Parts & Accessories > Camera Stabilizers & Supports",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "185014",
+      "ebayFullName": "Cameras & Photo > Video Production & Editing > Extenders",
+      "shopifyCategoryId": "co-1-3-1",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Camera Lens Accessories > Lens & Filter Adapter Rings",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "185015",
+      "ebayFullName": "Cameras & Photo > Video Production & Editing > Production Controllers & Panels",
+      "shopifyCategoryId": "co-1-4-17",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Camera Parts & Accessories > Camera Stabilizers & Supports",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "185016",
+      "ebayFullName": "Cameras & Photo > Video Production & Editing > Waveform Monitors",
+      "shopifyCategoryId": "co-1-4-21",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Camera Parts & Accessories > On-Camera Monitors",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "18871",
+      "ebayFullName": "Cameras & Photo > Camera, Drone & Photo Accessories > Memory Cards",
+      "shopifyCategoryId": "co-1-4-4",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Camera Parts & Accessories > Camera Digital Backs",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "29967",
+      "ebayFullName": "Cameras & Photo > Camera, Drone & Photo Accessories > Battery Grips",
+      "shopifyCategoryId": "co-1-4-10-1",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Camera Parts & Accessories > Camera Grips > Battery Grips",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "29994",
+      "ebayFullName": "Cameras & Photo > Camera, Drone & Photo Accessories > Accessory Bundles",
+      "shopifyCategoryId": "co-1-4-1",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Camera Parts & Accessories > Camera Accessory Sets",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "43440",
+      "ebayFullName": "Cameras & Photo > Camera, Drone & Photo Accessories > Camera & Camcorder Lights",
+      "shopifyCategoryId": "co-1-4-25",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Camera Parts & Accessories > Video Camera Lights",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "43448",
+      "ebayFullName": "Cameras & Photo > Camera, Drone & Photo Accessories > Memory Card Readers & Adapters",
+      "shopifyCategoryId": "co-1-1-1",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Camera & Optic Replacement Cables > Component Video Cables",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "50503",
+      "ebayFullName": "Cameras & Photo > Camera, Drone & Photo Accessories > Memory Card Cases",
+      "shopifyCategoryId": "co-1-4-2-7",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Camera Parts & Accessories > Camera Bags & Cases > Camera Soft Pouches",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "50506",
+      "ebayFullName": "Cameras & Photo > Camera, Drone & Photo Accessories > Underwater Cases & Housings",
+      "shopifyCategoryId": "co-1-4-24",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Camera Parts & Accessories > Underwater Camera Housings",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "50508",
+      "ebayFullName": "Cameras & Photo > Camera, Drone & Photo Accessories > LCD Hoods",
+      "shopifyCategoryId": "co-1-4-19",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Camera Parts & Accessories > Camera Sun Hoods & Viewfinder Attachments",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "64343",
+      "ebayFullName": "Cameras & Photo > Camera, Drone & Photo Accessories > Straps & Hand Grips",
+      "shopifyCategoryId": "co-1-4-10-5",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Camera Parts & Accessories > Camera Grips > Strap Grips",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "64345",
+      "ebayFullName": "Cameras & Photo > Camera, Drone & Photo Accessories > Remotes & Shutter Releases",
+      "shopifyCategoryId": "co-1-4-13",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Camera Parts & Accessories > Camera Remote Controls",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "67339",
+      "ebayFullName": "Cameras & Photo > Camera, Drone & Photo Accessories > Camcorder Tapes & Discs",
+      "shopifyCategoryId": "co-1-4-4",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Camera Parts & Accessories > Camera Digital Backs",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "83857",
+      "ebayFullName": "Cameras & Photo > Camera, Drone & Photo Accessories > Microphones",
+      "shopifyCategoryId": "co-1-4-16",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Camera Parts & Accessories > Camera Silencers & Sound Blimps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "107894",
+      "ebayFullName": "Cameras & Photo > Camera, Drone & Photo Accessories > Cases, Bags & Covers",
+      "shopifyCategoryId": "co-1-4-2-1",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Camera Parts & Accessories > Camera Bags & Cases > Camera Backpacks",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "155707",
+      "ebayFullName": "Cameras & Photo > Camera, Drone & Photo Accessories > Cables & Adapters",
+      "shopifyCategoryId": "co-1-1-1",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Camera & Optic Replacement Cables > Component Video Cables",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "162045",
+      "ebayFullName": "Cameras & Photo > Camera, Drone & Photo Accessories > Batteries",
+      "shopifyCategoryId": "co-1-4-4",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Camera Parts & Accessories > Camera Digital Backs",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "162046",
+      "ebayFullName": "Cameras & Photo > Camera, Drone & Photo Accessories > Chargers & Cradles",
+      "shopifyCategoryId": "co-1-4-4",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Camera Parts & Accessories > Camera Digital Backs",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "162053",
+      "ebayFullName": "Cameras & Photo > Camera, Drone & Photo Accessories > Cleaning Equipment & Kits",
+      "shopifyCategoryId": "co-1-4-1",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Camera Parts & Accessories > Camera Accessory Sets",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "162480",
+      "ebayFullName": "Cameras & Photo > Camera, Drone & Photo Accessories > Other Camera & Photo Accs",
+      "shopifyCategoryId": "co-1-5-2-1",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Optic Accessories > Optics Bags & Cases > Accessory Cases",
+      "confidence": 0.6,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "167928",
+      "ebayFullName": "Cameras & Photo > Camera, Drone & Photo Accessories > Screen Protectors",
+      "shopifyCategoryId": "co-1-4-19",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Camera Parts & Accessories > Camera Sun Hoods & Viewfinder Attachments",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "167930",
+      "ebayFullName": "Cameras & Photo > Camera, Drone & Photo Accessories > Viewfinders & Eyecups",
+      "shopifyCategoryId": "co-1-4-19",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Camera Parts & Accessories > Camera Sun Hoods & Viewfinder Attachments",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182075",
+      "ebayFullName": "Cameras & Photo > Camera, Drone & Photo Accessories > Photo Albums & Storage",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "182969",
+      "ebayFullName": "Cameras & Photo > Camera, Drone & Photo Accessories > Camera Drone Accessories",
+      "shopifyCategoryId": "co-1-5-2-4",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Optic Accessories > Optics Bags & Cases > Drone Cases",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "29953",
+      "ebayFullName": "Cameras & Photo > Camera, Drone & Photo Accessories > Photo Albums & Storage > Other Photo Albums & Storage",
+      "shopifyCategoryId": "co-4-3",
+      "shopifyFullName": "Cameras & Optics > Photography > Photo Mounting Supplies",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73459",
+      "ebayFullName": "Cameras & Photo > Camera, Drone & Photo Accessories > Photo Albums & Storage > Photo Albums & Boxes",
+      "shopifyCategoryId": "co-4-3",
+      "shopifyFullName": "Cameras & Optics > Photography > Photo Mounting Supplies",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182076",
+      "ebayFullName": "Cameras & Photo > Camera, Drone & Photo Accessories > Photo Albums & Storage > Photo Pages, Sheets & Sleeves",
+      "shopifyCategoryId": "co-4-3",
+      "shopifyFullName": "Cameras & Optics > Photography > Photo Mounting Supplies",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "711",
+      "ebayFullName": "Cameras & Photo > Vintage Movie & Photography > Other Vintage Photography",
+      "shopifyCategoryId": "co-2-4-1",
+      "shopifyFullName": "Cameras & Optics > Cameras > Film Cameras > Compact Film Cameras",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "4702",
+      "ebayFullName": "Cameras & Photo > Vintage Movie & Photography > Vintage Parts & Accessories",
+      "shopifyCategoryId": "co-1-4-9",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Camera Parts & Accessories > Camera Gears",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "11722",
+      "ebayFullName": "Cameras & Photo > Vintage Movie & Photography > Vintage Projectors & Screens",
+      "shopifyCategoryId": "co-4-1-2-5",
+      "shopifyFullName": "Cameras & Optics > Photography > Darkroom > Enlarging Equipment > Photographic Enlargers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "101642",
+      "ebayFullName": "Cameras & Photo > Vintage Movie & Photography > Vintage Lenses",
+      "shopifyCategoryId": "co-1-2-1",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Camera & Video Camera Lenses > Camera Lenses",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "101643",
+      "ebayFullName": "Cameras & Photo > Vintage Movie & Photography > Vintage Cameras",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "167943",
+      "ebayFullName": "Cameras & Photo > Vintage Movie & Photography > Vintage Film",
+      "shopifyCategoryId": "co-1-4-5-1",
+      "shopifyFullName": "Cameras & Optics > Camera & Optic Accessories > Camera Parts & Accessories > Camera Film > Black & White Film",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "170067",
+      "ebayFullName": "Cameras & Photo > Vintage Movie & Photography > Vintage Manuals & Guides",
+      "shopifyCategoryId": "me-5",
+      "shopifyFullName": "Media > Product Manuals",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "4692",
+      "ebayFullName": "Cameras & Photo > Vintage Movie & Photography > Vintage Cameras > Stereo Cameras",
+      "shopifyCategoryId": "co-2-2-5",
+      "shopifyFullName": "Cameras & Optics > Cameras > Digital Cameras > Digital Single-Lens Reflex (DSLR) Cameras",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "4701",
+      "ebayFullName": "Cameras & Photo > Vintage Movie & Photography > Vintage Cameras > Other Vintage Cameras",
+      "shopifyCategoryId": "co-2-2-5",
+      "shopifyFullName": "Cameras & Optics > Cameras > Digital Cameras > Digital Single-Lens Reflex (DSLR) Cameras",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "11716",
+      "ebayFullName": "Cameras & Photo > Vintage Movie & Photography > Vintage Cameras > Box Cameras",
+      "shopifyCategoryId": "co-2-4-1",
+      "shopifyFullName": "Cameras & Optics > Cameras > Film Cameras > Compact Film Cameras",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "11717",
+      "ebayFullName": "Cameras & Photo > Vintage Movie & Photography > Vintage Cameras > Folding Cameras",
+      "shopifyCategoryId": "co-2-2-5",
+      "shopifyFullName": "Cameras & Optics > Cameras > Digital Cameras > Digital Single-Lens Reflex (DSLR) Cameras",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "11718",
+      "ebayFullName": "Cameras & Photo > Vintage Movie & Photography > Vintage Cameras > Instant Cameras",
+      "shopifyCategoryId": "co-2-4-2",
+      "shopifyFullName": "Cameras & Optics > Cameras > Film Cameras > Instant Film Cameras",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "11719",
+      "ebayFullName": "Cameras & Photo > Vintage Movie & Photography > Vintage Cameras > Movie Cameras",
+      "shopifyCategoryId": "co-2-7-5",
+      "shopifyFullName": "Cameras & Optics > Cameras > Video Cameras > Cinema Video Cameras",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "11720",
+      "ebayFullName": "Cameras & Photo > Vintage Movie & Photography > Vintage Cameras > SLR Cameras",
+      "shopifyCategoryId": "co-2-4-6",
+      "shopifyFullName": "Cameras & Optics > Cameras > Film Cameras > SLR Film Cameras",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "11721",
+      "ebayFullName": "Cameras & Photo > Vintage Movie & Photography > Vintage Cameras > TLR Cameras",
+      "shopifyCategoryId": "co-2-2-5",
+      "shopifyFullName": "Cameras & Optics > Cameras > Digital Cameras > Digital Single-Lens Reflex (DSLR) Cameras",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "98923",
+      "ebayFullName": "Cameras & Photo > Vintage Movie & Photography > Vintage Cameras > 35mm Cameras",
+      "shopifyCategoryId": "co-2-4-6",
+      "shopifyFullName": "Cameras & Optics > Cameras > Film Cameras > SLR Film Cameras",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "98924",
+      "ebayFullName": "Cameras & Photo > Vintage Movie & Photography > Vintage Cameras > Rangefinder Cameras",
+      "shopifyCategoryId": "co-2-4-5",
+      "shopifyFullName": "Cameras & Optics > Cameras > Film Cameras > Rangefinder Film Cameras",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "101644",
+      "ebayFullName": "Cameras & Photo > Vintage Movie & Photography > Vintage Cameras > Subminiature Cameras",
+      "shopifyCategoryId": "co-2-2-5",
+      "shopifyFullName": "Cameras & Optics > Cameras > Digital Cameras > Digital Single-Lens Reflex (DSLR) Cameras",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "109092",
+      "ebayFullName": "Cameras & Photo > Vintage Movie & Photography > Vintage Cameras > Disc Cameras",
+      "shopifyCategoryId": "co-2-2-5",
+      "shopifyFullName": "Cameras & Optics > Cameras > Digital Cameras > Digital Single-Lens Reflex (DSLR) Cameras",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    }
+  ]
+}

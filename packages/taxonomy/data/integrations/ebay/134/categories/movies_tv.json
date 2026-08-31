@@ -1,0 +1,79 @@
+{
+  "vertical": "Movies & TV",
+  "totalCategories": 9,
+  "leaves": 8,
+  "categories": [
+    {
+      "id": "11232",
+      "name": "Movies & TV",
+      "fullName": "Movies & TV",
+      "parentId": null,
+      "level": 1,
+      "leaf": false
+    },
+    {
+      "id": "309",
+      "name": "VHS Tapes",
+      "fullName": "Movies & TV > VHS Tapes",
+      "parentId": "11232",
+      "level": 2,
+      "leaf": true
+    },
+    {
+      "id": "381",
+      "name": "Laserdiscs",
+      "fullName": "Movies & TV > Laserdiscs",
+      "parentId": "11232",
+      "level": 2,
+      "leaf": true
+    },
+    {
+      "id": "617",
+      "name": "DVDs & Blu-ray Discs",
+      "fullName": "Movies & TV > DVDs & Blu-ray Discs",
+      "parentId": "11232",
+      "level": 2,
+      "leaf": true
+    },
+    {
+      "id": "41676",
+      "name": "Other Formats",
+      "fullName": "Movies & TV > Other Formats",
+      "parentId": "11232",
+      "level": 2,
+      "leaf": true
+    },
+    {
+      "id": "52554",
+      "name": "Video Media Accessories",
+      "fullName": "Movies & TV > Video Media Accessories",
+      "parentId": "11232",
+      "level": 2,
+      "leaf": true
+    },
+    {
+      "id": "63821",
+      "name": "Film Stock",
+      "fullName": "Movies & TV > Film Stock",
+      "parentId": "11232",
+      "level": 2,
+      "leaf": true
+    },
+    {
+      "id": "132975",
+      "name": "UMDs",
+      "fullName": "Movies & TV > UMDs",
+      "parentId": "11232",
+      "level": 2,
+      "leaf": true
+    },
+    {
+      "id": "262053",
+      "name": "Movie NFTs",
+      "fullName": "Movies & TV > Movie NFTs",
+      "parentId": "11232",
+      "level": 2,
+      "leaf": true
+    }
+  ]
+}

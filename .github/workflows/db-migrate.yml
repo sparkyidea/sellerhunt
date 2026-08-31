@@ -1,0 +1,47 @@
+# Applies committed drizzle migrations to the remote dev DB when new
+# migration files land on a deploy branch, or on demand via
+# workflow_dispatch. Local databases are unaffected — developers run
+# `bun db:migrate` themselves against localhost.
+#
+# Ordering rule: migrations apply BEFORE the code that needs them
+# deploys, so every migration must be backward-compatible with the
+# currently-deployed code (expand/contract: add before code writes,
+# drop only after no deployed code reads).
+#
+# Secrets: DATABASE_URL — the remote dev DB (same secret ops-alerts uses).
+name: DB Migrate
+
+on:
+  push:
+    branches: [dev, main]
+    paths:
+      - "packages/db/src/migrations/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# One migrator at a time — concurrent `drizzle-kit migrate` runs race on
+# the migrations ledger.
+concurrency:
+  group: db-migrate
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - uses: ./.github/actions/setup-tools
+      - name: Apply migrations
+        run: bun db:migrate
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
+      # To enforce migrate-then-deploy, turn OFF Dokploy auto-deploy for
+      # the DB-coupled apps (api, worker) and let this workflow trigger
+      # the deploy after migrations succeed:
+      # - name: Trigger Dokploy deploy
+      #   run: |
+      #     curl -fsS -X POST "${{ secrets.DOKPLOY_DEPLOY_WEBHOOK_API }}"
+      #     curl -fsS -X POST "${{ secrets.DOKPLOY_DEPLOY_WEBHOOK_WORKER }}"

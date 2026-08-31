@@ -1,0 +1,47 @@
+{
+  "name": "@dashseller/marketplace",
+  "type": "module",
+  "exports": {
+    ".": {
+      "default": "./src/index.ts"
+    },
+    "./types": {
+      "default": "./src/types.ts"
+    },
+    "./utils": {
+      "default": "./src/utils/index.ts"
+    },
+    "./utils/encrypt-secret": {
+      "default": "./src/utils/encrypt-secret.ts"
+    },
+    "./utils/decrypt-secret": {
+      "default": "./src/utils/decrypt-secret.ts"
+    },
+    "./shopify/verify-hmac": {
+      "default": "./src/adapters/shopify/auth/verify-hmac.ts"
+    }
+  },
+  "scripts": {
+    "check-types": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@dashseller/shipment-tracking": "workspace:*",
+    "@shopify/admin-api-client": "catalog:",
+    "convert-units": "catalog:",
+    "ebay-api": "catalog:",
+    "html-to-text": "catalog:",
+    "jose": "catalog:"
+  },
+  "devDependencies": {
+    "@dashseller/config": "workspace:*",
+    "@dashseller/db": "workspace:*",
+    "@types/convert-units": "catalog:",
+    "@types/html-to-text": "catalog:",
+    "dotenv": "catalog:",
+    "drizzle-orm": "catalog:",
+    "typescript": "catalog:",
+    "vitest": "catalog:"
+  }
+}

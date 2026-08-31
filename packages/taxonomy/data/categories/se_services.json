@@ -1,0 +1,674 @@
+{
+  "version": "2026-05-unstable",
+  "categories": [
+    {
+      "id": "se",
+      "level": 0,
+      "name": "Services",
+      "full_name": "Services",
+      "parent_id": null,
+      "children": [
+        {
+          "id": "se-1",
+          "name": "Automotive Services"
+        },
+        {
+          "id": "se-2",
+          "name": "Building & Construction Services"
+        },
+        {
+          "id": "se-3",
+          "name": "Business Services"
+        },
+        {
+          "id": "se-4",
+          "name": "Entertainment & Recreation Services"
+        },
+        {
+          "id": "se-8",
+          "name": "Environmental Services"
+        },
+        {
+          "id": "se-5",
+          "name": "Home Improvement Services"
+        },
+        {
+          "id": "se-6",
+          "name": "Personal Services"
+        },
+        {
+          "id": "se-7",
+          "name": "Professional Services"
+        }
+      ]
+    },
+    {
+      "id": "se-1",
+      "level": 1,
+      "name": "Automotive Services",
+      "full_name": "Services > Automotive Services",
+      "parent_id": "se",
+      "children": [
+        {
+          "id": "se-1-1",
+          "name": "Automotive Electrical Services"
+        },
+        {
+          "id": "se-1-3",
+          "name": "Car Repair & Maintenance"
+        },
+        {
+          "id": "se-1-4",
+          "name": "Car Security & Safety"
+        },
+        {
+          "id": "se-1-2",
+          "name": "Car Valeting & Detailing"
+        },
+        {
+          "id": "se-1-5",
+          "name": "Tire & Wheel Services"
+        },
+        {
+          "id": "se-1-6",
+          "name": "Vehicle Inspection"
+        }
+      ]
+    },
+    {
+      "id": "se-1-1",
+      "level": 2,
+      "name": "Automotive Electrical Services",
+      "full_name": "Services > Automotive Services > Automotive Electrical Services",
+      "parent_id": "se-1",
+      "children": []
+    },
+    {
+      "id": "se-1-3",
+      "level": 2,
+      "name": "Car Repair & Maintenance",
+      "full_name": "Services > Automotive Services > Car Repair & Maintenance",
+      "parent_id": "se-1",
+      "children": []
+    },
+    {
+      "id": "se-1-4",
+      "level": 2,
+      "name": "Car Security & Safety",
+      "full_name": "Services > Automotive Services > Car Security & Safety",
+      "parent_id": "se-1",
+      "children": []
+    },
+    {
+      "id": "se-1-2",
+      "level": 2,
+      "name": "Car Valeting & Detailing",
+      "full_name": "Services > Automotive Services > Car Valeting & Detailing",
+      "parent_id": "se-1",
+      "children": []
+    },
+    {
+      "id": "se-1-5",
+      "level": 2,
+      "name": "Tire & Wheel Services",
+      "full_name": "Services > Automotive Services > Tire & Wheel Services",
+      "parent_id": "se-1",
+      "children": []
+    },
+    {
+      "id": "se-1-6",
+      "level": 2,
+      "name": "Vehicle Inspection",
+      "full_name": "Services > Automotive Services > Vehicle Inspection",
+      "parent_id": "se-1",
+      "children": []
+    },
+    {
+      "id": "se-2",
+      "level": 1,
+      "name": "Building & Construction Services",
+      "full_name": "Services > Building & Construction Services",
+      "parent_id": "se",
+      "children": [
+        {
+          "id": "se-2-1",
+          "name": "Commercial Construction"
+        },
+        {
+          "id": "se-2-2",
+          "name": "Outdoor Construction"
+        },
+        {
+          "id": "se-2-3",
+          "name": "Residential Construction & Renovation"
+        },
+        {
+          "id": "se-2-4",
+          "name": "Specialized Construction Services"
+        }
+      ]
+    },
+    {
+      "id": "se-2-1",
+      "level": 2,
+      "name": "Commercial Construction",
+      "full_name": "Services > Building & Construction Services > Commercial Construction",
+      "parent_id": "se-2",
+      "children": []
+    },
+    {
+      "id": "se-2-2",
+      "level": 2,
+      "name": "Outdoor Construction",
+      "full_name": "Services > Building & Construction Services > Outdoor Construction",
+      "parent_id": "se-2",
+      "children": []
+    },
+    {
+      "id": "se-2-3",
+      "level": 2,
+      "name": "Residential Construction & Renovation",
+      "full_name": "Services > Building & Construction Services > Residential Construction & Renovation",
+      "parent_id": "se-2",
+      "children": []
+    },
+    {
+      "id": "se-2-4",
+      "level": 2,
+      "name": "Specialized Construction Services",
+      "full_name": "Services > Building & Construction Services > Specialized Construction Services",
+      "parent_id": "se-2",
+      "children": [
+        {
+          "id": "se-2-4-1",
+          "name": "Carpentry"
+        },
+        {
+          "id": "se-2-4-2",
+          "name": "Concrete & Foundations"
+        },
+        {
+          "id": "se-2-4-3",
+          "name": "Roofing & Guttering"
+        }
+      ]
+    },
+    {
+      "id": "se-2-4-1",
+      "level": 3,
+      "name": "Carpentry",
+      "full_name": "Services > Building & Construction Services > Specialized Construction Services > Carpentry",
+      "parent_id": "se-2-4",
+      "children": []
+    },
+    {
+      "id": "se-2-4-2",
+      "level": 3,
+      "name": "Concrete & Foundations",
+      "full_name": "Services > Building & Construction Services > Specialized Construction Services > Concrete & Foundations",
+      "parent_id": "se-2-4",
+      "children": []
+    },
+    {
+      "id": "se-2-4-3",
+      "level": 3,
+      "name": "Roofing & Guttering",
+      "full_name": "Services > Building & Construction Services > Specialized Construction Services > Roofing & Guttering",
+      "parent_id": "se-2-4",
+      "children": []
+    },
+    {
+      "id": "se-3",
+      "level": 1,
+      "name": "Business Services",
+      "full_name": "Services > Business Services",
+      "parent_id": "se",
+      "children": [
+        {
+          "id": "se-3-1",
+          "name": "Human Resources & Payroll"
+        },
+        {
+          "id": "se-3-2",
+          "name": "Logistics & Removals"
+        },
+        {
+          "id": "se-3-3",
+          "name": "Office Services"
+        },
+        {
+          "id": "se-3-4",
+          "name": "Security Services"
+        }
+      ]
+    },
+    {
+      "id": "se-3-1",
+      "level": 2,
+      "name": "Human Resources & Payroll",
+      "full_name": "Services > Business Services > Human Resources & Payroll",
+      "parent_id": "se-3",
+      "children": []
+    },
+    {
+      "id": "se-3-2",
+      "level": 2,
+      "name": "Logistics & Removals",
+      "full_name": "Services > Business Services > Logistics & Removals",
+      "parent_id": "se-3",
+      "children": []
+    },
+    {
+      "id": "se-3-3",
+      "level": 2,
+      "name": "Office Services",
+      "full_name": "Services > Business Services > Office Services",
+      "parent_id": "se-3",
+      "children": [
+        {
+          "id": "se-3-3-1",
+          "name": "Printing & Custom Print Services"
+        }
+      ]
+    },
+    {
+      "id": "se-3-3-1",
+      "level": 3,
+      "name": "Printing & Custom Print Services",
+      "full_name": "Services > Business Services > Office Services > Printing & Custom Print Services",
+      "parent_id": "se-3-3",
+      "children": []
+    },
+    {
+      "id": "se-3-4",
+      "level": 2,
+      "name": "Security Services",
+      "full_name": "Services > Business Services > Security Services",
+      "parent_id": "se-3",
+      "children": []
+    },
+    {
+      "id": "se-4",
+      "level": 1,
+      "name": "Entertainment & Recreation Services",
+      "full_name": "Services > Entertainment & Recreation Services",
+      "parent_id": "se",
+      "children": [
+        {
+          "id": "se-4-5",
+          "name": "Children Activities"
+        },
+        {
+          "id": "se-4-1",
+          "name": "Concerts & Entertainment Events"
+        },
+        {
+          "id": "se-4-3",
+          "name": "Event Planning"
+        },
+        {
+          "id": "se-4-6",
+          "name": "Indoor Activities"
+        },
+        {
+          "id": "se-4-7",
+          "name": "Outdoor Activities"
+        },
+        {
+          "id": "se-4-4",
+          "name": "Travel & Leisure"
+        }
+      ]
+    },
+    {
+      "id": "se-4-5",
+      "level": 2,
+      "name": "Children Activities",
+      "full_name": "Services > Entertainment & Recreation Services > Children Activities",
+      "parent_id": "se-4",
+      "children": []
+    },
+    {
+      "id": "se-4-1",
+      "level": 2,
+      "name": "Concerts & Entertainment Events",
+      "full_name": "Services > Entertainment & Recreation Services > Concerts & Entertainment Events",
+      "parent_id": "se-4",
+      "children": []
+    },
+    {
+      "id": "se-4-3",
+      "level": 2,
+      "name": "Event Planning",
+      "full_name": "Services > Entertainment & Recreation Services > Event Planning",
+      "parent_id": "se-4",
+      "children": []
+    },
+    {
+      "id": "se-4-6",
+      "level": 2,
+      "name": "Indoor Activities",
+      "full_name": "Services > Entertainment & Recreation Services > Indoor Activities",
+      "parent_id": "se-4",
+      "children": []
+    },
+    {
+      "id": "se-4-7",
+      "level": 2,
+      "name": "Outdoor Activities",
+      "full_name": "Services > Entertainment & Recreation Services > Outdoor Activities",
+      "parent_id": "se-4",
+      "children": []
+    },
+    {
+      "id": "se-4-4",
+      "level": 2,
+      "name": "Travel & Leisure",
+      "full_name": "Services > Entertainment & Recreation Services > Travel & Leisure",
+      "parent_id": "se-4",
+      "children": [
+        {
+          "id": "se-4-4-1",
+          "name": "Public Transport Tickets & Passes"
+        }
+      ]
+    },
+    {
+      "id": "se-4-4-1",
+      "level": 3,
+      "name": "Public Transport Tickets & Passes",
+      "full_name": "Services > Entertainment & Recreation Services > Travel & Leisure > Public Transport Tickets & Passes",
+      "parent_id": "se-4-4",
+      "children": []
+    },
+    {
+      "id": "se-8",
+      "level": 1,
+      "name": "Environmental Services",
+      "full_name": "Services > Environmental Services",
+      "parent_id": "se",
+      "children": [
+        {
+          "id": "se-8-1",
+          "name": "Waste Management Services"
+        }
+      ]
+    },
+    {
+      "id": "se-8-1",
+      "level": 2,
+      "name": "Waste Management Services",
+      "full_name": "Services > Environmental Services > Waste Management Services",
+      "parent_id": "se-8",
+      "children": []
+    },
+    {
+      "id": "se-5",
+      "level": 1,
+      "name": "Home Improvement Services",
+      "full_name": "Services > Home Improvement Services",
+      "parent_id": "se",
+      "children": [
+        {
+          "id": "se-5-1",
+          "name": "Electrical Services"
+        },
+        {
+          "id": "se-5-2",
+          "name": "Outdoor Services"
+        },
+        {
+          "id": "se-5-3",
+          "name": "Plumbing"
+        },
+        {
+          "id": "se-5-4",
+          "name": "Specialized Home Services"
+        }
+      ]
+    },
+    {
+      "id": "se-5-1",
+      "level": 2,
+      "name": "Electrical Services",
+      "full_name": "Services > Home Improvement Services > Electrical Services",
+      "parent_id": "se-5",
+      "children": []
+    },
+    {
+      "id": "se-5-2",
+      "level": 2,
+      "name": "Outdoor Services",
+      "full_name": "Services > Home Improvement Services > Outdoor Services",
+      "parent_id": "se-5",
+      "children": []
+    },
+    {
+      "id": "se-5-3",
+      "level": 2,
+      "name": "Plumbing",
+      "full_name": "Services > Home Improvement Services > Plumbing",
+      "parent_id": "se-5",
+      "children": []
+    },
+    {
+      "id": "se-5-4",
+      "level": 2,
+      "name": "Specialized Home Services",
+      "full_name": "Services > Home Improvement Services > Specialized Home Services",
+      "parent_id": "se-5",
+      "children": []
+    },
+    {
+      "id": "se-6",
+      "level": 1,
+      "name": "Personal Services",
+      "full_name": "Services > Personal Services",
+      "parent_id": "se",
+      "children": [
+        {
+          "id": "se-6-1",
+          "name": "Beauty & Personal Care"
+        },
+        {
+          "id": "se-6-7",
+          "name": "Clothing Alterations"
+        },
+        {
+          "id": "se-6-2",
+          "name": "Educational Services"
+        },
+        {
+          "id": "se-6-6",
+          "name": "Fitness & Wellness"
+        },
+        {
+          "id": "se-6-3",
+          "name": "Healthcare Services"
+        },
+        {
+          "id": "se-6-4",
+          "name": "Lifestyle Services"
+        }
+      ]
+    },
+    {
+      "id": "se-6-1",
+      "level": 2,
+      "name": "Beauty & Personal Care",
+      "full_name": "Services > Personal Services > Beauty & Personal Care",
+      "parent_id": "se-6",
+      "children": []
+    },
+    {
+      "id": "se-6-7",
+      "level": 2,
+      "name": "Clothing Alterations",
+      "full_name": "Services > Personal Services > Clothing Alterations",
+      "parent_id": "se-6",
+      "children": []
+    },
+    {
+      "id": "se-6-2",
+      "level": 2,
+      "name": "Educational Services",
+      "full_name": "Services > Personal Services > Educational Services",
+      "parent_id": "se-6",
+      "children": []
+    },
+    {
+      "id": "se-6-6",
+      "level": 2,
+      "name": "Fitness & Wellness",
+      "full_name": "Services > Personal Services > Fitness & Wellness",
+      "parent_id": "se-6",
+      "children": [
+        {
+          "id": "se-6-6-1",
+          "name": "Fitness & Workout Programs"
+        },
+        {
+          "id": "se-6-6-2",
+          "name": "Weight Loss Programs & Coaching"
+        }
+      ]
+    },
+    {
+      "id": "se-6-6-1",
+      "level": 3,
+      "name": "Fitness & Workout Programs",
+      "full_name": "Services > Personal Services > Fitness & Wellness > Fitness & Workout Programs",
+      "parent_id": "se-6-6",
+      "children": []
+    },
+    {
+      "id": "se-6-6-2",
+      "level": 3,
+      "name": "Weight Loss Programs & Coaching",
+      "full_name": "Services > Personal Services > Fitness & Wellness > Weight Loss Programs & Coaching",
+      "parent_id": "se-6-6",
+      "children": []
+    },
+    {
+      "id": "se-6-3",
+      "level": 2,
+      "name": "Healthcare Services",
+      "full_name": "Services > Personal Services > Healthcare Services",
+      "parent_id": "se-6",
+      "children": []
+    },
+    {
+      "id": "se-6-4",
+      "level": 2,
+      "name": "Lifestyle Services",
+      "full_name": "Services > Personal Services > Lifestyle Services",
+      "parent_id": "se-6",
+      "children": []
+    },
+    {
+      "id": "se-7",
+      "level": 1,
+      "name": "Professional Services",
+      "full_name": "Services > Professional Services",
+      "parent_id": "se",
+      "children": [
+        {
+          "id": "se-7-1",
+          "name": "Consulting Services"
+        },
+        {
+          "id": "se-7-2",
+          "name": "Finance & Insurance"
+        },
+        {
+          "id": "se-7-3",
+          "name": "IT & Technology"
+        },
+        {
+          "id": "se-7-4",
+          "name": "Legal Services"
+        },
+        {
+          "id": "se-7-5",
+          "name": "Marketing & Advertising"
+        },
+        {
+          "id": "se-7-8",
+          "name": "Property Management"
+        },
+        {
+          "id": "se-7-6",
+          "name": "Real Estate"
+        },
+        {
+          "id": "se-7-9",
+          "name": "Tax Services"
+        }
+      ]
+    },
+    {
+      "id": "se-7-1",
+      "level": 2,
+      "name": "Consulting Services",
+      "full_name": "Services > Professional Services > Consulting Services",
+      "parent_id": "se-7",
+      "children": []
+    },
+    {
+      "id": "se-7-2",
+      "level": 2,
+      "name": "Finance & Insurance",
+      "full_name": "Services > Professional Services > Finance & Insurance",
+      "parent_id": "se-7",
+      "children": []
+    },
+    {
+      "id": "se-7-3",
+      "level": 2,
+      "name": "IT & Technology",
+      "full_name": "Services > Professional Services > IT & Technology",
+      "parent_id": "se-7",
+      "children": []
+    },
+    {
+      "id": "se-7-4",
+      "level": 2,
+      "name": "Legal Services",
+      "full_name": "Services > Professional Services > Legal Services",
+      "parent_id": "se-7",
+      "children": []
+    },
+    {
+      "id": "se-7-5",
+      "level": 2,
+      "name": "Marketing & Advertising",
+      "full_name": "Services > Professional Services > Marketing & Advertising",
+      "parent_id": "se-7",
+      "children": []
+    },
+    {
+      "id": "se-7-8",
+      "level": 2,
+      "name": "Property Management",
+      "full_name": "Services > Professional Services > Property Management",
+      "parent_id": "se-7",
+      "children": []
+    },
+    {
+      "id": "se-7-6",
+      "level": 2,
+      "name": "Real Estate",
+      "full_name": "Services > Professional Services > Real Estate",
+      "parent_id": "se-7",
+      "children": []
+    },
+    {
+      "id": "se-7-9",
+      "level": 2,
+      "name": "Tax Services",
+      "full_name": "Services > Professional Services > Tax Services",
+      "parent_id": "se-7",
+      "children": []
+    }
+  ]
+}

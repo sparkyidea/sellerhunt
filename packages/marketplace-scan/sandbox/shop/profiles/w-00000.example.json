@@ -1,0 +1,5 @@
+{
+  "deviceId": "<per-install UUID — sent as x-device-id>",
+  "deviceIdHw": "<hardware UUID, Apple uppercase — sent as x-device-id-hw>",
+  "deviceName": "Apple iPhone XR"
+}

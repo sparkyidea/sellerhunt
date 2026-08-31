@@ -1,0 +1,63 @@
+{
+  "vertical": "Real Estate",
+  "totalCategories": 7,
+  "leaves": 6,
+  "categories": [
+    {
+      "id": "10542",
+      "name": "Real Estate",
+      "fullName": "Real Estate",
+      "parentId": null,
+      "level": 1,
+      "leaf": false
+    },
+    {
+      "id": "1607",
+      "name": "Other Real Estate",
+      "fullName": "Real Estate > Other Real Estate",
+      "parentId": "10542",
+      "level": 2,
+      "leaf": true
+    },
+    {
+      "id": "12605",
+      "name": "Residential",
+      "fullName": "Real Estate > Residential",
+      "parentId": "10542",
+      "level": 2,
+      "leaf": true
+    },
+    {
+      "id": "15825",
+      "name": "Commercial",
+      "fullName": "Real Estate > Commercial",
+      "parentId": "10542",
+      "level": 2,
+      "leaf": true
+    },
+    {
+      "id": "15841",
+      "name": "Land",
+      "fullName": "Real Estate > Land",
+      "parentId": "10542",
+      "level": 2,
+      "leaf": true
+    },
+    {
+      "id": "15897",
+      "name": "Timeshares for Sale",
+      "fullName": "Real Estate > Timeshares for Sale",
+      "parentId": "10542",
+      "level": 2,
+      "leaf": true
+    },
+    {
+      "id": "94825",
+      "name": "Manufactured Homes",
+      "fullName": "Real Estate > Manufactured Homes",
+      "parentId": "10542",
+      "level": 2,
+      "leaf": true
+    }
+  ]
+}

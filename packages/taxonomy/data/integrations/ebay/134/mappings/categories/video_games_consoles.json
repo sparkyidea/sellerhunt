@@ -1,0 +1,241 @@
+{
+  "ebayCategory": "Video Games & Consoles",
+  "shopifyCategories": ["Electronics", "Toys & Games"],
+  "totalMapped": 29,
+  "highConfidence": 25,
+  "lowConfidence": 0,
+  "mappings": [
+    {
+      "ebayId": "1249",
+      "ebayFullName": "Video Games & Consoles",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "38583",
+      "ebayFullName": "Video Games & Consoles > Video Game Merchandise",
+      "shopifyCategoryId": "el-18-6",
+      "shopifyFullName": "Electronics > Video Game Console Accessories > Interactive Gaming Figures",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "54968",
+      "ebayFullName": "Video Games & Consoles > Video Game Accessories",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "139971",
+      "ebayFullName": "Video Games & Consoles > Video Game Consoles",
+      "shopifyCategoryId": "el-19-2",
+      "shopifyFullName": "Electronics > Video Game Consoles > Home Game Consoles",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "139973",
+      "ebayFullName": "Video Games & Consoles > Video Games",
+      "shopifyCategoryId": "so-3-2",
+      "shopifyFullName": "Software > Video Game Software > Physical Video Games",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "156595",
+      "ebayFullName": "Video Games & Consoles > Strategy Guides & Cheats",
+      "shopifyCategoryId": "el-19-2",
+      "shopifyFullName": "Electronics > Video Game Consoles > Home Game Consoles",
+      "confidence": 0.6,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "156597",
+      "ebayFullName": "Video Games & Consoles > Prepaid Gaming Cards",
+      "shopifyCategoryId": "gc",
+      "shopifyFullName": "Gift Cards",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "171833",
+      "ebayFullName": "Video Games & Consoles > Replacement Parts & Tools",
+      "shopifyCategoryId": "el-18-3-8",
+      "shopifyFullName": "Electronics > Video Game Console Accessories > Home Game Console Accessories > Home Game Console Replacement Parts",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182174",
+      "ebayFullName": "Video Games & Consoles > Manuals, Inserts & Box Art",
+      "shopifyCategoryId": "el-1-5-6",
+      "shopifyFullName": "Electronics > Arcade Equipment > Video Game Arcade Cabinet Accessories > Arcade Cabinet Artwork",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182175",
+      "ebayFullName": "Video Games & Consoles > Original Game Cases & Boxes",
+      "shopifyCategoryId": "el-18-3-3",
+      "shopifyFullName": "Electronics > Video Game Console Accessories > Home Game Console Accessories > Home Game Console Cases & Storage",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260000",
+      "ebayFullName": "Video Games & Consoles > Mixed Lots",
+      "shopifyCategoryId": "so-3-2",
+      "shopifyFullName": "Software > Video Game Software > Physical Video Games",
+      "confidence": 0.6,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "49230",
+      "ebayFullName": "Video Games & Consoles > Video Game Accessories > Other Video Game Accessories",
+      "shopifyCategoryId": "el-18-3-3",
+      "shopifyFullName": "Electronics > Video Game Console Accessories > Home Game Console Accessories > Home Game Console Cases & Storage",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "117042",
+      "ebayFullName": "Video Games & Consoles > Video Game Accessories > Controllers & Attachments",
+      "shopifyCategoryId": "el-18-9",
+      "shopifyFullName": "Electronics > Video Game Console Accessories > Virtual Reality Headset Accessories",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "117044",
+      "ebayFullName": "Video Games & Consoles > Video Game Accessories > Motion Sensors & Cameras",
+      "shopifyCategoryId": "ha-15-36-20-2",
+      "shopifyFullName": "Hardware > Tools > Measuring Tools & Sensors > Moisture Meters > Pinless Meters",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "117045",
+      "ebayFullName": "Video Games & Consoles > Video Game Accessories > Memory Cards & Expansion Packs",
+      "shopifyCategoryId": "el-18-3-5",
+      "shopifyFullName": "Electronics > Video Game Console Accessories > Home Game Console Accessories > Home Game Console Memory & Storage Devices",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "171668",
+      "ebayFullName": "Video Games & Consoles > Video Game Accessories > Faceplates, Decals & Stickers",
+      "shopifyCategoryId": "el-18-3-2",
+      "shopifyFullName": "Electronics > Video Game Console Accessories > Home Game Console Accessories > Home Game Console Skins",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "171813",
+      "ebayFullName": "Video Games & Consoles > Video Game Accessories > Batteries",
+      "shopifyCategoryId": "el-7-15-1-12",
+      "shopifyFullName": "Electronics > Electronics Accessories > Power > Batteries > Video Game Console & Controller Batteries",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "171814",
+      "ebayFullName": "Video Games & Consoles > Video Game Accessories > Cables & Adapters",
+      "shopifyCategoryId": "el-18-8",
+      "shopifyFullName": "Electronics > Video Game Console Accessories > Video Game Console Cables",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "171820",
+      "ebayFullName": "Video Games & Consoles > Video Game Accessories > Hard Drives",
+      "shopifyCategoryId": "el-18-3-5",
+      "shopifyFullName": "Electronics > Video Game Console Accessories > Home Game Console Accessories > Home Game Console Memory & Storage Devices",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "171821",
+      "ebayFullName": "Video Games & Consoles > Video Game Accessories > Headsets",
+      "shopifyCategoryId": "el-2-2-7-2-2",
+      "shopifyFullName": "Electronics > Audio > Audio Components > Headphones & Headsets > Headsets > Gaming Headsets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "171826",
+      "ebayFullName": "Video Games & Consoles > Video Game Accessories > Accessory Bundles",
+      "shopifyCategoryId": "el-18-3-3",
+      "shopifyFullName": "Electronics > Video Game Console Accessories > Home Game Console Accessories > Home Game Console Cases & Storage",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "171831",
+      "ebayFullName": "Video Games & Consoles > Video Game Accessories > Bags, Skins & Travel Cases",
+      "shopifyCategoryId": "el-18-4-1",
+      "shopifyFullName": "Electronics > Video Game Console Accessories > Portable Game Console Accessories > Portable Game Console Cases",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "171837",
+      "ebayFullName": "Video Games & Consoles > Video Game Accessories > Screen Protectors",
+      "shopifyCategoryId": "el-18-4-2",
+      "shopifyFullName": "Electronics > Video Game Console Accessories > Portable Game Console Accessories > Portable Game Console Screen Protectors",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "171839",
+      "ebayFullName": "Video Games & Consoles > Video Game Accessories > Styluses",
+      "shopifyCategoryId": "el-18-4-8",
+      "shopifyFullName": "Electronics > Video Game Console Accessories > Portable Game Console Accessories > Portable Game Console Stylus Pens",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "171858",
+      "ebayFullName": "Video Games & Consoles > Video Game Accessories > Chargers & Charging Docks",
+      "shopifyCategoryId": "el-18-1",
+      "shopifyFullName": "Electronics > Video Game Console Accessories > Charging Docks",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "171898",
+      "ebayFullName": "Video Games & Consoles > Video Game Accessories > Cooling Devices",
+      "shopifyCategoryId": "el-7-9-7-3",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Computer System Cooling Parts > CPU Air Coolers & Heat Sinks",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "172510",
+      "ebayFullName": "Video Games & Consoles > Video Game Accessories > Keyboards & Keypads",
+      "shopifyCategoryId": "el-7-9-12-8-1",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Input Devices > Keyboards > Barebones Keyboards",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182179",
+      "ebayFullName": "Video Games & Consoles > Video Game Accessories > Mounts & Stands",
+      "shopifyCategoryId": "el-18-3-6",
+      "shopifyFullName": "Electronics > Video Game Console Accessories > Home Game Console Accessories > Home Game Console Stands & Mounts",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182180",
+      "ebayFullName": "Video Games & Consoles > Video Game Accessories > Toys to Life",
+      "shopifyCategoryId": "el-18-6",
+      "shopifyFullName": "Electronics > Video Game Console Accessories > Interactive Gaming Figures",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    }
+  ]
+}

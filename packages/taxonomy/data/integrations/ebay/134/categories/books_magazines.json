@@ -1,0 +1,151 @@
+{
+  "vertical": "Books & Magazines",
+  "totalCategories": 18,
+  "leaves": 15,
+  "categories": [
+    {
+      "id": "267",
+      "name": "Books & Magazines",
+      "fullName": "Books & Magazines",
+      "parentId": null,
+      "level": 1,
+      "leaf": false
+    },
+    {
+      "id": "280",
+      "name": "Magazines",
+      "fullName": "Books & Magazines > Magazines",
+      "parentId": "267",
+      "level": 2,
+      "leaf": true
+    },
+    {
+      "id": "29223",
+      "name": "Antiquarian & Collectible",
+      "fullName": "Books & Magazines > Antiquarian & Collectible",
+      "parentId": "267",
+      "level": 2,
+      "leaf": true
+    },
+    {
+      "id": "29792",
+      "name": "Audiobooks",
+      "fullName": "Books & Magazines > Audiobooks",
+      "parentId": "267",
+      "level": 2,
+      "leaf": true
+    },
+    {
+      "id": "45110",
+      "name": "Accessories",
+      "fullName": "Books & Magazines > Accessories",
+      "parentId": "267",
+      "level": 2,
+      "leaf": false
+    },
+    {
+      "id": "118254",
+      "name": "Catalogs",
+      "fullName": "Books & Magazines > Catalogs",
+      "parentId": "267",
+      "level": 2,
+      "leaf": true
+    },
+    {
+      "id": "184644",
+      "name": "Textbooks, Education & Reference",
+      "fullName": "Books & Magazines > Textbooks, Education & Reference",
+      "parentId": "267",
+      "level": 2,
+      "leaf": false
+    },
+    {
+      "id": "261186",
+      "name": "Books",
+      "fullName": "Books & Magazines > Books",
+      "parentId": "267",
+      "level": 2,
+      "leaf": true
+    },
+    {
+      "id": "1105",
+      "name": "Textbooks",
+      "fullName": "Books & Magazines > Textbooks, Education & Reference > Textbooks",
+      "parentId": "184644",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "11442",
+      "name": "Language Courses",
+      "fullName": "Books & Magazines > Textbooks, Education & Reference > Language Courses",
+      "parentId": "184644",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "69496",
+      "name": "Maps & Atlases",
+      "fullName": "Books & Magazines > Textbooks, Education & Reference > Maps & Atlases",
+      "parentId": "184644",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "171223",
+      "name": "Study Guides & Test Prep",
+      "fullName": "Books & Magazines > Textbooks, Education & Reference > Study Guides & Test Prep",
+      "parentId": "184644",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "171273",
+      "name": "Dictionaries & Reference",
+      "fullName": "Books & Magazines > Textbooks, Education & Reference > Dictionaries & Reference",
+      "parentId": "184644",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "45113",
+      "name": "Book Covers",
+      "fullName": "Books & Magazines > Accessories > Book Covers",
+      "parentId": "45110",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "45114",
+      "name": "Bookmarks",
+      "fullName": "Books & Magazines > Accessories > Bookmarks",
+      "parentId": "45110",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "48831",
+      "name": "Book Plates",
+      "fullName": "Books & Magazines > Accessories > Book Plates",
+      "parentId": "45110",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "120869",
+      "name": "Book Lights",
+      "fullName": "Books & Magazines > Accessories > Book Lights",
+      "parentId": "45110",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "162028",
+      "name": "Book Stands & Holders",
+      "fullName": "Books & Magazines > Accessories > Book Stands & Holders",
+      "parentId": "45110",
+      "level": 3,
+      "leaf": true
+    }
+  ]
+}

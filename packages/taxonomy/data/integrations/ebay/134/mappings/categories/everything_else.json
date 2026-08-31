@@ -1,0 +1,2689 @@
+{
+  "ebayCategory": "Everything Else",
+  "shopifyCategories": ["Uncategorized"],
+  "totalMapped": 335,
+  "highConfidence": 69,
+  "lowConfidence": 220,
+  "mappings": [
+    {
+      "ebayId": "99",
+      "ebayFullName": "Everything Else",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "1466",
+      "ebayFullName": "Everything Else > Weird Stuff",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "3143",
+      "ebayFullName": "Everything Else > Career Development & Education",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "14112",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "19266",
+      "ebayFullName": "Everything Else > Metaphysical",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "20924",
+      "ebayFullName": "Everything Else > eBay User Tools",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.3,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "20925",
+      "ebayFullName": "Everything Else > Genealogy",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "88433",
+      "ebayFullName": "Everything Else > Every Other Thing",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.3,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "88739",
+      "ebayFullName": "Everything Else > Funeral & Cemetery",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "102329",
+      "ebayFullName": "Everything Else > Personal Development",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "102480",
+      "ebayFullName": "Everything Else > Information Products",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "102535",
+      "ebayFullName": "Everything Else > Personal Security",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "102545",
+      "ebayFullName": "Everything Else > Religious Products & Supplies",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "102553",
+      "ebayFullName": "Everything Else > Reward Points & Incentives",
+      "shopifyCategoryId": "aa-1-25-1-11",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Bottoms > Skirts",
+      "confidence": 0.4,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "177600",
+      "ebayFullName": "Everything Else > eBay Special Offers",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "183627",
+      "ebayFullName": "Everything Else > LP Parent",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "178211",
+      "ebayFullName": "Everything Else > LP Parent > LL Child Revived 2",
+      "shopifyCategoryId": "ae-2-5",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Magic & Novelties",
+      "confidence": 0.3,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "183625",
+      "ebayFullName": "Everything Else > LP Parent > LL Child Revived 1",
+      "shopifyCategoryId": "ae-2-5",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Magic & Novelties",
+      "confidence": 0.3,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "184770",
+      "ebayFullName": "Everything Else > LP Parent > LL Child New 2",
+      "shopifyCategoryId": "ae-2-5",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Magic & Novelties",
+      "confidence": 0.3,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "177601",
+      "ebayFullName": "Everything Else > eBay Special Offers > eBay Special Offer 1",
+      "shopifyCategoryId": "ae-3-2-22",
+      "shopifyFullName": "Arts & Entertainment > Party & Celebration > Party Supplies > Party Supply Kits",
+      "confidence": 0.4,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "177602",
+      "ebayFullName": "Everything Else > eBay Special Offers > Gifts that Give Back",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.4,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "177603",
+      "ebayFullName": "Everything Else > eBay Special Offers > eBay Special Offer 3",
+      "shopifyCategoryId": "ae-3-2-22",
+      "shopifyFullName": "Arts & Entertainment > Party & Celebration > Party Supplies > Party Supply Kits",
+      "confidence": 0.4,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "16710",
+      "ebayFullName": "Everything Else > Religious Products & Supplies > Other Religious Supplies",
+      "shopifyCategoryId": "rc-1-1",
+      "shopifyFullName": "Religious & Ceremonial > Memorial Ceremony Supplies > Memorial Urns",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "102546",
+      "ebayFullName": "Everything Else > Religious Products & Supplies > Art",
+      "shopifyCategoryId": "hg-3-4-2-4",
+      "shopifyFullName": "Home & Garden > Decor > Artwork > Posters, Prints, & Visual Artwork > Paintings",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "102547",
+      "ebayFullName": "Everything Else > Religious Products & Supplies > Clothing",
+      "shopifyCategoryId": "aa-1-13-8",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Clothing Tops > T-Shirts",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "102548",
+      "ebayFullName": "Everything Else > Religious Products & Supplies > Communion Accessories",
+      "shopifyCategoryId": "rc-1-1",
+      "shopifyFullName": "Religious & Ceremonial > Memorial Ceremony Supplies > Memorial Urns",
+      "confidence": 0.75,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "102549",
+      "ebayFullName": "Everything Else > Religious Products & Supplies > Crosses",
+      "shopifyCategoryId": "rc-1-1",
+      "shopifyFullName": "Religious & Ceremonial > Memorial Ceremony Supplies > Memorial Urns",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "102550",
+      "ebayFullName": "Everything Else > Religious Products & Supplies > Jewelry",
+      "shopifyCategoryId": "aa-6-1",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Anklets",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "102551",
+      "ebayFullName": "Everything Else > Religious Products & Supplies > Judaica",
+      "shopifyCategoryId": "rc-1-1",
+      "shopifyFullName": "Religious & Ceremonial > Memorial Ceremony Supplies > Memorial Urns",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "102552",
+      "ebayFullName": "Everything Else > Religious Products & Supplies > Rosaries",
+      "shopifyCategoryId": "rc-2-1",
+      "shopifyFullName": "Religious & Ceremonial > Religious Items > Prayer Beads",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "116118",
+      "ebayFullName": "Everything Else > Religious Products & Supplies > Bibles Covers & Accessories",
+      "shopifyCategoryId": "os-1-1",
+      "shopifyFullName": "Office Supplies > Book Accessories > Book Covers",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "116119",
+      "ebayFullName": "Everything Else > Religious Products & Supplies > Educational Materials",
+      "shopifyCategoryId": "me-5",
+      "shopifyFullName": "Media > Product Manuals",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "3204",
+      "ebayFullName": "Everything Else > Personal Security > Other Personal Security",
+      "shopifyCategoryId": "hg-2-2",
+      "shopifyFullName": "Home & Garden > Business & Home Security > Home Alarm Systems",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "79849",
+      "ebayFullName": "Everything Else > Personal Security > Pepper Spray",
+      "shopifyCategoryId": "ma-2-2-4",
+      "shopifyFullName": "Mature > Weapons & Weapon Accessories > Weapons > Mace & Pepper Spray",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "79850",
+      "ebayFullName": "Everything Else > Personal Security > Stun Guns",
+      "shopifyCategoryId": "ma-2-2-8",
+      "shopifyFullName": "Mature > Weapons & Weapon Accessories > Weapons > Stun Guns & Tasers",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "102538",
+      "ebayFullName": "Everything Else > Personal Security > Handcuffs",
+      "shopifyCategoryId": "bi-16-1-1",
+      "shopifyFullName": "Business & Industrial > Law Enforcement > Cuffs > Chain Link Cuffs",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "102542",
+      "ebayFullName": "Everything Else > Personal Security > Safes",
+      "shopifyCategoryId": "hg-2-8-1",
+      "shopifyFullName": "Home & Garden > Business & Home Security > Security Safes > Fireproof Safes",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "102543",
+      "ebayFullName": "Everything Else > Personal Security > Surveillance Cameras",
+      "shopifyCategoryId": "co-2-6",
+      "shopifyFullName": "Cameras & Optics > Cameras > Trail Cameras",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "47103",
+      "ebayFullName": "Everything Else > Information Products > Other Information Products",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.4,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "102481",
+      "ebayFullName": "Everything Else > Information Products > How-To Guides",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "102487",
+      "ebayFullName": "Everything Else > Information Products > Wholesale Lists",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "102488",
+      "ebayFullName": "Everything Else > Information Products > Wholesale Lists > Bikes, Scooters",
+      "shopifyCategoryId": "sg-4-4-1-13-5",
+      "shopifyFullName": "Sporting Goods > Outdoor Recreation > Cycling > Bicycle Accessories > Bicycle Locks > Bicycle Ground Anchors",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "102489",
+      "ebayFullName": "Everything Else > Information Products > Wholesale Lists > Clothing & Accessories",
+      "shopifyCategoryId": "aa-1-1-1-8",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Activewear > Activewear Pants > Wind Pants",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "102490",
+      "ebayFullName": "Everything Else > Information Products > Wholesale Lists > Computers & Networking",
+      "shopifyCategoryId": "el-4-8-7-5",
+      "shopifyFullName": "Electronics > Communications > Telephony > Telephone Accessories > Telephone Expansion & Sidecar Modules",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "102491",
+      "ebayFullName": "Everything Else > Information Products > Wholesale Lists > Consumer Electronics",
+      "shopifyCategoryId": "el-2-1-1-1",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > Audio & Video Receiver Accessories > Audio & Video Receiver Rack Mounts",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "102492",
+      "ebayFullName": "Everything Else > Information Products > Wholesale Lists > Other Whlsl List Info Products",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.4,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "102482",
+      "ebayFullName": "Everything Else > Information Products > How-To Guides > Bad Credit Repair",
+      "shopifyCategoryId": "sg-1-2-1-2",
+      "shopifyFullName": "Sporting Goods > Athletics > Baseball & Softball > Baseball & Softball Bases & Plates > Baseball & Softball Plates",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "102483",
+      "ebayFullName": "Everything Else > Information Products > How-To Guides > Buy, Sell on eBay",
+      "shopifyCategoryId": "sg-1-2-1-2",
+      "shopifyFullName": "Sporting Goods > Athletics > Baseball & Softball > Baseball & Softball Bases & Plates > Baseball & Softball Plates",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "102484",
+      "ebayFullName": "Everything Else > Information Products > How-To Guides > Game Mastery",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.5,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "102485",
+      "ebayFullName": "Everything Else > Information Products > How-To Guides > Self Employment",
+      "shopifyCategoryId": "sg-1-2-1-2",
+      "shopifyFullName": "Sporting Goods > Athletics > Baseball & Softball > Baseball & Softball Bases & Plates > Baseball & Softball Plates",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "102486",
+      "ebayFullName": "Everything Else > Information Products > How-To Guides > Self Help",
+      "shopifyCategoryId": "sg-1-2-1-2",
+      "shopifyFullName": "Sporting Goods > Athletics > Baseball & Softball > Baseball & Softball Bases & Plates > Baseball & Softball Plates",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "3149",
+      "ebayFullName": "Everything Else > Personal Development > Other Personal Development",
+      "shopifyCategoryId": "sg-1-2-1-2",
+      "shopifyFullName": "Sporting Goods > Athletics > Baseball & Softball > Baseball & Softball Bases & Plates > Baseball & Softball Plates",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "102330",
+      "ebayFullName": "Everything Else > Personal Development > Leadership, Self-Confidence",
+      "shopifyCategoryId": "sg-1-2-1-2",
+      "shopifyFullName": "Sporting Goods > Athletics > Baseball & Softball > Baseball & Softball Bases & Plates > Baseball & Softball Plates",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "102331",
+      "ebayFullName": "Everything Else > Personal Development > Memory Improvement",
+      "shopifyCategoryId": "sg-1-2-1-2",
+      "shopifyFullName": "Sporting Goods > Athletics > Baseball & Softball > Baseball & Softball Bases & Plates > Baseball & Softball Plates",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "102332",
+      "ebayFullName": "Everything Else > Personal Development > Personal Finances",
+      "shopifyCategoryId": "sg-1-2-1-2",
+      "shopifyFullName": "Sporting Goods > Athletics > Baseball & Softball > Baseball & Softball Bases & Plates > Baseball & Softball Plates",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "88740",
+      "ebayFullName": "Everything Else > Funeral & Cemetery > Caskets",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.5,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "88741",
+      "ebayFullName": "Everything Else > Funeral & Cemetery > Cemetery Plots",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.4,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "88742",
+      "ebayFullName": "Everything Else > Funeral & Cemetery > Cremation Urns",
+      "shopifyCategoryId": "rc-1-1",
+      "shopifyFullName": "Religious & Ceremonial > Memorial Ceremony Supplies > Memorial Urns",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "88743",
+      "ebayFullName": "Everything Else > Funeral & Cemetery > Mortuary Supplies",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.5,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "88744",
+      "ebayFullName": "Everything Else > Funeral & Cemetery > Other Funeral & Cemetery",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.4,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179691",
+      "ebayFullName": "Everything Else > Funeral & Cemetery > Casket Parts & Accessories",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.5,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179692",
+      "ebayFullName": "Everything Else > Funeral & Cemetery > Headstones, Grave Markers",
+      "shopifyCategoryId": "rc-1-1",
+      "shopifyFullName": "Religious & Ceremonial > Memorial Ceremony Supplies > Memorial Urns",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "2980",
+      "ebayFullName": "Everything Else > Genealogy > Other Genealogy",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.4,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "20926",
+      "ebayFullName": "Everything Else > Genealogy > Births, Marriages, Deaths",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.5,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "20927",
+      "ebayFullName": "Everything Else > Genealogy > Census Records",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.6,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "20928",
+      "ebayFullName": "Everything Else > Genealogy > City, State Directories",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.6,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "20929",
+      "ebayFullName": "Everything Else > Genealogy > Immigration, Passenger Lists",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.6,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "20931",
+      "ebayFullName": "Everything Else > Genealogy > Military Records",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.6,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "102363",
+      "ebayFullName": "Everything Else > Genealogy > Maps",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "116098",
+      "ebayFullName": "Everything Else > Genealogy > Coat of Arms",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.6,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "116099",
+      "ebayFullName": "Everything Else > Genealogy > County, State History",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.6,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "116100",
+      "ebayFullName": "Everything Else > Genealogy > Family Trees",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.6,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "20930",
+      "ebayFullName": "Everything Else > Genealogy > Maps > Other Genealogy Maps",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.5,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "102364",
+      "ebayFullName": "Everything Else > Genealogy > Maps > A-I",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.5,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "102365",
+      "ebayFullName": "Everything Else > Genealogy > Maps > N-P",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.5,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "102366",
+      "ebayFullName": "Everything Else > Genealogy > Maps > J-M",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.5,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "102367",
+      "ebayFullName": "Everything Else > Genealogy > Maps > R-W",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.5,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "102369",
+      "ebayFullName": "Everything Else > Genealogy > Maps > International",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.5,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "1523",
+      "ebayFullName": "Everything Else > Metaphysical > Other Metaphysical",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.4,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "19267",
+      "ebayFullName": "Everything Else > Metaphysical > Astrology",
+      "shopifyCategoryId": "rc-2-5",
+      "shopifyFullName": "Religious & Ceremonial > Religious Items > Tarot Cards",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "102493",
+      "ebayFullName": "Everything Else > Metaphysical > Crystal Healing",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "102502",
+      "ebayFullName": "Everything Else > Metaphysical > Feng Shui",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "102507",
+      "ebayFullName": "Everything Else > Metaphysical > Goth",
+      "shopifyCategoryId": "aa-6-1",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Anklets",
+      "confidence": 0.6,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "102513",
+      "ebayFullName": "Everything Else > Metaphysical > Psychic, Paranormal",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "102518",
+      "ebayFullName": "Everything Else > Metaphysical > Reiki",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.6,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "102519",
+      "ebayFullName": "Everything Else > Metaphysical > Runes",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.6,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "102520",
+      "ebayFullName": "Everything Else > Metaphysical > Tarot",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "116109",
+      "ebayFullName": "Everything Else > Metaphysical > Wicca",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "116110",
+      "ebayFullName": "Everything Else > Metaphysical > Wicca > Books",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "116111",
+      "ebayFullName": "Everything Else > Metaphysical > Wicca > Candles",
+      "shopifyCategoryId": "hg-3-34",
+      "shopifyFullName": "Home & Garden > Decor > Flameless Candles",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "116112",
+      "ebayFullName": "Everything Else > Metaphysical > Wicca > Herbs",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "116113",
+      "ebayFullName": "Everything Else > Metaphysical > Wicca > Incense",
+      "shopifyCategoryId": "hg-3-40-4",
+      "shopifyFullName": "Home & Garden > Decor > Home Fragrances > Incense",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "116114",
+      "ebayFullName": "Everything Else > Metaphysical > Wicca > Kits",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "116115",
+      "ebayFullName": "Everything Else > Metaphysical > Wicca > Oils",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "116116",
+      "ebayFullName": "Everything Else > Metaphysical > Wicca > Pentacles",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.6,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "116117",
+      "ebayFullName": "Everything Else > Metaphysical > Wicca > Other Wicca",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.5,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "19271",
+      "ebayFullName": "Everything Else > Metaphysical > Tarot > Other Tarot",
+      "shopifyCategoryId": "rc-2-5",
+      "shopifyFullName": "Religious & Ceremonial > Religious Items > Tarot Cards",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "102521",
+      "ebayFullName": "Everything Else > Metaphysical > Tarot > Cards Decks",
+      "shopifyCategoryId": "rc-2-5",
+      "shopifyFullName": "Religious & Ceremonial > Religious Items > Tarot Cards",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "102523",
+      "ebayFullName": "Everything Else > Metaphysical > Tarot > Sets, Kits",
+      "shopifyCategoryId": "rc-2-5",
+      "shopifyFullName": "Religious & Ceremonial > Religious Items > Tarot Cards",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "116108",
+      "ebayFullName": "Everything Else > Metaphysical > Tarot > Single Cards",
+      "shopifyCategoryId": "rc-2-5",
+      "shopifyFullName": "Religious & Ceremonial > Religious Items > Tarot Cards",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "19270",
+      "ebayFullName": "Everything Else > Metaphysical > Psychic, Paranormal > Other Psychic, Paranormal",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.5,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "102514",
+      "ebayFullName": "Everything Else > Metaphysical > Psychic, Paranormal > Jewelry",
+      "shopifyCategoryId": "aa-6-1",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Anklets",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "102515",
+      "ebayFullName": "Everything Else > Metaphysical > Psychic, Paranormal > Ouija Boards",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "19269",
+      "ebayFullName": "Everything Else > Metaphysical > Feng Shui > Other Feng Shui",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.5,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "102503",
+      "ebayFullName": "Everything Else > Metaphysical > Feng Shui > Ba Guas, Baguas",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "102504",
+      "ebayFullName": "Everything Else > Metaphysical > Feng Shui > Coins",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "102505",
+      "ebayFullName": "Everything Else > Metaphysical > Feng Shui > Crystals",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "102506",
+      "ebayFullName": "Everything Else > Metaphysical > Feng Shui > Jewelry",
+      "shopifyCategoryId": "aa-6-1",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Anklets",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "19268",
+      "ebayFullName": "Everything Else > Metaphysical > Crystal Healing > Other Crystal Healing",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.6,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "102494",
+      "ebayFullName": "Everything Else > Metaphysical > Crystal Healing > Agates",
+      "shopifyCategoryId": "ae-2-2-6-2",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Rocks & Fossils > Gemstones",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "102495",
+      "ebayFullName": "Everything Else > Metaphysical > Crystal Healing > Amethysts",
+      "shopifyCategoryId": "ae-2-2-6-2",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Rocks & Fossils > Gemstones",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "102496",
+      "ebayFullName": "Everything Else > Metaphysical > Crystal Healing > Chakra Sets",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "102497",
+      "ebayFullName": "Everything Else > Metaphysical > Crystal Healing > Citrines",
+      "shopifyCategoryId": "ae-2-2-6-2",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Rocks & Fossils > Gemstones",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "102498",
+      "ebayFullName": "Everything Else > Metaphysical > Crystal Healing > Fluorites",
+      "shopifyCategoryId": "ae-2-2-6-2",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Rocks & Fossils > Gemstones",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "102499",
+      "ebayFullName": "Everything Else > Metaphysical > Crystal Healing > Hematites",
+      "shopifyCategoryId": "ae-2-2-6-2",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Rocks & Fossils > Gemstones",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "102500",
+      "ebayFullName": "Everything Else > Metaphysical > Crystal Healing > Quartz Crystals",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "102501",
+      "ebayFullName": "Everything Else > Metaphysical > Crystal Healing > Rose Quartzs",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "116102",
+      "ebayFullName": "Everything Else > Metaphysical > Crystal Healing > Pendant",
+      "shopifyCategoryId": "aa-6-1",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Anklets",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "116103",
+      "ebayFullName": "Everything Else > Metaphysical > Crystal Healing > Pendulum",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "116104",
+      "ebayFullName": "Everything Else > Metaphysical > Crystal Healing > Points",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "116105",
+      "ebayFullName": "Everything Else > Metaphysical > Crystal Healing > Skulls",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "116106",
+      "ebayFullName": "Everything Else > Metaphysical > Crystal Healing > Sphere",
+      "shopifyCategoryId": "se-6-4",
+      "shopifyFullName": "Services > Personal Services > Lifestyle Services",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "116107",
+      "ebayFullName": "Everything Else > Metaphysical > Crystal Healing > Wands",
+      "shopifyCategoryId": "hb-3-2-5-1-8-5",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Cosmetic Tools > Makeup Tools > False Eyelash Accessories > False Eyelash Brushes & Wands",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "14111",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > General",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "30120",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Use Only",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "31448",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > Personal Offer",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "37557",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > Test Category For Internal Use Only Parent Level 3",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "171781",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > Other",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178086",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "183592",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > Test Category Group",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "263529",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > Blocked Category For Internal Use",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "183593",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > Test Category Group > Test Category 1",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "183594",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > Test Category Group > Test Category 2",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "183595",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > Test Category Group > Test Category 3",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "183596",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > Test Category Group > Test Category 4",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "183597",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > Test Category Group > Test Category 5",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "183598",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > Test Category Group > Test Category 5 > Category 5.1",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "183599",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > Test Category Group > Test Category 5 > Category 5.2",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "183600",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > Test Category Group > Test Category 5 > Category 5.3",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "183601",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > Test Category Group > Test Category 5 > Category 5.4",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "183602",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > Test Category Group > Test Category 5 > Category 5.5",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "183603",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > Test Category Group > Test Category 5 > Category 5.6",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "183604",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > Test Category Group > Test Category 5 > Category 5.7",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "183605",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > Test Category Group > Test Category 5 > Category 5.8",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "183606",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > Test Category Group > Test Category 5 > Category 5.9",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "183607",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > Test Category Group > Test Category 5 > Category 5.10",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "183608",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > Test Category Group > Test Category 5 > Category 5.11",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "183609",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > Test Category Group > Test Category 5 > Category 5.12",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "183610",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > Test Category Group > Test Category 5 > Category 5.13",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "183611",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > Test Category Group > Test Category 5 > Category 5.14",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "183612",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > Test Category Group > Test Category 5 > Category 5.15",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "183613",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > Test Category Group > Test Category 5 > Category 5.16",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "183614",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > Test Category Group > Test Category 5 > Category 5.17",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "183615",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > Test Category Group > Test Category 5 > Category 5.18",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "183616",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > Test Category Group > Test Category 5 > Category 5.19",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "183617",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > Test Category Group > Test Category 5 > Category 5.20",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178087",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 1",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178113",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 2",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178139",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 3",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178165",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 4",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178191",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 5",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "183663",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 6",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "183550",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 6 > Category 10",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "183551",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 6 > Category 11",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "183552",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 6 > Category 12",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "183553",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 6 > Category 13",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "183554",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 6 > Category 14",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "183555",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 6 > Category 15",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "183560",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 6 > Category 1",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "183561",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 6 > Category 2",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "183562",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 6 > Category 3",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "183563",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 6 > Category 4",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "183564",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 6 > Category 5",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "183565",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 6 > Category 6",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "183566",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 6 > Category 7",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "183567",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 6 > Category 8",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "183568",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 6 > Category 9",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "183618",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 6 > Category 16",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "183619",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 6 > Category 17",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "183620",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 6 > Category 18",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "183621",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 6 > Category 19",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "183622",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 6 > Category 20",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "183623",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 6 > Category 21",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "183624",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 6 > Category 22",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178192",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 5 > Category 1",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178193",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 5 > Category 2",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178194",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 5 > Category 3",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178195",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 5 > Category 4",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178196",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 5 > Category 5",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178197",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 5 > Category 6",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178198",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 5 > Category 7",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178199",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 5 > Category 8",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178200",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 5 > Category 9",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178201",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 5 > Category 10",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178202",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 5 > Category 11",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178203",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 5 > Category 12",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178204",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 5 > Category 13",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178205",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 5 > Category 14",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178206",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 5 > Category 15",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178207",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 5 > Category 16",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178208",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 5 > Category 17",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178209",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 5 > Category 18",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178210",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 5 > Category 19",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178212",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 5 > Category 21",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178213",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 5 > Category 22",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178214",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 5 > Category 23",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178215",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 5 > Category 24",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178167",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 4 > Category 2",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178168",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 4 > Category 3",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178169",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 4 > Category 4",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178170",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 4 > Category 5",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178171",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 4 > Category 6",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178172",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 4 > Category 7",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178173",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 4 > Category 8",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178174",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 4 > Category 9",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178175",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 4 > Category 10",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178176",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 4 > Category 11",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178177",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 4 > Category 12",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178178",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 4 > Category 13",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178179",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 4 > Category 14",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178180",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 4 > Category 15",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178181",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 4 > Category 16",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178182",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 4 > Category 17",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178183",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 4 > Category 18",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178184",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 4 > Category 19",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178185",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 4 > Category 20",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178186",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 4 > Category 21",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178187",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 4 > Category 22",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178188",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 4 > Category 23",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178189",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 4 > Category 24",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178190",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 4 > Category 25",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "183666",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 4 > Category 1",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178140",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 3 > Category 1",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178141",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 3 > Category 2",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178142",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 3 > Category 3",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178143",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 3 > Category 4",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178144",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 3 > Category 5",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178145",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 3 > Category 6",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178146",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 3 > Category 7",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178147",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 3 > Category 8",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178148",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 3 > Category 9",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178149",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 3 > Category 10",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178150",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 3 > Category 11",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178151",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 3 > Category 12",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178152",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 3 > Category 13",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178153",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 3 > Category 14",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178154",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 3 > Category 15",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178155",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 3 > Category 16",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178156",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 3 > Category 17",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178157",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 3 > Category 18",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178158",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 3 > Category 19",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178159",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 3 > Category 20",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178160",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 3 > Category 21",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178161",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 3 > Category 22",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178162",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 3 > Category 23",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178163",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 3 > Category 24",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178164",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 3 > Category 25",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178114",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 2 > Category 1",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178115",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 2 > Category 2",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178116",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 2 > Category 3",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178117",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 2 > Category 4",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178118",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 2 > Category 5",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178119",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 2 > Category 6",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178120",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 2 > Category 7",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178121",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 2 > Category 8",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178122",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 2 > Category 9",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178123",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 2 > Category 10",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178124",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 2 > Category 11",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178125",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 2 > Category 12",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178126",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 2 > Category 13",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178127",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 2 > Category 14",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178128",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 2 > Category 15",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178129",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 2 > Category 16",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178130",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 2 > Category 17",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178131",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 2 > Category 18",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178132",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 2 > Category 19",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178133",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 2 > Category 20",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178134",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 2 > Category 21",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178135",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 2 > Category 22",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178136",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 2 > Category 23",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178137",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 2 > Category 24",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178138",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 2 > Category 25",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178088",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 1 > Category 1",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178089",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 1 > Category 2",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178091",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 1 > Category 4",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178092",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 1 > Category 5",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178093",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 1 > Category 6",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178094",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 1 > Category 7",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178095",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 1 > Category 8",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178096",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 1 > Category 9",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178097",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 1 > Category 10",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178098",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 1 > Category 11",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178099",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 1 > Category 12",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178100",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 1 > Category 13",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178101",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 1 > Category 14",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178102",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 1 > Category 15",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178103",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 1 > Category 16",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178104",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 1 > Category 17",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178105",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 1 > Category 18",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178106",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 1 > Category 19",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178107",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 1 > Category 20",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178108",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 1 > Category 21",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178109",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 1 > Category 22",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178110",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 1 > Category 23",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178111",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 1 > Category 24",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "178112",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > eBay Test Only > Group 1 > Category 25",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "171782",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > Other > Seller Category 1",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "171783",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > Other > Seller Category 2",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "171784",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > Other > Seller Category 3",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "171785",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > Other > Seller Category 4",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "171786",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > Other > Seller Category 5",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "37559",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > Test Category For Internal Use Only Parent Level 3 > Attributes2",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "37560",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > Test Category For Internal Use Only Parent Level 3 > Attributes3",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "37561",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > Test Category For Internal Use Only Parent Level 3 > Attributes4",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "37562",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > Test Category For Internal Use Only Parent Level 3 > Attributes5",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "37563",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > Test Category For Internal Use Only Parent Level 3 > Attributes6_Test",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "37565",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > Test Category For Internal Use Only Parent Level 3 > Attributes7",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "37566",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > Test Category For Internal Use Only Parent Level 3 > Attributes8",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "37567",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > Test Category For Internal Use Only Parent Level 3 > Attributes9",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "37568",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > Test Category For Internal Use Only Parent Level 3 > Attributes10",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "184463",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > Test Category For Internal Use Only Parent Level 3 > Test Category for Internal Use Only Parent Level 4",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "184464",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > Test Category For Internal Use Only Parent Level 3 > Test Category for Internal Use Only Parent Level 4 > Test Category for Internal Use Only Parent Level 5",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "115623",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > Test Category For Internal Use Only Parent Level 3 > Test Category for Internal Use Only Parent Level 4 > Test Category for Internal Use Only Parent Level 5 > Rename Category For Internal Use with Max Chars ®™",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "262973",
+      "ebayFullName": "Everything Else > Test Category For Internal Use Only Parent Level 2 > Test Category For Internal Use Only Parent Level 3 > Test Category for Internal Use Only Parent Level 4 > Test Category for Internal Use Only Parent Level 5 > New Category For Internal Use spec char ®™",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0,
+      "mappingSource": "excluded"
+    },
+    {
+      "ebayId": "3144",
+      "ebayFullName": "Everything Else > Career Development & Education > Other Career Development",
+      "shopifyCategoryId": "se-6-2",
+      "shopifyFullName": "Services > Personal Services > Educational Services",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "4256",
+      "ebayFullName": "Everything Else > Career Development & Education > Healthcare, Nursing",
+      "shopifyCategoryId": "se-6-3",
+      "shopifyFullName": "Services > Personal Services > Healthcare Services",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "16708",
+      "ebayFullName": "Everything Else > Career Development & Education > Certification & Licenses",
+      "shopifyCategoryId": "se-6-2",
+      "shopifyFullName": "Services > Personal Services > Educational Services",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "21255",
+      "ebayFullName": "Everything Else > Career Development & Education > Computer & Technical",
+      "shopifyCategoryId": "se-7-3",
+      "shopifyFullName": "Services > Professional Services > IT & Technology",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "102325",
+      "ebayFullName": "Everything Else > Career Development & Education > Direct Selling",
+      "shopifyCategoryId": "se-6-4",
+      "shopifyFullName": "Services > Personal Services > Lifestyle Services",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "102326",
+      "ebayFullName": "Everything Else > Career Development & Education > Entrepreneurship",
+      "shopifyCategoryId": "se-6-4",
+      "shopifyFullName": "Services > Personal Services > Lifestyle Services",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "102327",
+      "ebayFullName": "Everything Else > Career Development & Education > Marketing",
+      "shopifyCategoryId": "se-7-5",
+      "shopifyFullName": "Services > Professional Services > Marketing & Advertising",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "102328",
+      "ebayFullName": "Everything Else > Career Development & Education > Real Estate",
+      "shopifyCategoryId": "se-7-6",
+      "shopifyFullName": "Services > Professional Services > Real Estate",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "1467",
+      "ebayFullName": "Everything Else > Weird Stuff > Slightly Unusual",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.3,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "1468",
+      "ebayFullName": "Everything Else > Weird Stuff > Really Weird",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.3,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "1469",
+      "ebayFullName": "Everything Else > Weird Stuff > Totally Bizarre",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.3,
+      "mappingSource": "gpt-4.1-mini"
+    }
+  ]
+}

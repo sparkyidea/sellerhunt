@@ -1,0 +1,449 @@
+{
+  "ebayCategory": "Pottery & Glass",
+  "shopifyCategories": ["Arts & Entertainment"],
+  "totalMapped": 55,
+  "highConfidence": 49,
+  "lowConfidence": 5,
+  "mappings": [
+    {
+      "ebayId": "870",
+      "ebayFullName": "Pottery & Glass",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "170129",
+      "ebayFullName": "Pottery & Glass > Price Guides & Publications",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.6,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262359",
+      "ebayFullName": "Pottery & Glass > Drinkware & Barware",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "262364",
+      "ebayFullName": "Pottery & Glass > Decorative Cookware, Dinnerware & Serveware",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "262365",
+      "ebayFullName": "Pottery & Glass > Other Pottery & Glass",
+      "shopifyCategoryId": "hg-3-6",
+      "shopifyFullName": "Home & Garden > Decor > Baskets",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262384",
+      "ebayFullName": "Pottery & Glass > Decorative Pottery & Glassware",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "262410",
+      "ebayFullName": "Pottery & Glass > Lamps, Lighting",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "262411",
+      "ebayFullName": "Pottery & Glass > Lamps, Lighting > Lamps",
+      "shopifyCategoryId": "hg-13-5-3",
+      "shopifyFullName": "Home & Garden > Lighting > Lamps > Floor Lamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262412",
+      "ebayFullName": "Pottery & Glass > Lamps, Lighting > Sconces",
+      "shopifyCategoryId": "hg-13-9-4",
+      "shopifyFullName": "Home & Garden > Lighting > Lighting Fixtures > Wall Light Fixtures",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262385",
+      "ebayFullName": "Pottery & Glass > Decorative Pottery & Glassware > Ashtrays",
+      "shopifyCategoryId": "hg-12-3-3",
+      "shopifyFullName": "Home & Garden > Lawn & Garden > Outdoor Power Equipment > Hedge Trimmers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262386",
+      "ebayFullName": "Pottery & Glass > Decorative Pottery & Glassware > Baskets",
+      "shopifyCategoryId": "hg-3-6",
+      "shopifyFullName": "Home & Garden > Decor > Baskets",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262387",
+      "ebayFullName": "Pottery & Glass > Decorative Pottery & Glassware > Beads",
+      "shopifyCategoryId": "ae-2-1-2-8-2",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Embellishments & Trims > Beads",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262388",
+      "ebayFullName": "Pottery & Glass > Decorative Pottery & Glassware > Bells",
+      "shopifyCategoryId": "ae-2-1-2-3-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Craft Paint, Ink & Glaze > Ceramic & Pottery Glazes",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262389",
+      "ebayFullName": "Pottery & Glass > Decorative Pottery & Glassware > Decorative Balls",
+      "shopifyCategoryId": "ae-2-1-2-3-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Craft Paint, Ink & Glaze > Ceramic & Pottery Glazes",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262390",
+      "ebayFullName": "Pottery & Glass > Decorative Pottery & Glassware > Decorative Boxes",
+      "shopifyCategoryId": "ae-2-1-2-3-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Craft Paint, Ink & Glaze > Ceramic & Pottery Glazes",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262391",
+      "ebayFullName": "Pottery & Glass > Decorative Pottery & Glassware > Candle Sticks & Holders",
+      "shopifyCategoryId": "ae-2-1-1-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Craft Kits > Candle Making Kits",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262392",
+      "ebayFullName": "Pottery & Glass > Decorative Pottery & Glassware > Collector Plates",
+      "shopifyCategoryId": "ae-2-1-2-3-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Craft Paint, Ink & Glaze > Ceramic & Pottery Glazes",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262393",
+      "ebayFullName": "Pottery & Glass > Decorative Pottery & Glassware > Clocks",
+      "shopifyCategoryId": "ae-2-1-2-3-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Craft Paint, Ink & Glaze > Ceramic & Pottery Glazes",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262394",
+      "ebayFullName": "Pottery & Glass > Decorative Pottery & Glassware > Figurines",
+      "shopifyCategoryId": "ae-2-1-2-3-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Craft Paint, Ink & Glaze > Ceramic & Pottery Glazes",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262395",
+      "ebayFullName": "Pottery & Glass > Decorative Pottery & Glassware > Jewelry",
+      "shopifyCategoryId": "ae-2-1-1-5",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Craft Kits > Jewelry Making Kits",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262396",
+      "ebayFullName": "Pottery & Glass > Decorative Pottery & Glassware > Masks",
+      "shopifyCategoryId": "ae-2-1-2-3-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Craft Paint, Ink & Glaze > Ceramic & Pottery Glazes",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262397",
+      "ebayFullName": "Pottery & Glass > Decorative Pottery & Glassware > Money Boxes",
+      "shopifyCategoryId": "ae-2-1-2-3-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Craft Paint, Ink & Glaze > Ceramic & Pottery Glazes",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262398",
+      "ebayFullName": "Pottery & Glass > Decorative Pottery & Glassware > Ornaments",
+      "shopifyCategoryId": "ae-2-1-2-3-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Craft Paint, Ink & Glaze > Ceramic & Pottery Glazes",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262399",
+      "ebayFullName": "Pottery & Glass > Decorative Pottery & Glassware > Paperweights",
+      "shopifyCategoryId": "ae-2-1-2-3-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Craft Paint, Ink & Glaze > Ceramic & Pottery Glazes",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262400",
+      "ebayFullName": "Pottery & Glass > Decorative Pottery & Glassware > Decorative Bottles",
+      "shopifyCategoryId": "ae-2-1-2-3-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Craft Paint, Ink & Glaze > Ceramic & Pottery Glazes",
+      "confidence": 0.75,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262401",
+      "ebayFullName": "Pottery & Glass > Decorative Pottery & Glassware > Planters",
+      "shopifyCategoryId": "ae-2-1-2-3-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Craft Paint, Ink & Glaze > Ceramic & Pottery Glazes",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262402",
+      "ebayFullName": "Pottery & Glass > Decorative Pottery & Glassware > Sculptures",
+      "shopifyCategoryId": "ae-2-1-2-3-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Craft Paint, Ink & Glaze > Ceramic & Pottery Glazes",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262403",
+      "ebayFullName": "Pottery & Glass > Decorative Pottery & Glassware > Smoke Dispellers",
+      "shopifyCategoryId": "hg-3-40-4",
+      "shopifyFullName": "Home & Garden > Decor > Home Fragrances > Incense",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262404",
+      "ebayFullName": "Pottery & Glass > Decorative Pottery & Glassware > Suncatchers & Window Panels",
+      "shopifyCategoryId": "ae-2-1-2-3-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Craft Paint, Ink & Glaze > Ceramic & Pottery Glazes",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262405",
+      "ebayFullName": "Pottery & Glass > Decorative Pottery & Glassware > Thimbles",
+      "shopifyCategoryId": "ae-2-1-4-17-2",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Tools > Thimbles & Sewing Palms > Thimbles",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262406",
+      "ebayFullName": "Pottery & Glass > Decorative Pottery & Glassware > Tiles",
+      "shopifyCategoryId": "ae-2-1-2-3-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Craft Paint, Ink & Glaze > Ceramic & Pottery Glazes",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262407",
+      "ebayFullName": "Pottery & Glass > Decorative Pottery & Glassware > Urns",
+      "shopifyCategoryId": "hg-15-1-9-3",
+      "shopifyFullName": "Home & Garden > Linens & Bedding > Bedding > Pillows > Neck & Cervical Pillows",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262408",
+      "ebayFullName": "Pottery & Glass > Decorative Pottery & Glassware > Vases",
+      "shopifyCategoryId": "ae-2-1-2-3-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Craft Paint, Ink & Glaze > Ceramic & Pottery Glazes",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262352",
+      "ebayFullName": "Pottery & Glass > Decorative Cookware, Dinnerware & Serveware > Cruets",
+      "shopifyCategoryId": "hg-11-10-7-8",
+      "shopifyFullName": "Home & Garden > Kitchen & Dining > Tableware > Serveware > Serving Platters",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262366",
+      "ebayFullName": "Pottery & Glass > Decorative Cookware, Dinnerware & Serveware > Bowls",
+      "shopifyCategoryId": "ae-2-1-2-3-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Craft Paint, Ink & Glaze > Ceramic & Pottery Glazes",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262368",
+      "ebayFullName": "Pottery & Glass > Decorative Cookware, Dinnerware & Serveware > Cake Stands",
+      "shopifyCategoryId": "ae-2-1-2-3-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Craft Paint, Ink & Glaze > Ceramic & Pottery Glazes",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262369",
+      "ebayFullName": "Pottery & Glass > Decorative Cookware, Dinnerware & Serveware > Casseroles",
+      "shopifyCategoryId": "ae-2-1-2-3-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Craft Paint, Ink & Glaze > Ceramic & Pottery Glazes",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262370",
+      "ebayFullName": "Pottery & Glass > Decorative Cookware, Dinnerware & Serveware > Centerpieces",
+      "shopifyCategoryId": "ae-2-1-2-3-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Craft Paint, Ink & Glaze > Ceramic & Pottery Glazes",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262371",
+      "ebayFullName": "Pottery & Glass > Decorative Cookware, Dinnerware & Serveware > Creamers",
+      "shopifyCategoryId": "ae-2-1-2-3-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Craft Paint, Ink & Glaze > Ceramic & Pottery Glazes",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262372",
+      "ebayFullName": "Pottery & Glass > Decorative Cookware, Dinnerware & Serveware > Cup & Saucers",
+      "shopifyCategoryId": "ae-2-1-2-3-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Craft Paint, Ink & Glaze > Ceramic & Pottery Glazes",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262373",
+      "ebayFullName": "Pottery & Glass > Decorative Cookware, Dinnerware & Serveware > Dinner Sets",
+      "shopifyCategoryId": "ae-2-1-2-3-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Craft Paint, Ink & Glaze > Ceramic & Pottery Glazes",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262374",
+      "ebayFullName": "Pottery & Glass > Decorative Cookware, Dinnerware & Serveware > Dishes",
+      "shopifyCategoryId": "ae-2-1-2-3-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Craft Paint, Ink & Glaze > Ceramic & Pottery Glazes",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262375",
+      "ebayFullName": "Pottery & Glass > Decorative Cookware, Dinnerware & Serveware > Jars",
+      "shopifyCategoryId": "ae-2-1-2-3-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Craft Paint, Ink & Glaze > Ceramic & Pottery Glazes",
+      "confidence": 0.75,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262376",
+      "ebayFullName": "Pottery & Glass > Decorative Cookware, Dinnerware & Serveware > Jugs & Pitchers",
+      "shopifyCategoryId": "ae-2-1-2-3-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Craft Paint, Ink & Glaze > Ceramic & Pottery Glazes",
+      "confidence": 0.75,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262377",
+      "ebayFullName": "Pottery & Glass > Decorative Cookware, Dinnerware & Serveware > Gravy Boats",
+      "shopifyCategoryId": "ae-2-1-2-3-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Craft Paint, Ink & Glaze > Ceramic & Pottery Glazes",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262378",
+      "ebayFullName": "Pottery & Glass > Decorative Cookware, Dinnerware & Serveware > Mugs",
+      "shopifyCategoryId": "ae-2-1-2-3-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Craft Paint, Ink & Glaze > Ceramic & Pottery Glazes",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262379",
+      "ebayFullName": "Pottery & Glass > Decorative Cookware, Dinnerware & Serveware > Plates",
+      "shopifyCategoryId": "ae-2-1-2-3-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Craft Paint, Ink & Glaze > Ceramic & Pottery Glazes",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262380",
+      "ebayFullName": "Pottery & Glass > Decorative Cookware, Dinnerware & Serveware > Platters",
+      "shopifyCategoryId": "ae-2-1-2-3-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Craft Paint, Ink & Glaze > Ceramic & Pottery Glazes",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262381",
+      "ebayFullName": "Pottery & Glass > Decorative Cookware, Dinnerware & Serveware > Tea & Coffee Pots",
+      "shopifyCategoryId": "ae-2-1-2-3-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Craft Paint, Ink & Glaze > Ceramic & Pottery Glazes",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262382",
+      "ebayFullName": "Pottery & Glass > Decorative Cookware, Dinnerware & Serveware > Salt & Pepper Shakers",
+      "shopifyCategoryId": "ae-2-1-2-3-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Craft Paint, Ink & Glaze > Ceramic & Pottery Glazes",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262383",
+      "ebayFullName": "Pottery & Glass > Decorative Cookware, Dinnerware & Serveware > Trays",
+      "shopifyCategoryId": "ae-2-1-2-3-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Craft Paint, Ink & Glaze > Ceramic & Pottery Glazes",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262360",
+      "ebayFullName": "Pottery & Glass > Drinkware & Barware > Drinkware",
+      "shopifyCategoryId": "ae-2-1-2-3-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Craft Paint, Ink & Glaze > Ceramic & Pottery Glazes",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262361",
+      "ebayFullName": "Pottery & Glass > Drinkware & Barware > Coasters",
+      "shopifyCategoryId": "ae-2-1-2-3-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Craft Paint, Ink & Glaze > Ceramic & Pottery Glazes",
+      "confidence": 0.75,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262362",
+      "ebayFullName": "Pottery & Glass > Drinkware & Barware > Decanters",
+      "shopifyCategoryId": "ae-2-1-2-3-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Craft Paint, Ink & Glaze > Ceramic & Pottery Glazes",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262363",
+      "ebayFullName": "Pottery & Glass > Drinkware & Barware > Ice Buckets",
+      "shopifyCategoryId": "ae-2-1-2-3-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Craft Paint, Ink & Glaze > Ceramic & Pottery Glazes",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    }
+  ]
+}

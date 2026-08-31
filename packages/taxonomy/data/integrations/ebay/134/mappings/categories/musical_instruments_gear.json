@@ -1,0 +1,3353 @@
+{
+  "ebayCategory": "Musical Instruments & Gear",
+  "shopifyCategories": ["Arts & Entertainment"],
+  "totalMapped": 418,
+  "highConfidence": 342,
+  "lowConfidence": 1,
+  "mappings": [
+    {
+      "ebayId": "619",
+      "ebayFullName": "Musical Instruments & Gear",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "308",
+      "ebayFullName": "Musical Instruments & Gear > Other Musical Instruments",
+      "shopifyCategoryId": "se-5-4",
+      "shopifyFullName": "Services > Home Improvement Services > Specialized Home Services",
+      "confidence": 0.5,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "3858",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "10181",
+      "ebayFullName": "Musical Instruments & Gear > Wind & Woodwind",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "12922",
+      "ebayFullName": "Musical Instruments & Gear > Stage Lighting & Effects",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "16212",
+      "ebayFullName": "Musical Instruments & Gear > Brass",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "48458",
+      "ebayFullName": "Musical Instruments & Gear > DJ Equipment",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "52555",
+      "ebayFullName": "Musical Instruments & Gear > Wholesale Lots",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.4,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175696",
+      "ebayFullName": "Musical Instruments & Gear > Karaoke Entertainment",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "180008",
+      "ebayFullName": "Musical Instruments & Gear > General Accessories",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "180010",
+      "ebayFullName": "Musical Instruments & Gear > Pianos, Keyboards & Organs",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "180012",
+      "ebayFullName": "Musical Instruments & Gear > Percussion",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "180014",
+      "ebayFullName": "Musical Instruments & Gear > Pro Audio Equipment",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "180015",
+      "ebayFullName": "Musical Instruments & Gear > Sheet Music & Song Books",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "180016",
+      "ebayFullName": "Musical Instruments & Gear > String",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "181162",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "182150",
+      "ebayFullName": "Musical Instruments & Gear > Instruction Books, CDs & Video",
+      "shopifyCategoryId": "me-1-3",
+      "shopifyFullName": "Media > Books > Print Books",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "118974",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Brass",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "119023",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage String",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "181163",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Guitars & Basses",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "181170",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Percussion",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "181193",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Pianos & Keyboards",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "181202",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Wind & Woodwind",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "181203",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Wind & Woodwind > Band & Orchestral",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "181210",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Wind & Woodwind > Folk & World",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "181218",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Wind & Woodwind > Other Vintage Woodwind",
+      "shopifyCategoryId": "ae-2-8-1-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Accordions & Concertinas > Accordions",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182216",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Wind & Woodwind > Parts & Accessories",
+      "shopifyCategoryId": "ae-2-7-14-2-7",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Woodwind Instrument Accessories > Clarinet Accessories > Clarinet Straps & Supports",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "119095",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Wind & Woodwind > Folk & World > Harmonicas",
+      "shopifyCategoryId": "ae-1",
+      "shopifyFullName": "Arts & Entertainment > Event Tickets",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181212",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Wind & Woodwind > Folk & World > Bagpipes",
+      "shopifyCategoryId": "ae-1",
+      "shopifyFullName": "Arts & Entertainment > Event Tickets",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181214",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Wind & Woodwind > Folk & World > Melodicas",
+      "shopifyCategoryId": "ae-1",
+      "shopifyFullName": "Arts & Entertainment > Event Tickets",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181215",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Wind & Woodwind > Folk & World > Ocarinas",
+      "shopifyCategoryId": "ae-1",
+      "shopifyFullName": "Arts & Entertainment > Event Tickets",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181216",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Wind & Woodwind > Folk & World > Whistles",
+      "shopifyCategoryId": "ae-1",
+      "shopifyFullName": "Arts & Entertainment > Event Tickets",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "119029",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Wind & Woodwind > Band & Orchestral > Clarinets",
+      "shopifyCategoryId": "ae-1",
+      "shopifyFullName": "Arts & Entertainment > Event Tickets",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "119030",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Wind & Woodwind > Band & Orchestral > Saxophones",
+      "shopifyCategoryId": "ae-1",
+      "shopifyFullName": "Arts & Entertainment > Event Tickets",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181204",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Wind & Woodwind > Band & Orchestral > Bassoons",
+      "shopifyCategoryId": "ae-1",
+      "shopifyFullName": "Arts & Entertainment > Event Tickets",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181205",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Wind & Woodwind > Band & Orchestral > Flutes",
+      "shopifyCategoryId": "ae-1",
+      "shopifyFullName": "Arts & Entertainment > Event Tickets",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181206",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Wind & Woodwind > Band & Orchestral > Oboes",
+      "shopifyCategoryId": "ae-1",
+      "shopifyFullName": "Arts & Entertainment > Event Tickets",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181207",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Wind & Woodwind > Band & Orchestral > Piccolos",
+      "shopifyCategoryId": "ae-1",
+      "shopifyFullName": "Arts & Entertainment > Event Tickets",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181208",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Wind & Woodwind > Band & Orchestral > Recorders",
+      "shopifyCategoryId": "ae-1",
+      "shopifyFullName": "Arts & Entertainment > Event Tickets",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181194",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Pianos & Keyboards > Electronic Keyboards",
+      "shopifyCategoryId": "ae-2-8-4-3-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Electronic Musical Instruments > Musical Keyboards > Digital Pianos",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181195",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Pianos & Keyboards > Organs",
+      "shopifyCategoryId": "ae-2-8-8-8-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Woodwinds > Musical Pipes > Organs",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181196",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Pianos & Keyboards > Pianos",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "181201",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Pianos & Keyboards > Other Vintage Pianos",
+      "shopifyCategoryId": "ae-2-8-6-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Pianos > Acoustic Pianos",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181491",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Pianos & Keyboards > Folk & World",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "182215",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Pianos & Keyboards > Parts & Accessories",
+      "shopifyCategoryId": "ae-2-7-11-1-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Musical Keyboard Accessories > Musical Keyboard Bags & Cases > Musical Keyboard Gigbags",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181211",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Pianos & Keyboards > Folk & World > Accordions",
+      "shopifyCategoryId": "ae-2-8-1-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Accordions & Concertinas > Accordions",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181213",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Pianos & Keyboards > Folk & World > Concertinas",
+      "shopifyCategoryId": "ae-2-8-1-2",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Accordions & Concertinas > Concertinas",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "159954",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Pianos & Keyboards > Pianos > Player Pianos",
+      "shopifyCategoryId": "ae-2-8-6-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Pianos > Grand Pianos",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "178895",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Pianos & Keyboards > Pianos > Player Piano Rolls",
+      "shopifyCategoryId": "ae-1",
+      "shopifyFullName": "Arts & Entertainment > Event Tickets",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181197",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Pianos & Keyboards > Pianos > Grand & Baby Grand Pianos",
+      "shopifyCategoryId": "ae-2-8-6-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Pianos > Grand Pianos",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181198",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Pianos & Keyboards > Pianos > Upright Pianos",
+      "shopifyCategoryId": "ae-2-8-6-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Pianos > Upright Pianos",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181199",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Pianos & Keyboards > Pianos > Digital Pianos",
+      "shopifyCategoryId": "ae-2-8-4-3-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Electronic Musical Instruments > Musical Keyboards > Digital Pianos",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181171",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Percussion > Cymbals",
+      "shopifyCategoryId": "ae-2-8-5-2-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Percussion > Cymbals > China Cymbals",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181172",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Percussion > Drums",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "181179",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Percussion > Folk & World Drums",
+      "shopifyCategoryId": "ae-1",
+      "shopifyFullName": "Arts & Entertainment > Event Tickets",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181180",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Percussion > Hand Percussion",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "181187",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Percussion > Orchestral Percussion",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "181192",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Percussion > Other Vintage Percussion",
+      "shopifyCategoryId": "ae-2-7-12-8-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Percussion Accessories > Electronic Drum Modules > Trigger Modules",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182214",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Percussion > Parts & Accessories",
+      "shopifyCategoryId": "ae-2-7-12-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Percussion Accessories > Drum Kit Hardware > Bass Drum Beaters",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181188",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Percussion > Orchestral Percussion > Mallet Percussion",
+      "shopifyCategoryId": "ae-1",
+      "shopifyFullName": "Arts & Entertainment > Event Tickets",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181189",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Percussion > Orchestral Percussion > Gongs",
+      "shopifyCategoryId": "ae-2-8-5-6-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Percussion > Gongs > Opera Gongs",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181190",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Percussion > Orchestral Percussion > Bells & Chimes",
+      "shopifyCategoryId": "ae-2-8-5-7-3-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Percussion > Hand Percussion > Hand Bells & Chimes > Chimes",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181181",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Percussion > Hand Percussion > Shakers & Small Percussion",
+      "shopifyCategoryId": "ae-2-8-5-7-8-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Percussion > Hand Percussion > Musical Shakers > Cabasas",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181182",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Percussion > Hand Percussion > Tambourines",
+      "shopifyCategoryId": "ae-2-8-5-7-10-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Percussion > Hand Percussion > Tambourines > Handheld Tambourines",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181183",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Percussion > Hand Percussion > Kalimbas",
+      "shopifyCategoryId": "ae-1",
+      "shopifyFullName": "Arts & Entertainment > Event Tickets",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181184",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Percussion > Hand Percussion > Singing Bowls",
+      "shopifyCategoryId": "ae-1",
+      "shopifyFullName": "Arts & Entertainment > Event Tickets",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181185",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Percussion > Hand Percussion > Jaw Harps",
+      "shopifyCategoryId": "ae-2-8-8-6-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Woodwinds > Jew's Harps > Contemporary Jew's Harps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181173",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Percussion > Drums > Bass",
+      "shopifyCategoryId": "ae-2-8-5-1-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Percussion > Bass Drums > Concert Bass Drums",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181174",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Percussion > Drums > Electronic Drums",
+      "shopifyCategoryId": "ae-2-8-5-4-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Percussion > Electronic Drums > Electronic Cymbals",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181175",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Percussion > Drums > Snare Drums",
+      "shopifyCategoryId": "ae-2-8-5-10-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Percussion > Snare Drums > Metal Snare Drums",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181176",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Percussion > Drums > Toms",
+      "shopifyCategoryId": "ae-2-8-5-11-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Percussion > Tom-Toms > Concert Tom-Toms",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181177",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Percussion > Drums > Sets & Kits",
+      "shopifyCategoryId": "ae-2-8-5-3-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Percussion > Drum Kits > Acoustic Drum Kits",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "118979",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Guitars & Basses > Acoustic Guitars",
+      "shopifyCategoryId": "ae-2-8-7-2-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > String Instruments > Guitars > Acoustic Guitars",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "118983",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Guitars & Basses > Guitar Amplifiers",
+      "shopifyCategoryId": "ae-2-7-10-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Musical Instrument Amplifiers > Guitar Amplifiers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "118984",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Guitars & Basses > Bass Guitars",
+      "shopifyCategoryId": "ae-2-8-7-2-2",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > String Instruments > Guitars > Bass Guitars",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "118985",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Guitars & Basses > Electric Guitars",
+      "shopifyCategoryId": "ae-2-8-7-2-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > String Instruments > Guitars > Electric Guitars",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "118994",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Guitars & Basses > Other Vintage Guitars",
+      "shopifyCategoryId": "ae-1",
+      "shopifyFullName": "Arts & Entertainment > Event Tickets",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181164",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Guitars & Basses > Classical Guitars",
+      "shopifyCategoryId": "ae-2-8-7-2-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > String Instruments > Guitars > Classical Guitars",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181165",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Guitars & Basses > Resonator",
+      "shopifyCategoryId": "ae-1",
+      "shopifyFullName": "Arts & Entertainment > Event Tickets",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181166",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Guitars & Basses > Lap & Steel Guitars",
+      "shopifyCategoryId": "ae-1",
+      "shopifyFullName": "Arts & Entertainment > Event Tickets",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181167",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Guitars & Basses > Cigar Box Guitars",
+      "shopifyCategoryId": "ae-1",
+      "shopifyFullName": "Arts & Entertainment > Event Tickets",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181168",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Guitars & Basses > Parts",
+      "shopifyCategoryId": "ae-2-7-13-1-5",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > String Instrument Accessories > Guitar Accessories > Guitar Fittings & Parts",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181169",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Guitars & Basses > Accessories",
+      "shopifyCategoryId": "ae-2-7-13-1-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > String Instrument Accessories > Guitar Accessories > Guitar Cases & Gigbags",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "119027",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage String > Other Vintage String",
+      "shopifyCategoryId": "ae-2-7-13-2-2",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > String Instrument Accessories > Orchestral String Instrument Accessories > Orchestral String Instrument Bows",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181255",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage String > Orchestral",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "181260",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage String > Folk & World",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "182217",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage String > Parts & Accessories",
+      "shopifyCategoryId": "ae-2-7-13-3-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > String Instrument Accessories > String Instrument Care & Cleaning > Bow Rosin",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "119024",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage String > Folk & World > Banjos",
+      "shopifyCategoryId": "ae-2-8-7-7-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > String Instruments > Banjos > 4-String Banjos",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "119025",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage String > Folk & World > Ukuleles",
+      "shopifyCategoryId": "ae-2-8-7-9-2",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > String Instruments > Ukuleles > Concert Ukuleles",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181261",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage String > Folk & World > Autoharps & Zithers",
+      "shopifyCategoryId": "ae-1",
+      "shopifyFullName": "Arts & Entertainment > Event Tickets",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181262",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage String > Folk & World > Balalaikas",
+      "shopifyCategoryId": "ae-1",
+      "shopifyFullName": "Arts & Entertainment > Event Tickets",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181263",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage String > Folk & World > Harps & Dulcimers",
+      "shopifyCategoryId": "ae-2-8-7-3-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > String Instruments > Harps > Celtic Harps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181264",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage String > Folk & World > Lutes",
+      "shopifyCategoryId": "ae-1",
+      "shopifyFullName": "Arts & Entertainment > Event Tickets",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181265",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage String > Folk & World > Mandolins",
+      "shopifyCategoryId": "ae-2-8-7-8-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > String Instruments > Mandolins > A-Style Mandolins",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "119026",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage String > Orchestral > Violins",
+      "shopifyCategoryId": "ae-2-8-7-6",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > String Instruments > Violins",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181256",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage String > Orchestral > Upright Basses",
+      "shopifyCategoryId": "ae-2-8-7-4-2",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > String Instruments > Upright Basses > Double Basses",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181257",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage String > Orchestral > Cellos",
+      "shopifyCategoryId": "ae-2-8-7-1-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > String Instruments > Cellos > Acoustic Cellos",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181258",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage String > Orchestral > Violas",
+      "shopifyCategoryId": "ae-2-8-7-5",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > String Instruments > Violas",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "118975",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Brass > Trumpets",
+      "shopifyCategoryId": "ae-2-8-3-5-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Brass Instruments > Trumpets & Cornets > Trumpets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "118976",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Brass > Trombones",
+      "shopifyCategoryId": "ae-2-8-3-4-2",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Brass Instruments > Trombones > Tenor Trombones",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "118977",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Brass > Other Vintage Brass",
+      "shopifyCategoryId": "ae-2-7-1-2",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Brass Instrument Accessories > Brass Instrument Cases & Gigbags",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "159946",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Brass > Cornets",
+      "shopifyCategoryId": "ae-2-8-3-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Brass Instruments > Trumpets & Cornets > Cornets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181156",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Brass > Mellophones",
+      "shopifyCategoryId": "ae-2-8-3-1-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Brass Instruments > Alto & Baritone Horns > Mellophones",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181157",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Brass > Sousaphones",
+      "shopifyCategoryId": "ae-2-8-3-6-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Brass Instruments > Tubas > Sousaphones",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181158",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Brass > Baritones",
+      "shopifyCategoryId": "ae-2-8-3-1-2",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Brass Instruments > Alto & Baritone Horns > Baritone Horns",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181159",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Brass > Bugles",
+      "shopifyCategoryId": "ae-2-7-1-4-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Brass Instrument Accessories > Brass Instrument Mutes > Cup Mutes",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181160",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Brass > Tubas",
+      "shopifyCategoryId": "ae-2-8-3-6-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Brass Instruments > Tubas > Sousaphones",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181161",
+      "ebayFullName": "Musical Instruments & Gear > Vintage Musical Instruments > Vintage Brass > Parts & Accessories",
+      "shopifyCategoryId": "ae-2-7-1-5",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Brass Instrument Accessories > Brass Instrument Replacement Parts",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "623",
+      "ebayFullName": "Musical Instruments & Gear > String > Other String Instruments",
+      "shopifyCategoryId": "se-5-4",
+      "shopifyFullName": "Services > Home Improvement Services > Specialized Home Services",
+      "confidence": 0.6,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "181281",
+      "ebayFullName": "Musical Instruments & Gear > String > Orchestral",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "181282",
+      "ebayFullName": "Musical Instruments & Gear > String > Folk & World",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "182162",
+      "ebayFullName": "Musical Instruments & Gear > String > Accessories",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "261872",
+      "ebayFullName": "Musical Instruments & Gear > String > Parts",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "182164",
+      "ebayFullName": "Musical Instruments & Gear > String > Parts > Bows",
+      "shopifyCategoryId": "ae-2-7-13-2-2",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > String Instrument Accessories > Orchestral String Instrument Accessories > Orchestral String Instrument Bows",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182165",
+      "ebayFullName": "Musical Instruments & Gear > String > Parts > Bridges & Tailpieces",
+      "shopifyCategoryId": "ae-2-7-13-2-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > String Instrument Accessories > Orchestral String Instrument Accessories > Orchestral String Instrument Fittings & Parts",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182168",
+      "ebayFullName": "Musical Instruments & Gear > String > Parts > Pegs",
+      "shopifyCategoryId": "ae-2-7-14-2-5",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Woodwind Instrument Accessories > Clarinet Accessories > Clarinet Pegs & Stands",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182172",
+      "ebayFullName": "Musical Instruments & Gear > String > Parts > Strings",
+      "shopifyCategoryId": "ae-2-7-13-2-8",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > String Instrument Accessories > Orchestral String Instrument Accessories > Orchestral String Instrument Strings",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182163",
+      "ebayFullName": "Musical Instruments & Gear > String > Accessories > Bags & Cases",
+      "shopifyCategoryId": "ae-2-7-13-2-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > String Instrument Accessories > Orchestral String Instrument Accessories > Orchestral String Instrument Cases",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182166",
+      "ebayFullName": "Musical Instruments & Gear > String > Accessories > Care & Cleaning",
+      "shopifyCategoryId": "ae-2-7-13-3-2",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > String Instrument Accessories > String Instrument Care & Cleaning > String Instrument Cleaning Cloths",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182167",
+      "ebayFullName": "Musical Instruments & Gear > String > Accessories > Mutes",
+      "shopifyCategoryId": "ae-2-7-13-2-5",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > String Instrument Accessories > Orchestral String Instrument Accessories > Orchestral String Instrument Mutes",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182169",
+      "ebayFullName": "Musical Instruments & Gear > String > Accessories > Picks",
+      "shopifyCategoryId": "ae-2-7-13-1-7-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > String Instrument Accessories > Guitar Accessories > Guitar Picks > Finger Picks",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182170",
+      "ebayFullName": "Musical Instruments & Gear > String > Accessories > Rests & Pads",
+      "shopifyCategoryId": "ae-2-7-13-3-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > String Instrument Accessories > String Instrument Care & Cleaning > Bow Rosin",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182171",
+      "ebayFullName": "Musical Instruments & Gear > String > Accessories > Stands",
+      "shopifyCategoryId": "ae-2-7-13-2-7",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > String Instrument Accessories > Orchestral String Instrument Accessories > Orchestral String Instrument Stands",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182173",
+      "ebayFullName": "Musical Instruments & Gear > String > Accessories > Other Accessories",
+      "shopifyCategoryId": "se-5-4",
+      "shopifyFullName": "Services > Home Improvement Services > Specialized Home Services",
+      "confidence": 0.6,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "10177",
+      "ebayFullName": "Musical Instruments & Gear > String > Folk & World > Banjos",
+      "shopifyCategoryId": "ae-2-8-7-7-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > String Instruments > Banjos > 4-String Banjos",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "10179",
+      "ebayFullName": "Musical Instruments & Gear > String > Folk & World > Mandolins",
+      "shopifyCategoryId": "ae-2-8-7-8-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > String Instruments > Mandolins > A-Style Mandolins",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "16221",
+      "ebayFullName": "Musical Instruments & Gear > String > Folk & World > Autoharps & Zithers",
+      "shopifyCategoryId": "ae-2-8-7-8-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > String Instruments > Mandolins > A-Style Mandolins",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "16223",
+      "ebayFullName": "Musical Instruments & Gear > String > Folk & World > Harps & Dulcimers",
+      "shopifyCategoryId": "ae-2-8-7-3-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > String Instruments > Harps > Celtic Harps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "16224",
+      "ebayFullName": "Musical Instruments & Gear > String > Folk & World > Ukuleles",
+      "shopifyCategoryId": "ae-2-8-7-9-2",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > String Instruments > Ukuleles > Concert Ukuleles",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "101567",
+      "ebayFullName": "Musical Instruments & Gear > String > Folk & World > Bouzoukis/Mandolas",
+      "shopifyCategoryId": "ae-2-8-7-8-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > String Instruments > Mandolins > Electric Mandolins",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "112677",
+      "ebayFullName": "Musical Instruments & Gear > String > Folk & World > Sitars",
+      "shopifyCategoryId": "se-5-4",
+      "shopifyFullName": "Services > Home Improvement Services > Specialized Home Services",
+      "confidence": 0.6,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "181283",
+      "ebayFullName": "Musical Instruments & Gear > String > Folk & World > Balalaikas",
+      "shopifyCategoryId": "se-5-4",
+      "shopifyFullName": "Services > Home Improvement Services > Specialized Home Services",
+      "confidence": 0.6,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "181284",
+      "ebayFullName": "Musical Instruments & Gear > String > Folk & World > Erhus",
+      "shopifyCategoryId": "se-5-4",
+      "shopifyFullName": "Services > Home Improvement Services > Specialized Home Services",
+      "confidence": 0.6,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "181285",
+      "ebayFullName": "Musical Instruments & Gear > String > Folk & World > Guzhengs",
+      "shopifyCategoryId": "ae-2-8-1-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Accordions & Concertinas > Accordions",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181286",
+      "ebayFullName": "Musical Instruments & Gear > String > Folk & World > Ouds",
+      "shopifyCategoryId": "ae-2-8-7-2-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > String Instruments > Guitars > Classical Guitars",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181287",
+      "ebayFullName": "Musical Instruments & Gear > String > Folk & World > Pipas",
+      "shopifyCategoryId": "ae-2-8-7-2-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > String Instruments > Guitars > Classical Guitars",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181288",
+      "ebayFullName": "Musical Instruments & Gear > String > Folk & World > Rebabs",
+      "shopifyCategoryId": "ae-2-8-7-2-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > String Instruments > Guitars > Classical Guitars",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181289",
+      "ebayFullName": "Musical Instruments & Gear > String > Folk & World > Sarods",
+      "shopifyCategoryId": "ae-2-8-7-2-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > String Instruments > Guitars > Classical Guitars",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181290",
+      "ebayFullName": "Musical Instruments & Gear > String > Folk & World > Sazs",
+      "shopifyCategoryId": "ae-2-8-7-2-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > String Instruments > Guitars > Classical Guitars",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181291",
+      "ebayFullName": "Musical Instruments & Gear > String > Folk & World > Setars",
+      "shopifyCategoryId": "ae-2-8-7-2-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > String Instruments > Guitars > Classical Guitars",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "261870",
+      "ebayFullName": "Musical Instruments & Gear > String > Folk & World > Domras",
+      "shopifyCategoryId": "ae-2-8-7-2-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > String Instruments > Guitars > Classical Guitars",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "261871",
+      "ebayFullName": "Musical Instruments & Gear > String > Folk & World > Morin Khuurs",
+      "shopifyCategoryId": "ae-2-8-7-2-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > String Instruments > Guitars > Classical Guitars",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "10178",
+      "ebayFullName": "Musical Instruments & Gear > String > Orchestral > Cellos",
+      "shopifyCategoryId": "ae-2-8-7-1-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > String Instruments > Cellos > Acoustic Cellos",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "16222",
+      "ebayFullName": "Musical Instruments & Gear > String > Orchestral > Upright Basses",
+      "shopifyCategoryId": "ae-2-8-7-4-2",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > String Instruments > Upright Basses > Double Basses",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "16225",
+      "ebayFullName": "Musical Instruments & Gear > String > Orchestral > Violas",
+      "shopifyCategoryId": "ae-2-8-7-5",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > String Instruments > Violas",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "38107",
+      "ebayFullName": "Musical Instruments & Gear > String > Orchestral > Violins",
+      "shopifyCategoryId": "ae-2-8-7-6",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > String Instruments > Violins",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182151",
+      "ebayFullName": "Musical Instruments & Gear > Sheet Music & Song Books > Contemporary",
+      "shopifyCategoryId": "me-6",
+      "shopifyFullName": "Media > Sheet Music",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182152",
+      "ebayFullName": "Musical Instruments & Gear > Sheet Music & Song Books > Vintage & Antique",
+      "shopifyCategoryId": "me-6",
+      "shopifyFullName": "Media > Sheet Music",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "3278",
+      "ebayFullName": "Musical Instruments & Gear > Pro Audio Equipment > Other Pro Audio Equipment",
+      "shopifyCategoryId": "el-2-1-1-1",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > Audio & Video Receiver Accessories > Audio & Video Receiver Rack Mounts",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "4785",
+      "ebayFullName": "Musical Instruments & Gear > Pro Audio Equipment > Live & Studio Mixers",
+      "shopifyCategoryId": "el-2-2-3",
+      "shopifyFullName": "Electronics > Audio > Audio Components > Audio Mixers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "15199",
+      "ebayFullName": "Musical Instruments & Gear > Pro Audio Equipment > Recorders",
+      "shopifyCategoryId": "ae-2-7-14-6-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Woodwind Instrument Accessories > Recorder Accessories > Recorder Care & Cleaning",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "23789",
+      "ebayFullName": "Musical Instruments & Gear > Pro Audio Equipment > Cases, Racks & Bags",
+      "shopifyCategoryId": "ae-2-7-1-2",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Brass Instrument Accessories > Brass Instrument Cases & Gigbags",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "23791",
+      "ebayFullName": "Musical Instruments & Gear > Pro Audio Equipment > Signal Processors/Rack Effects",
+      "shopifyCategoryId": "el-2-2-9-2",
+      "shopifyFullName": "Electronics > Audio > Audio Components > Signal Processors > Effects Processors",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "29946",
+      "ebayFullName": "Musical Instruments & Gear > Pro Audio Equipment > Microphones & Wireless Systems",
+      "shopifyCategoryId": "el-2-2-8",
+      "shopifyFullName": "Electronics > Audio > Audio Components > Microphones",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "29948",
+      "ebayFullName": "Musical Instruments & Gear > Pro Audio Equipment > Stands, Mounts & Holders",
+      "shopifyCategoryId": "ae-2-7-8",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Music Stands",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "38070",
+      "ebayFullName": "Musical Instruments & Gear > Pro Audio Equipment > Samplers & Sequencers",
+      "shopifyCategoryId": "ae-2-8-4-1-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Electronic Musical Instruments > Audio Samplers > Drum Samplers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "38071",
+      "ebayFullName": "Musical Instruments & Gear > Pro Audio Equipment > Synthesizers",
+      "shopifyCategoryId": "ae-2-8-4-4-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Electronic Musical Instruments > Sound Synthesizers > Analog Synthesizers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "41459",
+      "ebayFullName": "Musical Instruments & Gear > Pro Audio Equipment > Cables, Snakes & Interconnects",
+      "shopifyCategoryId": "el-7-7-1-10",
+      "shopifyFullName": "Electronics > Electronics Accessories > Cables > Audio & Video Cables > Speaker Cables",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "47091",
+      "ebayFullName": "Musical Instruments & Gear > Pro Audio Equipment > Speakers",
+      "shopifyCategoryId": "el-2-2-10-1",
+      "shopifyFullName": "Electronics > Audio > Audio Components > Speakers > Bookshelf Speakers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "47092",
+      "ebayFullName": "Musical Instruments & Gear > Pro Audio Equipment > Speaker Drivers & Horns",
+      "shopifyCategoryId": "el-2-1-8-2-3",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > Speaker Accessories > Speaker Components & Kits > Speaker Drivers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "113484",
+      "ebayFullName": "Musical Instruments & Gear > Pro Audio Equipment > Pro Audio Equipment Parts",
+      "shopifyCategoryId": "el-2-1-8-2-1",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > Speaker Accessories > Speaker Components & Kits > Speaker Connectors & Terminals",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "119018",
+      "ebayFullName": "Musical Instruments & Gear > Pro Audio Equipment > Preamps & Channel Strips",
+      "shopifyCategoryId": "el-2-2-9-5",
+      "shopifyFullName": "Electronics > Audio > Audio Components > Signal Processors > Microphone Preamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "119019",
+      "ebayFullName": "Musical Instruments & Gear > Pro Audio Equipment > Vintage Pro Audio Equipment",
+      "shopifyCategoryId": "el-2-1-1-1",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > Audio & Video Receiver Accessories > Audio & Video Receiver Rack Mounts",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "123445",
+      "ebayFullName": "Musical Instruments & Gear > Pro Audio Equipment > Audio/MIDI Interfaces",
+      "shopifyCategoryId": "el-2-2-12",
+      "shopifyFullName": "Electronics > Audio > Audio Components > Audio Interfaces",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "159955",
+      "ebayFullName": "Musical Instruments & Gear > Pro Audio Equipment > Audio Power Conditioners",
+      "shopifyCategoryId": "el-7-15-6-1",
+      "shopifyFullName": "Electronics > Electronics Accessories > Power > Power Control Units > Power Conditioners",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "163896",
+      "ebayFullName": "Musical Instruments & Gear > Pro Audio Equipment > Amplifiers",
+      "shopifyCategoryId": "ae-2-7-10-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Musical Instrument Amplifiers > Acoustic Amplifiers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "168129",
+      "ebayFullName": "Musical Instruments & Gear > Pro Audio Equipment > Acoustical Treatments",
+      "shopifyCategoryId": "ha-2-16-1",
+      "shopifyFullName": "Hardware > Building Materials > Sound Dampening Panels & Foam > Acoustic Panels",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "177027",
+      "ebayFullName": "Musical Instruments & Gear > Pro Audio Equipment > Software, Loops & Samples",
+      "shopifyCategoryId": "so-1-10-8",
+      "shopifyFullName": "Software > Computer Software > Multimedia & Design Software > Sound Editing Software",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "177028",
+      "ebayFullName": "Musical Instruments & Gear > Pro Audio Equipment > Studio/Live Equipment Packages",
+      "shopifyCategoryId": "el-2-2-11",
+      "shopifyFullName": "Electronics > Audio > Audio Components > Studio Recording Bundles",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "178896",
+      "ebayFullName": "Musical Instruments & Gear > Pro Audio Equipment > MIDI Keyboards & Controllers",
+      "shopifyCategoryId": "ae-2-8-4-2-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Electronic Musical Instruments > MIDI Controllers > Keyboard Controllers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "261865",
+      "ebayFullName": "Musical Instruments & Gear > Pro Audio Equipment > In-Ear Monitors",
+      "shopifyCategoryId": "el-2-7-2",
+      "shopifyFullName": "Electronics > Audio > Stage Equipment > In-Ear Monitor Systems",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "622",
+      "ebayFullName": "Musical Instruments & Gear > Percussion > Other Percussion",
+      "shopifyCategoryId": "ae-2-7-12-10",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Percussion Accessories > Percussion Mallets",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "41441",
+      "ebayFullName": "Musical Instruments & Gear > Percussion > Cymbals",
+      "shopifyCategoryId": "ae-2-8-5-2-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Percussion > Cymbals > China Cymbals",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181227",
+      "ebayFullName": "Musical Instruments & Gear > Percussion > Drums",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "181228",
+      "ebayFullName": "Musical Instruments & Gear > Percussion > Folk & World Drums",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "181246",
+      "ebayFullName": "Musical Instruments & Gear > Percussion > Hand Percussion",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "181249",
+      "ebayFullName": "Musical Instruments & Gear > Percussion > Orchestral Percussion",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "181254",
+      "ebayFullName": "Musical Instruments & Gear > Percussion > Parts",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "261885",
+      "ebayFullName": "Musical Instruments & Gear > Percussion > Accessories",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "10173",
+      "ebayFullName": "Musical Instruments & Gear > Percussion > Accessories > Other Percussion Accessories",
+      "shopifyCategoryId": "ae-2-7-12-9-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Percussion Accessories > Hand Percussion Accessories > Hand Percussion Bags & Cases",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "41449",
+      "ebayFullName": "Musical Instruments & Gear > Percussion > Accessories > Bags & Cases",
+      "shopifyCategoryId": "ae-2-7-12-1-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Percussion Accessories > Cymbal & Drum Cases > Cymbal & Drum Set Cases",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "41453",
+      "ebayFullName": "Musical Instruments & Gear > Percussion > Accessories > Stands",
+      "shopifyCategoryId": "ae-2-7-12-11-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Percussion Accessories > Percussion Stands > Percussion Stand Sets",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "47084",
+      "ebayFullName": "Musical Instruments & Gear > Percussion > Accessories > Stools & Thrones",
+      "shopifyCategoryId": "ae-2-7-5",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Music Benches & Stools",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "47579",
+      "ebayFullName": "Musical Instruments & Gear > Percussion > Accessories > Practice Pads",
+      "shopifyCategoryId": "ae-2-8-5-9",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Percussion > Practice Pads",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "41450",
+      "ebayFullName": "Musical Instruments & Gear > Percussion > Parts > Heads",
+      "shopifyCategoryId": "ae-2-7-12-3-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Percussion Accessories > Drum Heads > Bass Drum Heads",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "41451",
+      "ebayFullName": "Musical Instruments & Gear > Percussion > Parts > Hoops & Rims",
+      "shopifyCategoryId": "ae-2-7-12-5-2-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Percussion Accessories > Drum Kit Hardware > Drum Kit Mounting Hardware > Clamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "41452",
+      "ebayFullName": "Musical Instruments & Gear > Percussion > Parts > Pedals",
+      "shopifyCategoryId": "ae-2-7-12-5-3-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Percussion Accessories > Drum Kit Hardware > Drum Pedals > Belt Drives",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "41456",
+      "ebayFullName": "Musical Instruments & Gear > Percussion > Parts > Sticks, Brushes & Mallets",
+      "shopifyCategoryId": "ae-2-7-12-7-2",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Percussion Accessories > Drum Sticks & Brushes > Drum Sticks",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "47089",
+      "ebayFullName": "Musical Instruments & Gear > Percussion > Parts > Mounts & Assembly Hardware",
+      "shopifyCategoryId": "ae-2-7-12-5-2-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Percussion Accessories > Drum Kit Hardware > Drum Kit Mounting Hardware > Multi-Clamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "261864",
+      "ebayFullName": "Musical Instruments & Gear > Percussion > Parts > Other Percussion Parts",
+      "shopifyCategoryId": "ae-2-7-12-10",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Percussion Accessories > Percussion Mallets",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "41440",
+      "ebayFullName": "Musical Instruments & Gear > Percussion > Orchestral Percussion > Bells & Chimes",
+      "shopifyCategoryId": "ae-2-8-5-7-3-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Percussion > Hand Percussion > Hand Bells & Chimes > Orchestra Chimes",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "41458",
+      "ebayFullName": "Musical Instruments & Gear > Percussion > Orchestral Percussion > Mallet Percussion",
+      "shopifyCategoryId": "ae-2-8-5-5-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Percussion > Glockenspiels & Xylophones > Vibraphones",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181250",
+      "ebayFullName": "Musical Instruments & Gear > Percussion > Orchestral Percussion > Gongs",
+      "shopifyCategoryId": "ae-2-8-5-6-2",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Percussion > Gongs > Tam-Tams",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181251",
+      "ebayFullName": "Musical Instruments & Gear > Percussion > Orchestral Percussion > Timpani",
+      "shopifyCategoryId": "ae-2-7-14-1-1-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Woodwind Instrument Accessories > Bassoon Accessories > Bassoon Care & Cleaning > Bassoon Swabs",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181253",
+      "ebayFullName": "Musical Instruments & Gear > Percussion > Orchestral Percussion > Other Orchestral Percussion",
+      "shopifyCategoryId": "ae-2-7-12-10",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Percussion Accessories > Percussion Mallets",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "39178",
+      "ebayFullName": "Musical Instruments & Gear > Percussion > Hand Percussion > Singing Bowls",
+      "shopifyCategoryId": "ae-2-7-12-8-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Percussion Accessories > Electronic Drum Modules > Control Modules",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "41457",
+      "ebayFullName": "Musical Instruments & Gear > Percussion > Hand Percussion > Tambourines",
+      "shopifyCategoryId": "ae-2-8-5-7-10-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Percussion > Hand Percussion > Tambourines > Handheld Tambourines",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "47090",
+      "ebayFullName": "Musical Instruments & Gear > Percussion > Hand Percussion > Shakers & Small Percussion",
+      "shopifyCategoryId": "ae-2-8-5-7-8-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Percussion > Hand Percussion > Musical Shakers > Maracas",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "148620",
+      "ebayFullName": "Musical Instruments & Gear > Percussion > Hand Percussion > Kalimbas",
+      "shopifyCategoryId": "ae-2-7-12-8-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Percussion Accessories > Electronic Drum Modules > Control Modules",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "148621",
+      "ebayFullName": "Musical Instruments & Gear > Percussion > Hand Percussion > Jaw Harps",
+      "shopifyCategoryId": "ae-2-8-8-6-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Woodwinds > Jew's Harps > Contemporary Jew's Harps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181248",
+      "ebayFullName": "Musical Instruments & Gear > Percussion > Hand Percussion > Other Hand Percussion",
+      "shopifyCategoryId": "ae-2-7-12-10",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Percussion Accessories > Percussion Mallets",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "93771",
+      "ebayFullName": "Musical Instruments & Gear > Percussion > Folk & World Drums > Bodhráns/Irish Drums",
+      "shopifyCategoryId": "ae-2-8-5-7-4-4-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Percussion > Hand Percussion > Hand Drums > Frame Drums > Bodhrans",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181229",
+      "ebayFullName": "Musical Instruments & Gear > Percussion > Folk & World Drums > Bongos",
+      "shopifyCategoryId": "ae-2-8-5-7-4-1-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Percussion > Hand Percussion > Hand Drums > Bongos > Traditional Bongos",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181230",
+      "ebayFullName": "Musical Instruments & Gear > Percussion > Folk & World Drums > Cajons",
+      "shopifyCategoryId": "ae-2-8-5-7-4-2-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Percussion > Hand Percussion > Hand Drums > Cajons > Bass Cajons",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181231",
+      "ebayFullName": "Musical Instruments & Gear > Percussion > Folk & World Drums > Congas",
+      "shopifyCategoryId": "ae-2-8-5-7-4-3-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Percussion > Hand Percussion > Hand Drums > Congas > Conga Sets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181232",
+      "ebayFullName": "Musical Instruments & Gear > Percussion > Folk & World Drums > Darbukas",
+      "shopifyCategoryId": "ae-2-8-5-7-4-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Percussion > Hand Percussion > Hand Drums > Goblet Drums > Darbukas",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181233",
+      "ebayFullName": "Musical Instruments & Gear > Percussion > Folk & World Drums > Dhols",
+      "shopifyCategoryId": "ae-2-7-12-8-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Percussion Accessories > Electronic Drum Modules > Control Modules",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181234",
+      "ebayFullName": "Musical Instruments & Gear > Percussion > Folk & World Drums > Dholaks",
+      "shopifyCategoryId": "ae-2-7-12-8-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Percussion Accessories > Electronic Drum Modules > Control Modules",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181235",
+      "ebayFullName": "Musical Instruments & Gear > Percussion > Folk & World Drums > Djembes",
+      "shopifyCategoryId": "ae-2-8-5-7-4-5-2",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Percussion > Hand Percussion > Hand Drums > Goblet Drums > Djembes",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181236",
+      "ebayFullName": "Musical Instruments & Gear > Percussion > Folk & World Drums > Handpans",
+      "shopifyCategoryId": "ae-2-7-12-8-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Percussion Accessories > Electronic Drum Modules > Control Modules",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181239",
+      "ebayFullName": "Musical Instruments & Gear > Percussion > Folk & World Drums > Steel Drums",
+      "shopifyCategoryId": "ae-2-7-12-8-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Percussion Accessories > Electronic Drum Modules > Control Modules",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181241",
+      "ebayFullName": "Musical Instruments & Gear > Percussion > Folk & World Drums > Tablas",
+      "shopifyCategoryId": "ae-2-8-5-7-4-6-2",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Percussion > Hand Percussion > Hand Drums > Tablas > Dayans",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181243",
+      "ebayFullName": "Musical Instruments & Gear > Percussion > Folk & World Drums > Tamboras",
+      "shopifyCategoryId": "ae-2-7-12-8-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Percussion Accessories > Electronic Drum Modules > Control Modules",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181245",
+      "ebayFullName": "Musical Instruments & Gear > Percussion > Folk & World Drums > Other Folk & World Drums",
+      "shopifyCategoryId": "ae-2-7-12-8-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Percussion Accessories > Electronic Drum Modules > Control Modules",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "261863",
+      "ebayFullName": "Musical Instruments & Gear > Percussion > Folk & World Drums > Guiros",
+      "shopifyCategoryId": "ae-2-8-5-7-7-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Percussion > Hand Percussion > Musical Scrapers & Ratchets > Guiros",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "10175",
+      "ebayFullName": "Musical Instruments & Gear > Percussion > Drums > Other Drums",
+      "shopifyCategoryId": "ae-2-8-5-3-8",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Percussion > Drum Kits > Rock Drum Kits",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "38069",
+      "ebayFullName": "Musical Instruments & Gear > Percussion > Drums > Electronic Drums",
+      "shopifyCategoryId": "ae-2-8-5-4-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Percussion > Electronic Drums > Electronic Cymbals",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "38093",
+      "ebayFullName": "Musical Instruments & Gear > Percussion > Drums > Bass Drums",
+      "shopifyCategoryId": "ae-2-8-5-1-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Percussion > Bass Drums > Concert Bass Drums",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "38095",
+      "ebayFullName": "Musical Instruments & Gear > Percussion > Drums > Snare Drums",
+      "shopifyCategoryId": "ae-2-8-5-10-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Percussion > Snare Drums > Metal Snare Drums",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "38096",
+      "ebayFullName": "Musical Instruments & Gear > Percussion > Drums > Toms",
+      "shopifyCategoryId": "ae-2-8-5-11-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Percussion > Tom-Toms > Concert Tom-Toms",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "38097",
+      "ebayFullName": "Musical Instruments & Gear > Percussion > Drums > Sets & Kits",
+      "shopifyCategoryId": "ae-2-8-5-3-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Percussion > Drum Kits > Acoustic Drum Kits",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "1289",
+      "ebayFullName": "Musical Instruments & Gear > Pianos, Keyboards & Organs > Other Pianos & Keyboards",
+      "shopifyCategoryId": "ae-2-8-4-3-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Electronic Musical Instruments > Musical Keyboards > Digital Pianos",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "16219",
+      "ebayFullName": "Musical Instruments & Gear > Pianos, Keyboards & Organs > Organs",
+      "shopifyCategoryId": "ae-2-8-8-8-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Woodwinds > Musical Pipes > Organs",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "38088",
+      "ebayFullName": "Musical Instruments & Gear > Pianos, Keyboards & Organs > Electronic Keyboards",
+      "shopifyCategoryId": "ae-2-8-4-3-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Electronic Musical Instruments > Musical Keyboards > Stage Pianos",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181224",
+      "ebayFullName": "Musical Instruments & Gear > Pianos, Keyboards & Organs > Parts & Accessories",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "181225",
+      "ebayFullName": "Musical Instruments & Gear > Pianos, Keyboards & Organs > Pianos",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "181489",
+      "ebayFullName": "Musical Instruments & Gear > Pianos, Keyboards & Organs > Folk & World",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "182149",
+      "ebayFullName": "Musical Instruments & Gear > Pianos, Keyboards & Organs > Harpsichords",
+      "shopifyCategoryId": "se-5-4",
+      "shopifyFullName": "Services > Home Improvement Services > Specialized Home Services",
+      "confidence": 0.6,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "181269",
+      "ebayFullName": "Musical Instruments & Gear > Pianos, Keyboards & Organs > Folk & World > Accordions",
+      "shopifyCategoryId": "ae-2-8-1-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Accordions & Concertinas > Accordions",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181270",
+      "ebayFullName": "Musical Instruments & Gear > Pianos, Keyboards & Organs > Folk & World > Concertinas",
+      "shopifyCategoryId": "ae-2-8-1-2",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Accordions & Concertinas > Concertinas",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181274",
+      "ebayFullName": "Musical Instruments & Gear > Pianos, Keyboards & Organs > Folk & World > Harmoniums",
+      "shopifyCategoryId": "ae-2-7-14-5-3-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Woodwind Instrument Accessories > Oboe & English Horn Accessories > Oboe Parts > Oboe Small Parts",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181490",
+      "ebayFullName": "Musical Instruments & Gear > Pianos, Keyboards & Organs > Folk & World > Other Folk & World",
+      "shopifyCategoryId": "se-5-4",
+      "shopifyFullName": "Services > Home Improvement Services > Specialized Home Services",
+      "confidence": 0.6,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "16220",
+      "ebayFullName": "Musical Instruments & Gear > Pianos, Keyboards & Organs > Pianos > Other Pianos",
+      "shopifyCategoryId": "ae-2-8-4-3-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Electronic Musical Instruments > Musical Keyboards > Digital Pianos",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "43376",
+      "ebayFullName": "Musical Instruments & Gear > Pianos, Keyboards & Organs > Pianos > Grand & Baby Grand Pianos",
+      "shopifyCategoryId": "ae-2-8-6-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Pianos > Grand Pianos",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "43377",
+      "ebayFullName": "Musical Instruments & Gear > Pianos, Keyboards & Organs > Pianos > Upright Pianos",
+      "shopifyCategoryId": "ae-2-8-6-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Pianos > Upright Pianos",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "85860",
+      "ebayFullName": "Musical Instruments & Gear > Pianos, Keyboards & Organs > Pianos > Digital Pianos",
+      "shopifyCategoryId": "ae-2-8-4-3-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Electronic Musical Instruments > Musical Keyboards > Digital Pianos",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "21766",
+      "ebayFullName": "Musical Instruments & Gear > Pianos, Keyboards & Organs > Parts & Accessories > Other Parts",
+      "shopifyCategoryId": "fr-4-14-2-1",
+      "shopifyFullName": "Furniture > Cabinets & Storage > Vanities > Bedroom Vanities > Bedroom Vanity Sets",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "47042",
+      "ebayFullName": "Musical Instruments & Gear > Pianos, Keyboards & Organs > Parts & Accessories > Stands",
+      "shopifyCategoryId": "ae-2-7-11-2-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Musical Keyboard Accessories > Musical Keyboard Stands > Column Stands",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "117049",
+      "ebayFullName": "Musical Instruments & Gear > Pianos, Keyboards & Organs > Parts & Accessories > Stools & Benches",
+      "shopifyCategoryId": "ae-2-7-5",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Music Benches & Stools",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "148725",
+      "ebayFullName": "Musical Instruments & Gear > Pianos, Keyboards & Organs > Parts & Accessories > Keyboard Covers",
+      "shopifyCategoryId": "ae-2-7-11-1-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Musical Keyboard Accessories > Musical Keyboard Bags & Cases > Musical Keyboard Soft Cases",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "148727",
+      "ebayFullName": "Musical Instruments & Gear > Pianos, Keyboards & Organs > Parts & Accessories > Cases & Bags",
+      "shopifyCategoryId": "ae-2-7-11-1-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Musical Keyboard Accessories > Musical Keyboard Bags & Cases > Musical Keyboard Gigbags",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "148728",
+      "ebayFullName": "Musical Instruments & Gear > Pianos, Keyboards & Organs > Parts & Accessories > Pedals",
+      "shopifyCategoryId": "ae-2-7-11-3-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Musical Keyboard Accessories > Sustain Pedals > Damper",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182147",
+      "ebayFullName": "Musical Instruments & Gear > Pianos, Keyboards & Organs > Parts & Accessories > Accordion Accessories",
+      "shopifyCategoryId": "ae-2-7-1-1-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Brass Instrument Accessories > Brass Instrument Care & Cleaning > Brass Instrument Care Kits",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182148",
+      "ebayFullName": "Musical Instruments & Gear > Pianos, Keyboards & Organs > Parts & Accessories > Repair & Maintenance",
+      "shopifyCategoryId": "ae-2-7-1-1-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Brass Instrument Accessories > Brass Instrument Care & Cleaning > Brass Instrument Cleaning Tools",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "261866",
+      "ebayFullName": "Musical Instruments & Gear > Pianos, Keyboards & Organs > Parts & Accessories > Felts",
+      "shopifyCategoryId": "ae-2-7-1-1-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Brass Instrument Accessories > Brass Instrument Care & Cleaning > Brass Instrument Cleaning Tools",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "261867",
+      "ebayFullName": "Musical Instruments & Gear > Pianos, Keyboards & Organs > Parts & Accessories > Keytops",
+      "shopifyCategoryId": "ae-2-7-1-1-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Brass Instrument Accessories > Brass Instrument Care & Cleaning > Brass Instrument Care Kits",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "261868",
+      "ebayFullName": "Musical Instruments & Gear > Pianos, Keyboards & Organs > Parts & Accessories > Piano Stickers",
+      "shopifyCategoryId": "se-5-4",
+      "shopifyFullName": "Services > Home Improvement Services > Specialized Home Services",
+      "confidence": 0.6,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "261869",
+      "ebayFullName": "Musical Instruments & Gear > Pianos, Keyboards & Organs > Parts & Accessories > Tuning Tools",
+      "shopifyCategoryId": "ae-2-7-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Electronic Tuners",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "1288",
+      "ebayFullName": "Musical Instruments & Gear > General Accessories > Other General Accessories",
+      "shopifyCategoryId": "se-5-4",
+      "shopifyFullName": "Services > Home Improvement Services > Specialized Home Services",
+      "confidence": 0.6,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "39179",
+      "ebayFullName": "Musical Instruments & Gear > General Accessories > Hearing Protection",
+      "shopifyCategoryId": "el-2-2-7-2-3",
+      "shopifyFullName": "Electronics > Audio > Audio Components > Headphones & Headsets > Headsets > Hearing Protection Headsets",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "41404",
+      "ebayFullName": "Musical Instruments & Gear > General Accessories > Metronomes",
+      "shopifyCategoryId": "ae-2-7-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Metronomes",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "64388",
+      "ebayFullName": "Musical Instruments & Gear > General Accessories > Tuners",
+      "shopifyCategoryId": "ae-2-7-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Electronic Tuners",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "101555",
+      "ebayFullName": "Musical Instruments & Gear > General Accessories > Music Stands",
+      "shopifyCategoryId": "ae-2-7-8",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Music Stands",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "50590",
+      "ebayFullName": "Musical Instruments & Gear > Karaoke Entertainment > Karaoke Microphones",
+      "shopifyCategoryId": "el-2-1-3-3",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > Karaoke System Accessories > Karaoke Microphones",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "64602",
+      "ebayFullName": "Musical Instruments & Gear > Karaoke Entertainment > Karaoke Systems",
+      "shopifyCategoryId": "el-2-3-5",
+      "shopifyFullName": "Electronics > Audio > Audio Players & Recorders > Karaoke Systems",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "64604",
+      "ebayFullName": "Musical Instruments & Gear > Karaoke Entertainment > Karaoke CDGs, DVDs & Media",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.5,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "64605",
+      "ebayFullName": "Musical Instruments & Gear > Karaoke Entertainment > Karaoke Mixers",
+      "shopifyCategoryId": "ae-2-7-9-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Musical Instrument Amplifier Accessories > Musical Instrument Amplifier Footswitches",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "64606",
+      "ebayFullName": "Musical Instruments & Gear > Karaoke Entertainment > Players & Mic-Based Players",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.5,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "14985",
+      "ebayFullName": "Musical Instruments & Gear > DJ Equipment > DJ & Monitoring Headphones",
+      "shopifyCategoryId": "el-2-2-7-1-2",
+      "shopifyFullName": "Electronics > Audio > Audio Components > Headphones & Headsets > Headphones > DJ Headphones",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "19656",
+      "ebayFullName": "Musical Instruments & Gear > DJ Equipment > Microphones",
+      "shopifyCategoryId": "ae-2-1-2-2-3-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Craft Fasteners & Closures > Eyelets & Grommets > Eyelets",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "19699",
+      "ebayFullName": "Musical Instruments & Gear > DJ Equipment > DJ Mixers",
+      "shopifyCategoryId": "ae-2-7-9-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Musical Instrument Amplifier Accessories > Musical Instrument Amplifier Footswitches",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "48460",
+      "ebayFullName": "Musical Instruments & Gear > DJ Equipment > DJ Turntables",
+      "shopifyCategoryId": "el-2-3-10-2",
+      "shopifyFullName": "Electronics > Audio > Audio Players & Recorders > Turntables & Record Players > Turntables",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "69962",
+      "ebayFullName": "Musical Instruments & Gear > DJ Equipment > Amplifiers",
+      "shopifyCategoryId": "ae-2-7-10-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Musical Instrument Amplifiers > Acoustic Amplifiers",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "69963",
+      "ebayFullName": "Musical Instruments & Gear > DJ Equipment > Cables, Leads & Connectors",
+      "shopifyCategoryId": "el-7-7-1-10",
+      "shopifyFullName": "Electronics > Electronics Accessories > Cables > Audio & Video Cables > Speaker Cables",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "69965",
+      "ebayFullName": "Musical Instruments & Gear > DJ Equipment > Cases, Racks & Bags",
+      "shopifyCategoryId": "ae-2-7-1-2",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Brass Instrument Accessories > Brass Instrument Cases & Gigbags",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "69967",
+      "ebayFullName": "Musical Instruments & Gear > DJ Equipment > Speakers & Monitors",
+      "shopifyCategoryId": "el-2-2-10-1",
+      "shopifyFullName": "Electronics > Audio > Audio Components > Speakers > Bookshelf Speakers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "91384",
+      "ebayFullName": "Musical Instruments & Gear > DJ Equipment > DJ CD/MP3 Players",
+      "shopifyCategoryId": "el-2-5-1",
+      "shopifyFullName": "Electronics > Audio > DJ & Specialty Audio > DJ CD Players",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "157158",
+      "ebayFullName": "Musical Instruments & Gear > DJ Equipment > DJ Equipment Packages",
+      "shopifyCategoryId": "el-2-5-2",
+      "shopifyFullName": "Electronics > Audio > DJ & Specialty Audio > DJ Systems",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "163862",
+      "ebayFullName": "Musical Instruments & Gear > DJ Equipment > Other DJ Equipment",
+      "shopifyCategoryId": "se-5-4",
+      "shopifyFullName": "Services > Home Improvement Services > Specialized Home Services",
+      "confidence": 0.6,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "175833",
+      "ebayFullName": "Musical Instruments & Gear > DJ Equipment > Stands & Supports",
+      "shopifyCategoryId": "ae-2-7-11-2-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Musical Keyboard Accessories > Musical Keyboard Stands > Column Stands",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182110",
+      "ebayFullName": "Musical Instruments & Gear > DJ Equipment > Digital Vinyl Systems (DVS)",
+      "shopifyCategoryId": "se-5-4",
+      "shopifyFullName": "Services > Home Improvement Services > Specialized Home Services",
+      "confidence": 0.6,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "182111",
+      "ebayFullName": "Musical Instruments & Gear > DJ Equipment > DJ Controllers",
+      "shopifyCategoryId": "el-2-5-4",
+      "shopifyFullName": "Electronics > Audio > DJ & Specialty Audio > DJ Controllers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262426",
+      "ebayFullName": "Musical Instruments & Gear > DJ Equipment > DJ Turntable Parts & Accessories",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "262427",
+      "ebayFullName": "Musical Instruments & Gear > DJ Equipment > DJ Turntable Parts & Accessories > Buttons & Knobs",
+      "shopifyCategoryId": "ae-2-7-9-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Musical Instrument Amplifier Accessories > Musical Instrument Amplifier Knobs",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262428",
+      "ebayFullName": "Musical Instruments & Gear > DJ Equipment > DJ Turntable Parts & Accessories > Cartridges & Needles",
+      "shopifyCategoryId": "ae-2-7-9-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Musical Instrument Amplifier Accessories > Musical Instrument Amplifier Knobs",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262429",
+      "ebayFullName": "Musical Instruments & Gear > DJ Equipment > DJ Turntable Parts & Accessories > Headshells",
+      "shopifyCategoryId": "ae-2-7-9-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Musical Instrument Amplifier Accessories > Musical Instrument Amplifier Knobs",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262430",
+      "ebayFullName": "Musical Instruments & Gear > DJ Equipment > DJ Turntable Parts & Accessories > Slipmats",
+      "shopifyCategoryId": "el-2-1-9-4",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > Turntable Accessories > Slipmats",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262431",
+      "ebayFullName": "Musical Instruments & Gear > DJ Equipment > DJ Turntable Parts & Accessories > Other Parts",
+      "shopifyCategoryId": "ae-2-7-9-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Musical Instrument Amplifier Accessories > Musical Instrument Amplifier Knobs",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "620",
+      "ebayFullName": "Musical Instruments & Gear > Brass > Other Brass Instruments",
+      "shopifyCategoryId": "ae-2-8-3-2",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Brass Instruments > Euphoniums",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "16214",
+      "ebayFullName": "Musical Instruments & Gear > Brass > Trumpets",
+      "shopifyCategoryId": "ae-2-8-3-5-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Brass Instruments > Trumpets & Cornets > Trumpets",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "16215",
+      "ebayFullName": "Musical Instruments & Gear > Brass > French Horns",
+      "shopifyCategoryId": "ae-2-8-3-3-2",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Brass Instruments > French Horns > Single French Horns",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "16216",
+      "ebayFullName": "Musical Instruments & Gear > Brass > Trombones",
+      "shopifyCategoryId": "ae-2-8-3-4-2",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Brass Instruments > Trombones > Tenor Trombones",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "41396",
+      "ebayFullName": "Musical Instruments & Gear > Brass > Cornets",
+      "shopifyCategoryId": "ae-2-8-3-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Brass Instruments > Trumpets & Cornets > Cornets",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "64374",
+      "ebayFullName": "Musical Instruments & Gear > Brass > Flugelhorns",
+      "shopifyCategoryId": "ae-2-8-3-5-2",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Brass Instruments > Trumpets & Cornets > Flugelhorns",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "75557",
+      "ebayFullName": "Musical Instruments & Gear > Brass > Bugles",
+      "shopifyCategoryId": "ae-2-8-3-2",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Brass Instruments > Euphoniums",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "101554",
+      "ebayFullName": "Musical Instruments & Gear > Brass > Alto Horns",
+      "shopifyCategoryId": "ae-2-8-3-1-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Brass Instruments > Alto & Baritone Horns > Alto Horns",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "159943",
+      "ebayFullName": "Musical Instruments & Gear > Brass > Euphoniums",
+      "shopifyCategoryId": "ae-2-8-3-2",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Brass Instruments > Euphoniums",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "159944",
+      "ebayFullName": "Musical Instruments & Gear > Brass > Sousaphones",
+      "shopifyCategoryId": "ae-2-8-3-6-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Brass Instruments > Tubas > Sousaphones",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "159945",
+      "ebayFullName": "Musical Instruments & Gear > Brass > Mellophones",
+      "shopifyCategoryId": "ae-2-8-3-1-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Brass Instruments > Alto & Baritone Horns > Mellophones",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179014",
+      "ebayFullName": "Musical Instruments & Gear > Brass > Baritones",
+      "shopifyCategoryId": "ae-2-8-3-1-2",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Brass Instruments > Alto & Baritone Horns > Baritone Horns",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179015",
+      "ebayFullName": "Musical Instruments & Gear > Brass > Tubas",
+      "shopifyCategoryId": "ae-2-8-3-2",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Brass Instruments > Euphoniums",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182138",
+      "ebayFullName": "Musical Instruments & Gear > Brass > Accessories",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "261873",
+      "ebayFullName": "Musical Instruments & Gear > Brass > Parts",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "182141",
+      "ebayFullName": "Musical Instruments & Gear > Brass > Parts > Mouthpieces",
+      "shopifyCategoryId": "ae-2-7-1-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Brass Instrument Accessories > Brass Instrument Mouthpieces",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "261874",
+      "ebayFullName": "Musical Instruments & Gear > Brass > Parts > Buttons",
+      "shopifyCategoryId": "ae-2-7-1-1-2-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Brass Instrument Accessories > Brass Instrument Care & Cleaning > Brass Instrument Cleaners & Sanitizers > Valve Cleaners",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "261875",
+      "ebayFullName": "Musical Instruments & Gear > Brass > Parts > Slides",
+      "shopifyCategoryId": "ae-2-7-1-1-2-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Brass Instrument Accessories > Brass Instrument Care & Cleaning > Brass Instrument Cleaners & Sanitizers > Slide Cleaners",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "261876",
+      "ebayFullName": "Musical Instruments & Gear > Brass > Parts > Other Parts",
+      "shopifyCategoryId": "ae-2-7-1-5",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Brass Instrument Accessories > Brass Instrument Replacement Parts",
+      "confidence": 0.75,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182139",
+      "ebayFullName": "Musical Instruments & Gear > Brass > Accessories > Bags & Cases",
+      "shopifyCategoryId": "ae-2-7-1-2",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Brass Instrument Accessories > Brass Instrument Cases & Gigbags",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182140",
+      "ebayFullName": "Musical Instruments & Gear > Brass > Accessories > Care & Cleaning",
+      "shopifyCategoryId": "ae-2-7-1-1-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Brass Instrument Accessories > Brass Instrument Care & Cleaning > Brass Instrument Care Kits",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182142",
+      "ebayFullName": "Musical Instruments & Gear > Brass > Accessories > Mutes",
+      "shopifyCategoryId": "ae-2-7-1-4-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Brass Instrument Accessories > Brass Instrument Mutes > Cup Mutes",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182143",
+      "ebayFullName": "Musical Instruments & Gear > Brass > Accessories > Practice Aids",
+      "shopifyCategoryId": "ae-2-7-1-4-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Brass Instrument Accessories > Brass Instrument Mutes > Practice Mutes",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182144",
+      "ebayFullName": "Musical Instruments & Gear > Brass > Accessories > Stands",
+      "shopifyCategoryId": "ae-2-7-1-6",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Brass Instrument Accessories > Brass Instrument Straps & Stands",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182145",
+      "ebayFullName": "Musical Instruments & Gear > Brass > Accessories > Straps",
+      "shopifyCategoryId": "ae-2-7-1-6",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Brass Instrument Accessories > Brass Instrument Straps & Stands",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182146",
+      "ebayFullName": "Musical Instruments & Gear > Brass > Accessories > Other Accessories",
+      "shopifyCategoryId": "ae-2-7-1-1-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Brass Instrument Accessories > Brass Instrument Care & Cleaning > Brass Instrument Care Kits",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "12921",
+      "ebayFullName": "Musical Instruments & Gear > Stage Lighting & Effects > Stage Lighting: Systems & Kits",
+      "shopifyCategoryId": "ae-3-3-5-4",
+      "shopifyFullName": "Arts & Entertainment > Party & Celebration > Special Effects > Special Effects Lighting > Strobe Lights",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "29945",
+      "ebayFullName": "Musical Instruments & Gear > Stage Lighting & Effects > Lighting Stands & Trusses",
+      "shopifyCategoryId": "ae-3-3-4",
+      "shopifyFullName": "Arts & Entertainment > Party & Celebration > Special Effects > Special Effects Light Stands",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "30889",
+      "ebayFullName": "Musical Instruments & Gear > Stage Lighting & Effects > Stage Lighting Controllers",
+      "shopifyCategoryId": "ae-3-3-3-1",
+      "shopifyFullName": "Arts & Entertainment > Party & Celebration > Special Effects > Special Effects Controllers > DMX Controllers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "69960",
+      "ebayFullName": "Musical Instruments & Gear > Stage Lighting & Effects > Atmospheric Effects Machines",
+      "shopifyCategoryId": "ae-3-3-2",
+      "shopifyFullName": "Arts & Entertainment > Party & Celebration > Special Effects > Fog Machines",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "81967",
+      "ebayFullName": "Musical Instruments & Gear > Stage Lighting & Effects > Gobos, Gels, Filters & Lenses",
+      "shopifyCategoryId": "ae-3-3-5-1",
+      "shopifyFullName": "Arts & Entertainment > Party & Celebration > Special Effects > Special Effects Lighting > Gobo Projectors",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "81970",
+      "ebayFullName": "Musical Instruments & Gear > Stage Lighting & Effects > Replacement Bulbs & Lamps",
+      "shopifyCategoryId": "aa-1-1-2-1",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Activewear > Activewear Tops > Crop Tops",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "132998",
+      "ebayFullName": "Musical Instruments & Gear > Stage Lighting & Effects > Atmospheric Effects Fluids",
+      "shopifyCategoryId": "ae-3-3-2",
+      "shopifyFullName": "Arts & Entertainment > Party & Celebration > Special Effects > Fog Machines",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "170088",
+      "ebayFullName": "Musical Instruments & Gear > Stage Lighting & Effects > Cables & Interconnects",
+      "shopifyCategoryId": "ae-2-1-2-1-5",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Art & Craft Paper > Origami Paper",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "170089",
+      "ebayFullName": "Musical Instruments & Gear > Stage Lighting & Effects > Other Stage Lighting & Effects",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.5,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "177022",
+      "ebayFullName": "Musical Instruments & Gear > Stage Lighting & Effects > Stage Lighting: Single Units",
+      "shopifyCategoryId": "ae-3-3-5-4",
+      "shopifyFullName": "Arts & Entertainment > Party & Celebration > Special Effects > Special Effects Lighting > Strobe Lights",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "177023",
+      "ebayFullName": "Musical Instruments & Gear > Stage Lighting & Effects > DJ Lighting: Single Units",
+      "shopifyCategoryId": "ae-3-3-5-4",
+      "shopifyFullName": "Arts & Entertainment > Party & Celebration > Special Effects > Special Effects Lighting > Strobe Lights",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "177024",
+      "ebayFullName": "Musical Instruments & Gear > Stage Lighting & Effects > DJ Lighting: Systems & Kits",
+      "shopifyCategoryId": "ae-3-3-5-4",
+      "shopifyFullName": "Arts & Entertainment > Party & Celebration > Special Effects > Special Effects Lighting > Strobe Lights",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "177025",
+      "ebayFullName": "Musical Instruments & Gear > Stage Lighting & Effects > Folding Screens & Backdrops",
+      "shopifyCategoryId": "ae-3-3-5-4",
+      "shopifyFullName": "Arts & Entertainment > Party & Celebration > Special Effects > Special Effects Lighting > Strobe Lights",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182103",
+      "ebayFullName": "Musical Instruments & Gear > Stage Lighting & Effects > Stage Lighting Dimmers",
+      "shopifyCategoryId": "ae-3-3-3-1",
+      "shopifyFullName": "Arts & Entertainment > Party & Celebration > Special Effects > Special Effects Controllers > DMX Controllers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182104",
+      "ebayFullName": "Musical Instruments & Gear > Stage Lighting & Effects > Clamps & Mounts",
+      "shopifyCategoryId": "ae-3-3-4",
+      "shopifyFullName": "Arts & Entertainment > Party & Celebration > Special Effects > Special Effects Light Stands",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "624",
+      "ebayFullName": "Musical Instruments & Gear > Wind & Woodwind > Other Wind & Woodwind",
+      "shopifyCategoryId": "se-5-4",
+      "shopifyFullName": "Services > Home Improvement Services > Specialized Home Services",
+      "confidence": 0.6,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "181267",
+      "ebayFullName": "Musical Instruments & Gear > Wind & Woodwind > Band & Orchestral",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "181268",
+      "ebayFullName": "Musical Instruments & Gear > Wind & Woodwind > Folk & World",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "182153",
+      "ebayFullName": "Musical Instruments & Gear > Wind & Woodwind > Accessories",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "261880",
+      "ebayFullName": "Musical Instruments & Gear > Wind & Woodwind > Parts",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "182156",
+      "ebayFullName": "Musical Instruments & Gear > Wind & Woodwind > Parts > Ligatures & Caps",
+      "shopifyCategoryId": "ae-2-7-14-2-3-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Woodwind Instrument Accessories > Clarinet Accessories > Clarinet Ligatures & Caps > Metal Ligatures & Caps",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182157",
+      "ebayFullName": "Musical Instruments & Gear > Wind & Woodwind > Parts > Mouthpieces",
+      "shopifyCategoryId": "ae-2-7-14-2-4-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Woodwind Instrument Accessories > Clarinet Accessories > Clarinet Parts > Clarinet Mouthpieces",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182158",
+      "ebayFullName": "Musical Instruments & Gear > Wind & Woodwind > Parts > Reeds",
+      "shopifyCategoryId": "ae-2-7-14-2-6",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Woodwind Instrument Accessories > Clarinet Accessories > Clarinet Reeds",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "261881",
+      "ebayFullName": "Musical Instruments & Gear > Wind & Woodwind > Parts > Barrels",
+      "shopifyCategoryId": "ae-2-7-14-2-4-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Woodwind Instrument Accessories > Clarinet Accessories > Clarinet Parts > Clarinet Barrels",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "261882",
+      "ebayFullName": "Musical Instruments & Gear > Wind & Woodwind > Parts > Bells",
+      "shopifyCategoryId": "ae-2-7-14-2-4-2-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Woodwind Instrument Accessories > Clarinet Accessories > Clarinet Parts > Clarinet Bells > Adjustable Bells",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "261883",
+      "ebayFullName": "Musical Instruments & Gear > Wind & Woodwind > Parts > Necks",
+      "shopifyCategoryId": "ae-2-7-14-7-4-2",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Woodwind Instrument Accessories > Saxophone Accessories > Saxophone Parts > Saxophone Necks",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "261884",
+      "ebayFullName": "Musical Instruments & Gear > Wind & Woodwind > Parts > Other Parts",
+      "shopifyCategoryId": "ae-2-7-14-7-4-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Woodwind Instrument Accessories > Saxophone Accessories > Saxophone Parts > Saxophone Small Parts",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182154",
+      "ebayFullName": "Musical Instruments & Gear > Wind & Woodwind > Accessories > Bags & Cases",
+      "shopifyCategoryId": "ae-2-7-14-2-2",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Woodwind Instrument Accessories > Clarinet Accessories > Clarinet Cases & Gigbags",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182155",
+      "ebayFullName": "Musical Instruments & Gear > Wind & Woodwind > Accessories > Care & Cleaning",
+      "shopifyCategoryId": "ae-2-7-14-2-1-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Woodwind Instrument Accessories > Clarinet Accessories > Clarinet Care & Cleaning > Clarinet Care Kits",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182159",
+      "ebayFullName": "Musical Instruments & Gear > Wind & Woodwind > Accessories > Stands",
+      "shopifyCategoryId": "ae-2-7-14-2-5",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Woodwind Instrument Accessories > Clarinet Accessories > Clarinet Pegs & Stands",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182160",
+      "ebayFullName": "Musical Instruments & Gear > Wind & Woodwind > Accessories > Straps",
+      "shopifyCategoryId": "ae-2-7-14-2-7",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Woodwind Instrument Accessories > Clarinet Accessories > Clarinet Straps & Supports",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182161",
+      "ebayFullName": "Musical Instruments & Gear > Wind & Woodwind > Accessories > Other Accessories",
+      "shopifyCategoryId": "se-5-4",
+      "shopifyFullName": "Services > Home Improvement Services > Specialized Home Services",
+      "confidence": 0.6,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "261878",
+      "ebayFullName": "Musical Instruments & Gear > Wind & Woodwind > Accessories > Mutes",
+      "shopifyCategoryId": "ae-2-7-13-2-5",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > String Instrument Accessories > Orchestral String Instrument Accessories > Orchestral String Instrument Mutes",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "261879",
+      "ebayFullName": "Musical Instruments & Gear > Wind & Woodwind > Accessories > Practice Aids",
+      "shopifyCategoryId": "se-5-4",
+      "shopifyFullName": "Services > Home Improvement Services > Specialized Home Services",
+      "confidence": 0.6,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "16226",
+      "ebayFullName": "Musical Instruments & Gear > Wind & Woodwind > Folk & World > Bagpipes",
+      "shopifyCategoryId": "ae-2-8-2-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Bagpipes > Great Highland Bagpipes",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "47078",
+      "ebayFullName": "Musical Instruments & Gear > Wind & Woodwind > Folk & World > Harmonicas",
+      "shopifyCategoryId": "ae-2-8-8-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Woodwinds > Harmonicas > Diatonic Harmonicas",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "90849",
+      "ebayFullName": "Musical Instruments & Gear > Wind & Woodwind > Folk & World > Didgeridoos",
+      "shopifyCategoryId": "ae-2-8-8-15",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Woodwinds > Didgeridoos",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "91502",
+      "ebayFullName": "Musical Instruments & Gear > Wind & Woodwind > Folk & World > Whistles",
+      "shopifyCategoryId": "ae-2-8-8-13-2",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Woodwinds > Tin Whistles > C Tin Whistles",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "178976",
+      "ebayFullName": "Musical Instruments & Gear > Wind & Woodwind > Folk & World > Melodicas",
+      "shopifyCategoryId": "ae-2-8-8-7-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Woodwinds > Melodicas > Keyboard-Style Melodicas",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "180017",
+      "ebayFullName": "Musical Instruments & Gear > Wind & Woodwind > Folk & World > Ocarinas",
+      "shopifyCategoryId": "ae-2-8-8-10-2",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Woodwinds > Ocarinas > Pendant Ocarinas",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181271",
+      "ebayFullName": "Musical Instruments & Gear > Wind & Woodwind > Folk & World > Dizis",
+      "shopifyCategoryId": "se-5-4",
+      "shopifyFullName": "Services > Home Improvement Services > Specialized Home Services",
+      "confidence": 0.6,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "181272",
+      "ebayFullName": "Musical Instruments & Gear > Wind & Woodwind > Folk & World > Duduks",
+      "shopifyCategoryId": "se-5-4",
+      "shopifyFullName": "Services > Home Improvement Services > Specialized Home Services",
+      "confidence": 0.6,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "181273",
+      "ebayFullName": "Musical Instruments & Gear > Wind & Woodwind > Folk & World > Guanzis",
+      "shopifyCategoryId": "se-5-4",
+      "shopifyFullName": "Services > Home Improvement Services > Specialized Home Services",
+      "confidence": 0.6,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "181275",
+      "ebayFullName": "Musical Instruments & Gear > Wind & Woodwind > Folk & World > Hulusis",
+      "shopifyCategoryId": "se-5-4",
+      "shopifyFullName": "Services > Home Improvement Services > Specialized Home Services",
+      "confidence": 0.6,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "181276",
+      "ebayFullName": "Musical Instruments & Gear > Wind & Woodwind > Folk & World > Kavals",
+      "shopifyCategoryId": "se-5-4",
+      "shopifyFullName": "Services > Home Improvement Services > Specialized Home Services",
+      "confidence": 0.6,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "181277",
+      "ebayFullName": "Musical Instruments & Gear > Wind & Woodwind > Folk & World > Neys",
+      "shopifyCategoryId": "ae-2-8-8-8-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Woodwinds > Musical Pipes > Organs",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181278",
+      "ebayFullName": "Musical Instruments & Gear > Wind & Woodwind > Folk & World > Pan Flutes",
+      "shopifyCategoryId": "ae-2-8-8-8-2",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Woodwinds > Musical Pipes > Pan Flutes",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181279",
+      "ebayFullName": "Musical Instruments & Gear > Wind & Woodwind > Folk & World > Shakuhachis",
+      "shopifyCategoryId": "ae-2-8-8-8-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Woodwinds > Musical Pipes > Organs",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "261877",
+      "ebayFullName": "Musical Instruments & Gear > Wind & Woodwind > Folk & World > Kazoos",
+      "shopifyCategoryId": "ae-2-5",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Magic & Novelties",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "10183",
+      "ebayFullName": "Musical Instruments & Gear > Wind & Woodwind > Band & Orchestral > Flutes",
+      "shopifyCategoryId": "ae-2-8-8-3-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Woodwinds > Flutes > Concert Flutes",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "16227",
+      "ebayFullName": "Musical Instruments & Gear > Wind & Woodwind > Band & Orchestral > Bassoons",
+      "shopifyCategoryId": "ae-2-8-8-1-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Woodwinds > Bassoons > Buffet Bassoons",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "16229",
+      "ebayFullName": "Musical Instruments & Gear > Wind & Woodwind > Band & Orchestral > Piccolos",
+      "shopifyCategoryId": "ae-2-8-8-3-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Woodwinds > Flutes > Piccolo Flutes",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "16230",
+      "ebayFullName": "Musical Instruments & Gear > Wind & Woodwind > Band & Orchestral > Recorders",
+      "shopifyCategoryId": "ae-2-8-8-11-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Woodwinds > Recorders > Alto Recorders",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "16231",
+      "ebayFullName": "Musical Instruments & Gear > Wind & Woodwind > Band & Orchestral > Saxophones",
+      "shopifyCategoryId": "ae-2-8-8-12-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Woodwinds > Saxophones > Alto Saxophones",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "47096",
+      "ebayFullName": "Musical Instruments & Gear > Wind & Woodwind > Band & Orchestral > Clarinets",
+      "shopifyCategoryId": "ae-2-8-8-2-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Woodwinds > Clarinets > Bb Clarinets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "112678",
+      "ebayFullName": "Musical Instruments & Gear > Wind & Woodwind > Band & Orchestral > Oboes",
+      "shopifyCategoryId": "ae-2-8-8-9-2",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > Woodwinds > Oboes & English Horns > Oboes",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "621",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses > Other Guitars",
+      "shopifyCategoryId": "ae-2-8-7-2-2",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > String Instruments > Guitars > Bass Guitars",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "4713",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses > Bass Guitars",
+      "shopifyCategoryId": "ae-2-8-7-2-2",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > String Instruments > Guitars > Bass Guitars",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "22966",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses > Acoustic Electric Guitars",
+      "shopifyCategoryId": "ae-2-8-7-2-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > String Instruments > Guitars > Acoustic Guitars",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "33021",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses > Acoustic Guitars",
+      "shopifyCategoryId": "ae-2-8-7-2-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > String Instruments > Guitars > Acoustic Guitars",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "33034",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses > Electric Guitars",
+      "shopifyCategoryId": "ae-2-8-7-2-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > String Instruments > Guitars > Electric Guitars",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "38072",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses > Guitar Amplifiers",
+      "shopifyCategoryId": "ae-2-7-10-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Musical Instrument Amplifiers > Guitar Amplifiers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "47067",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses > Guitar Building & Luthier Supplies",
+      "shopifyCategoryId": "ae-2-7-13-1-5",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > String Instrument Accessories > Guitar Accessories > Guitar Fittings & Parts",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "119544",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses > Classical Guitars",
+      "shopifyCategoryId": "ae-2-8-7-2-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > String Instruments > Guitars > Classical Guitars",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "159948",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses > Travel Guitars",
+      "shopifyCategoryId": "ae-2-8-7-2-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > String Instruments > Guitars > Acoustic Guitars",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "180009",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses > Parts & Accessories",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "181219",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses > Resonators",
+      "shopifyCategoryId": "ae-2-8-7-2-2",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > String Instruments > Guitars > Bass Guitars",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181220",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses > Lap & Pedal Steel Guitars",
+      "shopifyCategoryId": "ae-2-8-7-2-2",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > String Instruments > Guitars > Bass Guitars",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181221",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses > Cigar Box Guitars",
+      "shopifyCategoryId": "ae-2-8-7-2-2",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instruments > String Instruments > Guitars > Bass Guitars",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "7266",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses > Parts & Accessories > Other Guitar & Bass Accessories",
+      "shopifyCategoryId": "ae-2-7-13-1-5",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > String Instrument Accessories > Guitar Accessories > Guitar Fittings & Parts",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "22671",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses > Parts & Accessories > Stands & Hangers",
+      "shopifyCategoryId": "ae-2-7-13-1-9",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > String Instrument Accessories > Guitar Accessories > Guitar Stands",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "22672",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses > Parts & Accessories > Tuners",
+      "shopifyCategoryId": "ae-2-7-13-1-13",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > String Instrument Accessories > Guitar Accessories > Guitar Tuning Pegs",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "33050",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses > Parts & Accessories > Capos",
+      "shopifyCategoryId": "ae-2-7-13-1-2-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > String Instrument Accessories > Guitar Accessories > Capos > Clamp Capos",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "41408",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses > Parts & Accessories > Cases",
+      "shopifyCategoryId": "ae-2-7-13-1-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > String Instrument Accessories > Guitar Accessories > Guitar Cases & Gigbags",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "41431",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses > Parts & Accessories > Strings",
+      "shopifyCategoryId": "ae-2-7-13-1-12-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > String Instrument Accessories > Guitar Accessories > Guitar Strings > Acoustic Guitar Strings",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "46677",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses > Parts & Accessories > Straps",
+      "shopifyCategoryId": "ae-2-7-13-1-10",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > String Instrument Accessories > Guitar Accessories > Guitar Straps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "46680",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses > Parts & Accessories > Polishes & Cleaners",
+      "shopifyCategoryId": "ae-2-7-13-3-3-2",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > String Instrument Accessories > String Instrument Care & Cleaning > String Instrument Polish > Instrument Polish",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "46682",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses > Parts & Accessories > Picks",
+      "shopifyCategoryId": "ae-2-7-13-1-7-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > String Instrument Accessories > Guitar Accessories > Guitar Picks > Finger Picks",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "47075",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses > Parts & Accessories > Cables & Leads",
+      "shopifyCategoryId": "ae-2-7-13-1-5",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > String Instrument Accessories > Guitar Accessories > Guitar Fittings & Parts",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "85857",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses > Parts & Accessories > Slides",
+      "shopifyCategoryId": "ae-2-7-13-1-8",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > String Instrument Accessories > Guitar Accessories > Guitar Slides",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "148640",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses > Parts & Accessories > Footrests",
+      "shopifyCategoryId": "ae-2-7-13-1-5",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > String Instrument Accessories > Guitar Accessories > Guitar Fittings & Parts",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181222",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses > Parts & Accessories > Effects Pedals",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "181223",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses > Parts & Accessories > Guitar & Bass Parts",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "183389",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses > Parts & Accessories > Amplifier Parts",
+      "shopifyCategoryId": "ae-2-7-10-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Musical Instrument Amplifiers > Guitar Amplifiers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "22670",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses > Parts & Accessories > Guitar & Bass Parts > Pickups",
+      "shopifyCategoryId": "ae-2-7-13-1-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > String Instrument Accessories > Guitar Accessories > Electric Guitar Pickups",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "41406",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses > Parts & Accessories > Guitar & Bass Parts > Bodies",
+      "shopifyCategoryId": "ae-2-7-13-1-5",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > String Instrument Accessories > Guitar Accessories > Guitar Fittings & Parts",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "41407",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses > Parts & Accessories > Guitar & Bass Parts > Bridges",
+      "shopifyCategoryId": "ae-2-7-13-1-5",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > String Instrument Accessories > Guitar Accessories > Guitar Fittings & Parts",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "41423",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses > Parts & Accessories > Guitar & Bass Parts > Necks",
+      "shopifyCategoryId": "ae-2-7-13-1-5",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > String Instrument Accessories > Guitar Accessories > Guitar Fittings & Parts",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "41424",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses > Parts & Accessories > Guitar & Bass Parts > Pickguards",
+      "shopifyCategoryId": "ae-2-7-13-1-5",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > String Instrument Accessories > Guitar Accessories > Guitar Fittings & Parts",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "41434",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses > Parts & Accessories > Guitar & Bass Parts > Tuning Pegs",
+      "shopifyCategoryId": "ae-2-7-13-1-13",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > String Instrument Accessories > Guitar Accessories > Guitar Tuning Pegs",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "46678",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses > Parts & Accessories > Guitar & Bass Parts > Other Guitar & Bass Parts",
+      "shopifyCategoryId": "ae-2-7-13-1-5",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > String Instrument Accessories > Guitar Accessories > Guitar Fittings & Parts",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "47076",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses > Parts & Accessories > Guitar & Bass Parts > Knobs, Jacks & Switches",
+      "shopifyCategoryId": "ae-2-7-13-1-5",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > String Instrument Accessories > Guitar Accessories > Guitar Fittings & Parts",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "85856",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses > Parts & Accessories > Guitar & Bass Parts > Plates",
+      "shopifyCategoryId": "ae-2-7-13-1-5",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > String Instrument Accessories > Guitar Accessories > Guitar Fittings & Parts",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "101976",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses > Parts & Accessories > Guitar & Bass Parts > Nuts",
+      "shopifyCategoryId": "ae-2-7-13-1-5",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > String Instrument Accessories > Guitar Accessories > Guitar Fittings & Parts",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "101977",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses > Parts & Accessories > Guitar & Bass Parts > Saddles",
+      "shopifyCategoryId": "ae-2-7-13-1-5",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > String Instrument Accessories > Guitar Accessories > Guitar Fittings & Parts",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "148648",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses > Parts & Accessories > Guitar & Bass Parts > Tremolos",
+      "shopifyCategoryId": "ae-2-7-13-1-5",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > String Instrument Accessories > Guitar Accessories > Guitar Fittings & Parts",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "170605",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses > Parts & Accessories > Guitar & Bass Parts > Capacitors",
+      "shopifyCategoryId": "ae-2-7-13-1-5",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > String Instrument Accessories > Guitar Accessories > Guitar Fittings & Parts",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "22669",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses > Parts & Accessories > Effects Pedals > Other Guitar Effects Pedals",
+      "shopifyCategoryId": "ae-2-7-13-1-14",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > String Instrument Accessories > Guitar Accessories > Guitar Pedals",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "41411",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses > Parts & Accessories > Effects Pedals > Bass",
+      "shopifyCategoryId": "ae-2-7-10-2",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > Musical Instrument Amplifiers > Bass Amplifiers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "41412",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses > Parts & Accessories > Effects Pedals > Boards & Cases",
+      "shopifyCategoryId": "ae-2-7-13-1-14",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > String Instrument Accessories > Guitar Accessories > Guitar Pedals",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "41413",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses > Parts & Accessories > Effects Pedals > Chorus",
+      "shopifyCategoryId": "ae-2-7-13-1-14",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > String Instrument Accessories > Guitar Accessories > Guitar Pedals",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "41414",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses > Parts & Accessories > Effects Pedals > Compressors & Sustainers",
+      "shopifyCategoryId": "ae-2-7-13-1-14",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > String Instrument Accessories > Guitar Accessories > Guitar Pedals",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "41415",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses > Parts & Accessories > Effects Pedals > Delay, Echo & Reverb",
+      "shopifyCategoryId": "ae-2-7-13-1-14",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > String Instrument Accessories > Guitar Accessories > Guitar Pedals",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "41416",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses > Parts & Accessories > Effects Pedals > Distortion & Overdrive",
+      "shopifyCategoryId": "ae-2-7-13-1-14",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > String Instrument Accessories > Guitar Accessories > Guitar Pedals",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "41417",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses > Parts & Accessories > Effects Pedals > Flangers",
+      "shopifyCategoryId": "ae-2-7-13-1-14",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > String Instrument Accessories > Guitar Accessories > Guitar Pedals",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "41418",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses > Parts & Accessories > Effects Pedals > Fuzz",
+      "shopifyCategoryId": "ae-2-7-13-1-14",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > String Instrument Accessories > Guitar Accessories > Guitar Pedals",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "41419",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses > Parts & Accessories > Effects Pedals > Multi-Effects",
+      "shopifyCategoryId": "ae-2-7-13-1-14",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > String Instrument Accessories > Guitar Accessories > Guitar Pedals",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "41420",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses > Parts & Accessories > Effects Pedals > Phasers & Shifters",
+      "shopifyCategoryId": "ae-2-7-13-1-14",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > String Instrument Accessories > Guitar Accessories > Guitar Pedals",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "41421",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses > Parts & Accessories > Effects Pedals > Processors",
+      "shopifyCategoryId": "ae-2-7-13-1-14",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > String Instrument Accessories > Guitar Accessories > Guitar Pedals",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "41422",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses > Parts & Accessories > Effects Pedals > Wah & Volume",
+      "shopifyCategoryId": "ae-2-7-13-1-14",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > String Instrument Accessories > Guitar Accessories > Guitar Pedals",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "101973",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses > Parts & Accessories > Effects Pedals > Filter & Modulation",
+      "shopifyCategoryId": "ae-2-7-13-1-14",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > String Instrument Accessories > Guitar Accessories > Guitar Pedals",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "101974",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses > Parts & Accessories > Effects Pedals > Loopers & Samplers",
+      "shopifyCategoryId": "ae-2-7-13-1-14",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > String Instrument Accessories > Guitar Accessories > Guitar Pedals",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "101975",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses > Parts & Accessories > Effects Pedals > Power Supplies",
+      "shopifyCategoryId": "ae-2-7-13-1-14",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > String Instrument Accessories > Guitar Accessories > Guitar Pedals",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "159952",
+      "ebayFullName": "Musical Instruments & Gear > Guitars & Basses > Parts & Accessories > Effects Pedals > Custom",
+      "shopifyCategoryId": "ae-2-7-13-1-14",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Musical Instrument & Orchestra Accessories > String Instrument Accessories > Guitar Accessories > Guitar Pedals",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    }
+  ]
+}

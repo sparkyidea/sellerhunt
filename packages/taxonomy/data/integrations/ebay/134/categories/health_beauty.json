@@ -1,0 +1,3599 @@
+{
+  "vertical": "Health & Beauty",
+  "totalCategories": 449,
+  "leaves": 388,
+  "categories": [
+    {
+      "id": "26395",
+      "name": "Health & Beauty",
+      "fullName": "Health & Beauty",
+      "parentId": null,
+      "level": 1,
+      "leaf": false
+    },
+    {
+      "id": "1277",
+      "name": "Other Health & Beauty",
+      "fullName": "Health & Beauty > Other Health & Beauty",
+      "parentId": "26395",
+      "level": 2,
+      "leaf": true
+    },
+    {
+      "id": "11778",
+      "name": "Medical & Mobility",
+      "fullName": "Health & Beauty > Medical & Mobility",
+      "parentId": "26395",
+      "level": 2,
+      "leaf": false
+    },
+    {
+      "id": "11838",
+      "name": "Bath & Body",
+      "fullName": "Health & Beauty > Bath & Body",
+      "parentId": "26395",
+      "level": 2,
+      "leaf": false
+    },
+    {
+      "id": "11854",
+      "name": "Hair Care & Styling",
+      "fullName": "Health & Beauty > Hair Care & Styling",
+      "parentId": "26395",
+      "level": 2,
+      "leaf": false
+    },
+    {
+      "id": "11863",
+      "name": "Skin Care",
+      "fullName": "Health & Beauty > Skin Care",
+      "parentId": "26395",
+      "level": 2,
+      "leaf": false
+    },
+    {
+      "id": "31414",
+      "name": "Vision Care",
+      "fullName": "Health & Beauty > Vision Care",
+      "parentId": "26395",
+      "level": 2,
+      "leaf": false
+    },
+    {
+      "id": "31762",
+      "name": "Shaving & Hair Removal",
+      "fullName": "Health & Beauty > Shaving & Hair Removal",
+      "parentId": "26395",
+      "level": 2,
+      "leaf": false
+    },
+    {
+      "id": "31769",
+      "name": "Oral Care",
+      "fullName": "Health & Beauty > Oral Care",
+      "parentId": "26395",
+      "level": 2,
+      "leaf": false
+    },
+    {
+      "id": "31772",
+      "name": "Sun Protection & Tanning",
+      "fullName": "Health & Beauty > Sun Protection & Tanning",
+      "parentId": "26395",
+      "level": 2,
+      "leaf": false
+    },
+    {
+      "id": "31786",
+      "name": "Makeup",
+      "fullName": "Health & Beauty > Makeup",
+      "parentId": "26395",
+      "level": 2,
+      "leaf": false
+    },
+    {
+      "id": "33914",
+      "name": "Tattoos & Body Art",
+      "fullName": "Health & Beauty > Tattoos & Body Art",
+      "parentId": "26395",
+      "level": 2,
+      "leaf": false
+    },
+    {
+      "id": "36447",
+      "name": "Massage",
+      "fullName": "Health & Beauty > Massage",
+      "parentId": "26395",
+      "level": 2,
+      "leaf": false
+    },
+    {
+      "id": "40965",
+      "name": "Wholesale Lots",
+      "fullName": "Health & Beauty > Wholesale Lots",
+      "parentId": "26395",
+      "level": 2,
+      "leaf": false
+    },
+    {
+      "id": "47945",
+      "name": "Nail Care, Manicure & Pedicure",
+      "fullName": "Health & Beauty > Nail Care, Manicure & Pedicure",
+      "parentId": "26395",
+      "level": 2,
+      "leaf": false
+    },
+    {
+      "id": "67588",
+      "name": "Health Care",
+      "fullName": "Health & Beauty > Health Care",
+      "parentId": "26395",
+      "level": 2,
+      "leaf": false
+    },
+    {
+      "id": "67659",
+      "name": "Natural & Alternative Remedies",
+      "fullName": "Health & Beauty > Natural & Alternative Remedies",
+      "parentId": "26395",
+      "level": 2,
+      "leaf": false
+    },
+    {
+      "id": "177731",
+      "name": "Salon & Spa Equipment",
+      "fullName": "Health & Beauty > Salon & Spa Equipment",
+      "parentId": "26395",
+      "level": 2,
+      "leaf": false
+    },
+    {
+      "id": "180345",
+      "name": "Fragrances",
+      "fullName": "Health & Beauty > Fragrances",
+      "parentId": "26395",
+      "level": 2,
+      "leaf": false
+    },
+    {
+      "id": "180959",
+      "name": "Vitamins & Lifestyle Supplements",
+      "fullName": "Health & Beauty > Vitamins & Lifestyle Supplements",
+      "parentId": "26395",
+      "level": 2,
+      "leaf": false
+    },
+    {
+      "id": "183497",
+      "name": "Electronic Smoking, Parts & Accs",
+      "fullName": "Health & Beauty > Electronic Smoking, Parts & Accs",
+      "parentId": "26395",
+      "level": 2,
+      "leaf": false
+    },
+    {
+      "id": "183498",
+      "name": "E-Cigarettes, Vapes & Mods",
+      "fullName": "Health & Beauty > Electronic Smoking, Parts & Accs > E-Cigarettes, Vapes & Mods",
+      "parentId": "183497",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "183499",
+      "name": "E-Liquids & E-Cig Cartridges",
+      "fullName": "Health & Beauty > Electronic Smoking, Parts & Accs > E-Liquids & E-Cig Cartridges",
+      "parentId": "183497",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "183500",
+      "name": "Other E-Cigarette & Vape Parts",
+      "fullName": "Health & Beauty > Electronic Smoking, Parts & Accs > Other E-Cigarette & Vape Parts",
+      "parentId": "183497",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "183705",
+      "name": "E-Cigarette & Vape Accessories",
+      "fullName": "Health & Beauty > Electronic Smoking, Parts & Accs > E-Cigarette & Vape Accessories",
+      "parentId": "183497",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "1278",
+      "name": "Endurance & Energy Bars, Drinks & Pills",
+      "fullName": "Health & Beauty > Vitamins & Lifestyle Supplements > Endurance & Energy Bars, Drinks & Pills",
+      "parentId": "180959",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "11776",
+      "name": "Vitamins & Minerals",
+      "fullName": "Health & Beauty > Vitamins & Lifestyle Supplements > Vitamins & Minerals",
+      "parentId": "180959",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "19262",
+      "name": "Other Vitamins & Supplements",
+      "fullName": "Health & Beauty > Vitamins & Lifestyle Supplements > Other Vitamins & Supplements",
+      "parentId": "180959",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "31817",
+      "name": "Weight Management",
+      "fullName": "Health & Beauty > Vitamins & Lifestyle Supplements > Weight Management",
+      "parentId": "180959",
+      "level": 3,
+      "leaf": false
+    },
+    {
+      "id": "97033",
+      "name": "Sports Supplements",
+      "fullName": "Health & Beauty > Vitamins & Lifestyle Supplements > Sports Supplements",
+      "parentId": "180959",
+      "level": 3,
+      "leaf": false
+    },
+    {
+      "id": "180960",
+      "name": "Dietary Supplements",
+      "fullName": "Health & Beauty > Vitamins & Lifestyle Supplements > Dietary Supplements",
+      "parentId": "180959",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "184490",
+      "name": "Dietary Supplement Accessories",
+      "fullName": "Health & Beauty > Vitamins & Lifestyle Supplements > Dietary Supplement Accessories",
+      "parentId": "180959",
+      "level": 3,
+      "leaf": false
+    },
+    {
+      "id": "184492",
+      "name": "Empty Capsules",
+      "fullName": "Health & Beauty > Vitamins & Lifestyle Supplements > Dietary Supplement Accessories > Empty Capsules",
+      "parentId": "184490",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "184493",
+      "name": "Shake Bottles & Mixers",
+      "fullName": "Health & Beauty > Vitamins & Lifestyle Supplements > Dietary Supplement Accessories > Shake Bottles & Mixers",
+      "parentId": "184490",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "21561",
+      "name": "Sports Diet & Weight Loss",
+      "fullName": "Health & Beauty > Vitamins & Lifestyle Supplements > Sports Supplements > Sports Diet & Weight Loss",
+      "parentId": "97033",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "97034",
+      "name": "Protein Shakes & Bodybuilding",
+      "fullName": "Health & Beauty > Vitamins & Lifestyle Supplements > Sports Supplements > Protein Shakes & Bodybuilding",
+      "parentId": "97033",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "180094",
+      "name": "Sports Energy & Hydration",
+      "fullName": "Health & Beauty > Vitamins & Lifestyle Supplements > Sports Supplements > Sports Energy & Hydration",
+      "parentId": "97033",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "31821",
+      "name": "Meal Replacement Drinks",
+      "fullName": "Health & Beauty > Vitamins & Lifestyle Supplements > Weight Management > Meal Replacement Drinks",
+      "parentId": "31817",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "36455",
+      "name": "Weight Loss Accessories",
+      "fullName": "Health & Beauty > Vitamins & Lifestyle Supplements > Weight Management > Weight Loss Accessories",
+      "parentId": "31817",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "45735",
+      "name": "Body Fat Analyzers",
+      "fullName": "Health & Beauty > Vitamins & Lifestyle Supplements > Weight Management > Body Fat Analyzers",
+      "parentId": "31817",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "77305",
+      "name": "Scales",
+      "fullName": "Health & Beauty > Vitamins & Lifestyle Supplements > Weight Management > Scales",
+      "parentId": "31817",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "82616",
+      "name": "Weight Loss Program Foods",
+      "fullName": "Health & Beauty > Vitamins & Lifestyle Supplements > Weight Management > Weight Loss Program Foods",
+      "parentId": "31817",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "181007",
+      "name": "Weight Loss Supplements",
+      "fullName": "Health & Beauty > Vitamins & Lifestyle Supplements > Weight Management > Weight Loss Supplements",
+      "parentId": "31817",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "181008",
+      "name": "Appetite Control & Suppressants",
+      "fullName": "Health & Beauty > Vitamins & Lifestyle Supplements > Weight Management > Appetite Control & Suppressants",
+      "parentId": "31817",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "181009",
+      "name": "Fat Burners",
+      "fullName": "Health & Beauty > Vitamins & Lifestyle Supplements > Weight Management > Fat Burners",
+      "parentId": "31817",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "260817",
+      "name": "Detox & Cleansers",
+      "fullName": "Health & Beauty > Vitamins & Lifestyle Supplements > Weight Management > Detox & Cleansers",
+      "parentId": "31817",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "11848",
+      "name": "Women's Fragrances",
+      "fullName": "Health & Beauty > Fragrances > Women's Fragrances",
+      "parentId": "180345",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "29585",
+      "name": "Men's Fragrances",
+      "fullName": "Health & Beauty > Fragrances > Men's Fragrances",
+      "parentId": "180345",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "112661",
+      "name": "Unisex Fragrances",
+      "fullName": "Health & Beauty > Fragrances > Unisex Fragrances",
+      "parentId": "180345",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "159719",
+      "name": "Children's Fragrances",
+      "fullName": "Health & Beauty > Fragrances > Children's Fragrances",
+      "parentId": "180345",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "75053",
+      "name": "Rolling Makeup Cases",
+      "fullName": "Health & Beauty > Salon & Spa Equipment > Rolling Makeup Cases",
+      "parentId": "177731",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "96428",
+      "name": "Styling Capes & Gowns",
+      "fullName": "Health & Beauty > Salon & Spa Equipment > Styling Capes & Gowns",
+      "parentId": "177731",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "101915",
+      "name": "Scissors & Shears",
+      "fullName": "Health & Beauty > Salon & Spa Equipment > Scissors & Shears",
+      "parentId": "177731",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "117338",
+      "name": "Backwash Units & Shampoo Bowls",
+      "fullName": "Health & Beauty > Salon & Spa Equipment > Backwash Units & Shampoo Bowls",
+      "parentId": "177731",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "177732",
+      "name": "Hair & Makeup Mannequins",
+      "fullName": "Health & Beauty > Salon & Spa Equipment > Hair & Makeup Mannequins",
+      "parentId": "177731",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "177733",
+      "name": "Magnifying Lamps",
+      "fullName": "Health & Beauty > Salon & Spa Equipment > Magnifying Lamps",
+      "parentId": "177731",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "177734",
+      "name": "Professional Facial Machines",
+      "fullName": "Health & Beauty > Salon & Spa Equipment > Professional Facial Machines",
+      "parentId": "177731",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "177736",
+      "name": "Wax Heaters",
+      "fullName": "Health & Beauty > Salon & Spa Equipment > Wax Heaters",
+      "parentId": "177731",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "177737",
+      "name": "Salon Dryer & Steamer",
+      "fullName": "Health & Beauty > Salon & Spa Equipment > Salon Dryer & Steamer",
+      "parentId": "177731",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "177738",
+      "name": "Stylist Stations & Furniture",
+      "fullName": "Health & Beauty > Salon & Spa Equipment > Stylist Stations & Furniture",
+      "parentId": "177731",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "177739",
+      "name": "Sterilizers & Towel Warmers",
+      "fullName": "Health & Beauty > Salon & Spa Equipment > Sterilizers & Towel Warmers",
+      "parentId": "177731",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "177740",
+      "name": "Salon & Spa Supplies",
+      "fullName": "Health & Beauty > Salon & Spa Equipment > Salon & Spa Supplies",
+      "parentId": "177731",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "1279",
+      "name": "Other Natural Remedies",
+      "fullName": "Health & Beauty > Natural & Alternative Remedies > Other Natural Remedies",
+      "parentId": "67659",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "11777",
+      "name": "Magnetic Therapy",
+      "fullName": "Health & Beauty > Natural & Alternative Remedies > Magnetic Therapy",
+      "parentId": "67659",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "19258",
+      "name": "Aromatherapy",
+      "fullName": "Health & Beauty > Natural & Alternative Remedies > Aromatherapy",
+      "parentId": "67659",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "108002",
+      "name": "Electrotherapy",
+      "fullName": "Health & Beauty > Natural & Alternative Remedies > Electrotherapy",
+      "parentId": "67659",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "159879",
+      "name": "Ion Foot Baths",
+      "fullName": "Health & Beauty > Natural & Alternative Remedies > Ion Foot Baths",
+      "parentId": "67659",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "159880",
+      "name": "Self Help Audiovisuals",
+      "fullName": "Health & Beauty > Natural & Alternative Remedies > Self Help Audiovisuals",
+      "parentId": "67659",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "159881",
+      "name": "Light Therapy",
+      "fullName": "Health & Beauty > Natural & Alternative Remedies > Light Therapy",
+      "parentId": "67659",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "159882",
+      "name": "Neti Pots & Cleansers",
+      "fullName": "Health & Beauty > Natural & Alternative Remedies > Neti Pots & Cleansers",
+      "parentId": "67659",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "159885",
+      "name": "Titanium Therapy",
+      "fullName": "Health & Beauty > Natural & Alternative Remedies > Titanium Therapy",
+      "parentId": "67659",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "159886",
+      "name": "Detox Pads",
+      "fullName": "Health & Beauty > Natural & Alternative Remedies > Detox Pads",
+      "parentId": "67659",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "180954",
+      "name": "Herbal Remedies & Resins",
+      "fullName": "Health & Beauty > Natural & Alternative Remedies > Herbal Remedies & Resins",
+      "parentId": "67659",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "180955",
+      "name": "Homeopathic Remedies",
+      "fullName": "Health & Beauty > Natural & Alternative Remedies > Homeopathic Remedies",
+      "parentId": "67659",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "184585",
+      "name": "Acupressure",
+      "fullName": "Health & Beauty > Natural & Alternative Remedies > Acupressure",
+      "parentId": "67659",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "260778",
+      "name": "Vacuum Suction & Cupping Therapy",
+      "fullName": "Health & Beauty > Natural & Alternative Remedies > Vacuum Suction & Cupping Therapy",
+      "parentId": "67659",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "260816",
+      "name": "Acupuncture",
+      "fullName": "Health & Beauty > Natural & Alternative Remedies > Acupuncture",
+      "parentId": "67659",
+      "level": 3,
+      "leaf": false
+    },
+    {
+      "id": "260775",
+      "name": "Acupuncture Devices",
+      "fullName": "Health & Beauty > Natural & Alternative Remedies > Acupuncture > Acupuncture Devices",
+      "parentId": "260816",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "260776",
+      "name": "Acupuncture Models",
+      "fullName": "Health & Beauty > Natural & Alternative Remedies > Acupuncture > Acupuncture Models",
+      "parentId": "260816",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "260777",
+      "name": "Seeds",
+      "fullName": "Health & Beauty > Natural & Alternative Remedies > Acupuncture > Seeds",
+      "parentId": "260816",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "30115",
+      "name": "Monitoring & Testing",
+      "fullName": "Health & Beauty > Health Care > Monitoring & Testing",
+      "parentId": "67588",
+      "level": 3,
+      "leaf": false
+    },
+    {
+      "id": "36431",
+      "name": "Foot Creams & Treatments",
+      "fullName": "Health & Beauty > Health Care > Foot Creams & Treatments",
+      "parentId": "67588",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "67589",
+      "name": "Other Health Care Supplies",
+      "fullName": "Health & Beauty > Health Care > Other Health Care Supplies",
+      "parentId": "67588",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "72873",
+      "name": "Diabetes Care",
+      "fullName": "Health & Beauty > Health Care > Diabetes Care",
+      "parentId": "67588",
+      "level": 3,
+      "leaf": false
+    },
+    {
+      "id": "75036",
+      "name": "Over-the-Counter Medications & Treatments",
+      "fullName": "Health & Beauty > Health Care > Over-the-Counter Medications & Treatments",
+      "parentId": "67588",
+      "level": 3,
+      "leaf": false
+    },
+    {
+      "id": "75041",
+      "name": "Pill Boxes, Pill Cases",
+      "fullName": "Health & Beauty > Health Care > Pill Boxes, Pill Cases",
+      "parentId": "67588",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "75042",
+      "name": "Smoking Cessation",
+      "fullName": "Health & Beauty > Health Care > Smoking Cessation",
+      "parentId": "67588",
+      "level": 3,
+      "leaf": false
+    },
+    {
+      "id": "82593",
+      "name": "Sleeping Aids",
+      "fullName": "Health & Beauty > Health Care > Sleeping Aids",
+      "parentId": "67588",
+      "level": 3,
+      "leaf": false
+    },
+    {
+      "id": "176992",
+      "name": "Sexual Wellness",
+      "fullName": "Health & Beauty > Health Care > Sexual Wellness",
+      "parentId": "67588",
+      "level": 3,
+      "leaf": false
+    },
+    {
+      "id": "180931",
+      "name": "First Aid",
+      "fullName": "Health & Beauty > Health Care > First Aid",
+      "parentId": "67588",
+      "level": 3,
+      "leaf": false
+    },
+    {
+      "id": "180933",
+      "name": "Squeezable Stress Relievers",
+      "fullName": "Health & Beauty > Health Care > Squeezable Stress Relievers",
+      "parentId": "67588",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "180942",
+      "name": "Feminine Care",
+      "fullName": "Health & Beauty > Health Care > Feminine Care",
+      "parentId": "67588",
+      "level": 3,
+      "leaf": false
+    },
+    {
+      "id": "180951",
+      "name": "Hot & Cold Therapies",
+      "fullName": "Health & Beauty > Health Care > Hot & Cold Therapies",
+      "parentId": "67588",
+      "level": 3,
+      "leaf": false
+    },
+    {
+      "id": "260745",
+      "name": "Personal Hygiene",
+      "fullName": "Health & Beauty > Health Care > Personal Hygiene",
+      "parentId": "67588",
+      "level": 3,
+      "leaf": false
+    },
+    {
+      "id": "260818",
+      "name": "Ear Care",
+      "fullName": "Health & Beauty > Health Care > Ear Care",
+      "parentId": "67588",
+      "level": 3,
+      "leaf": false
+    },
+    {
+      "id": "180939",
+      "name": "Ear Drops",
+      "fullName": "Health & Beauty > Health Care > Ear Care > Ear Drops",
+      "parentId": "260818",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "180940",
+      "name": "Ear Plugs",
+      "fullName": "Health & Beauty > Health Care > Ear Care > Ear Plugs",
+      "parentId": "260818",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "180941",
+      "name": "Ear Wax Removers",
+      "fullName": "Health & Beauty > Health Care > Ear Care > Ear Wax Removers",
+      "parentId": "260818",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "177663",
+      "name": "Hand Sanitizers",
+      "fullName": "Health & Beauty > Health Care > Personal Hygiene > Hand Sanitizers",
+      "parentId": "260745",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "260746",
+      "name": "Face Masks",
+      "fullName": "Health & Beauty > Health Care > Personal Hygiene > Face Masks",
+      "parentId": "260745",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "260747",
+      "name": "Protective Gloves",
+      "fullName": "Health & Beauty > Health Care > Personal Hygiene > Protective Gloves",
+      "parentId": "260745",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "101406",
+      "name": "Hot Water Bottles & Covers",
+      "fullName": "Health & Beauty > Health Care > Hot & Cold Therapies > Hot Water Bottles & Covers",
+      "parentId": "180951",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "180952",
+      "name": "Cold & Hot Packs & Wraps",
+      "fullName": "Health & Beauty > Health Care > Hot & Cold Therapies > Cold & Hot Packs & Wraps",
+      "parentId": "180951",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "180953",
+      "name": "Electric Heating Pads",
+      "fullName": "Health & Beauty > Health Care > Hot & Cold Therapies > Electric Heating Pads",
+      "parentId": "180951",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "180943",
+      "name": "Feminine Care Deodorants",
+      "fullName": "Health & Beauty > Health Care > Feminine Care > Feminine Care Deodorants",
+      "parentId": "180942",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "180944",
+      "name": "Feminine Care Washes",
+      "fullName": "Health & Beauty > Health Care > Feminine Care > Feminine Care Washes",
+      "parentId": "180942",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "180945",
+      "name": "Menstrual Cups",
+      "fullName": "Health & Beauty > Health Care > Feminine Care > Menstrual Cups",
+      "parentId": "180942",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "180946",
+      "name": "Pantiliners",
+      "fullName": "Health & Beauty > Health Care > Feminine Care > Pantiliners",
+      "parentId": "180942",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "180947",
+      "name": "Sanitary Napkins",
+      "fullName": "Health & Beauty > Health Care > Feminine Care > Sanitary Napkins",
+      "parentId": "180942",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "180948",
+      "name": "Tampons",
+      "fullName": "Health & Beauty > Health Care > Feminine Care > Tampons",
+      "parentId": "180942",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "180949",
+      "name": "Vaginal Moisturizers",
+      "fullName": "Health & Beauty > Health Care > Feminine Care > Vaginal Moisturizers",
+      "parentId": "180942",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "180950",
+      "name": "Other Feminine Care",
+      "fullName": "Health & Beauty > Health Care > Feminine Care > Other Feminine Care",
+      "parentId": "180942",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "184571",
+      "name": "Vaginal Yeast Infection Treatments",
+      "fullName": "Health & Beauty > Health Care > Feminine Care > Vaginal Yeast Infection Treatments",
+      "parentId": "180942",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "11779",
+      "name": "Other First Aid",
+      "fullName": "Health & Beauty > Health Care > First Aid > Other First Aid",
+      "parentId": "180931",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "75034",
+      "name": "Bandages, Gauze & Dressings",
+      "fullName": "Health & Beauty > Health Care > First Aid > Bandages, Gauze & Dressings",
+      "parentId": "180931",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "75035",
+      "name": "Kits & Bags",
+      "fullName": "Health & Beauty > Health Care > First Aid > Kits & Bags",
+      "parentId": "180931",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "82592",
+      "name": "Ointments, Creams & Oils",
+      "fullName": "Health & Beauty > Health Care > First Aid > Ointments, Creams & Oils",
+      "parentId": "180931",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "180932",
+      "name": "Skin Antiseptics & Sterile Solutions",
+      "fullName": "Health & Beauty > Health Care > First Aid > Skin Antiseptics & Sterile Solutions",
+      "parentId": "180931",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "184573",
+      "name": "Medical ID Bracelets & Necklaces",
+      "fullName": "Health & Beauty > Health Care > First Aid > Medical ID Bracelets & Necklaces",
+      "parentId": "180931",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "176993",
+      "name": "Body Enhancing Methods",
+      "fullName": "Health & Beauty > Health Care > Sexual Wellness > Body Enhancing Methods",
+      "parentId": "176992",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "176994",
+      "name": "Condoms & Contraceptives",
+      "fullName": "Health & Beauty > Health Care > Sexual Wellness > Condoms & Contraceptives",
+      "parentId": "176992",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "176995",
+      "name": "Lubricants",
+      "fullName": "Health & Beauty > Health Care > Sexual Wellness > Lubricants",
+      "parentId": "176992",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "176996",
+      "name": "Fantasy & Fetish",
+      "fullName": "Health & Beauty > Health Care > Sexual Wellness > Fantasy & Fetish",
+      "parentId": "176992",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "176998",
+      "name": "Sexual Remedies & Supplements",
+      "fullName": "Health & Beauty > Health Care > Sexual Wellness > Sexual Remedies & Supplements",
+      "parentId": "176992",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "260748",
+      "name": "Adult Toys",
+      "fullName": "Health & Beauty > Health Care > Sexual Wellness > Adult Toys",
+      "parentId": "176992",
+      "level": 4,
+      "leaf": false
+    },
+    {
+      "id": "176997",
+      "name": "Sex Toys",
+      "fullName": "Health & Beauty > Health Care > Sexual Wellness > Adult Toys > Sex Toys",
+      "parentId": "260748",
+      "level": 5,
+      "leaf": true
+    },
+    {
+      "id": "260749",
+      "name": "Dildos & Vibrators",
+      "fullName": "Health & Beauty > Health Care > Sexual Wellness > Adult Toys > Dildos & Vibrators",
+      "parentId": "260748",
+      "level": 5,
+      "leaf": true
+    },
+    {
+      "id": "260750",
+      "name": "Anal Sex Toys",
+      "fullName": "Health & Beauty > Health Care > Sexual Wellness > Adult Toys > Anal Sex Toys",
+      "parentId": "260748",
+      "level": 5,
+      "leaf": true
+    },
+    {
+      "id": "260751",
+      "name": "Sex Dolls & Masturbators",
+      "fullName": "Health & Beauty > Health Care > Sexual Wellness > Adult Toys > Sex Dolls & Masturbators",
+      "parentId": "260748",
+      "level": 5,
+      "leaf": true
+    },
+    {
+      "id": "260752",
+      "name": "Sex Pillows & Wedges",
+      "fullName": "Health & Beauty > Health Care > Sexual Wellness > Adult Toys > Sex Pillows & Wedges",
+      "parentId": "260748",
+      "level": 5,
+      "leaf": true
+    },
+    {
+      "id": "262990",
+      "name": "Adult Toy Cleaners",
+      "fullName": "Health & Beauty > Health Care > Sexual Wellness > Adult Toys > Adult Toy Cleaners",
+      "parentId": "260748",
+      "level": 5,
+      "leaf": true
+    },
+    {
+      "id": "40101",
+      "name": "Other Sleeping Aids",
+      "fullName": "Health & Beauty > Health Care > Sleeping Aids > Other Sleeping Aids",
+      "parentId": "82593",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "82594",
+      "name": "Sound Therapy",
+      "fullName": "Health & Beauty > Health Care > Sleeping Aids > Sound Therapy",
+      "parentId": "82593",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "159799",
+      "name": "Sleep Masks",
+      "fullName": "Health & Beauty > Health Care > Sleeping Aids > Sleep Masks",
+      "parentId": "82593",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "180934",
+      "name": "Chin Straps",
+      "fullName": "Health & Beauty > Health Care > Sleeping Aids > Chin Straps",
+      "parentId": "82593",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "180935",
+      "name": "Mouthpieces",
+      "fullName": "Health & Beauty > Health Care > Sleeping Aids > Mouthpieces",
+      "parentId": "82593",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "180936",
+      "name": "Nasal Strips",
+      "fullName": "Health & Beauty > Health Care > Sleeping Aids > Nasal Strips",
+      "parentId": "82593",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "180937",
+      "name": "Sleeping Pills",
+      "fullName": "Health & Beauty > Health Care > Sleeping Aids > Sleeping Pills",
+      "parentId": "82593",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "184581",
+      "name": "Nasal Dilators",
+      "fullName": "Health & Beauty > Health Care > Sleeping Aids > Nasal Dilators",
+      "parentId": "82593",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "184582",
+      "name": "Nose Clips",
+      "fullName": "Health & Beauty > Health Care > Sleeping Aids > Nose Clips",
+      "parentId": "82593",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "75043",
+      "name": "Alternative Therapies",
+      "fullName": "Health & Beauty > Health Care > Smoking Cessation > Alternative Therapies",
+      "parentId": "75042",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "75044",
+      "name": "Gum & Lozenges",
+      "fullName": "Health & Beauty > Health Care > Smoking Cessation > Gum & Lozenges",
+      "parentId": "75042",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "75046",
+      "name": "Patches",
+      "fullName": "Health & Beauty > Health Care > Smoking Cessation > Patches",
+      "parentId": "75042",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "75047",
+      "name": "Other Smoking Cessation",
+      "fullName": "Health & Beauty > Health Care > Smoking Cessation > Other Smoking Cessation",
+      "parentId": "75042",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "45206",
+      "name": "Other OTC Meds & Treatments",
+      "fullName": "Health & Beauty > Health Care > Over-the-Counter Medications & Treatments > Other OTC Meds & Treatments",
+      "parentId": "75036",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "75037",
+      "name": "Allergy",
+      "fullName": "Health & Beauty > Health Care > Over-the-Counter Medications & Treatments > Allergy",
+      "parentId": "75036",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "75038",
+      "name": "Cough, Cold & Flu",
+      "fullName": "Health & Beauty > Health Care > Over-the-Counter Medications & Treatments > Cough, Cold & Flu",
+      "parentId": "75036",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "75039",
+      "name": "Digestion & Nausea",
+      "fullName": "Health & Beauty > Health Care > Over-the-Counter Medications & Treatments > Digestion & Nausea",
+      "parentId": "75036",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "75040",
+      "name": "Pain & Fever Relief",
+      "fullName": "Health & Beauty > Health Care > Over-the-Counter Medications & Treatments > Pain & Fever Relief",
+      "parentId": "75036",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "109075",
+      "name": "Medicated Hair Treatments",
+      "fullName": "Health & Beauty > Health Care > Over-the-Counter Medications & Treatments > Medicated Hair Treatments",
+      "parentId": "75036",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "125973",
+      "name": "Skin Conditions",
+      "fullName": "Health & Beauty > Health Care > Over-the-Counter Medications & Treatments > Skin Conditions",
+      "parentId": "75036",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "159797",
+      "name": "Cold Sores",
+      "fullName": "Health & Beauty > Health Care > Over-the-Counter Medications & Treatments > Cold Sores",
+      "parentId": "75036",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "182102",
+      "name": "Asthma",
+      "fullName": "Health & Beauty > Health Care > Over-the-Counter Medications & Treatments > Asthma",
+      "parentId": "75036",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "184577",
+      "name": "CPAP Accessories & Supplies",
+      "fullName": "Health & Beauty > Health Care > Over-the-Counter Medications & Treatments > CPAP Accessories & Supplies",
+      "parentId": "75036",
+      "level": 4,
+      "leaf": false
+    },
+    {
+      "id": "260744",
+      "name": "Probiotics",
+      "fullName": "Health & Beauty > Health Care > Over-the-Counter Medications & Treatments > Probiotics",
+      "parentId": "75036",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "184578",
+      "name": "CPAP Cleaning",
+      "fullName": "Health & Beauty > Health Care > Over-the-Counter Medications & Treatments > CPAP Accessories & Supplies > CPAP Cleaning",
+      "parentId": "184577",
+      "level": 5,
+      "leaf": true
+    },
+    {
+      "id": "184579",
+      "name": "CPAP Comfort & Travel",
+      "fullName": "Health & Beauty > Health Care > Over-the-Counter Medications & Treatments > CPAP Accessories & Supplies > CPAP Comfort & Travel",
+      "parentId": "184577",
+      "level": 5,
+      "leaf": true
+    },
+    {
+      "id": "184580",
+      "name": "CPAP Parts",
+      "fullName": "Health & Beauty > Health Care > Over-the-Counter Medications & Treatments > CPAP Accessories & Supplies > CPAP Parts",
+      "parentId": "184577",
+      "level": 5,
+      "leaf": true
+    },
+    {
+      "id": "30117",
+      "name": "Other Diabetic Supplies",
+      "fullName": "Health & Beauty > Health Care > Diabetes Care > Other Diabetic Supplies",
+      "parentId": "72873",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "72874",
+      "name": "Glucose Monitors",
+      "fullName": "Health & Beauty > Health Care > Diabetes Care > Glucose Monitors",
+      "parentId": "72873",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "72875",
+      "name": "Lancets",
+      "fullName": "Health & Beauty > Health Care > Diabetes Care > Lancets",
+      "parentId": "72873",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "72876",
+      "name": "Glucose Monitoring Kits",
+      "fullName": "Health & Beauty > Health Care > Diabetes Care > Glucose Monitoring Kits",
+      "parentId": "72873",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "72877",
+      "name": "Glucose Test Strips",
+      "fullName": "Health & Beauty > Health Care > Diabetes Care > Glucose Test Strips",
+      "parentId": "72873",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "184569",
+      "name": "Diabetic Care Bags & Cases",
+      "fullName": "Health & Beauty > Health Care > Diabetes Care > Diabetic Care Bags & Cases",
+      "parentId": "72873",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "30118",
+      "name": "Fertility & Ovulation Testing",
+      "fullName": "Health & Beauty > Health Care > Monitoring & Testing > Fertility & Ovulation Testing",
+      "parentId": "30115",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "36437",
+      "name": "Pregnancy Tests",
+      "fullName": "Health & Beauty > Health Care > Monitoring & Testing > Pregnancy Tests",
+      "parentId": "30115",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "58037",
+      "name": "Electronic Breathalyzers",
+      "fullName": "Health & Beauty > Health Care > Monitoring & Testing > Electronic Breathalyzers",
+      "parentId": "30115",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "75072",
+      "name": "Blood Pressure Monitoring",
+      "fullName": "Health & Beauty > Health Care > Monitoring & Testing > Blood Pressure Monitoring",
+      "parentId": "30115",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "75075",
+      "name": "Thermometers",
+      "fullName": "Health & Beauty > Health Care > Monitoring & Testing > Thermometers",
+      "parentId": "30115",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "159875",
+      "name": "Cholesterol Testing",
+      "fullName": "Health & Beauty > Health Care > Monitoring & Testing > Cholesterol Testing",
+      "parentId": "30115",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "159876",
+      "name": "Drug Testing",
+      "fullName": "Health & Beauty > Health Care > Monitoring & Testing > Drug Testing",
+      "parentId": "30115",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "171538",
+      "name": "Oximeters",
+      "fullName": "Health & Beauty > Health Care > Monitoring & Testing > Oximeters",
+      "parentId": "30115",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "182131",
+      "name": "Other Monitoring & Testing",
+      "fullName": "Health & Beauty > Health Care > Monitoring & Testing > Other Monitoring & Testing",
+      "parentId": "30115",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "184574",
+      "name": "Prenatal Monitoring",
+      "fullName": "Health & Beauty > Health Care > Monitoring & Testing > Prenatal Monitoring",
+      "parentId": "30115",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "185074",
+      "name": "Disposable Breathalyzers",
+      "fullName": "Health & Beauty > Health Care > Monitoring & Testing > Disposable Breathalyzers",
+      "parentId": "30115",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "260743",
+      "name": "Home DNA Test Kits",
+      "fullName": "Health & Beauty > Health Care > Monitoring & Testing > Home DNA Test Kits",
+      "parentId": "30115",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "263022",
+      "name": "Covid-19 Self Tests",
+      "fullName": "Health & Beauty > Health Care > Monitoring & Testing > Covid-19 Self Tests",
+      "parentId": "30115",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "36430",
+      "name": "Spa & Bath Devices",
+      "fullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Spa & Bath Devices",
+      "parentId": "47945",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "47940",
+      "name": "Nail Polish Remover",
+      "fullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Polish Remover",
+      "parentId": "47945",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "107965",
+      "name": "Storage & Empty Containers",
+      "fullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Storage & Empty Containers",
+      "parentId": "47945",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "112563",
+      "name": "Nail Practice & Display",
+      "fullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Practice & Display",
+      "parentId": "47945",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "260758",
+      "name": "Nail Polish & Powders",
+      "fullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Polish & Powders",
+      "parentId": "47945",
+      "level": 3,
+      "leaf": false
+    },
+    {
+      "id": "260762",
+      "name": "Nail Care & Treatment",
+      "fullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Care & Treatment",
+      "parentId": "47945",
+      "level": 3,
+      "leaf": false
+    },
+    {
+      "id": "260764",
+      "name": "Nail Art",
+      "fullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Art",
+      "parentId": "47945",
+      "level": 3,
+      "leaf": false
+    },
+    {
+      "id": "260772",
+      "name": "Nail Care Tools",
+      "fullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Care Tools",
+      "parentId": "47945",
+      "level": 3,
+      "leaf": false
+    },
+    {
+      "id": "11872",
+      "name": "Manicure & Pedicure Tools & Kits",
+      "fullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Care Tools > Manicure & Pedicure Tools & Kits",
+      "parentId": "260772",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "67653",
+      "name": "Nail Dryers & Lamps",
+      "fullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Care Tools > Nail Dryers & Lamps",
+      "parentId": "260772",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "178960",
+      "name": "Electric Files & Tools",
+      "fullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Care Tools > Electric Files & Tools",
+      "parentId": "260772",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "107876",
+      "name": "Nail Art Tools",
+      "fullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Art > Nail Art Tools",
+      "parentId": "260764",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "112562",
+      "name": "Artificial Nail Tips",
+      "fullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Art > Artificial Nail Tips",
+      "parentId": "260764",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "182107",
+      "name": "Fiberglass & Silk Wraps",
+      "fullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Art > Fiberglass & Silk Wraps",
+      "parentId": "260764",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "182108",
+      "name": "Press-On Nails",
+      "fullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Art > Press-On Nails",
+      "parentId": "260764",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "260765",
+      "name": "3D Nail Art Design",
+      "fullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Art > 3D Nail Art Design",
+      "parentId": "260764",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "260766",
+      "name": "2D Nail Art Design",
+      "fullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Art > 2D Nail Art Design",
+      "parentId": "260764",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "260813",
+      "name": "Nail Airbrush",
+      "fullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Art > Nail Airbrush",
+      "parentId": "260764",
+      "level": 4,
+      "leaf": false
+    },
+    {
+      "id": "260767",
+      "name": "Nail Airbrush Compressor",
+      "fullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Art > Nail Airbrush > Nail Airbrush Compressor",
+      "parentId": "260813",
+      "level": 5,
+      "leaf": true
+    },
+    {
+      "id": "260768",
+      "name": "Nail Airbrush Paint",
+      "fullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Art > Nail Airbrush > Nail Airbrush Paint",
+      "parentId": "260813",
+      "level": 5,
+      "leaf": true
+    },
+    {
+      "id": "260769",
+      "name": "Nail Airbrush Parts",
+      "fullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Art > Nail Airbrush > Nail Airbrush Parts",
+      "parentId": "260813",
+      "level": 5,
+      "leaf": true
+    },
+    {
+      "id": "260770",
+      "name": "Nail Airbrush Stencils",
+      "fullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Art > Nail Airbrush > Nail Airbrush Stencils",
+      "parentId": "260813",
+      "level": 5,
+      "leaf": true
+    },
+    {
+      "id": "260771",
+      "name": "Nail Airbrush Systems & Kits",
+      "fullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Art > Nail Airbrush > Nail Airbrush Systems & Kits",
+      "parentId": "260813",
+      "level": 5,
+      "leaf": true
+    },
+    {
+      "id": "36432",
+      "name": "Nail Treatment Creams",
+      "fullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Care & Treatment > Nail Treatment Creams",
+      "parentId": "260762",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "82610",
+      "name": "Cuticle Treatments",
+      "fullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Care & Treatment > Cuticle Treatments",
+      "parentId": "260762",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "260763",
+      "name": "Nail Strengtheners",
+      "fullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Care & Treatment > Nail Strengtheners",
+      "parentId": "260762",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "11873",
+      "name": "Nail Polish",
+      "fullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Polish & Powders > Nail Polish",
+      "parentId": "260758",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "178961",
+      "name": "Gel Nail Polish",
+      "fullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Polish & Powders > Gel Nail Polish",
+      "parentId": "260758",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "182105",
+      "name": "Acrylic Powders & Liquids",
+      "fullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Polish & Powders > Acrylic Powders & Liquids",
+      "parentId": "260758",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "260759",
+      "name": "Dip Powder",
+      "fullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Polish & Powders > Dip Powder",
+      "parentId": "260758",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "260760",
+      "name": "Top & Base Coat",
+      "fullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Polish & Powders > Top & Base Coat",
+      "parentId": "260758",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "260761",
+      "name": "Drying Agent & Finish",
+      "fullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Polish & Powders > Drying Agent & Finish",
+      "parentId": "260758",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "31822",
+      "name": "Other Whlsl Health & Beauty",
+      "fullName": "Health & Beauty > Wholesale Lots > Other Whlsl Health & Beauty",
+      "parentId": "40965",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "40967",
+      "name": "Medical & Special Needs",
+      "fullName": "Health & Beauty > Wholesale Lots > Medical & Special Needs",
+      "parentId": "40965",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "40968",
+      "name": "Health Care",
+      "fullName": "Health & Beauty > Wholesale Lots > Health Care",
+      "parentId": "40965",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "51005",
+      "name": "Beauty & Personal Care",
+      "fullName": "Health & Beauty > Wholesale Lots > Beauty & Personal Care",
+      "parentId": "40965",
+      "level": 3,
+      "leaf": false
+    },
+    {
+      "id": "40966",
+      "name": "Makeup",
+      "fullName": "Health & Beauty > Wholesale Lots > Beauty & Personal Care > Makeup",
+      "parentId": "51005",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "51006",
+      "name": "Bath & Body",
+      "fullName": "Health & Beauty > Wholesale Lots > Beauty & Personal Care > Bath & Body",
+      "parentId": "51005",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "51007",
+      "name": "Hair Care",
+      "fullName": "Health & Beauty > Wholesale Lots > Beauty & Personal Care > Hair Care",
+      "parentId": "51005",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "51008",
+      "name": "Fragrances",
+      "fullName": "Health & Beauty > Wholesale Lots > Beauty & Personal Care > Fragrances",
+      "parentId": "51005",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "51009",
+      "name": "Nail",
+      "fullName": "Health & Beauty > Wholesale Lots > Beauty & Personal Care > Nail",
+      "parentId": "51005",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "51010",
+      "name": "Other Whlsl Personal Care",
+      "fullName": "Health & Beauty > Wholesale Lots > Beauty & Personal Care > Other Whlsl Personal Care",
+      "parentId": "51005",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "78123",
+      "name": "Skin Care",
+      "fullName": "Health & Beauty > Wholesale Lots > Beauty & Personal Care > Skin Care",
+      "parentId": "51005",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "19263",
+      "name": "Other Massage Equipment & Accs",
+      "fullName": "Health & Beauty > Massage > Other Massage Equipment & Accs",
+      "parentId": "36447",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "36448",
+      "name": "Electric Massage Chairs",
+      "fullName": "Health & Beauty > Massage > Electric Massage Chairs",
+      "parentId": "36447",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "36449",
+      "name": "Massagers",
+      "fullName": "Health & Beauty > Massage > Massagers",
+      "parentId": "36447",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "36453",
+      "name": "Massage Oils & Lotions",
+      "fullName": "Health & Beauty > Massage > Massage Oils & Lotions",
+      "parentId": "36447",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "36454",
+      "name": "Massage Tables & Chairs",
+      "fullName": "Health & Beauty > Massage > Massage Tables & Chairs",
+      "parentId": "36447",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "67661",
+      "name": "Massage Stones & Rocks",
+      "fullName": "Health & Beauty > Massage > Massage Stones & Rocks",
+      "parentId": "36447",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "101972",
+      "name": "Massage Pillows & Bolsters",
+      "fullName": "Health & Beauty > Massage > Massage Pillows & Bolsters",
+      "parentId": "36447",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "180956",
+      "name": "Linens & Covers",
+      "fullName": "Health & Beauty > Massage > Linens & Covers",
+      "parentId": "36447",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "16705",
+      "name": "Other Tattoos & Body Art",
+      "fullName": "Health & Beauty > Tattoos & Body Art > Other Tattoos & Body Art",
+      "parentId": "33914",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "33916",
+      "name": "Piercing Supplies",
+      "fullName": "Health & Beauty > Tattoos & Body Art > Piercing Supplies",
+      "parentId": "33914",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "33917",
+      "name": "Tattoo Machines",
+      "fullName": "Health & Beauty > Tattoos & Body Art > Tattoo Machines",
+      "parentId": "33914",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "57589",
+      "name": "Tattoo Complete Kits",
+      "fullName": "Health & Beauty > Tattoos & Body Art > Tattoo Complete Kits",
+      "parentId": "33914",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "168192",
+      "name": "Tattoo Removal Machines",
+      "fullName": "Health & Beauty > Tattoos & Body Art > Tattoo Removal Machines",
+      "parentId": "33914",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "179276",
+      "name": "Tattoo Needles",
+      "fullName": "Health & Beauty > Tattoos & Body Art > Tattoo Needles",
+      "parentId": "33914",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "260793",
+      "name": "Piercing Kits",
+      "fullName": "Health & Beauty > Tattoos & Body Art > Piercing Kits",
+      "parentId": "33914",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "260794",
+      "name": "Tattoo Machine Parts",
+      "fullName": "Health & Beauty > Tattoos & Body Art > Tattoo Machine Parts",
+      "parentId": "33914",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "260795",
+      "name": "Tattoo Grips",
+      "fullName": "Health & Beauty > Tattoos & Body Art > Tattoo Grips",
+      "parentId": "33914",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "260796",
+      "name": "Tattoo Tips",
+      "fullName": "Health & Beauty > Tattoos & Body Art > Tattoo Tips",
+      "parentId": "33914",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "260797",
+      "name": "Tattoo Supplies",
+      "fullName": "Health & Beauty > Tattoos & Body Art > Tattoo Supplies",
+      "parentId": "33914",
+      "level": 3,
+      "leaf": false
+    },
+    {
+      "id": "260798",
+      "name": "Numbing Creams & Aftercare",
+      "fullName": "Health & Beauty > Tattoos & Body Art > Numbing Creams & Aftercare",
+      "parentId": "33914",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "260799",
+      "name": "Temporary Tattoos",
+      "fullName": "Health & Beauty > Tattoos & Body Art > Temporary Tattoos",
+      "parentId": "33914",
+      "level": 3,
+      "leaf": false
+    },
+    {
+      "id": "33919",
+      "name": "Press-on Tattoos",
+      "fullName": "Health & Beauty > Tattoos & Body Art > Temporary Tattoos > Press-on Tattoos",
+      "parentId": "260799",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "60890",
+      "name": "Henna Paste & Powder",
+      "fullName": "Health & Beauty > Tattoos & Body Art > Temporary Tattoos > Henna Paste & Powder",
+      "parentId": "260799",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "33915",
+      "name": "Tattoo Flash",
+      "fullName": "Health & Beauty > Tattoos & Body Art > Tattoo Supplies > Tattoo Flash",
+      "parentId": "260797",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "57586",
+      "name": "Tattoo Inks",
+      "fullName": "Health & Beauty > Tattoos & Body Art > Tattoo Supplies > Tattoo Inks",
+      "parentId": "260797",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "179277",
+      "name": "Tattoo Stencils & Accessories",
+      "fullName": "Health & Beauty > Tattoos & Body Art > Tattoo Supplies > Tattoo Stencils & Accessories",
+      "parentId": "260797",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "11985",
+      "name": "Makeup Mixed Lots",
+      "fullName": "Health & Beauty > Makeup > Makeup Mixed Lots",
+      "parentId": "31786",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "36409",
+      "name": "Makeup Tools & Accessories",
+      "fullName": "Health & Beauty > Makeup > Makeup Tools & Accessories",
+      "parentId": "31786",
+      "level": 3,
+      "leaf": false
+    },
+    {
+      "id": "36413",
+      "name": "Makeup Bags & Cases",
+      "fullName": "Health & Beauty > Makeup > Makeup Bags & Cases",
+      "parentId": "31786",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "107956",
+      "name": "Makeup Sets & Kits",
+      "fullName": "Health & Beauty > Makeup > Makeup Sets & Kits",
+      "parentId": "31786",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "172016",
+      "name": "Body",
+      "fullName": "Health & Beauty > Makeup > Body",
+      "parentId": "31786",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "172020",
+      "name": "Eyes",
+      "fullName": "Health & Beauty > Makeup > Eyes",
+      "parentId": "31786",
+      "level": 3,
+      "leaf": false
+    },
+    {
+      "id": "172025",
+      "name": "Face",
+      "fullName": "Health & Beauty > Makeup > Face",
+      "parentId": "31786",
+      "level": 3,
+      "leaf": false
+    },
+    {
+      "id": "172027",
+      "name": "Lips",
+      "fullName": "Health & Beauty > Makeup > Lips",
+      "parentId": "31786",
+      "level": 3,
+      "leaf": false
+    },
+    {
+      "id": "31802",
+      "name": "Lip Gloss",
+      "fullName": "Health & Beauty > Makeup > Lips > Lip Gloss",
+      "parentId": "172027",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "31803",
+      "name": "Lip Liner",
+      "fullName": "Health & Beauty > Makeup > Lips > Lip Liner",
+      "parentId": "172027",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "31804",
+      "name": "Lipstick",
+      "fullName": "Health & Beauty > Makeup > Lips > Lipstick",
+      "parentId": "172027",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "172029",
+      "name": "Lip Plumper",
+      "fullName": "Health & Beauty > Makeup > Lips > Lip Plumper",
+      "parentId": "172027",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "172030",
+      "name": "Lip Stain",
+      "fullName": "Health & Beauty > Makeup > Lips > Lip Stain",
+      "parentId": "172027",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "172031",
+      "name": "Lipstick Primer",
+      "fullName": "Health & Beauty > Makeup > Lips > Lipstick Primer",
+      "parentId": "172027",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "11864",
+      "name": "Blush",
+      "fullName": "Health & Beauty > Makeup > Face > Blush",
+      "parentId": "172025",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "11865",
+      "name": "Concealer",
+      "fullName": "Health & Beauty > Makeup > Face > Concealer",
+      "parentId": "172025",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "21021",
+      "name": "Face Powder",
+      "fullName": "Health & Beauty > Makeup > Face > Face Powder",
+      "parentId": "172025",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "82596",
+      "name": "Bronzer, Contour & Highlighter",
+      "fullName": "Health & Beauty > Makeup > Face > Bronzer, Contour & Highlighter",
+      "parentId": "172025",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "95216",
+      "name": "Face Primer",
+      "fullName": "Health & Beauty > Makeup > Face > Face Primer",
+      "parentId": "172025",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "177665",
+      "name": "BB, CC & Alphabet Cream",
+      "fullName": "Health & Beauty > Makeup > Face > BB, CC & Alphabet Cream",
+      "parentId": "172025",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "177666",
+      "name": "Foundation",
+      "fullName": "Health & Beauty > Makeup > Face > Foundation",
+      "parentId": "172025",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "260753",
+      "name": "Setting Spray",
+      "fullName": "Health & Beauty > Makeup > Face > Setting Spray",
+      "parentId": "172025",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "11869",
+      "name": "Mascara",
+      "fullName": "Health & Beauty > Makeup > Eyes > Mascara",
+      "parentId": "172020",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "31787",
+      "name": "Eyeliner",
+      "fullName": "Health & Beauty > Makeup > Eyes > Eyeliner",
+      "parentId": "172020",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "36865",
+      "name": "Eye Shadow",
+      "fullName": "Health & Beauty > Makeup > Eyes > Eye Shadow",
+      "parentId": "172020",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "78089",
+      "name": "Eyebrow Liner & Definition",
+      "fullName": "Health & Beauty > Makeup > Eyes > Eyebrow Liner & Definition",
+      "parentId": "172020",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "172021",
+      "name": "Eye Shadow Primer",
+      "fullName": "Health & Beauty > Makeup > Eyes > Eye Shadow Primer",
+      "parentId": "172020",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "172022",
+      "name": "Eye Shadow & Liner Combination",
+      "fullName": "Health & Beauty > Makeup > Eyes > Eye Shadow & Liner Combination",
+      "parentId": "172020",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "172023",
+      "name": "Eyelash & Eyebrow Growth",
+      "fullName": "Health & Beauty > Makeup > Eyes > Eyelash & Eyebrow Growth",
+      "parentId": "172020",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "172024",
+      "name": "Other Eye Makeup",
+      "fullName": "Health & Beauty > Makeup > Eyes > Other Eye Makeup",
+      "parentId": "172020",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "177664",
+      "name": "False Eyelashes & Adhesives",
+      "fullName": "Health & Beauty > Makeup > Eyes > False Eyelashes & Adhesives",
+      "parentId": "172020",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "82597",
+      "name": "Brushes",
+      "fullName": "Health & Beauty > Makeup > Makeup Tools & Accessories > Brushes",
+      "parentId": "36409",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "82599",
+      "name": "Eyelash Tools",
+      "fullName": "Health & Beauty > Makeup > Makeup Tools & Accessories > Eyelash Tools",
+      "parentId": "36409",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "106256",
+      "name": "Makeup Mirrors",
+      "fullName": "Health & Beauty > Makeup > Makeup Tools & Accessories > Makeup Mirrors",
+      "parentId": "36409",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "159805",
+      "name": "Brush Cleaners",
+      "fullName": "Health & Beauty > Makeup > Makeup Tools & Accessories > Brush Cleaners",
+      "parentId": "36409",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "159806",
+      "name": "Sponges, Applicators & Cotton",
+      "fullName": "Health & Beauty > Makeup > Makeup Tools & Accessories > Sponges, Applicators & Cotton",
+      "parentId": "36409",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "159807",
+      "name": "Other Makeup Tools & Accs",
+      "fullName": "Health & Beauty > Makeup > Makeup Tools & Accessories > Other Makeup Tools & Accs",
+      "parentId": "36409",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "172014",
+      "name": "Sharpeners",
+      "fullName": "Health & Beauty > Makeup > Makeup Tools & Accessories > Sharpeners",
+      "parentId": "36409",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "31773",
+      "name": "Self-Tanning Products",
+      "fullName": "Health & Beauty > Sun Protection & Tanning > Self-Tanning Products",
+      "parentId": "31772",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "31774",
+      "name": "Sunscreen",
+      "fullName": "Health & Beauty > Sun Protection & Tanning > Sunscreen",
+      "parentId": "31772",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "31776",
+      "name": "Tanning Lotion",
+      "fullName": "Health & Beauty > Sun Protection & Tanning > Tanning Lotion",
+      "parentId": "31772",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "50101",
+      "name": "Tanning Beds & Booths",
+      "fullName": "Health & Beauty > Sun Protection & Tanning > Tanning Beds & Booths",
+      "parentId": "31772",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "50102",
+      "name": "Tanning Bed & Booth Parts",
+      "fullName": "Health & Beauty > Sun Protection & Tanning > Tanning Bed & Booth Parts",
+      "parentId": "31772",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "74996",
+      "name": "After Sun Skin Care",
+      "fullName": "Health & Beauty > Sun Protection & Tanning > After Sun Skin Care",
+      "parentId": "31772",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "180919",
+      "name": "Tanning Body Stickers",
+      "fullName": "Health & Beauty > Sun Protection & Tanning > Tanning Body Stickers",
+      "parentId": "31772",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "180920",
+      "name": "Tanning Disposables",
+      "fullName": "Health & Beauty > Sun Protection & Tanning > Tanning Disposables",
+      "parentId": "31772",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "180921",
+      "name": "Airbrush Tanning Systems & Kits",
+      "fullName": "Health & Beauty > Sun Protection & Tanning > Airbrush Tanning Systems & Kits",
+      "parentId": "31772",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "180922",
+      "name": "Airbrush Tanning Compressors",
+      "fullName": "Health & Beauty > Sun Protection & Tanning > Airbrush Tanning Compressors",
+      "parentId": "31772",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "180923",
+      "name": "Airbrush Tents",
+      "fullName": "Health & Beauty > Sun Protection & Tanning > Airbrush Tents",
+      "parentId": "31772",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "260790",
+      "name": "Airbrush Tanning Parts",
+      "fullName": "Health & Beauty > Sun Protection & Tanning > Airbrush Tanning Parts",
+      "parentId": "31772",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "260791",
+      "name": "Airbrush Tanning Solutions",
+      "fullName": "Health & Beauty > Sun Protection & Tanning > Airbrush Tanning Solutions",
+      "parentId": "31772",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "48080",
+      "name": "Denture Care",
+      "fullName": "Health & Beauty > Oral Care > Denture Care",
+      "parentId": "31769",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "67421",
+      "name": "Standard Toothbrushes",
+      "fullName": "Health & Beauty > Oral Care > Standard Toothbrushes",
+      "parentId": "31769",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "67422",
+      "name": "Toothpaste",
+      "fullName": "Health & Beauty > Oral Care > Toothpaste",
+      "parentId": "31769",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "113913",
+      "name": "Whitening",
+      "fullName": "Health & Beauty > Oral Care > Whitening",
+      "parentId": "31769",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "159757",
+      "name": "Teething Pain Relief",
+      "fullName": "Health & Beauty > Oral Care > Teething Pain Relief",
+      "parentId": "31769",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "159758",
+      "name": "Dental Floss & Flossers",
+      "fullName": "Health & Beauty > Oral Care > Dental Floss & Flossers",
+      "parentId": "31769",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "180266",
+      "name": "Mouthwash",
+      "fullName": "Health & Beauty > Oral Care > Mouthwash",
+      "parentId": "31769",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "180267",
+      "name": "Tongue Cleaners",
+      "fullName": "Health & Beauty > Oral Care > Tongue Cleaners",
+      "parentId": "31769",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "260774",
+      "name": "Electric Oral & Dental Care",
+      "fullName": "Health & Beauty > Oral Care > Electric Oral & Dental Care",
+      "parentId": "31769",
+      "level": 3,
+      "leaf": false
+    },
+    {
+      "id": "260779",
+      "name": "Breath Fresheners",
+      "fullName": "Health & Beauty > Oral Care > Breath Fresheners",
+      "parentId": "31769",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "260780",
+      "name": "Dental Guards",
+      "fullName": "Health & Beauty > Oral Care > Dental Guards",
+      "parentId": "31769",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "260781",
+      "name": "Temporary Teeth & Supplies",
+      "fullName": "Health & Beauty > Oral Care > Temporary Teeth & Supplies",
+      "parentId": "31769",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "260782",
+      "name": "Orthodontic Care",
+      "fullName": "Health & Beauty > Oral Care > Orthodontic Care",
+      "parentId": "31769",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "30354",
+      "name": "Air & Water Flossers",
+      "fullName": "Health & Beauty > Oral Care > Electric Oral & Dental Care > Air & Water Flossers",
+      "parentId": "260774",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "31770",
+      "name": "Electric Toothbrushes",
+      "fullName": "Health & Beauty > Oral Care > Electric Oral & Dental Care > Electric Toothbrushes",
+      "parentId": "260774",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "99654",
+      "name": "Toothbrush Replacement Heads",
+      "fullName": "Health & Beauty > Oral Care > Electric Oral & Dental Care > Toothbrush Replacement Heads",
+      "parentId": "260774",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "31763",
+      "name": "Shaving Creams, Foams & Gels",
+      "fullName": "Health & Beauty > Shaving & Hair Removal > Shaving Creams, Foams & Gels",
+      "parentId": "31762",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "47920",
+      "name": "Aftershave",
+      "fullName": "Health & Beauty > Shaving & Hair Removal > Aftershave",
+      "parentId": "31762",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "47925",
+      "name": "Hair Removal Creams & Sprays",
+      "fullName": "Health & Beauty > Shaving & Hair Removal > Hair Removal Creams & Sprays",
+      "parentId": "31762",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "67416",
+      "name": "Tweezers",
+      "fullName": "Health & Beauty > Shaving & Hair Removal > Tweezers",
+      "parentId": "31762",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "82565",
+      "name": "Waxing Supplies",
+      "fullName": "Health & Beauty > Shaving & Hair Removal > Waxing Supplies",
+      "parentId": "31762",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "106315",
+      "name": "Shaving & Grooming Kits & Sets",
+      "fullName": "Health & Beauty > Shaving & Hair Removal > Shaving & Grooming Kits & Sets",
+      "parentId": "31762",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "168191",
+      "name": "Shaving Brushes & Mugs",
+      "fullName": "Health & Beauty > Shaving & Hair Removal > Shaving Brushes & Mugs",
+      "parentId": "31762",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "179841",
+      "name": "Razors & Razor Blades",
+      "fullName": "Health & Beauty > Shaving & Hair Removal > Razors & Razor Blades",
+      "parentId": "31762",
+      "level": 3,
+      "leaf": false
+    },
+    {
+      "id": "260783",
+      "name": "Electric Shaving & Hair Removal",
+      "fullName": "Health & Beauty > Shaving & Hair Removal > Electric Shaving & Hair Removal",
+      "parentId": "31762",
+      "level": 3,
+      "leaf": false
+    },
+    {
+      "id": "260785",
+      "name": "Hair Removal Wax",
+      "fullName": "Health & Beauty > Shaving & Hair Removal > Hair Removal Wax",
+      "parentId": "31762",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "37802",
+      "name": "Epilators & Electrolysis",
+      "fullName": "Health & Beauty > Shaving & Hair Removal > Electric Shaving & Hair Removal > Epilators & Electrolysis",
+      "parentId": "260783",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "67408",
+      "name": "Clippers & Trimmers",
+      "fullName": "Health & Beauty > Shaving & Hair Removal > Electric Shaving & Hair Removal > Clippers & Trimmers",
+      "parentId": "260783",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "159795",
+      "name": "Laser Hair Removal & IPL",
+      "fullName": "Health & Beauty > Shaving & Hair Removal > Electric Shaving & Hair Removal > Laser Hair Removal & IPL",
+      "parentId": "260783",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "180512",
+      "name": "Electric Shavers",
+      "fullName": "Health & Beauty > Shaving & Hair Removal > Electric Shaving & Hair Removal > Electric Shavers",
+      "parentId": "260783",
+      "level": 4,
+      "leaf": false
+    },
+    {
+      "id": "11844",
+      "name": "Men's Shavers",
+      "fullName": "Health & Beauty > Shaving & Hair Removal > Electric Shaving & Hair Removal > Electric Shavers > Men's Shavers",
+      "parentId": "180512",
+      "level": 5,
+      "leaf": true
+    },
+    {
+      "id": "106317",
+      "name": "Women's Shavers",
+      "fullName": "Health & Beauty > Shaving & Hair Removal > Electric Shaving & Hair Removal > Electric Shavers > Women's Shavers",
+      "parentId": "180512",
+      "level": 5,
+      "leaf": true
+    },
+    {
+      "id": "139844",
+      "name": "Shaver Accessories",
+      "fullName": "Health & Beauty > Shaving & Hair Removal > Electric Shaving & Hair Removal > Electric Shavers > Shaver Accessories",
+      "parentId": "180512",
+      "level": 5,
+      "leaf": true
+    },
+    {
+      "id": "159789",
+      "name": "Shaver Parts",
+      "fullName": "Health & Beauty > Shaving & Hair Removal > Electric Shaving & Hair Removal > Electric Shavers > Shaver Parts",
+      "parentId": "180512",
+      "level": 5,
+      "leaf": true
+    },
+    {
+      "id": "47921",
+      "name": "Men's Razors",
+      "fullName": "Health & Beauty > Shaving & Hair Removal > Razors & Razor Blades > Men's Razors",
+      "parentId": "179841",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "47931",
+      "name": "Men's Razor Blades",
+      "fullName": "Health & Beauty > Shaving & Hair Removal > Razors & Razor Blades > Men's Razor Blades",
+      "parentId": "179841",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "178964",
+      "name": "Women's Razors",
+      "fullName": "Health & Beauty > Shaving & Hair Removal > Razors & Razor Blades > Women's Razors",
+      "parentId": "179841",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "178965",
+      "name": "Women's Razor Blades",
+      "fullName": "Health & Beauty > Shaving & Hair Removal > Razors & Razor Blades > Women's Razor Blades",
+      "parentId": "179841",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "30368",
+      "name": "Replacement Lenses",
+      "fullName": "Health & Beauty > Vision Care > Replacement Lenses",
+      "parentId": "31414",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "31287",
+      "name": "Eyeglass Straps, Cords & Grips",
+      "fullName": "Health & Beauty > Vision Care > Eyeglass Straps, Cords & Grips",
+      "parentId": "31414",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "31289",
+      "name": "Contact Lens Care Solutions",
+      "fullName": "Health & Beauty > Vision Care > Contact Lens Care Solutions",
+      "parentId": "31414",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "31416",
+      "name": "Special Purpose Glasses",
+      "fullName": "Health & Beauty > Vision Care > Special Purpose Glasses",
+      "parentId": "31414",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "67670",
+      "name": "Reading Glasses",
+      "fullName": "Health & Beauty > Vision Care > Reading Glasses",
+      "parentId": "31414",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "67678",
+      "name": "Low Vision Magnifiers",
+      "fullName": "Health & Beauty > Vision Care > Low Vision Magnifiers",
+      "parentId": "31414",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "110235",
+      "name": "Contact Lens Storage & Equipment",
+      "fullName": "Health & Beauty > Vision Care > Contact Lens Storage & Equipment",
+      "parentId": "31414",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "116183",
+      "name": "Eyeglass Cases & Storage",
+      "fullName": "Health & Beauty > Vision Care > Eyeglass Cases & Storage",
+      "parentId": "31414",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "122773",
+      "name": "Eye Drops & Wash",
+      "fullName": "Health & Beauty > Vision Care > Eye Drops & Wash",
+      "parentId": "31414",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "127470",
+      "name": "Eyeglass Cleaning Tools & Supplies",
+      "fullName": "Health & Beauty > Vision Care > Eyeglass Cleaning Tools & Supplies",
+      "parentId": "31414",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "179693",
+      "name": "Prescription Glasses",
+      "fullName": "Health & Beauty > Vision Care > Prescription Glasses",
+      "parentId": "31414",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "180957",
+      "name": "Eyeglass Frames",
+      "fullName": "Health & Beauty > Vision Care > Eyeglass Frames",
+      "parentId": "31414",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "180958",
+      "name": "Eyepatches & Eyeglass Patches",
+      "fullName": "Health & Beauty > Vision Care > Eyepatches & Eyeglass Patches",
+      "parentId": "31414",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "260800",
+      "name": "Eyeglasses Parts",
+      "fullName": "Health & Beauty > Vision Care > Eyeglasses Parts",
+      "parentId": "31414",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "260801",
+      "name": "Eyeglass Repair",
+      "fullName": "Health & Beauty > Vision Care > Eyeglass Repair",
+      "parentId": "31414",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "21022",
+      "name": "Skin Masks",
+      "fullName": "Health & Beauty > Skin Care > Skin Masks",
+      "parentId": "11863",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "21205",
+      "name": "Moisturizers",
+      "fullName": "Health & Beauty > Skin Care > Moisturizers",
+      "parentId": "11863",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "29582",
+      "name": "Exfoliators & Scrubs",
+      "fullName": "Health & Beauty > Skin Care > Exfoliators & Scrubs",
+      "parentId": "11863",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "29618",
+      "name": "Acne & Blemish Treatments",
+      "fullName": "Health & Beauty > Skin Care > Acne & Blemish Treatments",
+      "parentId": "11863",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "33164",
+      "name": "Anti-Aging Products",
+      "fullName": "Health & Beauty > Skin Care > Anti-Aging Products",
+      "parentId": "11863",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "36870",
+      "name": "Lip Balm & Treatments",
+      "fullName": "Health & Beauty > Skin Care > Lip Balm & Treatments",
+      "parentId": "11863",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "40088",
+      "name": "Brightening Creams",
+      "fullName": "Health & Beauty > Skin Care > Brightening Creams",
+      "parentId": "11863",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "67500",
+      "name": "Sets & Kits",
+      "fullName": "Health & Beauty > Skin Care > Sets & Kits",
+      "parentId": "11863",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "75006",
+      "name": "Blotting Paper",
+      "fullName": "Health & Beauty > Skin Care > Blotting Paper",
+      "parentId": "11863",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "101925",
+      "name": "Microdermabrasion Tools",
+      "fullName": "Health & Beauty > Skin Care > Microdermabrasion Tools",
+      "parentId": "11863",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "101926",
+      "name": "Night Treatments",
+      "fullName": "Health & Beauty > Skin Care > Night Treatments",
+      "parentId": "11863",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "172032",
+      "name": "Makeup Remover",
+      "fullName": "Health & Beauty > Skin Care > Makeup Remover",
+      "parentId": "11863",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "177764",
+      "name": "Eye Treatments & Masks",
+      "fullName": "Health & Beauty > Skin Care > Eye Treatments & Masks",
+      "parentId": "11863",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "177765",
+      "name": "Cleansers & Toners",
+      "fullName": "Health & Beauty > Skin Care > Cleansers & Toners",
+      "parentId": "11863",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "177767",
+      "name": "Facial Cleansing Devices",
+      "fullName": "Health & Beauty > Skin Care > Facial Cleansing Devices",
+      "parentId": "11863",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "182112",
+      "name": "Cotton Swabs",
+      "fullName": "Health & Beauty > Skin Care > Cotton Swabs",
+      "parentId": "11863",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "260788",
+      "name": "Facial Cleansing Device Parts",
+      "fullName": "Health & Beauty > Skin Care > Facial Cleansing Device Parts",
+      "parentId": "11863",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "260789",
+      "name": "Skin Peels",
+      "fullName": "Health & Beauty > Skin Care > Skin Peels",
+      "parentId": "11863",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "11855",
+      "name": "Brushes & Combs",
+      "fullName": "Health & Beauty > Hair Care & Styling > Brushes & Combs",
+      "parentId": "11854",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "11860",
+      "name": "Styling Products",
+      "fullName": "Health & Beauty > Hair Care & Styling > Styling Products",
+      "parentId": "11854",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "31412",
+      "name": "Hair Color",
+      "fullName": "Health & Beauty > Hair Care & Styling > Hair Color",
+      "parentId": "11854",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "31413",
+      "name": "Hair Loss Treatments",
+      "fullName": "Health & Beauty > Hair Care & Styling > Hair Loss Treatments",
+      "parentId": "11854",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "31788",
+      "name": "Sets & Kits",
+      "fullName": "Health & Beauty > Hair Care & Styling > Sets & Kits",
+      "parentId": "11854",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "82591",
+      "name": "Hair Ties & Styling Accessories",
+      "fullName": "Health & Beauty > Hair Care & Styling > Hair Ties & Styling Accessories",
+      "parentId": "11854",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "166738",
+      "name": "Perms",
+      "fullName": "Health & Beauty > Hair Care & Styling > Perms",
+      "parentId": "11854",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "177660",
+      "name": "Treatments, Oils & Protectors",
+      "fullName": "Health & Beauty > Hair Care & Styling > Treatments, Oils & Protectors",
+      "parentId": "11854",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "177661",
+      "name": "Shampoos & Conditioners",
+      "fullName": "Health & Beauty > Hair Care & Styling > Shampoos & Conditioners",
+      "parentId": "11854",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "177662",
+      "name": "Relaxers & Straightening Prod",
+      "fullName": "Health & Beauty > Hair Care & Styling > Relaxers & Straightening Prod",
+      "parentId": "11854",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "182101",
+      "name": "Hair Extensions & Wigs",
+      "fullName": "Health & Beauty > Hair Care & Styling > Hair Extensions & Wigs",
+      "parentId": "11854",
+      "level": 3,
+      "leaf": false
+    },
+    {
+      "id": "260773",
+      "name": "Hair Styling Devices",
+      "fullName": "Health & Beauty > Hair Care & Styling > Hair Styling Devices",
+      "parentId": "11854",
+      "level": 3,
+      "leaf": false
+    },
+    {
+      "id": "11858",
+      "name": "Hair Dryers",
+      "fullName": "Health & Beauty > Hair Care & Styling > Hair Styling Devices > Hair Dryers",
+      "parentId": "260773",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "36407",
+      "name": "Rollers & Curlers",
+      "fullName": "Health & Beauty > Hair Care & Styling > Hair Styling Devices > Rollers & Curlers",
+      "parentId": "260773",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "177659",
+      "name": "Straightening & Curling Irons",
+      "fullName": "Health & Beauty > Hair Care & Styling > Hair Styling Devices > Straightening & Curling Irons",
+      "parentId": "260773",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "175635",
+      "name": "Wigs & Hairpieces",
+      "fullName": "Health & Beauty > Hair Care & Styling > Hair Extensions & Wigs > Wigs & Hairpieces",
+      "parentId": "182101",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "175636",
+      "name": "Hair Extensions",
+      "fullName": "Health & Beauty > Hair Care & Styling > Hair Extensions & Wigs > Hair Extensions",
+      "parentId": "182101",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "175637",
+      "name": "Wig & Extension Supplies",
+      "fullName": "Health & Beauty > Hair Care & Styling > Hair Extensions & Wigs > Wig & Extension Supplies",
+      "parentId": "182101",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "29580",
+      "name": "Deodorants & Antiperspirants",
+      "fullName": "Health & Beauty > Bath & Body > Deodorants & Antiperspirants",
+      "parentId": "11838",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "29581",
+      "name": "Body Powders",
+      "fullName": "Health & Beauty > Bath & Body > Body Powders",
+      "parentId": "11838",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "29584",
+      "name": "Bath & Body Mixed Items",
+      "fullName": "Health & Beauty > Bath & Body > Bath & Body Mixed Items",
+      "parentId": "11838",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "31751",
+      "name": "Bath Oils",
+      "fullName": "Health & Beauty > Bath & Body > Bath Oils",
+      "parentId": "11838",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "31753",
+      "name": "Body Sprays & Mists",
+      "fullName": "Health & Beauty > Bath & Body > Body Sprays & Mists",
+      "parentId": "11838",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "31754",
+      "name": "Body Washes & Shower Gels",
+      "fullName": "Health & Beauty > Bath & Body > Body Washes & Shower Gels",
+      "parentId": "11838",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "31755",
+      "name": "Bubble Baths",
+      "fullName": "Health & Beauty > Bath & Body > Bubble Baths",
+      "parentId": "11838",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "67390",
+      "name": "Bath Salts",
+      "fullName": "Health & Beauty > Bath & Body > Bath Salts",
+      "parentId": "11838",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "67391",
+      "name": "Bath Sets & Kits",
+      "fullName": "Health & Beauty > Bath & Body > Bath Sets & Kits",
+      "parentId": "11838",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "72759",
+      "name": "Bath Bombs & Fizzies",
+      "fullName": "Health & Beauty > Bath & Body > Bath Bombs & Fizzies",
+      "parentId": "11838",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "74990",
+      "name": "Bath Brushes & Sponges",
+      "fullName": "Health & Beauty > Bath & Body > Bath Brushes & Sponges",
+      "parentId": "11838",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "74994",
+      "name": "Scar & Stretch Mark Reducers",
+      "fullName": "Health & Beauty > Bath & Body > Scar & Stretch Mark Reducers",
+      "parentId": "11838",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "180918",
+      "name": "Hand Washes",
+      "fullName": "Health & Beauty > Bath & Body > Hand Washes",
+      "parentId": "11838",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "180924",
+      "name": "Body Soaps",
+      "fullName": "Health & Beauty > Bath & Body > Body Soaps",
+      "parentId": "11838",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "180925",
+      "name": "Travel Bottles & Containers",
+      "fullName": "Health & Beauty > Bath & Body > Travel Bottles & Containers",
+      "parentId": "11838",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "182100",
+      "name": "Shower Caps",
+      "fullName": "Health & Beauty > Bath & Body > Shower Caps",
+      "parentId": "11838",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "28175",
+      "name": "Mobility/Walking Equipment",
+      "fullName": "Health & Beauty > Medical & Mobility > Mobility/Walking Equipment",
+      "parentId": "11778",
+      "level": 3,
+      "leaf": false
+    },
+    {
+      "id": "182113",
+      "name": "Mobility Furniture & Fixtures",
+      "fullName": "Health & Beauty > Medical & Mobility > Mobility Furniture & Fixtures",
+      "parentId": "11778",
+      "level": 3,
+      "leaf": false
+    },
+    {
+      "id": "182118",
+      "name": "Daily Living Aids",
+      "fullName": "Health & Beauty > Medical & Mobility > Daily Living Aids",
+      "parentId": "11778",
+      "level": 3,
+      "leaf": false
+    },
+    {
+      "id": "182132",
+      "name": "Orthopedics & Supports",
+      "fullName": "Health & Beauty > Medical & Mobility > Orthopedics & Supports",
+      "parentId": "11778",
+      "level": 3,
+      "leaf": false
+    },
+    {
+      "id": "19264",
+      "name": "Orthotics, Braces & Sleeves",
+      "fullName": "Health & Beauty > Medical & Mobility > Orthopedics & Supports > Orthotics, Braces & Sleeves",
+      "parentId": "182132",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "182133",
+      "name": "Compression Garments",
+      "fullName": "Health & Beauty > Medical & Mobility > Orthopedics & Supports > Compression Garments",
+      "parentId": "182132",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "182134",
+      "name": "Insoles & Shoe Inserts",
+      "fullName": "Health & Beauty > Medical & Mobility > Orthopedics & Supports > Insoles & Shoe Inserts",
+      "parentId": "182132",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "182135",
+      "name": "Seat & Posture Cushions",
+      "fullName": "Health & Beauty > Medical & Mobility > Orthopedics & Supports > Seat & Posture Cushions",
+      "parentId": "182132",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "182136",
+      "name": "Wedges & Bed Positioners",
+      "fullName": "Health & Beauty > Medical & Mobility > Orthopedics & Supports > Wedges & Bed Positioners",
+      "parentId": "182132",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "182137",
+      "name": "Other Orthopedic Products",
+      "fullName": "Health & Beauty > Medical & Mobility > Orthopedics & Supports > Other Orthopedic Products",
+      "parentId": "182132",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "36440",
+      "name": "Incontinence Aids",
+      "fullName": "Health & Beauty > Medical & Mobility > Daily Living Aids > Incontinence Aids",
+      "parentId": "182118",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "159874",
+      "name": "Reacher Grabbers",
+      "fullName": "Health & Beauty > Medical & Mobility > Daily Living Aids > Reacher Grabbers",
+      "parentId": "182118",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "159878",
+      "name": "Emergency Alert Systems",
+      "fullName": "Health & Beauty > Medical & Mobility > Daily Living Aids > Emergency Alert Systems",
+      "parentId": "182118",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "182119",
+      "name": "Assisted Washing Aids",
+      "fullName": "Health & Beauty > Medical & Mobility > Daily Living Aids > Assisted Washing Aids",
+      "parentId": "182118",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "182120",
+      "name": "Bidet & Toilet Tissue Aids",
+      "fullName": "Health & Beauty > Medical & Mobility > Daily Living Aids > Bidet & Toilet Tissue Aids",
+      "parentId": "182118",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "182121",
+      "name": "Dressing & Grooming Aids",
+      "fullName": "Health & Beauty > Medical & Mobility > Daily Living Aids > Dressing & Grooming Aids",
+      "parentId": "182118",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "182122",
+      "name": "Kitchen & Dining Aids",
+      "fullName": "Health & Beauty > Medical & Mobility > Daily Living Aids > Kitchen & Dining Aids",
+      "parentId": "182118",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "182123",
+      "name": "Portable Urinals & Bed Pans",
+      "fullName": "Health & Beauty > Medical & Mobility > Daily Living Aids > Portable Urinals & Bed Pans",
+      "parentId": "182118",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "182124",
+      "name": "Work & Leisure Aids",
+      "fullName": "Health & Beauty > Medical & Mobility > Daily Living Aids > Work & Leisure Aids",
+      "parentId": "182118",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "182125",
+      "name": "Other Daily Living Aids",
+      "fullName": "Health & Beauty > Medical & Mobility > Daily Living Aids > Other Daily Living Aids",
+      "parentId": "182118",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "184572",
+      "name": "Ostomy Aids",
+      "fullName": "Health & Beauty > Medical & Mobility > Daily Living Aids > Ostomy Aids",
+      "parentId": "182118",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "184583",
+      "name": "Driving Aids",
+      "fullName": "Health & Beauty > Medical & Mobility > Daily Living Aids > Driving Aids",
+      "parentId": "182118",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "260815",
+      "name": "Hearing Assistance",
+      "fullName": "Health & Beauty > Medical & Mobility > Daily Living Aids > Hearing Assistance",
+      "parentId": "182118",
+      "level": 4,
+      "leaf": false
+    },
+    {
+      "id": "260754",
+      "name": "Hearing Aids",
+      "fullName": "Health & Beauty > Medical & Mobility > Daily Living Aids > Hearing Assistance > Hearing Aids",
+      "parentId": "260815",
+      "level": 5,
+      "leaf": true
+    },
+    {
+      "id": "260755",
+      "name": "Hearing Aid Parts",
+      "fullName": "Health & Beauty > Medical & Mobility > Daily Living Aids > Hearing Assistance > Hearing Aid Parts",
+      "parentId": "260815",
+      "level": 5,
+      "leaf": true
+    },
+    {
+      "id": "260756",
+      "name": "Hearing Aid Accessory",
+      "fullName": "Health & Beauty > Medical & Mobility > Daily Living Aids > Hearing Assistance > Hearing Aid Accessory",
+      "parentId": "260815",
+      "level": 5,
+      "leaf": true
+    },
+    {
+      "id": "260757",
+      "name": "Hearing Aid Batteries",
+      "fullName": "Health & Beauty > Medical & Mobility > Daily Living Aids > Hearing Assistance > Hearing Aid Batteries",
+      "parentId": "260815",
+      "level": 5,
+      "leaf": true
+    },
+    {
+      "id": "75067",
+      "name": "Access Ramps",
+      "fullName": "Health & Beauty > Medical & Mobility > Mobility Furniture & Fixtures > Access Ramps",
+      "parentId": "182113",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "129588",
+      "name": "Shower & Bath Seats",
+      "fullName": "Health & Beauty > Medical & Mobility > Mobility Furniture & Fixtures > Shower & Bath Seats",
+      "parentId": "182113",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "171535",
+      "name": "Toilet Frames & Commodes",
+      "fullName": "Health & Beauty > Medical & Mobility > Mobility Furniture & Fixtures > Toilet Frames & Commodes",
+      "parentId": "182113",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "171537",
+      "name": "Handles & Rails",
+      "fullName": "Health & Beauty > Medical & Mobility > Mobility Furniture & Fixtures > Handles & Rails",
+      "parentId": "182113",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "171540",
+      "name": "Toilet Seats",
+      "fullName": "Health & Beauty > Medical & Mobility > Mobility Furniture & Fixtures > Toilet Seats",
+      "parentId": "182113",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "182114",
+      "name": "Bed & Chair Tables",
+      "fullName": "Health & Beauty > Medical & Mobility > Mobility Furniture & Fixtures > Bed & Chair Tables",
+      "parentId": "182113",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "182115",
+      "name": "Steps & Stairs",
+      "fullName": "Health & Beauty > Medical & Mobility > Mobility Furniture & Fixtures > Steps & Stairs",
+      "parentId": "182113",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "182116",
+      "name": "Transfer Boards & Benches",
+      "fullName": "Health & Beauty > Medical & Mobility > Mobility Furniture & Fixtures > Transfer Boards & Benches",
+      "parentId": "182113",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "184584",
+      "name": "Furniture Risers",
+      "fullName": "Health & Beauty > Medical & Mobility > Mobility Furniture & Fixtures > Furniture Risers",
+      "parentId": "182113",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "19265",
+      "name": "Wheelchairs",
+      "fullName": "Health & Beauty > Medical & Mobility > Mobility/Walking Equipment > Wheelchairs",
+      "parentId": "28175",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "28176",
+      "name": "Walkers & Canes",
+      "fullName": "Health & Beauty > Medical & Mobility > Mobility/Walking Equipment > Walkers & Canes",
+      "parentId": "28175",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "28177",
+      "name": "Other Mobility Equipment",
+      "fullName": "Health & Beauty > Medical & Mobility > Mobility/Walking Equipment > Other Mobility Equipment",
+      "parentId": "28175",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "75066",
+      "name": "Stairlifts & Elevators",
+      "fullName": "Health & Beauty > Medical & Mobility > Mobility/Walking Equipment > Stairlifts & Elevators",
+      "parentId": "28175",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "75068",
+      "name": "Mobility Scooters",
+      "fullName": "Health & Beauty > Medical & Mobility > Mobility/Walking Equipment > Mobility Scooters",
+      "parentId": "28175",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "171536",
+      "name": "Crutches",
+      "fullName": "Health & Beauty > Medical & Mobility > Mobility/Walking Equipment > Crutches",
+      "parentId": "28175",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "182126",
+      "name": "Parts & Accessories",
+      "fullName": "Health & Beauty > Medical & Mobility > Mobility/Walking Equipment > Parts & Accessories",
+      "parentId": "28175",
+      "level": 4,
+      "leaf": false
+    },
+    {
+      "id": "182127",
+      "name": "Mobility Equipment Accessories",
+      "fullName": "Health & Beauty > Medical & Mobility > Mobility/Walking Equipment > Parts & Accessories > Mobility Equipment Accessories",
+      "parentId": "182126",
+      "level": 5,
+      "leaf": true
+    },
+    {
+      "id": "182128",
+      "name": "Mobility Scooter Parts",
+      "fullName": "Health & Beauty > Medical & Mobility > Mobility/Walking Equipment > Parts & Accessories > Mobility Scooter Parts",
+      "parentId": "182126",
+      "level": 5,
+      "leaf": true
+    },
+    {
+      "id": "182129",
+      "name": "Stairlift & Elevator Parts",
+      "fullName": "Health & Beauty > Medical & Mobility > Mobility/Walking Equipment > Parts & Accessories > Stairlift & Elevator Parts",
+      "parentId": "182126",
+      "level": 5,
+      "leaf": true
+    },
+    {
+      "id": "182130",
+      "name": "Wheelchair Parts",
+      "fullName": "Health & Beauty > Medical & Mobility > Mobility/Walking Equipment > Parts & Accessories > Wheelchair Parts",
+      "parentId": "182126",
+      "level": 5,
+      "leaf": true
+    }
+  ]
+}

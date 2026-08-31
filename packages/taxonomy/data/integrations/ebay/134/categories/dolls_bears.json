@@ -1,0 +1,263 @@
+{
+  "vertical": "Dolls & Bears",
+  "totalCategories": 32,
+  "leaves": 26,
+  "categories": [
+    {
+      "id": "237",
+      "name": "Dolls & Bears",
+      "fullName": "Dolls & Bears",
+      "parentId": null,
+      "level": 1,
+      "leaf": false
+    },
+    {
+      "id": "238",
+      "name": "Dolls, Clothing & Accessories",
+      "fullName": "Dolls & Bears > Dolls, Clothing & Accessories",
+      "parentId": "237",
+      "level": 2,
+      "leaf": false
+    },
+    {
+      "id": "1202",
+      "name": "Dollhouse Miniatures",
+      "fullName": "Dolls & Bears > Dollhouse Miniatures",
+      "parentId": "237",
+      "level": 2,
+      "leaf": false
+    },
+    {
+      "id": "2440",
+      "name": "Paper Dolls, Clothes & Accessories",
+      "fullName": "Dolls & Bears > Paper Dolls, Clothes & Accessories",
+      "parentId": "237",
+      "level": 2,
+      "leaf": true
+    },
+    {
+      "id": "262353",
+      "name": "Bears, Clothing & Accessories",
+      "fullName": "Dolls & Bears > Bears, Clothing & Accessories",
+      "parentId": "237",
+      "level": 2,
+      "leaf": false
+    },
+    {
+      "id": "387",
+      "name": "Bear Clothing & Accessories",
+      "fullName": "Dolls & Bears > Bears, Clothing & Accessories > Bear Clothing & Accessories",
+      "parentId": "262353",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "50253",
+      "name": "Bear Making Supplies",
+      "fullName": "Dolls & Bears > Bears, Clothing & Accessories > Bear Making Supplies",
+      "parentId": "262353",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "160824",
+      "name": "Bear Figurines & Miniatures",
+      "fullName": "Dolls & Bears > Bears, Clothing & Accessories > Bear Figurines & Miniatures",
+      "parentId": "262353",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "170085",
+      "name": "Collectors' Guides & Books",
+      "fullName": "Dolls & Bears > Bears, Clothing & Accessories > Collectors' Guides & Books",
+      "parentId": "262353",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "262345",
+      "name": "Bears",
+      "fullName": "Dolls & Bears > Bears, Clothing & Accessories > Bears",
+      "parentId": "262353",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "2458",
+      "name": "Dollhouses & Room Boxes",
+      "fullName": "Dolls & Bears > Dollhouse Miniatures > Dollhouses & Room Boxes",
+      "parentId": "1202",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "70001",
+      "name": "Dollhouse Building Components",
+      "fullName": "Dolls & Bears > Dollhouse Miniatures > Dollhouse Building Components",
+      "parentId": "1202",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "75528",
+      "name": "Dollhouse Lamps & Lighting",
+      "fullName": "Dolls & Bears > Dollhouse Miniatures > Dollhouse Lamps & Lighting",
+      "parentId": "1202",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "86823",
+      "name": "Dollhouse Dolls & Animals",
+      "fullName": "Dolls & Bears > Dollhouse Miniatures > Dollhouse Dolls & Animals",
+      "parentId": "1202",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "170086",
+      "name": "Collectors' Guides & Books",
+      "fullName": "Dolls & Bears > Dollhouse Miniatures > Collectors' Guides & Books",
+      "parentId": "1202",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "179251",
+      "name": "Dollhouse Décor & Accessories",
+      "fullName": "Dolls & Bears > Dollhouse Miniatures > Dollhouse Décor & Accessories",
+      "parentId": "1202",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "179309",
+      "name": "Dollhouse Furniture",
+      "fullName": "Dolls & Bears > Dollhouse Miniatures > Dollhouse Furniture",
+      "parentId": "1202",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "262342",
+      "name": "Dollhouse Fittings, Fixtures & Appliances",
+      "fullName": "Dolls & Bears > Dollhouse Miniatures > Dollhouse Fittings, Fixtures & Appliances",
+      "parentId": "1202",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "262422",
+      "name": "Dollhouse Wall, Window & Floor Coverings",
+      "fullName": "Dolls & Bears > Dollhouse Miniatures > Dollhouse Wall, Window & Floor Coverings",
+      "parentId": "1202",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "2408",
+      "name": "Doll Making & Repair",
+      "fullName": "Dolls & Bears > Dolls, Clothing & Accessories > Doll Making & Repair",
+      "parentId": "238",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "262346",
+      "name": "Dolls & Doll Playsets",
+      "fullName": "Dolls & Bears > Dolls, Clothing & Accessories > Dolls & Doll Playsets",
+      "parentId": "238",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "262347",
+      "name": "Doll Clothes & Accessories",
+      "fullName": "Dolls & Bears > Dolls, Clothing & Accessories > Doll Clothes & Accessories",
+      "parentId": "238",
+      "level": 3,
+      "leaf": false
+    },
+    {
+      "id": "262349",
+      "name": "Books & Guides",
+      "fullName": "Dolls & Bears > Dolls, Clothing & Accessories > Books & Guides",
+      "parentId": "238",
+      "level": 3,
+      "leaf": false
+    },
+    {
+      "id": "160839",
+      "name": "Collectors' Guides & Books",
+      "fullName": "Dolls & Bears > Dolls, Clothing & Accessories > Books & Guides > Collectors' Guides & Books",
+      "parentId": "262349",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "262350",
+      "name": "Books",
+      "fullName": "Dolls & Bears > Dolls, Clothing & Accessories > Books & Guides > Books",
+      "parentId": "262349",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "262351",
+      "name": "Magazines",
+      "fullName": "Dolls & Bears > Dolls, Clothing & Accessories > Books & Guides > Magazines",
+      "parentId": "262349",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "112546",
+      "name": "Strollers",
+      "fullName": "Dolls & Bears > Dolls, Clothing & Accessories > Doll Clothes & Accessories > Strollers",
+      "parentId": "262347",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "160871",
+      "name": "Storage & Display",
+      "fullName": "Dolls & Bears > Dolls, Clothing & Accessories > Doll Clothes & Accessories > Storage & Display",
+      "parentId": "262347",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "180102",
+      "name": "Houses & Furniture",
+      "fullName": "Dolls & Bears > Dolls, Clothing & Accessories > Doll Clothes & Accessories > Houses & Furniture",
+      "parentId": "262347",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "180103",
+      "name": "Vehicles",
+      "fullName": "Dolls & Bears > Dolls, Clothing & Accessories > Doll Clothes & Accessories > Vehicles",
+      "parentId": "262347",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "180104",
+      "name": "Pets & Animals",
+      "fullName": "Dolls & Bears > Dolls, Clothing & Accessories > Doll Clothes & Accessories > Pets & Animals",
+      "parentId": "262347",
+      "level": 4,
+      "leaf": true
+    },
+    {
+      "id": "262348",
+      "name": "Clothing & Accessories",
+      "fullName": "Dolls & Bears > Dolls, Clothing & Accessories > Doll Clothes & Accessories > Clothing & Accessories",
+      "parentId": "262347",
+      "level": 4,
+      "leaf": true
+    }
+  ]
+}

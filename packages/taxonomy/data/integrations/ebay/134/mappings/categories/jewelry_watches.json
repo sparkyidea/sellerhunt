@@ -1,0 +1,961 @@
+{
+  "ebayCategory": "Jewelry & Watches",
+  "shopifyCategories": ["Apparel & Accessories"],
+  "totalMapped": 119,
+  "highConfidence": 103,
+  "lowConfidence": 0,
+  "mappings": [
+    {
+      "ebayId": "281",
+      "ebayFullName": "Jewelry & Watches",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "491",
+      "ebayFullName": "Jewelry & Watches > Loose Diamonds & Gemstones",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "4196",
+      "ebayFullName": "Jewelry & Watches > Fine Jewelry",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "10290",
+      "ebayFullName": "Jewelry & Watches > Men's Jewelry",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "10968",
+      "ebayFullName": "Jewelry & Watches > Fashion Jewelry",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "84605",
+      "ebayFullName": "Jewelry & Watches > Children's Jewelry",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "91427",
+      "ebayFullName": "Jewelry & Watches > Engagement & Wedding",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "110633",
+      "ebayFullName": "Jewelry & Watches > Handcrafted & Artisan Jewelry",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "164352",
+      "ebayFullName": "Jewelry & Watches > Jewelry Care, Design & Repair",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "260324",
+      "ebayFullName": "Jewelry & Watches > Watches, Parts & Accessories",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "261986",
+      "ebayFullName": "Jewelry & Watches > Body Jewelry",
+      "shopifyCategoryId": "aa-6-2",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Body Jewelry",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "261997",
+      "ebayFullName": "Jewelry & Watches > Loose Beads",
+      "shopifyCategoryId": "ae-2-1-2-8-2",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Embellishments & Trims > Beads",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262022",
+      "ebayFullName": "Jewelry & Watches > Jewelry Mixed Lots",
+      "shopifyCategoryId": "aa-6-7",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Jewelry Sets",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262023",
+      "ebayFullName": "Jewelry & Watches > Other Jewelry",
+      "shopifyCategoryId": "aa-6-1",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Anklets",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262024",
+      "ebayFullName": "Jewelry & Watches > Vintage & Antique Jewelry",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "262025",
+      "ebayFullName": "Jewelry & Watches > Ethnic, Regional & Tribal",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "261978",
+      "ebayFullName": "Jewelry & Watches > Ethnic, Regional & Tribal > Anklets",
+      "shopifyCategoryId": "aa-6-1",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Anklets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "261979",
+      "ebayFullName": "Jewelry & Watches > Ethnic, Regional & Tribal > Bracelets & Charms",
+      "shopifyCategoryId": "aa-6-3",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Bracelets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "261980",
+      "ebayFullName": "Jewelry & Watches > Ethnic, Regional & Tribal > Brooches & Pins",
+      "shopifyCategoryId": "aa-6-4",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Brooches & Lapel Pins",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "261981",
+      "ebayFullName": "Jewelry & Watches > Ethnic, Regional & Tribal > Earrings",
+      "shopifyCategoryId": "aa-6-6",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Earrings",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "261982",
+      "ebayFullName": "Jewelry & Watches > Ethnic, Regional & Tribal > Hair & Head Jewelry",
+      "shopifyCategoryId": "aa-2-14-13",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Hair Accessories > Hair Bands",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "261983",
+      "ebayFullName": "Jewelry & Watches > Ethnic, Regional & Tribal > Jewelry Sets",
+      "shopifyCategoryId": "aa-6-7",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Jewelry Sets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "261984",
+      "ebayFullName": "Jewelry & Watches > Ethnic, Regional & Tribal > Necklaces & Pendants",
+      "shopifyCategoryId": "aa-6-8",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Necklaces",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "261985",
+      "ebayFullName": "Jewelry & Watches > Ethnic, Regional & Tribal > Rings",
+      "shopifyCategoryId": "aa-6-9",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Rings",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "166734",
+      "ebayFullName": "Jewelry & Watches > Vintage & Antique Jewelry > Other Vintage & Antique Jewelry",
+      "shopifyCategoryId": "aa-6-7",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Jewelry Sets",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "171122",
+      "ebayFullName": "Jewelry & Watches > Vintage & Antique Jewelry > Price Guides & Publications",
+      "shopifyCategoryId": "me-8",
+      "shopifyFullName": "Media > Academic Papers & Studies",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262001",
+      "ebayFullName": "Jewelry & Watches > Vintage & Antique Jewelry > Anklets",
+      "shopifyCategoryId": "aa-6-1",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Anklets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262002",
+      "ebayFullName": "Jewelry & Watches > Vintage & Antique Jewelry > Bolo Ties",
+      "shopifyCategoryId": "aa-2-23",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Neckties",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262003",
+      "ebayFullName": "Jewelry & Watches > Vintage & Antique Jewelry > Bracelets & Charms",
+      "shopifyCategoryId": "aa-6-3",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Bracelets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262004",
+      "ebayFullName": "Jewelry & Watches > Vintage & Antique Jewelry > Brooches & Pins",
+      "shopifyCategoryId": "aa-6-4",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Brooches & Lapel Pins",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262005",
+      "ebayFullName": "Jewelry & Watches > Vintage & Antique Jewelry > Cameos",
+      "shopifyCategoryId": "aa-6-4",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Brooches & Lapel Pins",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262006",
+      "ebayFullName": "Jewelry & Watches > Vintage & Antique Jewelry > Cufflinks",
+      "shopifyCategoryId": "aa-2-10",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Cufflinks",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262007",
+      "ebayFullName": "Jewelry & Watches > Vintage & Antique Jewelry > Dress & Scarf Clips",
+      "shopifyCategoryId": "aa-6-4",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Brooches & Lapel Pins",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262008",
+      "ebayFullName": "Jewelry & Watches > Vintage & Antique Jewelry > Earrings",
+      "shopifyCategoryId": "aa-6-6",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Earrings",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262009",
+      "ebayFullName": "Jewelry & Watches > Vintage & Antique Jewelry > Findings & Stampings",
+      "shopifyCategoryId": "ae-2-1-2-8-7",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Embellishments & Trims > Jewelry Findings",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262010",
+      "ebayFullName": "Jewelry & Watches > Vintage & Antique Jewelry > Hair & Head Jewelry",
+      "shopifyCategoryId": "aa-2-14-13",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Hair Accessories > Hair Bands",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262011",
+      "ebayFullName": "Jewelry & Watches > Vintage & Antique Jewelry > Jewelry Sets",
+      "shopifyCategoryId": "aa-6-7",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Jewelry Sets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262012",
+      "ebayFullName": "Jewelry & Watches > Vintage & Antique Jewelry > Mourning Jewelry",
+      "shopifyCategoryId": "aa-6-7",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Jewelry Sets",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262013",
+      "ebayFullName": "Jewelry & Watches > Vintage & Antique Jewelry > Necklaces & Pendants",
+      "shopifyCategoryId": "aa-6-8",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Necklaces",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262014",
+      "ebayFullName": "Jewelry & Watches > Vintage & Antique Jewelry > Rings",
+      "shopifyCategoryId": "aa-6-9",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Rings",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262015",
+      "ebayFullName": "Jewelry & Watches > Vintage & Antique Jewelry > Tie Clasps & Tacks",
+      "shopifyCategoryId": "aa-2-29",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Tie Clips",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262016",
+      "ebayFullName": "Jewelry & Watches > Vintage & Antique Jewelry > Collections & Lots",
+      "shopifyCategoryId": "aa-6-7",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Jewelry Sets",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "51020",
+      "ebayFullName": "Jewelry & Watches > Watches, Parts & Accessories > Watches Mixed Lots",
+      "shopifyCategoryId": "aa-6-11",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Watches",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "173696",
+      "ebayFullName": "Jewelry & Watches > Watches, Parts & Accessories > Parts, Tools & Guides",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "260325",
+      "ebayFullName": "Jewelry & Watches > Watches, Parts & Accessories > Watches",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "260328",
+      "ebayFullName": "Jewelry & Watches > Watches, Parts & Accessories > Watch Accessories",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "98624",
+      "ebayFullName": "Jewelry & Watches > Watches, Parts & Accessories > Watch Accessories > Wristwatch Bands",
+      "shopifyCategoryId": "aa-6-10-1",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Watch Accessories > Watch Bands",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260329",
+      "ebayFullName": "Jewelry & Watches > Watches, Parts & Accessories > Watch Accessories > Chains & Fobs",
+      "shopifyCategoryId": "aa-6-10-1",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Watch Accessories > Watch Bands",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260330",
+      "ebayFullName": "Jewelry & Watches > Watches, Parts & Accessories > Watch Accessories > Boxes & Cases",
+      "shopifyCategoryId": "aa-5-5-7",
+      "shopifyFullName": "Apparel & Accessories > Handbags, Wallets & Cases > Wallets & Money Clips > Wallets",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260331",
+      "ebayFullName": "Jewelry & Watches > Watches, Parts & Accessories > Watch Accessories > Watch Winders",
+      "shopifyCategoryId": "aa-6-10-3",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Watch Accessories > Watch Winders",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260332",
+      "ebayFullName": "Jewelry & Watches > Watches, Parts & Accessories > Watch Accessories > Other Watch Accessories",
+      "shopifyCategoryId": "aa-6-10-2",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Watch Accessories > Watch Stickers & Decals",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "3937",
+      "ebayFullName": "Jewelry & Watches > Watches, Parts & Accessories > Watches > Pocket Watches",
+      "shopifyCategoryId": "aa-6-11",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Watches",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "31387",
+      "ebayFullName": "Jewelry & Watches > Watches, Parts & Accessories > Watches > Wristwatches",
+      "shopifyCategoryId": "aa-6-11",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Watches",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260326",
+      "ebayFullName": "Jewelry & Watches > Watches, Parts & Accessories > Watches > Other Watches",
+      "shopifyCategoryId": "aa-6-11",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Watches",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "93720",
+      "ebayFullName": "Jewelry & Watches > Watches, Parts & Accessories > Parts, Tools & Guides > Manuals, Guides & Catalogs",
+      "shopifyCategoryId": "me-5",
+      "shopifyFullName": "Media > Product Manuals",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "98625",
+      "ebayFullName": "Jewelry & Watches > Watches, Parts & Accessories > Parts, Tools & Guides > Watch Batteries",
+      "shopifyCategoryId": "el-7-15-1-15",
+      "shopifyFullName": "Electronics > Electronics Accessories > Power > Batteries > Watch Batteries",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "117039",
+      "ebayFullName": "Jewelry & Watches > Watches, Parts & Accessories > Parts, Tools & Guides > Tools & Repair Kits",
+      "shopifyCategoryId": "hb-2-5",
+      "shopifyFullName": "Health & Beauty > Jewelry Cleaning & Care > Watch Repair Kits",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "165144",
+      "ebayFullName": "Jewelry & Watches > Watches, Parts & Accessories > Parts, Tools & Guides > Watches for Parts",
+      "shopifyCategoryId": "aa-6-11",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Watches",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "260327",
+      "ebayFullName": "Jewelry & Watches > Watches, Parts & Accessories > Parts, Tools & Guides > Parts",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "10324",
+      "ebayFullName": "Jewelry & Watches > Watches, Parts & Accessories > Parts, Tools & Guides > Parts > Other Watch Parts",
+      "shopifyCategoryId": "aa-6-7",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Jewelry Sets",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "57714",
+      "ebayFullName": "Jewelry & Watches > Watches, Parts & Accessories > Parts, Tools & Guides > Parts > Bezels & Inserts",
+      "shopifyCategoryId": "aa-6-7",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Jewelry Sets",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "57715",
+      "ebayFullName": "Jewelry & Watches > Watches, Parts & Accessories > Parts, Tools & Guides > Parts > Crystals",
+      "shopifyCategoryId": "aa-6-7",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Jewelry Sets",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "57720",
+      "ebayFullName": "Jewelry & Watches > Watches, Parts & Accessories > Parts, Tools & Guides > Parts > Movements",
+      "shopifyCategoryId": "aa-6-7",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Jewelry Sets",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "57721",
+      "ebayFullName": "Jewelry & Watches > Watches, Parts & Accessories > Parts, Tools & Guides > Parts > Hands",
+      "shopifyCategoryId": "aa-6-7",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Jewelry Sets",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "57723",
+      "ebayFullName": "Jewelry & Watches > Watches, Parts & Accessories > Parts, Tools & Guides > Parts > Dials",
+      "shopifyCategoryId": "aa-6-7",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Jewelry Sets",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "494",
+      "ebayFullName": "Jewelry & Watches > Jewelry Care, Design & Repair > Other Jewelry Care, Design & Repair",
+      "shopifyCategoryId": "tg-5-24",
+      "shopifyFullName": "Toys & Games > Toys > Toy Gift Baskets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "67720",
+      "ebayFullName": "Jewelry & Watches > Jewelry Care, Design & Repair > Jewelry Cleaners & Polish",
+      "shopifyCategoryId": "aa-6-7",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Jewelry Sets",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262017",
+      "ebayFullName": "Jewelry & Watches > Jewelry Care, Design & Repair > Jewelry Boxes, Organizers & Packaging",
+      "shopifyCategoryId": "aa-5-5-7",
+      "shopifyFullName": "Apparel & Accessories > Handbags, Wallets & Cases > Wallets & Money Clips > Wallets",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262018",
+      "ebayFullName": "Jewelry & Watches > Jewelry Care, Design & Repair > Jewelry Findings",
+      "shopifyCategoryId": "aa-6-7",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Jewelry Sets",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262019",
+      "ebayFullName": "Jewelry & Watches > Jewelry Care, Design & Repair > Jewelry Settings",
+      "shopifyCategoryId": "aa-6-7",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Jewelry Sets",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262020",
+      "ebayFullName": "Jewelry & Watches > Jewelry Care, Design & Repair > Jewelry Tools & Workbenches",
+      "shopifyCategoryId": "tg-5-25",
+      "shopifyFullName": "Toys & Games > Toys > Toy Weapon & Gadget Accessories",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262021",
+      "ebayFullName": "Jewelry & Watches > Jewelry Care, Design & Repair > Jewelry for Parts or Repair",
+      "shopifyCategoryId": "aa-6-7",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Jewelry Sets",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "34071",
+      "ebayFullName": "Jewelry & Watches > Handcrafted & Artisan Jewelry > Jewelry Sets",
+      "shopifyCategoryId": "aa-6-7",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Jewelry Sets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "110634",
+      "ebayFullName": "Jewelry & Watches > Handcrafted & Artisan Jewelry > Anklets",
+      "shopifyCategoryId": "aa-6-1",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Anklets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "110645",
+      "ebayFullName": "Jewelry & Watches > Handcrafted & Artisan Jewelry > Earrings",
+      "shopifyCategoryId": "aa-6-6",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Earrings",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "110655",
+      "ebayFullName": "Jewelry & Watches > Handcrafted & Artisan Jewelry > Necklaces & Pendants",
+      "shopifyCategoryId": "aa-6-8",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Necklaces",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "110666",
+      "ebayFullName": "Jewelry & Watches > Handcrafted & Artisan Jewelry > Rings",
+      "shopifyCategoryId": "aa-6-9",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Rings",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "152807",
+      "ebayFullName": "Jewelry & Watches > Handcrafted & Artisan Jewelry > Brooches & Pins",
+      "shopifyCategoryId": "aa-6-4",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Brooches & Lapel Pins",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "164351",
+      "ebayFullName": "Jewelry & Watches > Handcrafted & Artisan Jewelry > Hair & Head Jewelry",
+      "shopifyCategoryId": "aa-2-14-13",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Hair Accessories > Hair Bands",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "261996",
+      "ebayFullName": "Jewelry & Watches > Handcrafted & Artisan Jewelry > Bracelets & Charms",
+      "shopifyCategoryId": "aa-6-3",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Bracelets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "261975",
+      "ebayFullName": "Jewelry & Watches > Engagement & Wedding > Engagement Rings",
+      "shopifyCategoryId": "aa-6-9",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Rings",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "261976",
+      "ebayFullName": "Jewelry & Watches > Engagement & Wedding > Engagement & Wedding Ring Sets",
+      "shopifyCategoryId": "aa-6-7",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Jewelry Sets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "261977",
+      "ebayFullName": "Jewelry & Watches > Engagement & Wedding > Wedding & Anniversary Bands",
+      "shopifyCategoryId": "aa-6-9",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Rings",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "84607",
+      "ebayFullName": "Jewelry & Watches > Children's Jewelry > Necklaces & Pendants",
+      "shopifyCategoryId": "aa-6-8",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Necklaces",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "98476",
+      "ebayFullName": "Jewelry & Watches > Children's Jewelry > Earrings",
+      "shopifyCategoryId": "aa-6-6",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Earrings",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "98477",
+      "ebayFullName": "Jewelry & Watches > Children's Jewelry > Rings",
+      "shopifyCategoryId": "aa-6-9",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Rings",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "98478",
+      "ebayFullName": "Jewelry & Watches > Children's Jewelry > Jewelry Sets",
+      "shopifyCategoryId": "aa-6-7",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Jewelry Sets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "261974",
+      "ebayFullName": "Jewelry & Watches > Children's Jewelry > Bracelets & Charms",
+      "shopifyCategoryId": "aa-6-3",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Bracelets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "43205",
+      "ebayFullName": "Jewelry & Watches > Fashion Jewelry > Anklets",
+      "shopifyCategoryId": "aa-6-1",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Anklets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "50647",
+      "ebayFullName": "Jewelry & Watches > Fashion Jewelry > Earrings",
+      "shopifyCategoryId": "aa-6-6",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Earrings",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "50677",
+      "ebayFullName": "Jewelry & Watches > Fashion Jewelry > Brooches & Pins",
+      "shopifyCategoryId": "aa-6-4",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Brooches & Lapel Pins",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "50692",
+      "ebayFullName": "Jewelry & Watches > Fashion Jewelry > Jewelry Sets",
+      "shopifyCategoryId": "aa-6-7",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Jewelry Sets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "67681",
+      "ebayFullName": "Jewelry & Watches > Fashion Jewelry > Rings",
+      "shopifyCategoryId": "aa-6-9",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Rings",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "110620",
+      "ebayFullName": "Jewelry & Watches > Fashion Jewelry > Hair & Head Jewelry",
+      "shopifyCategoryId": "aa-2-14-13",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Hair Accessories > Hair Bands",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "140010",
+      "ebayFullName": "Jewelry & Watches > Fashion Jewelry > Toe Rings",
+      "shopifyCategoryId": "aa-6-9",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Rings",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "155101",
+      "ebayFullName": "Jewelry & Watches > Fashion Jewelry > Necklaces & Pendants",
+      "shopifyCategoryId": "aa-6-8",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Necklaces",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "261987",
+      "ebayFullName": "Jewelry & Watches > Fashion Jewelry > Bracelets & Charms",
+      "shopifyCategoryId": "aa-6-3",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Bracelets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "10292",
+      "ebayFullName": "Jewelry & Watches > Men's Jewelry > Bolo Ties",
+      "shopifyCategoryId": "aa-2-23",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Neckties",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "10298",
+      "ebayFullName": "Jewelry & Watches > Men's Jewelry > Tie Clasps & Tacks",
+      "shopifyCategoryId": "aa-2-29",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Tie Clips",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "14085",
+      "ebayFullName": "Jewelry & Watches > Men's Jewelry > Earrings",
+      "shopifyCategoryId": "aa-6-6",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Earrings",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "60115",
+      "ebayFullName": "Jewelry & Watches > Men's Jewelry > Lapel Pins",
+      "shopifyCategoryId": "aa-6-4",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Brooches & Lapel Pins",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "137839",
+      "ebayFullName": "Jewelry & Watches > Men's Jewelry > Necklaces & Pendants",
+      "shopifyCategoryId": "aa-6-8",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Necklaces",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "137843",
+      "ebayFullName": "Jewelry & Watches > Men's Jewelry > Cufflinks",
+      "shopifyCategoryId": "aa-2-10",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Cufflinks",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "137856",
+      "ebayFullName": "Jewelry & Watches > Men's Jewelry > Rings",
+      "shopifyCategoryId": "aa-6-9",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Rings",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "177649",
+      "ebayFullName": "Jewelry & Watches > Men's Jewelry > Collar Tips",
+      "shopifyCategoryId": "aa-2-6",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Belts",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "261999",
+      "ebayFullName": "Jewelry & Watches > Men's Jewelry > Bracelets & Charms",
+      "shopifyCategoryId": "aa-6-3",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Bracelets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262000",
+      "ebayFullName": "Jewelry & Watches > Men's Jewelry > Jewelry Sets",
+      "shopifyCategoryId": "aa-6-7",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Jewelry Sets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "101437",
+      "ebayFullName": "Jewelry & Watches > Fine Jewelry > Anklets",
+      "shopifyCategoryId": "aa-6-1",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Anklets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "261988",
+      "ebayFullName": "Jewelry & Watches > Fine Jewelry > Bracelets & Charms",
+      "shopifyCategoryId": "aa-6-3",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Bracelets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "261989",
+      "ebayFullName": "Jewelry & Watches > Fine Jewelry > Brooches & Pins",
+      "shopifyCategoryId": "aa-6-4",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Brooches & Lapel Pins",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "261990",
+      "ebayFullName": "Jewelry & Watches > Fine Jewelry > Earrings",
+      "shopifyCategoryId": "aa-6-6",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Earrings",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "261991",
+      "ebayFullName": "Jewelry & Watches > Fine Jewelry > Hair & Head Jewelry",
+      "shopifyCategoryId": "aa-2-14-13",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Hair Accessories > Hair Bands",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "261992",
+      "ebayFullName": "Jewelry & Watches > Fine Jewelry > Jewelry Sets",
+      "shopifyCategoryId": "aa-6-7",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Jewelry Sets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "261993",
+      "ebayFullName": "Jewelry & Watches > Fine Jewelry > Necklaces & Pendants",
+      "shopifyCategoryId": "aa-6-8",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Necklaces",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "261994",
+      "ebayFullName": "Jewelry & Watches > Fine Jewelry > Rings",
+      "shopifyCategoryId": "aa-6-9",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Rings",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "261995",
+      "ebayFullName": "Jewelry & Watches > Fine Jewelry > Toe Rings",
+      "shopifyCategoryId": "aa-6-9",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Rings",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "10285",
+      "ebayFullName": "Jewelry & Watches > Loose Diamonds & Gemstones > Cubic Zirconia",
+      "shopifyCategoryId": "aa-6-5",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Charms & Pendants",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262026",
+      "ebayFullName": "Jewelry & Watches > Loose Diamonds & Gemstones > Loose Diamonds",
+      "shopifyCategoryId": "aa-6-5",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Charms & Pendants",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262027",
+      "ebayFullName": "Jewelry & Watches > Loose Diamonds & Gemstones > Loose Gemstones",
+      "shopifyCategoryId": "aa-6-5",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Charms & Pendants",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    }
+  ]
+}

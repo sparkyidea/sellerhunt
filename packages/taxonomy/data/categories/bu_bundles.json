@@ -1,0 +1,13 @@
+{
+  "version": "2026-05-unstable",
+  "categories": [
+    {
+      "id": "bu",
+      "level": 0,
+      "name": "Bundles",
+      "full_name": "Bundles",
+      "parent_id": null,
+      "children": []
+    }
+  ]
+}

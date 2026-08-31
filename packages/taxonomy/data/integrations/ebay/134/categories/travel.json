@@ -1,0 +1,263 @@
+{
+  "vertical": "Travel",
+  "totalCategories": 32,
+  "leaves": 27,
+  "categories": [
+    {
+      "id": "3252",
+      "name": "Travel",
+      "fullName": "Travel",
+      "parentId": null,
+      "level": 1,
+      "leaf": false
+    },
+    {
+      "id": "1310",
+      "name": "Other Travel",
+      "fullName": "Travel > Other Travel",
+      "parentId": "3252",
+      "level": 2,
+      "leaf": true
+    },
+    {
+      "id": "3253",
+      "name": "Airline",
+      "fullName": "Travel > Airline",
+      "parentId": "3252",
+      "level": 2,
+      "leaf": true
+    },
+    {
+      "id": "16078",
+      "name": "Cruises",
+      "fullName": "Travel > Cruises",
+      "parentId": "3252",
+      "level": 2,
+      "leaf": true
+    },
+    {
+      "id": "16080",
+      "name": "Luggage",
+      "fullName": "Travel > Luggage",
+      "parentId": "3252",
+      "level": 2,
+      "leaf": true
+    },
+    {
+      "id": "16123",
+      "name": "Lodging",
+      "fullName": "Travel > Lodging",
+      "parentId": "3252",
+      "level": 2,
+      "leaf": true
+    },
+    {
+      "id": "29578",
+      "name": "Vacation Packages",
+      "fullName": "Travel > Vacation Packages",
+      "parentId": "3252",
+      "level": 2,
+      "leaf": false
+    },
+    {
+      "id": "93838",
+      "name": "Travel Accessories",
+      "fullName": "Travel > Travel Accessories",
+      "parentId": "3252",
+      "level": 2,
+      "leaf": false
+    },
+    {
+      "id": "98982",
+      "name": "Rail",
+      "fullName": "Travel > Rail",
+      "parentId": "3252",
+      "level": 2,
+      "leaf": true
+    },
+    {
+      "id": "147399",
+      "name": "Car Rental",
+      "fullName": "Travel > Car Rental",
+      "parentId": "3252",
+      "level": 2,
+      "leaf": true
+    },
+    {
+      "id": "164802",
+      "name": "Campground & RV Parks",
+      "fullName": "Travel > Campground & RV Parks",
+      "parentId": "3252",
+      "level": 2,
+      "leaf": true
+    },
+    {
+      "id": "164803",
+      "name": "Maps",
+      "fullName": "Travel > Maps",
+      "parentId": "3252",
+      "level": 2,
+      "leaf": false
+    },
+    {
+      "id": "173520",
+      "name": "Luggage Accessories",
+      "fullName": "Travel > Luggage Accessories",
+      "parentId": "3252",
+      "level": 2,
+      "leaf": false
+    },
+    {
+      "id": "183477",
+      "name": "Vintage Luggage & Travel Accs",
+      "fullName": "Travel > Vintage Luggage & Travel Accs",
+      "parentId": "3252",
+      "level": 2,
+      "leaf": true
+    },
+    {
+      "id": "164797",
+      "name": "Luggage Carts",
+      "fullName": "Travel > Luggage Accessories > Luggage Carts",
+      "parentId": "173520",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "164798",
+      "name": "Luggage Scales",
+      "fullName": "Travel > Luggage Accessories > Luggage Scales",
+      "parentId": "173520",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "164799",
+      "name": "Luggage Straps",
+      "fullName": "Travel > Luggage Accessories > Luggage Straps",
+      "parentId": "173520",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "164800",
+      "name": "Luggage Tags",
+      "fullName": "Travel > Luggage Accessories > Luggage Tags",
+      "parentId": "173520",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "173521",
+      "name": "Other Luggage Accessories",
+      "fullName": "Travel > Luggage Accessories > Other Luggage Accessories",
+      "parentId": "173520",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "164804",
+      "name": "Asia",
+      "fullName": "Travel > Maps > Asia",
+      "parentId": "164803",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "164805",
+      "name": "Europe",
+      "fullName": "Travel > Maps > Europe",
+      "parentId": "164803",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "164806",
+      "name": "North America",
+      "fullName": "Travel > Maps > North America",
+      "parentId": "164803",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "164807",
+      "name": "Other Travel Maps",
+      "fullName": "Travel > Maps > Other Travel Maps",
+      "parentId": "164803",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "19315",
+      "name": "Adapters & Converters",
+      "fullName": "Travel > Travel Accessories > Adapters & Converters",
+      "parentId": "93838",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "58730",
+      "name": "Travel Pillows",
+      "fullName": "Travel > Travel Accessories > Travel Pillows",
+      "parentId": "93838",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "93839",
+      "name": "Other Travel Accessories",
+      "fullName": "Travel > Travel Accessories > Other Travel Accessories",
+      "parentId": "93838",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "98968",
+      "name": "Money Belts & Wallets",
+      "fullName": "Travel > Travel Accessories > Money Belts & Wallets",
+      "parentId": "93838",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "98972",
+      "name": "Flight Socks",
+      "fullName": "Travel > Travel Accessories > Flight Socks",
+      "parentId": "93838",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "164795",
+      "name": "Passport & ID Holders",
+      "fullName": "Travel > Travel Accessories > Passport & ID Holders",
+      "parentId": "93838",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "164796",
+      "name": "Locks",
+      "fullName": "Travel > Travel Accessories > Locks",
+      "parentId": "93838",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "3256",
+      "name": "With Air",
+      "fullName": "Travel > Vacation Packages > With Air",
+      "parentId": "29578",
+      "level": 3,
+      "leaf": true
+    },
+    {
+      "id": "29579",
+      "name": "Without Air",
+      "fullName": "Travel > Vacation Packages > Without Air",
+      "parentId": "29578",
+      "level": 3,
+      "leaf": true
+    }
+  ]
+}

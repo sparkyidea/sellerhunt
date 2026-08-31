@@ -1,0 +1,71 @@
+{
+  "name": "@dashseller/auth",
+  "type": "module",
+  "exports": {
+    ".": {
+      "default": "./src/index.ts"
+    },
+    "./*": {
+      "default": "./src/*.ts"
+    },
+    "./components/*": {
+      "default": "./src/components/*.tsx"
+    },
+    "./lib/auth/organization-plugin": {
+      "default": "./src/lib/auth/organization-plugin.tsx"
+    },
+    "./styles.css": "./src/style.css"
+  },
+  "scripts": {
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@better-auth-ui/core": "catalog:",
+    "@better-auth-ui/react": "catalog:",
+    "@better-auth/api-key": "catalog:",
+    "@better-auth/passkey": "catalog:",
+    "@better-fetch/fetch": "catalog:",
+    "@captchafox/react": "catalog:",
+    "@dashseller/db": "workspace:*",
+    "@dashseller/env": "workspace:*",
+    "@hcaptcha/react-hcaptcha": "catalog:",
+    "@hookform/resolvers": "catalog:",
+    "@marsidev/react-turnstile": "catalog:",
+    "@mikkelscheike/email-provider-links": "catalog:",
+    "@noble/hashes": "catalog:",
+    "@radix-ui/react-label": "catalog:",
+    "@radix-ui/react-slot": "catalog:",
+    "@react-email/components": "catalog:",
+    "@sparkyidea/ui": "workspace:*",
+    "@tanstack/react-pacer": "catalog:",
+    "@tanstack/react-query": "catalog:",
+    "@wojtekmaj/react-recaptcha-v3": "catalog:",
+    "better-auth": "catalog:",
+    "better-call": "catalog:",
+    "bowser": "catalog:",
+    "class-variance-authority": "catalog:",
+    "clsx": "catalog:",
+    "date-fns": "catalog:",
+    "dotenv": "catalog:",
+    "input-otp": "catalog:",
+    "lucide-react": "catalog:",
+    "next-themes": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-email": "catalog:",
+    "react-google-recaptcha": "catalog:",
+    "react-hook-form": "catalog:",
+    "react-qr-code": "catalog:",
+    "resend": "catalog:",
+    "sonner": "catalog:",
+    "tailwind-merge": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@dashseller/config": "workspace:*",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "@types/react-google-recaptcha": "catalog:",
+    "typescript": "catalog:"
+  }
+}

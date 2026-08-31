@@ -1,0 +1,95 @@
+{
+  "vertical": "Art",
+  "totalCategories": 11,
+  "leaves": 10,
+  "categories": [
+    {
+      "id": "550",
+      "name": "Art",
+      "fullName": "Art",
+      "parentId": null,
+      "level": 1,
+      "leaf": false
+    },
+    {
+      "id": "360",
+      "name": "Art Prints",
+      "fullName": "Art > Art Prints",
+      "parentId": "550",
+      "level": 2,
+      "leaf": true
+    },
+    {
+      "id": "551",
+      "name": "Paintings",
+      "fullName": "Art > Paintings",
+      "parentId": "550",
+      "level": 2,
+      "leaf": true
+    },
+    {
+      "id": "552",
+      "name": "Art Drawings",
+      "fullName": "Art > Art Drawings",
+      "parentId": "550",
+      "level": 2,
+      "leaf": true
+    },
+    {
+      "id": "553",
+      "name": "Art Sculptures",
+      "fullName": "Art > Art Sculptures",
+      "parentId": "550",
+      "level": 2,
+      "leaf": true
+    },
+    {
+      "id": "554",
+      "name": "Mixed Media Art & Collage Art",
+      "fullName": "Art > Mixed Media Art & Collage Art",
+      "parentId": "550",
+      "level": 2,
+      "leaf": true
+    },
+    {
+      "id": "2211",
+      "name": "Art Photographs",
+      "fullName": "Art > Art Photographs",
+      "parentId": "550",
+      "level": 2,
+      "leaf": true
+    },
+    {
+      "id": "20158",
+      "name": "Other Art",
+      "fullName": "Art > Other Art",
+      "parentId": "550",
+      "level": 2,
+      "leaf": true
+    },
+    {
+      "id": "28009",
+      "name": "Art Posters",
+      "fullName": "Art > Art Posters",
+      "parentId": "550",
+      "level": 2,
+      "leaf": true
+    },
+    {
+      "id": "156196",
+      "name": "Textile Art & Fiber Art",
+      "fullName": "Art > Textile Art & Fiber Art",
+      "parentId": "550",
+      "level": 2,
+      "leaf": true
+    },
+    {
+      "id": "262051",
+      "name": "Art NFTs",
+      "fullName": "Art > Art NFTs",
+      "parentId": "550",
+      "level": 2,
+      "leaf": true
+    }
+  ]
+}

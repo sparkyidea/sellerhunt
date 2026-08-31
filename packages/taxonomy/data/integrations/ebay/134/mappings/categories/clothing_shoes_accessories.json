@@ -1,0 +1,4145 @@
+{
+  "ebayCategory": "Clothing, Shoes & Accessories",
+  "shopifyCategories": ["Apparel & Accessories"],
+  "totalMapped": 517,
+  "highConfidence": 453,
+  "lowConfidence": 0,
+  "mappings": [
+    {
+      "ebayId": "11450",
+      "ebayFullName": "Clothing, Shoes & Accessories",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "171146",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "260010",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "260012",
+      "ebayFullName": "Clothing, Shoes & Accessories > Men",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "260018",
+      "ebayFullName": "Clothing, Shoes & Accessories > Baby",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "260033",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "312",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Other Clothing, Shoes & Accessories",
+      "shopifyCategoryId": "aa-2-31",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Traditional Clothing Accessories",
+      "confidence": 0.6,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "3259",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Wedding & Formal Occasion",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "28015",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Uniforms & Work Clothing",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "106121",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Clothing & Shoe Care",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "112425",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Dancewear",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "155240",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > World & Traditional Clothing",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "163147",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Costumes, Reenactment, Theater",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "175759",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "260034",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Mixed Lots",
+      "shopifyCategoryId": "aa-2-31",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Traditional Clothing Accessories",
+      "confidence": 0.5,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "50979",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Wholesale Vintage Clothing",
+      "shopifyCategoryId": "aa-1-13-7",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Clothing Tops > Shirts",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "74976",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Women's Vintage Shoes",
+      "shopifyCategoryId": "aa-8-10",
+      "shopifyFullName": "Apparel & Accessories > Shoes > Heels",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "91247",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Other Vintage Clothing",
+      "shopifyCategoryId": "aa-2-31",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Traditional Clothing Accessories",
+      "confidence": 0.6,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "163628",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Men's Vintage Shoes",
+      "shopifyCategoryId": "aa-8-11-4",
+      "shopifyFullName": "Apparel & Accessories > Shoes > Baby & Children's Shoes > Baby & Children's Athletic Shoes",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182025",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Children's Vintage Clothing",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "182034",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Children's Vintage Shoes",
+      "shopifyCategoryId": "aa-8-11-5",
+      "shopifyFullName": "Apparel & Accessories > Shoes > Baby & Children's Shoes > Baby & Children's Sneakers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182044",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Men's Vintage Clothing",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "182047",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Women's Vintage Clothing",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "182059",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Vintage Accessories",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "957",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Vintage Accessories > Other Vintage Accessories",
+      "shopifyCategoryId": "aa-3-1",
+      "shopifyFullName": "Apparel & Accessories > Costumes & Accessories > Costume Accessories",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "14062",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Vintage Accessories > Hat Boxes",
+      "shopifyCategoryId": "hg-10-16-1-5",
+      "shopifyFullName": "Home & Garden > Household Supplies > Storage & Organization > Clothing & Closet Storage > Hat Boxes",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "14070",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Vintage Accessories > Ties, Bow Ties & Cravats",
+      "shopifyCategoryId": "aa-2-23",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Neckties",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "48559",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Vintage Accessories > Sunglasses",
+      "shopifyCategoryId": "aa-2-27",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Sunglasses",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "74962",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Vintage Accessories > Bags, Handbags & Cases",
+      "shopifyCategoryId": "aa-5-4-1",
+      "shopifyFullName": "Apparel & Accessories > Handbags, Wallets & Cases > Handbags > Baguette Handbags",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "74969",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Vintage Accessories > Women's Hats",
+      "shopifyCategoryId": "aa-2-17-11",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Hats > Sun Hats",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "163600",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Vintage Accessories > Belt Buckles",
+      "shopifyCategoryId": "aa-2-5",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Belt Buckles",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "163601",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Vintage Accessories > Belts",
+      "shopifyCategoryId": "aa-2-6",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Belts",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "163606",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Vintage Accessories > Clothes Hangers",
+      "shopifyCategoryId": "hg-10-16-1-4",
+      "shopifyFullName": "Home & Garden > Household Supplies > Storage & Organization > Clothing & Closet Storage > Hangers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "163607",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Vintage Accessories > Collars",
+      "shopifyCategoryId": "aa-2-9",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Collar Stays",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "163608",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Vintage Accessories > Handkerchiefs",
+      "shopifyCategoryId": "aa-2-16",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Handkerchiefs",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "163619",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Vintage Accessories > Men's Hats",
+      "shopifyCategoryId": "aa-2-17-8",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Hats > Flat Caps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "163627",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Vintage Accessories > Shoe Accessories",
+      "shopifyCategoryId": "aa-7-1",
+      "shopifyFullName": "Apparel & Accessories > Shoe Accessories > Boot Liners",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175769",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Vintage Accessories > Wallets & Coin Purses",
+      "shopifyCategoryId": "aa-5-5-7",
+      "shopifyFullName": "Apparel & Accessories > Handbags, Wallets & Cases > Wallets & Money Clips > Wallets",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175805",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Vintage Accessories > Eyeglasses",
+      "shopifyCategoryId": "hb-3-19-4",
+      "shopifyFullName": "Health & Beauty > Personal Care > Vision Care > Eyeglasses",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175806",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Vintage Accessories > Gloves",
+      "shopifyCategoryId": "aa-2-13",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Gloves & Mittens",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175807",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Vintage Accessories > Scarves & Wraps",
+      "shopifyCategoryId": "aa-2-26",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Scarves & Shawls",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175819",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Vintage Accessories > Hair Accessories",
+      "shopifyCategoryId": "aa-2-14-13",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Hair Accessories > Hair Bands",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182028",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Vintage Accessories > Children's Hats",
+      "shopifyCategoryId": "aa-2-33-3",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Baby & Children's Clothing Accessories > Baby & Children's Hats",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182060",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Vintage Accessories > Canes & Walking Sticks",
+      "shopifyCategoryId": "hb-1-17-5-1-1",
+      "shopifyFullName": "Health & Beauty > Health Care > Mobility & Accessibility > Walking Aids > Canes & Walking Sticks > Folding Canes",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182061",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Vintage Accessories > Hand Fans",
+      "shopifyCategoryId": "aa-2-11",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Decorative Fans",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182062",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Vintage Accessories > Suspenders/Braces",
+      "shopifyCategoryId": "aa-2-28",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Suspenders",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182063",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Vintage Accessories > Umbrellas & Parasols",
+      "shopifyCategoryId": "aa-3-1",
+      "shopifyFullName": "Apparel & Accessories > Costumes & Accessories > Costume Accessories",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "965",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Women's Vintage Clothing > Other Women's Vintage Clothing",
+      "shopifyCategoryId": "aa-1-13-1",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Clothing Tops > Blouses",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175783",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Women's Vintage Clothing > Coats, Jackets & Vests",
+      "shopifyCategoryId": "aa-1-10-2-1",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Outerwear > Coats & Jackets > Bolero Jackets",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175784",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Women's Vintage Clothing > Dresses",
+      "shopifyCategoryId": "aa-1-4",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Dresses",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175785",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Women's Vintage Clothing > Jeans",
+      "shopifyCategoryId": "aa-1-12-4",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Pants > Jeans",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175786",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Women's Vintage Clothing > Sweaters",
+      "shopifyCategoryId": "aa-1-13-12",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Clothing Tops > Sweaters",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175787",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Women's Vintage Clothing > Jumpsuits & Playsuits",
+      "shopifyCategoryId": "aa-1-9",
+      "shopifyFullName": "Apparel & Accessories > Clothing > One-Pieces",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175789",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Women's Vintage Clothing > Sleepwear & Robes",
+      "shopifyCategoryId": "aa-1-17-4",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Sleepwear & Loungewear > Pajamas",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175790",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Women's Vintage Clothing > Shorts",
+      "shopifyCategoryId": "aa-1-14-1",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Shorts > Bermudas",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175791",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Women's Vintage Clothing > Skirts",
+      "shopifyCategoryId": "aa-1-15",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Skirts",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175792",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Women's Vintage Clothing > Suits, Sets & Suit Separates",
+      "shopifyCategoryId": "aa-1-19-2",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Suits > Skirt Suits",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175793",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Women's Vintage Clothing > Sweats & Tracksuits",
+      "shopifyCategoryId": "aa-1-1-1-4",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Activewear > Activewear Pants > Sweatpants",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175794",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Women's Vintage Clothing > Swimwear",
+      "shopifyCategoryId": "aa-1-20-6",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Swimwear > Classic Bikinis",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175795",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Women's Vintage Clothing > Tops",
+      "shopifyCategoryId": "aa-1-13-8",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Clothing Tops > T-Shirts",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175796",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Women's Vintage Clothing > Pants",
+      "shopifyCategoryId": "aa-1-12-11",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Pants > Trousers",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175799",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Women's Vintage Clothing > Wedding Dresses & Veils",
+      "shopifyCategoryId": "aa-1-22-2",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Wedding & Bridal Party Dresses > Wedding Dresses",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182048",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Women's Vintage Clothing > Lingerie",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "182057",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Women's Vintage Clothing > Socks",
+      "shopifyCategoryId": "aa-1-18-3",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Socks > Crew Socks",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182049",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Women's Vintage Clothing > Lingerie > Bras",
+      "shopifyCategoryId": "aa-1-6-3",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Lingerie > Bras",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182050",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Women's Vintage Clothing > Lingerie > Camisoles",
+      "shopifyCategoryId": "aa-1-6-4",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Lingerie > Camisoles",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182051",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Women's Vintage Clothing > Lingerie > Corsets & Girdles",
+      "shopifyCategoryId": "aa-1-6-10-2",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Lingerie > Shapewear > Full Body Shapes",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182052",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Women's Vintage Clothing > Lingerie > Garter Belts",
+      "shopifyCategoryId": "aa-1-6-8-1",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Lingerie > Lingerie Accessories > Garter Belts",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182053",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Women's Vintage Clothing > Lingerie > Pantyhose & Stockings",
+      "shopifyCategoryId": "aa-1-6-8-3",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Lingerie > Lingerie Accessories > Pantyhose",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182054",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Women's Vintage Clothing > Lingerie > Panties",
+      "shopifyCategoryId": "aa-1-6-11-3",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Lingerie > Women's Underpants > Briefs",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182055",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Women's Vintage Clothing > Lingerie > Slips & Petticoats",
+      "shopifyCategoryId": "aa-1-6-9",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Lingerie > Petticoats & Pettipants",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182056",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Women's Vintage Clothing > Lingerie > Other Vintage Lingerie",
+      "shopifyCategoryId": "aa-1-6-1",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Lingerie > Bodysuits",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "48861",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Men's Vintage Clothing > Other Men's Vintage Clothing",
+      "shopifyCategoryId": "aa-1-13-7",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Clothing Tops > Shirts",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "175770",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Men's Vintage Clothing > Casual Shirts",
+      "shopifyCategoryId": "aa-1-13-7",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Clothing Tops > Shirts",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175771",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Men's Vintage Clothing > Outerwear Coats & Jackets",
+      "shopifyCategoryId": "aa-1-10-2-1",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Outerwear > Coats & Jackets > Bolero Jackets",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175772",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Men's Vintage Clothing > Dress Shirts",
+      "shopifyCategoryId": "aa-1-13-7",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Clothing Tops > Shirts",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175773",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Men's Vintage Clothing > Jeans",
+      "shopifyCategoryId": "aa-1-12-4",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Pants > Jeans",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175774",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Men's Vintage Clothing > Sweaters",
+      "shopifyCategoryId": "aa-1-13-12",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Clothing Tops > Sweaters",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175775",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Men's Vintage Clothing > Sleepwear & Robes",
+      "shopifyCategoryId": "aa-1-17-4",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Sleepwear & Loungewear > Pajamas",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175776",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Men's Vintage Clothing > Shorts",
+      "shopifyCategoryId": "aa-1-14-1",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Shorts > Bermudas",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175777",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Men's Vintage Clothing > Suits",
+      "shopifyCategoryId": "aa-1-19-3",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Suits > Tuxedos",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175778",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Men's Vintage Clothing > Sweats & Tracksuits",
+      "shopifyCategoryId": "aa-1-1-1-4",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Activewear > Activewear Pants > Sweatpants",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175779",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Men's Vintage Clothing > Swimwear",
+      "shopifyCategoryId": "aa-1-20-3",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Swimwear > Swim Boxers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175780",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Men's Vintage Clothing > Pants",
+      "shopifyCategoryId": "aa-1-12-11",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Pants > Trousers",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175781",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Men's Vintage Clothing > T-Shirts",
+      "shopifyCategoryId": "aa-1-13-8",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Clothing Tops > T-Shirts",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175782",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Men's Vintage Clothing > Vests",
+      "shopifyCategoryId": "aa-1-10-6",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Outerwear > Vests",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182045",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Men's Vintage Clothing > Socks",
+      "shopifyCategoryId": "aa-1-18-3",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Socks > Crew Socks",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182046",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Men's Vintage Clothing > Suit Jackets & Blazers",
+      "shopifyCategoryId": "aa-1-10-2-11",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Outerwear > Coats & Jackets > Sport Jackets",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "20291",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Children's Vintage Clothing > Other Kids' Vintage Clothing",
+      "shopifyCategoryId": "aa-1-25-9-6",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Tops > Shirts",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "182026",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Children's Vintage Clothing > Christening Outfits",
+      "shopifyCategoryId": "aa-1-25-10",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's One-Pieces",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182027",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Children's Vintage Clothing > Dresses",
+      "shopifyCategoryId": "aa-1-25-3",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Dresses",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182029",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Children's Vintage Clothing > Jeans",
+      "shopifyCategoryId": "aa-1-25-1-4",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Bottoms > Jeans",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182030",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Children's Vintage Clothing > Jumpsuits & Rompers",
+      "shopifyCategoryId": "aa-1-25-10",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's One-Pieces",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182031",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Children's Vintage Clothing > Outerwear Coats & Jackets",
+      "shopifyCategoryId": "aa-1-25-4-17-1",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Outerwear > Baby & Children's Coats & Jackets > Bolero Jackets",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182032",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Children's Vintage Clothing > Outfit Sets",
+      "shopifyCategoryId": "aa-1-25-5",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Outfits",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182033",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Children's Vintage Clothing > Pants",
+      "shopifyCategoryId": "aa-1-25-1-14",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Bottoms > Trousers",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182035",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Children's Vintage Clothing > Shorts",
+      "shopifyCategoryId": "aa-1-17-2-1-4",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Sleepwear & Loungewear > Loungewear > Loungewear Bottoms > Shorts",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182036",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Children's Vintage Clothing > Skirts",
+      "shopifyCategoryId": "aa-1-25-1-11",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Bottoms > Skirts",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182037",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Children's Vintage Clothing > Sleepwear",
+      "shopifyCategoryId": "aa-1-25-6",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Sleepwear",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182038",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Children's Vintage Clothing > Socks & Tights",
+      "shopifyCategoryId": "aa-1-25-7",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Socks & Tights",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182039",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Children's Vintage Clothing > Suit Jackets & Blazers",
+      "shopifyCategoryId": "aa-1-25-4-17-11",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Outerwear > Baby & Children's Coats & Jackets > Sport Jackets",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182040",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Children's Vintage Clothing > Suits",
+      "shopifyCategoryId": "aa-1-25-5",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Outfits",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182041",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Children's Vintage Clothing > Sweaters",
+      "shopifyCategoryId": "aa-1-25-9-12",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Tops > Sweaters",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182042",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Children's Vintage Clothing > Sweats & Tracksuits",
+      "shopifyCategoryId": "aa-1-25-1-13",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Bottoms > Sweatpants",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182043",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Children's Vintage Clothing > Shirts & Tops",
+      "shopifyCategoryId": "aa-1-25-9-6",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Tops > Shirts",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182964",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Children's Vintage Clothing > Bibs",
+      "shopifyCategoryId": "aa-1-25-2",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Diaper Covers",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182965",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Children's Vintage Clothing > Slips & Petticoats",
+      "shopifyCategoryId": "aa-1-6-9",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Lingerie > Petticoats & Pettipants",
+      "confidence": 0.75,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182966",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Children's Vintage Clothing > Swimwear",
+      "shopifyCategoryId": "aa-1-25-8-2",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Swimwear > Burkinis",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182967",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Vintage > Children's Vintage Clothing > Vests",
+      "shopifyCategoryId": "aa-1-25-1-8",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Bottoms > Leggings",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "155344",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Costumes, Reenactment, Theater > Accessories",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "163149",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Costumes, Reenactment, Theater > Other Theatrical Clothing",
+      "shopifyCategoryId": "aa-3-1",
+      "shopifyFullName": "Apparel & Accessories > Costumes & Accessories > Costume Accessories",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175648",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Costumes, Reenactment, Theater > Costumes",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "175650",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Costumes, Reenactment, Theater > Reenactment & Theater",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "125473",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Costumes, Reenactment, Theater > Reenactment & Theater > Medieval & Renaissance",
+      "shopifyCategoryId": "aa-3-3-1",
+      "shopifyFullName": "Apparel & Accessories > Costumes & Accessories > Costumes > Costume Dresses",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "125474",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Costumes, Reenactment, Theater > Reenactment & Theater > Civil War",
+      "shopifyCategoryId": "aa-3-3-1",
+      "shopifyFullName": "Apparel & Accessories > Costumes & Accessories > Costumes > Costume Dresses",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "125475",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Costumes, Reenactment, Theater > Reenactment & Theater > Victorian & Edwardian",
+      "shopifyCategoryId": "aa-3-3-1",
+      "shopifyFullName": "Apparel & Accessories > Costumes & Accessories > Costumes > Costume Dresses",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "163129",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Costumes, Reenactment, Theater > Reenactment & Theater > 18th Century, Colonial",
+      "shopifyCategoryId": "aa-3-3-1",
+      "shopifyFullName": "Apparel & Accessories > Costumes & Accessories > Costumes > Costume Dresses",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "163130",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Costumes, Reenactment, Theater > Reenactment & Theater > Regency",
+      "shopifyCategoryId": "aa-3-3-1",
+      "shopifyFullName": "Apparel & Accessories > Costumes & Accessories > Costumes > Costume Dresses",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "163131",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Costumes, Reenactment, Theater > Reenactment & Theater > Patterns",
+      "shopifyCategoryId": "ae-2-1-5-3-2",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Craft Organization > Thread & Yarn Organizers > Thread Racks",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "163132",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Costumes, Reenactment, Theater > Reenactment & Theater > Other Reenactment & Theater",
+      "shopifyCategoryId": "aa-3-1",
+      "shopifyFullName": "Apparel & Accessories > Costumes & Accessories > Costume Accessories",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175651",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Costumes, Reenactment, Theater > Reenactment & Theater > Contemporary",
+      "shopifyCategoryId": "aa-3-1",
+      "shopifyFullName": "Apparel & Accessories > Costumes & Accessories > Costume Accessories",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "19255",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Costumes, Reenactment, Theater > Costumes > Other Costumes",
+      "shopifyCategoryId": "aa-3-3-2",
+      "shopifyFullName": "Apparel & Accessories > Costumes & Accessories > Costumes > Costume Sets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "52762",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Costumes, Reenactment, Theater > Costumes > Men",
+      "shopifyCategoryId": "aa-3-3-2",
+      "shopifyFullName": "Apparel & Accessories > Costumes & Accessories > Costumes > Costume Sets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "53369",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Costumes, Reenactment, Theater > Costumes > Women",
+      "shopifyCategoryId": "aa-3-3-1",
+      "shopifyFullName": "Apparel & Accessories > Costumes & Accessories > Costumes > Costume Dresses",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "80913",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Costumes, Reenactment, Theater > Costumes > Boys",
+      "shopifyCategoryId": "aa-3-3-2",
+      "shopifyFullName": "Apparel & Accessories > Costumes & Accessories > Costumes > Costume Sets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "80914",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Costumes, Reenactment, Theater > Costumes > Girls",
+      "shopifyCategoryId": "aa-3-3-1",
+      "shopifyFullName": "Apparel & Accessories > Costumes & Accessories > Costumes > Costume Dresses",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "86207",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Costumes, Reenactment, Theater > Costumes > Unisex",
+      "shopifyCategoryId": "aa-3-3-2",
+      "shopifyFullName": "Apparel & Accessories > Costumes & Accessories > Costumes > Costume Sets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "90635",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Costumes, Reenactment, Theater > Costumes > Infants & Toddlers",
+      "shopifyCategoryId": "aa-3-3-2",
+      "shopifyFullName": "Apparel & Accessories > Costumes & Accessories > Costumes > Costume Sets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175649",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Costumes, Reenactment, Theater > Costumes > Mixed Items & Lots",
+      "shopifyCategoryId": "aa-3-3-2",
+      "shopifyFullName": "Apparel & Accessories > Costumes & Accessories > Costumes > Costume Sets",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "82161",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Costumes, Reenactment, Theater > Accessories > Other Costume Accessories",
+      "shopifyCategoryId": "aa-3-1",
+      "shopifyFullName": "Apparel & Accessories > Costumes & Accessories > Costume Accessories",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "116724",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Costumes, Reenactment, Theater > Accessories > Masks & Eye Masks",
+      "shopifyCategoryId": "aa-3-4",
+      "shopifyFullName": "Apparel & Accessories > Costumes & Accessories > Masks",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "155345",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Costumes, Reenactment, Theater > Accessories > Capes, Coats & Cloaks",
+      "shopifyCategoryId": "aa-1-10-2-3",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Outerwear > Coats & Jackets > Capes",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "155346",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Costumes, Reenactment, Theater > Accessories > Crowns & Tiaras",
+      "shopifyCategoryId": "aa-2-14-10",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Hair Accessories > Tiaras",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "155347",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Costumes, Reenactment, Theater > Accessories > Shoes & Footwear",
+      "shopifyCategoryId": "aa-3-2",
+      "shopifyFullName": "Apparel & Accessories > Costumes & Accessories > Costume Shoes",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "155348",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Costumes, Reenactment, Theater > Accessories > Gloves",
+      "shopifyCategoryId": "aa-2-13",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Gloves & Mittens",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "155349",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Costumes, Reenactment, Theater > Accessories > Hats & Headgear",
+      "shopifyCategoryId": "aa-2-17-1",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Hats > Baseball Caps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "155350",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Costumes, Reenactment, Theater > Accessories > Wigs & Facial Hair",
+      "shopifyCategoryId": "aa-2-14-12",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Hair Accessories > Wigs",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "155351",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Costumes, Reenactment, Theater > Accessories > Wings, Tails, Ears & Noses",
+      "shopifyCategoryId": "aa-3-1",
+      "shopifyFullName": "Apparel & Accessories > Costumes & Accessories > Costume Accessories",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "163148",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Costumes, Reenactment, Theater > Accessories > Handhelds & Props",
+      "shopifyCategoryId": "aa-3-1",
+      "shopifyFullName": "Apparel & Accessories > Costumes & Accessories > Costume Accessories",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175641",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Costumes, Reenactment, Theater > Accessories > Bags & Pouches",
+      "shopifyCategoryId": "aa-5-4-6",
+      "shopifyFullName": "Apparel & Accessories > Handbags, Wallets & Cases > Handbags > Convertible Bags",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175642",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Costumes, Reenactment, Theater > Accessories > Belts & Sashes",
+      "shopifyCategoryId": "aa-2-6",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Belts",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175643",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Costumes, Reenactment, Theater > Accessories > Boas, Scarves & Leis",
+      "shopifyCategoryId": "aa-2-26",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Scarves & Shawls",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175644",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Costumes, Reenactment, Theater > Accessories > Face Paint & Stage Makeup",
+      "shopifyCategoryId": "aa-3-1",
+      "shopifyFullName": "Apparel & Accessories > Costumes & Accessories > Costume Accessories",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175645",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Costumes, Reenactment, Theater > Accessories > Fans & Parasols",
+      "shopifyCategoryId": "aa-2-11",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Decorative Fans",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175646",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Costumes, Reenactment, Theater > Accessories > Glasses",
+      "shopifyCategoryId": "aa-2-27",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Sunglasses",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175647",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Costumes, Reenactment, Theater > Accessories > Prosthetics",
+      "shopifyCategoryId": "aa-3-1",
+      "shopifyFullName": "Apparel & Accessories > Costumes & Accessories > Costume Accessories",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "155241",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > World & Traditional Clothing > Africa",
+      "shopifyCategoryId": "aa-2-31",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Traditional Clothing Accessories",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "155242",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > World & Traditional Clothing > Asia & Pacific Islands",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "155246",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > World & Traditional Clothing > India & Pakistan",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "155252",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > World & Traditional Clothing > Latin America",
+      "shopifyCategoryId": "aa-2-31",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Traditional Clothing Accessories",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "155253",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > World & Traditional Clothing > Middle East",
+      "shopifyCategoryId": "aa-2-31",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Traditional Clothing Accessories",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "155254",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > World & Traditional Clothing > Other Cultural Clothing",
+      "shopifyCategoryId": "aa-2-31",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Traditional Clothing Accessories",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "163145",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > World & Traditional Clothing > Other European Clothing",
+      "shopifyCategoryId": "aa-2-31",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Traditional Clothing Accessories",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "163146",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > World & Traditional Clothing > Native American",
+      "shopifyCategoryId": "aa-2-31",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Traditional Clothing Accessories",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "185095",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > World & Traditional Clothing > Germany",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "185097",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > World & Traditional Clothing > Scotland",
+      "shopifyCategoryId": "aa-2-31",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Traditional Clothing Accessories",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "80960",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > World & Traditional Clothing > Germany > Women's Traditional Clothing",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "80966",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > World & Traditional Clothing > Germany > Men's Traditional Clothing",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "185096",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > World & Traditional Clothing > Germany > Youth Traditional Clothing",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "97127",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > World & Traditional Clothing > Germany > Youth Traditional Clothing > Boys'",
+      "shopifyCategoryId": "aa-1-25-1-2",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Bottoms > Cargos",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "97128",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > World & Traditional Clothing > Germany > Youth Traditional Clothing > Girls'",
+      "shopifyCategoryId": "aa-1-25-1-11",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Bottoms > Skirts",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "8467",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > World & Traditional Clothing > Germany > Men's Traditional Clothing > Accessories",
+      "shopifyCategoryId": "aa-2-6",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Belts",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "80967",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > World & Traditional Clothing > Germany > Men's Traditional Clothing > Shirts",
+      "shopifyCategoryId": "aa-1-13-7",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Clothing Tops > Shirts",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "80968",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > World & Traditional Clothing > Germany > Men's Traditional Clothing > Lederhosen & Pants",
+      "shopifyCategoryId": "aa-1-12-2",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Pants > Cargo Pants",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "80969",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > World & Traditional Clothing > Germany > Men's Traditional Clothing > Jackets & Vests",
+      "shopifyCategoryId": "aa-1-1-8-2",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Activewear > Activewear Vests & Jackets > Jackets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "8468",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > World & Traditional Clothing > Germany > Women's Traditional Clothing > Accessories",
+      "shopifyCategoryId": "aa-2-6",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Belts",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "80961",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > World & Traditional Clothing > Germany > Women's Traditional Clothing > Tops & Blouses",
+      "shopifyCategoryId": "aa-1-13-1",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Clothing Tops > Blouses",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "80962",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > World & Traditional Clothing > Germany > Women's Traditional Clothing > Dirndls & Dresses",
+      "shopifyCategoryId": "aa-1-4",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Dresses",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "80963",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > World & Traditional Clothing > Germany > Women's Traditional Clothing > Pants",
+      "shopifyCategoryId": "aa-1-12-11",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Pants > Trousers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "80964",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > World & Traditional Clothing > Germany > Women's Traditional Clothing > Jackets & Vests",
+      "shopifyCategoryId": "aa-1-1-8-2",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Activewear > Activewear Vests & Jackets > Jackets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "165163",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > World & Traditional Clothing > Germany > Women's Traditional Clothing > Skirts",
+      "shopifyCategoryId": "aa-1-15",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Skirts",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "155247",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > World & Traditional Clothing > India & Pakistan > Choli",
+      "shopifyCategoryId": "aa-1-13-1",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Clothing Tops > Blouses",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "155248",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > World & Traditional Clothing > India & Pakistan > Kurta",
+      "shopifyCategoryId": "aa-1-13-7",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Clothing Tops > Shirts",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "155249",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > World & Traditional Clothing > India & Pakistan > Salwar Kameez",
+      "shopifyCategoryId": "aa-1-23-2",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Traditional & Ceremonial Clothing > Saris & Lehengas",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "155250",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > World & Traditional Clothing > India & Pakistan > Sari, Saree",
+      "shopifyCategoryId": "aa-1-23-2",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Traditional & Ceremonial Clothing > Saris & Lehengas",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "155251",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > World & Traditional Clothing > India & Pakistan > Other Ind-Pak Clothes & Accs",
+      "shopifyCategoryId": "aa-2-31",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Traditional Clothing Accessories",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "155243",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > World & Traditional Clothing > Asia & Pacific Islands > Cheong-sam",
+      "shopifyCategoryId": "aa-1-23-1",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Traditional & Ceremonial Clothing > Kimonos",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "155244",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > World & Traditional Clothing > Asia & Pacific Islands > Kimono",
+      "shopifyCategoryId": "aa-1-23-1",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Traditional & Ceremonial Clothing > Kimonos",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "155245",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > World & Traditional Clothing > Asia & Pacific Islands > Other Asian & Pacific Clothing",
+      "shopifyCategoryId": "aa-2-31",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Traditional Clothing Accessories",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "163141",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > World & Traditional Clothing > Asia & Pacific Islands > Jackets",
+      "shopifyCategoryId": "aa-1-1-8-2",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Activewear > Activewear Vests & Jackets > Jackets",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "152345",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Dancewear > Kids' Dancewear",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "172007",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Dancewear > Baby & Toddler Dancewear",
+      "shopifyCategoryId": "aa-1-25-5",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Outfits",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175638",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Dancewear > Adult Dancewear",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "175639",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Dancewear > Dance Shoes",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "150663",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Dancewear > Dance Shoes > Ballet",
+      "shopifyCategoryId": "aa-8-1",
+      "shopifyFullName": "Apparel & Accessories > Shoes > Athletic Shoes",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "150664",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Dancewear > Dance Shoes > Jazz, Hip Hop",
+      "shopifyCategoryId": "aa-8-1",
+      "shopifyFullName": "Apparel & Accessories > Shoes > Athletic Shoes",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "152340",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Dancewear > Dance Shoes > Ballroom",
+      "shopifyCategoryId": "aa-8-1",
+      "shopifyFullName": "Apparel & Accessories > Shoes > Athletic Shoes",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "152341",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Dancewear > Dance Shoes > Character",
+      "shopifyCategoryId": "aa-8-1",
+      "shopifyFullName": "Apparel & Accessories > Shoes > Athletic Shoes",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "152342",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Dancewear > Dance Shoes > Tap",
+      "shopifyCategoryId": "aa-8-1",
+      "shopifyFullName": "Apparel & Accessories > Shoes > Athletic Shoes",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "153004",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Dancewear > Dance Shoes > Other Dance Shoes",
+      "shopifyCategoryId": "aa-8-1",
+      "shopifyFullName": "Apparel & Accessories > Shoes > Athletic Shoes",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "112428",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Dancewear > Adult Dancewear > Other Adult Dancewear",
+      "shopifyCategoryId": "aa-1-11",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Outfit Sets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "150666",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Dancewear > Adult Dancewear > Skirts",
+      "shopifyCategoryId": "aa-1-15",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Skirts",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "152360",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Dancewear > Adult Dancewear > Ballet",
+      "shopifyCategoryId": "aa-1-1-5",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Activewear > Dance Dresses, Skirts & Costumes",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "152361",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Dancewear > Adult Dancewear > Ballroom",
+      "shopifyCategoryId": "aa-1-1-5",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Activewear > Dance Dresses, Skirts & Costumes",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "152362",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Dancewear > Adult Dancewear > Belly Dancing",
+      "shopifyCategoryId": "aa-1-11",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Outfit Sets",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "152363",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Dancewear > Adult Dancewear > Square Dancing",
+      "shopifyCategoryId": "aa-1-11",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Outfit Sets",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "152364",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Dancewear > Adult Dancewear > Leggings & Tights",
+      "shopifyCategoryId": "aa-1-12-8",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Pants > Leggings",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "152365",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Dancewear > Adult Dancewear > Leotards & Unitards",
+      "shopifyCategoryId": "aa-1-1-9",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Activewear > Leotards & Unitards",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "152366",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Dancewear > Adult Dancewear > Outfits",
+      "shopifyCategoryId": "aa-1-11",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Outfit Sets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "152367",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Dancewear > Adult Dancewear > Tops, Shirts",
+      "shopifyCategoryId": "aa-1-13-7",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Clothing Tops > Shirts",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "152368",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Dancewear > Adult Dancewear > Totes, Duffel Bags",
+      "shopifyCategoryId": "aa-5-4-6",
+      "shopifyFullName": "Apparel & Accessories > Handbags, Wallets & Cases > Handbags > Convertible Bags",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "152369",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Dancewear > Adult Dancewear > Dance Accessories",
+      "shopifyCategoryId": "aa-3-1",
+      "shopifyFullName": "Apparel & Accessories > Costumes & Accessories > Costume Accessories",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "163139",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Dancewear > Adult Dancewear > Leg Warmers",
+      "shopifyCategoryId": "aa-2-19",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Leg Warmers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "163140",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Dancewear > Adult Dancewear > Pants & Shorts",
+      "shopifyCategoryId": "aa-1-12-11",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Pants > Trousers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "112426",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Dancewear > Kids' Dancewear > Other Kids' Dancewear",
+      "shopifyCategoryId": "aa-1-25-5",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Outfits",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "152352",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Dancewear > Kids' Dancewear > Dresses & Tutus",
+      "shopifyCategoryId": "aa-1-25-3",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Dresses",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "152353",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Dancewear > Kids' Dancewear > Leggings & Tights",
+      "shopifyCategoryId": "aa-1-25-1-8",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Bottoms > Leggings",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "152354",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Dancewear > Kids' Dancewear > Leotards & Unitards",
+      "shopifyCategoryId": "aa-1-1-9",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Activewear > Leotards & Unitards",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "152355",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Dancewear > Kids' Dancewear > Outfits",
+      "shopifyCategoryId": "aa-1-25-5",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Outfits",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "152356",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Dancewear > Kids' Dancewear > Tops, Shirts",
+      "shopifyCategoryId": "aa-1-25-9-6",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Tops > Shirts",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "152357",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Dancewear > Kids' Dancewear > Totes, Duffel Bags",
+      "shopifyCategoryId": "aa-5-4-6",
+      "shopifyFullName": "Apparel & Accessories > Handbags, Wallets & Cases > Handbags > Convertible Bags",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "152358",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Dancewear > Kids' Dancewear > Dance Accessories",
+      "shopifyCategoryId": "aa-3-1",
+      "shopifyFullName": "Apparel & Accessories > Costumes & Accessories > Costume Accessories",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "152359",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Dancewear > Kids' Dancewear > Lots",
+      "shopifyCategoryId": "aa-1-25-5",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Outfits",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "163137",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Dancewear > Kids' Dancewear > Leg Warmers",
+      "shopifyCategoryId": "aa-2-19",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Leg Warmers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "163138",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Dancewear > Kids' Dancewear > Pants & Shorts",
+      "shopifyCategoryId": "aa-1-25-1-14",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Bottoms > Trousers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "106126",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Clothing & Shoe Care > Other Clothing & Shoe Care",
+      "shopifyCategoryId": "hg-10-14-4",
+      "shopifyFullName": "Home & Garden > Household Supplies > Shoe Care & Tools > Shoe Care Kits",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "116744",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Clothing & Shoe Care > Garment Bags",
+      "shopifyCategoryId": "aa-3-1",
+      "shopifyFullName": "Apparel & Accessories > Costumes & Accessories > Costume Accessories",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "185103",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Clothing & Shoe Care > Shoe Care & Repair",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "185105",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Clothing & Shoe Care > Clothes Brushes",
+      "shopifyCategoryId": "hg-10-14-3",
+      "shopifyFullName": "Home & Garden > Household Supplies > Shoe Care & Tools > Shoe Brushes",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "40659",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Clothing & Shoe Care > Shoe Care & Repair > Other Shoe Care & Repair",
+      "shopifyCategoryId": "aa-3-1",
+      "shopifyFullName": "Apparel & Accessories > Costumes & Accessories > Costume Accessories",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "106122",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Clothing & Shoe Care > Shoe Care & Repair > Shoe Fresheners",
+      "shopifyCategoryId": "aa-3-1",
+      "shopifyFullName": "Apparel & Accessories > Costumes & Accessories > Costume Accessories",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "106123",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Clothing & Shoe Care > Shoe Care & Repair > Shoe Cleaners, Conditioners & Polishes",
+      "shopifyCategoryId": "aa-3-1",
+      "shopifyFullName": "Apparel & Accessories > Costumes & Accessories > Costume Accessories",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "106124",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Clothing & Shoe Care > Shoe Care & Repair > Shoe Repair",
+      "shopifyCategoryId": "aa-3-1",
+      "shopifyFullName": "Apparel & Accessories > Costumes & Accessories > Costume Accessories",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "106125",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Clothing & Shoe Care > Shoe Care & Repair > Shoe Trees",
+      "shopifyCategoryId": "hg-10-14-11-2",
+      "shopifyFullName": "Home & Garden > Household Supplies > Shoe Care & Tools > Shoe Trees & Shapers > Shoe Trees",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "122338",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Clothing & Shoe Care > Shoe Care & Repair > Shoe Horns",
+      "shopifyCategoryId": "hg-10-14-6-2",
+      "shopifyFullName": "Home & Garden > Household Supplies > Shoe Care & Tools > Shoe Horns & Dressing Aids > Shoe Horns",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "141474",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Clothing & Shoe Care > Shoe Care & Repair > Shoe Brushes",
+      "shopifyCategoryId": "aa-3-1",
+      "shopifyFullName": "Apparel & Accessories > Costumes & Accessories > Costume Accessories",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "141475",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Clothing & Shoe Care > Shoe Care & Repair > Shoe Care Sets",
+      "shopifyCategoryId": "aa-3-1",
+      "shopifyFullName": "Apparel & Accessories > Costumes & Accessories > Costume Accessories",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "169282",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Clothing & Shoe Care > Shoe Care & Repair > Shoe Laces",
+      "shopifyCategoryId": "aa-7-6",
+      "shopifyFullName": "Apparel & Accessories > Shoe Accessories > Shoelaces",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "169284",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Clothing & Shoe Care > Shoe Care & Repair > Insoles",
+      "shopifyCategoryId": "aa-7-5-1",
+      "shopifyFullName": "Apparel & Accessories > Shoe Accessories > Shoe Inserts > Anti Slip Steps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "185104",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Clothing & Shoe Care > Shoe Care & Repair > Shoe Bags",
+      "shopifyCategoryId": "hg-10-14-2",
+      "shopifyFullName": "Home & Garden > Household Supplies > Shoe Care & Tools > Shoe Bags",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "105417",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Uniforms & Work Clothing > Lab Coats",
+      "shopifyCategoryId": "aa-1-24-8",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Uniforms & Workwear > White Coats",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "105418",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Uniforms & Work Clothing > Scouting Uniforms",
+      "shopifyCategoryId": "aa-1-24-5",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Uniforms & Workwear > School Uniforms",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "105419",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Uniforms & Work Clothing > Scrubs",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "163525",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Uniforms & Work Clothing > Pants & Shorts",
+      "shopifyCategoryId": "aa-1-24-1",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Uniforms & Workwear > Contractor Pants & Coveralls",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "163526",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Uniforms & Work Clothing > Hats",
+      "shopifyCategoryId": "aa-2-17-1",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Hats > Baseball Caps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "163528",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Uniforms & Work Clothing > Other Uniforms & Work Clothing",
+      "shopifyCategoryId": "aa-1-24-4",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Uniforms & Workwear > Military Uniforms",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175628",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Uniforms & Work Clothing > Aprons",
+      "shopifyCategoryId": "aa-1-24-3",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Uniforms & Workwear > Food Service Uniforms",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175629",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Uniforms & Work Clothing > Jackets & Vests",
+      "shopifyCategoryId": "aa-1-24-1",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Uniforms & Workwear > Contractor Pants & Coveralls",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175630",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Uniforms & Work Clothing > Shirts",
+      "shopifyCategoryId": "aa-1-13-7",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Clothing Tops > Shirts",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "178962",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Uniforms & Work Clothing > Coveralls & Jumpsuits",
+      "shopifyCategoryId": "aa-1-24-2",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Uniforms & Workwear > Flight Suits",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "16119",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Uniforms & Work Clothing > Scrubs > Other Scrubs",
+      "shopifyCategoryId": "aa-1-24-9",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Uniforms & Workwear > Scrubs",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "105422",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Uniforms & Work Clothing > Scrubs > Bottoms",
+      "shopifyCategoryId": "aa-1-24-9",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Uniforms & Workwear > Scrubs",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "105432",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Uniforms & Work Clothing > Scrubs > Sets",
+      "shopifyCategoryId": "aa-1-24-9",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Uniforms & Workwear > Scrubs",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "105440",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Uniforms & Work Clothing > Scrubs > Tops",
+      "shopifyCategoryId": "aa-1-24-9",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Uniforms & Workwear > Scrubs",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "105444",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Uniforms & Work Clothing > Scrubs > Mixed Lots",
+      "shopifyCategoryId": "aa-1-24-9",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Uniforms & Workwear > Scrubs",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "1265",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Wedding & Formal Occasion > Other Wedding & Formal Wear",
+      "shopifyCategoryId": "aa-2-7",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Bridal Accessories",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "3263",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Wedding & Formal Occasion > Girls' Formal Occasion",
+      "shopifyCategoryId": "aa-1-4",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Dresses",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "15720",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Wedding & Formal Occasion > Wedding Dresses",
+      "shopifyCategoryId": "aa-1-22-2",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Wedding & Bridal Party Dresses > Wedding Dresses",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "105471",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Wedding & Formal Occasion > Bridal Shoes",
+      "shopifyCategoryId": "aa-8-10",
+      "shopifyFullName": "Apparel & Accessories > Shoes > Heels",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "105508",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Wedding & Formal Occasion > Men's Formal Occasion",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "105520",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Wedding & Formal Occasion > Boys' Formal Occasion",
+      "shopifyCategoryId": "aa-1-19-1",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Suits > Pant Suits",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "106127",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Wedding & Formal Occasion > Bridal Accessories",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "131474",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Wedding & Formal Occasion > Mother of the Bride",
+      "shopifyCategoryId": "aa-2-7",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Bridal Accessories",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "131476",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Wedding & Formal Occasion > Women's Formal Hats",
+      "shopifyCategoryId": "aa-2-17-1",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Hats > Baseball Caps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175632",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Wedding & Formal Occasion > Novelty Attire",
+      "shopifyCategoryId": "bi-6-1",
+      "shopifyFullName": "Business & Industrial > Film & Television > Film & Television Costumes",
+      "confidence": 0.6,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "175633",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Wedding & Formal Occasion > Bridesmaid Dresses",
+      "shopifyCategoryId": "aa-1-22-1",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Wedding & Bridal Party Dresses > Bridal Party Dresses",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "15718",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Wedding & Formal Occasion > Bridal Accessories > Garters",
+      "shopifyCategoryId": "aa-1-6-8-2",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Lingerie > Lingerie Accessories > Garters",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "15719",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Wedding & Formal Occasion > Bridal Accessories > Veils",
+      "shopifyCategoryId": "aa-2-7",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Bridal Accessories",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "98735",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Wedding & Formal Occasion > Bridal Accessories > Gloves",
+      "shopifyCategoryId": "aa-2-13",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Gloves & Mittens",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "98745",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Wedding & Formal Occasion > Bridal Accessories > Slips, Petticoats & Hoops",
+      "shopifyCategoryId": "aa-1-6-9",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Lingerie > Petticoats & Pettipants",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "105472",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Wedding & Formal Occasion > Bridal Accessories > Wraps & Jackets",
+      "shopifyCategoryId": "aa-2-7",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Bridal Accessories",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "105516",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Wedding & Formal Occasion > Bridal Accessories > Tiaras & Headbands",
+      "shopifyCategoryId": "aa-2-14-10",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Hair Accessories > Tiaras",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "106128",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Wedding & Formal Occasion > Bridal Accessories > Other Bridal Accessories",
+      "shopifyCategoryId": "aa-2-7",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Bridal Accessories",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "163551",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Wedding & Formal Occasion > Bridal Accessories > Handbags & Bags",
+      "shopifyCategoryId": "aa-5-4-1",
+      "shopifyFullName": "Apparel & Accessories > Handbags, Wallets & Cases > Handbags > Baguette Handbags",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "163552",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Wedding & Formal Occasion > Bridal Accessories > Bridal Jewelry",
+      "shopifyCategoryId": "aa-6-7",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Jewelry Sets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "163553",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Wedding & Formal Occasion > Bridal Accessories > Fans & Parasols",
+      "shopifyCategoryId": "aa-2-11",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Decorative Fans",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "163556",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Wedding & Formal Occasion > Bridal Accessories > Bras",
+      "shopifyCategoryId": "aa-1-6-3",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Lingerie > Bras",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "163560",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Wedding & Formal Occasion > Bridal Accessories > Hair Accessories",
+      "shopifyCategoryId": "aa-2-14-13",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Hair Accessories > Hair Bands",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175631",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Wedding & Formal Occasion > Bridal Accessories > Storage Bags & Preservation",
+      "shopifyCategoryId": "hg-10-16-1-7",
+      "shopifyFullName": "Home & Garden > Household Supplies > Storage & Organization > Clothing & Closet Storage > Garment Storage Bags",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "180249",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Wedding & Formal Occasion > Bridal Accessories > Belts & Sashes",
+      "shopifyCategoryId": "aa-2-25",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Sashes",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "105509",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Wedding & Formal Occasion > Men's Formal Occasion > Ties, Cravats & Cummerbunds",
+      "shopifyCategoryId": "aa-2-23",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Neckties",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "105511",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Wedding & Formal Occasion > Men's Formal Occasion > Tuxedo & Formal Jackets",
+      "shopifyCategoryId": "aa-1-19-3",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Suits > Tuxedos",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "105512",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Wedding & Formal Occasion > Men's Formal Occasion > Tuxedo & Formal Shirts",
+      "shopifyCategoryId": "aa-1-13-7",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Clothing Tops > Shirts",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "105514",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Wedding & Formal Occasion > Men's Formal Occasion > Tuxedo & Formal Vests",
+      "shopifyCategoryId": "aa-1-10-6",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Outerwear > Vests",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "105515",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Wedding & Formal Occasion > Men's Formal Occasion > Tuxedos & Formal Suits",
+      "shopifyCategoryId": "aa-1-19-3",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Suits > Tuxedos",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "114293",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Wedding & Formal Occasion > Men's Formal Occasion > Other Men's Formal Occasion",
+      "shopifyCategoryId": "aa-1-13-7",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Clothing Tops > Shirts",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "148486",
+      "ebayFullName": "Clothing, Shoes & Accessories > Specialty > Wedding & Formal Occasion > Men's Formal Occasion > Accessories",
+      "shopifyCategoryId": "aa-2-6",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Belts",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "147285",
+      "ebayFullName": "Clothing, Shoes & Accessories > Baby > Baby Shoes",
+      "shopifyCategoryId": "aa-8-11-4",
+      "shopifyFullName": "Apparel & Accessories > Shoes > Baby & Children's Shoes > Baby & Children's Athletic Shoes",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "163222",
+      "ebayFullName": "Clothing, Shoes & Accessories > Baby > Baby Accessories",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "260019",
+      "ebayFullName": "Clothing, Shoes & Accessories > Baby > Baby & Toddler Clothing",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "260020",
+      "ebayFullName": "Clothing, Shoes & Accessories > Baby > Baby & Toddler Clothing > Bottoms",
+      "shopifyCategoryId": "aa-1-25-1-2",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Bottoms > Cargos",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260021",
+      "ebayFullName": "Clothing, Shoes & Accessories > Baby > Baby & Toddler Clothing > Dresses",
+      "shopifyCategoryId": "aa-1-25-3",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Dresses",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260022",
+      "ebayFullName": "Clothing, Shoes & Accessories > Baby > Baby & Toddler Clothing > One-Pieces",
+      "shopifyCategoryId": "aa-1-25-10",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's One-Pieces",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260023",
+      "ebayFullName": "Clothing, Shoes & Accessories > Baby > Baby & Toddler Clothing > Outerwear",
+      "shopifyCategoryId": "aa-1-25-4-17-1",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Outerwear > Baby & Children's Coats & Jackets > Bolero Jackets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260024",
+      "ebayFullName": "Clothing, Shoes & Accessories > Baby > Baby & Toddler Clothing > Outfits & Sets",
+      "shopifyCategoryId": "aa-1-25-5",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Outfits",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260025",
+      "ebayFullName": "Clothing, Shoes & Accessories > Baby > Baby & Toddler Clothing > Skirts",
+      "shopifyCategoryId": "aa-1-25-1-11",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Bottoms > Skirts",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260026",
+      "ebayFullName": "Clothing, Shoes & Accessories > Baby > Baby & Toddler Clothing > Sleepwear",
+      "shopifyCategoryId": "aa-1-25-6",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Sleepwear",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260027",
+      "ebayFullName": "Clothing, Shoes & Accessories > Baby > Baby & Toddler Clothing > Socks & Tights",
+      "shopifyCategoryId": "aa-1-25-7",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Socks & Tights",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260028",
+      "ebayFullName": "Clothing, Shoes & Accessories > Baby > Baby & Toddler Clothing > Suits",
+      "shopifyCategoryId": "aa-1-25-5",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Outfits",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260029",
+      "ebayFullName": "Clothing, Shoes & Accessories > Baby > Baby & Toddler Clothing > Sweaters",
+      "shopifyCategoryId": "aa-1-25-9-12",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Tops > Sweaters",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260030",
+      "ebayFullName": "Clothing, Shoes & Accessories > Baby > Baby & Toddler Clothing > Swimwear",
+      "shopifyCategoryId": "aa-1-25-8-2",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Swimwear > Burkinis",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260031",
+      "ebayFullName": "Clothing, Shoes & Accessories > Baby > Baby & Toddler Clothing > Tops & T-Shirts",
+      "shopifyCategoryId": "aa-1-25-9-7",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Tops > T-Shirts",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260032",
+      "ebayFullName": "Clothing, Shoes & Accessories > Baby > Baby & Toddler Clothing > Underwear",
+      "shopifyCategoryId": "aa-1-25-11-1-4",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Underwear > Toddler Underwear > Panties",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "18786",
+      "ebayFullName": "Clothing, Shoes & Accessories > Baby > Baby Accessories > Hair Accessories",
+      "shopifyCategoryId": "aa-2-14-13",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Hair Accessories > Hair Bands",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "163224",
+      "ebayFullName": "Clothing, Shoes & Accessories > Baby > Baby Accessories > Hats",
+      "shopifyCategoryId": "aa-2-33-3",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Baby & Children's Clothing Accessories > Baby & Children's Hats",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "163225",
+      "ebayFullName": "Clothing, Shoes & Accessories > Baby > Baby Accessories > Gloves & Mittens",
+      "shopifyCategoryId": "aa-2-33-2",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Baby & Children's Clothing Accessories > Baby & Children's Gloves & Mittens",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175523",
+      "ebayFullName": "Clothing, Shoes & Accessories > Baby > Baby Accessories > Scarves",
+      "shopifyCategoryId": "aa-2-26",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Scarves & Shawls",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "176966",
+      "ebayFullName": "Clothing, Shoes & Accessories > Baby > Baby Accessories > Belts",
+      "shopifyCategoryId": "aa-2-33-1",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Baby & Children's Clothing Accessories > Baby & Children's Belts",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "176967",
+      "ebayFullName": "Clothing, Shoes & Accessories > Baby > Baby Accessories > Sunglasses",
+      "shopifyCategoryId": "aa-2-27",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Sunglasses",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "176968",
+      "ebayFullName": "Clothing, Shoes & Accessories > Baby > Baby Accessories > Ties",
+      "shopifyCategoryId": "aa-2-23",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Neckties",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "1059",
+      "ebayFullName": "Clothing, Shoes & Accessories > Men > Men's Clothing",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "4250",
+      "ebayFullName": "Clothing, Shoes & Accessories > Men > Men's Accessories",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "93427",
+      "ebayFullName": "Clothing, Shoes & Accessories > Men > Men's Shoes",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "11498",
+      "ebayFullName": "Clothing, Shoes & Accessories > Men > Men's Shoes > Boots",
+      "shopifyCategoryId": "aa-8-3",
+      "shopifyFullName": "Apparel & Accessories > Shoes > Boots",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "11504",
+      "ebayFullName": "Clothing, Shoes & Accessories > Men > Men's Shoes > Sandals",
+      "shopifyCategoryId": "aa-8-6",
+      "shopifyFullName": "Apparel & Accessories > Shoes > Sandals",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "11505",
+      "ebayFullName": "Clothing, Shoes & Accessories > Men > Men's Shoes > Slippers",
+      "shopifyCategoryId": "aa-8-7",
+      "shopifyFullName": "Apparel & Accessories > Shoes > Slippers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "15709",
+      "ebayFullName": "Clothing, Shoes & Accessories > Men > Men's Shoes > Athletic Shoes",
+      "shopifyCategoryId": "aa-8-1",
+      "shopifyFullName": "Apparel & Accessories > Shoes > Athletic Shoes",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "24087",
+      "ebayFullName": "Clothing, Shoes & Accessories > Men > Men's Shoes > Casual Shoes",
+      "shopifyCategoryId": "aa-8-8",
+      "shopifyFullName": "Apparel & Accessories > Shoes > Sneakers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "53120",
+      "ebayFullName": "Clothing, Shoes & Accessories > Men > Men's Shoes > Dress Shoes",
+      "shopifyCategoryId": "aa-8-8",
+      "shopifyFullName": "Apparel & Accessories > Shoes > Sneakers",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "2993",
+      "ebayFullName": "Clothing, Shoes & Accessories > Men > Men's Accessories > Belts",
+      "shopifyCategoryId": "aa-2-6",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Belts",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "2994",
+      "ebayFullName": "Clothing, Shoes & Accessories > Men > Men's Accessories > Gloves & Mittens",
+      "shopifyCategoryId": "aa-2-13",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Gloves & Mittens",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "2996",
+      "ebayFullName": "Clothing, Shoes & Accessories > Men > Men's Accessories > Wallets",
+      "shopifyCategoryId": "aa-5-5-7",
+      "shopifyFullName": "Apparel & Accessories > Handbags, Wallets & Cases > Wallets & Money Clips > Wallets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "15662",
+      "ebayFullName": "Clothing, Shoes & Accessories > Men > Men's Accessories > Ties",
+      "shopifyCategoryId": "aa-2-23",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Neckties",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "52357",
+      "ebayFullName": "Clothing, Shoes & Accessories > Men > Men's Accessories > Bags",
+      "shopifyCategoryId": "aa-5-4-6",
+      "shopifyFullName": "Apparel & Accessories > Handbags, Wallets & Cases > Handbags > Convertible Bags",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "52365",
+      "ebayFullName": "Clothing, Shoes & Accessories > Men > Men's Accessories > Hats",
+      "shopifyCategoryId": "aa-2-17-1",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Hats > Baseball Caps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "52373",
+      "ebayFullName": "Clothing, Shoes & Accessories > Men > Men's Accessories > Key Chains, Rings & Cases",
+      "shopifyCategoryId": "aa-4-1",
+      "shopifyFullName": "Apparel & Accessories > Handbag & Wallet Accessories > Keychains",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "52382",
+      "ebayFullName": "Clothing, Shoes & Accessories > Men > Men's Accessories > Scarves",
+      "shopifyCategoryId": "aa-2-26",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Scarves & Shawls",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "86647",
+      "ebayFullName": "Clothing, Shoes & Accessories > Men > Men's Accessories > Belt Buckles",
+      "shopifyCategoryId": "aa-2-5",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Belt Buckles",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "90634",
+      "ebayFullName": "Clothing, Shoes & Accessories > Men > Men's Accessories > Umbrellas",
+      "shopifyCategoryId": "hg-10-16-9-2-1",
+      "shopifyFullName": "Home & Garden > Household Supplies > Storage & Organization > Storage Hooks & Racks > Umbrella Stands & Racks > Umbrella Racks",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "105387",
+      "ebayFullName": "Clothing, Shoes & Accessories > Men > Men's Accessories > Suspenders",
+      "shopifyCategoryId": "aa-2-28",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Suspenders",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "167902",
+      "ebayFullName": "Clothing, Shoes & Accessories > Men > Men's Accessories > Handkerchiefs",
+      "shopifyCategoryId": "aa-2-16",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Handkerchiefs",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "169271",
+      "ebayFullName": "Clothing, Shoes & Accessories > Men > Men's Accessories > ID & Document Holders",
+      "shopifyCategoryId": "aa-5-1",
+      "shopifyFullName": "Apparel & Accessories > Handbags, Wallets & Cases > Badge & Pass Holders",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175627",
+      "ebayFullName": "Clothing, Shoes & Accessories > Men > Men's Accessories > Accessory Sets",
+      "shopifyCategoryId": "aa-2-6",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Belts",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179239",
+      "ebayFullName": "Clothing, Shoes & Accessories > Men > Men's Accessories > Sunglasses & Sunglasses Accessories",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "184594",
+      "ebayFullName": "Clothing, Shoes & Accessories > Men > Men's Accessories > Collar Stays",
+      "shopifyCategoryId": "aa-2-9",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Collar Stays",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "79720",
+      "ebayFullName": "Clothing, Shoes & Accessories > Men > Men's Accessories > Sunglasses & Sunglasses Accessories > Sunglasses",
+      "shopifyCategoryId": "aa-2-27",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Sunglasses",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179194",
+      "ebayFullName": "Clothing, Shoes & Accessories > Men > Men's Accessories > Sunglasses & Sunglasses Accessories > Replacement Lenses & Parts",
+      "shopifyCategoryId": "aa-2-27",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Sunglasses",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179241",
+      "ebayFullName": "Clothing, Shoes & Accessories > Men > Men's Accessories > Sunglasses & Sunglasses Accessories > Accessories",
+      "shopifyCategoryId": "aa-2-27",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Sunglasses",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "3001",
+      "ebayFullName": "Clothing, Shoes & Accessories > Men > Men's Clothing > Suits & Suit Separates",
+      "shopifyCategoryId": "aa-1-19-1",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Suits > Pant Suits",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "11483",
+      "ebayFullName": "Clothing, Shoes & Accessories > Men > Men's Clothing > Jeans",
+      "shopifyCategoryId": "aa-1-12-4",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Pants > Jeans",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "11484",
+      "ebayFullName": "Clothing, Shoes & Accessories > Men > Men's Clothing > Sweaters",
+      "shopifyCategoryId": "aa-1-13-12",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Clothing Tops > Sweaters",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "11507",
+      "ebayFullName": "Clothing, Shoes & Accessories > Men > Men's Clothing > Underwear",
+      "shopifyCategoryId": "aa-1-8-3-4",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Men's Undergarments > Men's Underwear > Briefs",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "11510",
+      "ebayFullName": "Clothing, Shoes & Accessories > Men > Men's Clothing > Sleepwear & Robes",
+      "shopifyCategoryId": "aa-1-17-4",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Sleepwear & Loungewear > Pajamas",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "11511",
+      "ebayFullName": "Clothing, Shoes & Accessories > Men > Men's Clothing > Socks",
+      "shopifyCategoryId": "aa-1-18-3",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Socks > Crew Socks",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "15689",
+      "ebayFullName": "Clothing, Shoes & Accessories > Men > Men's Clothing > Shorts",
+      "shopifyCategoryId": "aa-1-14-1",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Shorts > Bermudas",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "15690",
+      "ebayFullName": "Clothing, Shoes & Accessories > Men > Men's Clothing > Swimwear",
+      "shopifyCategoryId": "aa-1-20-2",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Swimwear > Boardshorts",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "57988",
+      "ebayFullName": "Clothing, Shoes & Accessories > Men > Men's Clothing > Coats, Jackets & Vests",
+      "shopifyCategoryId": "aa-1-10-2-11",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Outerwear > Coats & Jackets > Sport Jackets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "57989",
+      "ebayFullName": "Clothing, Shoes & Accessories > Men > Men's Clothing > Pants",
+      "shopifyCategoryId": "aa-1-12-2",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Pants > Cargo Pants",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "185099",
+      "ebayFullName": "Clothing, Shoes & Accessories > Men > Men's Clothing > Activewear",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "185100",
+      "ebayFullName": "Clothing, Shoes & Accessories > Men > Men's Clothing > Shirts",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "15687",
+      "ebayFullName": "Clothing, Shoes & Accessories > Men > Men's Clothing > Shirts > T-Shirts",
+      "shopifyCategoryId": "aa-1-13-8",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Clothing Tops > T-Shirts",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "57990",
+      "ebayFullName": "Clothing, Shoes & Accessories > Men > Men's Clothing > Shirts > Casual Button-Down Shirts",
+      "shopifyCategoryId": "aa-1-13-7",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Clothing Tops > Shirts",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "57991",
+      "ebayFullName": "Clothing, Shoes & Accessories > Men > Men's Clothing > Shirts > Dress Shirts",
+      "shopifyCategoryId": "aa-1-13-7",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Clothing Tops > Shirts",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "185101",
+      "ebayFullName": "Clothing, Shoes & Accessories > Men > Men's Clothing > Shirts > Polos",
+      "shopifyCategoryId": "aa-1-13-6",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Clothing Tops > Polos",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "155183",
+      "ebayFullName": "Clothing, Shoes & Accessories > Men > Men's Clothing > Activewear > Hoodies & Sweatshirts",
+      "shopifyCategoryId": "aa-1-1-7-2",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Activewear > Activewear Sweatshirts & Hoodies > Hoodies",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "185076",
+      "ebayFullName": "Clothing, Shoes & Accessories > Men > Men's Clothing > Activewear > Activewear Tops",
+      "shopifyCategoryId": "aa-1-1-2-2",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Activewear > Activewear Tops > T-Shirts",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "185702",
+      "ebayFullName": "Clothing, Shoes & Accessories > Men > Men's Clothing > Activewear > Activewear Jackets",
+      "shopifyCategoryId": "aa-1-1-8-2",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Activewear > Activewear Vests & Jackets > Jackets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "185708",
+      "ebayFullName": "Clothing, Shoes & Accessories > Men > Men's Clothing > Activewear > Tracksuits & Sets",
+      "shopifyCategoryId": "aa-1-1-1-7",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Activewear > Activewear Pants > Training Pants",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260956",
+      "ebayFullName": "Clothing, Shoes & Accessories > Men > Men's Clothing > Activewear > Activewear Pants",
+      "shopifyCategoryId": "aa-1-1-1-7",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Activewear > Activewear Pants > Training Pants",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260957",
+      "ebayFullName": "Clothing, Shoes & Accessories > Men > Men's Clothing > Activewear > Activewear Shorts",
+      "shopifyCategoryId": "aa-1-1-1-3",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Activewear > Activewear Pants > Shorts",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "3034",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Shoes",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "4251",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Accessories",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "15724",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Clothing",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "169291",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Bags & Handbags",
+      "shopifyCategoryId": "aa-5-4-1",
+      "shopifyFullName": "Apparel & Accessories > Handbags, Wallets & Cases > Handbags > Baguette Handbags",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "3009",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Clothing > Jumpsuits & Rompers",
+      "shopifyCategoryId": "aa-1-9",
+      "shopifyFullName": "Apparel & Accessories > Clothing > One-Pieces",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "11514",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Clothing > Intimates & Sleep",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "11524",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Clothing > Hosiery & Socks",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "11554",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Clothing > Jeans",
+      "shopifyCategoryId": "aa-1-12-4",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Pants > Jeans",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "11555",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Clothing > Shorts",
+      "shopifyCategoryId": "aa-1-14-1",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Shorts > Bermudas",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "53159",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Clothing > Tops",
+      "shopifyCategoryId": "aa-1-13-1",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Clothing Tops > Blouses",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "63861",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Clothing > Dresses",
+      "shopifyCategoryId": "aa-1-4",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Dresses",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "63862",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Clothing > Coats, Jackets & Vests",
+      "shopifyCategoryId": "aa-1-10-2-1",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Outerwear > Coats & Jackets > Bolero Jackets",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "63863",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Clothing > Pants",
+      "shopifyCategoryId": "aa-1-12-11",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Pants > Trousers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "63864",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Clothing > Skirts",
+      "shopifyCategoryId": "aa-1-15",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Skirts",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "63865",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Clothing > Suits & Suit Separates",
+      "shopifyCategoryId": "aa-1-19-1",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Suits > Pant Suits",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "63866",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Clothing > Sweaters",
+      "shopifyCategoryId": "aa-1-13-12",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Clothing Tops > Sweaters",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "63867",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Clothing > Swimwear",
+      "shopifyCategoryId": "aa-1-20-22",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Swimwear > One-Piece Swimsuits",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "169001",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Clothing > Leggings",
+      "shopifyCategoryId": "aa-1-12-8",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Pants > Leggings",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "185098",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Clothing > Activewear",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "260011",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Clothing > Outfits & Sets",
+      "shopifyCategoryId": "aa-1-11",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Outfit Sets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "155226",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Clothing > Activewear > Hoodies & Sweatshirts",
+      "shopifyCategoryId": "aa-1-1-7-2",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Activewear > Activewear Sweatshirts & Hoodies > Hoodies",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "185079",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Clothing > Activewear > Activewear Jackets",
+      "shopifyCategoryId": "aa-1-1-8-2",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Activewear > Activewear Vests & Jackets > Jackets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "185082",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Clothing > Activewear > Activewear Tops",
+      "shopifyCategoryId": "aa-1-1-2-2",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Activewear > Activewear Tops > T-Shirts",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "185083",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Clothing > Activewear > Sports Bras",
+      "shopifyCategoryId": "aa-1-1-6",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Activewear > Sports Bras",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "185084",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Clothing > Activewear > Tracksuits & Sets",
+      "shopifyCategoryId": "aa-1-1-1-7",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Activewear > Activewear Pants > Training Pants",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260954",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Clothing > Activewear > Activewear Pants",
+      "shopifyCategoryId": "aa-1-1-1-2",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Activewear > Activewear Pants > Leggings",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260955",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Clothing > Activewear > Activewear Shorts",
+      "shopifyCategoryId": "aa-1-1-1-3",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Activewear > Activewear Pants > Shorts",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "261046",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Clothing > Activewear > Activewear Skirts & Skorts",
+      "shopifyCategoryId": "aa-1-17-2-1-1",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Sleepwear & Loungewear > Loungewear > Loungewear Bottoms > Boxers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "11525",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Clothing > Hosiery & Socks > Pantyhose & Tights",
+      "shopifyCategoryId": "aa-1-6-8-3",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Lingerie > Lingerie Accessories > Pantyhose",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "11527",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Clothing > Hosiery & Socks > Stockings & Thigh-Highs",
+      "shopifyCategoryId": "aa-1-6-6",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Lingerie > Hosiery",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "163587",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Clothing > Hosiery & Socks > Leg Warmers",
+      "shopifyCategoryId": "aa-2-19",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Leg Warmers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "163588",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Clothing > Hosiery & Socks > Socks",
+      "shopifyCategoryId": "aa-1-18-3",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Socks > Crew Socks",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "11521",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Clothing > Intimates & Sleep > Camisoles & Camisole Sets",
+      "shopifyCategoryId": "aa-1-6-4",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Lingerie > Camisoles",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "11522",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Clothing > Intimates & Sleep > Corsets & Bustiers",
+      "shopifyCategoryId": "aa-1-6-1",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Lingerie > Bodysuits",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "11530",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Clothing > Intimates & Sleep > Shapewear",
+      "shopifyCategoryId": "aa-1-6-10-2",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Lingerie > Shapewear > Full Body Shapes",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "11532",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Clothing > Intimates & Sleep > Slips",
+      "shopifyCategoryId": "aa-1-6-13",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Lingerie > Women's Underwear Slips",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "45279",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Clothing > Intimates & Sleep > Bodysuits",
+      "shopifyCategoryId": "aa-1-6-1",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Lingerie > Bodysuits",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "63853",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Clothing > Intimates & Sleep > Bras & Bra Sets",
+      "shopifyCategoryId": "aa-1-6-3",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Lingerie > Bras",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "63854",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Clothing > Intimates & Sleep > Panties",
+      "shopifyCategoryId": "aa-1-6-11-3",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Lingerie > Women's Underpants > Briefs",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "63855",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Clothing > Intimates & Sleep > Sleepwear & Robes",
+      "shopifyCategoryId": "aa-1-17-4",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Sleepwear & Loungewear > Pajamas",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "163586",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Clothing > Intimates & Sleep > Garter Belts",
+      "shopifyCategoryId": "aa-1-6-8-1",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Lingerie > Lingerie Accessories > Garter Belts",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "163593",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Clothing > Intimates & Sleep > Bra Accessories",
+      "shopifyCategoryId": "aa-1-6-2-1",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Lingerie > Bra Accessories > Bra Strap Pads",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "3003",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Accessories > Belts",
+      "shopifyCategoryId": "aa-2-6",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Belts",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "15735",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Accessories > Organizers & Day Planners",
+      "shopifyCategoryId": "os-3-5-2",
+      "shopifyFullName": "Office Supplies > Filing & Organization > Calendars, Organizers & Planners > Organizers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "15738",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Accessories > Accessory Sets",
+      "shopifyCategoryId": "aa-6-7",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Jewelry Sets",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "45220",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Accessories > Hair Accessories",
+      "shopifyCategoryId": "aa-2-14-13",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Hair Accessories > Hair Bands",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "45230",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Accessories > Hats",
+      "shopifyCategoryId": "aa-2-17-11",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Hats > Sun Hats",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "45237",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Accessories > Key Chains, Rings & Finders",
+      "shopifyCategoryId": "aa-4-1",
+      "shopifyFullName": "Apparel & Accessories > Handbag & Wallet Accessories > Keychains",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "45238",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Accessories > Scarves & Wraps",
+      "shopifyCategoryId": "aa-2-26",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Scarves & Shawls",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "45258",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Accessories > Wallets",
+      "shopifyCategoryId": "aa-5-5-7",
+      "shopifyFullName": "Apparel & Accessories > Handbags, Wallets & Cases > Wallets & Money Clips > Wallets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "105559",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Accessories > Gloves & Mittens",
+      "shopifyCategoryId": "aa-2-13",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Gloves & Mittens",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "105569",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Accessories > Umbrellas",
+      "shopifyCategoryId": "hg-10-16-9-2-1",
+      "shopifyFullName": "Home & Garden > Household Supplies > Storage & Organization > Storage Hooks & Racks > Umbrella Stands & Racks > Umbrella Racks",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "150955",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Accessories > Shoe Charms & Jewelry",
+      "shopifyCategoryId": "aa-6-5",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Charms & Pendants",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "151486",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Accessories > Ties",
+      "shopifyCategoryId": "aa-2-23",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Neckties",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "163570",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Accessories > Handbag Accessories",
+      "shopifyCategoryId": "aa-4-1",
+      "shopifyFullName": "Apparel & Accessories > Handbag & Wallet Accessories > Keychains",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "163573",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Accessories > Belt Buckles",
+      "shopifyCategoryId": "aa-2-5",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Belt Buckles",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "168998",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Accessories > Fascinators & Headpieces",
+      "shopifyCategoryId": "aa-2-18-1",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Headwear > Fascinators",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "169285",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Accessories > ID & Document Holders",
+      "shopifyCategoryId": "aa-5-1",
+      "shopifyFullName": "Apparel & Accessories > Handbags, Wallets & Cases > Badge & Pass Holders",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179247",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Accessories > Sunglasses & Sunglasses Accessories",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "45246",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Accessories > Sunglasses & Sunglasses Accessories > Sunglasses",
+      "shopifyCategoryId": "aa-2-27",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Sunglasses",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179196",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Accessories > Sunglasses & Sunglasses Accessories > Replacement Lenses & Parts",
+      "shopifyCategoryId": "hb-3-12-10-2",
+      "shopifyFullName": "Health & Beauty > Personal Care > Oral Care > Gum Stimulators > Manual Gum Stimulators",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179249",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Accessories > Sunglasses & Sunglasses Accessories > Accessories",
+      "shopifyCategoryId": "hb-3-19-5-1-1",
+      "shopifyFullName": "Health & Beauty > Personal Care > Vision Care > Eyewear Accessories > Eyewear Cases & Holders > Eyewear Cases",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "11632",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Shoes > Slippers",
+      "shopifyCategoryId": "aa-8-7",
+      "shopifyFullName": "Apparel & Accessories > Shoes > Slippers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "45333",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Shoes > Flats",
+      "shopifyCategoryId": "aa-8-9",
+      "shopifyFullName": "Apparel & Accessories > Shoes > Flats",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "53548",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Shoes > Comfort Shoes",
+      "shopifyCategoryId": "aa-8-1",
+      "shopifyFullName": "Apparel & Accessories > Shoes > Athletic Shoes",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "53557",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Shoes > Boots",
+      "shopifyCategoryId": "aa-8-3",
+      "shopifyFullName": "Apparel & Accessories > Shoes > Boots",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "55793",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Shoes > Heels",
+      "shopifyCategoryId": "aa-8-10",
+      "shopifyFullName": "Apparel & Accessories > Shoes > Heels",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "62107",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Shoes > Sandals",
+      "shopifyCategoryId": "aa-8-6",
+      "shopifyFullName": "Apparel & Accessories > Shoes > Sandals",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "95672",
+      "ebayFullName": "Clothing, Shoes & Accessories > Women > Women's Shoes > Athletic Shoes",
+      "shopifyCategoryId": "aa-8-1",
+      "shopifyFullName": "Apparel & Accessories > Shoes > Athletic Shoes",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260013",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Boys",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "260015",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Girls",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "260017",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Unisex Kids",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "260988",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Backpacks & Bags",
+      "shopifyCategoryId": "aa-5-4-17",
+      "shopifyFullName": "Apparel & Accessories > Handbags, Wallets & Cases > Handbags > School Bags",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "155198",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Unisex Kids > Unisex Kids' Clothing (Sizes 4 & Up)",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "155202",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Unisex Kids > Unisex Kids' Shoes",
+      "shopifyCategoryId": "aa-8-11-5",
+      "shopifyFullName": "Apparel & Accessories > Shoes > Baby & Children's Shoes > Baby & Children's Sneakers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "155199",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Unisex Kids > Unisex Kids' Clothing (Sizes 4 & Up) > Tops & T-Shirts",
+      "shopifyCategoryId": "aa-1-25-9-7",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Tops > T-Shirts",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "155200",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Unisex Kids > Unisex Kids' Clothing (Sizes 4 & Up) > Sweatshirts & Hoodies",
+      "shopifyCategoryId": "aa-1-25-9-13",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Tops > Sweatshirts",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "155201",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Unisex Kids > Unisex Kids' Clothing (Sizes 4 & Up) > Outerwear",
+      "shopifyCategoryId": "aa-1-25-4-17-12",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Outerwear > Baby & Children's Coats & Jackets > Track Jackets",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175652",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Unisex Kids > Unisex Kids' Clothing (Sizes 4 & Up) > Uniforms",
+      "shopifyCategoryId": "aa-1-24-5",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Uniforms & Workwear > School Uniforms",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175653",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Unisex Kids > Unisex Kids' Clothing (Sizes 4 & Up) > Swimwear",
+      "shopifyCategoryId": "aa-1-25-8-22",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Swimwear > One-Piece Swimsuits",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175654",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Unisex Kids > Unisex Kids' Clothing (Sizes 4 & Up) > Pants",
+      "shopifyCategoryId": "aa-1-25-1-4",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Bottoms > Jeans",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175655",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Unisex Kids > Unisex Kids' Clothing (Sizes 4 & Up) > Shorts",
+      "shopifyCategoryId": "aa-1-14-5",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Shorts > Denim Shorts",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175656",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Unisex Kids > Unisex Kids' Clothing (Sizes 4 & Up) > Sleepwear",
+      "shopifyCategoryId": "aa-1-25-6",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Sleepwear",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175657",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Unisex Kids > Unisex Kids' Clothing (Sizes 4 & Up) > Sweaters",
+      "shopifyCategoryId": "aa-1-25-9-12",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Tops > Sweaters",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175658",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Unisex Kids > Unisex Kids' Clothing (Sizes 4 & Up) > Jeans",
+      "shopifyCategoryId": "aa-1-25-1-4",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Bottoms > Jeans",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175697",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Unisex Kids > Unisex Kids' Clothing (Sizes 4 & Up) > Socks",
+      "shopifyCategoryId": "aa-1-25-7",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Socks & Tights",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260981",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Unisex Kids > Unisex Kids' Clothing (Sizes 4 & Up) > Activewear",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "260982",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Unisex Kids > Unisex Kids' Clothing (Sizes 4 & Up) > Activewear > Activewear Jackets",
+      "shopifyCategoryId": "aa-1-25-4-17-12",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Outerwear > Baby & Children's Coats & Jackets > Track Jackets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260983",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Unisex Kids > Unisex Kids' Clothing (Sizes 4 & Up) > Activewear > Activewear Pants",
+      "shopifyCategoryId": "aa-1-25-1-8",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Bottoms > Leggings",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260984",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Unisex Kids > Unisex Kids' Clothing (Sizes 4 & Up) > Activewear > Activewear Shorts",
+      "shopifyCategoryId": "aa-1-17-2-1-4",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Sleepwear & Loungewear > Loungewear > Loungewear Bottoms > Shorts",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260985",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Unisex Kids > Unisex Kids' Clothing (Sizes 4 & Up) > Activewear > Activewear Tops",
+      "shopifyCategoryId": "aa-1-25-9-7",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Tops > T-Shirts",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260986",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Unisex Kids > Unisex Kids' Clothing (Sizes 4 & Up) > Activewear > Hoodies & Sweatshirts",
+      "shopifyCategoryId": "aa-1-25-9-11",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Tops > Hoodies",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260987",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Unisex Kids > Unisex Kids' Clothing (Sizes 4 & Up) > Activewear > Tracksuits & Sets",
+      "shopifyCategoryId": "aa-1-25-1-7",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Bottoms > Joggers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "11462",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Girls > Girls' Clothing (Sizes 4 & Up)",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "15628",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Girls > Girls' Accessories",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "57974",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Girls > Girls' Shoes",
+      "shopifyCategoryId": "aa-8-11-5",
+      "shopifyFullName": "Apparel & Accessories > Shoes > Baby & Children's Shoes > Baby & Children's Sneakers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "15629",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Girls > Girls' Accessories > Wallets",
+      "shopifyCategoryId": "aa-5-5-7",
+      "shopifyFullName": "Apparel & Accessories > Handbags, Wallets & Cases > Wallets & Money Clips > Wallets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "15630",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Girls > Girls' Accessories > Hats",
+      "shopifyCategoryId": "aa-2-33-3",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Baby & Children's Clothing Accessories > Baby & Children's Hats",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "57918",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Girls > Girls' Accessories > Belts & Belt Buckles",
+      "shopifyCategoryId": "aa-2-6",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Belts",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "57919",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Girls > Girls' Accessories > Gloves & Mittens",
+      "shopifyCategoryId": "aa-2-33-2",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Baby & Children's Clothing Accessories > Baby & Children's Gloves & Mittens",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "57920",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Girls > Girls' Accessories > Hair Accessories",
+      "shopifyCategoryId": "aa-2-14-13",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Hair Accessories > Hair Bands",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "57927",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Girls > Girls' Accessories > Scarves & Wraps",
+      "shopifyCategoryId": "aa-2-26",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Scarves & Shawls",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "122340",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Girls > Girls' Accessories > Sunglasses",
+      "shopifyCategoryId": "aa-2-27",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Sunglasses",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "122341",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Girls > Girls' Accessories > Umbrellas",
+      "shopifyCategoryId": "hg-10-16-9-2-1",
+      "shopifyFullName": "Home & Garden > Household Supplies > Storage & Organization > Storage Hooks & Racks > Umbrella Stands & Racks > Umbrella Racks",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "150956",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Girls > Girls' Accessories > Shoe Charms & Jewelry",
+      "shopifyCategoryId": "aa-6-5",
+      "shopifyFullName": "Apparel & Accessories > Jewelry > Charms & Pendants",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175527",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Girls > Girls' Accessories > Key Chains",
+      "shopifyCategoryId": "aa-4-1",
+      "shopifyFullName": "Apparel & Accessories > Handbag & Wallet Accessories > Keychains",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260016",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Girls > Girls' Accessories > Accessory Sets",
+      "shopifyCategoryId": "aa-3-1",
+      "shopifyFullName": "Apparel & Accessories > Costumes & Accessories > Costume Accessories",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "15648",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Girls > Girls' Clothing (Sizes 4 & Up) > Shorts",
+      "shopifyCategoryId": "aa-1-14-1",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Shorts > Bermudas",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "28017",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Girls > Girls' Clothing (Sizes 4 & Up) > Uniforms",
+      "shopifyCategoryId": "aa-1-24-5",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Uniforms & Workwear > School Uniforms",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "51567",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Girls > Girls' Clothing (Sizes 4 & Up) > Swimwear",
+      "shopifyCategoryId": "aa-1-20-22",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Swimwear > One-Piece Swimsuits",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "51568",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Girls > Girls' Clothing (Sizes 4 & Up) > Pants",
+      "shopifyCategoryId": "aa-1-12-2",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Pants > Cargo Pants",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "51580",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Girls > Girls' Clothing (Sizes 4 & Up) > Outerwear",
+      "shopifyCategoryId": "aa-1-10-2-1",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Outerwear > Coats & Jackets > Bolero Jackets",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "51581",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Girls > Girls' Clothing (Sizes 4 & Up) > Dresses",
+      "shopifyCategoryId": "aa-1-4",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Dresses",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "51582",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Girls > Girls' Clothing (Sizes 4 & Up) > Sweaters",
+      "shopifyCategoryId": "aa-1-13-12",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Clothing Tops > Sweaters",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "51583",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Girls > Girls' Clothing (Sizes 4 & Up) > Skirts & Skorts",
+      "shopifyCategoryId": "aa-1-15",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Skirts",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "51586",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Girls > Girls' Clothing (Sizes 4 & Up) > Underwear",
+      "shopifyCategoryId": "aa-1-25-11-2-1",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Underwear > Girls' Underwear > Girls' Long Johns",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "77411",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Girls > Girls' Clothing (Sizes 4 & Up) > Jeans",
+      "shopifyCategoryId": "aa-1-12-4",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Pants > Jeans",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "99735",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Girls > Girls' Clothing (Sizes 4 & Up) > Sleepwear",
+      "shopifyCategoryId": "aa-1-17-4",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Sleepwear & Loungewear > Pajamas",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "152554",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Girls > Girls' Clothing (Sizes 4 & Up) > Sweatshirts & Hoodies",
+      "shopifyCategoryId": "aa-1-13-14",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Clothing Tops > Sweatshirts",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "152719",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Girls > Girls' Clothing (Sizes 4 & Up) > Leggings",
+      "shopifyCategoryId": "aa-1-12-8",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Pants > Leggings",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "153797",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Girls > Girls' Clothing (Sizes 4 & Up) > Socks & Tights",
+      "shopifyCategoryId": "aa-1-25-7",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Socks & Tights",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "156801",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Girls > Girls' Clothing (Sizes 4 & Up) > Outfits & Sets",
+      "shopifyCategoryId": "aa-1-11",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Outfit Sets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175528",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Girls > Girls' Clothing (Sizes 4 & Up) > Jumpsuits & Rompers",
+      "shopifyCategoryId": "aa-1-25-10",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's One-Pieces",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260965",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Girls > Girls' Clothing (Sizes 4 & Up) > Tops, Shirts & T-Shirts",
+      "shopifyCategoryId": "aa-1-13-7",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Clothing Tops > Shirts",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260974",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Girls > Girls' Clothing (Sizes 4 & Up) > Activewear",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "260975",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Girls > Girls' Clothing (Sizes 4 & Up) > Activewear > Activewear Jackets",
+      "shopifyCategoryId": "aa-1-1-8-2",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Activewear > Activewear Vests & Jackets > Jackets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260976",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Girls > Girls' Clothing (Sizes 4 & Up) > Activewear > Activewear Pants",
+      "shopifyCategoryId": "aa-1-25-1-8",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Bottoms > Leggings",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260977",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Girls > Girls' Clothing (Sizes 4 & Up) > Activewear > Activewear Shorts",
+      "shopifyCategoryId": "aa-1-14-8",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Shorts > Legging Shorts",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260978",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Girls > Girls' Clothing (Sizes 4 & Up) > Activewear > Activewear Tops",
+      "shopifyCategoryId": "aa-1-1-2-2",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Activewear > Activewear Tops > T-Shirts",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260979",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Girls > Girls' Clothing (Sizes 4 & Up) > Activewear > Hoodies & Sweatshirts",
+      "shopifyCategoryId": "aa-1-1-7-2",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Activewear > Activewear Sweatshirts & Hoodies > Hoodies",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260980",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Girls > Girls' Clothing (Sizes 4 & Up) > Activewear > Tracksuits & Sets",
+      "shopifyCategoryId": "aa-1-11",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Outfit Sets",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "261047",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Girls > Girls' Clothing (Sizes 4 & Up) > Activewear > Activewear Skirts & Skorts",
+      "shopifyCategoryId": "aa-1-16",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Skorts",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "11452",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Boys > Boys' Clothing (Sizes 4 & Up)",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "57881",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Boys > Boys' Accessories",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "57929",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Boys > Boys' Shoes",
+      "shopifyCategoryId": "aa-8-1",
+      "shopifyFullName": "Apparel & Accessories > Shoes > Athletic Shoes",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "57883",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Boys > Boys' Accessories > Belts & Belt Buckles",
+      "shopifyCategoryId": "aa-2-6",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Belts",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "57884",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Boys > Boys' Accessories > Hats",
+      "shopifyCategoryId": "aa-2-33-3",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Baby & Children's Clothing Accessories > Baby & Children's Hats",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "57885",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Boys > Boys' Accessories > Gloves & Mittens",
+      "shopifyCategoryId": "aa-2-33-2",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Baby & Children's Clothing Accessories > Baby & Children's Gloves & Mittens",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "57886",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Boys > Boys' Accessories > Ties",
+      "shopifyCategoryId": "aa-2-23",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Neckties",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "57887",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Boys > Boys' Accessories > Wallets",
+      "shopifyCategoryId": "aa-5-5-7",
+      "shopifyFullName": "Apparel & Accessories > Handbags, Wallets & Cases > Wallets & Money Clips > Wallets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "122320",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Boys > Boys' Accessories > Suspenders",
+      "shopifyCategoryId": "aa-2-28",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Suspenders",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "122321",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Boys > Boys' Accessories > Scarves",
+      "shopifyCategoryId": "aa-2-26",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Scarves & Shawls",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "131411",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Boys > Boys' Accessories > Sunglasses",
+      "shopifyCategoryId": "aa-2-27",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Sunglasses",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175524",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Boys > Boys' Accessories > Key Chains",
+      "shopifyCategoryId": "aa-4-1",
+      "shopifyFullName": "Apparel & Accessories > Handbag & Wallet Accessories > Keychains",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175525",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Boys > Boys' Accessories > Umbrellas",
+      "shopifyCategoryId": "hg-10-16-9-2-1",
+      "shopifyFullName": "Home & Garden > Household Supplies > Storage & Organization > Storage Hooks & Racks > Umbrella Stands & Racks > Umbrella Racks",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260014",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Boys > Boys' Accessories > Accessory Sets",
+      "shopifyCategoryId": "aa-3-1",
+      "shopifyFullName": "Apparel & Accessories > Costumes & Accessories > Costume Accessories",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "15615",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Boys > Boys' Clothing (Sizes 4 & Up) > Shorts",
+      "shopifyCategoryId": "aa-1-14-1",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Shorts > Bermudas",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "28016",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Boys > Boys' Clothing (Sizes 4 & Up) > Uniforms",
+      "shopifyCategoryId": "aa-1-24-5",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Uniforms & Workwear > School Uniforms",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "51919",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Boys > Boys' Clothing (Sizes 4 & Up) > Swimwear",
+      "shopifyCategoryId": "aa-1-20-2",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Swimwear > Boardshorts",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "51920",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Boys > Boys' Clothing (Sizes 4 & Up) > Pants",
+      "shopifyCategoryId": "aa-1-12-2",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Pants > Cargo Pants",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "51933",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Boys > Boys' Clothing (Sizes 4 & Up) > Outerwear",
+      "shopifyCategoryId": "aa-1-10-2-1",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Outerwear > Coats & Jackets > Bolero Jackets",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "51946",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Boys > Boys' Clothing (Sizes 4 & Up) > Sweaters",
+      "shopifyCategoryId": "aa-1-13-12",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Clothing Tops > Sweaters",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "51973",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Boys > Boys' Clothing (Sizes 4 & Up) > Underwear",
+      "shopifyCategoryId": "aa-1-25-11-3-1",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Underwear > Boys' Underwear > Boys' Long Johns",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "57916",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Boys > Boys' Clothing (Sizes 4 & Up) > Sweatshirts & Hoodies",
+      "shopifyCategoryId": "aa-1-13-14",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Clothing Tops > Sweatshirts",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "77475",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Boys > Boys' Clothing (Sizes 4 & Up) > Jeans",
+      "shopifyCategoryId": "aa-1-12-4",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Pants > Jeans",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "84544",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Boys > Boys' Clothing (Sizes 4 & Up) > Sleepwear",
+      "shopifyCategoryId": "aa-1-17-4",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Sleepwear & Loungewear > Pajamas",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "99754",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Boys > Boys' Clothing (Sizes 4 & Up) > Suits",
+      "shopifyCategoryId": "aa-1-19-3",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Suits > Tuxedos",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "153564",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Boys > Boys' Clothing (Sizes 4 & Up) > Socks",
+      "shopifyCategoryId": "aa-1-18-1",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Socks > Ankle Socks",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "156790",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Boys > Boys' Clothing (Sizes 4 & Up) > Outfits & Sets",
+      "shopifyCategoryId": "aa-1-11",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Outfit Sets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260966",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Boys > Boys' Clothing (Sizes 4 & Up) > Tops, Shirts & T-Shirts",
+      "shopifyCategoryId": "aa-1-13-7",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Clothing Tops > Shirts",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260967",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Boys > Boys' Clothing (Sizes 4 & Up) > Activewear",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "260968",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Boys > Boys' Clothing (Sizes 4 & Up) > Activewear > Activewear Jackets",
+      "shopifyCategoryId": "aa-1-1-8-2",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Activewear > Activewear Vests & Jackets > Jackets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260969",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Boys > Boys' Clothing (Sizes 4 & Up) > Activewear > Activewear Pants",
+      "shopifyCategoryId": "aa-1-25-1-8",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Baby & Children's Clothing > Baby & Children's Bottoms > Leggings",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260970",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Boys > Boys' Clothing (Sizes 4 & Up) > Activewear > Activewear Shorts",
+      "shopifyCategoryId": "aa-1-14-8",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Shorts > Legging Shorts",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260971",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Boys > Boys' Clothing (Sizes 4 & Up) > Activewear > Activewear Tops",
+      "shopifyCategoryId": "aa-1-1-2-2",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Activewear > Activewear Tops > T-Shirts",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260972",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Boys > Boys' Clothing (Sizes 4 & Up) > Activewear > Hoodies & Sweatshirts",
+      "shopifyCategoryId": "aa-1-1-7-2",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Activewear > Activewear Sweatshirts & Hoodies > Hoodies",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260973",
+      "ebayFullName": "Clothing, Shoes & Accessories > Kids > Boys > Boys' Clothing (Sizes 4 & Up) > Activewear > Tracksuits & Sets",
+      "shopifyCategoryId": "aa-1-11",
+      "shopifyFullName": "Apparel & Accessories > Clothing > Outfit Sets",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "version": "2026-05-unstable",
+  "categories": [
+    {
+      "id": "pa",
+      "level": 0,
+      "name": "Product Add-Ons",
+      "full_name": "Product Add-Ons",
+      "parent_id": null,
+      "children": [
+        {
+          "id": "pa-1",
+          "name": "Extended Warranties"
+        },
+        {
+          "id": "pa-2",
+          "name": "Installation Services"
+        },
+        {
+          "id": "pa-3",
+          "name": "Maintenance Plans"
+        },
+        {
+          "id": "pa-4",
+          "name": "Product Customization"
+        },
+        {
+          "id": "pa-5",
+          "name": "Product Upgrades"
+        },
+        {
+          "id": "pa-6",
+          "name": "Shipping Insurance"
+        },
+        {
+          "id": "pa-7",
+          "name": "Subscription Services"
+        }
+      ]
+    },
+    {
+      "id": "pa-1",
+      "level": 1,
+      "name": "Extended Warranties",
+      "full_name": "Product Add-Ons > Extended Warranties",
+      "parent_id": "pa",
+      "children": []
+    },
+    {
+      "id": "pa-2",
+      "level": 1,
+      "name": "Installation Services",
+      "full_name": "Product Add-Ons > Installation Services",
+      "parent_id": "pa",
+      "children": []
+    },
+    {
+      "id": "pa-3",
+      "level": 1,
+      "name": "Maintenance Plans",
+      "full_name": "Product Add-Ons > Maintenance Plans",
+      "parent_id": "pa",
+      "children": []
+    },
+    {
+      "id": "pa-4",
+      "level": 1,
+      "name": "Product Customization",
+      "full_name": "Product Add-Ons > Product Customization",
+      "parent_id": "pa",
+      "children": []
+    },
+    {
+      "id": "pa-5",
+      "level": 1,
+      "name": "Product Upgrades",
+      "full_name": "Product Add-Ons > Product Upgrades",
+      "parent_id": "pa",
+      "children": []
+    },
+    {
+      "id": "pa-6",
+      "level": 1,
+      "name": "Shipping Insurance",
+      "full_name": "Product Add-Ons > Shipping Insurance",
+      "parent_id": "pa",
+      "children": []
+    },
+    {
+      "id": "pa-7",
+      "level": 1,
+      "name": "Subscription Services",
+      "full_name": "Product Add-Ons > Subscription Services",
+      "parent_id": "pa",
+      "children": []
+    }
+  ]
+}

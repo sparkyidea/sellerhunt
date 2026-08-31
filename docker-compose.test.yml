@@ -1,0 +1,33 @@
+name: dashseller-test
+
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: dashseller
+      POSTGRES_PASSWORD: dashseller
+      POSTGRES_DB: dashseller_test
+    ports:
+      - "54329:5432"
+    # Ephemeral by design — every `up` starts from an empty cluster and the
+    # test migration runner rebuilds the schema.
+    tmpfs:
+      - /var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U dashseller -d dashseller_test"]
+      interval: 2s
+      timeout: 3s
+      retries: 15
+
+  redis:
+    image: redis:7-alpine
+    # Mirrors the production requirements for BullMQ: eviction would silently
+    # drop jobs, so tests run against the same noeviction + AOF configuration.
+    command: redis-server --maxmemory-policy noeviction --appendonly yes
+    ports:
+      - "63799:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 2s
+      timeout: 3s
+      retries: 15

@@ -1,0 +1,65 @@
+{
+  "ebayCategory": "Real Estate",
+  "shopifyCategories": ["Uncategorized"],
+  "totalMapped": 7,
+  "highConfidence": 6,
+  "lowConfidence": 0,
+  "mappings": [
+    {
+      "ebayId": "10542",
+      "ebayFullName": "Real Estate",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "1607",
+      "ebayFullName": "Real Estate > Other Real Estate",
+      "shopifyCategoryId": "se-7-6",
+      "shopifyFullName": "Services > Professional Services > Real Estate",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "12605",
+      "ebayFullName": "Real Estate > Residential",
+      "shopifyCategoryId": "se-7-6",
+      "shopifyFullName": "Services > Professional Services > Real Estate",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "15825",
+      "ebayFullName": "Real Estate > Commercial",
+      "shopifyCategoryId": "se-2-1",
+      "shopifyFullName": "Services > Building & Construction Services > Commercial Construction",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "15841",
+      "ebayFullName": "Real Estate > Land",
+      "shopifyCategoryId": "se-7-6",
+      "shopifyFullName": "Services > Professional Services > Real Estate",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "15897",
+      "ebayFullName": "Real Estate > Timeshares for Sale",
+      "shopifyCategoryId": "se-7-6",
+      "shopifyFullName": "Services > Professional Services > Real Estate",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "94825",
+      "ebayFullName": "Real Estate > Manufactured Homes",
+      "shopifyCategoryId": "se-7-6",
+      "shopifyFullName": "Services > Professional Services > Real Estate",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini-retry"
+    }
+  ]
+}

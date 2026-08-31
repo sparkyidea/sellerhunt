@@ -1,0 +1,30 @@
+{
+  "name": "@dashseller/env",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./server": "./src/server.ts",
+    "./marketplace": "./src/marketplace.ts",
+    "./db": "./src/db.ts",
+    "./geo": "./src/geo.ts",
+    "./tracking": "./src/tracking.ts",
+    "./trigger-sync": "./src/trigger-sync.ts",
+    "./trigger-scan": "./src/trigger-scan.ts",
+    "./web": "./src/web.ts",
+    "./app": "./src/app.ts",
+    "./worker": "./src/worker.ts"
+  },
+  "scripts": {
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@t3-oss/env-core": "catalog:",
+    "@t3-oss/env-nextjs": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@dashseller/config": "workspace:*",
+    "typescript": "catalog:"
+  }
+}

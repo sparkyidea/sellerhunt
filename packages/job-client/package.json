@@ -1,0 +1,23 @@
+{
+  "name": "@dashseller/job-client",
+  "type": "module",
+  "exports": {
+    ".": {
+      "default": "./src/index.ts"
+    },
+    "./*": {
+      "default": "./src/*.ts"
+    }
+  },
+  "scripts": {
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "bullmq": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@dashseller/config": "workspace:*",
+    "typescript": "catalog:"
+  }
+}

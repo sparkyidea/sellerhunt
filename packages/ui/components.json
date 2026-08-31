@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "style": "base-nova",
+  "rsc": true,
+  "tsx": true,
+  "tailwind": {
+    "config": "",
+    "css": "src/styles/globals.css",
+    "baseColor": "neutral",
+    "cssVariables": true,
+    "prefix": ""
+  },
+  "iconLibrary": "lucide",
+  "rtl": false,
+  "menuColor": "default",
+  "menuAccent": "subtle",
+  "aliases": {
+    "components": "@sparkyidea/ui/components",
+    "utils": "@sparkyidea/ui/lib/utils",
+    "ui": "@sparkyidea/ui/components",
+    "lib": "@sparkyidea/ui/lib",
+    "hooks": "@sparkyidea/ui/hooks"
+  },
+  "registries": {
+    "@mapcn": "https://mapcn.dev/r/{name}.json"
+  }
+}

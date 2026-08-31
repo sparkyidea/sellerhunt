@@ -1,0 +1,136 @@
+version: 2
+updates:
+  # GitHub Actions
+  - package-ecosystem: "github-actions"
+    directories:
+      - "/"
+      - "/.github/actions/*"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "07:00"
+      timezone: "America/New_York"
+    open-pull-requests-limit: 10
+    commit-message:
+      prefix: "chore(ci)"
+    labels:
+      - "area: github actions"
+      - "status: ready"
+
+  # NPM dependencies
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    open-pull-requests-limit: 10
+    commit-message:
+      prefix: "chore(deps)"
+    labels:
+      - "change: deps"
+      - "status: ready"
+    groups:
+      # Core frameworks
+      react:
+        patterns:
+          - "react"
+          - "react-dom"
+          - "@types/react"
+          - "@types/react-dom"
+      next:
+        patterns:
+          - "next"
+          - "@next/*"
+          - "next-themes"
+
+      # Data layer
+      tanstack:
+        patterns:
+          - "@tanstack/*"
+      trpc:
+        patterns:
+          - "@trpc/*"
+          - "@hono/trpc-server"
+      drizzle:
+        patterns:
+          - "drizzle-kit"
+          - "drizzle-orm"
+
+      # UI libraries
+      base-ui:
+        patterns:
+          - "@base-ui/*"
+      radix-ui:
+        # Transitive deps from cmdk, vaul
+        patterns:
+          - "@radix-ui/*"
+      dnd-kit:
+        patterns:
+          - "@dnd-kit/*"
+      shadcn-ui:
+        # Components installed via shadcn
+        patterns:
+          - "shadcn"
+          - "cmdk"
+          - "vaul"
+          - "sonner"
+          - "input-otp"
+      embla:
+        patterns:
+          - "embla-carousel-*"
+
+      # Styling
+      tailwind:
+        patterns:
+          - "tailwindcss"
+          - "@tailwindcss/*"
+          - "tailwind-merge"
+          - "tw-animate-css"
+
+      # Backend/Server
+      hono:
+        patterns:
+          - "hono"
+      pino:
+        patterns:
+          - "pino"
+          - "pino-pretty"
+
+      # Forms
+      react-hook-form:
+        patterns:
+          - "react-hook-form"
+          - "@hookform/*"
+
+      # Build tools
+      turbo:
+        patterns:
+          - "turbo"
+          - "@turbo/*"
+      biome:
+        patterns:
+          - "@biomejs/*"
+          - "ultracite"
+      typescript:
+        patterns:
+          - "typescript"
+
+      # Type definitions
+      types:
+        patterns:
+          - "@types/*"
+
+      # Testing
+      playwright:
+        patterns:
+          - "playwright"
+          - "@playwright/*"
+
+      # Utilities
+      t3-oss:
+        patterns:
+          - "@t3-oss/*"
+      ffmpeg:
+        patterns:
+          - "@ffmpeg-installer/*"
+          - "fluent-ffmpeg"

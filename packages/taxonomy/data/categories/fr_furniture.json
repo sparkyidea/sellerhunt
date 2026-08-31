@@ -1,0 +1,4317 @@
+{
+  "version": "2026-05-unstable",
+  "categories": [
+    {
+      "id": "fr",
+      "level": 0,
+      "name": "Furniture",
+      "full_name": "Furniture",
+      "parent_id": null,
+      "children": [
+        {
+          "id": "fr-1",
+          "name": "Baby & Toddler Furniture"
+        },
+        {
+          "id": "fr-2",
+          "name": "Beds & Accessories"
+        },
+        {
+          "id": "fr-3",
+          "name": "Benches"
+        },
+        {
+          "id": "fr-4",
+          "name": "Cabinets & Storage"
+        },
+        {
+          "id": "fr-5",
+          "name": "Carts & Islands"
+        },
+        {
+          "id": "fr-6",
+          "name": "Chair Accessories"
+        },
+        {
+          "id": "fr-7",
+          "name": "Chairs"
+        },
+        {
+          "id": "fr-8",
+          "name": "Daybeds"
+        },
+        {
+          "id": "fr-9",
+          "name": "Entertainment Centers & TV Stands"
+        },
+        {
+          "id": "fr-10",
+          "name": "Furniture Sets"
+        },
+        {
+          "id": "fr-11",
+          "name": "Futons"
+        },
+        {
+          "id": "fr-12",
+          "name": "Office Furniture"
+        },
+        {
+          "id": "fr-13",
+          "name": "Office Furniture Accessories"
+        },
+        {
+          "id": "fr-14",
+          "name": "Ottomans"
+        },
+        {
+          "id": "fr-15",
+          "name": "Outdoor Furniture"
+        },
+        {
+          "id": "fr-16",
+          "name": "Outdoor Furniture Accessories"
+        },
+        {
+          "id": "fr-17",
+          "name": "Room Divider Accessories"
+        },
+        {
+          "id": "fr-18",
+          "name": "Room Dividers"
+        },
+        {
+          "id": "fr-19",
+          "name": "Shelving"
+        },
+        {
+          "id": "fr-20",
+          "name": "Shelving Accessories"
+        },
+        {
+          "id": "fr-21",
+          "name": "Sofa Accessories"
+        },
+        {
+          "id": "fr-22",
+          "name": "Sofas"
+        },
+        {
+          "id": "fr-23",
+          "name": "Table Accessories"
+        },
+        {
+          "id": "fr-24",
+          "name": "Tables"
+        }
+      ]
+    },
+    {
+      "id": "fr-1",
+      "level": 1,
+      "name": "Baby & Toddler Furniture",
+      "full_name": "Furniture > Baby & Toddler Furniture",
+      "parent_id": "fr",
+      "children": [
+        {
+          "id": "fr-1-1",
+          "name": "Baby & Toddler Furniture Sets"
+        },
+        {
+          "id": "fr-1-2",
+          "name": "Bassinet & Cradle Accessories"
+        },
+        {
+          "id": "fr-1-3",
+          "name": "Bassinets & Cradles"
+        },
+        {
+          "id": "fr-1-4",
+          "name": "Changing Tables"
+        },
+        {
+          "id": "fr-1-5",
+          "name": "Crib & Toddler Bed Accessories"
+        },
+        {
+          "id": "fr-1-6",
+          "name": "Cribs & Toddler Beds"
+        },
+        {
+          "id": "fr-1-7",
+          "name": "High Chair & Booster Seat Accessories"
+        },
+        {
+          "id": "fr-1-8",
+          "name": "High Chairs & Booster Seats"
+        },
+        {
+          "id": "fr-1-9",
+          "name": "Play Sofas"
+        }
+      ]
+    },
+    {
+      "id": "fr-1-1",
+      "level": 2,
+      "name": "Baby & Toddler Furniture Sets",
+      "full_name": "Furniture > Baby & Toddler Furniture > Baby & Toddler Furniture Sets",
+      "parent_id": "fr-1",
+      "children": []
+    },
+    {
+      "id": "fr-1-2",
+      "level": 2,
+      "name": "Bassinet & Cradle Accessories",
+      "full_name": "Furniture > Baby & Toddler Furniture > Bassinet & Cradle Accessories",
+      "parent_id": "fr-1",
+      "children": []
+    },
+    {
+      "id": "fr-1-3",
+      "level": 2,
+      "name": "Bassinets & Cradles",
+      "full_name": "Furniture > Baby & Toddler Furniture > Bassinets & Cradles",
+      "parent_id": "fr-1",
+      "children": [
+        {
+          "id": "fr-1-3-1",
+          "name": "Bassinet Playards"
+        },
+        {
+          "id": "fr-1-3-2",
+          "name": "Bassinets"
+        },
+        {
+          "id": "fr-1-3-3",
+          "name": "Bedside Bassinets"
+        },
+        {
+          "id": "fr-1-3-5",
+          "name": "Convertible Bassinets"
+        },
+        {
+          "id": "fr-1-3-6",
+          "name": "Cradles"
+        },
+        {
+          "id": "fr-1-3-7",
+          "name": "Folding Bassinets"
+        },
+        {
+          "id": "fr-1-3-8",
+          "name": "Hanging Bassinets"
+        },
+        {
+          "id": "fr-1-3-10",
+          "name": "Rocking Bassinets"
+        },
+        {
+          "id": "fr-1-3-11",
+          "name": "Travel Bassinets"
+        }
+      ]
+    },
+    {
+      "id": "fr-1-3-1",
+      "level": 3,
+      "name": "Bassinet Playards",
+      "full_name": "Furniture > Baby & Toddler Furniture > Bassinets & Cradles > Bassinet Playards",
+      "parent_id": "fr-1-3",
+      "children": []
+    },
+    {
+      "id": "fr-1-3-2",
+      "level": 3,
+      "name": "Bassinets",
+      "full_name": "Furniture > Baby & Toddler Furniture > Bassinets & Cradles > Bassinets",
+      "parent_id": "fr-1-3",
+      "children": []
+    },
+    {
+      "id": "fr-1-3-3",
+      "level": 3,
+      "name": "Bedside Bassinets",
+      "full_name": "Furniture > Baby & Toddler Furniture > Bassinets & Cradles > Bedside Bassinets",
+      "parent_id": "fr-1-3",
+      "children": []
+    },
+    {
+      "id": "fr-1-3-5",
+      "level": 3,
+      "name": "Convertible Bassinets",
+      "full_name": "Furniture > Baby & Toddler Furniture > Bassinets & Cradles > Convertible Bassinets",
+      "parent_id": "fr-1-3",
+      "children": []
+    },
+    {
+      "id": "fr-1-3-6",
+      "level": 3,
+      "name": "Cradles",
+      "full_name": "Furniture > Baby & Toddler Furniture > Bassinets & Cradles > Cradles",
+      "parent_id": "fr-1-3",
+      "children": []
+    },
+    {
+      "id": "fr-1-3-7",
+      "level": 3,
+      "name": "Folding Bassinets",
+      "full_name": "Furniture > Baby & Toddler Furniture > Bassinets & Cradles > Folding Bassinets",
+      "parent_id": "fr-1-3",
+      "children": []
+    },
+    {
+      "id": "fr-1-3-8",
+      "level": 3,
+      "name": "Hanging Bassinets",
+      "full_name": "Furniture > Baby & Toddler Furniture > Bassinets & Cradles > Hanging Bassinets",
+      "parent_id": "fr-1-3",
+      "children": []
+    },
+    {
+      "id": "fr-1-3-10",
+      "level": 3,
+      "name": "Rocking Bassinets",
+      "full_name": "Furniture > Baby & Toddler Furniture > Bassinets & Cradles > Rocking Bassinets",
+      "parent_id": "fr-1-3",
+      "children": []
+    },
+    {
+      "id": "fr-1-3-11",
+      "level": 3,
+      "name": "Travel Bassinets",
+      "full_name": "Furniture > Baby & Toddler Furniture > Bassinets & Cradles > Travel Bassinets",
+      "parent_id": "fr-1-3",
+      "children": []
+    },
+    {
+      "id": "fr-1-4",
+      "level": 2,
+      "name": "Changing Tables",
+      "full_name": "Furniture > Baby & Toddler Furniture > Changing Tables",
+      "parent_id": "fr-1",
+      "children": []
+    },
+    {
+      "id": "fr-1-5",
+      "level": 2,
+      "name": "Crib & Toddler Bed Accessories",
+      "full_name": "Furniture > Baby & Toddler Furniture > Crib & Toddler Bed Accessories",
+      "parent_id": "fr-1",
+      "children": [
+        {
+          "id": "fr-1-5-1",
+          "name": "Crib Bumpers & Liners"
+        },
+        {
+          "id": "fr-1-5-2",
+          "name": "Crib Conversion Kits"
+        }
+      ]
+    },
+    {
+      "id": "fr-1-5-1",
+      "level": 3,
+      "name": "Crib Bumpers & Liners",
+      "full_name": "Furniture > Baby & Toddler Furniture > Crib & Toddler Bed Accessories > Crib Bumpers & Liners",
+      "parent_id": "fr-1-5",
+      "children": [
+        {
+          "id": "fr-1-5-1-1",
+          "name": "Crib Liners"
+        },
+        {
+          "id": "fr-1-5-1-2",
+          "name": "Crib Rail Covers"
+        },
+        {
+          "id": "fr-1-5-1-3",
+          "name": "Crib Skirts"
+        },
+        {
+          "id": "fr-1-5-1-4",
+          "name": "Mesh Crib Bumpers"
+        },
+        {
+          "id": "fr-1-5-1-5",
+          "name": "Padded Crib Bumpers"
+        },
+        {
+          "id": "fr-1-5-1-6",
+          "name": "Teething Rail Covers"
+        }
+      ]
+    },
+    {
+      "id": "fr-1-5-1-1",
+      "level": 4,
+      "name": "Crib Liners",
+      "full_name": "Furniture > Baby & Toddler Furniture > Crib & Toddler Bed Accessories > Crib Bumpers & Liners > Crib Liners",
+      "parent_id": "fr-1-5-1",
+      "children": []
+    },
+    {
+      "id": "fr-1-5-1-2",
+      "level": 4,
+      "name": "Crib Rail Covers",
+      "full_name": "Furniture > Baby & Toddler Furniture > Crib & Toddler Bed Accessories > Crib Bumpers & Liners > Crib Rail Covers",
+      "parent_id": "fr-1-5-1",
+      "children": []
+    },
+    {
+      "id": "fr-1-5-1-3",
+      "level": 4,
+      "name": "Crib Skirts",
+      "full_name": "Furniture > Baby & Toddler Furniture > Crib & Toddler Bed Accessories > Crib Bumpers & Liners > Crib Skirts",
+      "parent_id": "fr-1-5-1",
+      "children": []
+    },
+    {
+      "id": "fr-1-5-1-4",
+      "level": 4,
+      "name": "Mesh Crib Bumpers",
+      "full_name": "Furniture > Baby & Toddler Furniture > Crib & Toddler Bed Accessories > Crib Bumpers & Liners > Mesh Crib Bumpers",
+      "parent_id": "fr-1-5-1",
+      "children": []
+    },
+    {
+      "id": "fr-1-5-1-5",
+      "level": 4,
+      "name": "Padded Crib Bumpers",
+      "full_name": "Furniture > Baby & Toddler Furniture > Crib & Toddler Bed Accessories > Crib Bumpers & Liners > Padded Crib Bumpers",
+      "parent_id": "fr-1-5-1",
+      "children": []
+    },
+    {
+      "id": "fr-1-5-1-6",
+      "level": 4,
+      "name": "Teething Rail Covers",
+      "full_name": "Furniture > Baby & Toddler Furniture > Crib & Toddler Bed Accessories > Crib Bumpers & Liners > Teething Rail Covers",
+      "parent_id": "fr-1-5-1",
+      "children": []
+    },
+    {
+      "id": "fr-1-5-2",
+      "level": 3,
+      "name": "Crib Conversion Kits",
+      "full_name": "Furniture > Baby & Toddler Furniture > Crib & Toddler Bed Accessories > Crib Conversion Kits",
+      "parent_id": "fr-1-5",
+      "children": []
+    },
+    {
+      "id": "fr-1-6",
+      "level": 2,
+      "name": "Cribs & Toddler Beds",
+      "full_name": "Furniture > Baby & Toddler Furniture > Cribs & Toddler Beds",
+      "parent_id": "fr-1",
+      "children": [
+        {
+          "id": "fr-1-6-4",
+          "name": "Bunk Toddler Beds"
+        },
+        {
+          "id": "fr-1-6-5",
+          "name": "Canopy Toddler Beds"
+        },
+        {
+          "id": "fr-1-6-6",
+          "name": "Loft Toddler Beds"
+        },
+        {
+          "id": "fr-1-6-7",
+          "name": "Mini Cribs"
+        },
+        {
+          "id": "fr-1-6-9",
+          "name": "Sleigh Toddler Beds"
+        },
+        {
+          "id": "fr-1-6-10",
+          "name": "Standard Cribs"
+        },
+        {
+          "id": "fr-1-6-11",
+          "name": "Toddler Beds"
+        },
+        {
+          "id": "fr-1-6-12",
+          "name": "Travel Cribs"
+        }
+      ]
+    },
+    {
+      "id": "fr-1-6-4",
+      "level": 3,
+      "name": "Bunk Toddler Beds",
+      "full_name": "Furniture > Baby & Toddler Furniture > Cribs & Toddler Beds > Bunk Toddler Beds",
+      "parent_id": "fr-1-6",
+      "children": []
+    },
+    {
+      "id": "fr-1-6-5",
+      "level": 3,
+      "name": "Canopy Toddler Beds",
+      "full_name": "Furniture > Baby & Toddler Furniture > Cribs & Toddler Beds > Canopy Toddler Beds",
+      "parent_id": "fr-1-6",
+      "children": []
+    },
+    {
+      "id": "fr-1-6-6",
+      "level": 3,
+      "name": "Loft Toddler Beds",
+      "full_name": "Furniture > Baby & Toddler Furniture > Cribs & Toddler Beds > Loft Toddler Beds",
+      "parent_id": "fr-1-6",
+      "children": []
+    },
+    {
+      "id": "fr-1-6-7",
+      "level": 3,
+      "name": "Mini Cribs",
+      "full_name": "Furniture > Baby & Toddler Furniture > Cribs & Toddler Beds > Mini Cribs",
+      "parent_id": "fr-1-6",
+      "children": []
+    },
+    {
+      "id": "fr-1-6-9",
+      "level": 3,
+      "name": "Sleigh Toddler Beds",
+      "full_name": "Furniture > Baby & Toddler Furniture > Cribs & Toddler Beds > Sleigh Toddler Beds",
+      "parent_id": "fr-1-6",
+      "children": []
+    },
+    {
+      "id": "fr-1-6-10",
+      "level": 3,
+      "name": "Standard Cribs",
+      "full_name": "Furniture > Baby & Toddler Furniture > Cribs & Toddler Beds > Standard Cribs",
+      "parent_id": "fr-1-6",
+      "children": []
+    },
+    {
+      "id": "fr-1-6-11",
+      "level": 3,
+      "name": "Toddler Beds",
+      "full_name": "Furniture > Baby & Toddler Furniture > Cribs & Toddler Beds > Toddler Beds",
+      "parent_id": "fr-1-6",
+      "children": []
+    },
+    {
+      "id": "fr-1-6-12",
+      "level": 3,
+      "name": "Travel Cribs",
+      "full_name": "Furniture > Baby & Toddler Furniture > Cribs & Toddler Beds > Travel Cribs",
+      "parent_id": "fr-1-6",
+      "children": []
+    },
+    {
+      "id": "fr-1-7",
+      "level": 2,
+      "name": "High Chair & Booster Seat Accessories",
+      "full_name": "Furniture > Baby & Toddler Furniture > High Chair & Booster Seat Accessories",
+      "parent_id": "fr-1",
+      "children": []
+    },
+    {
+      "id": "fr-1-8",
+      "level": 2,
+      "name": "High Chairs & Booster Seats",
+      "full_name": "Furniture > Baby & Toddler Furniture > High Chairs & Booster Seats",
+      "parent_id": "fr-1",
+      "children": [
+        {
+          "id": "fr-1-8-2",
+          "name": "Booster Feeding Seats"
+        },
+        {
+          "id": "fr-1-8-3",
+          "name": "Convertible High Chairs"
+        },
+        {
+          "id": "fr-1-8-4",
+          "name": "High Chairs"
+        },
+        {
+          "id": "fr-1-8-5",
+          "name": "Hook-On Seats"
+        }
+      ]
+    },
+    {
+      "id": "fr-1-8-2",
+      "level": 3,
+      "name": "Booster Feeding Seats",
+      "full_name": "Furniture > Baby & Toddler Furniture > High Chairs & Booster Seats > Booster Feeding Seats",
+      "parent_id": "fr-1-8",
+      "children": []
+    },
+    {
+      "id": "fr-1-8-3",
+      "level": 3,
+      "name": "Convertible High Chairs",
+      "full_name": "Furniture > Baby & Toddler Furniture > High Chairs & Booster Seats > Convertible High Chairs",
+      "parent_id": "fr-1-8",
+      "children": []
+    },
+    {
+      "id": "fr-1-8-4",
+      "level": 3,
+      "name": "High Chairs",
+      "full_name": "Furniture > Baby & Toddler Furniture > High Chairs & Booster Seats > High Chairs",
+      "parent_id": "fr-1-8",
+      "children": []
+    },
+    {
+      "id": "fr-1-8-5",
+      "level": 3,
+      "name": "Hook-On Seats",
+      "full_name": "Furniture > Baby & Toddler Furniture > High Chairs & Booster Seats > Hook-On Seats",
+      "parent_id": "fr-1-8",
+      "children": []
+    },
+    {
+      "id": "fr-1-9",
+      "level": 2,
+      "name": "Play Sofas",
+      "full_name": "Furniture > Baby & Toddler Furniture > Play Sofas",
+      "parent_id": "fr-1",
+      "children": []
+    },
+    {
+      "id": "fr-2",
+      "level": 1,
+      "name": "Beds & Accessories",
+      "full_name": "Furniture > Beds & Accessories",
+      "parent_id": "fr",
+      "children": [
+        {
+          "id": "fr-2-1",
+          "name": "Bed & Bed Frame Accessories"
+        },
+        {
+          "id": "fr-2-2",
+          "name": "Beds & Bed Frames"
+        },
+        {
+          "id": "fr-2-3",
+          "name": "Footboards"
+        },
+        {
+          "id": "fr-2-4",
+          "name": "Headboards"
+        },
+        {
+          "id": "fr-2-5",
+          "name": "Mattress Foundations"
+        },
+        {
+          "id": "fr-2-6",
+          "name": "Mattresses"
+        }
+      ]
+    },
+    {
+      "id": "fr-2-1",
+      "level": 2,
+      "name": "Bed & Bed Frame Accessories",
+      "full_name": "Furniture > Beds & Accessories > Bed & Bed Frame Accessories",
+      "parent_id": "fr-2",
+      "children": []
+    },
+    {
+      "id": "fr-2-2",
+      "level": 2,
+      "name": "Beds & Bed Frames",
+      "full_name": "Furniture > Beds & Accessories > Beds & Bed Frames",
+      "parent_id": "fr-2",
+      "children": [
+        {
+          "id": "fr-2-2-1",
+          "name": "Air Beds"
+        },
+        {
+          "id": "fr-2-2-2",
+          "name": "Bunk Beds & Bed Frames"
+        },
+        {
+          "id": "fr-2-2-3",
+          "name": "Cabin Beds & Bed Frames"
+        },
+        {
+          "id": "fr-2-2-4",
+          "name": "Canopy Beds & Bed Frames"
+        },
+        {
+          "id": "fr-2-2-5",
+          "name": "Cot Beds & Bed Frames"
+        },
+        {
+          "id": "fr-2-2-6",
+          "name": "Divan Beds & Bed Frames"
+        },
+        {
+          "id": "fr-2-2-7",
+          "name": "Four Posters"
+        },
+        {
+          "id": "fr-2-2-8",
+          "name": "Loft Beds & Bed Frames"
+        },
+        {
+          "id": "fr-2-2-9",
+          "name": "Mid-Century Beds & Bed Frames"
+        },
+        {
+          "id": "fr-2-2-10",
+          "name": "Panel Beds & Bed Frames"
+        },
+        {
+          "id": "fr-2-2-11",
+          "name": "Platform Beds & Bed Frames"
+        },
+        {
+          "id": "fr-2-2-12",
+          "name": "Slat Beds & Bed Frames"
+        },
+        {
+          "id": "fr-2-2-13",
+          "name": "Sleigh Beds & Bed Frames"
+        },
+        {
+          "id": "fr-2-2-14",
+          "name": "Trundle Beds & Bed Frames"
+        },
+        {
+          "id": "fr-2-2-15",
+          "name": "Wall Beds & Bed Frames"
+        },
+        {
+          "id": "fr-2-2-16",
+          "name": "Water Beds"
+        }
+      ]
+    },
+    {
+      "id": "fr-2-2-1",
+      "level": 3,
+      "name": "Air Beds",
+      "full_name": "Furniture > Beds & Accessories > Beds & Bed Frames > Air Beds",
+      "parent_id": "fr-2-2",
+      "children": []
+    },
+    {
+      "id": "fr-2-2-2",
+      "level": 3,
+      "name": "Bunk Beds & Bed Frames",
+      "full_name": "Furniture > Beds & Accessories > Beds & Bed Frames > Bunk Beds & Bed Frames",
+      "parent_id": "fr-2-2",
+      "children": []
+    },
+    {
+      "id": "fr-2-2-3",
+      "level": 3,
+      "name": "Cabin Beds & Bed Frames",
+      "full_name": "Furniture > Beds & Accessories > Beds & Bed Frames > Cabin Beds & Bed Frames",
+      "parent_id": "fr-2-2",
+      "children": []
+    },
+    {
+      "id": "fr-2-2-4",
+      "level": 3,
+      "name": "Canopy Beds & Bed Frames",
+      "full_name": "Furniture > Beds & Accessories > Beds & Bed Frames > Canopy Beds & Bed Frames",
+      "parent_id": "fr-2-2",
+      "children": []
+    },
+    {
+      "id": "fr-2-2-5",
+      "level": 3,
+      "name": "Cot Beds & Bed Frames",
+      "full_name": "Furniture > Beds & Accessories > Beds & Bed Frames > Cot Beds & Bed Frames",
+      "parent_id": "fr-2-2",
+      "children": []
+    },
+    {
+      "id": "fr-2-2-6",
+      "level": 3,
+      "name": "Divan Beds & Bed Frames",
+      "full_name": "Furniture > Beds & Accessories > Beds & Bed Frames > Divan Beds & Bed Frames",
+      "parent_id": "fr-2-2",
+      "children": []
+    },
+    {
+      "id": "fr-2-2-7",
+      "level": 3,
+      "name": "Four Posters",
+      "full_name": "Furniture > Beds & Accessories > Beds & Bed Frames > Four Posters",
+      "parent_id": "fr-2-2",
+      "children": []
+    },
+    {
+      "id": "fr-2-2-8",
+      "level": 3,
+      "name": "Loft Beds & Bed Frames",
+      "full_name": "Furniture > Beds & Accessories > Beds & Bed Frames > Loft Beds & Bed Frames",
+      "parent_id": "fr-2-2",
+      "children": []
+    },
+    {
+      "id": "fr-2-2-9",
+      "level": 3,
+      "name": "Mid-Century Beds & Bed Frames",
+      "full_name": "Furniture > Beds & Accessories > Beds & Bed Frames > Mid-Century Beds & Bed Frames",
+      "parent_id": "fr-2-2",
+      "children": []
+    },
+    {
+      "id": "fr-2-2-10",
+      "level": 3,
+      "name": "Panel Beds & Bed Frames",
+      "full_name": "Furniture > Beds & Accessories > Beds & Bed Frames > Panel Beds & Bed Frames",
+      "parent_id": "fr-2-2",
+      "children": []
+    },
+    {
+      "id": "fr-2-2-11",
+      "level": 3,
+      "name": "Platform Beds & Bed Frames",
+      "full_name": "Furniture > Beds & Accessories > Beds & Bed Frames > Platform Beds & Bed Frames",
+      "parent_id": "fr-2-2",
+      "children": []
+    },
+    {
+      "id": "fr-2-2-12",
+      "level": 3,
+      "name": "Slat Beds & Bed Frames",
+      "full_name": "Furniture > Beds & Accessories > Beds & Bed Frames > Slat Beds & Bed Frames",
+      "parent_id": "fr-2-2",
+      "children": []
+    },
+    {
+      "id": "fr-2-2-13",
+      "level": 3,
+      "name": "Sleigh Beds & Bed Frames",
+      "full_name": "Furniture > Beds & Accessories > Beds & Bed Frames > Sleigh Beds & Bed Frames",
+      "parent_id": "fr-2-2",
+      "children": []
+    },
+    {
+      "id": "fr-2-2-14",
+      "level": 3,
+      "name": "Trundle Beds & Bed Frames",
+      "full_name": "Furniture > Beds & Accessories > Beds & Bed Frames > Trundle Beds & Bed Frames",
+      "parent_id": "fr-2-2",
+      "children": []
+    },
+    {
+      "id": "fr-2-2-15",
+      "level": 3,
+      "name": "Wall Beds & Bed Frames",
+      "full_name": "Furniture > Beds & Accessories > Beds & Bed Frames > Wall Beds & Bed Frames",
+      "parent_id": "fr-2-2",
+      "children": []
+    },
+    {
+      "id": "fr-2-2-16",
+      "level": 3,
+      "name": "Water Beds",
+      "full_name": "Furniture > Beds & Accessories > Beds & Bed Frames > Water Beds",
+      "parent_id": "fr-2-2",
+      "children": []
+    },
+    {
+      "id": "fr-2-3",
+      "level": 2,
+      "name": "Footboards",
+      "full_name": "Furniture > Beds & Accessories > Footboards",
+      "parent_id": "fr-2",
+      "children": []
+    },
+    {
+      "id": "fr-2-4",
+      "level": 2,
+      "name": "Headboards",
+      "full_name": "Furniture > Beds & Accessories > Headboards",
+      "parent_id": "fr-2",
+      "children": []
+    },
+    {
+      "id": "fr-2-5",
+      "level": 2,
+      "name": "Mattress Foundations",
+      "full_name": "Furniture > Beds & Accessories > Mattress Foundations",
+      "parent_id": "fr-2",
+      "children": [
+        {
+          "id": "fr-2-5-1",
+          "name": "Adjustable Bases"
+        },
+        {
+          "id": "fr-2-5-2",
+          "name": "Box Springs"
+        },
+        {
+          "id": "fr-2-5-3",
+          "name": "Bunkie Boards"
+        },
+        {
+          "id": "fr-2-5-4",
+          "name": "Foldable Metal Foundations"
+        },
+        {
+          "id": "fr-2-5-5",
+          "name": "Foundations & Frames-in-One"
+        },
+        {
+          "id": "fr-2-5-7",
+          "name": "Panel Bases"
+        },
+        {
+          "id": "fr-2-5-8",
+          "name": "Platform Bases"
+        }
+      ]
+    },
+    {
+      "id": "fr-2-5-1",
+      "level": 3,
+      "name": "Adjustable Bases",
+      "full_name": "Furniture > Beds & Accessories > Mattress Foundations > Adjustable Bases",
+      "parent_id": "fr-2-5",
+      "children": []
+    },
+    {
+      "id": "fr-2-5-2",
+      "level": 3,
+      "name": "Box Springs",
+      "full_name": "Furniture > Beds & Accessories > Mattress Foundations > Box Springs",
+      "parent_id": "fr-2-5",
+      "children": []
+    },
+    {
+      "id": "fr-2-5-3",
+      "level": 3,
+      "name": "Bunkie Boards",
+      "full_name": "Furniture > Beds & Accessories > Mattress Foundations > Bunkie Boards",
+      "parent_id": "fr-2-5",
+      "children": []
+    },
+    {
+      "id": "fr-2-5-4",
+      "level": 3,
+      "name": "Foldable Metal Foundations",
+      "full_name": "Furniture > Beds & Accessories > Mattress Foundations > Foldable Metal Foundations",
+      "parent_id": "fr-2-5",
+      "children": []
+    },
+    {
+      "id": "fr-2-5-5",
+      "level": 3,
+      "name": "Foundations & Frames-in-One",
+      "full_name": "Furniture > Beds & Accessories > Mattress Foundations > Foundations & Frames-in-One",
+      "parent_id": "fr-2-5",
+      "children": []
+    },
+    {
+      "id": "fr-2-5-7",
+      "level": 3,
+      "name": "Panel Bases",
+      "full_name": "Furniture > Beds & Accessories > Mattress Foundations > Panel Bases",
+      "parent_id": "fr-2-5",
+      "children": []
+    },
+    {
+      "id": "fr-2-5-8",
+      "level": 3,
+      "name": "Platform Bases",
+      "full_name": "Furniture > Beds & Accessories > Mattress Foundations > Platform Bases",
+      "parent_id": "fr-2-5",
+      "children": []
+    },
+    {
+      "id": "fr-2-6",
+      "level": 2,
+      "name": "Mattresses",
+      "full_name": "Furniture > Beds & Accessories > Mattresses",
+      "parent_id": "fr-2",
+      "children": [
+        {
+          "id": "fr-2-6-1",
+          "name": "Gel Foam Mattresses"
+        },
+        {
+          "id": "fr-2-6-2",
+          "name": "High Resilience Foam Mattresses"
+        },
+        {
+          "id": "fr-2-6-3",
+          "name": "Innerspring Mattresses"
+        },
+        {
+          "id": "fr-2-6-4",
+          "name": "Latex Mattresses"
+        },
+        {
+          "id": "fr-2-6-5",
+          "name": "Memory Foam Mattresses"
+        },
+        {
+          "id": "fr-2-6-6",
+          "name": "Rolled Mattresses"
+        },
+        {
+          "id": "fr-2-6-7",
+          "name": "Water Mattresses"
+        }
+      ]
+    },
+    {
+      "id": "fr-2-6-1",
+      "level": 3,
+      "name": "Gel Foam Mattresses",
+      "full_name": "Furniture > Beds & Accessories > Mattresses > Gel Foam Mattresses",
+      "parent_id": "fr-2-6",
+      "children": []
+    },
+    {
+      "id": "fr-2-6-2",
+      "level": 3,
+      "name": "High Resilience Foam Mattresses",
+      "full_name": "Furniture > Beds & Accessories > Mattresses > High Resilience Foam Mattresses",
+      "parent_id": "fr-2-6",
+      "children": []
+    },
+    {
+      "id": "fr-2-6-3",
+      "level": 3,
+      "name": "Innerspring Mattresses",
+      "full_name": "Furniture > Beds & Accessories > Mattresses > Innerspring Mattresses",
+      "parent_id": "fr-2-6",
+      "children": []
+    },
+    {
+      "id": "fr-2-6-4",
+      "level": 3,
+      "name": "Latex Mattresses",
+      "full_name": "Furniture > Beds & Accessories > Mattresses > Latex Mattresses",
+      "parent_id": "fr-2-6",
+      "children": []
+    },
+    {
+      "id": "fr-2-6-5",
+      "level": 3,
+      "name": "Memory Foam Mattresses",
+      "full_name": "Furniture > Beds & Accessories > Mattresses > Memory Foam Mattresses",
+      "parent_id": "fr-2-6",
+      "children": []
+    },
+    {
+      "id": "fr-2-6-6",
+      "level": 3,
+      "name": "Rolled Mattresses",
+      "full_name": "Furniture > Beds & Accessories > Mattresses > Rolled Mattresses",
+      "parent_id": "fr-2-6",
+      "children": []
+    },
+    {
+      "id": "fr-2-6-7",
+      "level": 3,
+      "name": "Water Mattresses",
+      "full_name": "Furniture > Beds & Accessories > Mattresses > Water Mattresses",
+      "parent_id": "fr-2-6",
+      "children": []
+    },
+    {
+      "id": "fr-3",
+      "level": 1,
+      "name": "Benches",
+      "full_name": "Furniture > Benches",
+      "parent_id": "fr",
+      "children": [
+        {
+          "id": "fr-3-1",
+          "name": "Kitchen & Dining Benches"
+        },
+        {
+          "id": "fr-3-2",
+          "name": "Storage & Entryway Benches"
+        },
+        {
+          "id": "fr-3-3",
+          "name": "Vanity Benches"
+        }
+      ]
+    },
+    {
+      "id": "fr-3-1",
+      "level": 2,
+      "name": "Kitchen & Dining Benches",
+      "full_name": "Furniture > Benches > Kitchen & Dining Benches",
+      "parent_id": "fr-3",
+      "children": [
+        {
+          "id": "fr-3-1-1",
+          "name": "Backed Benches"
+        },
+        {
+          "id": "fr-3-1-2",
+          "name": "Backless Benches"
+        },
+        {
+          "id": "fr-3-1-3",
+          "name": "Banquettes"
+        },
+        {
+          "id": "fr-3-1-4",
+          "name": "Booths"
+        },
+        {
+          "id": "fr-3-1-5",
+          "name": "Corner Benches"
+        },
+        {
+          "id": "fr-3-1-6",
+          "name": "Counter Height Benches"
+        },
+        {
+          "id": "fr-3-1-7",
+          "name": "Dining Benches"
+        },
+        {
+          "id": "fr-3-1-8",
+          "name": "Farmhouse Benches"
+        },
+        {
+          "id": "fr-3-1-9",
+          "name": "Kitchen Nook Benches"
+        },
+        {
+          "id": "fr-3-1-10",
+          "name": "L-Shaped Benches"
+        },
+        {
+          "id": "fr-3-1-11",
+          "name": "Saddle Benches"
+        },
+        {
+          "id": "fr-3-1-13",
+          "name": "Storage Benches"
+        },
+        {
+          "id": "fr-3-1-14",
+          "name": "Trestles"
+        },
+        {
+          "id": "fr-3-1-15",
+          "name": "Upholstered Benches"
+        }
+      ]
+    },
+    {
+      "id": "fr-3-1-1",
+      "level": 3,
+      "name": "Backed Benches",
+      "full_name": "Furniture > Benches > Kitchen & Dining Benches > Backed Benches",
+      "parent_id": "fr-3-1",
+      "children": []
+    },
+    {
+      "id": "fr-3-1-2",
+      "level": 3,
+      "name": "Backless Benches",
+      "full_name": "Furniture > Benches > Kitchen & Dining Benches > Backless Benches",
+      "parent_id": "fr-3-1",
+      "children": []
+    },
+    {
+      "id": "fr-3-1-3",
+      "level": 3,
+      "name": "Banquettes",
+      "full_name": "Furniture > Benches > Kitchen & Dining Benches > Banquettes",
+      "parent_id": "fr-3-1",
+      "children": []
+    },
+    {
+      "id": "fr-3-1-4",
+      "level": 3,
+      "name": "Booths",
+      "full_name": "Furniture > Benches > Kitchen & Dining Benches > Booths",
+      "parent_id": "fr-3-1",
+      "children": []
+    },
+    {
+      "id": "fr-3-1-5",
+      "level": 3,
+      "name": "Corner Benches",
+      "full_name": "Furniture > Benches > Kitchen & Dining Benches > Corner Benches",
+      "parent_id": "fr-3-1",
+      "children": []
+    },
+    {
+      "id": "fr-3-1-6",
+      "level": 3,
+      "name": "Counter Height Benches",
+      "full_name": "Furniture > Benches > Kitchen & Dining Benches > Counter Height Benches",
+      "parent_id": "fr-3-1",
+      "children": []
+    },
+    {
+      "id": "fr-3-1-7",
+      "level": 3,
+      "name": "Dining Benches",
+      "full_name": "Furniture > Benches > Kitchen & Dining Benches > Dining Benches",
+      "parent_id": "fr-3-1",
+      "children": []
+    },
+    {
+      "id": "fr-3-1-8",
+      "level": 3,
+      "name": "Farmhouse Benches",
+      "full_name": "Furniture > Benches > Kitchen & Dining Benches > Farmhouse Benches",
+      "parent_id": "fr-3-1",
+      "children": []
+    },
+    {
+      "id": "fr-3-1-9",
+      "level": 3,
+      "name": "Kitchen Nook Benches",
+      "full_name": "Furniture > Benches > Kitchen & Dining Benches > Kitchen Nook Benches",
+      "parent_id": "fr-3-1",
+      "children": []
+    },
+    {
+      "id": "fr-3-1-10",
+      "level": 3,
+      "name": "L-Shaped Benches",
+      "full_name": "Furniture > Benches > Kitchen & Dining Benches > L-Shaped Benches",
+      "parent_id": "fr-3-1",
+      "children": []
+    },
+    {
+      "id": "fr-3-1-11",
+      "level": 3,
+      "name": "Saddle Benches",
+      "full_name": "Furniture > Benches > Kitchen & Dining Benches > Saddle Benches",
+      "parent_id": "fr-3-1",
+      "children": []
+    },
+    {
+      "id": "fr-3-1-13",
+      "level": 3,
+      "name": "Storage Benches",
+      "full_name": "Furniture > Benches > Kitchen & Dining Benches > Storage Benches",
+      "parent_id": "fr-3-1",
+      "children": []
+    },
+    {
+      "id": "fr-3-1-14",
+      "level": 3,
+      "name": "Trestles",
+      "full_name": "Furniture > Benches > Kitchen & Dining Benches > Trestles",
+      "parent_id": "fr-3-1",
+      "children": []
+    },
+    {
+      "id": "fr-3-1-15",
+      "level": 3,
+      "name": "Upholstered Benches",
+      "full_name": "Furniture > Benches > Kitchen & Dining Benches > Upholstered Benches",
+      "parent_id": "fr-3-1",
+      "children": []
+    },
+    {
+      "id": "fr-3-2",
+      "level": 2,
+      "name": "Storage & Entryway Benches",
+      "full_name": "Furniture > Benches > Storage & Entryway Benches",
+      "parent_id": "fr-3",
+      "children": [
+        {
+          "id": "fr-3-2-1",
+          "name": "Basket Benches"
+        },
+        {
+          "id": "fr-3-2-2",
+          "name": "Coat Racks"
+        },
+        {
+          "id": "fr-3-2-3",
+          "name": "Cubby Benches"
+        },
+        {
+          "id": "fr-3-2-4",
+          "name": "Drawer Storage Benches"
+        },
+        {
+          "id": "fr-3-2-5",
+          "name": "Entryway Benches"
+        },
+        {
+          "id": "fr-3-2-6",
+          "name": "Hall Trees"
+        },
+        {
+          "id": "fr-3-2-7",
+          "name": "Hook Benches"
+        },
+        {
+          "id": "fr-3-2-8",
+          "name": "Lidded Storage Benches"
+        },
+        {
+          "id": "fr-3-2-9",
+          "name": "Lift-Top Storage Benches"
+        },
+        {
+          "id": "fr-3-2-10",
+          "name": "Locker Benches"
+        },
+        {
+          "id": "fr-3-2-12",
+          "name": "Shoe Storage Benches"
+        },
+        {
+          "id": "fr-3-2-13",
+          "name": "Upholstered Storage Benches"
+        },
+        {
+          "id": "fr-3-2-14",
+          "name": "Window Seats"
+        }
+      ]
+    },
+    {
+      "id": "fr-3-2-1",
+      "level": 3,
+      "name": "Basket Benches",
+      "full_name": "Furniture > Benches > Storage & Entryway Benches > Basket Benches",
+      "parent_id": "fr-3-2",
+      "children": []
+    },
+    {
+      "id": "fr-3-2-2",
+      "level": 3,
+      "name": "Coat Racks",
+      "full_name": "Furniture > Benches > Storage & Entryway Benches > Coat Racks",
+      "parent_id": "fr-3-2",
+      "children": []
+    },
+    {
+      "id": "fr-3-2-3",
+      "level": 3,
+      "name": "Cubby Benches",
+      "full_name": "Furniture > Benches > Storage & Entryway Benches > Cubby Benches",
+      "parent_id": "fr-3-2",
+      "children": []
+    },
+    {
+      "id": "fr-3-2-4",
+      "level": 3,
+      "name": "Drawer Storage Benches",
+      "full_name": "Furniture > Benches > Storage & Entryway Benches > Drawer Storage Benches",
+      "parent_id": "fr-3-2",
+      "children": []
+    },
+    {
+      "id": "fr-3-2-5",
+      "level": 3,
+      "name": "Entryway Benches",
+      "full_name": "Furniture > Benches > Storage & Entryway Benches > Entryway Benches",
+      "parent_id": "fr-3-2",
+      "children": []
+    },
+    {
+      "id": "fr-3-2-6",
+      "level": 3,
+      "name": "Hall Trees",
+      "full_name": "Furniture > Benches > Storage & Entryway Benches > Hall Trees",
+      "parent_id": "fr-3-2",
+      "children": []
+    },
+    {
+      "id": "fr-3-2-7",
+      "level": 3,
+      "name": "Hook Benches",
+      "full_name": "Furniture > Benches > Storage & Entryway Benches > Hook Benches",
+      "parent_id": "fr-3-2",
+      "children": []
+    },
+    {
+      "id": "fr-3-2-8",
+      "level": 3,
+      "name": "Lidded Storage Benches",
+      "full_name": "Furniture > Benches > Storage & Entryway Benches > Lidded Storage Benches",
+      "parent_id": "fr-3-2",
+      "children": []
+    },
+    {
+      "id": "fr-3-2-9",
+      "level": 3,
+      "name": "Lift-Top Storage Benches",
+      "full_name": "Furniture > Benches > Storage & Entryway Benches > Lift-Top Storage Benches",
+      "parent_id": "fr-3-2",
+      "children": []
+    },
+    {
+      "id": "fr-3-2-10",
+      "level": 3,
+      "name": "Locker Benches",
+      "full_name": "Furniture > Benches > Storage & Entryway Benches > Locker Benches",
+      "parent_id": "fr-3-2",
+      "children": []
+    },
+    {
+      "id": "fr-3-2-12",
+      "level": 3,
+      "name": "Shoe Storage Benches",
+      "full_name": "Furniture > Benches > Storage & Entryway Benches > Shoe Storage Benches",
+      "parent_id": "fr-3-2",
+      "children": []
+    },
+    {
+      "id": "fr-3-2-13",
+      "level": 3,
+      "name": "Upholstered Storage Benches",
+      "full_name": "Furniture > Benches > Storage & Entryway Benches > Upholstered Storage Benches",
+      "parent_id": "fr-3-2",
+      "children": []
+    },
+    {
+      "id": "fr-3-2-14",
+      "level": 3,
+      "name": "Window Seats",
+      "full_name": "Furniture > Benches > Storage & Entryway Benches > Window Seats",
+      "parent_id": "fr-3-2",
+      "children": []
+    },
+    {
+      "id": "fr-3-3",
+      "level": 2,
+      "name": "Vanity Benches",
+      "full_name": "Furniture > Benches > Vanity Benches",
+      "parent_id": "fr-3",
+      "children": []
+    },
+    {
+      "id": "fr-4",
+      "level": 1,
+      "name": "Cabinets & Storage",
+      "full_name": "Furniture > Cabinets & Storage",
+      "parent_id": "fr",
+      "children": [
+        {
+          "id": "fr-4-1",
+          "name": "Armoires & Wardrobes"
+        },
+        {
+          "id": "fr-4-2",
+          "name": "Buffets"
+        },
+        {
+          "id": "fr-4-3",
+          "name": "China Cabinets & Hutches"
+        },
+        {
+          "id": "fr-4-17",
+          "name": "Closet Parts & Accessories"
+        },
+        {
+          "id": "fr-4-4",
+          "name": "Closets"
+        },
+        {
+          "id": "fr-4-5",
+          "name": "Dressers"
+        },
+        {
+          "id": "fr-4-6",
+          "name": "File Cabinets"
+        },
+        {
+          "id": "fr-4-7",
+          "name": "Ironing Centers"
+        },
+        {
+          "id": "fr-4-8",
+          "name": "Kitchen Cabinets"
+        },
+        {
+          "id": "fr-4-9",
+          "name": "Magazine Racks"
+        },
+        {
+          "id": "fr-4-10",
+          "name": "Media Storage Cabinets & Racks"
+        },
+        {
+          "id": "fr-4-11",
+          "name": "Sideboards"
+        },
+        {
+          "id": "fr-4-12",
+          "name": "Storage Cabinets & Lockers"
+        },
+        {
+          "id": "fr-4-13",
+          "name": "Storage Chests"
+        },
+        {
+          "id": "fr-4-14",
+          "name": "Vanities"
+        },
+        {
+          "id": "fr-4-15",
+          "name": "Wine & Liquor Cabinets"
+        },
+        {
+          "id": "fr-4-16",
+          "name": "Wine Racks"
+        }
+      ]
+    },
+    {
+      "id": "fr-4-1",
+      "level": 2,
+      "name": "Armoires & Wardrobes",
+      "full_name": "Furniture > Cabinets & Storage > Armoires & Wardrobes",
+      "parent_id": "fr-4",
+      "children": [
+        {
+          "id": "fr-4-1-1",
+          "name": "Computer Armoires"
+        },
+        {
+          "id": "fr-4-1-2",
+          "name": "Corner Armoires"
+        },
+        {
+          "id": "fr-4-1-3",
+          "name": "Corner Wardrobes"
+        },
+        {
+          "id": "fr-4-1-4",
+          "name": "Double Wardrobes"
+        },
+        {
+          "id": "fr-4-1-5",
+          "name": "Hanging Rail Wardrobes"
+        },
+        {
+          "id": "fr-4-1-6",
+          "name": "Hinged Door Wardrobes"
+        },
+        {
+          "id": "fr-4-1-7",
+          "name": "Jewelry Armoires"
+        },
+        {
+          "id": "fr-4-1-8",
+          "name": "Kids' Armoires"
+        },
+        {
+          "id": "fr-4-1-9",
+          "name": "Kids' Wardrobes"
+        },
+        {
+          "id": "fr-4-1-10",
+          "name": "Mirrored Armoires"
+        },
+        {
+          "id": "fr-4-1-11",
+          "name": "Mirrored Wardrobes"
+        },
+        {
+          "id": "fr-4-1-12",
+          "name": "Office Armoires"
+        },
+        {
+          "id": "fr-4-1-13",
+          "name": "Portable Wardrobes"
+        },
+        {
+          "id": "fr-4-1-14",
+          "name": "Shelved Armoires"
+        },
+        {
+          "id": "fr-4-1-15",
+          "name": "Sliding Door Wardrobes"
+        },
+        {
+          "id": "fr-4-1-17",
+          "name": "TV Armoires"
+        },
+        {
+          "id": "fr-4-1-16",
+          "name": "Triple Wardrobes"
+        }
+      ]
+    },
+    {
+      "id": "fr-4-1-1",
+      "level": 3,
+      "name": "Computer Armoires",
+      "full_name": "Furniture > Cabinets & Storage > Armoires & Wardrobes > Computer Armoires",
+      "parent_id": "fr-4-1",
+      "children": []
+    },
+    {
+      "id": "fr-4-1-2",
+      "level": 3,
+      "name": "Corner Armoires",
+      "full_name": "Furniture > Cabinets & Storage > Armoires & Wardrobes > Corner Armoires",
+      "parent_id": "fr-4-1",
+      "children": []
+    },
+    {
+      "id": "fr-4-1-3",
+      "level": 3,
+      "name": "Corner Wardrobes",
+      "full_name": "Furniture > Cabinets & Storage > Armoires & Wardrobes > Corner Wardrobes",
+      "parent_id": "fr-4-1",
+      "children": []
+    },
+    {
+      "id": "fr-4-1-4",
+      "level": 3,
+      "name": "Double Wardrobes",
+      "full_name": "Furniture > Cabinets & Storage > Armoires & Wardrobes > Double Wardrobes",
+      "parent_id": "fr-4-1",
+      "children": []
+    },
+    {
+      "id": "fr-4-1-5",
+      "level": 3,
+      "name": "Hanging Rail Wardrobes",
+      "full_name": "Furniture > Cabinets & Storage > Armoires & Wardrobes > Hanging Rail Wardrobes",
+      "parent_id": "fr-4-1",
+      "children": []
+    },
+    {
+      "id": "fr-4-1-6",
+      "level": 3,
+      "name": "Hinged Door Wardrobes",
+      "full_name": "Furniture > Cabinets & Storage > Armoires & Wardrobes > Hinged Door Wardrobes",
+      "parent_id": "fr-4-1",
+      "children": []
+    },
+    {
+      "id": "fr-4-1-7",
+      "level": 3,
+      "name": "Jewelry Armoires",
+      "full_name": "Furniture > Cabinets & Storage > Armoires & Wardrobes > Jewelry Armoires",
+      "parent_id": "fr-4-1",
+      "children": []
+    },
+    {
+      "id": "fr-4-1-8",
+      "level": 3,
+      "name": "Kids' Armoires",
+      "full_name": "Furniture > Cabinets & Storage > Armoires & Wardrobes > Kids' Armoires",
+      "parent_id": "fr-4-1",
+      "children": []
+    },
+    {
+      "id": "fr-4-1-9",
+      "level": 3,
+      "name": "Kids' Wardrobes",
+      "full_name": "Furniture > Cabinets & Storage > Armoires & Wardrobes > Kids' Wardrobes",
+      "parent_id": "fr-4-1",
+      "children": []
+    },
+    {
+      "id": "fr-4-1-10",
+      "level": 3,
+      "name": "Mirrored Armoires",
+      "full_name": "Furniture > Cabinets & Storage > Armoires & Wardrobes > Mirrored Armoires",
+      "parent_id": "fr-4-1",
+      "children": []
+    },
+    {
+      "id": "fr-4-1-11",
+      "level": 3,
+      "name": "Mirrored Wardrobes",
+      "full_name": "Furniture > Cabinets & Storage > Armoires & Wardrobes > Mirrored Wardrobes",
+      "parent_id": "fr-4-1",
+      "children": []
+    },
+    {
+      "id": "fr-4-1-12",
+      "level": 3,
+      "name": "Office Armoires",
+      "full_name": "Furniture > Cabinets & Storage > Armoires & Wardrobes > Office Armoires",
+      "parent_id": "fr-4-1",
+      "children": []
+    },
+    {
+      "id": "fr-4-1-13",
+      "level": 3,
+      "name": "Portable Wardrobes",
+      "full_name": "Furniture > Cabinets & Storage > Armoires & Wardrobes > Portable Wardrobes",
+      "parent_id": "fr-4-1",
+      "children": []
+    },
+    {
+      "id": "fr-4-1-14",
+      "level": 3,
+      "name": "Shelved Armoires",
+      "full_name": "Furniture > Cabinets & Storage > Armoires & Wardrobes > Shelved Armoires",
+      "parent_id": "fr-4-1",
+      "children": []
+    },
+    {
+      "id": "fr-4-1-15",
+      "level": 3,
+      "name": "Sliding Door Wardrobes",
+      "full_name": "Furniture > Cabinets & Storage > Armoires & Wardrobes > Sliding Door Wardrobes",
+      "parent_id": "fr-4-1",
+      "children": []
+    },
+    {
+      "id": "fr-4-1-17",
+      "level": 3,
+      "name": "TV Armoires",
+      "full_name": "Furniture > Cabinets & Storage > Armoires & Wardrobes > TV Armoires",
+      "parent_id": "fr-4-1",
+      "children": []
+    },
+    {
+      "id": "fr-4-1-16",
+      "level": 3,
+      "name": "Triple Wardrobes",
+      "full_name": "Furniture > Cabinets & Storage > Armoires & Wardrobes > Triple Wardrobes",
+      "parent_id": "fr-4-1",
+      "children": []
+    },
+    {
+      "id": "fr-4-2",
+      "level": 2,
+      "name": "Buffets",
+      "full_name": "Furniture > Cabinets & Storage > Buffets",
+      "parent_id": "fr-4",
+      "children": []
+    },
+    {
+      "id": "fr-4-3",
+      "level": 2,
+      "name": "China Cabinets & Hutches",
+      "full_name": "Furniture > Cabinets & Storage > China Cabinets & Hutches",
+      "parent_id": "fr-4",
+      "children": [
+        {
+          "id": "fr-4-3-1",
+          "name": "Buffets with Hutch"
+        },
+        {
+          "id": "fr-4-3-2",
+          "name": "Cabinet Hutches"
+        },
+        {
+          "id": "fr-4-3-3",
+          "name": "China Cabinets"
+        },
+        {
+          "id": "fr-4-3-4",
+          "name": "Corner Display Cabinets"
+        },
+        {
+          "id": "fr-4-3-5",
+          "name": "Corner Hutches"
+        },
+        {
+          "id": "fr-4-3-6",
+          "name": "Credenza Hutches"
+        },
+        {
+          "id": "fr-4-3-7",
+          "name": "Dining Room Hutches"
+        },
+        {
+          "id": "fr-4-3-8",
+          "name": "Display Hutches"
+        },
+        {
+          "id": "fr-4-3-9",
+          "name": "Kitchen Hutches"
+        },
+        {
+          "id": "fr-4-3-10",
+          "name": "Secretary Desks with Hutch"
+        },
+        {
+          "id": "fr-4-3-11",
+          "name": "Server Hutches"
+        },
+        {
+          "id": "fr-4-3-12",
+          "name": "Sideboards with Hutch"
+        },
+        {
+          "id": "fr-4-3-13",
+          "name": "Tall Display Cabinets"
+        },
+        {
+          "id": "fr-4-3-14",
+          "name": "Wall-Mounted Hutches"
+        }
+      ]
+    },
+    {
+      "id": "fr-4-3-1",
+      "level": 3,
+      "name": "Buffets with Hutch",
+      "full_name": "Furniture > Cabinets & Storage > China Cabinets & Hutches > Buffets with Hutch",
+      "parent_id": "fr-4-3",
+      "children": []
+    },
+    {
+      "id": "fr-4-3-2",
+      "level": 3,
+      "name": "Cabinet Hutches",
+      "full_name": "Furniture > Cabinets & Storage > China Cabinets & Hutches > Cabinet Hutches",
+      "parent_id": "fr-4-3",
+      "children": []
+    },
+    {
+      "id": "fr-4-3-3",
+      "level": 3,
+      "name": "China Cabinets",
+      "full_name": "Furniture > Cabinets & Storage > China Cabinets & Hutches > China Cabinets",
+      "parent_id": "fr-4-3",
+      "children": []
+    },
+    {
+      "id": "fr-4-3-4",
+      "level": 3,
+      "name": "Corner Display Cabinets",
+      "full_name": "Furniture > Cabinets & Storage > China Cabinets & Hutches > Corner Display Cabinets",
+      "parent_id": "fr-4-3",
+      "children": []
+    },
+    {
+      "id": "fr-4-3-5",
+      "level": 3,
+      "name": "Corner Hutches",
+      "full_name": "Furniture > Cabinets & Storage > China Cabinets & Hutches > Corner Hutches",
+      "parent_id": "fr-4-3",
+      "children": []
+    },
+    {
+      "id": "fr-4-3-6",
+      "level": 3,
+      "name": "Credenza Hutches",
+      "full_name": "Furniture > Cabinets & Storage > China Cabinets & Hutches > Credenza Hutches",
+      "parent_id": "fr-4-3",
+      "children": []
+    },
+    {
+      "id": "fr-4-3-7",
+      "level": 3,
+      "name": "Dining Room Hutches",
+      "full_name": "Furniture > Cabinets & Storage > China Cabinets & Hutches > Dining Room Hutches",
+      "parent_id": "fr-4-3",
+      "children": []
+    },
+    {
+      "id": "fr-4-3-8",
+      "level": 3,
+      "name": "Display Hutches",
+      "full_name": "Furniture > Cabinets & Storage > China Cabinets & Hutches > Display Hutches",
+      "parent_id": "fr-4-3",
+      "children": []
+    },
+    {
+      "id": "fr-4-3-9",
+      "level": 3,
+      "name": "Kitchen Hutches",
+      "full_name": "Furniture > Cabinets & Storage > China Cabinets & Hutches > Kitchen Hutches",
+      "parent_id": "fr-4-3",
+      "children": []
+    },
+    {
+      "id": "fr-4-3-10",
+      "level": 3,
+      "name": "Secretary Desks with Hutch",
+      "full_name": "Furniture > Cabinets & Storage > China Cabinets & Hutches > Secretary Desks with Hutch",
+      "parent_id": "fr-4-3",
+      "children": []
+    },
+    {
+      "id": "fr-4-3-11",
+      "level": 3,
+      "name": "Server Hutches",
+      "full_name": "Furniture > Cabinets & Storage > China Cabinets & Hutches > Server Hutches",
+      "parent_id": "fr-4-3",
+      "children": []
+    },
+    {
+      "id": "fr-4-3-12",
+      "level": 3,
+      "name": "Sideboards with Hutch",
+      "full_name": "Furniture > Cabinets & Storage > China Cabinets & Hutches > Sideboards with Hutch",
+      "parent_id": "fr-4-3",
+      "children": []
+    },
+    {
+      "id": "fr-4-3-13",
+      "level": 3,
+      "name": "Tall Display Cabinets",
+      "full_name": "Furniture > Cabinets & Storage > China Cabinets & Hutches > Tall Display Cabinets",
+      "parent_id": "fr-4-3",
+      "children": []
+    },
+    {
+      "id": "fr-4-3-14",
+      "level": 3,
+      "name": "Wall-Mounted Hutches",
+      "full_name": "Furniture > Cabinets & Storage > China Cabinets & Hutches > Wall-Mounted Hutches",
+      "parent_id": "fr-4-3",
+      "children": []
+    },
+    {
+      "id": "fr-4-17",
+      "level": 2,
+      "name": "Closet Parts & Accessories",
+      "full_name": "Furniture > Cabinets & Storage > Closet Parts & Accessories",
+      "parent_id": "fr-4",
+      "children": [
+        {
+          "id": "fr-4-17-1",
+          "name": "Closet Baskets"
+        },
+        {
+          "id": "fr-4-17-2",
+          "name": "Closet Bins"
+        },
+        {
+          "id": "fr-4-17-3",
+          "name": "Closet Doors"
+        },
+        {
+          "id": "fr-4-17-4",
+          "name": "Closet Drawers"
+        },
+        {
+          "id": "fr-4-17-5",
+          "name": "Closet Rods"
+        },
+        {
+          "id": "fr-4-17-6",
+          "name": "Closet Shelves"
+        }
+      ]
+    },
+    {
+      "id": "fr-4-17-1",
+      "level": 3,
+      "name": "Closet Baskets",
+      "full_name": "Furniture > Cabinets & Storage > Closet Parts & Accessories > Closet Baskets",
+      "parent_id": "fr-4-17",
+      "children": []
+    },
+    {
+      "id": "fr-4-17-2",
+      "level": 3,
+      "name": "Closet Bins",
+      "full_name": "Furniture > Cabinets & Storage > Closet Parts & Accessories > Closet Bins",
+      "parent_id": "fr-4-17",
+      "children": []
+    },
+    {
+      "id": "fr-4-17-3",
+      "level": 3,
+      "name": "Closet Doors",
+      "full_name": "Furniture > Cabinets & Storage > Closet Parts & Accessories > Closet Doors",
+      "parent_id": "fr-4-17",
+      "children": []
+    },
+    {
+      "id": "fr-4-17-4",
+      "level": 3,
+      "name": "Closet Drawers",
+      "full_name": "Furniture > Cabinets & Storage > Closet Parts & Accessories > Closet Drawers",
+      "parent_id": "fr-4-17",
+      "children": []
+    },
+    {
+      "id": "fr-4-17-5",
+      "level": 3,
+      "name": "Closet Rods",
+      "full_name": "Furniture > Cabinets & Storage > Closet Parts & Accessories > Closet Rods",
+      "parent_id": "fr-4-17",
+      "children": []
+    },
+    {
+      "id": "fr-4-17-6",
+      "level": 3,
+      "name": "Closet Shelves",
+      "full_name": "Furniture > Cabinets & Storage > Closet Parts & Accessories > Closet Shelves",
+      "parent_id": "fr-4-17",
+      "children": []
+    },
+    {
+      "id": "fr-4-4",
+      "level": 2,
+      "name": "Closets",
+      "full_name": "Furniture > Cabinets & Storage > Closets",
+      "parent_id": "fr-4",
+      "children": [
+        {
+          "id": "fr-4-4-7",
+          "name": "Kids' Closets"
+        },
+        {
+          "id": "fr-4-4-8",
+          "name": "Reach-In Closets"
+        },
+        {
+          "id": "fr-4-4-9",
+          "name": "Walk-In Closets"
+        }
+      ]
+    },
+    {
+      "id": "fr-4-4-7",
+      "level": 3,
+      "name": "Kids' Closets",
+      "full_name": "Furniture > Cabinets & Storage > Closets > Kids' Closets",
+      "parent_id": "fr-4-4",
+      "children": []
+    },
+    {
+      "id": "fr-4-4-8",
+      "level": 3,
+      "name": "Reach-In Closets",
+      "full_name": "Furniture > Cabinets & Storage > Closets > Reach-In Closets",
+      "parent_id": "fr-4-4",
+      "children": []
+    },
+    {
+      "id": "fr-4-4-9",
+      "level": 3,
+      "name": "Walk-In Closets",
+      "full_name": "Furniture > Cabinets & Storage > Closets > Walk-In Closets",
+      "parent_id": "fr-4-4",
+      "children": []
+    },
+    {
+      "id": "fr-4-5",
+      "level": 2,
+      "name": "Dressers",
+      "full_name": "Furniture > Cabinets & Storage > Dressers",
+      "parent_id": "fr-4",
+      "children": []
+    },
+    {
+      "id": "fr-4-6",
+      "level": 2,
+      "name": "File Cabinets",
+      "full_name": "Furniture > Cabinets & Storage > File Cabinets",
+      "parent_id": "fr-4",
+      "children": []
+    },
+    {
+      "id": "fr-4-7",
+      "level": 2,
+      "name": "Ironing Centers",
+      "full_name": "Furniture > Cabinets & Storage > Ironing Centers",
+      "parent_id": "fr-4",
+      "children": []
+    },
+    {
+      "id": "fr-4-8",
+      "level": 2,
+      "name": "Kitchen Cabinets",
+      "full_name": "Furniture > Cabinets & Storage > Kitchen Cabinets",
+      "parent_id": "fr-4",
+      "children": [
+        {
+          "id": "fr-4-8-1",
+          "name": "Base Kitchen Cabinets"
+        },
+        {
+          "id": "fr-4-8-2",
+          "name": "Corner Kitchen Cabinets"
+        },
+        {
+          "id": "fr-4-8-3",
+          "name": "Double Doors"
+        },
+        {
+          "id": "fr-4-8-4",
+          "name": "Drawer Base Kitchen Cabinets"
+        },
+        {
+          "id": "fr-4-8-5",
+          "name": "Farmhouse Kitchen Cabinets"
+        },
+        {
+          "id": "fr-4-8-6",
+          "name": "Glass-Front Kitchen Cabinets"
+        },
+        {
+          "id": "fr-4-8-7",
+          "name": "Hutch-Style Kitchen Cabinets"
+        },
+        {
+          "id": "fr-4-8-8",
+          "name": "Microwave Cabinets"
+        },
+        {
+          "id": "fr-4-8-9",
+          "name": "Open Shelves"
+        },
+        {
+          "id": "fr-4-8-10",
+          "name": "Oven Cabinets"
+        },
+        {
+          "id": "fr-4-8-11",
+          "name": "Pantries"
+        },
+        {
+          "id": "fr-4-8-12",
+          "name": "Pull-Out Trash Cans"
+        },
+        {
+          "id": "fr-4-8-13",
+          "name": "Single Door Kitchen Cabinets"
+        },
+        {
+          "id": "fr-4-8-14",
+          "name": "Sink Base Cabinets"
+        },
+        {
+          "id": "fr-4-8-15",
+          "name": "Tall Kitchen Cabinets"
+        },
+        {
+          "id": "fr-4-8-16",
+          "name": "Wall Kitchen Cabinets"
+        }
+      ]
+    },
+    {
+      "id": "fr-4-8-1",
+      "level": 3,
+      "name": "Base Kitchen Cabinets",
+      "full_name": "Furniture > Cabinets & Storage > Kitchen Cabinets > Base Kitchen Cabinets",
+      "parent_id": "fr-4-8",
+      "children": []
+    },
+    {
+      "id": "fr-4-8-2",
+      "level": 3,
+      "name": "Corner Kitchen Cabinets",
+      "full_name": "Furniture > Cabinets & Storage > Kitchen Cabinets > Corner Kitchen Cabinets",
+      "parent_id": "fr-4-8",
+      "children": []
+    },
+    {
+      "id": "fr-4-8-3",
+      "level": 3,
+      "name": "Double Doors",
+      "full_name": "Furniture > Cabinets & Storage > Kitchen Cabinets > Double Doors",
+      "parent_id": "fr-4-8",
+      "children": []
+    },
+    {
+      "id": "fr-4-8-4",
+      "level": 3,
+      "name": "Drawer Base Kitchen Cabinets",
+      "full_name": "Furniture > Cabinets & Storage > Kitchen Cabinets > Drawer Base Kitchen Cabinets",
+      "parent_id": "fr-4-8",
+      "children": []
+    },
+    {
+      "id": "fr-4-8-5",
+      "level": 3,
+      "name": "Farmhouse Kitchen Cabinets",
+      "full_name": "Furniture > Cabinets & Storage > Kitchen Cabinets > Farmhouse Kitchen Cabinets",
+      "parent_id": "fr-4-8",
+      "children": []
+    },
+    {
+      "id": "fr-4-8-6",
+      "level": 3,
+      "name": "Glass-Front Kitchen Cabinets",
+      "full_name": "Furniture > Cabinets & Storage > Kitchen Cabinets > Glass-Front Kitchen Cabinets",
+      "parent_id": "fr-4-8",
+      "children": []
+    },
+    {
+      "id": "fr-4-8-7",
+      "level": 3,
+      "name": "Hutch-Style Kitchen Cabinets",
+      "full_name": "Furniture > Cabinets & Storage > Kitchen Cabinets > Hutch-Style Kitchen Cabinets",
+      "parent_id": "fr-4-8",
+      "children": []
+    },
+    {
+      "id": "fr-4-8-8",
+      "level": 3,
+      "name": "Microwave Cabinets",
+      "full_name": "Furniture > Cabinets & Storage > Kitchen Cabinets > Microwave Cabinets",
+      "parent_id": "fr-4-8",
+      "children": []
+    },
+    {
+      "id": "fr-4-8-9",
+      "level": 3,
+      "name": "Open Shelves",
+      "full_name": "Furniture > Cabinets & Storage > Kitchen Cabinets > Open Shelves",
+      "parent_id": "fr-4-8",
+      "children": []
+    },
+    {
+      "id": "fr-4-8-10",
+      "level": 3,
+      "name": "Oven Cabinets",
+      "full_name": "Furniture > Cabinets & Storage > Kitchen Cabinets > Oven Cabinets",
+      "parent_id": "fr-4-8",
+      "children": []
+    },
+    {
+      "id": "fr-4-8-11",
+      "level": 3,
+      "name": "Pantries",
+      "full_name": "Furniture > Cabinets & Storage > Kitchen Cabinets > Pantries",
+      "parent_id": "fr-4-8",
+      "children": []
+    },
+    {
+      "id": "fr-4-8-12",
+      "level": 3,
+      "name": "Pull-Out Trash Cans",
+      "full_name": "Furniture > Cabinets & Storage > Kitchen Cabinets > Pull-Out Trash Cans",
+      "parent_id": "fr-4-8",
+      "children": []
+    },
+    {
+      "id": "fr-4-8-13",
+      "level": 3,
+      "name": "Single Door Kitchen Cabinets",
+      "full_name": "Furniture > Cabinets & Storage > Kitchen Cabinets > Single Door Kitchen Cabinets",
+      "parent_id": "fr-4-8",
+      "children": []
+    },
+    {
+      "id": "fr-4-8-14",
+      "level": 3,
+      "name": "Sink Base Cabinets",
+      "full_name": "Furniture > Cabinets & Storage > Kitchen Cabinets > Sink Base Cabinets",
+      "parent_id": "fr-4-8",
+      "children": []
+    },
+    {
+      "id": "fr-4-8-15",
+      "level": 3,
+      "name": "Tall Kitchen Cabinets",
+      "full_name": "Furniture > Cabinets & Storage > Kitchen Cabinets > Tall Kitchen Cabinets",
+      "parent_id": "fr-4-8",
+      "children": []
+    },
+    {
+      "id": "fr-4-8-16",
+      "level": 3,
+      "name": "Wall Kitchen Cabinets",
+      "full_name": "Furniture > Cabinets & Storage > Kitchen Cabinets > Wall Kitchen Cabinets",
+      "parent_id": "fr-4-8",
+      "children": []
+    },
+    {
+      "id": "fr-4-9",
+      "level": 2,
+      "name": "Magazine Racks",
+      "full_name": "Furniture > Cabinets & Storage > Magazine Racks",
+      "parent_id": "fr-4",
+      "children": []
+    },
+    {
+      "id": "fr-4-10",
+      "level": 2,
+      "name": "Media Storage Cabinets & Racks",
+      "full_name": "Furniture > Cabinets & Storage > Media Storage Cabinets & Racks",
+      "parent_id": "fr-4",
+      "children": []
+    },
+    {
+      "id": "fr-4-11",
+      "level": 2,
+      "name": "Sideboards",
+      "full_name": "Furniture > Cabinets & Storage > Sideboards",
+      "parent_id": "fr-4",
+      "children": []
+    },
+    {
+      "id": "fr-4-12",
+      "level": 2,
+      "name": "Storage Cabinets & Lockers",
+      "full_name": "Furniture > Cabinets & Storage > Storage Cabinets & Lockers",
+      "parent_id": "fr-4",
+      "children": []
+    },
+    {
+      "id": "fr-4-13",
+      "level": 2,
+      "name": "Storage Chests",
+      "full_name": "Furniture > Cabinets & Storage > Storage Chests",
+      "parent_id": "fr-4",
+      "children": [
+        {
+          "id": "fr-4-13-1",
+          "name": "Hope Chests"
+        },
+        {
+          "id": "fr-4-13-2",
+          "name": "Toy Chests"
+        }
+      ]
+    },
+    {
+      "id": "fr-4-13-1",
+      "level": 3,
+      "name": "Hope Chests",
+      "full_name": "Furniture > Cabinets & Storage > Storage Chests > Hope Chests",
+      "parent_id": "fr-4-13",
+      "children": []
+    },
+    {
+      "id": "fr-4-13-2",
+      "level": 3,
+      "name": "Toy Chests",
+      "full_name": "Furniture > Cabinets & Storage > Storage Chests > Toy Chests",
+      "parent_id": "fr-4-13",
+      "children": []
+    },
+    {
+      "id": "fr-4-14",
+      "level": 2,
+      "name": "Vanities",
+      "full_name": "Furniture > Cabinets & Storage > Vanities",
+      "parent_id": "fr-4",
+      "children": [
+        {
+          "id": "fr-4-14-1",
+          "name": "Bathroom Vanities"
+        },
+        {
+          "id": "fr-4-14-2",
+          "name": "Bedroom Vanities"
+        }
+      ]
+    },
+    {
+      "id": "fr-4-14-1",
+      "level": 3,
+      "name": "Bathroom Vanities",
+      "full_name": "Furniture > Cabinets & Storage > Vanities > Bathroom Vanities",
+      "parent_id": "fr-4-14",
+      "children": [
+        {
+          "id": "fr-4-14-1-1",
+          "name": "Bathroom Cabinets"
+        },
+        {
+          "id": "fr-4-14-1-2",
+          "name": "Bathroom Vanity Sets"
+        },
+        {
+          "id": "fr-4-14-1-3",
+          "name": "Corner Vanities"
+        },
+        {
+          "id": "fr-4-14-1-4",
+          "name": "Double Sinks"
+        },
+        {
+          "id": "fr-4-14-1-5",
+          "name": "Floating Vanities"
+        },
+        {
+          "id": "fr-4-14-1-6",
+          "name": "Free-Standing Vanities"
+        },
+        {
+          "id": "fr-4-14-1-7",
+          "name": "Pedestal Vanities"
+        },
+        {
+          "id": "fr-4-14-1-8",
+          "name": "Single Sink Vanities"
+        },
+        {
+          "id": "fr-4-14-1-9",
+          "name": "Topless Vanities"
+        },
+        {
+          "id": "fr-4-14-1-10",
+          "name": "Topped Vanities"
+        },
+        {
+          "id": "fr-4-14-1-11",
+          "name": "Vanity Bases"
+        }
+      ]
+    },
+    {
+      "id": "fr-4-14-1-1",
+      "level": 4,
+      "name": "Bathroom Cabinets",
+      "full_name": "Furniture > Cabinets & Storage > Vanities > Bathroom Vanities > Bathroom Cabinets",
+      "parent_id": "fr-4-14-1",
+      "children": []
+    },
+    {
+      "id": "fr-4-14-1-2",
+      "level": 4,
+      "name": "Bathroom Vanity Sets",
+      "full_name": "Furniture > Cabinets & Storage > Vanities > Bathroom Vanities > Bathroom Vanity Sets",
+      "parent_id": "fr-4-14-1",
+      "children": []
+    },
+    {
+      "id": "fr-4-14-1-3",
+      "level": 4,
+      "name": "Corner Vanities",
+      "full_name": "Furniture > Cabinets & Storage > Vanities > Bathroom Vanities > Corner Vanities",
+      "parent_id": "fr-4-14-1",
+      "children": []
+    },
+    {
+      "id": "fr-4-14-1-4",
+      "level": 4,
+      "name": "Double Sinks",
+      "full_name": "Furniture > Cabinets & Storage > Vanities > Bathroom Vanities > Double Sinks",
+      "parent_id": "fr-4-14-1",
+      "children": []
+    },
+    {
+      "id": "fr-4-14-1-5",
+      "level": 4,
+      "name": "Floating Vanities",
+      "full_name": "Furniture > Cabinets & Storage > Vanities > Bathroom Vanities > Floating Vanities",
+      "parent_id": "fr-4-14-1",
+      "children": []
+    },
+    {
+      "id": "fr-4-14-1-6",
+      "level": 4,
+      "name": "Free-Standing Vanities",
+      "full_name": "Furniture > Cabinets & Storage > Vanities > Bathroom Vanities > Free-Standing Vanities",
+      "parent_id": "fr-4-14-1",
+      "children": []
+    },
+    {
+      "id": "fr-4-14-1-7",
+      "level": 4,
+      "name": "Pedestal Vanities",
+      "full_name": "Furniture > Cabinets & Storage > Vanities > Bathroom Vanities > Pedestal Vanities",
+      "parent_id": "fr-4-14-1",
+      "children": []
+    },
+    {
+      "id": "fr-4-14-1-8",
+      "level": 4,
+      "name": "Single Sink Vanities",
+      "full_name": "Furniture > Cabinets & Storage > Vanities > Bathroom Vanities > Single Sink Vanities",
+      "parent_id": "fr-4-14-1",
+      "children": []
+    },
+    {
+      "id": "fr-4-14-1-9",
+      "level": 4,
+      "name": "Topless Vanities",
+      "full_name": "Furniture > Cabinets & Storage > Vanities > Bathroom Vanities > Topless Vanities",
+      "parent_id": "fr-4-14-1",
+      "children": []
+    },
+    {
+      "id": "fr-4-14-1-10",
+      "level": 4,
+      "name": "Topped Vanities",
+      "full_name": "Furniture > Cabinets & Storage > Vanities > Bathroom Vanities > Topped Vanities",
+      "parent_id": "fr-4-14-1",
+      "children": []
+    },
+    {
+      "id": "fr-4-14-1-11",
+      "level": 4,
+      "name": "Vanity Bases",
+      "full_name": "Furniture > Cabinets & Storage > Vanities > Bathroom Vanities > Vanity Bases",
+      "parent_id": "fr-4-14-1",
+      "children": []
+    },
+    {
+      "id": "fr-4-14-2",
+      "level": 3,
+      "name": "Bedroom Vanities",
+      "full_name": "Furniture > Cabinets & Storage > Vanities > Bedroom Vanities",
+      "parent_id": "fr-4-14",
+      "children": [
+        {
+          "id": "fr-4-14-2-1",
+          "name": "Bedroom Vanity Sets"
+        },
+        {
+          "id": "fr-4-14-2-3",
+          "name": "Desk Vanities"
+        },
+        {
+          "id": "fr-4-14-2-4",
+          "name": "Dressing Tables"
+        },
+        {
+          "id": "fr-4-14-2-5",
+          "name": "Lighted Vanities"
+        },
+        {
+          "id": "fr-4-14-2-6",
+          "name": "Makeup Vanities"
+        },
+        {
+          "id": "fr-4-14-2-7",
+          "name": "Mirrored Vanities"
+        },
+        {
+          "id": "fr-4-14-2-8",
+          "name": "Table Vanities"
+        }
+      ]
+    },
+    {
+      "id": "fr-4-14-2-1",
+      "level": 4,
+      "name": "Bedroom Vanity Sets",
+      "full_name": "Furniture > Cabinets & Storage > Vanities > Bedroom Vanities > Bedroom Vanity Sets",
+      "parent_id": "fr-4-14-2",
+      "children": []
+    },
+    {
+      "id": "fr-4-14-2-3",
+      "level": 4,
+      "name": "Desk Vanities",
+      "full_name": "Furniture > Cabinets & Storage > Vanities > Bedroom Vanities > Desk Vanities",
+      "parent_id": "fr-4-14-2",
+      "children": []
+    },
+    {
+      "id": "fr-4-14-2-4",
+      "level": 4,
+      "name": "Dressing Tables",
+      "full_name": "Furniture > Cabinets & Storage > Vanities > Bedroom Vanities > Dressing Tables",
+      "parent_id": "fr-4-14-2",
+      "children": []
+    },
+    {
+      "id": "fr-4-14-2-5",
+      "level": 4,
+      "name": "Lighted Vanities",
+      "full_name": "Furniture > Cabinets & Storage > Vanities > Bedroom Vanities > Lighted Vanities",
+      "parent_id": "fr-4-14-2",
+      "children": []
+    },
+    {
+      "id": "fr-4-14-2-6",
+      "level": 4,
+      "name": "Makeup Vanities",
+      "full_name": "Furniture > Cabinets & Storage > Vanities > Bedroom Vanities > Makeup Vanities",
+      "parent_id": "fr-4-14-2",
+      "children": []
+    },
+    {
+      "id": "fr-4-14-2-7",
+      "level": 4,
+      "name": "Mirrored Vanities",
+      "full_name": "Furniture > Cabinets & Storage > Vanities > Bedroom Vanities > Mirrored Vanities",
+      "parent_id": "fr-4-14-2",
+      "children": []
+    },
+    {
+      "id": "fr-4-14-2-8",
+      "level": 4,
+      "name": "Table Vanities",
+      "full_name": "Furniture > Cabinets & Storage > Vanities > Bedroom Vanities > Table Vanities",
+      "parent_id": "fr-4-14-2",
+      "children": []
+    },
+    {
+      "id": "fr-4-15",
+      "level": 2,
+      "name": "Wine & Liquor Cabinets",
+      "full_name": "Furniture > Cabinets & Storage > Wine & Liquor Cabinets",
+      "parent_id": "fr-4",
+      "children": []
+    },
+    {
+      "id": "fr-4-16",
+      "level": 2,
+      "name": "Wine Racks",
+      "full_name": "Furniture > Cabinets & Storage > Wine Racks",
+      "parent_id": "fr-4",
+      "children": []
+    },
+    {
+      "id": "fr-5",
+      "level": 1,
+      "name": "Carts & Islands",
+      "full_name": "Furniture > Carts & Islands",
+      "parent_id": "fr",
+      "children": [
+        {
+          "id": "fr-5-1",
+          "name": "Carts"
+        },
+        {
+          "id": "fr-5-2",
+          "name": "Islands"
+        }
+      ]
+    },
+    {
+      "id": "fr-5-1",
+      "level": 2,
+      "name": "Carts",
+      "full_name": "Furniture > Carts & Islands > Carts",
+      "parent_id": "fr-5",
+      "children": []
+    },
+    {
+      "id": "fr-5-2",
+      "level": 2,
+      "name": "Islands",
+      "full_name": "Furniture > Carts & Islands > Islands",
+      "parent_id": "fr-5",
+      "children": []
+    },
+    {
+      "id": "fr-6",
+      "level": 1,
+      "name": "Chair Accessories",
+      "full_name": "Furniture > Chair Accessories",
+      "parent_id": "fr",
+      "children": [
+        {
+          "id": "fr-6-1",
+          "name": "Hanging Chair Replacement Parts"
+        }
+      ]
+    },
+    {
+      "id": "fr-6-1",
+      "level": 2,
+      "name": "Hanging Chair Replacement Parts",
+      "full_name": "Furniture > Chair Accessories > Hanging Chair Replacement Parts",
+      "parent_id": "fr-6",
+      "children": []
+    },
+    {
+      "id": "fr-7",
+      "level": 1,
+      "name": "Chairs",
+      "full_name": "Furniture > Chairs",
+      "parent_id": "fr",
+      "children": [
+        {
+          "id": "fr-7-1",
+          "name": "Armchairs, Recliners & Sleeper Chairs"
+        },
+        {
+          "id": "fr-7-2",
+          "name": "Bean Bag Chairs"
+        },
+        {
+          "id": "fr-7-3",
+          "name": "Chaises"
+        },
+        {
+          "id": "fr-7-4",
+          "name": "Electric Massaging Chairs"
+        },
+        {
+          "id": "fr-7-5",
+          "name": "Floor Chairs"
+        },
+        {
+          "id": "fr-7-6",
+          "name": "Folding Chairs & Stools"
+        },
+        {
+          "id": "fr-7-7",
+          "name": "Gaming Chairs"
+        },
+        {
+          "id": "fr-7-8",
+          "name": "Hanging Chairs"
+        },
+        {
+          "id": "fr-7-9",
+          "name": "Kitchen & Dining Room Chairs"
+        },
+        {
+          "id": "fr-7-10",
+          "name": "Rocking Chairs"
+        },
+        {
+          "id": "fr-7-11",
+          "name": "Slipper Chairs"
+        },
+        {
+          "id": "fr-7-12",
+          "name": "Table & Bar Stools"
+        }
+      ]
+    },
+    {
+      "id": "fr-7-1",
+      "level": 2,
+      "name": "Armchairs, Recliners & Sleeper Chairs",
+      "full_name": "Furniture > Chairs > Armchairs, Recliners & Sleeper Chairs",
+      "parent_id": "fr-7",
+      "children": [
+        {
+          "id": "fr-7-1-1",
+          "name": "Armchairs"
+        },
+        {
+          "id": "fr-7-1-2",
+          "name": "Recliners"
+        },
+        {
+          "id": "fr-7-1-3",
+          "name": "Sleeper Chairs"
+        }
+      ]
+    },
+    {
+      "id": "fr-7-1-1",
+      "level": 3,
+      "name": "Armchairs",
+      "full_name": "Furniture > Chairs > Armchairs, Recliners & Sleeper Chairs > Armchairs",
+      "parent_id": "fr-7-1",
+      "children": []
+    },
+    {
+      "id": "fr-7-1-2",
+      "level": 3,
+      "name": "Recliners",
+      "full_name": "Furniture > Chairs > Armchairs, Recliners & Sleeper Chairs > Recliners",
+      "parent_id": "fr-7-1",
+      "children": []
+    },
+    {
+      "id": "fr-7-1-3",
+      "level": 3,
+      "name": "Sleeper Chairs",
+      "full_name": "Furniture > Chairs > Armchairs, Recliners & Sleeper Chairs > Sleeper Chairs",
+      "parent_id": "fr-7-1",
+      "children": []
+    },
+    {
+      "id": "fr-7-2",
+      "level": 2,
+      "name": "Bean Bag Chairs",
+      "full_name": "Furniture > Chairs > Bean Bag Chairs",
+      "parent_id": "fr-7",
+      "children": []
+    },
+    {
+      "id": "fr-7-3",
+      "level": 2,
+      "name": "Chaises",
+      "full_name": "Furniture > Chairs > Chaises",
+      "parent_id": "fr-7",
+      "children": [
+        {
+          "id": "fr-7-3-1",
+          "name": "Armless Chaises"
+        },
+        {
+          "id": "fr-7-3-2",
+          "name": "Chaise Longues"
+        },
+        {
+          "id": "fr-7-3-3",
+          "name": "Double Chaises Longues"
+        },
+        {
+          "id": "fr-7-3-5",
+          "name": "Reclining Chaises Longues"
+        }
+      ]
+    },
+    {
+      "id": "fr-7-3-1",
+      "level": 3,
+      "name": "Armless Chaises",
+      "full_name": "Furniture > Chairs > Chaises > Armless Chaises",
+      "parent_id": "fr-7-3",
+      "children": []
+    },
+    {
+      "id": "fr-7-3-2",
+      "level": 3,
+      "name": "Chaise Longues",
+      "full_name": "Furniture > Chairs > Chaises > Chaise Longues",
+      "parent_id": "fr-7-3",
+      "children": []
+    },
+    {
+      "id": "fr-7-3-3",
+      "level": 3,
+      "name": "Double Chaises Longues",
+      "full_name": "Furniture > Chairs > Chaises > Double Chaises Longues",
+      "parent_id": "fr-7-3",
+      "children": []
+    },
+    {
+      "id": "fr-7-3-5",
+      "level": 3,
+      "name": "Reclining Chaises Longues",
+      "full_name": "Furniture > Chairs > Chaises > Reclining Chaises Longues",
+      "parent_id": "fr-7-3",
+      "children": []
+    },
+    {
+      "id": "fr-7-4",
+      "level": 2,
+      "name": "Electric Massaging Chairs",
+      "full_name": "Furniture > Chairs > Electric Massaging Chairs",
+      "parent_id": "fr-7",
+      "children": []
+    },
+    {
+      "id": "fr-7-5",
+      "level": 2,
+      "name": "Floor Chairs",
+      "full_name": "Furniture > Chairs > Floor Chairs",
+      "parent_id": "fr-7",
+      "children": []
+    },
+    {
+      "id": "fr-7-6",
+      "level": 2,
+      "name": "Folding Chairs & Stools",
+      "full_name": "Furniture > Chairs > Folding Chairs & Stools",
+      "parent_id": "fr-7",
+      "children": [
+        {
+          "id": "fr-7-6-1",
+          "name": "Folding Chairs"
+        },
+        {
+          "id": "fr-7-6-2",
+          "name": "Folding Stools"
+        }
+      ]
+    },
+    {
+      "id": "fr-7-6-1",
+      "level": 3,
+      "name": "Folding Chairs",
+      "full_name": "Furniture > Chairs > Folding Chairs & Stools > Folding Chairs",
+      "parent_id": "fr-7-6",
+      "children": []
+    },
+    {
+      "id": "fr-7-6-2",
+      "level": 3,
+      "name": "Folding Stools",
+      "full_name": "Furniture > Chairs > Folding Chairs & Stools > Folding Stools",
+      "parent_id": "fr-7-6",
+      "children": []
+    },
+    {
+      "id": "fr-7-7",
+      "level": 2,
+      "name": "Gaming Chairs",
+      "full_name": "Furniture > Chairs > Gaming Chairs",
+      "parent_id": "fr-7",
+      "children": []
+    },
+    {
+      "id": "fr-7-8",
+      "level": 2,
+      "name": "Hanging Chairs",
+      "full_name": "Furniture > Chairs > Hanging Chairs",
+      "parent_id": "fr-7",
+      "children": []
+    },
+    {
+      "id": "fr-7-9",
+      "level": 2,
+      "name": "Kitchen & Dining Room Chairs",
+      "full_name": "Furniture > Chairs > Kitchen & Dining Room Chairs",
+      "parent_id": "fr-7",
+      "children": []
+    },
+    {
+      "id": "fr-7-10",
+      "level": 2,
+      "name": "Rocking Chairs",
+      "full_name": "Furniture > Chairs > Rocking Chairs",
+      "parent_id": "fr-7",
+      "children": [
+        {
+          "id": "fr-7-10-1",
+          "name": "Classic Rocking Chairs"
+        },
+        {
+          "id": "fr-7-10-4",
+          "name": "Kids' Rocking Chairs"
+        },
+        {
+          "id": "fr-7-10-5",
+          "name": "Nursery Rocking Chairs"
+        }
+      ]
+    },
+    {
+      "id": "fr-7-10-1",
+      "level": 3,
+      "name": "Classic Rocking Chairs",
+      "full_name": "Furniture > Chairs > Rocking Chairs > Classic Rocking Chairs",
+      "parent_id": "fr-7-10",
+      "children": []
+    },
+    {
+      "id": "fr-7-10-4",
+      "level": 3,
+      "name": "Kids' Rocking Chairs",
+      "full_name": "Furniture > Chairs > Rocking Chairs > Kids' Rocking Chairs",
+      "parent_id": "fr-7-10",
+      "children": []
+    },
+    {
+      "id": "fr-7-10-5",
+      "level": 3,
+      "name": "Nursery Rocking Chairs",
+      "full_name": "Furniture > Chairs > Rocking Chairs > Nursery Rocking Chairs",
+      "parent_id": "fr-7-10",
+      "children": []
+    },
+    {
+      "id": "fr-7-11",
+      "level": 2,
+      "name": "Slipper Chairs",
+      "full_name": "Furniture > Chairs > Slipper Chairs",
+      "parent_id": "fr-7",
+      "children": []
+    },
+    {
+      "id": "fr-7-12",
+      "level": 2,
+      "name": "Table & Bar Stools",
+      "full_name": "Furniture > Chairs > Table & Bar Stools",
+      "parent_id": "fr-7",
+      "children": [
+        {
+          "id": "fr-7-12-1",
+          "name": "Adjustable Bar Stools"
+        },
+        {
+          "id": "fr-7-12-2",
+          "name": "Bar Stools"
+        }
+      ]
+    },
+    {
+      "id": "fr-7-12-1",
+      "level": 3,
+      "name": "Adjustable Bar Stools",
+      "full_name": "Furniture > Chairs > Table & Bar Stools > Adjustable Bar Stools",
+      "parent_id": "fr-7-12",
+      "children": []
+    },
+    {
+      "id": "fr-7-12-2",
+      "level": 3,
+      "name": "Bar Stools",
+      "full_name": "Furniture > Chairs > Table & Bar Stools > Bar Stools",
+      "parent_id": "fr-7-12",
+      "children": []
+    },
+    {
+      "id": "fr-8",
+      "level": 1,
+      "name": "Daybeds",
+      "full_name": "Furniture > Daybeds",
+      "parent_id": "fr",
+      "children": []
+    },
+    {
+      "id": "fr-9",
+      "level": 1,
+      "name": "Entertainment Centers & TV Stands",
+      "full_name": "Furniture > Entertainment Centers & TV Stands",
+      "parent_id": "fr",
+      "children": []
+    },
+    {
+      "id": "fr-10",
+      "level": 1,
+      "name": "Furniture Sets",
+      "full_name": "Furniture > Furniture Sets",
+      "parent_id": "fr",
+      "children": [
+        {
+          "id": "fr-10-1",
+          "name": "Bathroom Furniture Sets"
+        },
+        {
+          "id": "fr-10-2",
+          "name": "Bedroom Furniture Sets"
+        },
+        {
+          "id": "fr-10-3",
+          "name": "Kitchen & Dining Furniture Sets"
+        },
+        {
+          "id": "fr-10-4",
+          "name": "Living Room Furniture Sets"
+        }
+      ]
+    },
+    {
+      "id": "fr-10-1",
+      "level": 2,
+      "name": "Bathroom Furniture Sets",
+      "full_name": "Furniture > Furniture Sets > Bathroom Furniture Sets",
+      "parent_id": "fr-10",
+      "children": []
+    },
+    {
+      "id": "fr-10-2",
+      "level": 2,
+      "name": "Bedroom Furniture Sets",
+      "full_name": "Furniture > Furniture Sets > Bedroom Furniture Sets",
+      "parent_id": "fr-10",
+      "children": []
+    },
+    {
+      "id": "fr-10-3",
+      "level": 2,
+      "name": "Kitchen & Dining Furniture Sets",
+      "full_name": "Furniture > Furniture Sets > Kitchen & Dining Furniture Sets",
+      "parent_id": "fr-10",
+      "children": []
+    },
+    {
+      "id": "fr-10-4",
+      "level": 2,
+      "name": "Living Room Furniture Sets",
+      "full_name": "Furniture > Furniture Sets > Living Room Furniture Sets",
+      "parent_id": "fr-10",
+      "children": []
+    },
+    {
+      "id": "fr-11",
+      "level": 1,
+      "name": "Futons",
+      "full_name": "Furniture > Futons",
+      "parent_id": "fr",
+      "children": [
+        {
+          "id": "fr-11-1",
+          "name": "Futon Frames"
+        },
+        {
+          "id": "fr-11-2",
+          "name": "Futon Pads"
+        }
+      ]
+    },
+    {
+      "id": "fr-11-1",
+      "level": 2,
+      "name": "Futon Frames",
+      "full_name": "Furniture > Futons > Futon Frames",
+      "parent_id": "fr-11",
+      "children": []
+    },
+    {
+      "id": "fr-11-2",
+      "level": 2,
+      "name": "Futon Pads",
+      "full_name": "Furniture > Futons > Futon Pads",
+      "parent_id": "fr-11",
+      "children": []
+    },
+    {
+      "id": "fr-12",
+      "level": 1,
+      "name": "Office Furniture",
+      "full_name": "Furniture > Office Furniture",
+      "parent_id": "fr",
+      "children": [
+        {
+          "id": "fr-12-1",
+          "name": "Desks"
+        },
+        {
+          "id": "fr-12-2",
+          "name": "Office Chairs"
+        },
+        {
+          "id": "fr-12-3",
+          "name": "Office Furniture Sets"
+        },
+        {
+          "id": "fr-12-4",
+          "name": "Workspace Tables"
+        },
+        {
+          "id": "fr-12-5",
+          "name": "Workstations & Cubicles"
+        }
+      ]
+    },
+    {
+      "id": "fr-12-1",
+      "level": 2,
+      "name": "Desks",
+      "full_name": "Furniture > Office Furniture > Desks",
+      "parent_id": "fr-12",
+      "children": []
+    },
+    {
+      "id": "fr-12-2",
+      "level": 2,
+      "name": "Office Chairs",
+      "full_name": "Furniture > Office Furniture > Office Chairs",
+      "parent_id": "fr-12",
+      "children": []
+    },
+    {
+      "id": "fr-12-3",
+      "level": 2,
+      "name": "Office Furniture Sets",
+      "full_name": "Furniture > Office Furniture > Office Furniture Sets",
+      "parent_id": "fr-12",
+      "children": []
+    },
+    {
+      "id": "fr-12-4",
+      "level": 2,
+      "name": "Workspace Tables",
+      "full_name": "Furniture > Office Furniture > Workspace Tables",
+      "parent_id": "fr-12",
+      "children": [
+        {
+          "id": "fr-12-4-1",
+          "name": "Art & Drafting Tables"
+        },
+        {
+          "id": "fr-12-4-2",
+          "name": "Conference Room Tables"
+        }
+      ]
+    },
+    {
+      "id": "fr-12-4-1",
+      "level": 3,
+      "name": "Art & Drafting Tables",
+      "full_name": "Furniture > Office Furniture > Workspace Tables > Art & Drafting Tables",
+      "parent_id": "fr-12-4",
+      "children": []
+    },
+    {
+      "id": "fr-12-4-2",
+      "level": 3,
+      "name": "Conference Room Tables",
+      "full_name": "Furniture > Office Furniture > Workspace Tables > Conference Room Tables",
+      "parent_id": "fr-12-4",
+      "children": []
+    },
+    {
+      "id": "fr-12-5",
+      "level": 2,
+      "name": "Workstations & Cubicles",
+      "full_name": "Furniture > Office Furniture > Workstations & Cubicles",
+      "parent_id": "fr-12",
+      "children": []
+    },
+    {
+      "id": "fr-13",
+      "level": 1,
+      "name": "Office Furniture Accessories",
+      "full_name": "Furniture > Office Furniture Accessories",
+      "parent_id": "fr",
+      "children": [
+        {
+          "id": "fr-13-1",
+          "name": "Desk Parts & Accessories"
+        },
+        {
+          "id": "fr-13-2",
+          "name": "Office Chair Accessories"
+        },
+        {
+          "id": "fr-13-3",
+          "name": "Workstation & Cubicle Accessories"
+        }
+      ]
+    },
+    {
+      "id": "fr-13-1",
+      "level": 2,
+      "name": "Desk Parts & Accessories",
+      "full_name": "Furniture > Office Furniture Accessories > Desk Parts & Accessories",
+      "parent_id": "fr-13",
+      "children": []
+    },
+    {
+      "id": "fr-13-2",
+      "level": 2,
+      "name": "Office Chair Accessories",
+      "full_name": "Furniture > Office Furniture Accessories > Office Chair Accessories",
+      "parent_id": "fr-13",
+      "children": []
+    },
+    {
+      "id": "fr-13-3",
+      "level": 2,
+      "name": "Workstation & Cubicle Accessories",
+      "full_name": "Furniture > Office Furniture Accessories > Workstation & Cubicle Accessories",
+      "parent_id": "fr-13",
+      "children": []
+    },
+    {
+      "id": "fr-14",
+      "level": 1,
+      "name": "Ottomans",
+      "full_name": "Furniture > Ottomans",
+      "parent_id": "fr",
+      "children": []
+    },
+    {
+      "id": "fr-15",
+      "level": 1,
+      "name": "Outdoor Furniture",
+      "full_name": "Furniture > Outdoor Furniture",
+      "parent_id": "fr",
+      "children": [
+        {
+          "id": "fr-15-1",
+          "name": "Outdoor Beds"
+        },
+        {
+          "id": "fr-15-2",
+          "name": "Outdoor Furniture Sets"
+        },
+        {
+          "id": "fr-15-3",
+          "name": "Outdoor Ottomans"
+        },
+        {
+          "id": "fr-15-4",
+          "name": "Outdoor Seating"
+        },
+        {
+          "id": "fr-15-5",
+          "name": "Outdoor Storage Boxes"
+        },
+        {
+          "id": "fr-15-6",
+          "name": "Outdoor Tables"
+        }
+      ]
+    },
+    {
+      "id": "fr-15-1",
+      "level": 2,
+      "name": "Outdoor Beds",
+      "full_name": "Furniture > Outdoor Furniture > Outdoor Beds",
+      "parent_id": "fr-15",
+      "children": [
+        {
+          "id": "fr-15-1-1",
+          "name": "Bunk Beds"
+        },
+        {
+          "id": "fr-15-1-2",
+          "name": "Cabana Beds"
+        },
+        {
+          "id": "fr-15-1-3",
+          "name": "Canopy Beds"
+        },
+        {
+          "id": "fr-15-1-4",
+          "name": "Daybeds"
+        },
+        {
+          "id": "fr-15-1-5",
+          "name": "Futons"
+        },
+        {
+          "id": "fr-15-1-7",
+          "name": "Poolside Beds"
+        },
+        {
+          "id": "fr-15-1-8",
+          "name": "Sunbeds"
+        },
+        {
+          "id": "fr-15-1-9",
+          "name": "Swings"
+        }
+      ]
+    },
+    {
+      "id": "fr-15-1-1",
+      "level": 3,
+      "name": "Bunk Beds",
+      "full_name": "Furniture > Outdoor Furniture > Outdoor Beds > Bunk Beds",
+      "parent_id": "fr-15-1",
+      "children": []
+    },
+    {
+      "id": "fr-15-1-2",
+      "level": 3,
+      "name": "Cabana Beds",
+      "full_name": "Furniture > Outdoor Furniture > Outdoor Beds > Cabana Beds",
+      "parent_id": "fr-15-1",
+      "children": []
+    },
+    {
+      "id": "fr-15-1-3",
+      "level": 3,
+      "name": "Canopy Beds",
+      "full_name": "Furniture > Outdoor Furniture > Outdoor Beds > Canopy Beds",
+      "parent_id": "fr-15-1",
+      "children": []
+    },
+    {
+      "id": "fr-15-1-4",
+      "level": 3,
+      "name": "Daybeds",
+      "full_name": "Furniture > Outdoor Furniture > Outdoor Beds > Daybeds",
+      "parent_id": "fr-15-1",
+      "children": []
+    },
+    {
+      "id": "fr-15-1-5",
+      "level": 3,
+      "name": "Futons",
+      "full_name": "Furniture > Outdoor Furniture > Outdoor Beds > Futons",
+      "parent_id": "fr-15-1",
+      "children": []
+    },
+    {
+      "id": "fr-15-1-7",
+      "level": 3,
+      "name": "Poolside Beds",
+      "full_name": "Furniture > Outdoor Furniture > Outdoor Beds > Poolside Beds",
+      "parent_id": "fr-15-1",
+      "children": []
+    },
+    {
+      "id": "fr-15-1-8",
+      "level": 3,
+      "name": "Sunbeds",
+      "full_name": "Furniture > Outdoor Furniture > Outdoor Beds > Sunbeds",
+      "parent_id": "fr-15-1",
+      "children": []
+    },
+    {
+      "id": "fr-15-1-9",
+      "level": 3,
+      "name": "Swings",
+      "full_name": "Furniture > Outdoor Furniture > Outdoor Beds > Swings",
+      "parent_id": "fr-15-1",
+      "children": []
+    },
+    {
+      "id": "fr-15-2",
+      "level": 2,
+      "name": "Outdoor Furniture Sets",
+      "full_name": "Furniture > Outdoor Furniture > Outdoor Furniture Sets",
+      "parent_id": "fr-15",
+      "children": []
+    },
+    {
+      "id": "fr-15-3",
+      "level": 2,
+      "name": "Outdoor Ottomans",
+      "full_name": "Furniture > Outdoor Furniture > Outdoor Ottomans",
+      "parent_id": "fr-15",
+      "children": [
+        {
+          "id": "fr-15-3-1",
+          "name": "Cocktail Ottomans"
+        },
+        {
+          "id": "fr-15-3-2",
+          "name": "Foldable Ottomans"
+        },
+        {
+          "id": "fr-15-3-3",
+          "name": "Footstools"
+        },
+        {
+          "id": "fr-15-3-4",
+          "name": "Glider Ottomans"
+        },
+        {
+          "id": "fr-15-3-5",
+          "name": "Hassocks"
+        },
+        {
+          "id": "fr-15-3-6",
+          "name": "Ottoman Benches"
+        },
+        {
+          "id": "fr-15-3-7",
+          "name": "Ottoman Cubes"
+        },
+        {
+          "id": "fr-15-3-8",
+          "name": "Poufs"
+        },
+        {
+          "id": "fr-15-3-9",
+          "name": "Rectangle Ottomans"
+        },
+        {
+          "id": "fr-15-3-10",
+          "name": "Round Ottomans"
+        },
+        {
+          "id": "fr-15-3-11",
+          "name": "Shoe Storage Ottomans"
+        },
+        {
+          "id": "fr-15-3-12",
+          "name": "Sleeper Ottomans"
+        },
+        {
+          "id": "fr-15-3-13",
+          "name": "Square Ottomans"
+        },
+        {
+          "id": "fr-15-3-14",
+          "name": "Storage Ottomans"
+        },
+        {
+          "id": "fr-15-3-15",
+          "name": "Tray Top Ottomans"
+        },
+        {
+          "id": "fr-15-3-16",
+          "name": "Tufted Ottomans"
+        }
+      ]
+    },
+    {
+      "id": "fr-15-3-1",
+      "level": 3,
+      "name": "Cocktail Ottomans",
+      "full_name": "Furniture > Outdoor Furniture > Outdoor Ottomans > Cocktail Ottomans",
+      "parent_id": "fr-15-3",
+      "children": []
+    },
+    {
+      "id": "fr-15-3-2",
+      "level": 3,
+      "name": "Foldable Ottomans",
+      "full_name": "Furniture > Outdoor Furniture > Outdoor Ottomans > Foldable Ottomans",
+      "parent_id": "fr-15-3",
+      "children": []
+    },
+    {
+      "id": "fr-15-3-3",
+      "level": 3,
+      "name": "Footstools",
+      "full_name": "Furniture > Outdoor Furniture > Outdoor Ottomans > Footstools",
+      "parent_id": "fr-15-3",
+      "children": []
+    },
+    {
+      "id": "fr-15-3-4",
+      "level": 3,
+      "name": "Glider Ottomans",
+      "full_name": "Furniture > Outdoor Furniture > Outdoor Ottomans > Glider Ottomans",
+      "parent_id": "fr-15-3",
+      "children": []
+    },
+    {
+      "id": "fr-15-3-5",
+      "level": 3,
+      "name": "Hassocks",
+      "full_name": "Furniture > Outdoor Furniture > Outdoor Ottomans > Hassocks",
+      "parent_id": "fr-15-3",
+      "children": []
+    },
+    {
+      "id": "fr-15-3-6",
+      "level": 3,
+      "name": "Ottoman Benches",
+      "full_name": "Furniture > Outdoor Furniture > Outdoor Ottomans > Ottoman Benches",
+      "parent_id": "fr-15-3",
+      "children": []
+    },
+    {
+      "id": "fr-15-3-7",
+      "level": 3,
+      "name": "Ottoman Cubes",
+      "full_name": "Furniture > Outdoor Furniture > Outdoor Ottomans > Ottoman Cubes",
+      "parent_id": "fr-15-3",
+      "children": []
+    },
+    {
+      "id": "fr-15-3-8",
+      "level": 3,
+      "name": "Poufs",
+      "full_name": "Furniture > Outdoor Furniture > Outdoor Ottomans > Poufs",
+      "parent_id": "fr-15-3",
+      "children": []
+    },
+    {
+      "id": "fr-15-3-9",
+      "level": 3,
+      "name": "Rectangle Ottomans",
+      "full_name": "Furniture > Outdoor Furniture > Outdoor Ottomans > Rectangle Ottomans",
+      "parent_id": "fr-15-3",
+      "children": []
+    },
+    {
+      "id": "fr-15-3-10",
+      "level": 3,
+      "name": "Round Ottomans",
+      "full_name": "Furniture > Outdoor Furniture > Outdoor Ottomans > Round Ottomans",
+      "parent_id": "fr-15-3",
+      "children": []
+    },
+    {
+      "id": "fr-15-3-11",
+      "level": 3,
+      "name": "Shoe Storage Ottomans",
+      "full_name": "Furniture > Outdoor Furniture > Outdoor Ottomans > Shoe Storage Ottomans",
+      "parent_id": "fr-15-3",
+      "children": []
+    },
+    {
+      "id": "fr-15-3-12",
+      "level": 3,
+      "name": "Sleeper Ottomans",
+      "full_name": "Furniture > Outdoor Furniture > Outdoor Ottomans > Sleeper Ottomans",
+      "parent_id": "fr-15-3",
+      "children": []
+    },
+    {
+      "id": "fr-15-3-13",
+      "level": 3,
+      "name": "Square Ottomans",
+      "full_name": "Furniture > Outdoor Furniture > Outdoor Ottomans > Square Ottomans",
+      "parent_id": "fr-15-3",
+      "children": []
+    },
+    {
+      "id": "fr-15-3-14",
+      "level": 3,
+      "name": "Storage Ottomans",
+      "full_name": "Furniture > Outdoor Furniture > Outdoor Ottomans > Storage Ottomans",
+      "parent_id": "fr-15-3",
+      "children": []
+    },
+    {
+      "id": "fr-15-3-15",
+      "level": 3,
+      "name": "Tray Top Ottomans",
+      "full_name": "Furniture > Outdoor Furniture > Outdoor Ottomans > Tray Top Ottomans",
+      "parent_id": "fr-15-3",
+      "children": []
+    },
+    {
+      "id": "fr-15-3-16",
+      "level": 3,
+      "name": "Tufted Ottomans",
+      "full_name": "Furniture > Outdoor Furniture > Outdoor Ottomans > Tufted Ottomans",
+      "parent_id": "fr-15-3",
+      "children": []
+    },
+    {
+      "id": "fr-15-4",
+      "level": 2,
+      "name": "Outdoor Seating",
+      "full_name": "Furniture > Outdoor Furniture > Outdoor Seating",
+      "parent_id": "fr-15",
+      "children": [
+        {
+          "id": "fr-15-4-1",
+          "name": "Outdoor Benches"
+        },
+        {
+          "id": "fr-15-4-2",
+          "name": "Outdoor Chairs"
+        },
+        {
+          "id": "fr-15-4-3",
+          "name": "Outdoor Sectional Sofa Units"
+        },
+        {
+          "id": "fr-15-4-4",
+          "name": "Outdoor Sofas"
+        },
+        {
+          "id": "fr-15-4-5",
+          "name": "Sunloungers"
+        }
+      ]
+    },
+    {
+      "id": "fr-15-4-1",
+      "level": 3,
+      "name": "Outdoor Benches",
+      "full_name": "Furniture > Outdoor Furniture > Outdoor Seating > Outdoor Benches",
+      "parent_id": "fr-15-4",
+      "children": [
+        {
+          "id": "fr-15-4-1-10",
+          "name": "Picnic Benches"
+        },
+        {
+          "id": "fr-15-4-1-11",
+          "name": "Storage Benches"
+        },
+        {
+          "id": "fr-15-4-1-12",
+          "name": "Swing Benches"
+        }
+      ]
+    },
+    {
+      "id": "fr-15-4-1-10",
+      "level": 4,
+      "name": "Picnic Benches",
+      "full_name": "Furniture > Outdoor Furniture > Outdoor Seating > Outdoor Benches > Picnic Benches",
+      "parent_id": "fr-15-4-1",
+      "children": []
+    },
+    {
+      "id": "fr-15-4-1-11",
+      "level": 4,
+      "name": "Storage Benches",
+      "full_name": "Furniture > Outdoor Furniture > Outdoor Seating > Outdoor Benches > Storage Benches",
+      "parent_id": "fr-15-4-1",
+      "children": []
+    },
+    {
+      "id": "fr-15-4-1-12",
+      "level": 4,
+      "name": "Swing Benches",
+      "full_name": "Furniture > Outdoor Furniture > Outdoor Seating > Outdoor Benches > Swing Benches",
+      "parent_id": "fr-15-4-1",
+      "children": []
+    },
+    {
+      "id": "fr-15-4-2",
+      "level": 3,
+      "name": "Outdoor Chairs",
+      "full_name": "Furniture > Outdoor Furniture > Outdoor Seating > Outdoor Chairs",
+      "parent_id": "fr-15-4",
+      "children": [
+        {
+          "id": "fr-15-4-2-5",
+          "name": "Club Chairs"
+        },
+        {
+          "id": "fr-15-4-2-9",
+          "name": "Folding Chairs"
+        },
+        {
+          "id": "fr-15-4-2-15",
+          "name": "Rocking Chairs"
+        },
+        {
+          "id": "fr-15-4-2-16",
+          "name": "Sling Chairs"
+        },
+        {
+          "id": "fr-15-4-2-18",
+          "name": "Swing Chairs"
+        }
+      ]
+    },
+    {
+      "id": "fr-15-4-2-5",
+      "level": 4,
+      "name": "Club Chairs",
+      "full_name": "Furniture > Outdoor Furniture > Outdoor Seating > Outdoor Chairs > Club Chairs",
+      "parent_id": "fr-15-4-2",
+      "children": []
+    },
+    {
+      "id": "fr-15-4-2-9",
+      "level": 4,
+      "name": "Folding Chairs",
+      "full_name": "Furniture > Outdoor Furniture > Outdoor Seating > Outdoor Chairs > Folding Chairs",
+      "parent_id": "fr-15-4-2",
+      "children": []
+    },
+    {
+      "id": "fr-15-4-2-15",
+      "level": 4,
+      "name": "Rocking Chairs",
+      "full_name": "Furniture > Outdoor Furniture > Outdoor Seating > Outdoor Chairs > Rocking Chairs",
+      "parent_id": "fr-15-4-2",
+      "children": []
+    },
+    {
+      "id": "fr-15-4-2-16",
+      "level": 4,
+      "name": "Sling Chairs",
+      "full_name": "Furniture > Outdoor Furniture > Outdoor Seating > Outdoor Chairs > Sling Chairs",
+      "parent_id": "fr-15-4-2",
+      "children": []
+    },
+    {
+      "id": "fr-15-4-2-18",
+      "level": 4,
+      "name": "Swing Chairs",
+      "full_name": "Furniture > Outdoor Furniture > Outdoor Seating > Outdoor Chairs > Swing Chairs",
+      "parent_id": "fr-15-4-2",
+      "children": []
+    },
+    {
+      "id": "fr-15-4-3",
+      "level": 3,
+      "name": "Outdoor Sectional Sofa Units",
+      "full_name": "Furniture > Outdoor Furniture > Outdoor Seating > Outdoor Sectional Sofa Units",
+      "parent_id": "fr-15-4",
+      "children": []
+    },
+    {
+      "id": "fr-15-4-4",
+      "level": 3,
+      "name": "Outdoor Sofas",
+      "full_name": "Furniture > Outdoor Furniture > Outdoor Seating > Outdoor Sofas",
+      "parent_id": "fr-15-4",
+      "children": [
+        {
+          "id": "fr-15-4-4-1",
+          "name": "Loveseat Sofas"
+        },
+        {
+          "id": "fr-15-4-4-2",
+          "name": "Sectional Sofas"
+        }
+      ]
+    },
+    {
+      "id": "fr-15-4-4-1",
+      "level": 4,
+      "name": "Loveseat Sofas",
+      "full_name": "Furniture > Outdoor Furniture > Outdoor Seating > Outdoor Sofas > Loveseat Sofas",
+      "parent_id": "fr-15-4-4",
+      "children": []
+    },
+    {
+      "id": "fr-15-4-4-2",
+      "level": 4,
+      "name": "Sectional Sofas",
+      "full_name": "Furniture > Outdoor Furniture > Outdoor Seating > Outdoor Sofas > Sectional Sofas",
+      "parent_id": "fr-15-4-4",
+      "children": []
+    },
+    {
+      "id": "fr-15-4-5",
+      "level": 3,
+      "name": "Sunloungers",
+      "full_name": "Furniture > Outdoor Furniture > Outdoor Seating > Sunloungers",
+      "parent_id": "fr-15-4",
+      "children": []
+    },
+    {
+      "id": "fr-15-5",
+      "level": 2,
+      "name": "Outdoor Storage Boxes",
+      "full_name": "Furniture > Outdoor Furniture > Outdoor Storage Boxes",
+      "parent_id": "fr-15",
+      "children": []
+    },
+    {
+      "id": "fr-15-6",
+      "level": 2,
+      "name": "Outdoor Tables",
+      "full_name": "Furniture > Outdoor Furniture > Outdoor Tables",
+      "parent_id": "fr-15",
+      "children": [
+        {
+          "id": "fr-15-6-1",
+          "name": "Bar Tables"
+        },
+        {
+          "id": "fr-15-6-2",
+          "name": "Bistro Tables"
+        },
+        {
+          "id": "fr-15-6-3",
+          "name": "Coffee Tables"
+        },
+        {
+          "id": "fr-15-6-4",
+          "name": "Console Tables"
+        },
+        {
+          "id": "fr-15-6-5",
+          "name": "Dining Tables"
+        },
+        {
+          "id": "fr-15-6-7",
+          "name": "Fire Pits"
+        },
+        {
+          "id": "fr-15-6-9",
+          "name": "Game Tables"
+        },
+        {
+          "id": "fr-15-6-11",
+          "name": "Poolside Tables"
+        }
+      ]
+    },
+    {
+      "id": "fr-15-6-1",
+      "level": 3,
+      "name": "Bar Tables",
+      "full_name": "Furniture > Outdoor Furniture > Outdoor Tables > Bar Tables",
+      "parent_id": "fr-15-6",
+      "children": []
+    },
+    {
+      "id": "fr-15-6-2",
+      "level": 3,
+      "name": "Bistro Tables",
+      "full_name": "Furniture > Outdoor Furniture > Outdoor Tables > Bistro Tables",
+      "parent_id": "fr-15-6",
+      "children": []
+    },
+    {
+      "id": "fr-15-6-3",
+      "level": 3,
+      "name": "Coffee Tables",
+      "full_name": "Furniture > Outdoor Furniture > Outdoor Tables > Coffee Tables",
+      "parent_id": "fr-15-6",
+      "children": []
+    },
+    {
+      "id": "fr-15-6-4",
+      "level": 3,
+      "name": "Console Tables",
+      "full_name": "Furniture > Outdoor Furniture > Outdoor Tables > Console Tables",
+      "parent_id": "fr-15-6",
+      "children": []
+    },
+    {
+      "id": "fr-15-6-5",
+      "level": 3,
+      "name": "Dining Tables",
+      "full_name": "Furniture > Outdoor Furniture > Outdoor Tables > Dining Tables",
+      "parent_id": "fr-15-6",
+      "children": []
+    },
+    {
+      "id": "fr-15-6-7",
+      "level": 3,
+      "name": "Fire Pits",
+      "full_name": "Furniture > Outdoor Furniture > Outdoor Tables > Fire Pits",
+      "parent_id": "fr-15-6",
+      "children": []
+    },
+    {
+      "id": "fr-15-6-9",
+      "level": 3,
+      "name": "Game Tables",
+      "full_name": "Furniture > Outdoor Furniture > Outdoor Tables > Game Tables",
+      "parent_id": "fr-15-6",
+      "children": []
+    },
+    {
+      "id": "fr-15-6-11",
+      "level": 3,
+      "name": "Poolside Tables",
+      "full_name": "Furniture > Outdoor Furniture > Outdoor Tables > Poolside Tables",
+      "parent_id": "fr-15-6",
+      "children": []
+    },
+    {
+      "id": "fr-16",
+      "level": 1,
+      "name": "Outdoor Furniture Accessories",
+      "full_name": "Furniture > Outdoor Furniture Accessories",
+      "parent_id": "fr",
+      "children": [
+        {
+          "id": "fr-16-1",
+          "name": "Outdoor Furniture Covers"
+        }
+      ]
+    },
+    {
+      "id": "fr-16-1",
+      "level": 2,
+      "name": "Outdoor Furniture Covers",
+      "full_name": "Furniture > Outdoor Furniture Accessories > Outdoor Furniture Covers",
+      "parent_id": "fr-16",
+      "children": []
+    },
+    {
+      "id": "fr-17",
+      "level": 1,
+      "name": "Room Divider Accessories",
+      "full_name": "Furniture > Room Divider Accessories",
+      "parent_id": "fr",
+      "children": []
+    },
+    {
+      "id": "fr-18",
+      "level": 1,
+      "name": "Room Dividers",
+      "full_name": "Furniture > Room Dividers",
+      "parent_id": "fr",
+      "children": []
+    },
+    {
+      "id": "fr-19",
+      "level": 1,
+      "name": "Shelving",
+      "full_name": "Furniture > Shelving",
+      "parent_id": "fr",
+      "children": [
+        {
+          "id": "fr-19-1",
+          "name": "Bookcases & Standing Shelves"
+        },
+        {
+          "id": "fr-19-2",
+          "name": "Wall Shelves & Ledges"
+        }
+      ]
+    },
+    {
+      "id": "fr-19-1",
+      "level": 2,
+      "name": "Bookcases & Standing Shelves",
+      "full_name": "Furniture > Shelving > Bookcases & Standing Shelves",
+      "parent_id": "fr-19",
+      "children": [
+        {
+          "id": "fr-19-1-1",
+          "name": "Corner Bookcases & Shelves"
+        },
+        {
+          "id": "fr-19-1-2",
+          "name": "Floating Bookcases & Shelves"
+        },
+        {
+          "id": "fr-19-1-3",
+          "name": "Ladder Bookcases & Shelves"
+        },
+        {
+          "id": "fr-19-1-4",
+          "name": "Modular Bookcases & Shelves"
+        },
+        {
+          "id": "fr-19-1-5",
+          "name": "Rack Bookcases & Shelves"
+        }
+      ]
+    },
+    {
+      "id": "fr-19-1-1",
+      "level": 3,
+      "name": "Corner Bookcases & Shelves",
+      "full_name": "Furniture > Shelving > Bookcases & Standing Shelves > Corner Bookcases & Shelves",
+      "parent_id": "fr-19-1",
+      "children": []
+    },
+    {
+      "id": "fr-19-1-2",
+      "level": 3,
+      "name": "Floating Bookcases & Shelves",
+      "full_name": "Furniture > Shelving > Bookcases & Standing Shelves > Floating Bookcases & Shelves",
+      "parent_id": "fr-19-1",
+      "children": []
+    },
+    {
+      "id": "fr-19-1-3",
+      "level": 3,
+      "name": "Ladder Bookcases & Shelves",
+      "full_name": "Furniture > Shelving > Bookcases & Standing Shelves > Ladder Bookcases & Shelves",
+      "parent_id": "fr-19-1",
+      "children": []
+    },
+    {
+      "id": "fr-19-1-4",
+      "level": 3,
+      "name": "Modular Bookcases & Shelves",
+      "full_name": "Furniture > Shelving > Bookcases & Standing Shelves > Modular Bookcases & Shelves",
+      "parent_id": "fr-19-1",
+      "children": []
+    },
+    {
+      "id": "fr-19-1-5",
+      "level": 3,
+      "name": "Rack Bookcases & Shelves",
+      "full_name": "Furniture > Shelving > Bookcases & Standing Shelves > Rack Bookcases & Shelves",
+      "parent_id": "fr-19-1",
+      "children": []
+    },
+    {
+      "id": "fr-19-2",
+      "level": 2,
+      "name": "Wall Shelves & Ledges",
+      "full_name": "Furniture > Shelving > Wall Shelves & Ledges",
+      "parent_id": "fr-19",
+      "children": [
+        {
+          "id": "fr-19-2-1",
+          "name": "Corner Wall Shelves & Ledges"
+        },
+        {
+          "id": "fr-19-2-2",
+          "name": "Floating Wall Shelves & Ledges"
+        },
+        {
+          "id": "fr-19-2-3",
+          "name": "Ladder Wall Shelves & Ledges"
+        },
+        {
+          "id": "fr-19-2-4",
+          "name": "Modular Wall Shelves & Ledges"
+        },
+        {
+          "id": "fr-19-2-5",
+          "name": "Rack Wall Shelves & Ledges"
+        }
+      ]
+    },
+    {
+      "id": "fr-19-2-1",
+      "level": 3,
+      "name": "Corner Wall Shelves & Ledges",
+      "full_name": "Furniture > Shelving > Wall Shelves & Ledges > Corner Wall Shelves & Ledges",
+      "parent_id": "fr-19-2",
+      "children": []
+    },
+    {
+      "id": "fr-19-2-2",
+      "level": 3,
+      "name": "Floating Wall Shelves & Ledges",
+      "full_name": "Furniture > Shelving > Wall Shelves & Ledges > Floating Wall Shelves & Ledges",
+      "parent_id": "fr-19-2",
+      "children": []
+    },
+    {
+      "id": "fr-19-2-3",
+      "level": 3,
+      "name": "Ladder Wall Shelves & Ledges",
+      "full_name": "Furniture > Shelving > Wall Shelves & Ledges > Ladder Wall Shelves & Ledges",
+      "parent_id": "fr-19-2",
+      "children": []
+    },
+    {
+      "id": "fr-19-2-4",
+      "level": 3,
+      "name": "Modular Wall Shelves & Ledges",
+      "full_name": "Furniture > Shelving > Wall Shelves & Ledges > Modular Wall Shelves & Ledges",
+      "parent_id": "fr-19-2",
+      "children": []
+    },
+    {
+      "id": "fr-19-2-5",
+      "level": 3,
+      "name": "Rack Wall Shelves & Ledges",
+      "full_name": "Furniture > Shelving > Wall Shelves & Ledges > Rack Wall Shelves & Ledges",
+      "parent_id": "fr-19-2",
+      "children": []
+    },
+    {
+      "id": "fr-20",
+      "level": 1,
+      "name": "Shelving Accessories",
+      "full_name": "Furniture > Shelving Accessories",
+      "parent_id": "fr",
+      "children": [
+        {
+          "id": "fr-20-1",
+          "name": "Replacement Shelves"
+        }
+      ]
+    },
+    {
+      "id": "fr-20-1",
+      "level": 2,
+      "name": "Replacement Shelves",
+      "full_name": "Furniture > Shelving Accessories > Replacement Shelves",
+      "parent_id": "fr-20",
+      "children": []
+    },
+    {
+      "id": "fr-21",
+      "level": 1,
+      "name": "Sofa Accessories",
+      "full_name": "Furniture > Sofa Accessories",
+      "parent_id": "fr",
+      "children": [
+        {
+          "id": "fr-21-1",
+          "name": "Chair & Sofa Supports"
+        },
+        {
+          "id": "fr-21-2",
+          "name": "Sectional Sofa Units"
+        }
+      ]
+    },
+    {
+      "id": "fr-21-1",
+      "level": 2,
+      "name": "Chair & Sofa Supports",
+      "full_name": "Furniture > Sofa Accessories > Chair & Sofa Supports",
+      "parent_id": "fr-21",
+      "children": []
+    },
+    {
+      "id": "fr-21-2",
+      "level": 2,
+      "name": "Sectional Sofa Units",
+      "full_name": "Furniture > Sofa Accessories > Sectional Sofa Units",
+      "parent_id": "fr-21",
+      "children": []
+    },
+    {
+      "id": "fr-22",
+      "level": 1,
+      "name": "Sofas",
+      "full_name": "Furniture > Sofas",
+      "parent_id": "fr",
+      "children": [
+        {
+          "id": "fr-22-1",
+          "name": "Chaise Longue Sofas"
+        },
+        {
+          "id": "fr-22-3",
+          "name": "Corner Sofas"
+        },
+        {
+          "id": "fr-22-4",
+          "name": "Loveseat Sofas"
+        },
+        {
+          "id": "fr-22-6",
+          "name": "Sectional Sofas"
+        },
+        {
+          "id": "fr-22-7",
+          "name": "Sofa Beds"
+        }
+      ]
+    },
+    {
+      "id": "fr-22-1",
+      "level": 2,
+      "name": "Chaise Longue Sofas",
+      "full_name": "Furniture > Sofas > Chaise Longue Sofas",
+      "parent_id": "fr-22",
+      "children": []
+    },
+    {
+      "id": "fr-22-3",
+      "level": 2,
+      "name": "Corner Sofas",
+      "full_name": "Furniture > Sofas > Corner Sofas",
+      "parent_id": "fr-22",
+      "children": []
+    },
+    {
+      "id": "fr-22-4",
+      "level": 2,
+      "name": "Loveseat Sofas",
+      "full_name": "Furniture > Sofas > Loveseat Sofas",
+      "parent_id": "fr-22",
+      "children": []
+    },
+    {
+      "id": "fr-22-6",
+      "level": 2,
+      "name": "Sectional Sofas",
+      "full_name": "Furniture > Sofas > Sectional Sofas",
+      "parent_id": "fr-22",
+      "children": []
+    },
+    {
+      "id": "fr-22-7",
+      "level": 2,
+      "name": "Sofa Beds",
+      "full_name": "Furniture > Sofas > Sofa Beds",
+      "parent_id": "fr-22",
+      "children": []
+    },
+    {
+      "id": "fr-23",
+      "level": 1,
+      "name": "Table Accessories",
+      "full_name": "Furniture > Table Accessories",
+      "parent_id": "fr",
+      "children": [
+        {
+          "id": "fr-23-1",
+          "name": "Table Legs"
+        },
+        {
+          "id": "fr-23-2",
+          "name": "Table Tops"
+        }
+      ]
+    },
+    {
+      "id": "fr-23-1",
+      "level": 2,
+      "name": "Table Legs",
+      "full_name": "Furniture > Table Accessories > Table Legs",
+      "parent_id": "fr-23",
+      "children": []
+    },
+    {
+      "id": "fr-23-2",
+      "level": 2,
+      "name": "Table Tops",
+      "full_name": "Furniture > Table Accessories > Table Tops",
+      "parent_id": "fr-23",
+      "children": []
+    },
+    {
+      "id": "fr-24",
+      "level": 1,
+      "name": "Tables",
+      "full_name": "Furniture > Tables",
+      "parent_id": "fr",
+      "children": [
+        {
+          "id": "fr-24-1",
+          "name": "Accent Tables"
+        },
+        {
+          "id": "fr-24-2",
+          "name": "Activity Tables"
+        },
+        {
+          "id": "fr-24-3",
+          "name": "Folding Tables"
+        },
+        {
+          "id": "fr-24-4",
+          "name": "Kitchen & Dining Room Tables"
+        },
+        {
+          "id": "fr-24-5",
+          "name": "Kotatsu"
+        },
+        {
+          "id": "fr-24-6",
+          "name": "Nightstands"
+        }
+      ]
+    },
+    {
+      "id": "fr-24-1",
+      "level": 2,
+      "name": "Accent Tables",
+      "full_name": "Furniture > Tables > Accent Tables",
+      "parent_id": "fr-24",
+      "children": [
+        {
+          "id": "fr-24-1-1",
+          "name": "Coffee Tables"
+        },
+        {
+          "id": "fr-24-1-2",
+          "name": "End Tables"
+        },
+        {
+          "id": "fr-24-1-3",
+          "name": "Sofa Tables"
+        }
+      ]
+    },
+    {
+      "id": "fr-24-1-1",
+      "level": 3,
+      "name": "Coffee Tables",
+      "full_name": "Furniture > Tables > Accent Tables > Coffee Tables",
+      "parent_id": "fr-24-1",
+      "children": []
+    },
+    {
+      "id": "fr-24-1-2",
+      "level": 3,
+      "name": "End Tables",
+      "full_name": "Furniture > Tables > Accent Tables > End Tables",
+      "parent_id": "fr-24-1",
+      "children": []
+    },
+    {
+      "id": "fr-24-1-3",
+      "level": 3,
+      "name": "Sofa Tables",
+      "full_name": "Furniture > Tables > Accent Tables > Sofa Tables",
+      "parent_id": "fr-24-1",
+      "children": []
+    },
+    {
+      "id": "fr-24-2",
+      "level": 2,
+      "name": "Activity Tables",
+      "full_name": "Furniture > Tables > Activity Tables",
+      "parent_id": "fr-24",
+      "children": []
+    },
+    {
+      "id": "fr-24-3",
+      "level": 2,
+      "name": "Folding Tables",
+      "full_name": "Furniture > Tables > Folding Tables",
+      "parent_id": "fr-24",
+      "children": []
+    },
+    {
+      "id": "fr-24-4",
+      "level": 2,
+      "name": "Kitchen & Dining Room Tables",
+      "full_name": "Furniture > Tables > Kitchen & Dining Room Tables",
+      "parent_id": "fr-24",
+      "children": [
+        {
+          "id": "fr-24-4-1",
+          "name": "Console Tables"
+        }
+      ]
+    },
+    {
+      "id": "fr-24-4-1",
+      "level": 3,
+      "name": "Console Tables",
+      "full_name": "Furniture > Tables > Kitchen & Dining Room Tables > Console Tables",
+      "parent_id": "fr-24-4",
+      "children": []
+    },
+    {
+      "id": "fr-24-5",
+      "level": 2,
+      "name": "Kotatsu",
+      "full_name": "Furniture > Tables > Kotatsu",
+      "parent_id": "fr-24",
+      "children": []
+    },
+    {
+      "id": "fr-24-6",
+      "level": 2,
+      "name": "Nightstands",
+      "full_name": "Furniture > Tables > Nightstands",
+      "parent_id": "fr-24",
+      "children": []
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "ebayCategory": "Music",
+  "shopifyCategories": ["Media"],
+  "totalMapped": 7,
+  "highConfidence": 4,
+  "lowConfidence": 2,
+  "mappings": [
+    {
+      "ebayId": "11233",
+      "ebayFullName": "Music",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "618",
+      "ebayFullName": "Music > Other Formats",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.4,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "52473",
+      "ebayFullName": "Music > Audio Media Accessories",
+      "shopifyCategoryId": "el-2-1-1-1",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > Audio & Video Receiver Accessories > Audio & Video Receiver Rack Mounts",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "176983",
+      "ebayFullName": "Music > Cassettes",
+      "shopifyCategoryId": "me-3-2",
+      "shopifyFullName": "Media > Music & Sound Recordings > Music Cassette Tapes",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "176984",
+      "ebayFullName": "Music > CDs",
+      "shopifyCategoryId": "me-3-3",
+      "shopifyFullName": "Media > Music & Sound Recordings > Music CDs",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "176985",
+      "ebayFullName": "Music > Vinyl Records",
+      "shopifyCategoryId": "me-3-6",
+      "shopifyFullName": "Media > Music & Sound Recordings > Vinyl",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262054",
+      "ebayFullName": "Music > Music NFTs",
+      "shopifyCategoryId": "so-2-2",
+      "shopifyFullName": "Software > Digital Goods & Currency > Desktop Wallpapers",
+      "confidence": 0.6,
+      "mappingSource": "gpt-4.1-mini"
+    }
+  ]
+}

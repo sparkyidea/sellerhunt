@@ -1,0 +1,2193 @@
+{
+  "ebayCategory": "Computers/Tablets & Networking",
+  "shopifyCategories": ["Electronics"],
+  "totalMapped": 273,
+  "highConfidence": 235,
+  "lowConfidence": 0,
+  "mappings": [
+    {
+      "ebayId": "58058",
+      "ebayFullName": "Computers/Tablets & Networking",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "162",
+      "ebayFullName": "Computers/Tablets & Networking > Other Computers & Networking",
+      "shopifyCategoryId": "el-6-12",
+      "shopifyFullName": "Electronics > Computers > All-in-One Computers",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "165",
+      "ebayFullName": "Computers/Tablets & Networking > Drives, Storage & Blank Media",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "3516",
+      "ebayFullName": "Computers/Tablets & Networking > Manuals & Resources",
+      "shopifyCategoryId": "me-8",
+      "shopifyFullName": "Media > Academic Papers & Studies",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "3676",
+      "ebayFullName": "Computers/Tablets & Networking > Keyboards, Mice & Pointers",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "11176",
+      "ebayFullName": "Computers/Tablets & Networking > Home Networking & Connectivity",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "11189",
+      "ebayFullName": "Computers/Tablets & Networking > Vintage Computing",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "18793",
+      "ebayFullName": "Computers/Tablets & Networking > Software",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "31530",
+      "ebayFullName": "Computers/Tablets & Networking > Laptop & Desktop Accessories",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "86722",
+      "ebayFullName": "Computers/Tablets & Networking > Power Protection, Distribution",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "162497",
+      "ebayFullName": "Computers/Tablets & Networking > Monitors, Projectors & Accs",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "171485",
+      "ebayFullName": "Computers/Tablets & Networking > Tablets & eBook Readers",
+      "shopifyCategoryId": "el-6-8",
+      "shopifyFullName": "Electronics > Computers > Tablet Computers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "171957",
+      "ebayFullName": "Computers/Tablets & Networking > Desktops & All-In-Ones",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "171961",
+      "ebayFullName": "Computers/Tablets & Networking > Printers, Scanners & Supplies",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "175672",
+      "ebayFullName": "Computers/Tablets & Networking > Laptops & Netbooks",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "175673",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Components & Parts",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "175698",
+      "ebayFullName": "Computers/Tablets & Networking > Enterprise Networking, Servers",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "176970",
+      "ebayFullName": "Computers/Tablets & Networking > Tablet & eBook Reader Accs",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "180235",
+      "ebayFullName": "Computers/Tablets & Networking > Tablet & eBook Reader Parts",
+      "shopifyCategoryId": "el-7-9-15-4",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Tablet Computer Parts > Tablet Computer Buttons & Flex Cables",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182094",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Cables & Connectors",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "183062",
+      "ebayFullName": "Computers/Tablets & Networking > 3D Printers & Supplies",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "259696",
+      "ebayFullName": "Computers/Tablets & Networking > Mixed Lots",
+      "shopifyCategoryId": "el-6-2",
+      "shopifyFullName": "Electronics > Computers > Computer Servers",
+      "confidence": 0.5,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "183063",
+      "ebayFullName": "Computers/Tablets & Networking > 3D Printers & Supplies > 3D Printers",
+      "shopifyCategoryId": "el-13-2",
+      "shopifyFullName": "Electronics > Print, Copy, Scan & Fax > 3D Printers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "183064",
+      "ebayFullName": "Computers/Tablets & Networking > 3D Printers & Supplies > 3D Scanners",
+      "shopifyCategoryId": "el-13-6-7",
+      "shopifyFullName": "Electronics > Print, Copy, Scan & Fax > Scanners > 3D Scanners",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "183065",
+      "ebayFullName": "Computers/Tablets & Networking > 3D Printers & Supplies > 3D Printer Consumables",
+      "shopifyCategoryId": "el-13-1-5",
+      "shopifyFullName": "Electronics > Print, Copy, Scan & Fax > 3D Printer Accessories > Filaments",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "183066",
+      "ebayFullName": "Computers/Tablets & Networking > 3D Printers & Supplies > 3D Printer Parts",
+      "shopifyCategoryId": "el-13-7",
+      "shopifyFullName": "Electronics > Print, Copy, Scan & Fax > 3D Printer Replacement Parts",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260315",
+      "ebayFullName": "Computers/Tablets & Networking > 3D Printers & Supplies > 3D Printer Accessories",
+      "shopifyCategoryId": "el-13-1-10",
+      "shopifyFullName": "Electronics > Print, Copy, Scan & Fax > 3D Printer Accessories > 3D Printer Enclosures",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260316",
+      "ebayFullName": "Computers/Tablets & Networking > 3D Printers & Supplies > 3D Scanner Accessories",
+      "shopifyCategoryId": "el-13-6-7",
+      "shopifyFullName": "Electronics > Print, Copy, Scan & Fax > Scanners > 3D Scanners",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260317",
+      "ebayFullName": "Computers/Tablets & Networking > 3D Printers & Supplies > 3D Scanner Parts",
+      "shopifyCategoryId": "el-13-6-7",
+      "shopifyFullName": "Electronics > Print, Copy, Scan & Fax > Scanners > 3D Scanners",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "3668",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Cables & Connectors > Other Computer Cables",
+      "shopifyCategoryId": "el-7-7-2",
+      "shopifyFullName": "Electronics > Electronics Accessories > Cables > Extension Cables",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "20311",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Cables & Connectors > Networking Cables & Adapters",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "31492",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Cables & Connectors > Audio Cables & Adapters",
+      "shopifyCategoryId": "el-7-7-1-1",
+      "shopifyFullName": "Electronics > Electronics Accessories > Cables > Audio & Video Cables > AUX Cables",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "31493",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Cables & Connectors > FireWire Cables & Adapters",
+      "shopifyCategoryId": "el-7-7-5-1",
+      "shopifyFullName": "Electronics > Electronics Accessories > Cables > Storage & Data Transfer Cables > FireWire Cables",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "44932",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Cables & Connectors > USB Cables, Hubs & Adapters",
+      "shopifyCategoryId": "el-7-7-5-2",
+      "shopifyFullName": "Electronics > Electronics Accessories > Cables > Storage & Data Transfer Cables > USB Cables",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "51169",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Cables & Connectors > Cabling Tools",
+      "shopifyCategoryId": "ha-14-7-1",
+      "shopifyFullName": "Hardware > Tool Accessories > Grinder Accessories > Grinding Wheels & Points",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "58300",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Cables & Connectors > Computer Cable Testers",
+      "shopifyCategoryId": "ha-14-13-2",
+      "shopifyFullName": "Hardware > Tool Accessories > Measuring Tool & Sensor Accessories > Gas Detector Accessories",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "67858",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Cables & Connectors > Cable Ties & Organizers",
+      "shopifyCategoryId": "el-7-6-7",
+      "shopifyFullName": "Electronics > Electronics Accessories > Cable Management > Wire & Cable Ties",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "74941",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Cables & Connectors > Drive Cables & Adapters",
+      "shopifyCategoryId": "el-7-9-14-2-4",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Storage Devices > Hard Drive Accessories > Hard Drive Adapters & Converters",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "116848",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Cables & Connectors > Parallel, Serial & PS/2",
+      "shopifyCategoryId": "el-7-7-5-5",
+      "shopifyFullName": "Electronics > Electronics Accessories > Cables > Storage & Data Transfer Cables > Serial & RS-232 Cables",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "158840",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Cables & Connectors > Monitor/AV Cables & Adapters",
+      "shopifyCategoryId": "el-7-7-1-6",
+      "shopifyFullName": "Electronics > Electronics Accessories > Cables > Audio & Video Cables > DVI Cables",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182095",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Cables & Connectors > KVM Cables",
+      "shopifyCategoryId": "el-7-7-3",
+      "shopifyFullName": "Electronics > Electronics Accessories > Cables > KVM Cables",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182096",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Cables & Connectors > KVM Switches",
+      "shopifyCategoryId": "el-7-9-12-9",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Input Devices > KVM Switches",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182097",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Cables & Connectors > Power Cables & Connectors",
+      "shopifyCategoryId": "el-7-7-6-1",
+      "shopifyFullName": "Electronics > Electronics Accessories > Cables > System & Power Cables > AC Power Cords",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "64035",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Cables & Connectors > Networking Cables & Adapters > Ethernet Cables (RJ-45/8P8C)",
+      "shopifyCategoryId": "el-7-7-4-2",
+      "shopifyFullName": "Electronics > Electronics Accessories > Cables > Network Cables > Ethernet Cables",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "64043",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Cables & Connectors > Networking Cables & Adapters > Optical Fiber Cables",
+      "shopifyCategoryId": "el-7-7-4-3",
+      "shopifyFullName": "Electronics > Electronics Accessories > Cables > Network Cables > Fiber Optic Cables",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "67276",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Cables & Connectors > Networking Cables & Adapters > Splitters, Couplers & Adapters",
+      "shopifyCategoryId": "el-7-2-10",
+      "shopifyFullName": "Electronics > Electronics Accessories > Antenna Accessories > Splitters, Combiners & Distribution Systems",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "67279",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Cables & Connectors > Networking Cables & Adapters > Plugs, Jacks & Wall Plates",
+      "shopifyCategoryId": "el-7-2-9",
+      "shopifyFullName": "Electronics > Electronics Accessories > Antenna Accessories > RF Adapters & Connectors",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "67857",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Cables & Connectors > Networking Cables & Adapters > DSL/Phone Cables (RJ-11)",
+      "shopifyCategoryId": "el-7-7-7",
+      "shopifyFullName": "Electronics > Electronics Accessories > Cables > Telephone Cables",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "101282",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Cables & Connectors > Networking Cables & Adapters > Other Networking Cables",
+      "shopifyCategoryId": "el-7-7-4-1",
+      "shopifyFullName": "Electronics > Electronics Accessories > Cables > Network Cables > Coaxial Cables",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175681",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Cables & Connectors > Networking Cables & Adapters > Coaxial Network Cables",
+      "shopifyCategoryId": "el-7-7-4-1",
+      "shopifyFullName": "Electronics > Electronics Accessories > Cables > Network Cables > Coaxial Cables",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "176971",
+      "ebayFullName": "Computers/Tablets & Networking > Tablet & eBook Reader Accs > Accessory Bundles",
+      "shopifyCategoryId": "el-7-8-4-3",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Accessories > Handheld Device Accessories > Tablet Computer Accessories",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "176972",
+      "ebayFullName": "Computers/Tablets & Networking > Tablet & eBook Reader Accs > A/V Cables & Adapters",
+      "shopifyCategoryId": "el-7-1-1",
+      "shopifyFullName": "Electronics > Electronics Accessories > Adapters > Audio & Video Cable Adapters & Couplers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "176973",
+      "ebayFullName": "Computers/Tablets & Networking > Tablet & eBook Reader Accs > Cases, Covers, Keyboard Folios",
+      "shopifyCategoryId": "el-7-8-4-1-1",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Accessories > Handheld Device Accessories > E-Book Reader Accessories > E-Book Reader Cases",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "176974",
+      "ebayFullName": "Computers/Tablets & Networking > Tablet & eBook Reader Accs > Chargers & Sync Cables",
+      "shopifyCategoryId": "el-7-15-4-1",
+      "shopifyFullName": "Electronics > Electronics Accessories > Power > Power Adapter & Charger Accessories > Charger Protective Cases",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "176975",
+      "ebayFullName": "Computers/Tablets & Networking > Tablet & eBook Reader Accs > Keyboards",
+      "shopifyCategoryId": "el-7-9-12-15",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Input Devices > Keyboard & Mouse Sets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "176976",
+      "ebayFullName": "Computers/Tablets & Networking > Tablet & eBook Reader Accs > Memory Card & USB Adapters",
+      "shopifyCategoryId": "el-7-1-2",
+      "shopifyFullName": "Electronics > Electronics Accessories > Adapters > Memory Card Adapters",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "176977",
+      "ebayFullName": "Computers/Tablets & Networking > Tablet & eBook Reader Accs > Mounts, Stands & Holders",
+      "shopifyCategoryId": "el-7-8-11",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Accessories > Tablet Computer Docks & Stands",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "176978",
+      "ebayFullName": "Computers/Tablets & Networking > Tablet & eBook Reader Accs > Reading Lights",
+      "shopifyCategoryId": "os-1-2",
+      "shopifyFullName": "Office Supplies > Book Accessories > Book Lights",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "176979",
+      "ebayFullName": "Computers/Tablets & Networking > Tablet & eBook Reader Accs > Screen Protectors",
+      "shopifyCategoryId": "el-7-11-5-3",
+      "shopifyFullName": "Electronics > Electronics Accessories > Electronics Films & Shields > Screen Protectors > Tablet & E-Book Reader Screen Protectors",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "176980",
+      "ebayFullName": "Computers/Tablets & Networking > Tablet & eBook Reader Accs > Stickers & Decals",
+      "shopifyCategoryId": "el-7-11-2",
+      "shopifyFullName": "Electronics > Electronics Accessories > Electronics Films & Shields > Electronics Stickers & Decals",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "176981",
+      "ebayFullName": "Computers/Tablets & Networking > Tablet & eBook Reader Accs > Styluses",
+      "shopifyCategoryId": "el-7-8-10",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Accessories > Stylus Pens",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "176982",
+      "ebayFullName": "Computers/Tablets & Networking > Tablet & eBook Reader Accs > Other Tablet & eBook Accs",
+      "shopifyCategoryId": "el-7-8-4-3",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Accessories > Handheld Device Accessories > Tablet Computer Accessories",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "11175",
+      "ebayFullName": "Computers/Tablets & Networking > Enterprise Networking, Servers > Other Enterprise Networking",
+      "shopifyCategoryId": "el-6-12",
+      "shopifyFullName": "Electronics > Computers > All-in-One Computers",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "51167",
+      "ebayFullName": "Computers/Tablets & Networking > Enterprise Networking, Servers > Load Balancers",
+      "shopifyCategoryId": "el-12-3-4",
+      "shopifyFullName": "Electronics > Networking > Hubs & Switches > Managed Switches",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "51168",
+      "ebayFullName": "Computers/Tablets & Networking > Enterprise Networking, Servers > Firewall & VPN Devices",
+      "shopifyCategoryId": "el-12-7",
+      "shopifyFullName": "Electronics > Networking > Network Security & Firewall Devices",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "51197",
+      "ebayFullName": "Computers/Tablets & Networking > Enterprise Networking, Servers > Racks, Chassis & Patch Panels",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "51240",
+      "ebayFullName": "Computers/Tablets & Networking > Enterprise Networking, Servers > Server Components",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "61839",
+      "ebayFullName": "Computers/Tablets & Networking > Enterprise Networking, Servers > VoIP Business Phones/IP PBX",
+      "shopifyCategoryId": "el-4-8-2-2",
+      "shopifyFullName": "Electronics > Communications > Telephony > Corded Phones > VoIP Phones",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "80225",
+      "ebayFullName": "Computers/Tablets & Networking > Enterprise Networking, Servers > CSUs/DSUs",
+      "shopifyCategoryId": "el-12-3-4",
+      "shopifyFullName": "Electronics > Networking > Hubs & Switches > Managed Switches",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "86720",
+      "ebayFullName": "Computers/Tablets & Networking > Enterprise Networking, Servers > Directional Antennas",
+      "shopifyCategoryId": "el-7-2-1",
+      "shopifyFullName": "Electronics > Electronics Accessories > Antenna Accessories > Antenna Mounts & Brackets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175699",
+      "ebayFullName": "Computers/Tablets & Networking > Enterprise Networking, Servers > Enterprise Routers",
+      "shopifyCategoryId": "el-12-1-7",
+      "shopifyFullName": "Electronics > Networking > Bridges & Routers > Wired Routers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175700",
+      "ebayFullName": "Computers/Tablets & Networking > Enterprise Networking, Servers > Servers, Clients & Terminals",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "182091",
+      "ebayFullName": "Computers/Tablets & Networking > Enterprise Networking, Servers > Switches & Hubs",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "182092",
+      "ebayFullName": "Computers/Tablets & Networking > Enterprise Networking, Servers > Enterprise Router Components",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "182093",
+      "ebayFullName": "Computers/Tablets & Networking > Enterprise Networking, Servers > Network Storage Disk Arrays",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "11209",
+      "ebayFullName": "Computers/Tablets & Networking > Enterprise Networking, Servers > Network Storage Disk Arrays > Other Network Disk Arrays",
+      "shopifyCategoryId": "el-7-9-14-5",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Storage Devices > Network Storage Systems",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "58317",
+      "ebayFullName": "Computers/Tablets & Networking > Enterprise Networking, Servers > Network Storage Disk Arrays > SAN Disk Arrays",
+      "shopifyCategoryId": "el-7-9-14-5",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Storage Devices > Network Storage Systems",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "58322",
+      "ebayFullName": "Computers/Tablets & Networking > Enterprise Networking, Servers > Network Storage Disk Arrays > Disk Array Components",
+      "shopifyCategoryId": "el-7-9-14-5",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Storage Devices > Network Storage Systems",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "64069",
+      "ebayFullName": "Computers/Tablets & Networking > Enterprise Networking, Servers > Network Storage Disk Arrays > NAS Disk Arrays",
+      "shopifyCategoryId": "el-7-9-14-5",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Storage Devices > Network Storage Systems",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "67286",
+      "ebayFullName": "Computers/Tablets & Networking > Enterprise Networking, Servers > Enterprise Router Components > Router Modules/Cards/Adapters",
+      "shopifyCategoryId": "el-7-9-4",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Computer Processors",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "67287",
+      "ebayFullName": "Computers/Tablets & Networking > Enterprise Networking, Servers > Enterprise Router Components > Router Power Supplies",
+      "shopifyCategoryId": "el-7-9-3",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Computer Power Supplies",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "67292",
+      "ebayFullName": "Computers/Tablets & Networking > Enterprise Networking, Servers > Enterprise Router Components > Router Memory",
+      "shopifyCategoryId": "el-7-12-3",
+      "shopifyFullName": "Electronics > Electronics Accessories > Memory > RAM",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175704",
+      "ebayFullName": "Computers/Tablets & Networking > Enterprise Networking, Servers > Enterprise Router Components > Other Ent. Router Components",
+      "shopifyCategoryId": "el-7-9-3",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Computer Power Supplies",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "11180",
+      "ebayFullName": "Computers/Tablets & Networking > Enterprise Networking, Servers > Switches & Hubs > Network Hubs",
+      "shopifyCategoryId": "el-12-3-10",
+      "shopifyFullName": "Electronics > Networking > Hubs & Switches > Ethernet Hubs",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "51268",
+      "ebayFullName": "Computers/Tablets & Networking > Enterprise Networking, Servers > Switches & Hubs > Network Switches",
+      "shopifyCategoryId": "el-12-3-1",
+      "shopifyFullName": "Electronics > Networking > Hubs & Switches > Gigabit Switches",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "58319",
+      "ebayFullName": "Computers/Tablets & Networking > Enterprise Networking, Servers > Switches & Hubs > Switch Modules",
+      "shopifyCategoryId": "el-12-3-5-1",
+      "shopifyFullName": "Electronics > Networking > Hubs & Switches > Modular Switches > Network Switch Expansion Modules",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "58320",
+      "ebayFullName": "Computers/Tablets & Networking > Enterprise Networking, Servers > Switches & Hubs > Switch Power Supplies",
+      "shopifyCategoryId": "el-12-3-5-3",
+      "shopifyFullName": "Electronics > Networking > Hubs & Switches > Modular Switches > Switch Power Supplies",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "58321",
+      "ebayFullName": "Computers/Tablets & Networking > Enterprise Networking, Servers > Switches & Hubs > Other Ent. Switches & Hubs",
+      "shopifyCategoryId": "el-12-3-10",
+      "shopifyFullName": "Electronics > Networking > Hubs & Switches > Ethernet Hubs",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "11211",
+      "ebayFullName": "Computers/Tablets & Networking > Enterprise Networking, Servers > Servers, Clients & Terminals > Computer Servers",
+      "shopifyCategoryId": "el-6-2",
+      "shopifyFullName": "Electronics > Computers > Computer Servers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "64052",
+      "ebayFullName": "Computers/Tablets & Networking > Enterprise Networking, Servers > Servers, Clients & Terminals > Print Servers",
+      "shopifyCategoryId": "el-12-9",
+      "shopifyFullName": "Electronics > Networking > Print Servers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175701",
+      "ebayFullName": "Computers/Tablets & Networking > Enterprise Networking, Servers > Servers, Clients & Terminals > Terminal Servers",
+      "shopifyCategoryId": "el-6-2",
+      "shopifyFullName": "Electronics > Computers > Computer Servers",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175702",
+      "ebayFullName": "Computers/Tablets & Networking > Enterprise Networking, Servers > Servers, Clients & Terminals > Thin Clients",
+      "shopifyCategoryId": "el-6-9-1",
+      "shopifyFullName": "Electronics > Computers > Thin & Zero Clients > Thin Client Computers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175703",
+      "ebayFullName": "Computers/Tablets & Networking > Enterprise Networking, Servers > Servers, Clients & Terminals > Other Ent. Clients & Terminals",
+      "shopifyCategoryId": "el-6-2",
+      "shopifyFullName": "Electronics > Computers > Computer Servers",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "184657",
+      "ebayFullName": "Computers/Tablets & Networking > Enterprise Networking, Servers > Servers, Clients & Terminals > Server Cables & Adapters",
+      "shopifyCategoryId": "el-7-7-2",
+      "shopifyFullName": "Electronics > Electronics Accessories > Cables > Extension Cables",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "184658",
+      "ebayFullName": "Computers/Tablets & Networking > Enterprise Networking, Servers > Servers, Clients & Terminals > Server Tray Sleds/Caddies",
+      "shopifyCategoryId": "el-7-9-14-2-3-1",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Storage Devices > Hard Drive Accessories > Hard Drive Enclosures & Mounts > Hard Drive Caddies & Trays",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "184659",
+      "ebayFullName": "Computers/Tablets & Networking > Enterprise Networking, Servers > Servers, Clients & Terminals > Server Mount Hardware",
+      "shopifyCategoryId": "el-7-9-14-2-3-1",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Storage Devices > Hard Drive Accessories > Hard Drive Enclosures & Mounts > Hard Drive Caddies & Trays",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "11210",
+      "ebayFullName": "Computers/Tablets & Networking > Enterprise Networking, Servers > Server Components > Server Memory (RAM)",
+      "shopifyCategoryId": "el-7-12-3",
+      "shopifyFullName": "Electronics > Electronics Accessories > Memory > RAM",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "56088",
+      "ebayFullName": "Computers/Tablets & Networking > Enterprise Networking, Servers > Server Components > Server CPUs/Processors",
+      "shopifyCategoryId": "el-7-9-4",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Computer Processors",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "56090",
+      "ebayFullName": "Computers/Tablets & Networking > Enterprise Networking, Servers > Server Components > Server Power Supplies",
+      "shopifyCategoryId": "el-7-9-3",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Computer Power Supplies",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "56091",
+      "ebayFullName": "Computers/Tablets & Networking > Enterprise Networking, Servers > Server Components > Disk Controllers/RAID Cards",
+      "shopifyCategoryId": "el-7-9-10-6",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > I/O Cards & Adapters > Storage Controller Cards & Adapters",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "56092",
+      "ebayFullName": "Computers/Tablets & Networking > Enterprise Networking, Servers > Server Components > Other Ent. Server Components",
+      "shopifyCategoryId": "el-7-9-4",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Computer Processors",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "71509",
+      "ebayFullName": "Computers/Tablets & Networking > Enterprise Networking, Servers > Server Components > Server Boards",
+      "shopifyCategoryId": "el-7-9-4",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Computer Processors",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "168074",
+      "ebayFullName": "Computers/Tablets & Networking > Enterprise Networking, Servers > Server Components > Server Fans & Cooling Systems",
+      "shopifyCategoryId": "el-7-9-7-4",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Computer System Cooling Parts > Fan Controllers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "44992",
+      "ebayFullName": "Computers/Tablets & Networking > Enterprise Networking, Servers > Racks, Chassis & Patch Panels > Patch Panels",
+      "shopifyCategoryId": "el-7-6-4-2",
+      "shopifyFullName": "Electronics > Electronics Accessories > Cable Management > Patch Panels > Ethernet Patch Panels",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "51199",
+      "ebayFullName": "Computers/Tablets & Networking > Enterprise Networking, Servers > Racks, Chassis & Patch Panels > Rackmount Cabinets & Frames",
+      "shopifyCategoryId": "el-7-9-5-4",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Computer Racks & Mounts > Server Cabinets & Enclosures",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "64061",
+      "ebayFullName": "Computers/Tablets & Networking > Enterprise Networking, Servers > Racks, Chassis & Patch Panels > Rackmount Cases & Chassis",
+      "shopifyCategoryId": "el-7-9-8",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Desktop Computer & Server Cases",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "80216",
+      "ebayFullName": "Computers/Tablets & Networking > Enterprise Networking, Servers > Racks, Chassis & Patch Panels > Other Ent. Networking Racks",
+      "shopifyCategoryId": "el-7-9-5-4",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Computer Racks & Mounts > Server Cabinets & Enclosures",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "164",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Components & Parts > CPUs/Processors",
+      "shopifyCategoryId": "el-7-9-4",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Computer Processors",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "1244",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Components & Parts > Motherboards",
+      "shopifyCategoryId": "el-7-9-4",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Computer Processors",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "3761",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Components & Parts > Video Capture & TV Tuner Cards",
+      "shopifyCategoryId": "el-7-9-10-4",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > I/O Cards & Adapters > TV Tuner Cards & Adapters",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "16145",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Components & Parts > Other Components & Parts",
+      "shopifyCategoryId": "el-7-9-4",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Computer Processors",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "27386",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Components & Parts > Graphics/Video Cards",
+      "shopifyCategoryId": "el-7-9-10-5-1",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > I/O Cards & Adapters > Video Cards & Adapters > Video Capture Cards",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "42000",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Components & Parts > Fans, Heat Sinks & Cooling",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "42017",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Components & Parts > Power Supplies",
+      "shopifyCategoryId": "el-7-9-3",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Computer Power Supplies",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "44980",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Components & Parts > Sound Cards (Internal)",
+      "shopifyCategoryId": "el-7-9-10-1",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > I/O Cards & Adapters > Audio Cards & Adapters",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "131511",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Components & Parts > Motherboard & CPU Combos",
+      "shopifyCategoryId": "el-7-9-4",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Computer Processors",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "168059",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Components & Parts > Power Supply Testers",
+      "shopifyCategoryId": "el-7-15-2-5",
+      "shopifyFullName": "Electronics > Electronics Accessories > Power > Battery Accessories > General Purpose Battery Testers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "170083",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Components & Parts > Memory (RAM)",
+      "shopifyCategoryId": "el-7-12-3",
+      "shopifyFullName": "Electronics > Electronics Accessories > Memory > RAM",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175674",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Components & Parts > Computer Cases & Accessories",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "182088",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Components & Parts > Interface/Add-On Cards",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "182089",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Components & Parts > Laptop Replacement Parts",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "182090",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Components & Parts > Motherboard Components & Accs",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "168060",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Components & Parts > Motherboard Components & Accs > Motherboard Diagnostic Cards",
+      "shopifyCategoryId": "el-7-9-4",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Computer Processors",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "170080",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Components & Parts > Motherboard Components & Accs > Motherboard Backplates",
+      "shopifyCategoryId": "el-7-9-2-5",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Computer Backplates & I/O Shields > Motherboard I/O Shields",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "170082",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Components & Parts > Motherboard Components & Accs > Other Motherboard Accessories",
+      "shopifyCategoryId": "el-7-9-2-5",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Computer Backplates & I/O Shields > Motherboard I/O Shields",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175668",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Components & Parts > Motherboard Components & Accs > Motherboard Components",
+      "shopifyCategoryId": "el-7-9-2-5",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Computer Backplates & I/O Shields > Motherboard I/O Shields",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "31568",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Components & Parts > Laptop Replacement Parts > Laptop Replacement Keyboards",
+      "shopifyCategoryId": "el-7-9-13-4",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Laptop Parts > Laptop Replacement Keyboards",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "31569",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Components & Parts > Laptop Replacement Parts > Laptop Screens & LCD Panels",
+      "shopifyCategoryId": "el-7-9-13-5",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Laptop Parts > Laptop Replacement Screens",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "168061",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Components & Parts > Laptop Replacement Parts > Other Laptop Replacement Parts",
+      "shopifyCategoryId": "el-7-9-13-10",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Laptop Parts > Laptop Motherboards & Logic Boards",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175676",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Components & Parts > Laptop Replacement Parts > Laptop Housings & Touchpads",
+      "shopifyCategoryId": "el-7-9-13-2",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Laptop Parts > Laptop Housings & Trim",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "20318",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Components & Parts > Interface/Add-On Cards > Network Cards",
+      "shopifyCategoryId": "el-12-6-2",
+      "shopifyFullName": "Electronics > Networking > Network Cards & Adapters > Ethernet Cards & Adapters",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "44940",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Components & Parts > Interface/Add-On Cards > Modem Cards",
+      "shopifyCategoryId": "el-12-5-1",
+      "shopifyFullName": "Electronics > Networking > Modems > Cable Modems",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "90715",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Components & Parts > Interface/Add-On Cards > Disk Controllers/RAID Cards",
+      "shopifyCategoryId": "el-7-9-10-6",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > I/O Cards & Adapters > Storage Controller Cards & Adapters",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "90718",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Components & Parts > Interface/Add-On Cards > Port Expansion Cards",
+      "shopifyCategoryId": "el-7-9-10-2-4",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > I/O Cards & Adapters > Computer Interface Cards & Adapters > USB Expansion Cards & Adapters",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "90719",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Components & Parts > Interface/Add-On Cards > Other Interface/Add-On Cards",
+      "shopifyCategoryId": "el-7-9-10-1",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > I/O Cards & Adapters > Audio Cards & Adapters",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "42014",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Components & Parts > Computer Cases & Accessories > Computer Cases",
+      "shopifyCategoryId": "el-7-9-8",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Desktop Computer & Server Cases",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "51064",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Components & Parts > Computer Cases & Accessories > Case Parts & Accessories",
+      "shopifyCategoryId": "el-7-9-8",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Desktop Computer & Server Cases",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "3673",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Components & Parts > Fans, Heat Sinks & Cooling > Other Computer Fans & Cooling",
+      "shopifyCategoryId": "el-7-9-7-2",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Computer System Cooling Parts > Computer Case Fans",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "46322",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Components & Parts > Fans, Heat Sinks & Cooling > Thermal Compounds & Supplies",
+      "shopifyCategoryId": "el-7-9-7-5",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Computer System Cooling Parts > Thermal Compounds & Pads",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "80151",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Components & Parts > Fans, Heat Sinks & Cooling > Video Card/GPU Cooling",
+      "shopifyCategoryId": "el-7-9-7-2",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Computer System Cooling Parts > Computer Case Fans",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "131486",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Components & Parts > Fans, Heat Sinks & Cooling > CPU Fans & Heat Sinks",
+      "shopifyCategoryId": "el-7-9-7-3",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Computer System Cooling Parts > CPU Air Coolers & Heat Sinks",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "131487",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Components & Parts > Fans, Heat Sinks & Cooling > Computer Case Fans",
+      "shopifyCategoryId": "el-7-9-7-2",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Computer System Cooling Parts > Computer Case Fans",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "131494",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Components & Parts > Fans, Heat Sinks & Cooling > Hard Drive Cooling",
+      "shopifyCategoryId": "el-7-9-7-2",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Computer System Cooling Parts > Computer Case Fans",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "131495",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Components & Parts > Fans, Heat Sinks & Cooling > Fan Grills & Filters",
+      "shopifyCategoryId": "el-7-9-2-2",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Computer Backplates & I/O Shields > GPU Fan Shrouds",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "131502",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Components & Parts > Fans, Heat Sinks & Cooling > Memory & Chipset Cooling",
+      "shopifyCategoryId": "el-7-9-7-2",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Computer System Cooling Parts > Computer Case Fans",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "131503",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Components & Parts > Fans, Heat Sinks & Cooling > Water Cooling",
+      "shopifyCategoryId": "el-7-9-7-6",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Computer System Cooling Parts > Water Cooling Components",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "170078",
+      "ebayFullName": "Computers/Tablets & Networking > Computer Components & Parts > Fans, Heat Sinks & Cooling > Fan, Heat Sink Brackets & Accs",
+      "shopifyCategoryId": "el-7-9-2-2",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Computer Backplates & I/O Shields > GPU Fan Shrouds",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "177",
+      "ebayFullName": "Computers/Tablets & Networking > Laptops & Netbooks > PC Laptops & Netbooks",
+      "shopifyCategoryId": "el-6-6",
+      "shopifyFullName": "Electronics > Computers > Laptops",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "111422",
+      "ebayFullName": "Computers/Tablets & Networking > Laptops & Netbooks > Apple Laptops",
+      "shopifyCategoryId": "el-6-6",
+      "shopifyFullName": "Electronics > Computers > Laptops",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "1245",
+      "ebayFullName": "Computers/Tablets & Networking > Printers, Scanners & Supplies > Printers",
+      "shopifyCategoryId": "el-13-4-3",
+      "shopifyFullName": "Electronics > Print, Copy, Scan & Fax > Printers, Copiers & Fax Machines > Inkjet Printers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "11195",
+      "ebayFullName": "Computers/Tablets & Networking > Printers, Scanners & Supplies > Printer Ink, Toner & Paper",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "11205",
+      "ebayFullName": "Computers/Tablets & Networking > Printers, Scanners & Supplies > Scanners",
+      "shopifyCategoryId": "el-13-6-3",
+      "shopifyFullName": "Electronics > Print, Copy, Scan & Fax > Scanners > Flatbed Scanners",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182086",
+      "ebayFullName": "Computers/Tablets & Networking > Printers, Scanners & Supplies > Printer & Scanner Parts & Accs",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "11197",
+      "ebayFullName": "Computers/Tablets & Networking > Printers, Scanners & Supplies > Printer & Scanner Parts & Accs > Feeders & Trays",
+      "shopifyCategoryId": "el-13-3-7-2",
+      "shopifyFullName": "Electronics > Print, Copy, Scan & Fax > Printer, Copier & Fax Machine Accessories > Printer, Copier & Fax Machine Replacement Parts > Paper Trays & Feeders",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "16211",
+      "ebayFullName": "Computers/Tablets & Networking > Printers, Scanners & Supplies > Printer & Scanner Parts & Accs > Printer Memory",
+      "shopifyCategoryId": "el-13-3-3",
+      "shopifyFullName": "Electronics > Print, Copy, Scan & Fax > Printer, Copier & Fax Machine Accessories > Printer Memory",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "51288",
+      "ebayFullName": "Computers/Tablets & Networking > Printers, Scanners & Supplies > Printer & Scanner Parts & Accs > Laser Drums",
+      "shopifyCategoryId": "el-13-3-1-1",
+      "shopifyFullName": "Electronics > Print, Copy, Scan & Fax > Printer, Copier & Fax Machine Accessories > Printer Consumables > Printer Drums & Drum Kits",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "51328",
+      "ebayFullName": "Computers/Tablets & Networking > Printers, Scanners & Supplies > Printer & Scanner Parts & Accs > Print Heads",
+      "shopifyCategoryId": "el-13-3-1-5",
+      "shopifyFullName": "Electronics > Print, Copy, Scan & Fax > Printer, Copier & Fax Machine Accessories > Printer Consumables > Printheads",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "101356",
+      "ebayFullName": "Computers/Tablets & Networking > Printers, Scanners & Supplies > Printer & Scanner Parts & Accs > Power Supplies",
+      "shopifyCategoryId": "el-7-9-3",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Computer Power Supplies",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "170599",
+      "ebayFullName": "Computers/Tablets & Networking > Printers, Scanners & Supplies > Printer & Scanner Parts & Accs > Other Printer & Scanner Accs",
+      "shopifyCategoryId": "el-13-3-8",
+      "shopifyFullName": "Electronics > Print, Copy, Scan & Fax > Printer, Copier & Fax Machine Accessories > Automatic Document Feeders",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "170601",
+      "ebayFullName": "Computers/Tablets & Networking > Printers, Scanners & Supplies > Printer & Scanner Parts & Accs > Scanner Parts",
+      "shopifyCategoryId": "el-3-6-8",
+      "shopifyFullName": "Electronics > Circuit Boards & Components > Printed Circuit Boards > Scanner Circuit Boards",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175685",
+      "ebayFullName": "Computers/Tablets & Networking > Printers, Scanners & Supplies > Printer & Scanner Parts & Accs > Cleaning & Repair Kits",
+      "shopifyCategoryId": "el-13-3-1-3-3",
+      "shopifyFullName": "Electronics > Print, Copy, Scan & Fax > Printer, Copier & Fax Machine Accessories > Printer Consumables > Printer Maintenance Kits > Printer Cleaning & Flushing Solutions",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175686",
+      "ebayFullName": "Computers/Tablets & Networking > Printers, Scanners & Supplies > Printer & Scanner Parts & Accs > Fusers",
+      "shopifyCategoryId": "el-13-3-7-1",
+      "shopifyFullName": "Electronics > Print, Copy, Scan & Fax > Printer, Copier & Fax Machine Accessories > Printer, Copier & Fax Machine Replacement Parts > Fuser Units",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182087",
+      "ebayFullName": "Computers/Tablets & Networking > Printers, Scanners & Supplies > Printer & Scanner Parts & Accs > Duplexers",
+      "shopifyCategoryId": "el-13-3-2",
+      "shopifyFullName": "Electronics > Print, Copy, Scan & Fax > Printer, Copier & Fax Machine Accessories > Printer Duplexers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "11202",
+      "ebayFullName": "Computers/Tablets & Networking > Printers, Scanners & Supplies > Printer Ink, Toner & Paper > Ink Ribbons",
+      "shopifyCategoryId": "el-13-3-1-4",
+      "shopifyFullName": "Electronics > Print, Copy, Scan & Fax > Printer, Copier & Fax Machine Accessories > Printer Consumables > Printer Ribbons",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "16191",
+      "ebayFullName": "Computers/Tablets & Networking > Printers, Scanners & Supplies > Printer Ink, Toner & Paper > Ink Cartridges",
+      "shopifyCategoryId": "el-13-3-1-7",
+      "shopifyFullName": "Electronics > Print, Copy, Scan & Fax > Printer, Copier & Fax Machine Accessories > Printer Consumables > Toner & Inkjet Cartridges",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "16204",
+      "ebayFullName": "Computers/Tablets & Networking > Printers, Scanners & Supplies > Printer Ink, Toner & Paper > Toner Cartridges",
+      "shopifyCategoryId": "el-13-3-1-7",
+      "shopifyFullName": "Electronics > Print, Copy, Scan & Fax > Printer, Copier & Fax Machine Accessories > Printer Consumables > Toner & Inkjet Cartridges",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73452",
+      "ebayFullName": "Computers/Tablets & Networking > Printers, Scanners & Supplies > Printer Ink, Toner & Paper > Printer Photo Paper",
+      "shopifyCategoryId": "el-13-3-1-8",
+      "shopifyFullName": "Electronics > Print, Copy, Scan & Fax > Printer, Copier & Fax Machine Accessories > Printer Consumables > Printer Media & Film",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "86728",
+      "ebayFullName": "Computers/Tablets & Networking > Printers, Scanners & Supplies > Printer Ink, Toner & Paper > Printer Paper",
+      "shopifyCategoryId": "el-13-3-1-8",
+      "shopifyFullName": "Electronics > Print, Copy, Scan & Fax > Printer, Copier & Fax Machine Accessories > Printer Consumables > Printer Media & Film",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "99319",
+      "ebayFullName": "Computers/Tablets & Networking > Printers, Scanners & Supplies > Printer Ink, Toner & Paper > Ink Refills & Kits",
+      "shopifyCategoryId": "el-13-3-1-7",
+      "shopifyFullName": "Electronics > Print, Copy, Scan & Fax > Printer, Copier & Fax Machine Accessories > Printer Consumables > Toner & Inkjet Cartridges",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "156545",
+      "ebayFullName": "Computers/Tablets & Networking > Printers, Scanners & Supplies > Printer Ink, Toner & Paper > Empty Ink Cartridges",
+      "shopifyCategoryId": "el-13-3-1-7",
+      "shopifyFullName": "Electronics > Print, Copy, Scan & Fax > Printer, Copier & Fax Machine Accessories > Printer Consumables > Toner & Inkjet Cartridges",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175682",
+      "ebayFullName": "Computers/Tablets & Networking > Printers, Scanners & Supplies > Printer Ink, Toner & Paper > Toner Refills & Kits",
+      "shopifyCategoryId": "el-13-3-1-7",
+      "shopifyFullName": "Electronics > Print, Copy, Scan & Fax > Printer, Copier & Fax Machine Accessories > Printer Consumables > Toner & Inkjet Cartridges",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175705",
+      "ebayFullName": "Computers/Tablets & Networking > Printers, Scanners & Supplies > Printer Ink, Toner & Paper > Other Ink, Toner & Paper",
+      "shopifyCategoryId": "el-13-3-1-8",
+      "shopifyFullName": "Electronics > Print, Copy, Scan & Fax > Printer, Copier & Fax Machine Accessories > Printer Consumables > Printer Media & Film",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179",
+      "ebayFullName": "Computers/Tablets & Networking > Desktops & All-In-Ones > PC Desktops & All-In-Ones",
+      "shopifyCategoryId": "el-6-3",
+      "shopifyFullName": "Electronics > Computers > Desktop Computers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "111418",
+      "ebayFullName": "Computers/Tablets & Networking > Desktops & All-In-Ones > Apple Desktops & All-In-Ones",
+      "shopifyCategoryId": "el-6-3",
+      "shopifyFullName": "Electronics > Computers > Desktop Computers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "25321",
+      "ebayFullName": "Computers/Tablets & Networking > Monitors, Projectors & Accs > Projectors",
+      "shopifyCategoryId": "el-17-2-1",
+      "shopifyFullName": "Electronics > Video > Projectors > Multimedia Projectors",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "51052",
+      "ebayFullName": "Computers/Tablets & Networking > Monitors, Projectors & Accs > Monitor Mounts & Stands",
+      "shopifyCategoryId": "el-17-5-2-3",
+      "shopifyFullName": "Electronics > Video > Video Accessories > Computer Monitor Accessories > Monitor Arms & Mounts",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "80053",
+      "ebayFullName": "Computers/Tablets & Networking > Monitors, Projectors & Accs > Monitors",
+      "shopifyCategoryId": "el-17-1-1",
+      "shopifyFullName": "Electronics > Video > Computer Monitors > Portable Monitors",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "99231",
+      "ebayFullName": "Computers/Tablets & Networking > Monitors, Projectors & Accs > Projector Replacement Parts",
+      "shopifyCategoryId": "el-17-5-3-5",
+      "shopifyFullName": "Electronics > Video > Video Accessories > Projector Accessories > Projector Replacement Lamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "158845",
+      "ebayFullName": "Computers/Tablets & Networking > Monitors, Projectors & Accs > Monitor Power Supplies",
+      "shopifyCategoryId": "el-7-9-3",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Computer Power Supplies",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "168068",
+      "ebayFullName": "Computers/Tablets & Networking > Monitors, Projectors & Accs > Monitor Replacement Parts",
+      "shopifyCategoryId": "el-17-5-2-7",
+      "shopifyFullName": "Electronics > Video > Video Accessories > Computer Monitor Accessories > Screen Protectors & Filters",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175688",
+      "ebayFullName": "Computers/Tablets & Networking > Monitors, Projectors & Accs > Other Computer Monitors & Accs",
+      "shopifyCategoryId": "el-17-5-2-7",
+      "shopifyFullName": "Electronics > Video > Video Accessories > Computer Monitor Accessories > Screen Protectors & Filters",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260137",
+      "ebayFullName": "Computers/Tablets & Networking > Monitors, Projectors & Accs > Projector Accessories",
+      "shopifyCategoryId": "el-17-5-3-1",
+      "shopifyFullName": "Electronics > Video > Video Accessories > Projector Accessories > Projection & Tripod Skirts",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "20315",
+      "ebayFullName": "Computers/Tablets & Networking > Power Protection, Distribution > Other Power Protection",
+      "shopifyCategoryId": "el-7-15-10",
+      "shopifyFullName": "Electronics > Electronics Accessories > Power > Surge Protection Devices",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "48479",
+      "ebayFullName": "Computers/Tablets & Networking > Power Protection, Distribution > UPS Batteries & Components",
+      "shopifyCategoryId": "el-7-15-1-10",
+      "shopifyFullName": "Electronics > Electronics Accessories > Power > Batteries > UPS Batteries",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "86723",
+      "ebayFullName": "Computers/Tablets & Networking > Power Protection, Distribution > Power Distribution Units",
+      "shopifyCategoryId": "el-7-15-6-2",
+      "shopifyFullName": "Electronics > Electronics Accessories > Power > Power Control Units > Power Distribution Units",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "96907",
+      "ebayFullName": "Computers/Tablets & Networking > Power Protection, Distribution > Surge Protectors, Power Strips",
+      "shopifyCategoryId": "el-7-15-8",
+      "shopifyFullName": "Electronics > Electronics Accessories > Power > Power Strips & Surge Suppressors",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "99265",
+      "ebayFullName": "Computers/Tablets & Networking > Power Protection, Distribution > Uninterruptible Power Supplies",
+      "shopifyCategoryId": "el-7-15-12",
+      "shopifyFullName": "Electronics > Electronics Accessories > Power > UPS",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175687",
+      "ebayFullName": "Computers/Tablets & Networking > Power Protection, Distribution > Power Inverters",
+      "shopifyCategoryId": "el-7-15-14",
+      "shopifyFullName": "Electronics > Electronics Accessories > Power > Power Inverters",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "3702",
+      "ebayFullName": "Computers/Tablets & Networking > Laptop & Desktop Accessories > Computer Speakers",
+      "shopifyCategoryId": "el-2-2-10-1",
+      "shopifyFullName": "Electronics > Audio > Audio Components > Speakers > Bookshelf Speakers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "3709",
+      "ebayFullName": "Computers/Tablets & Networking > Laptop & Desktop Accessories > Laptop Docking Stations",
+      "shopifyCategoryId": "el-7-8-7",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Accessories > Laptop Docking Stations",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "4616",
+      "ebayFullName": "Computers/Tablets & Networking > Laptop & Desktop Accessories > Webcams",
+      "shopifyCategoryId": "el-4-9-1",
+      "shopifyFullName": "Electronics > Communications > Video Conferencing > Video Conferencing Cameras",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "14295",
+      "ebayFullName": "Computers/Tablets & Networking > Laptop & Desktop Accessories > Laptop Batteries",
+      "shopifyCategoryId": "el-7-15-1-5",
+      "shopifyFullName": "Electronics > Electronics Accessories > Power > Batteries > Laptop Batteries",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "23895",
+      "ebayFullName": "Computers/Tablets & Networking > Laptop & Desktop Accessories > Mouse Pads & Wrist Rests",
+      "shopifyCategoryId": "el-7-8-8",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Accessories > Mouse Pads",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "31510",
+      "ebayFullName": "Computers/Tablets & Networking > Laptop & Desktop Accessories > Laptop Power Adapters/Chargers",
+      "shopifyCategoryId": "el-7-15-5-5",
+      "shopifyFullName": "Electronics > Electronics Accessories > Power > Power Adapters & Chargers > Laptop Chargers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "31519",
+      "ebayFullName": "Computers/Tablets & Networking > Laptop & Desktop Accessories > Laptop Cases & Bags",
+      "shopifyCategoryId": "el-7-8-2-2",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Accessories > Computer Covers & Skins > Laptop Hard Cases",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "31529",
+      "ebayFullName": "Computers/Tablets & Networking > Laptop & Desktop Accessories > Anti-Theft Locks & Kits",
+      "shopifyCategoryId": "el-7-8-12",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Accessories > Computer Security Locks",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "31534",
+      "ebayFullName": "Computers/Tablets & Networking > Laptop & Desktop Accessories > Other Laptop & Desktop Accs",
+      "shopifyCategoryId": "el-7-8-3-4",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Accessories > Computer Risers & Stands > Laptop Stands",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "42190",
+      "ebayFullName": "Computers/Tablets & Networking > Laptop & Desktop Accessories > Laptop Add-On Cards",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "51082",
+      "ebayFullName": "Computers/Tablets & Networking > Laptop & Desktop Accessories > Memory Card Readers & Adapters",
+      "shopifyCategoryId": "el-7-9-12-10",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Input Devices > Memory Card Readers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "67870",
+      "ebayFullName": "Computers/Tablets & Networking > Laptop & Desktop Accessories > USB Lights & Gadgets",
+      "shopifyCategoryId": "os-1-2",
+      "shopifyFullName": "Office Supplies > Book Accessories > Book Lights",
+      "confidence": 0.75,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "75518",
+      "ebayFullName": "Computers/Tablets & Networking > Laptop & Desktop Accessories > Sound Cards (External)",
+      "shopifyCategoryId": "el-7-9-10-1",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > I/O Cards & Adapters > Audio Cards & Adapters",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "80183",
+      "ebayFullName": "Computers/Tablets & Networking > Laptop & Desktop Accessories > Headsets",
+      "shopifyCategoryId": "el-2-2-7-2-3",
+      "shopifyFullName": "Electronics > Audio > Audio Components > Headphones & Headsets > Headsets > Hearing Protection Headsets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "96915",
+      "ebayFullName": "Computers/Tablets & Networking > Laptop & Desktop Accessories > Laptop Cooling Pads",
+      "shopifyCategoryId": "el-7-8-3-3",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Accessories > Computer Risers & Stands > Laptop Cooling Pads",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "116309",
+      "ebayFullName": "Computers/Tablets & Networking > Laptop & Desktop Accessories > Microphones",
+      "shopifyCategoryId": "el-2-2-8",
+      "shopifyFullName": "Electronics > Audio > Audio Components > Microphones",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "116346",
+      "ebayFullName": "Computers/Tablets & Networking > Laptop & Desktop Accessories > Stands, Holders & Car Mounts",
+      "shopifyCategoryId": "el-7-8-3-4",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Accessories > Computer Risers & Stands > Laptop Stands",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "158837",
+      "ebayFullName": "Computers/Tablets & Networking > Laptop & Desktop Accessories > Keyboard Protectors",
+      "shopifyCategoryId": "el-7-11-3",
+      "shopifyFullName": "Electronics > Electronics Accessories > Electronics Films & Shields > Keyboard Protectors",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "158846",
+      "ebayFullName": "Computers/Tablets & Networking > Laptop & Desktop Accessories > Screen Protectors",
+      "shopifyCategoryId": "el-7-11-5-3",
+      "shopifyFullName": "Electronics > Electronics Accessories > Electronics Films & Shields > Screen Protectors > Tablet & E-Book Reader Screen Protectors",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "170597",
+      "ebayFullName": "Computers/Tablets & Networking > Laptop & Desktop Accessories > Privacy Filters",
+      "shopifyCategoryId": "el-7-11-4-1",
+      "shopifyFullName": "Electronics > Electronics Accessories > Electronics Films & Shields > Privacy Filters > Laptop Privacy Filters",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175677",
+      "ebayFullName": "Computers/Tablets & Networking > Laptop & Desktop Accessories > Case Mods, Stickers & Decals",
+      "shopifyCategoryId": "el-7-11-2",
+      "shopifyFullName": "Electronics > Electronics Accessories > Electronics Films & Shields > Electronics Stickers & Decals",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175678",
+      "ebayFullName": "Computers/Tablets & Networking > Laptop & Desktop Accessories > Cleaning Equipment & Kits",
+      "shopifyCategoryId": "el-7-10",
+      "shopifyFullName": "Electronics > Electronics Accessories > Electronics Cleaners",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175679",
+      "ebayFullName": "Computers/Tablets & Networking > Laptop & Desktop Accessories > TV Tuner/Video Capture Devices",
+      "shopifyCategoryId": "el-7-9-10-4",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > I/O Cards & Adapters > TV Tuner Cards & Adapters",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175680",
+      "ebayFullName": "Computers/Tablets & Networking > Laptop & Desktop Accessories > Hard Drive Pouches",
+      "shopifyCategoryId": "el-7-9-14-2-1",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Storage Devices > Hard Drive Accessories > Hard Drive Carrying Cases",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "42196",
+      "ebayFullName": "Computers/Tablets & Networking > Laptop & Desktop Accessories > Laptop Add-On Cards > Laptop Network Cards",
+      "shopifyCategoryId": "el-12-6-1",
+      "shopifyFullName": "Electronics > Networking > Network Cards & Adapters > Bluetooth Network Adapters",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "42323",
+      "ebayFullName": "Computers/Tablets & Networking > Laptop & Desktop Accessories > Laptop Add-On Cards > Laptop Port Expansion Cards",
+      "shopifyCategoryId": "el-7-9-10-2-4",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > I/O Cards & Adapters > Computer Interface Cards & Adapters > USB Expansion Cards & Adapters",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "74953",
+      "ebayFullName": "Computers/Tablets & Networking > Laptop & Desktop Accessories > Laptop Add-On Cards > Laptop Modem Cards",
+      "shopifyCategoryId": "el-12-5-1",
+      "shopifyFullName": "Electronics > Networking > Modems > Cable Modems",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "96913",
+      "ebayFullName": "Computers/Tablets & Networking > Laptop & Desktop Accessories > Laptop Add-On Cards > Other Laptop Add-On Cards",
+      "shopifyCategoryId": "el-7-9-10-1",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > I/O Cards & Adapters > Audio Cards & Adapters",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182",
+      "ebayFullName": "Computers/Tablets & Networking > Software > Other Computer Software",
+      "shopifyCategoryId": "so-1-4",
+      "shopifyFullName": "Software > Computer Software > Computer Utilities & Maintenance Software",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "185",
+      "ebayFullName": "Computers/Tablets & Networking > Software > Web & Desktop Publishing",
+      "shopifyCategoryId": "so-1-10-10",
+      "shopifyFullName": "Software > Computer Software > Multimedia & Design Software > Web Design Software",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "3768",
+      "ebayFullName": "Computers/Tablets & Networking > Software > Office & Business",
+      "shopifyCategoryId": "so-1-12",
+      "shopifyFullName": "Software > Computer Software > Office Application Software",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "3783",
+      "ebayFullName": "Computers/Tablets & Networking > Software > Education, Language, Reference",
+      "shopifyCategoryId": "so-1-6",
+      "shopifyFullName": "Software > Computer Software > Educational Software",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "11226",
+      "ebayFullName": "Computers/Tablets & Networking > Software > Operating Systems",
+      "shopifyCategoryId": "so-1-13",
+      "shopifyFullName": "Software > Computer Software > Operating Systems",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "41859",
+      "ebayFullName": "Computers/Tablets & Networking > Software > Image, Video & Audio",
+      "shopifyCategoryId": "so-1-10-8",
+      "shopifyFullName": "Software > Computer Software > Multimedia & Design Software > Sound Editing Software",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "80015",
+      "ebayFullName": "Computers/Tablets & Networking > Software > Hobbies & Leisure",
+      "shopifyCategoryId": "so-1-6",
+      "shopifyFullName": "Software > Computer Software > Educational Software",
+      "confidence": 0.6,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "80356",
+      "ebayFullName": "Computers/Tablets & Networking > Software > Servers, Development & DBMS",
+      "shopifyCategoryId": "so-1-3-1",
+      "shopifyFullName": "Software > Computer Software > Compilers & Programming Tools > Software Development Tools",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "158906",
+      "ebayFullName": "Computers/Tablets & Networking > Software > Personal Finance, Tax & Legal",
+      "shopifyCategoryId": "so-1-7",
+      "shopifyFullName": "Software > Computer Software > Financial, Tax & Accounting Software",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "158911",
+      "ebayFullName": "Computers/Tablets & Networking > Software > Drivers & Utilities",
+      "shopifyCategoryId": "so-1-4",
+      "shopifyFullName": "Software > Computer Software > Computer Utilities & Maintenance Software",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175689",
+      "ebayFullName": "Computers/Tablets & Networking > Software > Antivirus & Security",
+      "shopifyCategoryId": "so-1-1",
+      "shopifyFullName": "Software > Computer Software > Antivirus & Security Software",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "4193",
+      "ebayFullName": "Computers/Tablets & Networking > Vintage Computing > Other Vintage Computing",
+      "shopifyCategoryId": "el-6-1",
+      "shopifyFullName": "Electronics > Computers > Barebone Computers",
+      "confidence": 0.6,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "14906",
+      "ebayFullName": "Computers/Tablets & Networking > Vintage Computing > Vintage Manuals & Merchandise",
+      "shopifyCategoryId": "me-5",
+      "shopifyFullName": "Media > Product Manuals",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "162075",
+      "ebayFullName": "Computers/Tablets & Networking > Vintage Computing > Vintage Computers & Mainframes",
+      "shopifyCategoryId": "el-6-1",
+      "shopifyFullName": "Electronics > Computers > Barebone Computers",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "175690",
+      "ebayFullName": "Computers/Tablets & Networking > Vintage Computing > Vintage Parts & Accessories",
+      "shopifyCategoryId": "el-7-9-4",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Computer Processors",
+      "confidence": 0.6,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "11183",
+      "ebayFullName": "Computers/Tablets & Networking > Home Networking & Connectivity > Wired Routers",
+      "shopifyCategoryId": "el-12-1-7",
+      "shopifyFullName": "Electronics > Networking > Bridges & Routers > Wired Routers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "44995",
+      "ebayFullName": "Computers/Tablets & Networking > Home Networking & Connectivity > Wireless Routers",
+      "shopifyCategoryId": "el-12-1-4",
+      "shopifyFullName": "Electronics > Networking > Bridges & Routers > Wireless Routers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "44996",
+      "ebayFullName": "Computers/Tablets & Networking > Home Networking & Connectivity > Other Home Networking",
+      "shopifyCategoryId": "el-12-3-4",
+      "shopifyFullName": "Electronics > Networking > Hubs & Switches > Managed Switches",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "44999",
+      "ebayFullName": "Computers/Tablets & Networking > Home Networking & Connectivity > USB Bluetooth Adapters/Dongles",
+      "shopifyCategoryId": "el-2-1-1-2",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > Audio & Video Receiver Accessories > Bluetooth Adapters",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "45002",
+      "ebayFullName": "Computers/Tablets & Networking > Home Networking & Connectivity > USB Wi-Fi Adapters/Dongles",
+      "shopifyCategoryId": "el-12-6-4",
+      "shopifyFullName": "Electronics > Networking > Network Cards & Adapters > Wi-Fi Network Cards & Adapters",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "58297",
+      "ebayFullName": "Computers/Tablets & Networking > Home Networking & Connectivity > Modems",
+      "shopifyCategoryId": "el-12-5-1",
+      "shopifyFullName": "Electronics > Networking > Modems > Cable Modems",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "61816",
+      "ebayFullName": "Computers/Tablets & Networking > Home Networking & Connectivity > Boosters, Extenders & Antennas",
+      "shopifyCategoryId": "el-7-17-2",
+      "shopifyFullName": "Electronics > Electronics Accessories > Signal Boosters > Cellular Signal Boosters",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "61840",
+      "ebayFullName": "Computers/Tablets & Networking > Home Networking & Connectivity > VoIP Home Phones",
+      "shopifyCategoryId": "el-4-8-2-2",
+      "shopifyFullName": "Electronics > Communications > Telephony > Corded Phones > VoIP Phones",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "67262",
+      "ebayFullName": "Computers/Tablets & Networking > Home Networking & Connectivity > Powerline Networking",
+      "shopifyCategoryId": "el-12-6-3",
+      "shopifyFullName": "Electronics > Networking > Network Cards & Adapters > Powerline Network Adapters",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "99269",
+      "ebayFullName": "Computers/Tablets & Networking > Home Networking & Connectivity > VoIP Phone Adapters",
+      "shopifyCategoryId": "el-12-1-2",
+      "shopifyFullName": "Electronics > Networking > Bridges & Routers > VoIP Gateways & Routers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "101270",
+      "ebayFullName": "Computers/Tablets & Networking > Home Networking & Connectivity > Modem-Router Combos",
+      "shopifyCategoryId": "el-12-1-2",
+      "shopifyFullName": "Electronics > Networking > Bridges & Routers > VoIP Gateways & Routers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175709",
+      "ebayFullName": "Computers/Tablets & Networking > Home Networking & Connectivity > Wireless Access Points",
+      "shopifyCategoryId": "el-12-1-3",
+      "shopifyFullName": "Electronics > Networking > Bridges & Routers > Wireless Access Points",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175710",
+      "ebayFullName": "Computers/Tablets & Networking > Home Networking & Connectivity > Mobile Broadband Devices",
+      "shopifyCategoryId": "el-12-5-2",
+      "shopifyFullName": "Electronics > Networking > Modems > Cellular Modems",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "170",
+      "ebayFullName": "Computers/Tablets & Networking > Keyboards, Mice & Pointers > Other Keyboards & Mice",
+      "shopifyCategoryId": "el-7-9-12-8-1",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Input Devices > Keyboards > Barebones Keyboards",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "3680",
+      "ebayFullName": "Computers/Tablets & Networking > Keyboards, Mice & Pointers > Graphics Tablets/Boards & Pens",
+      "shopifyCategoryId": "el-7-9-12-7-2",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Input Devices > Graphics Tablets > Pen Tablets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "23160",
+      "ebayFullName": "Computers/Tablets & Networking > Keyboards, Mice & Pointers > Mice, Trackballs & Touchpads",
+      "shopifyCategoryId": "el-7-9-12-11",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Input Devices > Mice & Trackballs",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "33963",
+      "ebayFullName": "Computers/Tablets & Networking > Keyboards, Mice & Pointers > Keyboards & Keypads",
+      "shopifyCategoryId": "el-7-9-12-8-1",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Input Devices > Keyboards > Barebones Keyboards",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "47779",
+      "ebayFullName": "Computers/Tablets & Networking > Keyboards, Mice & Pointers > Keyboard & Mouse Bundles",
+      "shopifyCategoryId": "el-7-9-12-15",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Input Devices > Keyboard & Mouse Sets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "51086",
+      "ebayFullName": "Computers/Tablets & Networking > Keyboards, Mice & Pointers > Remote Controls & Pointers",
+      "shopifyCategoryId": "el-7-16-5",
+      "shopifyFullName": "Electronics > Electronics Accessories > Remote Controls > TV Remote Controls",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "167",
+      "ebayFullName": "Computers/Tablets & Networking > Drives, Storage & Blank Media > Other Drives, Storage & Media",
+      "shopifyCategoryId": "el-7-9-14-4",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Storage Devices > Hard Drives",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "169",
+      "ebayFullName": "Computers/Tablets & Networking > Drives, Storage & Blank Media > Floppy, Zip & Jaz Drives",
+      "shopifyCategoryId": "el-7-9-14-4",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Storage Devices > Hard Drives",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "31509",
+      "ebayFullName": "Computers/Tablets & Networking > Drives, Storage & Blank Media > CD, DVD & Blu-ray Duplicators",
+      "shopifyCategoryId": "el-7-9-14-1-1",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Storage Devices > Disk Duplicators > CD/DVD/Blu-ray Duplicators",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "39976",
+      "ebayFullName": "Computers/Tablets & Networking > Drives, Storage & Blank Media > Tape & Data Cartridge Drives",
+      "shopifyCategoryId": "el-7-9-14-7",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Storage Devices > Tape Drives",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "51071",
+      "ebayFullName": "Computers/Tablets & Networking > Drives, Storage & Blank Media > USB Flash Drives",
+      "shopifyCategoryId": "el-7-9-14-8",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Storage Devices > USB Flash Drives",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "80133",
+      "ebayFullName": "Computers/Tablets & Networking > Drives, Storage & Blank Media > Blank Media & Accessories",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "131542",
+      "ebayFullName": "Computers/Tablets & Networking > Drives, Storage & Blank Media > CD, DVD & Blu-ray Drives",
+      "shopifyCategoryId": "el-7-9-14-6-2",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Storage Devices > Optical Drives > Internal Optical Drives",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "158816",
+      "ebayFullName": "Computers/Tablets & Networking > Drives, Storage & Blank Media > Drive Bay Caddies",
+      "shopifyCategoryId": "el-7-9-14-2-3-1",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Storage Devices > Hard Drive Accessories > Hard Drive Enclosures & Mounts > Hard Drive Caddies & Trays",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "158817",
+      "ebayFullName": "Computers/Tablets & Networking > Drives, Storage & Blank Media > Drive Enclosures & Docks",
+      "shopifyCategoryId": "el-7-9-14-2-3-2",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Storage Devices > Hard Drive Accessories > Hard Drive Enclosures & Mounts > Hard Drive Enclosures",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175671",
+      "ebayFullName": "Computers/Tablets & Networking > Drives, Storage & Blank Media > Hard Drive Duplicators",
+      "shopifyCategoryId": "el-7-9-14-1-2",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Storage Devices > Disk Duplicators > Hard Drive Duplicators",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182085",
+      "ebayFullName": "Computers/Tablets & Networking > Drives, Storage & Blank Media > Hard Drives (HDD, SSD & NAS)",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "56083",
+      "ebayFullName": "Computers/Tablets & Networking > Drives, Storage & Blank Media > Hard Drives (HDD, SSD & NAS) > Internal Hard Disk Drives",
+      "shopifyCategoryId": "el-7-9-14-4",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Storage Devices > Hard Drives",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "106273",
+      "ebayFullName": "Computers/Tablets & Networking > Drives, Storage & Blank Media > Hard Drives (HDD, SSD & NAS) > Network Attached Storage",
+      "shopifyCategoryId": "el-7-9-14-5",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Storage Devices > Network Storage Systems",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "131553",
+      "ebayFullName": "Computers/Tablets & Networking > Drives, Storage & Blank Media > Hard Drives (HDD, SSD & NAS) > External Hard Disk Drives",
+      "shopifyCategoryId": "el-7-9-14-4",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Storage Devices > Hard Drives",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175669",
+      "ebayFullName": "Computers/Tablets & Networking > Drives, Storage & Blank Media > Hard Drives (HDD, SSD & NAS) > Solid State Drives",
+      "shopifyCategoryId": "el-7-9-14-9",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Storage Devices > Solid State Drives",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175670",
+      "ebayFullName": "Computers/Tablets & Networking > Drives, Storage & Blank Media > Hard Drives (HDD, SSD & NAS) > Other Hard Drives",
+      "shopifyCategoryId": "el-7-9-14-4",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Storage Devices > Hard Drives",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "11161",
+      "ebayFullName": "Computers/Tablets & Networking > Drives, Storage & Blank Media > Blank Media & Accessories > Other Blank Media & Accs",
+      "shopifyCategoryId": "el-7-5-1",
+      "shopifyFullName": "Electronics > Electronics Accessories > Blank Media > Blank Audio Cassettes",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73329",
+      "ebayFullName": "Computers/Tablets & Networking > Drives, Storage & Blank Media > Blank Media & Accessories > Tapes & Data Cartridges",
+      "shopifyCategoryId": "el-7-5-5",
+      "shopifyFullName": "Electronics > Electronics Accessories > Blank Media > Blank Floppy Disks",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "80135",
+      "ebayFullName": "Computers/Tablets & Networking > Drives, Storage & Blank Media > Blank Media & Accessories > CD, DVD & Blu-ray Discs",
+      "shopifyCategoryId": "el-7-5-3",
+      "shopifyFullName": "Electronics > Electronics Accessories > Blank Media > Blank CDs",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "80136",
+      "ebayFullName": "Computers/Tablets & Networking > Drives, Storage & Blank Media > Blank Media & Accessories > Floppy, Zip & Jaz Disks",
+      "shopifyCategoryId": "el-7-5-5",
+      "shopifyFullName": "Electronics > Electronics Accessories > Blank Media > Blank Floppy Disks",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175664",
+      "ebayFullName": "Computers/Tablets & Networking > Drives, Storage & Blank Media > Blank Media & Accessories > Disc Repair & Disc Cleaning",
+      "shopifyCategoryId": "el-2-1-9-2-2",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > Turntable Accessories > Record Cleaning Kits > Record Cleaning Fluids",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175665",
+      "ebayFullName": "Computers/Tablets & Networking > Drives, Storage & Blank Media > Blank Media & Accessories > Drive Head & Lens Cleaning",
+      "shopifyCategoryId": "el-2-1-9-2-2",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > Turntable Accessories > Record Cleaning Kits > Record Cleaning Fluids",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175666",
+      "ebayFullName": "Computers/Tablets & Networking > Drives, Storage & Blank Media > Blank Media & Accessories > Media Cases, Sleeves & Wallets",
+      "shopifyCategoryId": "el-2-1-9-8",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > Turntable Accessories > Record Storage Cases",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    }
+  ]
+}

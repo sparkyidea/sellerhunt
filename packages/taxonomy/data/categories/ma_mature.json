@@ -1,0 +1,452 @@
+{
+  "version": "2026-05-unstable",
+  "categories": [
+    {
+      "id": "ma",
+      "level": 0,
+      "name": "Mature",
+      "full_name": "Mature",
+      "parent_id": null,
+      "children": [
+        {
+          "id": "ma-1",
+          "name": "Erotic"
+        },
+        {
+          "id": "ma-2",
+          "name": "Weapons & Weapon Accessories"
+        }
+      ]
+    },
+    {
+      "id": "ma-1",
+      "level": 1,
+      "name": "Erotic",
+      "full_name": "Mature > Erotic",
+      "parent_id": "ma",
+      "children": [
+        {
+          "id": "ma-1-6",
+          "name": "Erotic Books"
+        },
+        {
+          "id": "ma-1-1",
+          "name": "Erotic Clothing"
+        },
+        {
+          "id": "ma-1-2",
+          "name": "Erotic Food & Edibles"
+        },
+        {
+          "id": "ma-1-3",
+          "name": "Erotic Magazines"
+        },
+        {
+          "id": "ma-1-5",
+          "name": "Erotic Videos"
+        },
+        {
+          "id": "ma-1-4",
+          "name": "Sex Toys & Erotic Games"
+        }
+      ]
+    },
+    {
+      "id": "ma-1-6",
+      "level": 2,
+      "name": "Erotic Books",
+      "full_name": "Mature > Erotic > Erotic Books",
+      "parent_id": "ma-1",
+      "children": []
+    },
+    {
+      "id": "ma-1-1",
+      "level": 2,
+      "name": "Erotic Clothing",
+      "full_name": "Mature > Erotic > Erotic Clothing",
+      "parent_id": "ma-1",
+      "children": []
+    },
+    {
+      "id": "ma-1-2",
+      "level": 2,
+      "name": "Erotic Food & Edibles",
+      "full_name": "Mature > Erotic > Erotic Food & Edibles",
+      "parent_id": "ma-1",
+      "children": []
+    },
+    {
+      "id": "ma-1-3",
+      "level": 2,
+      "name": "Erotic Magazines",
+      "full_name": "Mature > Erotic > Erotic Magazines",
+      "parent_id": "ma-1",
+      "children": []
+    },
+    {
+      "id": "ma-1-5",
+      "level": 2,
+      "name": "Erotic Videos",
+      "full_name": "Mature > Erotic > Erotic Videos",
+      "parent_id": "ma-1",
+      "children": []
+    },
+    {
+      "id": "ma-1-4",
+      "level": 2,
+      "name": "Sex Toys & Erotic Games",
+      "full_name": "Mature > Erotic > Sex Toys & Erotic Games",
+      "parent_id": "ma-1",
+      "children": []
+    },
+    {
+      "id": "ma-2",
+      "level": 1,
+      "name": "Weapons & Weapon Accessories",
+      "full_name": "Mature > Weapons & Weapon Accessories",
+      "parent_id": "ma",
+      "children": [
+        {
+          "id": "ma-2-1",
+          "name": "Weapon Care & Accessories"
+        },
+        {
+          "id": "ma-2-2",
+          "name": "Weapons"
+        }
+      ]
+    },
+    {
+      "id": "ma-2-1",
+      "level": 2,
+      "name": "Weapon Care & Accessories",
+      "full_name": "Mature > Weapons & Weapon Accessories > Weapon Care & Accessories",
+      "parent_id": "ma-2",
+      "children": [
+        {
+          "id": "ma-2-1-1",
+          "name": "Ammunition"
+        },
+        {
+          "id": "ma-2-1-2",
+          "name": "Ammunition Cases & Holders"
+        },
+        {
+          "id": "ma-2-1-3",
+          "name": "Reloading Supplies & Equipment"
+        },
+        {
+          "id": "ma-2-1-4",
+          "name": "Weapon Cases & Range Bags"
+        },
+        {
+          "id": "ma-2-1-5",
+          "name": "Weapon Cleaning"
+        },
+        {
+          "id": "ma-2-1-6",
+          "name": "Weapon Grips"
+        },
+        {
+          "id": "ma-2-1-7",
+          "name": "Weapon Holsters"
+        },
+        {
+          "id": "ma-2-1-8",
+          "name": "Weapon Lights"
+        },
+        {
+          "id": "ma-2-1-9",
+          "name": "Weapon Rails"
+        },
+        {
+          "id": "ma-2-1-10",
+          "name": "Weapon Slings"
+        }
+      ]
+    },
+    {
+      "id": "ma-2-1-1",
+      "level": 3,
+      "name": "Ammunition",
+      "full_name": "Mature > Weapons & Weapon Accessories > Weapon Care & Accessories > Ammunition",
+      "parent_id": "ma-2-1",
+      "children": []
+    },
+    {
+      "id": "ma-2-1-2",
+      "level": 3,
+      "name": "Ammunition Cases & Holders",
+      "full_name": "Mature > Weapons & Weapon Accessories > Weapon Care & Accessories > Ammunition Cases & Holders",
+      "parent_id": "ma-2-1",
+      "children": []
+    },
+    {
+      "id": "ma-2-1-3",
+      "level": 3,
+      "name": "Reloading Supplies & Equipment",
+      "full_name": "Mature > Weapons & Weapon Accessories > Weapon Care & Accessories > Reloading Supplies & Equipment",
+      "parent_id": "ma-2-1",
+      "children": [
+        {
+          "id": "ma-2-1-3-1",
+          "name": "Ammunition Reloading Presses"
+        }
+      ]
+    },
+    {
+      "id": "ma-2-1-3-1",
+      "level": 4,
+      "name": "Ammunition Reloading Presses",
+      "full_name": "Mature > Weapons & Weapon Accessories > Weapon Care & Accessories > Reloading Supplies & Equipment > Ammunition Reloading Presses",
+      "parent_id": "ma-2-1-3",
+      "children": []
+    },
+    {
+      "id": "ma-2-1-4",
+      "level": 3,
+      "name": "Weapon Cases & Range Bags",
+      "full_name": "Mature > Weapons & Weapon Accessories > Weapon Care & Accessories > Weapon Cases & Range Bags",
+      "parent_id": "ma-2-1",
+      "children": []
+    },
+    {
+      "id": "ma-2-1-5",
+      "level": 3,
+      "name": "Weapon Cleaning",
+      "full_name": "Mature > Weapons & Weapon Accessories > Weapon Care & Accessories > Weapon Cleaning",
+      "parent_id": "ma-2-1",
+      "children": [
+        {
+          "id": "ma-2-1-5-1",
+          "name": "Cleaning Cloths & Swabs"
+        },
+        {
+          "id": "ma-2-1-5-2",
+          "name": "Cleaning Patches"
+        },
+        {
+          "id": "ma-2-1-5-3",
+          "name": "Cleaning Solvents"
+        }
+      ]
+    },
+    {
+      "id": "ma-2-1-5-1",
+      "level": 4,
+      "name": "Cleaning Cloths & Swabs",
+      "full_name": "Mature > Weapons & Weapon Accessories > Weapon Care & Accessories > Weapon Cleaning > Cleaning Cloths & Swabs",
+      "parent_id": "ma-2-1-5",
+      "children": []
+    },
+    {
+      "id": "ma-2-1-5-2",
+      "level": 4,
+      "name": "Cleaning Patches",
+      "full_name": "Mature > Weapons & Weapon Accessories > Weapon Care & Accessories > Weapon Cleaning > Cleaning Patches",
+      "parent_id": "ma-2-1-5",
+      "children": []
+    },
+    {
+      "id": "ma-2-1-5-3",
+      "level": 4,
+      "name": "Cleaning Solvents",
+      "full_name": "Mature > Weapons & Weapon Accessories > Weapon Care & Accessories > Weapon Cleaning > Cleaning Solvents",
+      "parent_id": "ma-2-1-5",
+      "children": []
+    },
+    {
+      "id": "ma-2-1-6",
+      "level": 3,
+      "name": "Weapon Grips",
+      "full_name": "Mature > Weapons & Weapon Accessories > Weapon Care & Accessories > Weapon Grips",
+      "parent_id": "ma-2-1",
+      "children": []
+    },
+    {
+      "id": "ma-2-1-7",
+      "level": 3,
+      "name": "Weapon Holsters",
+      "full_name": "Mature > Weapons & Weapon Accessories > Weapon Care & Accessories > Weapon Holsters",
+      "parent_id": "ma-2-1",
+      "children": []
+    },
+    {
+      "id": "ma-2-1-8",
+      "level": 3,
+      "name": "Weapon Lights",
+      "full_name": "Mature > Weapons & Weapon Accessories > Weapon Care & Accessories > Weapon Lights",
+      "parent_id": "ma-2-1",
+      "children": []
+    },
+    {
+      "id": "ma-2-1-9",
+      "level": 3,
+      "name": "Weapon Rails",
+      "full_name": "Mature > Weapons & Weapon Accessories > Weapon Care & Accessories > Weapon Rails",
+      "parent_id": "ma-2-1",
+      "children": []
+    },
+    {
+      "id": "ma-2-1-10",
+      "level": 3,
+      "name": "Weapon Slings",
+      "full_name": "Mature > Weapons & Weapon Accessories > Weapon Care & Accessories > Weapon Slings",
+      "parent_id": "ma-2-1",
+      "children": []
+    },
+    {
+      "id": "ma-2-2",
+      "level": 2,
+      "name": "Weapons",
+      "full_name": "Mature > Weapons & Weapon Accessories > Weapons",
+      "parent_id": "ma-2",
+      "children": [
+        {
+          "id": "ma-2-2-1",
+          "name": "Brass Knuckles"
+        },
+        {
+          "id": "ma-2-2-2",
+          "name": "Clubs & Batons"
+        },
+        {
+          "id": "ma-2-2-3",
+          "name": "Combat Knives"
+        },
+        {
+          "id": "ma-2-2-12",
+          "name": "Guns"
+        },
+        {
+          "id": "ma-2-2-4",
+          "name": "Mace & Pepper Spray"
+        },
+        {
+          "id": "ma-2-2-5",
+          "name": "Nunchucks"
+        },
+        {
+          "id": "ma-2-2-6",
+          "name": "Spears"
+        },
+        {
+          "id": "ma-2-2-7",
+          "name": "Staff & Stick Weapons"
+        },
+        {
+          "id": "ma-2-2-8",
+          "name": "Stun Guns & Tasers"
+        },
+        {
+          "id": "ma-2-2-9",
+          "name": "Swords"
+        },
+        {
+          "id": "ma-2-2-10",
+          "name": "Throwing Stars"
+        },
+        {
+          "id": "ma-2-2-11",
+          "name": "Whips"
+        }
+      ]
+    },
+    {
+      "id": "ma-2-2-1",
+      "level": 3,
+      "name": "Brass Knuckles",
+      "full_name": "Mature > Weapons & Weapon Accessories > Weapons > Brass Knuckles",
+      "parent_id": "ma-2-2",
+      "children": []
+    },
+    {
+      "id": "ma-2-2-2",
+      "level": 3,
+      "name": "Clubs & Batons",
+      "full_name": "Mature > Weapons & Weapon Accessories > Weapons > Clubs & Batons",
+      "parent_id": "ma-2-2",
+      "children": []
+    },
+    {
+      "id": "ma-2-2-3",
+      "level": 3,
+      "name": "Combat Knives",
+      "full_name": "Mature > Weapons & Weapon Accessories > Weapons > Combat Knives",
+      "parent_id": "ma-2-2",
+      "children": []
+    },
+    {
+      "id": "ma-2-2-12",
+      "level": 3,
+      "name": "Guns",
+      "full_name": "Mature > Weapons & Weapon Accessories > Weapons > Guns",
+      "parent_id": "ma-2-2",
+      "children": []
+    },
+    {
+      "id": "ma-2-2-4",
+      "level": 3,
+      "name": "Mace & Pepper Spray",
+      "full_name": "Mature > Weapons & Weapon Accessories > Weapons > Mace & Pepper Spray",
+      "parent_id": "ma-2-2",
+      "children": []
+    },
+    {
+      "id": "ma-2-2-5",
+      "level": 3,
+      "name": "Nunchucks",
+      "full_name": "Mature > Weapons & Weapon Accessories > Weapons > Nunchucks",
+      "parent_id": "ma-2-2",
+      "children": []
+    },
+    {
+      "id": "ma-2-2-6",
+      "level": 3,
+      "name": "Spears",
+      "full_name": "Mature > Weapons & Weapon Accessories > Weapons > Spears",
+      "parent_id": "ma-2-2",
+      "children": []
+    },
+    {
+      "id": "ma-2-2-7",
+      "level": 3,
+      "name": "Staff & Stick Weapons",
+      "full_name": "Mature > Weapons & Weapon Accessories > Weapons > Staff & Stick Weapons",
+      "parent_id": "ma-2-2",
+      "children": []
+    },
+    {
+      "id": "ma-2-2-8",
+      "level": 3,
+      "name": "Stun Guns & Tasers",
+      "full_name": "Mature > Weapons & Weapon Accessories > Weapons > Stun Guns & Tasers",
+      "parent_id": "ma-2-2",
+      "children": []
+    },
+    {
+      "id": "ma-2-2-9",
+      "level": 3,
+      "name": "Swords",
+      "full_name": "Mature > Weapons & Weapon Accessories > Weapons > Swords",
+      "parent_id": "ma-2-2",
+      "children": []
+    },
+    {
+      "id": "ma-2-2-10",
+      "level": 3,
+      "name": "Throwing Stars",
+      "full_name": "Mature > Weapons & Weapon Accessories > Weapons > Throwing Stars",
+      "parent_id": "ma-2-2",
+      "children": []
+    },
+    {
+      "id": "ma-2-2-11",
+      "level": 3,
+      "name": "Whips",
+      "full_name": "Mature > Weapons & Weapon Accessories > Weapons > Whips",
+      "parent_id": "ma-2-2",
+      "children": []
+    }
+  ]
+}

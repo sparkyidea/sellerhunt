@@ -1,0 +1,7 @@
+{
+  "extends": "@dashseller/config/tsconfig.base.json",
+  "compilerOptions": {
+    "strictNullChecks": true
+  },
+  "include": ["src", "scripts"]
+}

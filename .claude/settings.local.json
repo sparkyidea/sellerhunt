@@ -1,0 +1,38 @@
+{
+  "permissions": {
+    "deny": [
+      "Bash(git push:*)",
+      "Bash(gh pr merge:*)",
+      "Bash(drizzle-kit push:*)",
+      "Bash(drizzle-kit migrate:*)",
+      "Bash(drizzle-kit drop:*)",
+      "Bash(bun drizzle-kit push:*)",
+      "Bash(bun drizzle-kit migrate:*)",
+      "Bash(bun drizzle-kit drop:*)",
+      "Bash(bun run db:migrate:*)",
+      "Bash(bun run db:push:*)",
+      "Bash(bun db:migrate:*)",
+      "Bash(bun db:push:*)",
+      "Bash(bunx drizzle-kit push:*)",
+      "Bash(bunx drizzle-kit migrate:*)",
+      "Bash(bunx drizzle-kit drop:*)",
+      "Bash(npx drizzle-kit push:*)",
+      "Bash(npx drizzle-kit migrate:*)",
+      "Bash(npx drizzle-kit drop:*)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bun \"$CLAUDE_PROJECT_DIR/.claude/hooks/domain-rules.ts\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "cca2": "US",
+    "code": "11805",
+    "stateCode": "NY",
+    "cityName": "Hicksville",
+    "latitude": 40.76716232,
+    "longitude": -73.53347015
+  },
+  {
+    "cca2": "US",
+    "code": "48055",
+    "stateCode": "MI",
+    "cityName": "Pontiac",
+    "latitude": 42.63487244,
+    "longitude": -83.31980133
+  },
+  {
+    "cca2": "US",
+    "code": "90085",
+    "stateCode": "CA",
+    "cityName": "Los Angeles",
+    "latitude": 33.97853088,
+    "longitude": -118.25718689
+  },
+  {
+    "cca2": "US",
+    "code": "90140",
+    "stateCode": "CA",
+    "cityName": "Los Angeles",
+    "latitude": 34.05550003,
+    "longitude": -118.25550079
+  },
+  {
+    "cca2": "US",
+    "code": "90205",
+    "stateCode": "CA",
+    "cityName": "Los Angeles",
+    "latitude": 33.96857071,
+    "longitude": -118.15039825
+  },
+  {
+    "cca2": "US",
+    "code": "43165",
+    "stateCode": "OH",
+    "cityName": "Groveport",
+    "latitude": 39.85333252,
+    "longitude": -82.89421844
+  },
+  {
+    "cca2": "US",
+    "code": "18005",
+    "stateCode": "PA",
+    "cityName": "Bethlehem",
+    "latitude": 40.67332458,
+    "longitude": -75.37152863
+  },
+  {
+    "cca2": "US",
+    "code": "18768",
+    "stateCode": "PA",
+    "cityName": "Wilkes-Barre",
+    "latitude": 41.24185944,
+    "longitude": -75.87743378
+  },
+  {
+    "cca2": "US",
+    "code": "46245",
+    "stateCode": "IN",
+    "cityName": "Indianapolis",
+    "latitude": 39.76031876,
+    "longitude": -86.16143799
+  }
+]

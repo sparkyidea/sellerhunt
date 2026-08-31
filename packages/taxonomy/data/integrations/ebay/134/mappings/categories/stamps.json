@@ -1,0 +1,3721 @@
+{
+  "ebayCategory": "Stamps",
+  "shopifyCategories": ["Arts & Entertainment"],
+  "totalMapped": 464,
+  "highConfidence": 429,
+  "lowConfidence": 6,
+  "mappings": [
+    {
+      "ebayId": "260",
+      "ebayFullName": "Stamps",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "261",
+      "ebayFullName": "Stamps > United States",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "3478",
+      "ebayFullName": "Stamps > Canada",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "3499",
+      "ebayFullName": "Stamps > Great Britain",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "4742",
+      "ebayFullName": "Stamps > Europe",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "4752",
+      "ebayFullName": "Stamps > Topical Stamps",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "7898",
+      "ebayFullName": "Stamps > Specialty Philately",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "65174",
+      "ebayFullName": "Stamps > British Colonies & Territories",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "170137",
+      "ebayFullName": "Stamps > Other Stamps",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179377",
+      "ebayFullName": "Stamps > Caribbean",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "181416",
+      "ebayFullName": "Stamps > Asia",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "181417",
+      "ebayFullName": "Stamps > Latin America",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "181420",
+      "ebayFullName": "Stamps > Worldwide",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "181421",
+      "ebayFullName": "Stamps > Publications & Supplies",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "181422",
+      "ebayFullName": "Stamps > Middle East",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "181423",
+      "ebayFullName": "Stamps > Africa",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "181424",
+      "ebayFullName": "Stamps > Australia & Oceania",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "3468",
+      "ebayFullName": "Stamps > Australia & Oceania > Australia",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "70089",
+      "ebayFullName": "Stamps > Australia & Oceania > New Zealand",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73240",
+      "ebayFullName": "Stamps > Australia & Oceania > Tuvalu",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "150924",
+      "ebayFullName": "Stamps > Australia & Oceania > Other Oceania Stamps",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179344",
+      "ebayFullName": "Stamps > Australia & Oceania > Cook Islands (1965-Now)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179345",
+      "ebayFullName": "Stamps > Australia & Oceania > Fiji (1967-Now)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179346",
+      "ebayFullName": "Stamps > Australia & Oceania > Micronesia",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179347",
+      "ebayFullName": "Stamps > Australia & Oceania > Niue (1974-Now)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179348",
+      "ebayFullName": "Stamps > Australia & Oceania > Papua New Guinea (1975-Now)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179349",
+      "ebayFullName": "Stamps > Australia & Oceania > Samoa (1962-Now)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179350",
+      "ebayFullName": "Stamps > Australia & Oceania > Solomon Islands (1978-Now)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179351",
+      "ebayFullName": "Stamps > Australia & Oceania > Tokelau Islands",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179352",
+      "ebayFullName": "Stamps > Australia & Oceania > Tonga (1970-Now)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179353",
+      "ebayFullName": "Stamps > Australia & Oceania > Vanuatu (1980-Now)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179354",
+      "ebayFullName": "Stamps > Australia & Oceania > Collections, Lots",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "3470",
+      "ebayFullName": "Stamps > Australia & Oceania > Australia > Booklets",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "3471",
+      "ebayFullName": "Stamps > Australia & Oceania > Australia > Collections, Lots",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "3472",
+      "ebayFullName": "Stamps > Australia & Oceania > Australia > Covers",
+      "shopifyCategoryId": "ae-2-2-5-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > First Day Covers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "3473",
+      "ebayFullName": "Stamps > Australia & Oceania > Australia > FDCs",
+      "shopifyCategoryId": "ae-2-2-5-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > First Day Covers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "3474",
+      "ebayFullName": "Stamps > Australia & Oceania > Australia > Flight Covers",
+      "shopifyCategoryId": "ae-2-2-5-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > First Day Covers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "3475",
+      "ebayFullName": "Stamps > Australia & Oceania > Australia > Plate Blocks/Multiples",
+      "shopifyCategoryId": "ae-2-2-5-6",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Stamp Sheets",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "3476",
+      "ebayFullName": "Stamps > Australia & Oceania > Australia > Sheets",
+      "shopifyCategoryId": "ae-2-2-5-6",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Stamp Sheets",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "23851",
+      "ebayFullName": "Stamps > Australia & Oceania > Australia > Kangaroos",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "80109",
+      "ebayFullName": "Stamps > Australia & Oceania > Australia > Other Australian Stamps",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "111861",
+      "ebayFullName": "Stamps > Australia & Oceania > Australia > Individuals",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "153379",
+      "ebayFullName": "Stamps > Australia & Oceania > Australia > States & Territories",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "3469",
+      "ebayFullName": "Stamps > Australia & Oceania > Australia > States & Territories > Other State & Territory Stamps",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "111852",
+      "ebayFullName": "Stamps > Australia & Oceania > Australia > States & Territories > New South Wales",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "111853",
+      "ebayFullName": "Stamps > Australia & Oceania > Australia > States & Territories > Victoria",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "111854",
+      "ebayFullName": "Stamps > Australia & Oceania > Australia > States & Territories > Queensland",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "111855",
+      "ebayFullName": "Stamps > Australia & Oceania > Australia > States & Territories > South Australia",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "111856",
+      "ebayFullName": "Stamps > Australia & Oceania > Australia > States & Territories > Western Australia",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "111857",
+      "ebayFullName": "Stamps > Australia & Oceania > Australia > States & Territories > Tasmania",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "111870",
+      "ebayFullName": "Stamps > Australia & Oceania > Australia > States & Territories > Norfolk Island",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "153380",
+      "ebayFullName": "Stamps > Australia & Oceania > Australia > States & Territories > Antarctica",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "153381",
+      "ebayFullName": "Stamps > Australia & Oceania > Australia > States & Territories > Christmas Island",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "153382",
+      "ebayFullName": "Stamps > Australia & Oceania > Australia > States & Territories > Cocos Island",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "127413",
+      "ebayFullName": "Stamps > Africa > South Africa (1961-Now)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "127414",
+      "ebayFullName": "Stamps > Africa > Algeria",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "127417",
+      "ebayFullName": "Stamps > Africa > Congo",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "127418",
+      "ebayFullName": "Stamps > Africa > Ivory Coast",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "127420",
+      "ebayFullName": "Stamps > Africa > Gabon",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "127421",
+      "ebayFullName": "Stamps > Africa > Guinea",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "127423",
+      "ebayFullName": "Stamps > Africa > Madagascar",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "127424",
+      "ebayFullName": "Stamps > Africa > Morocco",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "127425",
+      "ebayFullName": "Stamps > Africa > Mauritania",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "127426",
+      "ebayFullName": "Stamps > Africa > Mozambique",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "127428",
+      "ebayFullName": "Stamps > Africa > Central African Republic",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "127431",
+      "ebayFullName": "Stamps > Africa > Togo",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "127432",
+      "ebayFullName": "Stamps > Africa > Tunisia",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "127433",
+      "ebayFullName": "Stamps > Africa > Collections, Lots",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "127443",
+      "ebayFullName": "Stamps > Africa > Cameroon",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "162074",
+      "ebayFullName": "Stamps > Africa > Somalia",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "166766",
+      "ebayFullName": "Stamps > Africa > Angola",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "166767",
+      "ebayFullName": "Stamps > Africa > Benin",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "166768",
+      "ebayFullName": "Stamps > Africa > Botswana (1966-Now)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "166769",
+      "ebayFullName": "Stamps > Africa > Burkina Faso",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "166770",
+      "ebayFullName": "Stamps > Africa > Chad",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "166772",
+      "ebayFullName": "Stamps > Africa > Ethiopia",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "166774",
+      "ebayFullName": "Stamps > Africa > Lesotho",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "166775",
+      "ebayFullName": "Stamps > Africa > Liberia",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "166776",
+      "ebayFullName": "Stamps > Africa > Libya",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "166777",
+      "ebayFullName": "Stamps > Africa > Mali",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "166779",
+      "ebayFullName": "Stamps > Africa > Niger",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "166780",
+      "ebayFullName": "Stamps > Africa > Senegal",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "166782",
+      "ebayFullName": "Stamps > Africa > Tanzania",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179355",
+      "ebayFullName": "Stamps > Africa > Djibouti",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179356",
+      "ebayFullName": "Stamps > Africa > Equatorial Guinea",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179357",
+      "ebayFullName": "Stamps > Africa > Eritrea",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179358",
+      "ebayFullName": "Stamps > Africa > Guinea-Bissau",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179359",
+      "ebayFullName": "Stamps > Africa > Burundi",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179360",
+      "ebayFullName": "Stamps > Africa > Comoros",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179361",
+      "ebayFullName": "Stamps > Africa > Gambia (1965-Now)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179362",
+      "ebayFullName": "Stamps > Africa > Ghana",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179363",
+      "ebayFullName": "Stamps > Africa > Kenya (1963-Now)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179364",
+      "ebayFullName": "Stamps > Africa > Nigeria (1960-Now)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179365",
+      "ebayFullName": "Stamps > Africa > Rwanda",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179366",
+      "ebayFullName": "Stamps > Africa > Sao Tome & Principe",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179367",
+      "ebayFullName": "Stamps > Africa > Seychelles (1976-Now)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179368",
+      "ebayFullName": "Stamps > Africa > Sierra Leone (1961-Now)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179369",
+      "ebayFullName": "Stamps > Africa > Swaziland (1968-Now)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179370",
+      "ebayFullName": "Stamps > Africa > Cape Verde",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179371",
+      "ebayFullName": "Stamps > Africa > Malawi (1964-Now)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179372",
+      "ebayFullName": "Stamps > Africa > Namibia",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179373",
+      "ebayFullName": "Stamps > Africa > Uganda (1962-Now)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179374",
+      "ebayFullName": "Stamps > Africa > Zambia (1964-Now)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179375",
+      "ebayFullName": "Stamps > Africa > Zimbabwe (1965-Now)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179376",
+      "ebayFullName": "Stamps > Africa > Other African Stamps",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "123791",
+      "ebayFullName": "Stamps > Middle East > Bahrain (1971-Now)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "123794",
+      "ebayFullName": "Stamps > Middle East > Iraq",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "123795",
+      "ebayFullName": "Stamps > Middle East > Israel",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "123796",
+      "ebayFullName": "Stamps > Middle East > Jordan",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "123797",
+      "ebayFullName": "Stamps > Middle East > Kuwait (1961-Now)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "123798",
+      "ebayFullName": "Stamps > Middle East > Lebanon",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "123799",
+      "ebayFullName": "Stamps > Middle East > Oman",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "123800",
+      "ebayFullName": "Stamps > Middle East > Qatar",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "123801",
+      "ebayFullName": "Stamps > Middle East > Saudi Arabia",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "123803",
+      "ebayFullName": "Stamps > Middle East > United Arab Emirates",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "123804",
+      "ebayFullName": "Stamps > Middle East > Yemen",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "127419",
+      "ebayFullName": "Stamps > Middle East > Egypt",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "131628",
+      "ebayFullName": "Stamps > Middle East > Palestine (1948-Now)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "145822",
+      "ebayFullName": "Stamps > Middle East > Afghanistan",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "145842",
+      "ebayFullName": "Stamps > Middle East > Collections, Lots",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179405",
+      "ebayFullName": "Stamps > Middle East > Other Middle Eastern Stamps",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "701",
+      "ebayFullName": "Stamps > Publications & Supplies > Publications",
+      "shopifyCategoryId": "ae-2-1-1-8",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Craft Kits > Scrapbooking & Stamping Kits",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "705",
+      "ebayFullName": "Stamps > Publications & Supplies > Other Stamp Supplies",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.3,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "82978",
+      "ebayFullName": "Stamps > Publications & Supplies > Protective Envelopes",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.3,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "162057",
+      "ebayFullName": "Stamps > Publications & Supplies > Albums",
+      "shopifyCategoryId": "ae-2-1-1-8",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Craft Kits > Scrapbooking & Stamping Kits",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "162058",
+      "ebayFullName": "Stamps > Publications & Supplies > Magnifiers & Loupes",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.3,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "162059",
+      "ebayFullName": "Stamps > Publications & Supplies > Mounts & Hinges",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.3,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179653",
+      "ebayFullName": "Stamps > Publications & Supplies > Perforation Gauges",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.3,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "264",
+      "ebayFullName": "Stamps > Worldwide > Other Worldwide Stamps",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "698",
+      "ebayFullName": "Stamps > Worldwide > World: Errors, Freaks, Oddities",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "700",
+      "ebayFullName": "Stamps > Worldwide > First Day Covers",
+      "shopifyCategoryId": "ae-2-2-5-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > First Day Covers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "3515",
+      "ebayFullName": "Stamps > Worldwide > United Nations",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "7908",
+      "ebayFullName": "Stamps > Worldwide > Philatelic Covers",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "7921",
+      "ebayFullName": "Stamps > Worldwide > Collections, Lots",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "65184",
+      "ebayFullName": "Stamps > Worldwide > Postal History",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "123783",
+      "ebayFullName": "Stamps > Worldwide > Omnibus Issues",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "3494",
+      "ebayFullName": "Stamps > Latin America > Mexico",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "47173",
+      "ebayFullName": "Stamps > Latin America > Collections, Lots",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "127351",
+      "ebayFullName": "Stamps > Latin America > Guyana",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "128302",
+      "ebayFullName": "Stamps > Latin America > Suriname",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "145824",
+      "ebayFullName": "Stamps > Latin America > Argentina",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "145825",
+      "ebayFullName": "Stamps > Latin America > Bolivia",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "145826",
+      "ebayFullName": "Stamps > Latin America > Brazil",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "145827",
+      "ebayFullName": "Stamps > Latin America > Chile",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "145828",
+      "ebayFullName": "Stamps > Latin America > Colombia",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "145829",
+      "ebayFullName": "Stamps > Latin America > Costa Rica",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "145831",
+      "ebayFullName": "Stamps > Latin America > Ecuador",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "145832",
+      "ebayFullName": "Stamps > Latin America > El Salvador",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "145833",
+      "ebayFullName": "Stamps > Latin America > Guatemala",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "145835",
+      "ebayFullName": "Stamps > Latin America > Honduras",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "145836",
+      "ebayFullName": "Stamps > Latin America > Nicaragua",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "145837",
+      "ebayFullName": "Stamps > Latin America > Panama",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "145838",
+      "ebayFullName": "Stamps > Latin America > Paraguay",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "145839",
+      "ebayFullName": "Stamps > Latin America > Peru",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "145840",
+      "ebayFullName": "Stamps > Latin America > Uruguay",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "145841",
+      "ebayFullName": "Stamps > Latin America > Venezuela",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179399",
+      "ebayFullName": "Stamps > Latin America > Belize (1973-Now)",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179400",
+      "ebayFullName": "Stamps > Latin America > Other Latin American Stamps",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "47176",
+      "ebayFullName": "Stamps > Asia > Thailand",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "68114",
+      "ebayFullName": "Stamps > Asia > China",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "91577",
+      "ebayFullName": "Stamps > Asia > Nepal",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "91578",
+      "ebayFullName": "Stamps > Asia > Philippines",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "91579",
+      "ebayFullName": "Stamps > Asia > Taiwan",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "91580",
+      "ebayFullName": "Stamps > Asia > Vietnam",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "123786",
+      "ebayFullName": "Stamps > Asia > Bhutan",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "123787",
+      "ebayFullName": "Stamps > Asia > Indonesia",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "123789",
+      "ebayFullName": "Stamps > Asia > Mongolia",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "127408",
+      "ebayFullName": "Stamps > Asia > Japan",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "127409",
+      "ebayFullName": "Stamps > Asia > Laos",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "127410",
+      "ebayFullName": "Stamps > Asia > Collections, Lots",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "127411",
+      "ebayFullName": "Stamps > Asia > Other Asian Stamps",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "146901",
+      "ebayFullName": "Stamps > Asia > Korea",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "162054",
+      "ebayFullName": "Stamps > Asia > Cambodia",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "169978",
+      "ebayFullName": "Stamps > Asia > India (1947-Now)",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "170608",
+      "ebayFullName": "Stamps > Asia > Hong Kong SAR (1997-Now)",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179327",
+      "ebayFullName": "Stamps > Asia > Kyrgyzstan",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179328",
+      "ebayFullName": "Stamps > Asia > Armenia",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179329",
+      "ebayFullName": "Stamps > Asia > Azerbaijan",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179330",
+      "ebayFullName": "Stamps > Asia > Bangladesh",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179331",
+      "ebayFullName": "Stamps > Asia > Burma/Myanmar (1948-Now)",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179332",
+      "ebayFullName": "Stamps > Asia > Georgia",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179333",
+      "ebayFullName": "Stamps > Asia > Kazakhstan",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179334",
+      "ebayFullName": "Stamps > Asia > Macau",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179335",
+      "ebayFullName": "Stamps > Asia > Malaysia (1963-Now)",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179336",
+      "ebayFullName": "Stamps > Asia > Maldives (1965-Now)",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179337",
+      "ebayFullName": "Stamps > Asia > Pakistan (1947-Now)",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179338",
+      "ebayFullName": "Stamps > Asia > Singapore (1963-Now)",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179339",
+      "ebayFullName": "Stamps > Asia > Sri Lanka",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179340",
+      "ebayFullName": "Stamps > Asia > Tajikistan",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179341",
+      "ebayFullName": "Stamps > Asia > Timor",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179342",
+      "ebayFullName": "Stamps > Asia > Turkmenistan",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179343",
+      "ebayFullName": "Stamps > Asia > Uzbekistan",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "128308",
+      "ebayFullName": "Stamps > Caribbean > Curacao",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "145834",
+      "ebayFullName": "Stamps > Caribbean > Haiti",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179378",
+      "ebayFullName": "Stamps > Caribbean > Antigua & Barbuda (1981-Now)",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179379",
+      "ebayFullName": "Stamps > Caribbean > Bahamas (1973-Now)",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179380",
+      "ebayFullName": "Stamps > Caribbean > Barbados (1966-Now)",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179381",
+      "ebayFullName": "Stamps > Caribbean > Dominica (1967-Now)",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179382",
+      "ebayFullName": "Stamps > Caribbean > Dominican Republic",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179383",
+      "ebayFullName": "Stamps > Caribbean > Grenada (1974-Now)",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179384",
+      "ebayFullName": "Stamps > Caribbean > Jamaica (1962-Now)",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179385",
+      "ebayFullName": "Stamps > Caribbean > St Kitts & Nevis (1983-Now)",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179386",
+      "ebayFullName": "Stamps > Caribbean > St Lucia (1979-Now)",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179387",
+      "ebayFullName": "Stamps > Caribbean > St Vincent & the Grenadines",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179388",
+      "ebayFullName": "Stamps > Caribbean > Trinidad & Tobago (1962-Now)",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179389",
+      "ebayFullName": "Stamps > Caribbean > Turks & Caicos Is. (1976-Now)",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179390",
+      "ebayFullName": "Stamps > Caribbean > Collections, Lots",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179391",
+      "ebayFullName": "Stamps > Caribbean > Other Caribbean Stamps",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "263",
+      "ebayFullName": "Stamps > British Colonies & Territories > Other British Colony Stamps",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "65175",
+      "ebayFullName": "Stamps > British Colonies & Territories > South Africa (until 1961)",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "65176",
+      "ebayFullName": "Stamps > British Colonies & Territories > Hong Kong (until 1997)",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "65177",
+      "ebayFullName": "Stamps > British Colonies & Territories > Falkland Islands",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "65178",
+      "ebayFullName": "Stamps > British Colonies & Territories > Malta (until 1964)",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "65179",
+      "ebayFullName": "Stamps > British Colonies & Territories > Fiji (until 1967)",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "70088",
+      "ebayFullName": "Stamps > British Colonies & Territories > India (until 1947)",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "70094",
+      "ebayFullName": "Stamps > British Colonies & Territories > Bahrain (until 1971)",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "70096",
+      "ebayFullName": "Stamps > British Colonies & Territories > Kuwait (until 1961)",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73184",
+      "ebayFullName": "Stamps > British Colonies & Territories > Aden (until 1967)",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73185",
+      "ebayFullName": "Stamps > British Colonies & Territories > Anguilla",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73186",
+      "ebayFullName": "Stamps > British Colonies & Territories > Antigua & Barbuda (until 1981)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73187",
+      "ebayFullName": "Stamps > British Colonies & Territories > Ascension Island",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73188",
+      "ebayFullName": "Stamps > British Colonies & Territories > Barbados (until 1966)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73189",
+      "ebayFullName": "Stamps > British Colonies & Territories > Bechuanaland (until 1966)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73190",
+      "ebayFullName": "Stamps > British Colonies & Territories > Bermuda",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73191",
+      "ebayFullName": "Stamps > British Colonies & Territories > British Antarctic Territory",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73192",
+      "ebayFullName": "Stamps > British Colonies & Territories > British Virgin Islands",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73193",
+      "ebayFullName": "Stamps > British Colonies & Territories > Brunei",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73194",
+      "ebayFullName": "Stamps > British Colonies & Territories > Cayman Islands",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73195",
+      "ebayFullName": "Stamps > British Colonies & Territories > Ceylon (until 1948)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73197",
+      "ebayFullName": "Stamps > British Colonies & Territories > Cook Islands (until 1965)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73198",
+      "ebayFullName": "Stamps > British Colonies & Territories > Cyprus (until 1960)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73199",
+      "ebayFullName": "Stamps > British Colonies & Territories > Dominica (until 1967)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73200",
+      "ebayFullName": "Stamps > British Colonies & Territories > Gambia (until 1965)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73201",
+      "ebayFullName": "Stamps > British Colonies & Territories > Gibraltar",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73202",
+      "ebayFullName": "Stamps > British Colonies & Territories > Gilbert & Ellice (until 1971)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73203",
+      "ebayFullName": "Stamps > British Colonies & Territories > Gold Coast (until 1957)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73204",
+      "ebayFullName": "Stamps > British Colonies & Territories > Grenada (until 1974)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73205",
+      "ebayFullName": "Stamps > British Colonies & Territories > Jamaica (until 1962)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73206",
+      "ebayFullName": "Stamps > British Colonies & Territories > British KUT",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73208",
+      "ebayFullName": "Stamps > British Colonies & Territories > Leeward Islands",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73209",
+      "ebayFullName": "Stamps > British Colonies & Territories > Malaya, Straits Settlements",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73210",
+      "ebayFullName": "Stamps > British Colonies & Territories > Mauritius",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73211",
+      "ebayFullName": "Stamps > British Colonies & Territories > Montserrat",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73212",
+      "ebayFullName": "Stamps > British Colonies & Territories > Nauru (until 1968)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73213",
+      "ebayFullName": "Stamps > British Colonies & Territories > Nigeria (until 1960)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73214",
+      "ebayFullName": "Stamps > British Colonies & Territories > Niue (until 1974)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73215",
+      "ebayFullName": "Stamps > British Colonies & Territories > Norfolk Island",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73216",
+      "ebayFullName": "Stamps > British Colonies & Territories > North Borneo",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73217",
+      "ebayFullName": "Stamps > British Colonies & Territories > Nyasaland/British Cent. Africa",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73218",
+      "ebayFullName": "Stamps > British Colonies & Territories > Bahawalpur (until 1947)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73219",
+      "ebayFullName": "Stamps > British Colonies & Territories > Papua New Guinea (until 1975)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73220",
+      "ebayFullName": "Stamps > British Colonies & Territories > Pitcairn Island",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73221",
+      "ebayFullName": "Stamps > British Colonies & Territories > Rhodesia (until 1965)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73222",
+      "ebayFullName": "Stamps > British Colonies & Territories > St Helena",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73223",
+      "ebayFullName": "Stamps > British Colonies & Territories > St Kitts & Nevis (until 1983)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73224",
+      "ebayFullName": "Stamps > British Colonies & Territories > St Lucia (1814-1979)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73225",
+      "ebayFullName": "Stamps > British Colonies & Territories > St Vincent & Grenadines (Brit)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73226",
+      "ebayFullName": "Stamps > British Colonies & Territories > Samoa (until 1962)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73227",
+      "ebayFullName": "Stamps > British Colonies & Territories > Sarawak",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73228",
+      "ebayFullName": "Stamps > British Colonies & Territories > Seychelles (until 1976)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73229",
+      "ebayFullName": "Stamps > British Colonies & Territories > Sierra Leone (1808-1961)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73230",
+      "ebayFullName": "Stamps > British Colonies & Territories > Singapore (1824-1963)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73231",
+      "ebayFullName": "Stamps > British Colonies & Territories > Solomon Islands (1893-1978)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73234",
+      "ebayFullName": "Stamps > British Colonies & Territories > Swaziland (until 1968)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73236",
+      "ebayFullName": "Stamps > British Colonies & Territories > Tonga (1900-70)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73237",
+      "ebayFullName": "Stamps > British Colonies & Territories > Trinidad & Tobago (until 1962)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73238",
+      "ebayFullName": "Stamps > British Colonies & Territories > Tristan da Cunha",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73239",
+      "ebayFullName": "Stamps > British Colonies & Territories > Turks & Caicos (until 1976)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73242",
+      "ebayFullName": "Stamps > British Colonies & Territories > Zanzibar",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "80110",
+      "ebayFullName": "Stamps > British Colonies & Territories > Morocco Agencies",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "80111",
+      "ebayFullName": "Stamps > British Colonies & Territories > New Hebrides (until 1980)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "80112",
+      "ebayFullName": "Stamps > British Colonies & Territories > Basutoland (until 1966)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "80113",
+      "ebayFullName": "Stamps > British Colonies & Territories > British Guiana (until 1966)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "80114",
+      "ebayFullName": "Stamps > British Colonies & Territories > British Honduras (until 1973)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "80115",
+      "ebayFullName": "Stamps > British Colonies & Territories > British Levant (until 1922)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "80116",
+      "ebayFullName": "Stamps > British Colonies & Territories > Burma (until 1948)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "80118",
+      "ebayFullName": "Stamps > British Colonies & Territories > South West Africa (until 1990)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "80119",
+      "ebayFullName": "Stamps > British Colonies & Territories > Collections, Lots",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "80120",
+      "ebayFullName": "Stamps > British Colonies & Territories > Somaliland Protectorate",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "90895",
+      "ebayFullName": "Stamps > British Colonies & Territories > Northern Rhodesia (until 1964)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "91575",
+      "ebayFullName": "Stamps > British Colonies & Territories > Maldives (until 1965)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "91576",
+      "ebayFullName": "Stamps > British Colonies & Territories > British Indian Ocean Territory",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "93831",
+      "ebayFullName": "Stamps > British Colonies & Territories > Heligoland",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "98957",
+      "ebayFullName": "Stamps > British Colonies & Territories > Palestine (until 1948)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "162482",
+      "ebayFullName": "Stamps > British Colonies & Territories > Bahamas (until 1973)",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "3459",
+      "ebayFullName": "Stamps > Specialty Philately > Cinderellas",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "4751",
+      "ebayFullName": "Stamps > Specialty Philately > Postal Stationery",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "7937",
+      "ebayFullName": "Stamps > Specialty Philately > Other Specialty Philately",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "139792",
+      "ebayFullName": "Stamps > Specialty Philately > Fakes & Reproductions",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "166764",
+      "ebayFullName": "Stamps > Specialty Philately > Maxi Cards",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179402",
+      "ebayFullName": "Stamps > Specialty Philately > Memorabilia",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "703",
+      "ebayFullName": "Stamps > Topical Stamps > Other Topical Stamps",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "4753",
+      "ebayFullName": "Stamps > Topical Stamps > Animation, Cartoons",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "7896",
+      "ebayFullName": "Stamps > Topical Stamps > Art",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "30261",
+      "ebayFullName": "Stamps > Topical Stamps > Architecture",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "30262",
+      "ebayFullName": "Stamps > Topical Stamps > Cultures & Ethnicities",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "65203",
+      "ebayFullName": "Stamps > Topical Stamps > Nature & Plants",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "65208",
+      "ebayFullName": "Stamps > Topical Stamps > Sports",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "65213",
+      "ebayFullName": "Stamps > Topical Stamps > Space",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "68096",
+      "ebayFullName": "Stamps > Topical Stamps > Famous People",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "70097",
+      "ebayFullName": "Stamps > Topical Stamps > Music",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "70098",
+      "ebayFullName": "Stamps > Topical Stamps > Royalty",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "91583",
+      "ebayFullName": "Stamps > Topical Stamps > Collections, Lots",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "139793",
+      "ebayFullName": "Stamps > Topical Stamps > Flags & National Emblems",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "139794",
+      "ebayFullName": "Stamps > Topical Stamps > Holidays",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "139796",
+      "ebayFullName": "Stamps > Topical Stamps > Military & War",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "168203",
+      "ebayFullName": "Stamps > Topical Stamps > Organizations",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "179401",
+      "ebayFullName": "Stamps > Topical Stamps > Science & Technology",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181418",
+      "ebayFullName": "Stamps > Topical Stamps > Transportation",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "181419",
+      "ebayFullName": "Stamps > Topical Stamps > Animal Kingdom",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "36716",
+      "ebayFullName": "Stamps > Topical Stamps > Animal Kingdom > Other Animal Kingdom Stamps",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "65200",
+      "ebayFullName": "Stamps > Topical Stamps > Animal Kingdom > Birds",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "65201",
+      "ebayFullName": "Stamps > Topical Stamps > Animal Kingdom > Pets & Farm Animals",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "65202",
+      "ebayFullName": "Stamps > Topical Stamps > Animal Kingdom > Fish & Marine Life",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "65204",
+      "ebayFullName": "Stamps > Topical Stamps > Animal Kingdom > Insects & Butterflies",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "65205",
+      "ebayFullName": "Stamps > Topical Stamps > Animal Kingdom > Reptiles & Amphibians",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "65206",
+      "ebayFullName": "Stamps > Topical Stamps > Animal Kingdom > Wild Animals",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "65210",
+      "ebayFullName": "Stamps > Topical Stamps > Transportation > Aviation",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "65211",
+      "ebayFullName": "Stamps > Topical Stamps > Transportation > Ships & Boats",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "65212",
+      "ebayFullName": "Stamps > Topical Stamps > Transportation > Motor Vehicles",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "65214",
+      "ebayFullName": "Stamps > Topical Stamps > Transportation > Trains & Railroads",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "162070",
+      "ebayFullName": "Stamps > Topical Stamps > Transportation > Other Transportation Stamps",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "65207",
+      "ebayFullName": "Stamps > Topical Stamps > Organizations > Red Cross",
+      "shopifyCategoryId": "ae-2-1-1-8",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Craft Kits > Scrapbooking & Stamping Kits",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "162062",
+      "ebayFullName": "Stamps > Topical Stamps > Organizations > Boy Scouts",
+      "shopifyCategoryId": "ae-2-1-1-8",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Craft Kits > Scrapbooking & Stamping Kits",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "168205",
+      "ebayFullName": "Stamps > Topical Stamps > Organizations > Girl Scouts & Girl Guides",
+      "shopifyCategoryId": "ae-2-1-1-8",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Craft Kits > Scrapbooking & Stamping Kits",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "168207",
+      "ebayFullName": "Stamps > Topical Stamps > Organizations > Rotary International",
+      "shopifyCategoryId": "ae-2-1-1-8",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Craft Kits > Scrapbooking & Stamping Kits",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "168208",
+      "ebayFullName": "Stamps > Topical Stamps > Organizations > Other Organization Stamps",
+      "shopifyCategoryId": "ae-2-1-1-8",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Craft Kits > Scrapbooking & Stamping Kits",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "139789",
+      "ebayFullName": "Stamps > Topical Stamps > Sports > Football",
+      "shopifyCategoryId": "ae-2-1-1-8",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Craft Kits > Scrapbooking & Stamping Kits",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "139790",
+      "ebayFullName": "Stamps > Topical Stamps > Sports > Soccer",
+      "shopifyCategoryId": "ae-2-1-1-8",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Craft Kits > Scrapbooking & Stamping Kits",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "139791",
+      "ebayFullName": "Stamps > Topical Stamps > Sports > Other Sports Stamps",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.3,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "162063",
+      "ebayFullName": "Stamps > Topical Stamps > Sports > Baseball",
+      "shopifyCategoryId": "ae-2-1-1-8",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Craft Kits > Scrapbooking & Stamping Kits",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "162064",
+      "ebayFullName": "Stamps > Topical Stamps > Sports > Basketball",
+      "shopifyCategoryId": "ae-2-1-1-8",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Craft Kits > Scrapbooking & Stamping Kits",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "162065",
+      "ebayFullName": "Stamps > Topical Stamps > Sports > Chess",
+      "shopifyCategoryId": "os-11-5-8",
+      "shopifyFullName": "Office Supplies > Office Instruments > Office Stamps > Vintage Stamps",
+      "confidence": 0.5,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "162066",
+      "ebayFullName": "Stamps > Topical Stamps > Sports > Hockey",
+      "shopifyCategoryId": "ae-2-1-1-8",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Craft Kits > Scrapbooking & Stamping Kits",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "162067",
+      "ebayFullName": "Stamps > Topical Stamps > Sports > Table Tennis",
+      "shopifyCategoryId": "os-11-5-8",
+      "shopifyFullName": "Office Supplies > Office Instruments > Office Stamps > Vintage Stamps",
+      "confidence": 0.5,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "162068",
+      "ebayFullName": "Stamps > Topical Stamps > Sports > Tennis",
+      "shopifyCategoryId": "ae-2-1-1-8",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Craft Kits > Scrapbooking & Stamping Kits",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "162069",
+      "ebayFullName": "Stamps > Topical Stamps > Sports > Olympics",
+      "shopifyCategoryId": "ae-2-1-1-8",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Craft Kits > Scrapbooking & Stamping Kits",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "168201",
+      "ebayFullName": "Stamps > Topical Stamps > Sports > Auto Racing",
+      "shopifyCategoryId": "ae-2-1-1-8",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Craft Kits > Scrapbooking & Stamping Kits",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "168202",
+      "ebayFullName": "Stamps > Topical Stamps > Sports > Cycling",
+      "shopifyCategoryId": "ae-2-1-1-8",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Craft Kits > Scrapbooking & Stamping Kits",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "699",
+      "ebayFullName": "Stamps > Europe > Other European Stamps",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "3489",
+      "ebayFullName": "Stamps > Europe > Germany & Colonies",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "3490",
+      "ebayFullName": "Stamps > Europe > Ireland",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "4744",
+      "ebayFullName": "Stamps > Europe > Belgium & Colonies",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "4749",
+      "ebayFullName": "Stamps > Europe > Switzerland",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "7886",
+      "ebayFullName": "Stamps > Europe > Monaco",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "7891",
+      "ebayFullName": "Stamps > Europe > Hungary",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "7903",
+      "ebayFullName": "Stamps > Europe > Europa CEPT",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "12563",
+      "ebayFullName": "Stamps > Europe > Italy",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "17734",
+      "ebayFullName": "Stamps > Europe > France & Colonies",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "17937",
+      "ebayFullName": "Stamps > Europe > Vatican",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "21035",
+      "ebayFullName": "Stamps > Europe > Spain & Colonies",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "35284",
+      "ebayFullName": "Stamps > Europe > Estonia",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "35285",
+      "ebayFullName": "Stamps > Europe > Latvia",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "35286",
+      "ebayFullName": "Stamps > Europe > Lithuania",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "35288",
+      "ebayFullName": "Stamps > Europe > Bulgaria",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "35289",
+      "ebayFullName": "Stamps > Europe > Denmark & Faroe Islands",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "40370",
+      "ebayFullName": "Stamps > Europe > Bosnia and Herzegovina",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "40395",
+      "ebayFullName": "Stamps > Europe > Aland",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "40411",
+      "ebayFullName": "Stamps > Europe > Liechtenstein",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "40413",
+      "ebayFullName": "Stamps > Europe > Netherlands & Colonies",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "40417",
+      "ebayFullName": "Stamps > Europe > Poland",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "40419",
+      "ebayFullName": "Stamps > Europe > Portugal & Colonies",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "40422",
+      "ebayFullName": "Stamps > Europe > Russia & Soviet Union",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "42829",
+      "ebayFullName": "Stamps > Europe > San Marino",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "47159",
+      "ebayFullName": "Stamps > Europe > Albania",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "47160",
+      "ebayFullName": "Stamps > Europe > Austria",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "47162",
+      "ebayFullName": "Stamps > Europe > Czech Republic, Czechoslovakia",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "47163",
+      "ebayFullName": "Stamps > Europe > Greece",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "47164",
+      "ebayFullName": "Stamps > Europe > Greenland",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "47165",
+      "ebayFullName": "Stamps > Europe > Luxembourg",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "47167",
+      "ebayFullName": "Stamps > Europe > Norway",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "47169",
+      "ebayFullName": "Stamps > Europe > Romania",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "47170",
+      "ebayFullName": "Stamps > Europe > Finland",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "47171",
+      "ebayFullName": "Stamps > Europe > Sweden",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "47172",
+      "ebayFullName": "Stamps > Europe > Iceland",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "65182",
+      "ebayFullName": "Stamps > Europe > Turkey",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "65183",
+      "ebayFullName": "Stamps > Europe > Yugoslavia",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "68004",
+      "ebayFullName": "Stamps > Europe > Andorra",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "80121",
+      "ebayFullName": "Stamps > Europe > Collections, Lots",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "91581",
+      "ebayFullName": "Stamps > Europe > Croatia",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "127399",
+      "ebayFullName": "Stamps > Europe > Slovakia",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "127400",
+      "ebayFullName": "Stamps > Europe > Slovenia",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "127402",
+      "ebayFullName": "Stamps > Europe > Ukraine",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "127405",
+      "ebayFullName": "Stamps > Europe > Belarus",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179392",
+      "ebayFullName": "Stamps > Europe > Cyprus (1960-Now)",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179393",
+      "ebayFullName": "Stamps > Europe > Kosovo",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179394",
+      "ebayFullName": "Stamps > Europe > Macedonia",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179395",
+      "ebayFullName": "Stamps > Europe > Malta (1964-Now)",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179396",
+      "ebayFullName": "Stamps > Europe > Moldova",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179397",
+      "ebayFullName": "Stamps > Europe > Montenegro",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179398",
+      "ebayFullName": "Stamps > Europe > Serbia",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "3500",
+      "ebayFullName": "Stamps > Great Britain > Sheets",
+      "shopifyCategoryId": "ae-2-2-5-6",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Stamp Sheets",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "3505",
+      "ebayFullName": "Stamps > Great Britain > Plate Blocks/Multiples",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "3507",
+      "ebayFullName": "Stamps > Great Britain > Edward VIII",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "3508",
+      "ebayFullName": "Stamps > Great Britain > George VI",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "3509",
+      "ebayFullName": "Stamps > Great Britain > George V",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "3510",
+      "ebayFullName": "Stamps > Great Britain > Edward VII",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "23739",
+      "ebayFullName": "Stamps > Great Britain > Victoria",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "65130",
+      "ebayFullName": "Stamps > Great Britain > Booklets",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "65137",
+      "ebayFullName": "Stamps > Great Britain > Commemorative",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "65143",
+      "ebayFullName": "Stamps > Great Britain > Presentation Packs",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "65144",
+      "ebayFullName": "Stamps > Great Britain > Covers",
+      "shopifyCategoryId": "ae-2-2-5-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > First Day Covers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "65152",
+      "ebayFullName": "Stamps > Great Britain > Elizabeth II",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "65154",
+      "ebayFullName": "Stamps > Great Britain > Collections, Lots",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "65158",
+      "ebayFullName": "Stamps > Great Britain > FDCs",
+      "shopifyCategoryId": "ae-2-2-5-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > First Day Covers",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "65165",
+      "ebayFullName": "Stamps > Great Britain > PHQ Cards",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "65166",
+      "ebayFullName": "Stamps > Great Britain > Regional Issues",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "101763",
+      "ebayFullName": "Stamps > Great Britain > Postage Dues",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179326",
+      "ebayFullName": "Stamps > Great Britain > Other British Stamps",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262988",
+      "ebayFullName": "Stamps > Great Britain > Charles III",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "3477",
+      "ebayFullName": "Stamps > Canada > Other Canadian Stamps",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "3479",
+      "ebayFullName": "Stamps > Canada > Blocks/Multiples",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "3480",
+      "ebayFullName": "Stamps > Canada > Mint",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "3481",
+      "ebayFullName": "Stamps > Canada > Used",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "3482",
+      "ebayFullName": "Stamps > Canada > Covers",
+      "shopifyCategoryId": "ae-2-2-5-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > First Day Covers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "3485",
+      "ebayFullName": "Stamps > Canada > Provinces",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "3486",
+      "ebayFullName": "Stamps > Canada > Collections, Lots",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "7168",
+      "ebayFullName": "Stamps > Canada > NFLD (pre-1949)",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "47150",
+      "ebayFullName": "Stamps > Canada > Back of Book",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "47151",
+      "ebayFullName": "Stamps > Canada > FDCs",
+      "shopifyCategoryId": "ae-2-2-5-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > First Day Covers",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "47229",
+      "ebayFullName": "Stamps > Canada > Booklets",
+      "shopifyCategoryId": "ae-2-2-5-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Commemorative Stamps",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "168200",
+      "ebayFullName": "Stamps > Canada > FFCs",
+      "shopifyCategoryId": "ae-2-2-5-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > First Day Covers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262",
+      "ebayFullName": "Stamps > United States > Other United States Stamps",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "265",
+      "ebayFullName": "Stamps > United States > Sheets",
+      "shopifyCategoryId": "ae-2-2-5-6",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Stamp Sheets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "675",
+      "ebayFullName": "Stamps > United States > 19th Century: Used",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "676",
+      "ebayFullName": "Stamps > United States > 19th Century: Unused",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "678",
+      "ebayFullName": "Stamps > United States > 1901-Now: Used",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "679",
+      "ebayFullName": "Stamps > United States > 1941-Now: Unused",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "682",
+      "ebayFullName": "Stamps > United States > Plate Blocks/Multiples",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "683",
+      "ebayFullName": "Stamps > United States > Collections, Lots",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "686",
+      "ebayFullName": "Stamps > United States > Errors, Freaks, Oddities",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "688",
+      "ebayFullName": "Stamps > United States > Possessions",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "3461",
+      "ebayFullName": "Stamps > United States > 1901-40: Unused",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "3463",
+      "ebayFullName": "Stamps > United States > Confederate States",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "47141",
+      "ebayFullName": "Stamps > United States > Back of Book",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "47147",
+      "ebayFullName": "Stamps > United States > Covers",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "47149",
+      "ebayFullName": "Stamps > United States > Postage",
+      "shopifyCategoryId": "ae-2-2-5-2",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Definitive Stamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "50252",
+      "ebayFullName": "Stamps > United States > Plate Number Coils",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "689",
+      "ebayFullName": "Stamps > United States > Covers > Postal History",
+      "shopifyCategoryId": "ae-2-2-5-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > First Day Covers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "47148",
+      "ebayFullName": "Stamps > United States > Covers > Other US Stamp Covers",
+      "shopifyCategoryId": "ae-2-2-5-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > First Day Covers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "139772",
+      "ebayFullName": "Stamps > United States > Covers > Event Covers",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "139776",
+      "ebayFullName": "Stamps > United States > Covers > FDCs (pre-1951)",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "139779",
+      "ebayFullName": "Stamps > United States > Covers > FDCs (1951-Now)",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "687",
+      "ebayFullName": "Stamps > United States > Covers > FDCs (1951-Now) > 2001-Now",
+      "shopifyCategoryId": "ae-2-2-5-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > First Day Covers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "139780",
+      "ebayFullName": "Stamps > United States > Covers > FDCs (1951-Now) > 1951-60",
+      "shopifyCategoryId": "ae-2-2-5-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > First Day Covers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "139781",
+      "ebayFullName": "Stamps > United States > Covers > FDCs (1951-Now) > 1961-70",
+      "shopifyCategoryId": "ae-2-2-5-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > First Day Covers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "139782",
+      "ebayFullName": "Stamps > United States > Covers > FDCs (1951-Now) > 1971-80",
+      "shopifyCategoryId": "ae-2-2-5-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > First Day Covers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "139783",
+      "ebayFullName": "Stamps > United States > Covers > FDCs (1951-Now) > 1981-90",
+      "shopifyCategoryId": "ae-2-2-5-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > First Day Covers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "139784",
+      "ebayFullName": "Stamps > United States > Covers > FDCs (1951-Now) > 1991-2000",
+      "shopifyCategoryId": "ae-2-2-5-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > First Day Covers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "3464",
+      "ebayFullName": "Stamps > United States > Covers > FDCs (pre-1951) > Pre-1930",
+      "shopifyCategoryId": "ae-2-2-5-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > First Day Covers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "139777",
+      "ebayFullName": "Stamps > United States > Covers > FDCs (pre-1951) > 1931-40",
+      "shopifyCategoryId": "ae-2-2-5-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > First Day Covers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "139778",
+      "ebayFullName": "Stamps > United States > Covers > FDCs (pre-1951) > 1941-50",
+      "shopifyCategoryId": "ae-2-2-5-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > First Day Covers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "684",
+      "ebayFullName": "Stamps > United States > Covers > Event Covers > Other US Event Stamp Covers",
+      "shopifyCategoryId": "ae-2-2-5-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > First Day Covers",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "139773",
+      "ebayFullName": "Stamps > United States > Covers > Event Covers > First Flight",
+      "shopifyCategoryId": "ae-2-2-5-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > First Day Covers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "139774",
+      "ebayFullName": "Stamps > United States > Covers > Event Covers > Naval",
+      "shopifyCategoryId": "ae-2-2-5-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > First Day Covers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "139775",
+      "ebayFullName": "Stamps > United States > Covers > Event Covers > Space",
+      "shopifyCategoryId": "ae-2-2-5-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > First Day Covers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179325",
+      "ebayFullName": "Stamps > United States > Covers > Event Covers > Inauguration & Political",
+      "shopifyCategoryId": "ae-2-2-5-3",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > First Day Covers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "680",
+      "ebayFullName": "Stamps > United States > Back of Book > Air Mail",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "681",
+      "ebayFullName": "Stamps > United States > Back of Book > Other US Back of Book Stamps",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "685",
+      "ebayFullName": "Stamps > United States > Back of Book > Duck Stamps",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "690",
+      "ebayFullName": "Stamps > United States > Back of Book > Revenues",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "691",
+      "ebayFullName": "Stamps > United States > Back of Book > Postal Cards & Stationery",
+      "shopifyCategoryId": "ae-2-2-5-2",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Definitive Stamps",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "3462",
+      "ebayFullName": "Stamps > United States > Back of Book > Booklets",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "139771",
+      "ebayFullName": "Stamps > United States > Back of Book > Proofs & Essays",
+      "shopifyCategoryId": "ae-2-2-5-4",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Collectibles > Postage Stamps > Single Stamps",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    }
+  ]
+}

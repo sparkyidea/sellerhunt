@@ -1,0 +1,36 @@
+{
+  "name": "worker",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "tsdown",
+    "check-types": "tsc --noEmit",
+    "dev": "bun run --watch src/index.ts",
+    "start": "bun run dist/index.mjs",
+    "test": "vitest run",
+    "bullmq:studio": "bun scripts/queue-board.ts",
+    "test:integration": "vitest run --config vitest.integration.config.ts",
+    "webhook:send-test": "bun scripts/send-test-webhook.ts"
+  },
+  "dependencies": {
+    "@dashseller/db": "workspace:*",
+    "@dashseller/env": "workspace:*",
+    "@dashseller/geo": "workspace:*",
+    "@dashseller/job-client": "workspace:*",
+    "@dashseller/marketplace": "workspace:*",
+    "@dashseller/sync": "workspace:*",
+    "bullmq": "catalog:",
+    "drizzle-orm": "catalog:",
+    "hono": "catalog:"
+  },
+  "devDependencies": {
+    "@bull-board/api": "catalog:",
+    "@bull-board/hono": "catalog:",
+    "@dashseller/config": "workspace:*",
+    "dotenv": "catalog:",
+    "resend": "catalog:",
+    "tsdown": "catalog:",
+    "typescript": "catalog:",
+    "vitest": "catalog:"
+  }
+}

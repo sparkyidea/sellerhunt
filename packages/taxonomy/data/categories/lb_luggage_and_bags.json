@@ -1,0 +1,439 @@
+{
+  "version": "2026-05-unstable",
+  "categories": [
+    {
+      "id": "lb",
+      "level": 0,
+      "name": "Luggage & Bags",
+      "full_name": "Luggage & Bags",
+      "parent_id": null,
+      "children": [
+        {
+          "id": "lb-1",
+          "name": "Backpacks"
+        },
+        {
+          "id": "lb-2",
+          "name": "Briefcases"
+        },
+        {
+          "id": "lb-3",
+          "name": "Cosmetic & Toiletry Bags"
+        },
+        {
+          "id": "lb-4",
+          "name": "Diaper Bags"
+        },
+        {
+          "id": "lb-5",
+          "name": "Dry Boxes"
+        },
+        {
+          "id": "lb-6",
+          "name": "Duffel Bags"
+        },
+        {
+          "id": "lb-7",
+          "name": "Fanny Packs"
+        },
+        {
+          "id": "lb-8",
+          "name": "Garment Bags"
+        },
+        {
+          "id": "lb-15",
+          "name": "Laptop Bags"
+        },
+        {
+          "id": "lb-9",
+          "name": "Luggage Accessories"
+        },
+        {
+          "id": "lb-10",
+          "name": "Messenger Bags"
+        },
+        {
+          "id": "lb-11",
+          "name": "Shopping Totes"
+        },
+        {
+          "id": "lb-12",
+          "name": "Suitcases"
+        },
+        {
+          "id": "lb-13",
+          "name": "Tote Bags"
+        },
+        {
+          "id": "lb-14",
+          "name": "Train Cases"
+        }
+      ]
+    },
+    {
+      "id": "lb-1",
+      "level": 1,
+      "name": "Backpacks",
+      "full_name": "Luggage & Bags > Backpacks",
+      "parent_id": "lb",
+      "children": [
+        {
+          "id": "lb-1-15",
+          "name": "Hiking Backpacks"
+        },
+        {
+          "id": "lb-1-16",
+          "name": "Laptop Backpacks"
+        },
+        {
+          "id": "lb-1-17",
+          "name": "Military Backpacks"
+        },
+        {
+          "id": "lb-1-12",
+          "name": "School Backpacks"
+        }
+      ]
+    },
+    {
+      "id": "lb-1-15",
+      "level": 2,
+      "name": "Hiking Backpacks",
+      "full_name": "Luggage & Bags > Backpacks > Hiking Backpacks",
+      "parent_id": "lb-1",
+      "children": []
+    },
+    {
+      "id": "lb-1-16",
+      "level": 2,
+      "name": "Laptop Backpacks",
+      "full_name": "Luggage & Bags > Backpacks > Laptop Backpacks",
+      "parent_id": "lb-1",
+      "children": []
+    },
+    {
+      "id": "lb-1-17",
+      "level": 2,
+      "name": "Military Backpacks",
+      "full_name": "Luggage & Bags > Backpacks > Military Backpacks",
+      "parent_id": "lb-1",
+      "children": []
+    },
+    {
+      "id": "lb-1-12",
+      "level": 2,
+      "name": "School Backpacks",
+      "full_name": "Luggage & Bags > Backpacks > School Backpacks",
+      "parent_id": "lb-1",
+      "children": []
+    },
+    {
+      "id": "lb-2",
+      "level": 1,
+      "name": "Briefcases",
+      "full_name": "Luggage & Bags > Briefcases",
+      "parent_id": "lb",
+      "children": []
+    },
+    {
+      "id": "lb-3",
+      "level": 1,
+      "name": "Cosmetic & Toiletry Bags",
+      "full_name": "Luggage & Bags > Cosmetic & Toiletry Bags",
+      "parent_id": "lb",
+      "children": [
+        {
+          "id": "lb-3-3",
+          "name": "Makeup Bags"
+        },
+        {
+          "id": "lb-3-4",
+          "name": "Toiletry Bags"
+        },
+        {
+          "id": "lb-3-5",
+          "name": "Travel Organizer Bags"
+        }
+      ]
+    },
+    {
+      "id": "lb-3-3",
+      "level": 2,
+      "name": "Makeup Bags",
+      "full_name": "Luggage & Bags > Cosmetic & Toiletry Bags > Makeup Bags",
+      "parent_id": "lb-3",
+      "children": []
+    },
+    {
+      "id": "lb-3-4",
+      "level": 2,
+      "name": "Toiletry Bags",
+      "full_name": "Luggage & Bags > Cosmetic & Toiletry Bags > Toiletry Bags",
+      "parent_id": "lb-3",
+      "children": []
+    },
+    {
+      "id": "lb-3-5",
+      "level": 2,
+      "name": "Travel Organizer Bags",
+      "full_name": "Luggage & Bags > Cosmetic & Toiletry Bags > Travel Organizer Bags",
+      "parent_id": "lb-3",
+      "children": []
+    },
+    {
+      "id": "lb-4",
+      "level": 1,
+      "name": "Diaper Bags",
+      "full_name": "Luggage & Bags > Diaper Bags",
+      "parent_id": "lb",
+      "children": []
+    },
+    {
+      "id": "lb-5",
+      "level": 1,
+      "name": "Dry Boxes",
+      "full_name": "Luggage & Bags > Dry Boxes",
+      "parent_id": "lb",
+      "children": []
+    },
+    {
+      "id": "lb-6",
+      "level": 1,
+      "name": "Duffel Bags",
+      "full_name": "Luggage & Bags > Duffel Bags",
+      "parent_id": "lb",
+      "children": [
+        {
+          "id": "lb-6-1",
+          "name": "Gym Duffel Bags"
+        }
+      ]
+    },
+    {
+      "id": "lb-6-1",
+      "level": 2,
+      "name": "Gym Duffel Bags",
+      "full_name": "Luggage & Bags > Duffel Bags > Gym Duffel Bags",
+      "parent_id": "lb-6",
+      "children": []
+    },
+    {
+      "id": "lb-7",
+      "level": 1,
+      "name": "Fanny Packs",
+      "full_name": "Luggage & Bags > Fanny Packs",
+      "parent_id": "lb",
+      "children": []
+    },
+    {
+      "id": "lb-8",
+      "level": 1,
+      "name": "Garment Bags",
+      "full_name": "Luggage & Bags > Garment Bags",
+      "parent_id": "lb",
+      "children": []
+    },
+    {
+      "id": "lb-15",
+      "level": 1,
+      "name": "Laptop Bags",
+      "full_name": "Luggage & Bags > Laptop Bags",
+      "parent_id": "lb",
+      "children": []
+    },
+    {
+      "id": "lb-9",
+      "level": 1,
+      "name": "Luggage Accessories",
+      "full_name": "Luggage & Bags > Luggage Accessories",
+      "parent_id": "lb",
+      "children": [
+        {
+          "id": "lb-9-1",
+          "name": "Dry Box Liners & Inserts"
+        },
+        {
+          "id": "lb-9-2",
+          "name": "Luggage Covers"
+        },
+        {
+          "id": "lb-9-3",
+          "name": "Luggage Racks & Stands"
+        },
+        {
+          "id": "lb-9-4",
+          "name": "Luggage Straps"
+        },
+        {
+          "id": "lb-9-5",
+          "name": "Luggage Tags"
+        },
+        {
+          "id": "lb-9-6",
+          "name": "Packing Organizers"
+        },
+        {
+          "id": "lb-9-7",
+          "name": "Travel Bottles & Containers"
+        },
+        {
+          "id": "lb-9-8",
+          "name": "Travel Pouches"
+        }
+      ]
+    },
+    {
+      "id": "lb-9-1",
+      "level": 2,
+      "name": "Dry Box Liners & Inserts",
+      "full_name": "Luggage & Bags > Luggage Accessories > Dry Box Liners & Inserts",
+      "parent_id": "lb-9",
+      "children": []
+    },
+    {
+      "id": "lb-9-2",
+      "level": 2,
+      "name": "Luggage Covers",
+      "full_name": "Luggage & Bags > Luggage Accessories > Luggage Covers",
+      "parent_id": "lb-9",
+      "children": []
+    },
+    {
+      "id": "lb-9-3",
+      "level": 2,
+      "name": "Luggage Racks & Stands",
+      "full_name": "Luggage & Bags > Luggage Accessories > Luggage Racks & Stands",
+      "parent_id": "lb-9",
+      "children": []
+    },
+    {
+      "id": "lb-9-4",
+      "level": 2,
+      "name": "Luggage Straps",
+      "full_name": "Luggage & Bags > Luggage Accessories > Luggage Straps",
+      "parent_id": "lb-9",
+      "children": []
+    },
+    {
+      "id": "lb-9-5",
+      "level": 2,
+      "name": "Luggage Tags",
+      "full_name": "Luggage & Bags > Luggage Accessories > Luggage Tags",
+      "parent_id": "lb-9",
+      "children": []
+    },
+    {
+      "id": "lb-9-6",
+      "level": 2,
+      "name": "Packing Organizers",
+      "full_name": "Luggage & Bags > Luggage Accessories > Packing Organizers",
+      "parent_id": "lb-9",
+      "children": []
+    },
+    {
+      "id": "lb-9-7",
+      "level": 2,
+      "name": "Travel Bottles & Containers",
+      "full_name": "Luggage & Bags > Luggage Accessories > Travel Bottles & Containers",
+      "parent_id": "lb-9",
+      "children": []
+    },
+    {
+      "id": "lb-9-8",
+      "level": 2,
+      "name": "Travel Pouches",
+      "full_name": "Luggage & Bags > Luggage Accessories > Travel Pouches",
+      "parent_id": "lb-9",
+      "children": []
+    },
+    {
+      "id": "lb-10",
+      "level": 1,
+      "name": "Messenger Bags",
+      "full_name": "Luggage & Bags > Messenger Bags",
+      "parent_id": "lb",
+      "children": []
+    },
+    {
+      "id": "lb-11",
+      "level": 1,
+      "name": "Shopping Totes",
+      "full_name": "Luggage & Bags > Shopping Totes",
+      "parent_id": "lb",
+      "children": []
+    },
+    {
+      "id": "lb-12",
+      "level": 1,
+      "name": "Suitcases",
+      "full_name": "Luggage & Bags > Suitcases",
+      "parent_id": "lb",
+      "children": [
+        {
+          "id": "lb-12-2",
+          "name": "Carry-On Suitcases"
+        },
+        {
+          "id": "lb-12-3",
+          "name": "Checked Suitcases"
+        },
+        {
+          "id": "lb-12-5",
+          "name": "Kids' Suitcases"
+        },
+        {
+          "id": "lb-12-9",
+          "name": "Suitcase Travel Sets"
+        }
+      ]
+    },
+    {
+      "id": "lb-12-2",
+      "level": 2,
+      "name": "Carry-On Suitcases",
+      "full_name": "Luggage & Bags > Suitcases > Carry-On Suitcases",
+      "parent_id": "lb-12",
+      "children": []
+    },
+    {
+      "id": "lb-12-3",
+      "level": 2,
+      "name": "Checked Suitcases",
+      "full_name": "Luggage & Bags > Suitcases > Checked Suitcases",
+      "parent_id": "lb-12",
+      "children": []
+    },
+    {
+      "id": "lb-12-5",
+      "level": 2,
+      "name": "Kids' Suitcases",
+      "full_name": "Luggage & Bags > Suitcases > Kids' Suitcases",
+      "parent_id": "lb-12",
+      "children": []
+    },
+    {
+      "id": "lb-12-9",
+      "level": 2,
+      "name": "Suitcase Travel Sets",
+      "full_name": "Luggage & Bags > Suitcases > Suitcase Travel Sets",
+      "parent_id": "lb-12",
+      "children": []
+    },
+    {
+      "id": "lb-13",
+      "level": 1,
+      "name": "Tote Bags",
+      "full_name": "Luggage & Bags > Tote Bags",
+      "parent_id": "lb",
+      "children": []
+    },
+    {
+      "id": "lb-14",
+      "level": 1,
+      "name": "Train Cases",
+      "full_name": "Luggage & Bags > Train Cases",
+      "parent_id": "lb",
+      "children": []
+    }
+  ]
+}

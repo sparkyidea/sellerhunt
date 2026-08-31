@@ -1,0 +1,36 @@
+# Ops alerting for the sync worker — runs apps/worker/scripts/alert-check.ts
+# (thresholds documented in apps/worker/OPERATIONS.md) and emails via Resend
+# on breach. NOTE: scheduled workflows only run from the DEFAULT branch —
+# until this file lands there, run the script locally during observation
+# windows:  cd apps/worker && bun scripts/alert-check.ts
+#
+# Secrets: DATABASE_URL, RESEND_API_KEY, ALERT_EMAIL_TO
+# Variables: WORKER_URL (public worker base, e.g. https://worker-jing.dashseller.dev)
+name: Ops Alerts
+
+on:
+  schedule:
+    # Best-effort timing; GitHub may lag 3-15 min. Fine for these alerts.
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ops-alerts
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - uses: ./.github/actions/setup-tools
+      - name: Run alert check
+        run: bun apps/worker/scripts/alert-check.ts
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          ALERT_EMAIL_TO: ${{ secrets.ALERT_EMAIL_TO }}
+          WORKER_URL: ${{ vars.WORKER_URL }}

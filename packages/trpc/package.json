@@ -1,0 +1,36 @@
+{
+  "name": "@dashseller/trpc",
+  "type": "module",
+  "exports": {
+    ".": {
+      "default": "./src/index.ts"
+    },
+    "./*": {
+      "default": "./src/*.ts"
+    }
+  },
+  "scripts": {
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@dashseller/auth": "workspace:*",
+    "@dashseller/db": "workspace:*",
+    "@dashseller/env": "workspace:*",
+    "@dashseller/geo": "workspace:*",
+    "@dashseller/job-client": "workspace:*",
+    "@dashseller/marketplace": "workspace:*",
+    "@sparkyidea/dataview": "workspace:*",
+    "@trpc/client": "catalog:",
+    "@trpc/server": "catalog:",
+    "date-fns": "catalog:",
+    "dotenv": "catalog:",
+    "drizzle-orm": "catalog:",
+    "superjson": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@dashseller/config": "workspace:*",
+    "hono": "catalog:",
+    "typescript": "catalog:"
+  }
+}

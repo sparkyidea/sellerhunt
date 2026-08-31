@@ -1,0 +1,153 @@
+{
+  "ebayCategory": "Books & Magazines",
+  "shopifyCategories": ["Media"],
+  "totalMapped": 18,
+  "highConfidence": 15,
+  "lowConfidence": 3,
+  "mappings": [
+    {
+      "ebayId": "267",
+      "ebayFullName": "Books & Magazines",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "280",
+      "ebayFullName": "Books & Magazines > Magazines",
+      "shopifyCategoryId": "me-2-1-1",
+      "shopifyFullName": "Media > Magazines & Newspapers > Magazines > Consumer Magazines",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "29223",
+      "ebayFullName": "Books & Magazines > Antiquarian & Collectible",
+      "shopifyCategoryId": "me-1-3",
+      "shopifyFullName": "Media > Books > Print Books",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "29792",
+      "ebayFullName": "Books & Magazines > Audiobooks",
+      "shopifyCategoryId": "me-1-1",
+      "shopifyFullName": "Media > Books > Audiobooks",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "45110",
+      "ebayFullName": "Books & Magazines > Accessories",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "118254",
+      "ebayFullName": "Books & Magazines > Catalogs",
+      "shopifyCategoryId": "os-1-1",
+      "shopifyFullName": "Office Supplies > Book Accessories > Book Covers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "184644",
+      "ebayFullName": "Books & Magazines > Textbooks, Education & Reference",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "261186",
+      "ebayFullName": "Books & Magazines > Books",
+      "shopifyCategoryId": "me-1-3",
+      "shopifyFullName": "Media > Books > Print Books",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "1105",
+      "ebayFullName": "Books & Magazines > Textbooks, Education & Reference > Textbooks",
+      "shopifyCategoryId": "me-8",
+      "shopifyFullName": "Media > Academic Papers & Studies",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "11442",
+      "ebayFullName": "Books & Magazines > Textbooks, Education & Reference > Language Courses",
+      "shopifyCategoryId": "me-8",
+      "shopifyFullName": "Media > Academic Papers & Studies",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "69496",
+      "ebayFullName": "Books & Magazines > Textbooks, Education & Reference > Maps & Atlases",
+      "shopifyCategoryId": "me-8",
+      "shopifyFullName": "Media > Academic Papers & Studies",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "171223",
+      "ebayFullName": "Books & Magazines > Textbooks, Education & Reference > Study Guides & Test Prep",
+      "shopifyCategoryId": "me-8",
+      "shopifyFullName": "Media > Academic Papers & Studies",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "171273",
+      "ebayFullName": "Books & Magazines > Textbooks, Education & Reference > Dictionaries & Reference",
+      "shopifyCategoryId": "me-8",
+      "shopifyFullName": "Media > Academic Papers & Studies",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "45113",
+      "ebayFullName": "Books & Magazines > Accessories > Book Covers",
+      "shopifyCategoryId": "os-1-1",
+      "shopifyFullName": "Office Supplies > Book Accessories > Book Covers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "45114",
+      "ebayFullName": "Books & Magazines > Accessories > Bookmarks",
+      "shopifyCategoryId": "os-1-4",
+      "shopifyFullName": "Office Supplies > Book Accessories > Bookmarks",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "48831",
+      "ebayFullName": "Books & Magazines > Accessories > Book Plates",
+      "shopifyCategoryId": "os-1-1",
+      "shopifyFullName": "Office Supplies > Book Accessories > Book Covers",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "120869",
+      "ebayFullName": "Books & Magazines > Accessories > Book Lights",
+      "shopifyCategoryId": "os-1-2",
+      "shopifyFullName": "Office Supplies > Book Accessories > Book Lights",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "162028",
+      "ebayFullName": "Books & Magazines > Accessories > Book Stands & Holders",
+      "shopifyCategoryId": "os-1-3",
+      "shopifyFullName": "Office Supplies > Book Accessories > Book Stands & Rests",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    }
+  ]
+}

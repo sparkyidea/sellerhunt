@@ -1,0 +1,3601 @@
+{
+  "ebayCategory": "Health & Beauty",
+  "shopifyCategories": ["Health & Beauty"],
+  "totalMapped": 449,
+  "highConfidence": 376,
+  "lowConfidence": 1,
+  "mappings": [
+    {
+      "ebayId": "26395",
+      "ebayFullName": "Health & Beauty",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "1277",
+      "ebayFullName": "Health & Beauty > Other Health & Beauty",
+      "shopifyCategoryId": "se-6-1",
+      "shopifyFullName": "Services > Personal Services > Beauty & Personal Care",
+      "confidence": 0.4,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "11778",
+      "ebayFullName": "Health & Beauty > Medical & Mobility",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "11838",
+      "ebayFullName": "Health & Beauty > Bath & Body",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "11854",
+      "ebayFullName": "Health & Beauty > Hair Care & Styling",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "11863",
+      "ebayFullName": "Health & Beauty > Skin Care",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "31414",
+      "ebayFullName": "Health & Beauty > Vision Care",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "31762",
+      "ebayFullName": "Health & Beauty > Shaving & Hair Removal",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "31769",
+      "ebayFullName": "Health & Beauty > Oral Care",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "31772",
+      "ebayFullName": "Health & Beauty > Sun Protection & Tanning",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "31786",
+      "ebayFullName": "Health & Beauty > Makeup",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "33914",
+      "ebayFullName": "Health & Beauty > Tattoos & Body Art",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "36447",
+      "ebayFullName": "Health & Beauty > Massage",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "40965",
+      "ebayFullName": "Health & Beauty > Wholesale Lots",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "47945",
+      "ebayFullName": "Health & Beauty > Nail Care, Manicure & Pedicure",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "67588",
+      "ebayFullName": "Health & Beauty > Health Care",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "67659",
+      "ebayFullName": "Health & Beauty > Natural & Alternative Remedies",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "177731",
+      "ebayFullName": "Health & Beauty > Salon & Spa Equipment",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "180345",
+      "ebayFullName": "Health & Beauty > Fragrances",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "180959",
+      "ebayFullName": "Health & Beauty > Vitamins & Lifestyle Supplements",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "183497",
+      "ebayFullName": "Health & Beauty > Electronic Smoking, Parts & Accs",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "183498",
+      "ebayFullName": "Health & Beauty > Electronic Smoking, Parts & Accs > E-Cigarettes, Vapes & Mods",
+      "shopifyCategoryId": "hb-1-16-6",
+      "shopifyFullName": "Health & Beauty > Health Care > Medicine & Drugs > Smoking Cessation Aids",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "183499",
+      "ebayFullName": "Health & Beauty > Electronic Smoking, Parts & Accs > E-Liquids & E-Cig Cartridges",
+      "shopifyCategoryId": "hb-1-16-6",
+      "shopifyFullName": "Health & Beauty > Health Care > Medicine & Drugs > Smoking Cessation Aids",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "183500",
+      "ebayFullName": "Health & Beauty > Electronic Smoking, Parts & Accs > Other E-Cigarette & Vape Parts",
+      "shopifyCategoryId": "hb-1-16-6",
+      "shopifyFullName": "Health & Beauty > Health Care > Medicine & Drugs > Smoking Cessation Aids",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "183705",
+      "ebayFullName": "Health & Beauty > Electronic Smoking, Parts & Accs > E-Cigarette & Vape Accessories",
+      "shopifyCategoryId": "hb-1-16-6",
+      "shopifyFullName": "Health & Beauty > Health Care > Medicine & Drugs > Smoking Cessation Aids",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "1278",
+      "ebayFullName": "Health & Beauty > Vitamins & Lifestyle Supplements > Endurance & Energy Bars, Drinks & Pills",
+      "shopifyCategoryId": "hb-1-9-1-1",
+      "shopifyFullName": "Health & Beauty > Health Care > Fitness & Nutrition > Nutrition Bars > Energy Bars",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "11776",
+      "ebayFullName": "Health & Beauty > Vitamins & Lifestyle Supplements > Vitamins & Minerals",
+      "shopifyCategoryId": "hb-1-9-6-7",
+      "shopifyFullName": "Health & Beauty > Health Care > Fitness & Nutrition > Vitamins & Supplements > Multivitamin Supplements",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "19262",
+      "ebayFullName": "Health & Beauty > Vitamins & Lifestyle Supplements > Other Vitamins & Supplements",
+      "shopifyCategoryId": "hb-1-9-6-7",
+      "shopifyFullName": "Health & Beauty > Health Care > Fitness & Nutrition > Vitamins & Supplements > Multivitamin Supplements",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "31817",
+      "ebayFullName": "Health & Beauty > Vitamins & Lifestyle Supplements > Weight Management",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "97033",
+      "ebayFullName": "Health & Beauty > Vitamins & Lifestyle Supplements > Sports Supplements",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "180960",
+      "ebayFullName": "Health & Beauty > Vitamins & Lifestyle Supplements > Dietary Supplements",
+      "shopifyCategoryId": "hb-1-9-6-7",
+      "shopifyFullName": "Health & Beauty > Health Care > Fitness & Nutrition > Vitamins & Supplements > Multivitamin Supplements",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "184490",
+      "ebayFullName": "Health & Beauty > Vitamins & Lifestyle Supplements > Dietary Supplement Accessories",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "184492",
+      "ebayFullName": "Health & Beauty > Vitamins & Lifestyle Supplements > Dietary Supplement Accessories > Empty Capsules",
+      "shopifyCategoryId": "hb-1-9-1-1",
+      "shopifyFullName": "Health & Beauty > Health Care > Fitness & Nutrition > Nutrition Bars > Energy Bars",
+      "confidence": 0.6,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "184493",
+      "ebayFullName": "Health & Beauty > Vitamins & Lifestyle Supplements > Dietary Supplement Accessories > Shake Bottles & Mixers",
+      "shopifyCategoryId": "hb-1-9-2-1",
+      "shopifyFullName": "Health & Beauty > Health Care > Fitness & Nutrition > Nutrition Drinks & Shakes > Pre-Workout Drinks & Powders",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "21561",
+      "ebayFullName": "Health & Beauty > Vitamins & Lifestyle Supplements > Sports Supplements > Sports Diet & Weight Loss",
+      "shopifyCategoryId": "hb-1-9-7-1",
+      "shopifyFullName": "Health & Beauty > Health Care > Fitness & Nutrition > Weight Loss > Weight Loss Supplements",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "97034",
+      "ebayFullName": "Health & Beauty > Vitamins & Lifestyle Supplements > Sports Supplements > Protein Shakes & Bodybuilding",
+      "shopifyCategoryId": "hb-1-9-6-8",
+      "shopifyFullName": "Health & Beauty > Health Care > Fitness & Nutrition > Vitamins & Supplements > Protein Supplements",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "180094",
+      "ebayFullName": "Health & Beauty > Vitamins & Lifestyle Supplements > Sports Supplements > Sports Energy & Hydration",
+      "shopifyCategoryId": "hb-1-9-3-2",
+      "shopifyFullName": "Health & Beauty > Health Care > Fitness & Nutrition > Nutrition Gels & Chews > Energy Gels",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "31821",
+      "ebayFullName": "Health & Beauty > Vitamins & Lifestyle Supplements > Weight Management > Meal Replacement Drinks",
+      "shopifyCategoryId": "hb-1-9-2-2",
+      "shopifyFullName": "Health & Beauty > Health Care > Fitness & Nutrition > Nutrition Drinks & Shakes > Protein & Meal Replacement Shakes",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "36455",
+      "ebayFullName": "Health & Beauty > Vitamins & Lifestyle Supplements > Weight Management > Weight Loss Accessories",
+      "shopifyCategoryId": "hb-1-9-7-1",
+      "shopifyFullName": "Health & Beauty > Health Care > Fitness & Nutrition > Weight Loss > Weight Loss Supplements",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "45735",
+      "ebayFullName": "Health & Beauty > Vitamins & Lifestyle Supplements > Weight Management > Body Fat Analyzers",
+      "shopifyCategoryId": "hb-1-4-4-2",
+      "shopifyFullName": "Health & Beauty > Health Care > Biometric Monitors > Body Fat Analyzers > Body Fat Scales",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "77305",
+      "ebayFullName": "Health & Beauty > Vitamins & Lifestyle Supplements > Weight Management > Scales",
+      "shopifyCategoryId": "hb-1-4-5",
+      "shopifyFullName": "Health & Beauty > Health Care > Biometric Monitors > Body Weight Scales",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "82616",
+      "ebayFullName": "Health & Beauty > Vitamins & Lifestyle Supplements > Weight Management > Weight Loss Program Foods",
+      "shopifyCategoryId": "hb-1-9-7-1",
+      "shopifyFullName": "Health & Beauty > Health Care > Fitness & Nutrition > Weight Loss > Weight Loss Supplements",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181007",
+      "ebayFullName": "Health & Beauty > Vitamins & Lifestyle Supplements > Weight Management > Weight Loss Supplements",
+      "shopifyCategoryId": "hb-1-9-7-1",
+      "shopifyFullName": "Health & Beauty > Health Care > Fitness & Nutrition > Weight Loss > Weight Loss Supplements",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181008",
+      "ebayFullName": "Health & Beauty > Vitamins & Lifestyle Supplements > Weight Management > Appetite Control & Suppressants",
+      "shopifyCategoryId": "hb-1-9-7-1",
+      "shopifyFullName": "Health & Beauty > Health Care > Fitness & Nutrition > Weight Loss > Weight Loss Supplements",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "181009",
+      "ebayFullName": "Health & Beauty > Vitamins & Lifestyle Supplements > Weight Management > Fat Burners",
+      "shopifyCategoryId": "hb-1-9-7-1",
+      "shopifyFullName": "Health & Beauty > Health Care > Fitness & Nutrition > Weight Loss > Weight Loss Supplements",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260817",
+      "ebayFullName": "Health & Beauty > Vitamins & Lifestyle Supplements > Weight Management > Detox & Cleansers",
+      "shopifyCategoryId": "hb-1-9-7-3-1",
+      "shopifyFullName": "Health & Beauty > Health Care > Fitness & Nutrition > Weight Loss > Weight Loss Detox & Cleanse Products > Detox & Cleanse Patches",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "11848",
+      "ebayFullName": "Health & Beauty > Fragrances > Women's Fragrances",
+      "shopifyCategoryId": "hb-3-2-8-3",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Perfumes & Colognes > Eaux de Parfum",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "29585",
+      "ebayFullName": "Health & Beauty > Fragrances > Men's Fragrances",
+      "shopifyCategoryId": "hb-3-2-8-2",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Perfumes & Colognes > Colognes",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "112661",
+      "ebayFullName": "Health & Beauty > Fragrances > Unisex Fragrances",
+      "shopifyCategoryId": "hb-3-2-8-3",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Perfumes & Colognes > Eaux de Parfum",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "159719",
+      "ebayFullName": "Health & Beauty > Fragrances > Children's Fragrances",
+      "shopifyCategoryId": "hb-3-2-8-3",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Perfumes & Colognes > Eaux de Parfum",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "75053",
+      "ebayFullName": "Health & Beauty > Salon & Spa Equipment > Rolling Makeup Cases",
+      "shopifyCategoryId": "hb-2-3-1-3",
+      "shopifyFullName": "Health & Beauty > Jewelry Cleaning & Care > Jewelry Holders > Jewelry Boxes > Travel Jewelry Cases",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "96428",
+      "ebayFullName": "Health & Beauty > Salon & Spa Equipment > Styling Capes & Gowns",
+      "shopifyCategoryId": "bi-10-1",
+      "shopifyFullName": "Business & Industrial > Hairdressing & Cosmetology > Hairdressing Capes & Neck Covers",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "101915",
+      "ebayFullName": "Health & Beauty > Salon & Spa Equipment > Scissors & Shears",
+      "shopifyCategoryId": "hb-3-10-8",
+      "shopifyFullName": "Health & Beauty > Personal Care > Hair Care > Hair Shears",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "117338",
+      "ebayFullName": "Health & Beauty > Salon & Spa Equipment > Backwash Units & Shampoo Bowls",
+      "shopifyCategoryId": "bi-10-3-3",
+      "shopifyFullName": "Business & Industrial > Hairdressing & Cosmetology > Salon Chairs > Shampoo Chairs",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "177732",
+      "ebayFullName": "Health & Beauty > Salon & Spa Equipment > Hair & Makeup Mannequins",
+      "shopifyCategoryId": "hb-1-1-1",
+      "shopifyFullName": "Health & Beauty > Health Care > Acupuncture > Acupuncture Models",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "177733",
+      "ebayFullName": "Health & Beauty > Salon & Spa Equipment > Magnifying Lamps",
+      "shopifyCategoryId": "hb-1-12",
+      "shopifyFullName": "Health & Beauty > Health Care > Light Therapy Lamps",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "177734",
+      "ebayFullName": "Health & Beauty > Salon & Spa Equipment > Professional Facial Machines",
+      "shopifyCategoryId": "hb-3-2-5-3-12",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Cosmetic Tools > Skin Care Tools > Microcurrent & EMS Facial Devices",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "177736",
+      "ebayFullName": "Health & Beauty > Salon & Spa Equipment > Wax Heaters",
+      "shopifyCategoryId": "hb-3-14-7-4",
+      "shopifyFullName": "Health & Beauty > Personal Care > Shaving & Grooming > Hair Removal > Hair Removal Wax Warmers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "177737",
+      "ebayFullName": "Health & Beauty > Salon & Spa Equipment > Salon Dryer & Steamer",
+      "shopifyCategoryId": "hb-3-10-9-2",
+      "shopifyFullName": "Health & Beauty > Personal Care > Hair Care > Hair Steamers & Heat Caps > Hair Steamers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "177738",
+      "ebayFullName": "Health & Beauty > Salon & Spa Equipment > Stylist Stations & Furniture",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "177739",
+      "ebayFullName": "Health & Beauty > Salon & Spa Equipment > Sterilizers & Towel Warmers",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "177740",
+      "ebayFullName": "Health & Beauty > Salon & Spa Equipment > Salon & Spa Supplies",
+      "shopifyCategoryId": "se-6-1",
+      "shopifyFullName": "Services > Personal Services > Beauty & Personal Care",
+      "confidence": 0.75,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "1279",
+      "ebayFullName": "Health & Beauty > Natural & Alternative Remedies > Other Natural Remedies",
+      "shopifyCategoryId": "hb-1-9-6-5-1",
+      "shopifyFullName": "Health & Beauty > Health Care > Fitness & Nutrition > Vitamins & Supplements > Herbal Supplements > Flower Essence Remedies",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "11777",
+      "ebayFullName": "Health & Beauty > Natural & Alternative Remedies > Magnetic Therapy",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.6,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "19258",
+      "ebayFullName": "Health & Beauty > Natural & Alternative Remedies > Aromatherapy",
+      "shopifyCategoryId": "hb-3-11-9",
+      "shopifyFullName": "Health & Beauty > Personal Care > Massage & Relaxation > Aromatherapy Mists & Sprays",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "108002",
+      "ebayFullName": "Health & Beauty > Natural & Alternative Remedies > Electrotherapy",
+      "shopifyCategoryId": "hb-1-18-1",
+      "shopifyFullName": "Health & Beauty > Health Care > Occupational & Physical Therapy Equipment > Electrical Muscle Stimulators",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "159879",
+      "ebayFullName": "Health & Beauty > Natural & Alternative Remedies > Ion Foot Baths",
+      "shopifyCategoryId": "hb-3-9-11",
+      "shopifyFullName": "Health & Beauty > Personal Care > Foot Care > Foot Soaks & Salts",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "159880",
+      "ebayFullName": "Health & Beauty > Natural & Alternative Remedies > Self Help Audiovisuals",
+      "shopifyCategoryId": "se-6-1",
+      "shopifyFullName": "Services > Personal Services > Beauty & Personal Care",
+      "confidence": 0.5,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "159881",
+      "ebayFullName": "Health & Beauty > Natural & Alternative Remedies > Light Therapy",
+      "shopifyCategoryId": "hb-1-12",
+      "shopifyFullName": "Health & Beauty > Health Care > Light Therapy Lamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "159882",
+      "ebayFullName": "Health & Beauty > Natural & Alternative Remedies > Neti Pots & Cleansers",
+      "shopifyCategoryId": "hb-3-7-2",
+      "shopifyFullName": "Health & Beauty > Personal Care > Enema Kits & Supplies > Enema Accessories",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "159885",
+      "ebayFullName": "Health & Beauty > Natural & Alternative Remedies > Titanium Therapy",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.5,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "159886",
+      "ebayFullName": "Health & Beauty > Natural & Alternative Remedies > Detox Pads",
+      "shopifyCategoryId": "hb-1-9-7-3-1",
+      "shopifyFullName": "Health & Beauty > Health Care > Fitness & Nutrition > Weight Loss > Weight Loss Detox & Cleanse Products > Detox & Cleanse Patches",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "180954",
+      "ebayFullName": "Health & Beauty > Natural & Alternative Remedies > Herbal Remedies & Resins",
+      "shopifyCategoryId": "hb-1-9-6-5-1",
+      "shopifyFullName": "Health & Beauty > Health Care > Fitness & Nutrition > Vitamins & Supplements > Herbal Supplements > Flower Essence Remedies",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "180955",
+      "ebayFullName": "Health & Beauty > Natural & Alternative Remedies > Homeopathic Remedies",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.6,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "184585",
+      "ebayFullName": "Health & Beauty > Natural & Alternative Remedies > Acupressure",
+      "shopifyCategoryId": "hb-1-1-3",
+      "shopifyFullName": "Health & Beauty > Health Care > Acupuncture > Acupressure Bands & Devices",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260778",
+      "ebayFullName": "Health & Beauty > Natural & Alternative Remedies > Vacuum Suction & Cupping Therapy",
+      "shopifyCategoryId": "hb-1-18-5",
+      "shopifyFullName": "Health & Beauty > Health Care > Occupational & Physical Therapy Equipment > Cupping Therapy Sets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260816",
+      "ebayFullName": "Health & Beauty > Natural & Alternative Remedies > Acupuncture",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "260775",
+      "ebayFullName": "Health & Beauty > Natural & Alternative Remedies > Acupuncture > Acupuncture Devices",
+      "shopifyCategoryId": "hb-1-1-6",
+      "shopifyFullName": "Health & Beauty > Health Care > Acupuncture > Electronic Acupuncture Pens & Stimulators",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260776",
+      "ebayFullName": "Health & Beauty > Natural & Alternative Remedies > Acupuncture > Acupuncture Models",
+      "shopifyCategoryId": "hb-1-1-1",
+      "shopifyFullName": "Health & Beauty > Health Care > Acupuncture > Acupuncture Models",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260777",
+      "ebayFullName": "Health & Beauty > Natural & Alternative Remedies > Acupuncture > Seeds",
+      "shopifyCategoryId": "hb-1-1-5",
+      "shopifyFullName": "Health & Beauty > Health Care > Acupuncture > Ear Seeds & Auriculotherapy Supplies",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "30115",
+      "ebayFullName": "Health & Beauty > Health Care > Monitoring & Testing",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "36431",
+      "ebayFullName": "Health & Beauty > Health Care > Foot Creams & Treatments",
+      "shopifyCategoryId": "hb-3-9-8",
+      "shopifyFullName": "Health & Beauty > Personal Care > Foot Care > Foot Creams & Balms",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "67589",
+      "ebayFullName": "Health & Beauty > Health Care > Other Health Care Supplies",
+      "shopifyCategoryId": "hb-1-3-8",
+      "shopifyFullName": "Health & Beauty > Health Care > Biometric Monitor Accessories > Pulse Oximeter Accessories",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "72873",
+      "ebayFullName": "Health & Beauty > Health Care > Diabetes Care",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "75036",
+      "ebayFullName": "Health & Beauty > Health Care > Over-the-Counter Medications & Treatments",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "75041",
+      "ebayFullName": "Health & Beauty > Health Care > Pill Boxes, Pill Cases",
+      "shopifyCategoryId": "hb-1-19",
+      "shopifyFullName": "Health & Beauty > Health Care > Pillboxes",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "75042",
+      "ebayFullName": "Health & Beauty > Health Care > Smoking Cessation",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "82593",
+      "ebayFullName": "Health & Beauty > Health Care > Sleeping Aids",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "176992",
+      "ebayFullName": "Health & Beauty > Health Care > Sexual Wellness",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "180931",
+      "ebayFullName": "Health & Beauty > Health Care > First Aid",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "180933",
+      "ebayFullName": "Health & Beauty > Health Care > Squeezable Stress Relievers",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.5,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "180942",
+      "ebayFullName": "Health & Beauty > Health Care > Feminine Care",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "180951",
+      "ebayFullName": "Health & Beauty > Health Care > Hot & Cold Therapies",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "260745",
+      "ebayFullName": "Health & Beauty > Health Care > Personal Hygiene",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "260818",
+      "ebayFullName": "Health & Beauty > Health Care > Ear Care",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "180939",
+      "ebayFullName": "Health & Beauty > Health Care > Ear Care > Ear Drops",
+      "shopifyCategoryId": "hb-3-6-2",
+      "shopifyFullName": "Health & Beauty > Personal Care > Ear Care > Ear Drops",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "180940",
+      "ebayFullName": "Health & Beauty > Health Care > Ear Care > Ear Plugs",
+      "shopifyCategoryId": "hb-3-6-8-1",
+      "shopifyFullName": "Health & Beauty > Personal Care > Ear Care > Earplugs > Foam Earplugs",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "180941",
+      "ebayFullName": "Health & Beauty > Health Care > Ear Care > Ear Wax Removers",
+      "shopifyCategoryId": "hb-3-6-6",
+      "shopifyFullName": "Health & Beauty > Personal Care > Ear Care > Ear Wax Removal Kits",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "177663",
+      "ebayFullName": "Health & Beauty > Health Care > Personal Hygiene > Hand Sanitizers",
+      "shopifyCategoryId": "hb-3-2-1-6",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Bath & Body > Hand Sanitizers & Wipes",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260746",
+      "ebayFullName": "Health & Beauty > Health Care > Personal Hygiene > Face Masks",
+      "shopifyCategoryId": "hb-1-26-3",
+      "shopifyFullName": "Health & Beauty > Health Care > Medical Face Masks > Surgical & Procedure Masks",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260747",
+      "ebayFullName": "Health & Beauty > Health Care > Personal Hygiene > Protective Gloves",
+      "shopifyCategoryId": "hb-1-30",
+      "shopifyFullName": "Health & Beauty > Health Care > Medical Gloves",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "101406",
+      "ebayFullName": "Health & Beauty > Health Care > Hot & Cold Therapies > Hot Water Bottles & Covers",
+      "shopifyCategoryId": "hb-1-8-5-6",
+      "shopifyFullName": "Health & Beauty > Health Care > First Aid > Hot & Cold Therapies > Hot Water Bottles",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "180952",
+      "ebayFullName": "Health & Beauty > Health Care > Hot & Cold Therapies > Cold & Hot Packs & Wraps",
+      "shopifyCategoryId": "hb-1-8-5-5",
+      "shopifyFullName": "Health & Beauty > Health Care > First Aid > Hot & Cold Therapies > Hot & Cold Packs",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "180953",
+      "ebayFullName": "Health & Beauty > Health Care > Hot & Cold Therapies > Electric Heating Pads",
+      "shopifyCategoryId": "hb-1-8-5-2",
+      "shopifyFullName": "Health & Beauty > Health Care > First Aid > Hot & Cold Therapies > Heating Pads",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "180943",
+      "ebayFullName": "Health & Beauty > Health Care > Feminine Care > Feminine Care Deodorants",
+      "shopifyCategoryId": "hb-3-8-2",
+      "shopifyFullName": "Health & Beauty > Personal Care > Feminine Sanitary Supplies > Feminine Deodorants",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "180944",
+      "ebayFullName": "Health & Beauty > Health Care > Feminine Care > Feminine Care Washes",
+      "shopifyCategoryId": "hb-3-8-7",
+      "shopifyFullName": "Health & Beauty > Personal Care > Feminine Sanitary Supplies > Feminine Intimate Wash",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "180945",
+      "ebayFullName": "Health & Beauty > Health Care > Feminine Care > Menstrual Cups",
+      "shopifyCategoryId": "hb-3-8-5",
+      "shopifyFullName": "Health & Beauty > Personal Care > Feminine Sanitary Supplies > Menstrual Cups",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "180946",
+      "ebayFullName": "Health & Beauty > Health Care > Feminine Care > Pantiliners",
+      "shopifyCategoryId": "hb-3-8-4-4",
+      "shopifyFullName": "Health & Beauty > Personal Care > Feminine Sanitary Supplies > Feminine Pads & Protectors > Panty Liners",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "180947",
+      "ebayFullName": "Health & Beauty > Health Care > Feminine Care > Sanitary Napkins",
+      "shopifyCategoryId": "hb-3-8-4-5",
+      "shopifyFullName": "Health & Beauty > Personal Care > Feminine Sanitary Supplies > Feminine Pads & Protectors > Regular Pads & Protectors",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "180948",
+      "ebayFullName": "Health & Beauty > Health Care > Feminine Care > Tampons",
+      "shopifyCategoryId": "hb-3-8-6",
+      "shopifyFullName": "Health & Beauty > Personal Care > Feminine Sanitary Supplies > Tampons",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "180949",
+      "ebayFullName": "Health & Beauty > Health Care > Feminine Care > Vaginal Moisturizers",
+      "shopifyCategoryId": "hb-3-8-8",
+      "shopifyFullName": "Health & Beauty > Personal Care > Feminine Sanitary Supplies > Feminine Moisturizers & Oils",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "180950",
+      "ebayFullName": "Health & Beauty > Health Care > Feminine Care > Other Feminine Care",
+      "shopifyCategoryId": "hb-3-8-4-5",
+      "shopifyFullName": "Health & Beauty > Personal Care > Feminine Sanitary Supplies > Feminine Pads & Protectors > Regular Pads & Protectors",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "184571",
+      "ebayFullName": "Health & Beauty > Health Care > Feminine Care > Vaginal Yeast Infection Treatments",
+      "shopifyCategoryId": "hb-3-9-6",
+      "shopifyFullName": "Health & Beauty > Personal Care > Foot Care > Antifungal Foot Treatments",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "11779",
+      "ebayFullName": "Health & Beauty > Health Care > First Aid > Other First Aid",
+      "shopifyCategoryId": "hb-1-8-4-1",
+      "shopifyFullName": "Health & Beauty > Health Care > First Aid > First Aid Kits > First Aid Bags & Empty Cases",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "75034",
+      "ebayFullName": "Health & Beauty > Health Care > First Aid > Bandages, Gauze & Dressings",
+      "shopifyCategoryId": "hb-1-8-6-4",
+      "shopifyFullName": "Health & Beauty > Health Care > First Aid > Medical Tape & Bandages > Gauze & Wound Dressings",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "75035",
+      "ebayFullName": "Health & Beauty > Health Care > First Aid > Kits & Bags",
+      "shopifyCategoryId": "hb-1-8-4-1",
+      "shopifyFullName": "Health & Beauty > Health Care > First Aid > First Aid Kits > First Aid Bags & Empty Cases",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "82592",
+      "ebayFullName": "Health & Beauty > Health Care > First Aid > Ointments, Creams & Oils",
+      "shopifyCategoryId": "hb-1-8-1-3",
+      "shopifyFullName": "Health & Beauty > Health Care > First Aid > Antiseptics & Cleaning Supplies > Antiseptic Wipes & Pads",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "180932",
+      "ebayFullName": "Health & Beauty > Health Care > First Aid > Skin Antiseptics & Sterile Solutions",
+      "shopifyCategoryId": "hb-1-8-1-1",
+      "shopifyFullName": "Health & Beauty > Health Care > First Aid > Antiseptics & Cleaning Supplies > Antiseptic Gels & Sprays",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "184573",
+      "ebayFullName": "Health & Beauty > Health Care > First Aid > Medical ID Bracelets & Necklaces",
+      "shopifyCategoryId": "hb-1-14",
+      "shopifyFullName": "Health & Beauty > Health Care > Medical Identification Tags & Jewelry",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "176993",
+      "ebayFullName": "Health & Beauty > Health Care > Sexual Wellness > Body Enhancing Methods",
+      "shopifyCategoryId": "ma-1-4",
+      "shopifyFullName": "Mature > Erotic > Sex Toys & Erotic Games",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "176994",
+      "ebayFullName": "Health & Beauty > Health Care > Sexual Wellness > Condoms & Contraceptives",
+      "shopifyCategoryId": "hb-1-5",
+      "shopifyFullName": "Health & Beauty > Health Care > Condoms",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "176995",
+      "ebayFullName": "Health & Beauty > Health Care > Sexual Wellness > Lubricants",
+      "shopifyCategoryId": "hb-1-25",
+      "shopifyFullName": "Health & Beauty > Health Care > Surgical Lubricants",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "176996",
+      "ebayFullName": "Health & Beauty > Health Care > Sexual Wellness > Fantasy & Fetish",
+      "shopifyCategoryId": "ma-1-4",
+      "shopifyFullName": "Mature > Erotic > Sex Toys & Erotic Games",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "176998",
+      "ebayFullName": "Health & Beauty > Health Care > Sexual Wellness > Sexual Remedies & Supplements",
+      "shopifyCategoryId": "ma-1-4",
+      "shopifyFullName": "Mature > Erotic > Sex Toys & Erotic Games",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260748",
+      "ebayFullName": "Health & Beauty > Health Care > Sexual Wellness > Adult Toys",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "176997",
+      "ebayFullName": "Health & Beauty > Health Care > Sexual Wellness > Adult Toys > Sex Toys",
+      "shopifyCategoryId": "ma-1-4",
+      "shopifyFullName": "Mature > Erotic > Sex Toys & Erotic Games",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260749",
+      "ebayFullName": "Health & Beauty > Health Care > Sexual Wellness > Adult Toys > Dildos & Vibrators",
+      "shopifyCategoryId": "ma-1-4",
+      "shopifyFullName": "Mature > Erotic > Sex Toys & Erotic Games",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260750",
+      "ebayFullName": "Health & Beauty > Health Care > Sexual Wellness > Adult Toys > Anal Sex Toys",
+      "shopifyCategoryId": "ma-1-4",
+      "shopifyFullName": "Mature > Erotic > Sex Toys & Erotic Games",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260751",
+      "ebayFullName": "Health & Beauty > Health Care > Sexual Wellness > Adult Toys > Sex Dolls & Masturbators",
+      "shopifyCategoryId": "ma-1-4",
+      "shopifyFullName": "Mature > Erotic > Sex Toys & Erotic Games",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260752",
+      "ebayFullName": "Health & Beauty > Health Care > Sexual Wellness > Adult Toys > Sex Pillows & Wedges",
+      "shopifyCategoryId": "ma-1-4",
+      "shopifyFullName": "Mature > Erotic > Sex Toys & Erotic Games",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262990",
+      "ebayFullName": "Health & Beauty > Health Care > Sexual Wellness > Adult Toys > Adult Toy Cleaners",
+      "shopifyCategoryId": "ma-1-4",
+      "shopifyFullName": "Mature > Erotic > Sex Toys & Erotic Games",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "40101",
+      "ebayFullName": "Health & Beauty > Health Care > Sleeping Aids > Other Sleeping Aids",
+      "shopifyCategoryId": "hb-3-15-2-9",
+      "shopifyFullName": "Health & Beauty > Personal Care > Sleeping Aids > Snoring & Sleep Apnea Aids > Positional Sleep Aids",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "82594",
+      "ebayFullName": "Health & Beauty > Health Care > Sleeping Aids > Sound Therapy",
+      "shopifyCategoryId": "hb-3-15-4",
+      "shopifyFullName": "Health & Beauty > Personal Care > Sleeping Aids > White Noise Machines",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "159799",
+      "ebayFullName": "Health & Beauty > Health Care > Sleeping Aids > Sleep Masks",
+      "shopifyCategoryId": "hb-3-15-1",
+      "shopifyFullName": "Health & Beauty > Personal Care > Sleeping Aids > Eye Masks",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "180934",
+      "ebayFullName": "Health & Beauty > Health Care > Sleeping Aids > Chin Straps",
+      "shopifyCategoryId": "hb-3-15-2-8",
+      "shopifyFullName": "Health & Beauty > Personal Care > Sleeping Aids > Snoring & Sleep Apnea Aids > Mouth Tape",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "180935",
+      "ebayFullName": "Health & Beauty > Health Care > Sleeping Aids > Mouthpieces",
+      "shopifyCategoryId": "hb-3-15-2-3",
+      "shopifyFullName": "Health & Beauty > Personal Care > Sleeping Aids > Snoring & Sleep Apnea Aids > Mandibular Advancement Devices (MAD)",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "180936",
+      "ebayFullName": "Health & Beauty > Health Care > Sleeping Aids > Nasal Strips",
+      "shopifyCategoryId": "hb-3-15-2-1",
+      "shopifyFullName": "Health & Beauty > Personal Care > Sleeping Aids > Snoring & Sleep Apnea Aids > External Nasal Strips",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "180937",
+      "ebayFullName": "Health & Beauty > Health Care > Sleeping Aids > Sleeping Pills",
+      "shopifyCategoryId": "hb-1-16-5",
+      "shopifyFullName": "Health & Beauty > Health Care > Medicine & Drugs > Sleep Aids & Relaxants",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "184581",
+      "ebayFullName": "Health & Beauty > Health Care > Sleeping Aids > Nasal Dilators",
+      "shopifyCategoryId": "hb-3-15-2-5",
+      "shopifyFullName": "Health & Beauty > Personal Care > Sleeping Aids > Snoring & Sleep Apnea Aids > Nasal Cones",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "184582",
+      "ebayFullName": "Health & Beauty > Health Care > Sleeping Aids > Nose Clips",
+      "shopifyCategoryId": "hb-3-15-2-4",
+      "shopifyFullName": "Health & Beauty > Personal Care > Sleeping Aids > Snoring & Sleep Apnea Aids > Nasal Clips",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "75043",
+      "ebayFullName": "Health & Beauty > Health Care > Smoking Cessation > Alternative Therapies",
+      "shopifyCategoryId": "hb-1-16-6",
+      "shopifyFullName": "Health & Beauty > Health Care > Medicine & Drugs > Smoking Cessation Aids",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "75044",
+      "ebayFullName": "Health & Beauty > Health Care > Smoking Cessation > Gum & Lozenges",
+      "shopifyCategoryId": "hb-1-16-6",
+      "shopifyFullName": "Health & Beauty > Health Care > Medicine & Drugs > Smoking Cessation Aids",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "75046",
+      "ebayFullName": "Health & Beauty > Health Care > Smoking Cessation > Patches",
+      "shopifyCategoryId": "hb-1-16-6",
+      "shopifyFullName": "Health & Beauty > Health Care > Medicine & Drugs > Smoking Cessation Aids",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "75047",
+      "ebayFullName": "Health & Beauty > Health Care > Smoking Cessation > Other Smoking Cessation",
+      "shopifyCategoryId": "hb-1-16-6",
+      "shopifyFullName": "Health & Beauty > Health Care > Medicine & Drugs > Smoking Cessation Aids",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "45206",
+      "ebayFullName": "Health & Beauty > Health Care > Over-the-Counter Medications & Treatments > Other OTC Meds & Treatments",
+      "shopifyCategoryId": "hb-1-16-7",
+      "shopifyFullName": "Health & Beauty > Health Care > Medicine & Drugs > Topical Skin Treatments",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "75037",
+      "ebayFullName": "Health & Beauty > Health Care > Over-the-Counter Medications & Treatments > Allergy",
+      "shopifyCategoryId": "hb-1-16-1",
+      "shopifyFullName": "Health & Beauty > Health Care > Medicine & Drugs > Allergy & Hay Fever Medicines",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "75038",
+      "ebayFullName": "Health & Beauty > Health Care > Over-the-Counter Medications & Treatments > Cough, Cold & Flu",
+      "shopifyCategoryId": "hb-1-16-2",
+      "shopifyFullName": "Health & Beauty > Health Care > Medicine & Drugs > Cough, Cold & Flu Medicines",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "75039",
+      "ebayFullName": "Health & Beauty > Health Care > Over-the-Counter Medications & Treatments > Digestion & Nausea",
+      "shopifyCategoryId": "hb-1-16-3",
+      "shopifyFullName": "Health & Beauty > Health Care > Medicine & Drugs > Digestive Health Medicines",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "75040",
+      "ebayFullName": "Health & Beauty > Health Care > Over-the-Counter Medications & Treatments > Pain & Fever Relief",
+      "shopifyCategoryId": "hb-1-16-4",
+      "shopifyFullName": "Health & Beauty > Health Care > Medicine & Drugs > Pain Relief & Fever Reducers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "109075",
+      "ebayFullName": "Health & Beauty > Health Care > Over-the-Counter Medications & Treatments > Medicated Hair Treatments",
+      "shopifyCategoryId": "hb-1-16-7",
+      "shopifyFullName": "Health & Beauty > Health Care > Medicine & Drugs > Topical Skin Treatments",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "125973",
+      "ebayFullName": "Health & Beauty > Health Care > Over-the-Counter Medications & Treatments > Skin Conditions",
+      "shopifyCategoryId": "hb-1-16-7",
+      "shopifyFullName": "Health & Beauty > Health Care > Medicine & Drugs > Topical Skin Treatments",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "159797",
+      "ebayFullName": "Health & Beauty > Health Care > Over-the-Counter Medications & Treatments > Cold Sores",
+      "shopifyCategoryId": "hb-1-16-7",
+      "shopifyFullName": "Health & Beauty > Health Care > Medicine & Drugs > Topical Skin Treatments",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182102",
+      "ebayFullName": "Health & Beauty > Health Care > Over-the-Counter Medications & Treatments > Asthma",
+      "shopifyCategoryId": "hb-1-16-7",
+      "shopifyFullName": "Health & Beauty > Health Care > Medicine & Drugs > Topical Skin Treatments",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "184577",
+      "ebayFullName": "Health & Beauty > Health Care > Over-the-Counter Medications & Treatments > CPAP Accessories & Supplies",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "260744",
+      "ebayFullName": "Health & Beauty > Health Care > Over-the-Counter Medications & Treatments > Probiotics",
+      "shopifyCategoryId": "hb-1-9-6-4-5",
+      "shopifyFullName": "Health & Beauty > Health Care > Fitness & Nutrition > Vitamins & Supplements > Digestive Supplements > Probiotics",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "184578",
+      "ebayFullName": "Health & Beauty > Health Care > Over-the-Counter Medications & Treatments > CPAP Accessories & Supplies > CPAP Cleaning",
+      "shopifyCategoryId": "hb-1-20-3-3",
+      "shopifyFullName": "Health & Beauty > Health Care > Respiratory Care > PAP Machines > CPAP Machines",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "184579",
+      "ebayFullName": "Health & Beauty > Health Care > Over-the-Counter Medications & Treatments > CPAP Accessories & Supplies > CPAP Comfort & Travel",
+      "shopifyCategoryId": "hb-1-20-9",
+      "shopifyFullName": "Health & Beauty > Health Care > Respiratory Care > PAP Mask Replacement Parts",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "184580",
+      "ebayFullName": "Health & Beauty > Health Care > Over-the-Counter Medications & Treatments > CPAP Accessories & Supplies > CPAP Parts",
+      "shopifyCategoryId": "hb-1-20-4",
+      "shopifyFullName": "Health & Beauty > Health Care > Respiratory Care > PAP Masks",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "30117",
+      "ebayFullName": "Health & Beauty > Health Care > Diabetes Care > Other Diabetic Supplies",
+      "shopifyCategoryId": "hb-1-3-2-1",
+      "shopifyFullName": "Health & Beauty > Health Care > Biometric Monitor Accessories > Blood Glucose Meter Accessories > Blood Glucose Control Solution",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "72874",
+      "ebayFullName": "Health & Beauty > Health Care > Diabetes Care > Glucose Monitors",
+      "shopifyCategoryId": "hb-1-4-2-1",
+      "shopifyFullName": "Health & Beauty > Health Care > Biometric Monitors > Blood Glucose Meters > Continuous Glucose Monitors",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "72875",
+      "ebayFullName": "Health & Beauty > Health Care > Diabetes Care > Lancets",
+      "shopifyCategoryId": "hb-1-3-2-6",
+      "shopifyFullName": "Health & Beauty > Health Care > Biometric Monitor Accessories > Blood Glucose Meter Accessories > Lancets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "72876",
+      "ebayFullName": "Health & Beauty > Health Care > Diabetes Care > Glucose Monitoring Kits",
+      "shopifyCategoryId": "hb-1-4-2-1",
+      "shopifyFullName": "Health & Beauty > Health Care > Biometric Monitors > Blood Glucose Meters > Continuous Glucose Monitors",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "72877",
+      "ebayFullName": "Health & Beauty > Health Care > Diabetes Care > Glucose Test Strips",
+      "shopifyCategoryId": "hb-1-3-2-2",
+      "shopifyFullName": "Health & Beauty > Health Care > Biometric Monitor Accessories > Blood Glucose Meter Accessories > Blood Glucose Test Strips",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "184569",
+      "ebayFullName": "Health & Beauty > Health Care > Diabetes Care > Diabetic Care Bags & Cases",
+      "shopifyCategoryId": "hb-1-3-2-4",
+      "shopifyFullName": "Health & Beauty > Health Care > Biometric Monitor Accessories > Blood Glucose Meter Accessories > Blood Glucose Meter Cases",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "30118",
+      "ebayFullName": "Health & Beauty > Health Care > Monitoring & Testing > Fertility & Ovulation Testing",
+      "shopifyCategoryId": "hb-1-4-13",
+      "shopifyFullName": "Health & Beauty > Health Care > Biometric Monitors > Heart Rate Monitors",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "36437",
+      "ebayFullName": "Health & Beauty > Health Care > Monitoring & Testing > Pregnancy Tests",
+      "shopifyCategoryId": "hb-1-15-5",
+      "shopifyFullName": "Health & Beauty > Health Care > Medical Tests > Pregnancy Tests",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "58037",
+      "ebayFullName": "Health & Beauty > Health Care > Monitoring & Testing > Electronic Breathalyzers",
+      "shopifyCategoryId": "hb-1-4-6",
+      "shopifyFullName": "Health & Beauty > Health Care > Biometric Monitors > Breathalyzers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "75072",
+      "ebayFullName": "Health & Beauty > Health Care > Monitoring & Testing > Blood Pressure Monitoring",
+      "shopifyCategoryId": "hb-1-4-3",
+      "shopifyFullName": "Health & Beauty > Health Care > Biometric Monitors > Blood Pressure Monitors",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "75075",
+      "ebayFullName": "Health & Beauty > Health Care > Monitoring & Testing > Thermometers",
+      "shopifyCategoryId": "hb-1-4-9-1",
+      "shopifyFullName": "Health & Beauty > Health Care > Biometric Monitors > Medical Thermometers > Digital Stick Thermometers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "159875",
+      "ebayFullName": "Health & Beauty > Health Care > Monitoring & Testing > Cholesterol Testing",
+      "shopifyCategoryId": "hb-1-4-7",
+      "shopifyFullName": "Health & Beauty > Health Care > Biometric Monitors > Cholesterol Analyzers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "159876",
+      "ebayFullName": "Health & Beauty > Health Care > Monitoring & Testing > Drug Testing",
+      "shopifyCategoryId": "hb-1-15-3",
+      "shopifyFullName": "Health & Beauty > Health Care > Medical Tests > Drug Tests",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "171538",
+      "ebayFullName": "Health & Beauty > Health Care > Monitoring & Testing > Oximeters",
+      "shopifyCategoryId": "hb-1-4-11-1",
+      "shopifyFullName": "Health & Beauty > Health Care > Biometric Monitors > Pulse Oximeters > Fingertip Pulse Oximeters",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182131",
+      "ebayFullName": "Health & Beauty > Health Care > Monitoring & Testing > Other Monitoring & Testing",
+      "shopifyCategoryId": "hb-1-4-1",
+      "shopifyFullName": "Health & Beauty > Health Care > Biometric Monitors > Activity Monitors",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "184574",
+      "ebayFullName": "Health & Beauty > Health Care > Monitoring & Testing > Prenatal Monitoring",
+      "shopifyCategoryId": "hb-1-4-10",
+      "shopifyFullName": "Health & Beauty > Health Care > Biometric Monitors > Prenatal Heart Rate Monitors",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "185074",
+      "ebayFullName": "Health & Beauty > Health Care > Monitoring & Testing > Disposable Breathalyzers",
+      "shopifyCategoryId": "hb-1-4-12",
+      "shopifyFullName": "Health & Beauty > Health Care > Biometric Monitors > Breathalyzer Accessories",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260743",
+      "ebayFullName": "Health & Beauty > Health Care > Monitoring & Testing > Home DNA Test Kits",
+      "shopifyCategoryId": "hb-1-15-8",
+      "shopifyFullName": "Health & Beauty > Health Care > Medical Tests > COVID-19 Tests",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "263022",
+      "ebayFullName": "Health & Beauty > Health Care > Monitoring & Testing > Covid-19 Self Tests",
+      "shopifyCategoryId": "hb-1-15-8",
+      "shopifyFullName": "Health & Beauty > Health Care > Medical Tests > COVID-19 Tests",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "36430",
+      "ebayFullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Spa & Bath Devices",
+      "shopifyCategoryId": "hb-3-2-5-1-8-5",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Cosmetic Tools > Makeup Tools > False Eyelash Accessories > False Eyelash Brushes & Wands",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "47940",
+      "ebayFullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Polish Remover",
+      "shopifyCategoryId": "hb-3-2-7-9",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Nail Care > Nail Polish Removers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "107965",
+      "ebayFullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Storage & Empty Containers",
+      "shopifyCategoryId": "hb-3-2-5-4",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Cosmetic Tools > Cosmetic Packaging & Containers",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "112563",
+      "ebayFullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Practice & Display",
+      "shopifyCategoryId": "hb-3-2-7-2-1",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Nail Care > False Nails > Nail Tips",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260758",
+      "ebayFullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Polish & Powders",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "260762",
+      "ebayFullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Care & Treatment",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "260764",
+      "ebayFullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Art",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "260772",
+      "ebayFullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Care Tools",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "11872",
+      "ebayFullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Care Tools > Manicure & Pedicure Tools & Kits",
+      "shopifyCategoryId": "hb-3-2-5-2-4",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Cosmetic Tools > Nail Tools > Manicure Tool Sets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "67653",
+      "ebayFullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Care Tools > Nail Dryers & Lamps",
+      "shopifyCategoryId": "hb-3-2-5-2-9",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Cosmetic Tools > Nail Tools > Nail Dryers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "178960",
+      "ebayFullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Care Tools > Electric Files & Tools",
+      "shopifyCategoryId": "hb-3-2-5-2-8",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Cosmetic Tools > Nail Tools > Nail Drills",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "107876",
+      "ebayFullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Art > Nail Art Tools",
+      "shopifyCategoryId": "hb-3-2-7-4-1",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Nail Care > Nail Art Kits & Accessories > Nail Art Brushes & Dotting Tools",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "112562",
+      "ebayFullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Art > Artificial Nail Tips",
+      "shopifyCategoryId": "hb-3-2-7-2-1",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Nail Care > False Nails > Nail Tips",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182107",
+      "ebayFullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Art > Fiberglass & Silk Wraps",
+      "shopifyCategoryId": "hb-3-2-7-2-2",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Nail Care > False Nails > Nail Wraps & Strips",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182108",
+      "ebayFullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Art > Press-On Nails",
+      "shopifyCategoryId": "hb-3-2-7-2-1",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Nail Care > False Nails > Nail Tips",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260765",
+      "ebayFullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Art > 3D Nail Art Design",
+      "shopifyCategoryId": "hb-3-2-7-4-2",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Nail Care > Nail Art Kits & Accessories > Nail Stickers & Decals",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260766",
+      "ebayFullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Art > 2D Nail Art Design",
+      "shopifyCategoryId": "hb-3-2-7-4-2",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Nail Care > Nail Art Kits & Accessories > Nail Stickers & Decals",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260813",
+      "ebayFullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Art > Nail Airbrush",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "260767",
+      "ebayFullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Art > Nail Airbrush > Nail Airbrush Compressor",
+      "shopifyCategoryId": "hb-3-2-7-4-3",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Nail Care > Nail Art Kits & Accessories > Nail Wraps & Foils",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260768",
+      "ebayFullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Art > Nail Airbrush > Nail Airbrush Paint",
+      "shopifyCategoryId": "hb-3-2-7-4-3",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Nail Care > Nail Art Kits & Accessories > Nail Wraps & Foils",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260769",
+      "ebayFullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Art > Nail Airbrush > Nail Airbrush Parts",
+      "shopifyCategoryId": "hb-3-2-7-4-3",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Nail Care > Nail Art Kits & Accessories > Nail Wraps & Foils",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260770",
+      "ebayFullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Art > Nail Airbrush > Nail Airbrush Stencils",
+      "shopifyCategoryId": "hb-3-2-7-4-3",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Nail Care > Nail Art Kits & Accessories > Nail Wraps & Foils",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260771",
+      "ebayFullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Art > Nail Airbrush > Nail Airbrush Systems & Kits",
+      "shopifyCategoryId": "hb-3-2-7-4-3",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Nail Care > Nail Art Kits & Accessories > Nail Wraps & Foils",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "36432",
+      "ebayFullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Care & Treatment > Nail Treatment Creams",
+      "shopifyCategoryId": "hb-3-2-7-13",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Nail Care > Nail Treatments",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "82610",
+      "ebayFullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Care & Treatment > Cuticle Treatments",
+      "shopifyCategoryId": "hb-3-2-7-1-1",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Nail Care > Cuticle Creams & Oil > Cuticle Creams",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260763",
+      "ebayFullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Care & Treatment > Nail Strengtheners",
+      "shopifyCategoryId": "hb-3-2-7-13",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Nail Care > Nail Treatments",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "11873",
+      "ebayFullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Polish & Powders > Nail Polish",
+      "shopifyCategoryId": "hb-3-2-7-11",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Nail Care > Nail Polishes",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "178961",
+      "ebayFullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Polish & Powders > Gel Nail Polish",
+      "shopifyCategoryId": "hb-3-2-7-11",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Nail Care > Nail Polishes",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182105",
+      "ebayFullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Polish & Powders > Acrylic Powders & Liquids",
+      "shopifyCategoryId": "hb-3-2-7-11",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Nail Care > Nail Polishes",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260759",
+      "ebayFullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Polish & Powders > Dip Powder",
+      "shopifyCategoryId": "hb-3-2-7-11",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Nail Care > Nail Polishes",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260760",
+      "ebayFullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Polish & Powders > Top & Base Coat",
+      "shopifyCategoryId": "hb-3-2-7-11",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Nail Care > Nail Polishes",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260761",
+      "ebayFullName": "Health & Beauty > Nail Care, Manicure & Pedicure > Nail Polish & Powders > Drying Agent & Finish",
+      "shopifyCategoryId": "hb-3-2-7-8",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Nail Care > Nail Polish Drying Drops & Sprays",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "31822",
+      "ebayFullName": "Health & Beauty > Wholesale Lots > Other Whlsl Health & Beauty",
+      "shopifyCategoryId": "se-6-1",
+      "shopifyFullName": "Services > Personal Services > Beauty & Personal Care",
+      "confidence": 0.5,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "40967",
+      "ebayFullName": "Health & Beauty > Wholesale Lots > Medical & Special Needs",
+      "shopifyCategoryId": "se-6-1",
+      "shopifyFullName": "Services > Personal Services > Beauty & Personal Care",
+      "confidence": 0.5,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "40968",
+      "ebayFullName": "Health & Beauty > Wholesale Lots > Health Care",
+      "shopifyCategoryId": "se-6-1",
+      "shopifyFullName": "Services > Personal Services > Beauty & Personal Care",
+      "confidence": 0.5,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "51005",
+      "ebayFullName": "Health & Beauty > Wholesale Lots > Beauty & Personal Care",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "40966",
+      "ebayFullName": "Health & Beauty > Wholesale Lots > Beauty & Personal Care > Makeup",
+      "shopifyCategoryId": "hb-3-2-6-2",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Makeup > Costume & Stage Makeup",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "51006",
+      "ebayFullName": "Health & Beauty > Wholesale Lots > Beauty & Personal Care > Bath & Body",
+      "shopifyCategoryId": "hb-3-2-1-1",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Bath & Body > Bar Soap",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "51007",
+      "ebayFullName": "Health & Beauty > Wholesale Lots > Beauty & Personal Care > Hair Care",
+      "shopifyCategoryId": "hb-3-10-13-3",
+      "shopifyFullName": "Health & Beauty > Personal Care > Hair Care > Shampoo & Conditioner > Shampoo",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "51008",
+      "ebayFullName": "Health & Beauty > Wholesale Lots > Beauty & Personal Care > Fragrances",
+      "shopifyCategoryId": "hb-3-2-8-2",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Perfumes & Colognes > Colognes",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "51009",
+      "ebayFullName": "Health & Beauty > Wholesale Lots > Beauty & Personal Care > Nail",
+      "shopifyCategoryId": "hb-3-2-7-11",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Nail Care > Nail Polishes",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "51010",
+      "ebayFullName": "Health & Beauty > Wholesale Lots > Beauty & Personal Care > Other Whlsl Personal Care",
+      "shopifyCategoryId": "se-6-1",
+      "shopifyFullName": "Services > Personal Services > Beauty & Personal Care",
+      "confidence": 0.5,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "78123",
+      "ebayFullName": "Health & Beauty > Wholesale Lots > Beauty & Personal Care > Skin Care",
+      "shopifyCategoryId": "hb-3-2-9-20",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Skin Care > Face Moisturizers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "19263",
+      "ebayFullName": "Health & Beauty > Massage > Other Massage Equipment & Accs",
+      "shopifyCategoryId": "hb-3-11-8-2-4",
+      "shopifyFullName": "Health & Beauty > Personal Care > Massage & Relaxation > Massagers > Manual Massage Tools > Massage Hooks",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "36448",
+      "ebayFullName": "Health & Beauty > Massage > Electric Massage Chairs",
+      "shopifyCategoryId": "hb-3-11-3",
+      "shopifyFullName": "Health & Beauty > Personal Care > Massage & Relaxation > Massage Chairs",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "36449",
+      "ebayFullName": "Health & Beauty > Massage > Massagers",
+      "shopifyCategoryId": "hb-3-11-8-1-2",
+      "shopifyFullName": "Health & Beauty > Personal Care > Massage & Relaxation > Massagers > Electric Massagers > Massage Guns",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "36453",
+      "ebayFullName": "Health & Beauty > Massage > Massage Oils & Lotions",
+      "shopifyCategoryId": "hb-3-11-4",
+      "shopifyFullName": "Health & Beauty > Personal Care > Massage & Relaxation > Massage Oil",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "36454",
+      "ebayFullName": "Health & Beauty > Massage > Massage Tables & Chairs",
+      "shopifyCategoryId": "hb-3-11-7",
+      "shopifyFullName": "Health & Beauty > Personal Care > Massage & Relaxation > Massage Tables",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "67661",
+      "ebayFullName": "Health & Beauty > Massage > Massage Stones & Rocks",
+      "shopifyCategoryId": "hb-3-11-6",
+      "shopifyFullName": "Health & Beauty > Personal Care > Massage & Relaxation > Massage Stones",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "101972",
+      "ebayFullName": "Health & Beauty > Massage > Massage Pillows & Bolsters",
+      "shopifyCategoryId": "hb-3-11-8-3-1",
+      "shopifyFullName": "Health & Beauty > Personal Care > Massage & Relaxation > Massagers > Massage Cushions > Massage Pillows",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "180956",
+      "ebayFullName": "Health & Beauty > Massage > Linens & Covers",
+      "shopifyCategoryId": "hb-3-11-10",
+      "shopifyFullName": "Health & Beauty > Personal Care > Massage & Relaxation > Massage Chair Parts & Accessories",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "16705",
+      "ebayFullName": "Health & Beauty > Tattoos & Body Art > Other Tattoos & Body Art",
+      "shopifyCategoryId": "hb-3-2-6-7",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Makeup > Temporary Tattoos",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "33916",
+      "ebayFullName": "Health & Beauty > Tattoos & Body Art > Piercing Supplies",
+      "shopifyCategoryId": "hb-2-3-1-4",
+      "shopifyFullName": "Health & Beauty > Jewelry Cleaning & Care > Jewelry Holders > Jewelry Boxes > Watch Boxes",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "33917",
+      "ebayFullName": "Health & Beauty > Tattoos & Body Art > Tattoo Machines",
+      "shopifyCategoryId": "bi-21-2-3-1",
+      "shopifyFullName": "Business & Industrial > Piercing & Tattooing > Tattooing Supplies > Tattooing Machines > Coil Tattooing Machines",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "57589",
+      "ebayFullName": "Health & Beauty > Tattoos & Body Art > Tattoo Complete Kits",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "168192",
+      "ebayFullName": "Health & Beauty > Tattoos & Body Art > Tattoo Removal Machines",
+      "shopifyCategoryId": "se-6-1",
+      "shopifyFullName": "Services > Personal Services > Beauty & Personal Care",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "179276",
+      "ebayFullName": "Health & Beauty > Tattoos & Body Art > Tattoo Needles",
+      "shopifyCategoryId": "bi-21-2-4-1",
+      "shopifyFullName": "Business & Industrial > Piercing & Tattooing > Tattooing Supplies > Tattooing Needles > Curved Magnum Tattooing Needles",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260793",
+      "ebayFullName": "Health & Beauty > Tattoos & Body Art > Piercing Kits",
+      "shopifyCategoryId": "hb-2-3-1-4",
+      "shopifyFullName": "Health & Beauty > Jewelry Cleaning & Care > Jewelry Holders > Jewelry Boxes > Watch Boxes",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260794",
+      "ebayFullName": "Health & Beauty > Tattoos & Body Art > Tattoo Machine Parts",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260795",
+      "ebayFullName": "Health & Beauty > Tattoos & Body Art > Tattoo Grips",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260796",
+      "ebayFullName": "Health & Beauty > Tattoos & Body Art > Tattoo Tips",
+      "shopifyCategoryId": "na",
+      "shopifyFullName": "Uncategorized",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260797",
+      "ebayFullName": "Health & Beauty > Tattoos & Body Art > Tattoo Supplies",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "260798",
+      "ebayFullName": "Health & Beauty > Tattoos & Body Art > Numbing Creams & Aftercare",
+      "shopifyCategoryId": "hb-1-16-7",
+      "shopifyFullName": "Health & Beauty > Health Care > Medicine & Drugs > Topical Skin Treatments",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260799",
+      "ebayFullName": "Health & Beauty > Tattoos & Body Art > Temporary Tattoos",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "33919",
+      "ebayFullName": "Health & Beauty > Tattoos & Body Art > Temporary Tattoos > Press-on Tattoos",
+      "shopifyCategoryId": "hb-3-2-6-7",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Makeup > Temporary Tattoos",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "60890",
+      "ebayFullName": "Health & Beauty > Tattoos & Body Art > Temporary Tattoos > Henna Paste & Powder",
+      "shopifyCategoryId": "hb-3-2-6-7",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Makeup > Temporary Tattoos",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "33915",
+      "ebayFullName": "Health & Beauty > Tattoos & Body Art > Tattoo Supplies > Tattoo Flash",
+      "shopifyCategoryId": "se-6-1",
+      "shopifyFullName": "Services > Personal Services > Beauty & Personal Care",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "57586",
+      "ebayFullName": "Health & Beauty > Tattoos & Body Art > Tattoo Supplies > Tattoo Inks",
+      "shopifyCategoryId": "bi-21-2-2",
+      "shopifyFullName": "Business & Industrial > Piercing & Tattooing > Tattooing Supplies > Tattooing Inks",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179277",
+      "ebayFullName": "Health & Beauty > Tattoos & Body Art > Tattoo Supplies > Tattoo Stencils & Accessories",
+      "shopifyCategoryId": "hb-3-2-6-7",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Makeup > Temporary Tattoos",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "11985",
+      "ebayFullName": "Health & Beauty > Makeup > Makeup Mixed Lots",
+      "shopifyCategoryId": "hb-3-2-6-8",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Makeup > Makeup Kits & Sets",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "36409",
+      "ebayFullName": "Health & Beauty > Makeup > Makeup Tools & Accessories",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "36413",
+      "ebayFullName": "Health & Beauty > Makeup > Makeup Bags & Cases",
+      "shopifyCategoryId": "hb-3-2-5-1-11",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Cosmetic Tools > Makeup Tools > Refillable Makeup Palettes & Cases",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "107956",
+      "ebayFullName": "Health & Beauty > Makeup > Makeup Sets & Kits",
+      "shopifyCategoryId": "hb-3-2-6-8",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Makeup > Makeup Kits & Sets",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "172016",
+      "ebayFullName": "Health & Beauty > Makeup > Body",
+      "shopifyCategoryId": "hb-3-2-6-1-4",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Makeup > Body Makeup > Body & Hair Glitter",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "172020",
+      "ebayFullName": "Health & Beauty > Makeup > Eyes",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "172025",
+      "ebayFullName": "Health & Beauty > Makeup > Face",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "172027",
+      "ebayFullName": "Health & Beauty > Makeup > Lips",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "31802",
+      "ebayFullName": "Health & Beauty > Makeup > Lips > Lip Gloss",
+      "shopifyCategoryId": "hb-3-2-6-5-2",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Makeup > Lip Makeup > Lip Gloss",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "31803",
+      "ebayFullName": "Health & Beauty > Makeup > Lips > Lip Liner",
+      "shopifyCategoryId": "hb-3-2-6-5-3",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Makeup > Lip Makeup > Lip Liners",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "31804",
+      "ebayFullName": "Health & Beauty > Makeup > Lips > Lipstick",
+      "shopifyCategoryId": "hb-3-2-6-5-6-1",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Makeup > Lip Makeup > Lipsticks > Lipstick Refills",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "172029",
+      "ebayFullName": "Health & Beauty > Makeup > Lips > Lip Plumper",
+      "shopifyCategoryId": "hb-3-2-6-5-9",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Makeup > Lip Makeup > Lip Plumpers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "172030",
+      "ebayFullName": "Health & Beauty > Makeup > Lips > Lip Stain",
+      "shopifyCategoryId": "hb-3-2-6-5-1",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Makeup > Lip Makeup > Lip & Cheek Stains",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "172031",
+      "ebayFullName": "Health & Beauty > Makeup > Lips > Lipstick Primer",
+      "shopifyCategoryId": "hb-3-2-6-5-5",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Makeup > Lip Makeup > Lip Primers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "11864",
+      "ebayFullName": "Health & Beauty > Makeup > Face > Blush",
+      "shopifyCategoryId": "hb-3-2-6-4-1-1",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Makeup > Face Makeup > Blushes & Bronzers > Blushes",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "11865",
+      "ebayFullName": "Health & Beauty > Makeup > Face > Concealer",
+      "shopifyCategoryId": "hb-3-2-6-4-4-3",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Makeup > Face Makeup > Foundations & Concealers > Concealers",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "21021",
+      "ebayFullName": "Health & Beauty > Makeup > Face > Face Powder",
+      "shopifyCategoryId": "hb-3-2-6-4-2",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Makeup > Face Makeup > Face Powder",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "82596",
+      "ebayFullName": "Health & Beauty > Makeup > Face > Bronzer, Contour & Highlighter",
+      "shopifyCategoryId": "hb-3-2-6-4-1-2",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Makeup > Face Makeup > Blushes & Bronzers > Bronzers",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "95216",
+      "ebayFullName": "Health & Beauty > Makeup > Face > Face Primer",
+      "shopifyCategoryId": "hb-3-2-6-4-3",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Makeup > Face Makeup > Face Primers",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "177665",
+      "ebayFullName": "Health & Beauty > Makeup > Face > BB, CC & Alphabet Cream",
+      "shopifyCategoryId": "hb-3-2-6-4-4-1",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Makeup > Face Makeup > Foundations & Concealers > BB & CC Creams",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "177666",
+      "ebayFullName": "Health & Beauty > Makeup > Face > Foundation",
+      "shopifyCategoryId": "hb-3-2-6-4-4-4",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Makeup > Face Makeup > Foundations & Concealers > Foundations",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260753",
+      "ebayFullName": "Health & Beauty > Makeup > Face > Setting Spray",
+      "shopifyCategoryId": "hb-3-2-6-6",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Makeup > Makeup Finishing Sprays",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "11869",
+      "ebayFullName": "Health & Beauty > Makeup > Eyes > Mascara",
+      "shopifyCategoryId": "hb-3-2-6-3-8",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Makeup > Eye Makeup > Mascaras",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "31787",
+      "ebayFullName": "Health & Beauty > Makeup > Eyes > Eyeliner",
+      "shopifyCategoryId": "hb-3-2-6-3-4",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Makeup > Eye Makeup > Eyeliner",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "36865",
+      "ebayFullName": "Health & Beauty > Makeup > Eyes > Eye Shadow",
+      "shopifyCategoryId": "hb-3-2-6-3-2-4",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Makeup > Eye Makeup > Eye Shadows > Single Eyeshadows",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "78089",
+      "ebayFullName": "Health & Beauty > Makeup > Eyes > Eyebrow Liner & Definition",
+      "shopifyCategoryId": "hb-3-2-6-3-3",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Makeup > Eye Makeup > Eyebrow Enhancers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "172021",
+      "ebayFullName": "Health & Beauty > Makeup > Eyes > Eye Shadow Primer",
+      "shopifyCategoryId": "hb-3-2-6-3-1",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Makeup > Eye Makeup > Eye Primers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "172022",
+      "ebayFullName": "Health & Beauty > Makeup > Eyes > Eye Shadow & Liner Combination",
+      "shopifyCategoryId": "hb-3-2-6-3-2-1",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Makeup > Eye Makeup > Eye Shadows > Eye Shadow Palettes",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "172023",
+      "ebayFullName": "Health & Beauty > Makeup > Eyes > Eyelash & Eyebrow Growth",
+      "shopifyCategoryId": "hb-3-2-6-3-6",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Makeup > Eye Makeup > Lash & Brow Growth Treatments",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "172024",
+      "ebayFullName": "Health & Beauty > Makeup > Eyes > Other Eye Makeup",
+      "shopifyCategoryId": "hb-3-2-6-3-5",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Makeup > Eye Makeup > False Eyelashes",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "177664",
+      "ebayFullName": "Health & Beauty > Makeup > Eyes > False Eyelashes & Adhesives",
+      "shopifyCategoryId": "hb-3-2-6-3-5",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Makeup > Eye Makeup > False Eyelashes",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "82597",
+      "ebayFullName": "Health & Beauty > Makeup > Makeup Tools & Accessories > Brushes",
+      "shopifyCategoryId": "hb-3-2-5-1-9",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Cosmetic Tools > Makeup Tools > Makeup Brushes",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "82599",
+      "ebayFullName": "Health & Beauty > Makeup > Makeup Tools & Accessories > Eyelash Tools",
+      "shopifyCategoryId": "hb-3-2-5-1-8-2",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Cosmetic Tools > Makeup Tools > False Eyelash Accessories > False Eyelash Applicators",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "106256",
+      "ebayFullName": "Health & Beauty > Makeup > Makeup Tools & Accessories > Makeup Mirrors",
+      "shopifyCategoryId": "hb-3-2-5-1-6-1",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Cosmetic Tools > Makeup Tools > Face Mirrors > Compact & Pocket Mirrors",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "159805",
+      "ebayFullName": "Health & Beauty > Makeup > Makeup Tools & Accessories > Brush Cleaners",
+      "shopifyCategoryId": "hb-3-2-4-2",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Cosmetic Tool Cleansers > Brush Cleaning Solutions",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "159806",
+      "ebayFullName": "Health & Beauty > Makeup > Makeup Tools & Accessories > Sponges, Applicators & Cotton",
+      "shopifyCategoryId": "hb-3-2-5-1-10",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Cosmetic Tools > Makeup Tools > Makeup Sponges",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "159807",
+      "ebayFullName": "Health & Beauty > Makeup > Makeup Tools & Accessories > Other Makeup Tools & Accs",
+      "shopifyCategoryId": "hb-3-2-5-4",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Cosmetic Tools > Cosmetic Packaging & Containers",
+      "confidence": 0.75,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "172014",
+      "ebayFullName": "Health & Beauty > Makeup > Makeup Tools & Accessories > Sharpeners",
+      "shopifyCategoryId": "hb-3-2-5-1-13",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Cosmetic Tools > Makeup Tools > Cosmetic Pencil Sharpeners",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "31773",
+      "ebayFullName": "Health & Beauty > Sun Protection & Tanning > Self-Tanning Products",
+      "shopifyCategoryId": "hb-3-2-9-16-1",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Skin Care > Tanning Products > Self Tanner",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "31774",
+      "ebayFullName": "Health & Beauty > Sun Protection & Tanning > Sunscreen",
+      "shopifyCategoryId": "hb-3-2-9-15",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Skin Care > Sunscreen",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "31776",
+      "ebayFullName": "Health & Beauty > Sun Protection & Tanning > Tanning Lotion",
+      "shopifyCategoryId": "hb-3-2-9-16-2",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Skin Care > Tanning Products > Tanning Oil & Lotions",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "50101",
+      "ebayFullName": "Health & Beauty > Sun Protection & Tanning > Tanning Beds & Booths",
+      "shopifyCategoryId": "hb-3-17-1",
+      "shopifyFullName": "Health & Beauty > Personal Care > Tanning Beds > Stand-Up Tanning Booths",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "50102",
+      "ebayFullName": "Health & Beauty > Sun Protection & Tanning > Tanning Bed & Booth Parts",
+      "shopifyCategoryId": "hb-3-17-2",
+      "shopifyFullName": "Health & Beauty > Personal Care > Tanning Beds > Tanning Canopies",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "74996",
+      "ebayFullName": "Health & Beauty > Sun Protection & Tanning > After Sun Skin Care",
+      "shopifyCategoryId": "hb-3-2-9-16-3",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Skin Care > Tanning Products > Tan Extenders & After-Sun Care",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "180919",
+      "ebayFullName": "Health & Beauty > Sun Protection & Tanning > Tanning Body Stickers",
+      "shopifyCategoryId": "hb-3-2-7-4-2",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Nail Care > Nail Art Kits & Accessories > Nail Stickers & Decals",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "180920",
+      "ebayFullName": "Health & Beauty > Sun Protection & Tanning > Tanning Disposables",
+      "shopifyCategoryId": "hb-3-2-9-16-5",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Skin Care > Tanning Products > Tanning Accelerators",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "180921",
+      "ebayFullName": "Health & Beauty > Sun Protection & Tanning > Airbrush Tanning Systems & Kits",
+      "shopifyCategoryId": "hb-3-16",
+      "shopifyFullName": "Health & Beauty > Personal Care > Spray Tanning Tents",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "180922",
+      "ebayFullName": "Health & Beauty > Sun Protection & Tanning > Airbrush Tanning Compressors",
+      "shopifyCategoryId": "hb-3-16",
+      "shopifyFullName": "Health & Beauty > Personal Care > Spray Tanning Tents",
+      "confidence": 0.75,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "180923",
+      "ebayFullName": "Health & Beauty > Sun Protection & Tanning > Airbrush Tents",
+      "shopifyCategoryId": "hb-3-16",
+      "shopifyFullName": "Health & Beauty > Personal Care > Spray Tanning Tents",
+      "confidence": 0.75,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260790",
+      "ebayFullName": "Health & Beauty > Sun Protection & Tanning > Airbrush Tanning Parts",
+      "shopifyCategoryId": "hb-3-16",
+      "shopifyFullName": "Health & Beauty > Personal Care > Spray Tanning Tents",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260791",
+      "ebayFullName": "Health & Beauty > Sun Protection & Tanning > Airbrush Tanning Solutions",
+      "shopifyCategoryId": "hb-3-16",
+      "shopifyFullName": "Health & Beauty > Personal Care > Spray Tanning Tents",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "48080",
+      "ebayFullName": "Health & Beauty > Oral Care > Denture Care",
+      "shopifyCategoryId": "hb-3-12-6",
+      "shopifyFullName": "Health & Beauty > Personal Care > Oral Care > Denture Adhesives",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "67421",
+      "ebayFullName": "Health & Beauty > Oral Care > Standard Toothbrushes",
+      "shopifyCategoryId": "hb-3-12-17-2",
+      "shopifyFullName": "Health & Beauty > Personal Care > Oral Care > Toothbrushes > Manual Toothbrushes",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "67422",
+      "ebayFullName": "Health & Beauty > Oral Care > Toothpaste",
+      "shopifyCategoryId": "hb-3-12-19",
+      "shopifyFullName": "Health & Beauty > Personal Care > Oral Care > Toothpaste",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "113913",
+      "ebayFullName": "Health & Beauty > Oral Care > Whitening",
+      "shopifyCategoryId": "hb-3-12-14-11",
+      "shopifyFullName": "Health & Beauty > Personal Care > Oral Care > Teeth Whiteners > Whitening Kits",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "159757",
+      "ebayFullName": "Health & Beauty > Oral Care > Teething Pain Relief",
+      "shopifyCategoryId": "hb-3-6-6",
+      "shopifyFullName": "Health & Beauty > Personal Care > Ear Care > Ear Wax Removal Kits",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "159758",
+      "ebayFullName": "Health & Beauty > Oral Care > Dental Floss & Flossers",
+      "shopifyCategoryId": "hb-3-12-2-1",
+      "shopifyFullName": "Health & Beauty > Personal Care > Oral Care > Dental Floss > Dental Floss Picks",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "180266",
+      "ebayFullName": "Health & Beauty > Oral Care > Mouthwash",
+      "shopifyCategoryId": "hb-3-12-11",
+      "shopifyFullName": "Health & Beauty > Personal Care > Oral Care > Mouthwash",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "180267",
+      "ebayFullName": "Health & Beauty > Oral Care > Tongue Cleaners",
+      "shopifyCategoryId": "hb-3-12-15",
+      "shopifyFullName": "Health & Beauty > Personal Care > Oral Care > Tongue Scrapers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260774",
+      "ebayFullName": "Health & Beauty > Oral Care > Electric Oral & Dental Care",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "260779",
+      "ebayFullName": "Health & Beauty > Oral Care > Breath Fresheners",
+      "shopifyCategoryId": "hb-3-12-1",
+      "shopifyFullName": "Health & Beauty > Personal Care > Oral Care > Breath Sprays",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260780",
+      "ebayFullName": "Health & Beauty > Oral Care > Dental Guards",
+      "shopifyCategoryId": "hb-3-12-3",
+      "shopifyFullName": "Health & Beauty > Personal Care > Oral Care > Dental Mouthguards",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260781",
+      "ebayFullName": "Health & Beauty > Oral Care > Temporary Teeth & Supplies",
+      "shopifyCategoryId": "hb-3-12-9-2",
+      "shopifyFullName": "Health & Beauty > Personal Care > Oral Care > Dentures > Snap-On Veneers",
+      "confidence": 0.75,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260782",
+      "ebayFullName": "Health & Beauty > Oral Care > Orthodontic Care",
+      "shopifyCategoryId": "hb-3-12-12-1",
+      "shopifyFullName": "Health & Beauty > Personal Care > Oral Care > Orthodontic Appliance Cases > Hard Orthodontic Appliance Cases",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "30354",
+      "ebayFullName": "Health & Beauty > Oral Care > Electric Oral & Dental Care > Air & Water Flossers",
+      "shopifyCategoryId": "hb-3-12-13",
+      "shopifyFullName": "Health & Beauty > Personal Care > Oral Care > Power Flossers",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "31770",
+      "ebayFullName": "Health & Beauty > Oral Care > Electric Oral & Dental Care > Electric Toothbrushes",
+      "shopifyCategoryId": "hb-3-12-17-1",
+      "shopifyFullName": "Health & Beauty > Personal Care > Oral Care > Toothbrushes > Electric Toothbrushes",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "99654",
+      "ebayFullName": "Health & Beauty > Oral Care > Electric Oral & Dental Care > Toothbrush Replacement Heads",
+      "shopifyCategoryId": "hb-3-12-16-2",
+      "shopifyFullName": "Health & Beauty > Personal Care > Oral Care > Toothbrush Accessories > Toothbrush Replacement Heads",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "31763",
+      "ebayFullName": "Health & Beauty > Shaving & Hair Removal > Shaving Creams, Foams & Gels",
+      "shopifyCategoryId": "hb-3-14-11",
+      "shopifyFullName": "Health & Beauty > Personal Care > Shaving & Grooming > Shaving Creams",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "47920",
+      "ebayFullName": "Health & Beauty > Shaving & Hair Removal > Aftershave",
+      "shopifyCategoryId": "hb-3-14-1",
+      "shopifyFullName": "Health & Beauty > Personal Care > Shaving & Grooming > Aftershave",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "47925",
+      "ebayFullName": "Health & Beauty > Shaving & Hair Removal > Hair Removal Creams & Sprays",
+      "shopifyCategoryId": "hb-3-14-7-1",
+      "shopifyFullName": "Health & Beauty > Personal Care > Shaving & Grooming > Hair Removal > Depilatories",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "67416",
+      "ebayFullName": "Health & Beauty > Shaving & Hair Removal > Tweezers",
+      "shopifyCategoryId": "hb-3-18",
+      "shopifyFullName": "Health & Beauty > Personal Care > Tweezers",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "82565",
+      "ebayFullName": "Health & Beauty > Shaving & Hair Removal > Waxing Supplies",
+      "shopifyCategoryId": "hb-3-14-7-6-1",
+      "shopifyFullName": "Health & Beauty > Personal Care > Shaving & Grooming > Hair Removal > Waxing Kits & Supplies > Hair Removal Wax Strips",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "106315",
+      "ebayFullName": "Health & Beauty > Shaving & Hair Removal > Shaving & Grooming Kits & Sets",
+      "shopifyCategoryId": "hb-3-14-12",
+      "shopifyFullName": "Health & Beauty > Personal Care > Shaving & Grooming > Shaving Kits",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "168191",
+      "ebayFullName": "Health & Beauty > Shaving & Hair Removal > Shaving Brushes & Mugs",
+      "shopifyCategoryId": "hb-3-14-10",
+      "shopifyFullName": "Health & Beauty > Personal Care > Shaving & Grooming > Shaving Brushes",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179841",
+      "ebayFullName": "Health & Beauty > Shaving & Hair Removal > Razors & Razor Blades",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "260783",
+      "ebayFullName": "Health & Beauty > Shaving & Hair Removal > Electric Shaving & Hair Removal",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "260785",
+      "ebayFullName": "Health & Beauty > Shaving & Hair Removal > Hair Removal Wax",
+      "shopifyCategoryId": "hb-3-14-7-6-2",
+      "shopifyFullName": "Health & Beauty > Personal Care > Shaving & Grooming > Hair Removal > Waxing Kits & Supplies > Hard Wax",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "37802",
+      "ebayFullName": "Health & Beauty > Shaving & Hair Removal > Electric Shaving & Hair Removal > Epilators & Electrolysis",
+      "shopifyCategoryId": "hb-3-14-7-3",
+      "shopifyFullName": "Health & Beauty > Personal Care > Shaving & Grooming > Hair Removal > Epilators",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "67408",
+      "ebayFullName": "Health & Beauty > Shaving & Hair Removal > Electric Shaving & Hair Removal > Clippers & Trimmers",
+      "shopifyCategoryId": "hb-3-14-6",
+      "shopifyFullName": "Health & Beauty > Personal Care > Shaving & Grooming > Hair Clippers & Trimmers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "159795",
+      "ebayFullName": "Health & Beauty > Shaving & Hair Removal > Electric Shaving & Hair Removal > Laser Hair Removal & IPL",
+      "shopifyCategoryId": "hb-3-14-7-5-2",
+      "shopifyFullName": "Health & Beauty > Personal Care > Shaving & Grooming > Hair Removal > Laser & IPL Hair Removal Devices > Laser Hair Removal Devices",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "180512",
+      "ebayFullName": "Health & Beauty > Shaving & Hair Removal > Electric Shaving & Hair Removal > Electric Shavers",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "11844",
+      "ebayFullName": "Health & Beauty > Shaving & Hair Removal > Electric Shaving & Hair Removal > Electric Shavers > Men's Shavers",
+      "shopifyCategoryId": "hb-3-14-4-1",
+      "shopifyFullName": "Health & Beauty > Personal Care > Shaving & Grooming > Electric Razors > Foil Electric Razors",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "106317",
+      "ebayFullName": "Health & Beauty > Shaving & Hair Removal > Electric Shaving & Hair Removal > Electric Shavers > Women's Shavers",
+      "shopifyCategoryId": "hb-3-14-4-2",
+      "shopifyFullName": "Health & Beauty > Personal Care > Shaving & Grooming > Electric Razors > Rotary Electric Razors",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "139844",
+      "ebayFullName": "Health & Beauty > Shaving & Hair Removal > Electric Shaving & Hair Removal > Electric Shavers > Shaver Accessories",
+      "shopifyCategoryId": "hb-3-14-3-1",
+      "shopifyFullName": "Health & Beauty > Personal Care > Shaving & Grooming > Electric Razor Accessories > Cleaning Cartridges & Solutions",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "159789",
+      "ebayFullName": "Health & Beauty > Shaving & Hair Removal > Electric Shaving & Hair Removal > Electric Shavers > Shaver Parts",
+      "shopifyCategoryId": "hb-3-14-3-1",
+      "shopifyFullName": "Health & Beauty > Personal Care > Shaving & Grooming > Electric Razor Accessories > Cleaning Cartridges & Solutions",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "47921",
+      "ebayFullName": "Health & Beauty > Shaving & Hair Removal > Razors & Razor Blades > Men's Razors",
+      "shopifyCategoryId": "hb-3-14-8-1",
+      "shopifyFullName": "Health & Beauty > Personal Care > Shaving & Grooming > Razors & Razor Blades > Cartridge Razors",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "47931",
+      "ebayFullName": "Health & Beauty > Shaving & Hair Removal > Razors & Razor Blades > Men's Razor Blades",
+      "shopifyCategoryId": "hb-3-14-8-3",
+      "shopifyFullName": "Health & Beauty > Personal Care > Shaving & Grooming > Razors & Razor Blades > Razor Blades & Refills",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "178964",
+      "ebayFullName": "Health & Beauty > Shaving & Hair Removal > Razors & Razor Blades > Women's Razors",
+      "shopifyCategoryId": "hb-3-14-8-2",
+      "shopifyFullName": "Health & Beauty > Personal Care > Shaving & Grooming > Razors & Razor Blades > Disposable Razors",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "178965",
+      "ebayFullName": "Health & Beauty > Shaving & Hair Removal > Razors & Razor Blades > Women's Razor Blades",
+      "shopifyCategoryId": "hb-3-14-8-3",
+      "shopifyFullName": "Health & Beauty > Personal Care > Shaving & Grooming > Razors & Razor Blades > Razor Blades & Refills",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "30368",
+      "ebayFullName": "Health & Beauty > Vision Care > Replacement Lenses",
+      "shopifyCategoryId": "hb-3-19-3",
+      "shopifyFullName": "Health & Beauty > Personal Care > Vision Care > Eyeglass Lenses",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "31287",
+      "ebayFullName": "Health & Beauty > Vision Care > Eyeglass Straps, Cords & Grips",
+      "shopifyCategoryId": "hb-3-19-5-4-2",
+      "shopifyFullName": "Health & Beauty > Personal Care > Vision Care > Eyewear Accessories > Eyewear Straps & Chains > Eyewear Straps",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "31289",
+      "ebayFullName": "Health & Beauty > Vision Care > Contact Lens Care Solutions",
+      "shopifyCategoryId": "hb-3-19-1-3",
+      "shopifyFullName": "Health & Beauty > Personal Care > Vision Care > Contact Lens Care > Contact Lens Solution",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "31416",
+      "ebayFullName": "Health & Beauty > Vision Care > Special Purpose Glasses",
+      "shopifyCategoryId": "hb-3-19-4",
+      "shopifyFullName": "Health & Beauty > Personal Care > Vision Care > Eyeglasses",
+      "confidence": 0.75,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "67670",
+      "ebayFullName": "Health & Beauty > Vision Care > Reading Glasses",
+      "shopifyCategoryId": "hb-3-19-4",
+      "shopifyFullName": "Health & Beauty > Personal Care > Vision Care > Eyeglasses",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "67678",
+      "ebayFullName": "Health & Beauty > Vision Care > Low Vision Magnifiers",
+      "shopifyCategoryId": "hb-3-19-10",
+      "shopifyFullName": "Health & Beauty > Personal Care > Vision Care > Vision Testing & Training Tools",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "110235",
+      "ebayFullName": "Health & Beauty > Vision Care > Contact Lens Storage & Equipment",
+      "shopifyCategoryId": "hb-3-19-1-2-2",
+      "shopifyFullName": "Health & Beauty > Personal Care > Vision Care > Contact Lens Care > Contact Lens Cases > Flat Contact Lens Cases",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "116183",
+      "ebayFullName": "Health & Beauty > Vision Care > Eyeglass Cases & Storage",
+      "shopifyCategoryId": "hb-3-19-5-1-1",
+      "shopifyFullName": "Health & Beauty > Personal Care > Vision Care > Eyewear Accessories > Eyewear Cases & Holders > Eyewear Cases",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "122773",
+      "ebayFullName": "Health & Beauty > Vision Care > Eye Drops & Wash",
+      "shopifyCategoryId": "hb-3-19-2",
+      "shopifyFullName": "Health & Beauty > Personal Care > Vision Care > Eye Drops & Lubricants",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "127470",
+      "ebayFullName": "Health & Beauty > Vision Care > Eyeglass Cleaning Tools & Supplies",
+      "shopifyCategoryId": "hb-3-19-5-2",
+      "shopifyFullName": "Health & Beauty > Personal Care > Vision Care > Eyewear Accessories > Eyewear Lens Cleaning Solutions",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179693",
+      "ebayFullName": "Health & Beauty > Vision Care > Prescription Glasses",
+      "shopifyCategoryId": "hb-3-19-4",
+      "shopifyFullName": "Health & Beauty > Personal Care > Vision Care > Eyeglasses",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "180957",
+      "ebayFullName": "Health & Beauty > Vision Care > Eyeglass Frames",
+      "shopifyCategoryId": "hb-3-19-4",
+      "shopifyFullName": "Health & Beauty > Personal Care > Vision Care > Eyeglasses",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "180958",
+      "ebayFullName": "Health & Beauty > Vision Care > Eyepatches & Eyeglass Patches",
+      "shopifyCategoryId": "hb-3-19-9",
+      "shopifyFullName": "Health & Beauty > Personal Care > Vision Care > Eyelid Wipes & Cleansers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260800",
+      "ebayFullName": "Health & Beauty > Vision Care > Eyeglasses Parts",
+      "shopifyCategoryId": "hb-3-19-5-3-1",
+      "shopifyFullName": "Health & Beauty > Personal Care > Vision Care > Eyewear Accessories > Eyewear Replacement Parts > Eyewear Nose Pads",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260801",
+      "ebayFullName": "Health & Beauty > Vision Care > Eyeglass Repair",
+      "shopifyCategoryId": "hb-3-19-5-7",
+      "shopifyFullName": "Health & Beauty > Personal Care > Vision Care > Eyewear Accessories > Eyewear Repair Kits",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "21022",
+      "ebayFullName": "Health & Beauty > Skin Care > Skin Masks",
+      "shopifyCategoryId": "hb-3-2-9-13",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Skin Care > Skin Care Masks & Peels",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "21205",
+      "ebayFullName": "Health & Beauty > Skin Care > Moisturizers",
+      "shopifyCategoryId": "hb-3-2-9-20",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Skin Care > Face Moisturizers",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "29582",
+      "ebayFullName": "Health & Beauty > Skin Care > Exfoliators & Scrubs",
+      "shopifyCategoryId": "hb-3-2-1-12",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Bath & Body > Body Scrubs & Exfoliants",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "29618",
+      "ebayFullName": "Health & Beauty > Skin Care > Acne & Blemish Treatments",
+      "shopifyCategoryId": "hb-3-2-9-1-1",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Skin Care > Acne Treatments & Kits > Acne Patches",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "33164",
+      "ebayFullName": "Health & Beauty > Skin Care > Anti-Aging Products",
+      "shopifyCategoryId": "hb-3-2-9-2",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Skin Care > Anti-Aging Skin Care",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "36870",
+      "ebayFullName": "Health & Beauty > Skin Care > Lip Balm & Treatments",
+      "shopifyCategoryId": "hb-3-2-9-9-1",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Skin Care > Lip Balms & Treatments > Lip Balms",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "40088",
+      "ebayFullName": "Health & Beauty > Skin Care > Brightening Creams",
+      "shopifyCategoryId": "hb-3-2-9-20",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Skin Care > Face Moisturizers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "67500",
+      "ebayFullName": "Health & Beauty > Skin Care > Sets & Kits",
+      "shopifyCategoryId": "hb-3-2-9-25",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Skin Care > Skin Care Kits & Sets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "75006",
+      "ebayFullName": "Health & Beauty > Skin Care > Blotting Paper",
+      "shopifyCategoryId": "hb-3-2-5-1-7",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Cosmetic Tools > Makeup Tools > Facial Blotting Paper",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "101925",
+      "ebayFullName": "Health & Beauty > Skin Care > Microdermabrasion Tools",
+      "shopifyCategoryId": "hb-3-2-5-3-9",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Cosmetic Tools > Skin Care Tools > Dermaplaning Tools",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "101926",
+      "ebayFullName": "Health & Beauty > Skin Care > Night Treatments",
+      "shopifyCategoryId": "hb-3-2-9-20",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Skin Care > Face Moisturizers",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "172032",
+      "ebayFullName": "Health & Beauty > Skin Care > Makeup Remover",
+      "shopifyCategoryId": "hb-3-2-9-11",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Skin Care > Makeup Removers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "177764",
+      "ebayFullName": "Health & Beauty > Skin Care > Eye Treatments & Masks",
+      "shopifyCategoryId": "hb-3-2-9-19",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Skin Care > Eye Creams",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "177765",
+      "ebayFullName": "Health & Beauty > Skin Care > Cleansers & Toners",
+      "shopifyCategoryId": "hb-3-2-9-6",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Skin Care > Facial Cleansers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "177767",
+      "ebayFullName": "Health & Beauty > Skin Care > Facial Cleansing Devices",
+      "shopifyCategoryId": "hb-3-2-5-3-8",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Cosmetic Tools > Skin Care Tools > Skin Cleansing Brushes & Systems",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182112",
+      "ebayFullName": "Health & Beauty > Skin Care > Cotton Swabs",
+      "shopifyCategoryId": "hb-3-4",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cotton Swabs",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260788",
+      "ebayFullName": "Health & Beauty > Skin Care > Facial Cleansing Device Parts",
+      "shopifyCategoryId": "hb-3-2-5-3-8",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Cosmetic Tools > Skin Care Tools > Skin Cleansing Brushes & Systems",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260789",
+      "ebayFullName": "Health & Beauty > Skin Care > Skin Peels",
+      "shopifyCategoryId": "hb-3-2-9-13",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Skin Care > Skin Care Masks & Peels",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "11855",
+      "ebayFullName": "Health & Beauty > Hair Care & Styling > Brushes & Combs",
+      "shopifyCategoryId": "hb-3-10-12-2-2",
+      "shopifyFullName": "Health & Beauty > Personal Care > Hair Care > Hair Styling Tools > Combs & Brushes > Hairbrushes & Combs",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "11860",
+      "ebayFullName": "Health & Beauty > Hair Care & Styling > Styling Products",
+      "shopifyCategoryId": "hb-3-10-10-1",
+      "shopifyFullName": "Health & Beauty > Personal Care > Hair Care > Hair Styling Products > Hair Creams & Lotions",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "31412",
+      "ebayFullName": "Health & Beauty > Hair Care & Styling > Hair Color",
+      "shopifyCategoryId": "hb-3-10-2",
+      "shopifyFullName": "Health & Beauty > Personal Care > Hair Care > Hair Color",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "31413",
+      "ebayFullName": "Health & Beauty > Hair Care & Styling > Hair Loss Treatments",
+      "shopifyCategoryId": "hb-3-10-6",
+      "shopifyFullName": "Health & Beauty > Personal Care > Hair Care > Hair Loss Treatments",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "31788",
+      "ebayFullName": "Health & Beauty > Hair Care & Styling > Sets & Kits",
+      "shopifyCategoryId": "hb-3-10-1",
+      "shopifyFullName": "Health & Beauty > Personal Care > Hair Care > Hair Care Kits",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "82591",
+      "ebayFullName": "Health & Beauty > Hair Care & Styling > Hair Ties & Styling Accessories",
+      "shopifyCategoryId": "hb-3-10-11-4",
+      "shopifyFullName": "Health & Beauty > Personal Care > Hair Care > Hair Styling Tool Accessories > Hair Extension Tools & Accessories",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "166738",
+      "ebayFullName": "Health & Beauty > Hair Care & Styling > Perms",
+      "shopifyCategoryId": "hb-3-10-7-1",
+      "shopifyFullName": "Health & Beauty > Personal Care > Hair Care > Hair Permanents & Straighteners > Hair Perm Solutions & Kits",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "177660",
+      "ebayFullName": "Health & Beauty > Hair Care & Styling > Treatments, Oils & Protectors",
+      "shopifyCategoryId": "hb-3-10-14-2",
+      "shopifyFullName": "Health & Beauty > Personal Care > Hair Care > Hair Treatments > Hair Oils",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "177661",
+      "ebayFullName": "Health & Beauty > Hair Care & Styling > Shampoos & Conditioners",
+      "shopifyCategoryId": "hb-3-10-13-3",
+      "shopifyFullName": "Health & Beauty > Personal Care > Hair Care > Shampoo & Conditioner > Shampoo",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "177662",
+      "ebayFullName": "Health & Beauty > Hair Care & Styling > Relaxers & Straightening Prod",
+      "shopifyCategoryId": "hb-3-10-7-2",
+      "shopifyFullName": "Health & Beauty > Personal Care > Hair Care > Hair Permanents & Straighteners > Hair Relaxers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182101",
+      "ebayFullName": "Health & Beauty > Hair Care & Styling > Hair Extensions & Wigs",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "260773",
+      "ebayFullName": "Health & Beauty > Hair Care & Styling > Hair Styling Devices",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "11858",
+      "ebayFullName": "Health & Beauty > Hair Care & Styling > Hair Styling Devices > Hair Dryers",
+      "shopifyCategoryId": "hb-3-10-12-6",
+      "shopifyFullName": "Health & Beauty > Personal Care > Hair Care > Hair Styling Tools > Hair Dryers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "36407",
+      "ebayFullName": "Health & Beauty > Hair Care & Styling > Hair Styling Devices > Rollers & Curlers",
+      "shopifyCategoryId": "hb-3-10-12-5",
+      "shopifyFullName": "Health & Beauty > Personal Care > Hair Care > Hair Styling Tools > Hair Curlers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "177659",
+      "ebayFullName": "Health & Beauty > Hair Care & Styling > Hair Styling Devices > Straightening & Curling Irons",
+      "shopifyCategoryId": "hb-3-10-12-7",
+      "shopifyFullName": "Health & Beauty > Personal Care > Hair Care > Hair Styling Tools > Hair Straighteners",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175635",
+      "ebayFullName": "Health & Beauty > Hair Care & Styling > Hair Extensions & Wigs > Wigs & Hairpieces",
+      "shopifyCategoryId": "aa-2-14-12",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Hair Accessories > Wigs",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175636",
+      "ebayFullName": "Health & Beauty > Hair Care & Styling > Hair Extensions & Wigs > Hair Extensions",
+      "shopifyCategoryId": "aa-2-14-3",
+      "shopifyFullName": "Apparel & Accessories > Clothing Accessories > Hair Accessories > Hair Extensions",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175637",
+      "ebayFullName": "Health & Beauty > Hair Care & Styling > Hair Extensions & Wigs > Wig & Extension Supplies",
+      "shopifyCategoryId": "hb-3-10-11-4",
+      "shopifyFullName": "Health & Beauty > Personal Care > Hair Care > Hair Styling Tool Accessories > Hair Extension Tools & Accessories",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "29580",
+      "ebayFullName": "Health & Beauty > Bath & Body > Deodorants & Antiperspirants",
+      "shopifyCategoryId": "hb-3-5-1",
+      "shopifyFullName": "Health & Beauty > Personal Care > Deodorants & Anti-Perspirant > Anti-Perspirant",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "29581",
+      "ebayFullName": "Health & Beauty > Bath & Body > Body Powders",
+      "shopifyCategoryId": "hb-3-2-9-4",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Skin Care > Body Powder",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "29584",
+      "ebayFullName": "Health & Beauty > Bath & Body > Bath & Body Mixed Items",
+      "shopifyCategoryId": "hb-3-2-1-11",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Bath & Body > Bath Bombs",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "31751",
+      "ebayFullName": "Health & Beauty > Bath & Body > Bath Oils",
+      "shopifyCategoryId": "hb-3-2-9-3",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Skin Care > Body Oil",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "31753",
+      "ebayFullName": "Health & Beauty > Bath & Body > Body Sprays & Mists",
+      "shopifyCategoryId": "hb-3-2-8-1",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Perfumes & Colognes > Body Mists",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "31754",
+      "ebayFullName": "Health & Beauty > Bath & Body > Body Washes & Shower Gels",
+      "shopifyCategoryId": "hb-3-2-1-5",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Bath & Body > Body Wash",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "31755",
+      "ebayFullName": "Health & Beauty > Bath & Body > Bubble Baths",
+      "shopifyCategoryId": "hb-3-2-1-2-3",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Bath & Body > Bath Additives > Bubble Bath & Foam",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "67390",
+      "ebayFullName": "Health & Beauty > Bath & Body > Bath Salts",
+      "shopifyCategoryId": "hb-3-2-1-2-2",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Bath & Body > Bath Additives > Bath Salts & Soaks",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "67391",
+      "ebayFullName": "Health & Beauty > Bath & Body > Bath Sets & Kits",
+      "shopifyCategoryId": "hb-3-2-2",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Bath & Body Gift Sets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "72759",
+      "ebayFullName": "Health & Beauty > Bath & Body > Bath Bombs & Fizzies",
+      "shopifyCategoryId": "hb-3-2-1-11",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Bath & Body > Bath Bombs",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "74990",
+      "ebayFullName": "Health & Beauty > Bath & Body > Bath Brushes & Sponges",
+      "shopifyCategoryId": "hb-3-2-1-3",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Bath & Body > Bath Brushes",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "74994",
+      "ebayFullName": "Health & Beauty > Bath & Body > Scar & Stretch Mark Reducers",
+      "shopifyCategoryId": "hb-1-16-7",
+      "shopifyFullName": "Health & Beauty > Health Care > Medicine & Drugs > Topical Skin Treatments",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "180918",
+      "ebayFullName": "Health & Beauty > Bath & Body > Hand Washes",
+      "shopifyCategoryId": "hb-3-2-1-8",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Bath & Body > Liquid Hand Soap",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "180924",
+      "ebayFullName": "Health & Beauty > Bath & Body > Body Soaps",
+      "shopifyCategoryId": "hb-3-2-1-1",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Bath & Body > Bar Soap",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "180925",
+      "ebayFullName": "Health & Beauty > Bath & Body > Travel Bottles & Containers",
+      "shopifyCategoryId": "lb-9-7",
+      "shopifyFullName": "Luggage & Bags > Luggage Accessories > Travel Bottles & Containers",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182100",
+      "ebayFullName": "Health & Beauty > Bath & Body > Shower Caps",
+      "shopifyCategoryId": "hb-3-2-1-10",
+      "shopifyFullName": "Health & Beauty > Personal Care > Cosmetics > Bath & Body > Shower Caps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "28175",
+      "ebayFullName": "Health & Beauty > Medical & Mobility > Mobility/Walking Equipment",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "182113",
+      "ebayFullName": "Health & Beauty > Medical & Mobility > Mobility Furniture & Fixtures",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "182118",
+      "ebayFullName": "Health & Beauty > Medical & Mobility > Daily Living Aids",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "182132",
+      "ebayFullName": "Health & Beauty > Medical & Mobility > Orthopedics & Supports",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "19264",
+      "ebayFullName": "Health & Beauty > Medical & Mobility > Orthopedics & Supports > Orthotics, Braces & Sleeves",
+      "shopifyCategoryId": "hb-1-17-2-2",
+      "shopifyFullName": "Health & Beauty > Health Care > Mobility & Accessibility > Accessibility Equipment Accessories > Prosthetic & Orthotic Accessories",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182133",
+      "ebayFullName": "Health & Beauty > Medical & Mobility > Orthopedics & Supports > Compression Garments",
+      "shopifyCategoryId": "hb-1-18-4",
+      "shopifyFullName": "Health & Beauty > Health Care > Occupational & Physical Therapy Equipment > Compression Therapy Devices",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182134",
+      "ebayFullName": "Health & Beauty > Medical & Mobility > Orthopedics & Supports > Insoles & Shoe Inserts",
+      "shopifyCategoryId": "hb-3-9-4-1",
+      "shopifyFullName": "Health & Beauty > Personal Care > Foot Care > Insoles & Inserts > Arch Supports",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182135",
+      "ebayFullName": "Health & Beauty > Medical & Mobility > Orthopedics & Supports > Seat & Posture Cushions",
+      "shopifyCategoryId": "hb-3-1-1-1",
+      "shopifyFullName": "Health & Beauty > Personal Care > Back Care > Back & Lumbar Support Cushions > Lumbar Roll Cushions",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182136",
+      "ebayFullName": "Health & Beauty > Medical & Mobility > Orthopedics & Supports > Wedges & Bed Positioners",
+      "shopifyCategoryId": "hb-3-1-1-1",
+      "shopifyFullName": "Health & Beauty > Personal Care > Back Care > Back & Lumbar Support Cushions > Lumbar Roll Cushions",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182137",
+      "ebayFullName": "Health & Beauty > Medical & Mobility > Orthopedics & Supports > Other Orthopedic Products",
+      "shopifyCategoryId": "hb-1-24-4",
+      "shopifyFullName": "Health & Beauty > Health Care > Supports & Braces > Knee Braces",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "36440",
+      "ebayFullName": "Health & Beauty > Medical & Mobility > Daily Living Aids > Incontinence Aids",
+      "shopifyCategoryId": "hb-1-11-6",
+      "shopifyFullName": "Health & Beauty > Health Care > Incontinence Aids > Adult Diapers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "159874",
+      "ebayFullName": "Health & Beauty > Medical & Mobility > Daily Living Aids > Reacher Grabbers",
+      "shopifyCategoryId": "hb-1-17-2-1",
+      "shopifyFullName": "Health & Beauty > Health Care > Mobility & Accessibility > Accessibility Equipment Accessories > Mobility Scooter Accessories",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "159878",
+      "ebayFullName": "Health & Beauty > Medical & Mobility > Daily Living Aids > Emergency Alert Systems",
+      "shopifyCategoryId": "hb-1-13-6",
+      "shopifyFullName": "Health & Beauty > Health Care > Medical Alarm Systems > Personal Medical Alert Devices",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182119",
+      "ebayFullName": "Health & Beauty > Medical & Mobility > Daily Living Aids > Assisted Washing Aids",
+      "shopifyCategoryId": "hb-1-17-2-1",
+      "shopifyFullName": "Health & Beauty > Health Care > Mobility & Accessibility > Accessibility Equipment Accessories > Mobility Scooter Accessories",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "182120",
+      "ebayFullName": "Health & Beauty > Medical & Mobility > Daily Living Aids > Bidet & Toilet Tissue Aids",
+      "shopifyCategoryId": "hb-1-17-3-6",
+      "shopifyFullName": "Health & Beauty > Health Care > Mobility & Accessibility > Accessibility Furniture & Fixtures > Raised Toilet Seats",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182121",
+      "ebayFullName": "Health & Beauty > Medical & Mobility > Daily Living Aids > Dressing & Grooming Aids",
+      "shopifyCategoryId": "hb-1-17-2-1",
+      "shopifyFullName": "Health & Beauty > Health Care > Mobility & Accessibility > Accessibility Equipment Accessories > Mobility Scooter Accessories",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "182122",
+      "ebayFullName": "Health & Beauty > Medical & Mobility > Daily Living Aids > Kitchen & Dining Aids",
+      "shopifyCategoryId": "hb-1-17-2-1",
+      "shopifyFullName": "Health & Beauty > Health Care > Mobility & Accessibility > Accessibility Equipment Accessories > Mobility Scooter Accessories",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "182123",
+      "ebayFullName": "Health & Beauty > Medical & Mobility > Daily Living Aids > Portable Urinals & Bed Pans",
+      "shopifyCategoryId": "hb-1-2",
+      "shopifyFullName": "Health & Beauty > Health Care > Bed Pans",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182124",
+      "ebayFullName": "Health & Beauty > Medical & Mobility > Daily Living Aids > Work & Leisure Aids",
+      "shopifyCategoryId": "hb-1-17-2-1",
+      "shopifyFullName": "Health & Beauty > Health Care > Mobility & Accessibility > Accessibility Equipment Accessories > Mobility Scooter Accessories",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "182125",
+      "ebayFullName": "Health & Beauty > Medical & Mobility > Daily Living Aids > Other Daily Living Aids",
+      "shopifyCategoryId": "hb-1-17-2-1",
+      "shopifyFullName": "Health & Beauty > Health Care > Mobility & Accessibility > Accessibility Equipment Accessories > Mobility Scooter Accessories",
+      "confidence": 0.6,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "184572",
+      "ebayFullName": "Health & Beauty > Medical & Mobility > Daily Living Aids > Ostomy Aids",
+      "shopifyCategoryId": "hb-1-17-2-2",
+      "shopifyFullName": "Health & Beauty > Health Care > Mobility & Accessibility > Accessibility Equipment Accessories > Prosthetic & Orthotic Accessories",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "184583",
+      "ebayFullName": "Health & Beauty > Medical & Mobility > Daily Living Aids > Driving Aids",
+      "shopifyCategoryId": "hb-1-17-2-1",
+      "shopifyFullName": "Health & Beauty > Health Care > Mobility & Accessibility > Accessibility Equipment Accessories > Mobility Scooter Accessories",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "260815",
+      "ebayFullName": "Health & Beauty > Medical & Mobility > Daily Living Aids > Hearing Assistance",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "260754",
+      "ebayFullName": "Health & Beauty > Medical & Mobility > Daily Living Aids > Hearing Assistance > Hearing Aids",
+      "shopifyCategoryId": "hb-1-10-1",
+      "shopifyFullName": "Health & Beauty > Health Care > Hearing Aids > Behind-The-Ear (BTE) Hearing Aids",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260755",
+      "ebayFullName": "Health & Beauty > Medical & Mobility > Daily Living Aids > Hearing Assistance > Hearing Aid Parts",
+      "shopifyCategoryId": "hb-1-31-2",
+      "shopifyFullName": "Health & Beauty > Health Care > Hearing Aid Accessories > Hearing Aid Cleaning & Maintenance",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260756",
+      "ebayFullName": "Health & Beauty > Medical & Mobility > Daily Living Aids > Hearing Assistance > Hearing Aid Accessory",
+      "shopifyCategoryId": "hb-1-31-3",
+      "shopifyFullName": "Health & Beauty > Health Care > Hearing Aid Accessories > Hearing Aid Cases & Storage",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260757",
+      "ebayFullName": "Health & Beauty > Medical & Mobility > Daily Living Aids > Hearing Assistance > Hearing Aid Batteries",
+      "shopifyCategoryId": "hb-1-31-1",
+      "shopifyFullName": "Health & Beauty > Health Care > Hearing Aid Accessories > Hearing Aid Batteries",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "75067",
+      "ebayFullName": "Health & Beauty > Medical & Mobility > Mobility Furniture & Fixtures > Access Ramps",
+      "shopifyCategoryId": "hb-1-17-3-2",
+      "shopifyFullName": "Health & Beauty > Health Care > Mobility & Accessibility > Accessibility Furniture & Fixtures > Bed Safety Rails",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "129588",
+      "ebayFullName": "Health & Beauty > Medical & Mobility > Mobility Furniture & Fixtures > Shower & Bath Seats",
+      "shopifyCategoryId": "hb-1-17-3-1-3",
+      "shopifyFullName": "Health & Beauty > Health Care > Mobility & Accessibility > Accessibility Furniture & Fixtures > Shower Benches & Seats > Shower Seats",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "171535",
+      "ebayFullName": "Health & Beauty > Medical & Mobility > Mobility Furniture & Fixtures > Toilet Frames & Commodes",
+      "shopifyCategoryId": "hb-1-17-3-3",
+      "shopifyFullName": "Health & Beauty > Health Care > Mobility & Accessibility > Accessibility Furniture & Fixtures > Commodes & Commode Chairs",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "171537",
+      "ebayFullName": "Health & Beauty > Medical & Mobility > Mobility Furniture & Fixtures > Handles & Rails",
+      "shopifyCategoryId": "hb-1-17-3-7",
+      "shopifyFullName": "Health & Beauty > Health Care > Mobility & Accessibility > Accessibility Furniture & Fixtures > Toilet Safety Frames & Rails",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "171540",
+      "ebayFullName": "Health & Beauty > Medical & Mobility > Mobility Furniture & Fixtures > Toilet Seats",
+      "shopifyCategoryId": "hb-1-17-3-6",
+      "shopifyFullName": "Health & Beauty > Health Care > Mobility & Accessibility > Accessibility Furniture & Fixtures > Raised Toilet Seats",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182114",
+      "ebayFullName": "Health & Beauty > Medical & Mobility > Mobility Furniture & Fixtures > Bed & Chair Tables",
+      "shopifyCategoryId": "hb-1-17-3-5",
+      "shopifyFullName": "Health & Beauty > Health Care > Mobility & Accessibility > Accessibility Furniture & Fixtures > Overbed Tables",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182115",
+      "ebayFullName": "Health & Beauty > Medical & Mobility > Mobility Furniture & Fixtures > Steps & Stairs",
+      "shopifyCategoryId": "hb-1-17-3-2",
+      "shopifyFullName": "Health & Beauty > Health Care > Mobility & Accessibility > Accessibility Furniture & Fixtures > Bed Safety Rails",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182116",
+      "ebayFullName": "Health & Beauty > Medical & Mobility > Mobility Furniture & Fixtures > Transfer Boards & Benches",
+      "shopifyCategoryId": "hb-1-17-1-3-2",
+      "shopifyFullName": "Health & Beauty > Health Care > Mobility & Accessibility > Accessibility Equipment > Transfer Boards & Sheets > Transfer Boards",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "184584",
+      "ebayFullName": "Health & Beauty > Medical & Mobility > Mobility Furniture & Fixtures > Furniture Risers",
+      "shopifyCategoryId": "hb-1-17-2-1",
+      "shopifyFullName": "Health & Beauty > Health Care > Mobility & Accessibility > Accessibility Equipment Accessories > Mobility Scooter Accessories",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "19265",
+      "ebayFullName": "Health & Beauty > Medical & Mobility > Mobility/Walking Equipment > Wheelchairs",
+      "shopifyCategoryId": "hb-1-17-1-4",
+      "shopifyFullName": "Health & Beauty > Health Care > Mobility & Accessibility > Accessibility Equipment > Wheelchairs",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "28176",
+      "ebayFullName": "Health & Beauty > Medical & Mobility > Mobility/Walking Equipment > Walkers & Canes",
+      "shopifyCategoryId": "hb-1-17-5-3",
+      "shopifyFullName": "Health & Beauty > Health Care > Mobility & Accessibility > Walking Aids > Walkers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "28177",
+      "ebayFullName": "Health & Beauty > Medical & Mobility > Mobility/Walking Equipment > Other Mobility Equipment",
+      "shopifyCategoryId": "hb-1-17-2-1",
+      "shopifyFullName": "Health & Beauty > Health Care > Mobility & Accessibility > Accessibility Equipment Accessories > Mobility Scooter Accessories",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "75066",
+      "ebayFullName": "Health & Beauty > Medical & Mobility > Mobility/Walking Equipment > Stairlifts & Elevators",
+      "shopifyCategoryId": "hb-1-17-1-2",
+      "shopifyFullName": "Health & Beauty > Health Care > Mobility & Accessibility > Accessibility Equipment > Stair Lifts",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "75068",
+      "ebayFullName": "Health & Beauty > Medical & Mobility > Mobility/Walking Equipment > Mobility Scooters",
+      "shopifyCategoryId": "hb-1-17-1-1",
+      "shopifyFullName": "Health & Beauty > Health Care > Mobility & Accessibility > Accessibility Equipment > Mobility Scooters",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "171536",
+      "ebayFullName": "Health & Beauty > Medical & Mobility > Mobility/Walking Equipment > Crutches",
+      "shopifyCategoryId": "hb-1-17-5-2",
+      "shopifyFullName": "Health & Beauty > Health Care > Mobility & Accessibility > Walking Aids > Crutches",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182126",
+      "ebayFullName": "Health & Beauty > Medical & Mobility > Mobility/Walking Equipment > Parts & Accessories",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "182127",
+      "ebayFullName": "Health & Beauty > Medical & Mobility > Mobility/Walking Equipment > Parts & Accessories > Mobility Equipment Accessories",
+      "shopifyCategoryId": "hb-1-17-2-2",
+      "shopifyFullName": "Health & Beauty > Health Care > Mobility & Accessibility > Accessibility Equipment Accessories > Prosthetic & Orthotic Accessories",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182128",
+      "ebayFullName": "Health & Beauty > Medical & Mobility > Mobility/Walking Equipment > Parts & Accessories > Mobility Scooter Parts",
+      "shopifyCategoryId": "hb-1-17-2-1",
+      "shopifyFullName": "Health & Beauty > Health Care > Mobility & Accessibility > Accessibility Equipment Accessories > Mobility Scooter Accessories",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182129",
+      "ebayFullName": "Health & Beauty > Medical & Mobility > Mobility/Walking Equipment > Parts & Accessories > Stairlift & Elevator Parts",
+      "shopifyCategoryId": "hb-1-17-1-5",
+      "shopifyFullName": "Health & Beauty > Health Care > Mobility & Accessibility > Accessibility Equipment > Stair Lift Accessories",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182130",
+      "ebayFullName": "Health & Beauty > Medical & Mobility > Mobility/Walking Equipment > Parts & Accessories > Wheelchair Parts",
+      "shopifyCategoryId": "hb-1-17-2-3",
+      "shopifyFullName": "Health & Beauty > Health Care > Mobility & Accessibility > Accessibility Equipment Accessories > Wheelchair Accessories",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    }
+  ]
+}

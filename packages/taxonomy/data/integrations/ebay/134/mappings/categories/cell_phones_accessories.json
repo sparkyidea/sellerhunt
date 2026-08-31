@@ -1,0 +1,337 @@
+{
+  "ebayCategory": "Cell Phones & Accessories",
+  "shopifyCategories": ["Electronics"],
+  "totalMapped": 41,
+  "highConfidence": 35,
+  "lowConfidence": 1,
+  "mappings": [
+    {
+      "ebayId": "15032",
+      "ebayFullName": "Cell Phones & Accessories",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "9355",
+      "ebayFullName": "Cell Phones & Accessories > Cell Phones & Smartphones",
+      "shopifyCategoryId": "el-4-8-5-2",
+      "shopifyFullName": "Electronics > Communications > Telephony > Mobile & Smart Phones > Smart Phones",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "9394",
+      "ebayFullName": "Cell Phones & Accessories > Cell Phone Accessories",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "38331",
+      "ebayFullName": "Cell Phones & Accessories > PDAs",
+      "shopifyCategoryId": "el-6-4-3",
+      "shopifyFullName": "Electronics > Computers > Handheld Devices > PDAs",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "43304",
+      "ebayFullName": "Cell Phones & Accessories > Cell Phone & Smartphone Parts",
+      "shopifyCategoryId": "el-4-8-4-5-5",
+      "shopifyFullName": "Electronics > Communications > Telephony > Mobile & Smart Phone Accessories > Mobile Phone Replacement Parts > Mobile Phone Connectors & Charging Ports",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "45065",
+      "ebayFullName": "Cell Phones & Accessories > Mixed Lots",
+      "shopifyCategoryId": "el-4-8-4-1-2",
+      "shopifyFullName": "Electronics > Communications > Telephony > Mobile & Smart Phone Accessories > Mobile Phone Camera Accessories > Lighting Kits",
+      "confidence": 0.4,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "136699",
+      "ebayFullName": "Cell Phones & Accessories > Display Phones",
+      "shopifyCategoryId": "el-4-8-4-1-2",
+      "shopifyFullName": "Electronics > Communications > Telephony > Mobile & Smart Phone Accessories > Mobile Phone Camera Accessories > Lighting Kits",
+      "confidence": 0.5,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "146492",
+      "ebayFullName": "Cell Phones & Accessories > Phone Cards & SIM Cards",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "175744",
+      "ebayFullName": "Cell Phones & Accessories > PDA Accessories",
+      "shopifyCategoryId": "el-7-8-4-2-1",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Accessories > Handheld Device Accessories > PDA Accessories > PDA Cases",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "178893",
+      "ebayFullName": "Cell Phones & Accessories > Smart Watches",
+      "shopifyCategoryId": "el-4-8-5-2",
+      "shopifyFullName": "Electronics > Communications > Telephony > Mobile & Smart Phones > Smart Phones",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182064",
+      "ebayFullName": "Cell Phones & Accessories > Smart Watch Accessories",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "182073",
+      "ebayFullName": "Cell Phones & Accessories > Vintage Cell Phones",
+      "shopifyCategoryId": "el-4-8-5-1",
+      "shopifyFullName": "Electronics > Communications > Telephony > Mobile & Smart Phones > Feature Phones",
+      "confidence": 0.75,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182065",
+      "ebayFullName": "Cell Phones & Accessories > Smart Watch Accessories > Chargers & Docking Stations",
+      "shopifyCategoryId": "el-7-15-4-2-2",
+      "shopifyFullName": "Electronics > Electronics Accessories > Power > Power Adapter & Charger Accessories > Replacement Cords > Smartwatch Charging Cables",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182066",
+      "ebayFullName": "Cell Phones & Accessories > Smart Watch Accessories > Screen Protectors",
+      "shopifyCategoryId": "el-7-11-5-2",
+      "shopifyFullName": "Electronics > Electronics Accessories > Electronics Films & Shields > Screen Protectors > Smartwatch Screen Protectors",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182067",
+      "ebayFullName": "Cell Phones & Accessories > Smart Watch Accessories > Smart Watch Cases",
+      "shopifyCategoryId": "el-4-8-10-4",
+      "shopifyFullName": "Electronics > Communications > Telephony > Satellite Phone Accessories > Satellite Phone Cases, Holsters & Pouches",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182068",
+      "ebayFullName": "Cell Phones & Accessories > Smart Watch Accessories > Watch Bands",
+      "shopifyCategoryId": "el-4-8-4-3-1",
+      "shopifyFullName": "Electronics > Communications > Telephony > Mobile & Smart Phone Accessories > Mobile Phone Charms & Straps > Mobile Phone Charms",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "182069",
+      "ebayFullName": "Cell Phones & Accessories > Smart Watch Accessories > Other Smart Watch Accessories",
+      "shopifyCategoryId": "el-4-8-5-2",
+      "shopifyFullName": "Electronics > Communications > Telephony > Mobile & Smart Phones > Smart Phones",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "29778",
+      "ebayFullName": "Cell Phones & Accessories > Phone Cards & SIM Cards > SIM Cards",
+      "shopifyCategoryId": "el-4-8-4-4-2",
+      "shopifyFullName": "Electronics > Communications > Telephony > Mobile & Smart Phone Accessories > Mobile Phone Pre-Paid Cards & SIM Cards > SIM Cards",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "43308",
+      "ebayFullName": "Cell Phones & Accessories > Phone Cards & SIM Cards > Phone & Data Cards",
+      "shopifyCategoryId": "el-4-8-4-4-1",
+      "shopifyFullName": "Electronics > Communications > Telephony > Mobile & Smart Phone Accessories > Mobile Phone Pre-Paid Cards & SIM Cards > Mobile Phone Pre-Paid Cards",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "146493",
+      "ebayFullName": "Cell Phones & Accessories > Phone Cards & SIM Cards > SIM Card Accessories",
+      "shopifyCategoryId": "el-4-8-4-7",
+      "shopifyFullName": "Electronics > Communications > Telephony > Mobile & Smart Phone Accessories > SIM Card Ejection Tools",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "20349",
+      "ebayFullName": "Cell Phones & Accessories > Cell Phone Accessories > Cases, Covers & Skins",
+      "shopifyCategoryId": "el-4-8-4-13",
+      "shopifyFullName": "Electronics > Communications > Telephony > Mobile & Smart Phone Accessories > Mobile Phone Skins & Wraps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "20357",
+      "ebayFullName": "Cell Phones & Accessories > Cell Phone Accessories > Batteries",
+      "shopifyCategoryId": "el-7-15-1-6",
+      "shopifyFullName": "Electronics > Electronics Accessories > Power > Batteries > Mobile Phone Batteries",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "20373",
+      "ebayFullName": "Cell Phones & Accessories > Cell Phone Accessories > Faceplates, Decals & Stickers",
+      "shopifyCategoryId": "el-7-11-2",
+      "shopifyFullName": "Electronics > Electronics Accessories > Electronics Films & Shields > Electronics Stickers & Decals",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "35190",
+      "ebayFullName": "Cell Phones & Accessories > Cell Phone Accessories > Mounts & Holders",
+      "shopifyCategoryId": "el-4-8-4-10",
+      "shopifyFullName": "Electronics > Communications > Telephony > Mobile & Smart Phone Accessories > Mobile Phone Grips & Holders",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "42425",
+      "ebayFullName": "Cell Phones & Accessories > Cell Phone Accessories > Other Cell Phone Accessories",
+      "shopifyCategoryId": "el-4-8-4-1-2",
+      "shopifyFullName": "Electronics > Communications > Telephony > Mobile & Smart Phone Accessories > Mobile Phone Camera Accessories > Lighting Kits",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "43307",
+      "ebayFullName": "Cell Phones & Accessories > Cell Phone Accessories > Manuals & Guides",
+      "shopifyCategoryId": "me-5",
+      "shopifyFullName": "Media > Product Manuals",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "48571",
+      "ebayFullName": "Cell Phones & Accessories > Cell Phone Accessories > Memory Card Readers & Adapters",
+      "shopifyCategoryId": "el-7-9-12-10",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Input Devices > Memory Card Readers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "48677",
+      "ebayFullName": "Cell Phones & Accessories > Cell Phone Accessories > Styluses",
+      "shopifyCategoryId": "el-7-8-10",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Accessories > Stylus Pens",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "58540",
+      "ebayFullName": "Cell Phones & Accessories > Cell Phone Accessories > Screen Protectors",
+      "shopifyCategoryId": "el-4-8-4-12",
+      "shopifyFullName": "Electronics > Communications > Telephony > Mobile & Smart Phone Accessories > Mobile Phone Screen Protectors",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "58543",
+      "ebayFullName": "Cell Phones & Accessories > Cell Phone Accessories > Accessory Bundles",
+      "shopifyCategoryId": "el-4-8-5-2",
+      "shopifyFullName": "Electronics > Communications > Telephony > Mobile & Smart Phones > Smart Phones",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "68030",
+      "ebayFullName": "Cell Phones & Accessories > Cell Phone Accessories > Signal Boosters",
+      "shopifyCategoryId": "el-7-17-2",
+      "shopifyFullName": "Electronics > Electronics Accessories > Signal Boosters > Cellular Signal Boosters",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "80077",
+      "ebayFullName": "Cell Phones & Accessories > Cell Phone Accessories > Headsets",
+      "shopifyCategoryId": "el-2-2-7-2-4",
+      "shopifyFullName": "Electronics > Audio > Audio Components > Headphones & Headsets > Headsets > Office & Call Center Headsets",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "88468",
+      "ebayFullName": "Cell Phones & Accessories > Cell Phone Accessories > Car Speakerphones",
+      "shopifyCategoryId": "el-2-2-7-2-4",
+      "shopifyFullName": "Electronics > Audio > Audio Components > Headphones & Headsets > Headsets > Office & Call Center Headsets",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "96991",
+      "ebayFullName": "Cell Phones & Accessories > Cell Phone Accessories > Memory Cards",
+      "shopifyCategoryId": "el-7-12-2-1",
+      "shopifyFullName": "Electronics > Electronics Accessories > Memory > Flash Memory > Flash Memory Cards",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "122962",
+      "ebayFullName": "Cell Phones & Accessories > Cell Phone Accessories > Straps & Charms",
+      "shopifyCategoryId": "el-4-8-4-3-2",
+      "shopifyFullName": "Electronics > Communications > Telephony > Mobile & Smart Phone Accessories > Mobile Phone Charms & Straps > Mobile Phone Lanyards & Straps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "123417",
+      "ebayFullName": "Cell Phones & Accessories > Cell Phone Accessories > Chargers & Cradles",
+      "shopifyCategoryId": "el-7-15-5-6",
+      "shopifyFullName": "Electronics > Electronics Accessories > Power > Power Adapters & Chargers > Wall Chargers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "123422",
+      "ebayFullName": "Cell Phones & Accessories > Cell Phone Accessories > Cables & Adapters",
+      "shopifyCategoryId": "el-7-7-5-2",
+      "shopifyFullName": "Electronics > Electronics Accessories > Cables > Storage & Data Transfer Cables > USB Cables",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "132297",
+      "ebayFullName": "Cell Phones & Accessories > Cell Phone Accessories > Audio Docks & Speakers",
+      "shopifyCategoryId": "el-2-2-10-5",
+      "shopifyFullName": "Electronics > Audio > Audio Components > Speakers > Smart Speakers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "146504",
+      "ebayFullName": "Cell Phones & Accessories > Cell Phone Accessories > Transmitters",
+      "shopifyCategoryId": "el-2-2-4-1",
+      "shopifyFullName": "Electronics > Audio > Audio Components > Audio Transmitters > Bluetooth Transmitters",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "166030",
+      "ebayFullName": "Cell Phones & Accessories > Cell Phone Accessories > Armbands",
+      "shopifyCategoryId": "el-2-1-6-3",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > MP3 Player Accessories > MP3 Player Armbands",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179406",
+      "ebayFullName": "Cell Phones & Accessories > Cell Phone Accessories > Port Dust Covers",
+      "shopifyCategoryId": "el-7-11-7",
+      "shopifyFullName": "Electronics > Electronics Accessories > Electronics Films & Shields > Port & Dust Plugs",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    }
+  ]
+}

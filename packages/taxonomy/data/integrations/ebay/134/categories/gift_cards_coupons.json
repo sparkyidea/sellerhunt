@@ -1,0 +1,55 @@
+{
+  "vertical": "Gift Cards & Coupons",
+  "totalCategories": 6,
+  "leaves": 5,
+  "categories": [
+    {
+      "id": "172008",
+      "name": "Gift Cards & Coupons",
+      "fullName": "Gift Cards & Coupons",
+      "parentId": null,
+      "level": 1,
+      "leaf": false
+    },
+    {
+      "id": "31411",
+      "name": "Gift Certificates",
+      "fullName": "Gift Cards & Coupons > Gift Certificates",
+      "parentId": "172008",
+      "level": 2,
+      "leaf": true
+    },
+    {
+      "id": "172009",
+      "name": "Gift Cards",
+      "fullName": "Gift Cards & Coupons > Gift Cards",
+      "parentId": "172008",
+      "level": 2,
+      "leaf": true
+    },
+    {
+      "id": "172010",
+      "name": "Coupons",
+      "fullName": "Gift Cards & Coupons > Coupons",
+      "parentId": "172008",
+      "level": 2,
+      "leaf": true
+    },
+    {
+      "id": "172036",
+      "name": "eBay Gift Cards",
+      "fullName": "Gift Cards & Coupons > eBay Gift Cards",
+      "parentId": "172008",
+      "level": 2,
+      "leaf": true
+    },
+    {
+      "id": "176950",
+      "name": "Digital Gifts",
+      "fullName": "Gift Cards & Coupons > Digital Gifts",
+      "parentId": "172008",
+      "level": 2,
+      "leaf": true
+    }
+  ]
+}

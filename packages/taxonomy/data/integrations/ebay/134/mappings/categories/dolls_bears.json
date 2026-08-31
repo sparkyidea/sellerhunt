@@ -1,0 +1,265 @@
+{
+  "ebayCategory": "Dolls & Bears",
+  "shopifyCategories": ["Toys & Games"],
+  "totalMapped": 32,
+  "highConfidence": 26,
+  "lowConfidence": 0,
+  "mappings": [
+    {
+      "ebayId": "237",
+      "ebayFullName": "Dolls & Bears",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "238",
+      "ebayFullName": "Dolls & Bears > Dolls, Clothing & Accessories",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "1202",
+      "ebayFullName": "Dolls & Bears > Dollhouse Miniatures",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "2440",
+      "ebayFullName": "Dolls & Bears > Paper Dolls, Clothes & Accessories",
+      "shopifyCategoryId": "tg-5-8-7",
+      "shopifyFullName": "Toys & Games > Toys > Dolls, Playsets & Toy Figures > Paper & Magnetic Dolls",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262353",
+      "ebayFullName": "Dolls & Bears > Bears, Clothing & Accessories",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "387",
+      "ebayFullName": "Dolls & Bears > Bears, Clothing & Accessories > Bear Clothing & Accessories",
+      "shopifyCategoryId": "tg-5-8-11",
+      "shopifyFullName": "Toys & Games > Toys > Dolls, Playsets & Toy Figures > Stuffed Animals",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "50253",
+      "ebayFullName": "Dolls & Bears > Bears, Clothing & Accessories > Bear Making Supplies",
+      "shopifyCategoryId": "ae-2-1-1-9-1",
+      "shopifyFullName": "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Craft Kits > Toy Craft Kits > Doll Making Kits",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "160824",
+      "ebayFullName": "Dolls & Bears > Bears, Clothing & Accessories > Bear Figurines & Miniatures",
+      "shopifyCategoryId": "tg-5-8-11",
+      "shopifyFullName": "Toys & Games > Toys > Dolls, Playsets & Toy Figures > Stuffed Animals",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "170085",
+      "ebayFullName": "Dolls & Bears > Bears, Clothing & Accessories > Collectors' Guides & Books",
+      "shopifyCategoryId": "me-1-3",
+      "shopifyFullName": "Media > Books > Print Books",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262345",
+      "ebayFullName": "Dolls & Bears > Bears, Clothing & Accessories > Bears",
+      "shopifyCategoryId": "tg-5-8-11",
+      "shopifyFullName": "Toys & Games > Toys > Dolls, Playsets & Toy Figures > Stuffed Animals",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "2458",
+      "ebayFullName": "Dolls & Bears > Dollhouse Miniatures > Dollhouses & Room Boxes",
+      "shopifyCategoryId": "tg-5-8-5",
+      "shopifyFullName": "Toys & Games > Toys > Dolls, Playsets & Toy Figures > Dollhouses",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "70001",
+      "ebayFullName": "Dolls & Bears > Dollhouse Miniatures > Dollhouse Building Components",
+      "shopifyCategoryId": "tg-5-8-4",
+      "shopifyFullName": "Toys & Games > Toys > Dolls, Playsets & Toy Figures > Dollhouse Accessories",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "75528",
+      "ebayFullName": "Dolls & Bears > Dollhouse Miniatures > Dollhouse Lamps & Lighting",
+      "shopifyCategoryId": "tg-5-8-4",
+      "shopifyFullName": "Toys & Games > Toys > Dolls, Playsets & Toy Figures > Dollhouse Accessories",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "86823",
+      "ebayFullName": "Dolls & Bears > Dollhouse Miniatures > Dollhouse Dolls & Animals",
+      "shopifyCategoryId": "tg-5-8-6",
+      "shopifyFullName": "Toys & Games > Toys > Dolls, Playsets & Toy Figures > Dolls",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "170086",
+      "ebayFullName": "Dolls & Bears > Dollhouse Miniatures > Collectors' Guides & Books",
+      "shopifyCategoryId": "me-1-3",
+      "shopifyFullName": "Media > Books > Print Books",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179251",
+      "ebayFullName": "Dolls & Bears > Dollhouse Miniatures > Dollhouse Décor & Accessories",
+      "shopifyCategoryId": "tg-5-8-4",
+      "shopifyFullName": "Toys & Games > Toys > Dolls, Playsets & Toy Figures > Dollhouse Accessories",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "179309",
+      "ebayFullName": "Dolls & Bears > Dollhouse Miniatures > Dollhouse Furniture",
+      "shopifyCategoryId": "tg-5-8-4",
+      "shopifyFullName": "Toys & Games > Toys > Dolls, Playsets & Toy Figures > Dollhouse Accessories",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262342",
+      "ebayFullName": "Dolls & Bears > Dollhouse Miniatures > Dollhouse Fittings, Fixtures & Appliances",
+      "shopifyCategoryId": "tg-5-8-4",
+      "shopifyFullName": "Toys & Games > Toys > Dolls, Playsets & Toy Figures > Dollhouse Accessories",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262422",
+      "ebayFullName": "Dolls & Bears > Dollhouse Miniatures > Dollhouse Wall, Window & Floor Coverings",
+      "shopifyCategoryId": "tg-5-8-4",
+      "shopifyFullName": "Toys & Games > Toys > Dolls, Playsets & Toy Figures > Dollhouse Accessories",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "2408",
+      "ebayFullName": "Dolls & Bears > Dolls, Clothing & Accessories > Doll Making & Repair",
+      "shopifyCategoryId": "tg-5-8-6",
+      "shopifyFullName": "Toys & Games > Toys > Dolls, Playsets & Toy Figures > Dolls",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262346",
+      "ebayFullName": "Dolls & Bears > Dolls, Clothing & Accessories > Dolls & Doll Playsets",
+      "shopifyCategoryId": "tg-5-8-6",
+      "shopifyFullName": "Toys & Games > Toys > Dolls, Playsets & Toy Figures > Dolls",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262347",
+      "ebayFullName": "Dolls & Bears > Dolls, Clothing & Accessories > Doll Clothes & Accessories",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "262349",
+      "ebayFullName": "Dolls & Bears > Dolls, Clothing & Accessories > Books & Guides",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "160839",
+      "ebayFullName": "Dolls & Bears > Dolls, Clothing & Accessories > Books & Guides > Collectors' Guides & Books",
+      "shopifyCategoryId": "me-1-3",
+      "shopifyFullName": "Media > Books > Print Books",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262350",
+      "ebayFullName": "Dolls & Bears > Dolls, Clothing & Accessories > Books & Guides > Books",
+      "shopifyCategoryId": "me-1-3",
+      "shopifyFullName": "Media > Books > Print Books",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262351",
+      "ebayFullName": "Dolls & Bears > Dolls, Clothing & Accessories > Books & Guides > Magazines",
+      "shopifyCategoryId": "me-2-1-1",
+      "shopifyFullName": "Media > Magazines & Newspapers > Magazines > Consumer Magazines",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "112546",
+      "ebayFullName": "Dolls & Bears > Dolls, Clothing & Accessories > Doll Clothes & Accessories > Strollers",
+      "shopifyCategoryId": "tg-5-8-3",
+      "shopifyFullName": "Toys & Games > Toys > Dolls, Playsets & Toy Figures > Doll & Action Figure Accessories",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "160871",
+      "ebayFullName": "Dolls & Bears > Dolls, Clothing & Accessories > Doll Clothes & Accessories > Storage & Display",
+      "shopifyCategoryId": "tg-5-8-3",
+      "shopifyFullName": "Toys & Games > Toys > Dolls, Playsets & Toy Figures > Doll & Action Figure Accessories",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "180102",
+      "ebayFullName": "Dolls & Bears > Dolls, Clothing & Accessories > Doll Clothes & Accessories > Houses & Furniture",
+      "shopifyCategoryId": "tg-5-8-3",
+      "shopifyFullName": "Toys & Games > Toys > Dolls, Playsets & Toy Figures > Doll & Action Figure Accessories",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "180103",
+      "ebayFullName": "Dolls & Bears > Dolls, Clothing & Accessories > Doll Clothes & Accessories > Vehicles",
+      "shopifyCategoryId": "tg-5-8-3",
+      "shopifyFullName": "Toys & Games > Toys > Dolls, Playsets & Toy Figures > Doll & Action Figure Accessories",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "180104",
+      "ebayFullName": "Dolls & Bears > Dolls, Clothing & Accessories > Doll Clothes & Accessories > Pets & Animals",
+      "shopifyCategoryId": "tg-5-8-3",
+      "shopifyFullName": "Toys & Games > Toys > Dolls, Playsets & Toy Figures > Doll & Action Figure Accessories",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "262348",
+      "ebayFullName": "Dolls & Bears > Dolls, Clothing & Accessories > Doll Clothes & Accessories > Clothing & Accessories",
+      "shopifyCategoryId": "tg-5-8-3",
+      "shopifyFullName": "Toys & Games > Toys > Dolls, Playsets & Toy Figures > Doll & Action Figure Accessories",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    }
+  ]
+}

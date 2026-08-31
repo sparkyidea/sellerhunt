@@ -1,0 +1,2425 @@
+{
+  "ebayCategory": "Consumer Electronics",
+  "shopifyCategories": ["Electronics"],
+  "totalMapped": 302,
+  "highConfidence": 259,
+  "lowConfidence": 2,
+  "mappings": [
+    {
+      "ebayId": "293",
+      "ebayFullName": "Consumer Electronics",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "1500",
+      "ebayFullName": "Consumer Electronics > Radio Communication",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "3270",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "3286",
+      "ebayFullName": "Consumer Electronics > Home Telephones & Accessories",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "15052",
+      "ebayFullName": "Consumer Electronics > Portable Audio & Headphones",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "32852",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "48446",
+      "ebayFullName": "Consumer Electronics > Multipurpose Batteries & Power",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "175837",
+      "ebayFullName": "Consumer Electronics > Other Consumer Electronics",
+      "shopifyCategoryId": "el-2-1-10",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > Audio Replacement Parts",
+      "confidence": 0.4,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "178894",
+      "ebayFullName": "Consumer Electronics > Smart Glasses",
+      "shopifyCategoryId": "el-6-7",
+      "shopifyFullName": "Electronics > Computers > Smart Glasses",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "183067",
+      "ebayFullName": "Consumer Electronics > Virtual Reality",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "183077",
+      "ebayFullName": "Consumer Electronics > Vintage Electronics",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "185067",
+      "ebayFullName": "Consumer Electronics > Surveillance & Smart Home Electronics",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "259701",
+      "ebayFullName": "Consumer Electronics > Mixed Lots",
+      "shopifyCategoryId": "el-2-1-10",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > Audio Replacement Parts",
+      "confidence": 0.4,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "48633",
+      "ebayFullName": "Consumer Electronics > Surveillance & Smart Home Electronics > Home Surveillance",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "185034",
+      "ebayFullName": "Consumer Electronics > Surveillance & Smart Home Electronics > Smart Speakers, Hubs & Accessories",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "185061",
+      "ebayFullName": "Consumer Electronics > Surveillance & Smart Home Electronics > Smart Plugs",
+      "shopifyCategoryId": "el-7-15-5-6",
+      "shopifyFullName": "Electronics > Electronics Accessories > Power > Power Adapters & Chargers > Wall Chargers",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "185065",
+      "ebayFullName": "Consumer Electronics > Surveillance & Smart Home Electronics > Other Smart Home Electronics",
+      "shopifyCategoryId": "hg-2-1",
+      "shopifyFullName": "Home & Garden > Business & Home Security > Dummy Surveillance Cameras",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "184435",
+      "ebayFullName": "Consumer Electronics > Surveillance & Smart Home Electronics > Smart Speakers, Hubs & Accessories > Smart Speakers",
+      "shopifyCategoryId": "el-2-2-10-5",
+      "shopifyFullName": "Electronics > Audio > Audio Components > Speakers > Smart Speakers",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "185043",
+      "ebayFullName": "Consumer Electronics > Surveillance & Smart Home Electronics > Smart Speakers, Hubs & Accessories > Smart Speaker Accessories",
+      "shopifyCategoryId": "el-2-1-8-1",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > Speaker Accessories > Speaker Bags, Covers & Cases",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "185068",
+      "ebayFullName": "Consumer Electronics > Surveillance & Smart Home Electronics > Smart Speakers, Hubs & Accessories > Smart Home Hubs",
+      "shopifyCategoryId": "el-2-2-10-5",
+      "shopifyFullName": "Electronics > Audio > Audio Components > Speakers > Smart Speakers",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "185119",
+      "ebayFullName": "Consumer Electronics > Surveillance & Smart Home Electronics > Smart Speakers, Hubs & Accessories > Smart Home Hub Accessories",
+      "shopifyCategoryId": "el-2-2-10-5",
+      "shopifyFullName": "Electronics > Audio > Audio Components > Speakers > Smart Speakers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260301",
+      "ebayFullName": "Consumer Electronics > Surveillance & Smart Home Electronics > Smart Speakers, Hubs & Accessories > Smart Speaker Parts",
+      "shopifyCategoryId": "el-2-1-10",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > Audio Replacement Parts",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260302",
+      "ebayFullName": "Consumer Electronics > Surveillance & Smart Home Electronics > Smart Speakers, Hubs & Accessories > Smart Home Hub Parts",
+      "shopifyCategoryId": "el-2-2-10-5",
+      "shopifyFullName": "Electronics > Audio > Audio Components > Speakers > Smart Speakers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "48638",
+      "ebayFullName": "Consumer Electronics > Surveillance & Smart Home Electronics > Home Surveillance > Security Cameras",
+      "shopifyCategoryId": "el-3-6-1",
+      "shopifyFullName": "Electronics > Circuit Boards & Components > Printed Circuit Boards > Camera Circuit Boards",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "75395",
+      "ebayFullName": "Consumer Electronics > Surveillance & Smart Home Electronics > Home Surveillance > Dummy Cameras",
+      "shopifyCategoryId": "hg-2-1",
+      "shopifyFullName": "Home & Garden > Business & Home Security > Dummy Surveillance Cameras",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "115940",
+      "ebayFullName": "Consumer Electronics > Surveillance & Smart Home Electronics > Home Surveillance > Sensors & Motion Detectors",
+      "shopifyCategoryId": "el-5-7",
+      "shopifyFullName": "Electronics > Components > Sensors",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "159909",
+      "ebayFullName": "Consumer Electronics > Surveillance & Smart Home Electronics > Home Surveillance > CCTV Systems",
+      "shopifyCategoryId": "el-17-8-6",
+      "shopifyFullName": "Electronics > Video > Video Players & Recorders > Network Video Recorders",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "185048",
+      "ebayFullName": "Consumer Electronics > Surveillance & Smart Home Electronics > Home Surveillance > Home Surveillance Parts & Accessories",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "185053",
+      "ebayFullName": "Consumer Electronics > Surveillance & Smart Home Electronics > Home Surveillance > IP & Smart Security Camera Systems",
+      "shopifyCategoryId": "el-17-8-6",
+      "shopifyFullName": "Electronics > Video > Video Players & Recorders > Network Video Recorders",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "48635",
+      "ebayFullName": "Consumer Electronics > Surveillance & Smart Home Electronics > Home Surveillance > Home Surveillance Parts & Accessories > Surveillance Monitors & Displays",
+      "shopifyCategoryId": "el-17-3-3",
+      "shopifyFullName": "Electronics > Video > Satellite & Cable TV > Satellite Dishes",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "48637",
+      "ebayFullName": "Consumer Electronics > Surveillance & Smart Home Electronics > Home Surveillance > Home Surveillance Parts & Accessories > Security Camera Cables & Adapters",
+      "shopifyCategoryId": "el-7-7-1-10",
+      "shopifyFullName": "Electronics > Electronics Accessories > Cables > Audio & Video Cables > Speaker Cables",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "75397",
+      "ebayFullName": "Consumer Electronics > Surveillance & Smart Home Electronics > Home Surveillance > Home Surveillance Parts & Accessories > Surveillance Video Processors & Switchers",
+      "shopifyCategoryId": "el-17-6-1",
+      "shopifyFullName": "Electronics > Video > Video Editing Hardware & Production Equipment > Video Processors & Scalers",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "88754",
+      "ebayFullName": "Consumer Electronics > Surveillance & Smart Home Electronics > Home Surveillance > Home Surveillance Parts & Accessories > Surveillance DVRs & NVRs",
+      "shopifyCategoryId": "el-17-8-6",
+      "shopifyFullName": "Electronics > Video > Video Players & Recorders > Network Video Recorders",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175725",
+      "ebayFullName": "Consumer Electronics > Surveillance & Smart Home Electronics > Home Surveillance > Home Surveillance Parts & Accessories > Other Surveillance Parts & Accessories",
+      "shopifyCategoryId": "hg-2-1",
+      "shopifyFullName": "Home & Garden > Business & Home Security > Dummy Surveillance Cameras",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "185049",
+      "ebayFullName": "Consumer Electronics > Surveillance & Smart Home Electronics > Home Surveillance > Home Surveillance Parts & Accessories > Security Camera Brackets & Mounts",
+      "shopifyCategoryId": "el-7-2-1",
+      "shopifyFullName": "Electronics > Electronics Accessories > Antenna Accessories > Antenna Mounts & Brackets",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "185050",
+      "ebayFullName": "Consumer Electronics > Surveillance & Smart Home Electronics > Home Surveillance > Home Surveillance Parts & Accessories > Security Camera Cases & Housings",
+      "shopifyCategoryId": "hg-2-1",
+      "shopifyFullName": "Home & Garden > Business & Home Security > Dummy Surveillance Cameras",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "185051",
+      "ebayFullName": "Consumer Electronics > Surveillance & Smart Home Electronics > Home Surveillance > Home Surveillance Parts & Accessories > Security Camera Microphones",
+      "shopifyCategoryId": "el-2-2-8",
+      "shopifyFullName": "Electronics > Audio > Audio Components > Microphones",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "185052",
+      "ebayFullName": "Consumer Electronics > Surveillance & Smart Home Electronics > Home Surveillance > Home Surveillance Parts & Accessories > Surveillance Illuminators",
+      "shopifyCategoryId": "hg-2-1",
+      "shopifyFullName": "Home & Garden > Business & Home Security > Dummy Surveillance Cameras",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "185116",
+      "ebayFullName": "Consumer Electronics > Surveillance & Smart Home Electronics > Home Surveillance > Home Surveillance Parts & Accessories > Security Camera Controllers & Joysticks",
+      "shopifyCategoryId": "hg-2-1",
+      "shopifyFullName": "Home & Garden > Business & Home Security > Dummy Surveillance Cameras",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "185117",
+      "ebayFullName": "Consumer Electronics > Surveillance & Smart Home Electronics > Home Surveillance > Home Surveillance Parts & Accessories > Security Camera Lenses",
+      "shopifyCategoryId": "el-3-6-1",
+      "shopifyFullName": "Electronics > Circuit Boards & Components > Printed Circuit Boards > Camera Circuit Boards",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "185118",
+      "ebayFullName": "Consumer Electronics > Surveillance & Smart Home Electronics > Home Surveillance > Home Surveillance Parts & Accessories > Security Camera Power Supplies",
+      "shopifyCategoryId": "el-7-15-9",
+      "shopifyFullName": "Electronics > Electronics Accessories > Power > Power Supply Enclosures",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "58042",
+      "ebayFullName": "Consumer Electronics > Vintage Electronics > Vintage Calculators",
+      "shopifyCategoryId": "os-10-2-1",
+      "shopifyFullName": "Office Supplies > Office Equipment > Calculators > Basic Calculators",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175740",
+      "ebayFullName": "Consumer Electronics > Vintage Electronics > Vintage Audio & Video",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "182098",
+      "ebayFullName": "Consumer Electronics > Vintage Electronics > Vintage Home Telephones",
+      "shopifyCategoryId": "el-4-8-2-1",
+      "shopifyFullName": "Electronics > Communications > Telephony > Corded Phones > Analog Landline Phones",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "183079",
+      "ebayFullName": "Consumer Electronics > Vintage Electronics > Other Vintage Electronics",
+      "shopifyCategoryId": "el-2-1-10",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > Audio Replacement Parts",
+      "confidence": 0.5,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "3317",
+      "ebayFullName": "Consumer Electronics > Vintage Electronics > Vintage Audio & Video > Laserdisc Players",
+      "shopifyCategoryId": "el-17-8-8",
+      "shopifyFullName": "Electronics > Video > Video Players & Recorders > LaserDisc Players",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "15088",
+      "ebayFullName": "Consumer Electronics > Vintage Electronics > Vintage Audio & Video > VCRs",
+      "shopifyCategoryId": "el-17-8-5",
+      "shopifyFullName": "Electronics > Video > Video Players & Recorders > VCRs",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "48649",
+      "ebayFullName": "Consumer Electronics > Vintage Electronics > Vintage Audio & Video > Vintage Record Players",
+      "shopifyCategoryId": "el-2-3-10-1",
+      "shopifyFullName": "Electronics > Audio > Audio Players & Recorders > Turntables & Record Players > Record Players",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "50595",
+      "ebayFullName": "Consumer Electronics > Vintage Electronics > Vintage Audio & Video > Vintage Radios",
+      "shopifyCategoryId": "el-2-3-7-1-1",
+      "shopifyFullName": "Electronics > Audio > Audio Players & Recorders > Radios > AM/FM Radios > Clock Radios",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "50596",
+      "ebayFullName": "Consumer Electronics > Vintage Electronics > Vintage Audio & Video > Vintage Stereo Receivers",
+      "shopifyCategoryId": "el-2-2-1",
+      "shopifyFullName": "Electronics > Audio > Audio Components > Audio & Video Receivers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "50597",
+      "ebayFullName": "Consumer Electronics > Vintage Electronics > Vintage Audio & Video > Vintage Speakers",
+      "shopifyCategoryId": "el-2-2-10-1",
+      "shopifyFullName": "Electronics > Audio > Audio Components > Speakers > Bookshelf Speakers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "67807",
+      "ebayFullName": "Consumer Electronics > Vintage Electronics > Vintage Audio & Video > Vintage Preamps & Tube Preamps",
+      "shopifyCategoryId": "el-2-2-9-7",
+      "shopifyFullName": "Electronics > Audio > Audio Components > Signal Processors > Phono Preamps",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "71574",
+      "ebayFullName": "Consumer Electronics > Vintage Electronics > Vintage Audio & Video > Vintage Cassette Decks",
+      "shopifyCategoryId": "el-2-3-2-1",
+      "shopifyFullName": "Electronics > Audio > Audio Players & Recorders > Handheld Players & Recorders > Portable Cassette Players",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73368",
+      "ebayFullName": "Consumer Electronics > Vintage Electronics > Vintage Audio & Video > Vintage Amplifiers & Tube Amps",
+      "shopifyCategoryId": "el-2-2-2-3",
+      "shopifyFullName": "Electronics > Audio > Audio Components > Audio Amplifiers > Integrated Amplifiers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73374",
+      "ebayFullName": "Consumer Electronics > Vintage Electronics > Vintage Audio & Video > Vintage Televisions",
+      "shopifyCategoryId": "el-17-4",
+      "shopifyFullName": "Electronics > Video > Televisions",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73382",
+      "ebayFullName": "Consumer Electronics > Vintage Electronics > Vintage Audio & Video > Vintage Tuners & Tube Tuners",
+      "shopifyCategoryId": "el-2-3-7-1-1",
+      "shopifyFullName": "Electronics > Audio > Audio Players & Recorders > Radios > AM/FM Radios > Clock Radios",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "116868",
+      "ebayFullName": "Consumer Electronics > Vintage Electronics > Vintage Audio & Video > Reel-to-Reel Tape Recorders",
+      "shopifyCategoryId": "el-2-3-8",
+      "shopifyFullName": "Electronics > Audio > Audio Players & Recorders > Reel-to-Reel Tape Players & Recorders",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175741",
+      "ebayFullName": "Consumer Electronics > Vintage Electronics > Vintage Audio & Video > Vintage Parts & Accessories",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "175742",
+      "ebayFullName": "Consumer Electronics > Vintage Electronics > Vintage Audio & Video > Other Vintage Audio & Video",
+      "shopifyCategoryId": "el-2-1-9-12",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > Turntable Accessories > Turntable Dust Covers",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "183074",
+      "ebayFullName": "Consumer Electronics > Vintage Electronics > Vintage Audio & Video > Vintage Headphones",
+      "shopifyCategoryId": "el-2-2-7-1-5",
+      "shopifyFullName": "Electronics > Audio > Audio Components > Headphones & Headsets > Headphones > Over-Ear Headphones",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "183078",
+      "ebayFullName": "Consumer Electronics > Vintage Electronics > Vintage Audio & Video > 8-Track Players",
+      "shopifyCategoryId": "el-2-3-1",
+      "shopifyFullName": "Electronics > Audio > Audio Players & Recorders > Boomboxes",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "39996",
+      "ebayFullName": "Consumer Electronics > Vintage Electronics > Vintage Audio & Video > Vintage Parts & Accessories > Vintage Manuals",
+      "shopifyCategoryId": "me-5",
+      "shopifyFullName": "Media > Product Manuals",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "64627",
+      "ebayFullName": "Consumer Electronics > Vintage Electronics > Vintage Audio & Video > Vintage Parts & Accessories > Vintage Tubes & Tube Sockets",
+      "shopifyCategoryId": "el-3-10",
+      "shopifyFullName": "Electronics > Circuit Boards & Components > Vacuum Tubes",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "67815",
+      "ebayFullName": "Consumer Electronics > Vintage Electronics > Vintage Audio & Video > Vintage Parts & Accessories > Vintage Transformers",
+      "shopifyCategoryId": "el-3-5-8",
+      "shopifyFullName": "Electronics > Circuit Boards & Components > Passive Circuit Components > Transformers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "71573",
+      "ebayFullName": "Consumer Electronics > Vintage Electronics > Vintage Audio & Video > Vintage Parts & Accessories > Vintage Capacitors",
+      "shopifyCategoryId": "el-3-5-1",
+      "shopifyFullName": "Electronics > Circuit Boards & Components > Passive Circuit Components > Capacitors",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73372",
+      "ebayFullName": "Consumer Electronics > Vintage Electronics > Vintage Audio & Video > Vintage Parts & Accessories > Vintage Speaker & Horn Drivers",
+      "shopifyCategoryId": "el-2-1-8-2-3",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > Speaker Accessories > Speaker Components & Kits > Speaker Drivers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "163851",
+      "ebayFullName": "Consumer Electronics > Vintage Electronics > Vintage Audio & Video > Vintage Parts & Accessories > Vintage Blank Media",
+      "shopifyCategoryId": "el-7-5-1",
+      "shopifyFullName": "Electronics > Electronics Accessories > Blank Media > Blank Audio Cassettes",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "168088",
+      "ebayFullName": "Consumer Electronics > Vintage Electronics > Vintage Audio & Video > Vintage Parts & Accessories > Other Vintage A/V Parts & Accs",
+      "shopifyCategoryId": "el-2-1-9-12",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > Turntable Accessories > Turntable Dust Covers",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "183068",
+      "ebayFullName": "Consumer Electronics > Virtual Reality > PC & Console VR Headsets",
+      "shopifyCategoryId": "el-19-2",
+      "shopifyFullName": "Electronics > Video Game Consoles > Home Game Consoles",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "183069",
+      "ebayFullName": "Consumer Electronics > Virtual Reality > Smartphone VR Headsets",
+      "shopifyCategoryId": "el-19-1",
+      "shopifyFullName": "Electronics > Video Game Consoles > Handheld Game Consoles",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "183070",
+      "ebayFullName": "Consumer Electronics > Virtual Reality > Cases, Covers & Skins",
+      "shopifyCategoryId": "el-18-4-5",
+      "shopifyFullName": "Electronics > Video Game Console Accessories > Portable Game Console Accessories > Portable Game Console Grips & Protective Covers",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "183071",
+      "ebayFullName": "Consumer Electronics > Virtual Reality > Controllers & Motion Sensors",
+      "shopifyCategoryId": "el-7-9-12-5-11",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Input Devices > Game Controllers > Virtual Reality Motion Controllers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "183072",
+      "ebayFullName": "Consumer Electronics > Virtual Reality > Parts",
+      "shopifyCategoryId": "el-18-9",
+      "shopifyFullName": "Electronics > Video Game Console Accessories > Virtual Reality Headset Accessories",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "183073",
+      "ebayFullName": "Consumer Electronics > Virtual Reality > Other Virtual Reality Accs",
+      "shopifyCategoryId": "el-18-9",
+      "shopifyFullName": "Electronics > Video Game Console Accessories > Virtual Reality Headset Accessories",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "184645",
+      "ebayFullName": "Consumer Electronics > Virtual Reality > Standalone VR Headsets",
+      "shopifyCategoryId": "el-19-2",
+      "shopifyFullName": "Electronics > Video Game Consoles > Home Game Consoles",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "48618",
+      "ebayFullName": "Consumer Electronics > Multipurpose Batteries & Power > Battery Chargers",
+      "shopifyCategoryId": "el-7-15-2-4",
+      "shopifyFullName": "Electronics > Electronics Accessories > Power > Battery Accessories > General Purpose Battery Chargers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "48619",
+      "ebayFullName": "Consumer Electronics > Multipurpose Batteries & Power > Rechargeable Batteries",
+      "shopifyCategoryId": "el-7-15-1-4",
+      "shopifyFullName": "Electronics > Electronics Accessories > Power > Batteries > General Purpose Batteries",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "50602",
+      "ebayFullName": "Consumer Electronics > Multipurpose Batteries & Power > Single Use Batteries",
+      "shopifyCategoryId": "el-7-15-1-4",
+      "shopifyFullName": "Electronics > Electronics Accessories > Power > Batteries > General Purpose Batteries",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "79845",
+      "ebayFullName": "Consumer Electronics > Multipurpose Batteries & Power > Battery Testers",
+      "shopifyCategoryId": "el-7-15-2-5",
+      "shopifyFullName": "Electronics > Electronics Accessories > Power > Battery Accessories > General Purpose Battery Testers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "79846",
+      "ebayFullName": "Consumer Electronics > Multipurpose Batteries & Power > Other Multipurpose Batteries",
+      "shopifyCategoryId": "el-7-15-1-4",
+      "shopifyFullName": "Electronics > Electronics Accessories > Power > Batteries > General Purpose Batteries",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "88758",
+      "ebayFullName": "Consumer Electronics > Multipurpose Batteries & Power > Multipurpose AC to DC Adapters",
+      "shopifyCategoryId": "el-7-15-5-6",
+      "shopifyFullName": "Electronics > Electronics Accessories > Power > Power Adapters & Chargers > Wall Chargers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "116852",
+      "ebayFullName": "Consumer Electronics > Multipurpose Batteries & Power > Power Cables & Connectors",
+      "shopifyCategoryId": "el-7-7-6-1",
+      "shopifyFullName": "Electronics > Electronics Accessories > Cables > System & Power Cables > AC Power Cords",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "172011",
+      "ebayFullName": "Consumer Electronics > Multipurpose Batteries & Power > Battery Converters",
+      "shopifyCategoryId": "el-7-15-1-4",
+      "shopifyFullName": "Electronics > Electronics Accessories > Power > Batteries > General Purpose Batteries",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175729",
+      "ebayFullName": "Consumer Electronics > Multipurpose Batteries & Power > Heavy-Duty Voltage Converters",
+      "shopifyCategoryId": "el-7-15-11-1",
+      "shopifyFullName": "Electronics > Electronics Accessories > Power > Travel Converters & Adapters > Travel Plug Adapters",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "14961",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Accessories",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "71582",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Parts",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "163829",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > Other TV, Video & Home Audio",
+      "shopifyCategoryId": "el-17-5-5-2",
+      "shopifyFullName": "Electronics > Video > Video Accessories > Television Parts & Accessories > TV Converter Boxes",
+      "confidence": 0.5,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "168058",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > Media Streamers",
+      "shopifyCategoryId": "el-17-8-4",
+      "shopifyFullName": "Electronics > Video > Video Players & Recorders > Streaming & Home Media Players",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "184972",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV & Video",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "184973",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > Home Audio",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "4787",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > Home Audio > Compact & Shelf Stereos",
+      "shopifyCategoryId": "el-2-3-9",
+      "shopifyFullName": "Electronics > Audio > Audio Players & Recorders > Stereo Systems",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "14969",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > Home Audio > Home Audio Components",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "14990",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > Home Audio > Home Speakers & Subwoofers",
+      "shopifyCategoryId": "el-2-2-10-1",
+      "shopifyFullName": "Electronics > Audio > Audio Components > Speakers > Bookshelf Speakers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "72406",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > Home Audio > Home Theater Systems",
+      "shopifyCategoryId": "el-2-3-3",
+      "shopifyFullName": "Electronics > Audio > Audio Players & Recorders > Home Theater Systems",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "184974",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > Home Audio > Receivers & Amplifiers",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "3271",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > Home Audio > Receivers & Amplifiers > Equalizers",
+      "shopifyCategoryId": "el-2-2-9-3",
+      "shopifyFullName": "Electronics > Audio > Audio Components > Signal Processors > Equalizers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "14970",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > Home Audio > Receivers & Amplifiers > Amplifiers & Preamps",
+      "shopifyCategoryId": "el-2-2-2-3",
+      "shopifyFullName": "Electronics > Audio > Audio Components > Audio Amplifiers > Integrated Amplifiers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "14981",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > Home Audio > Receivers & Amplifiers > Receivers",
+      "shopifyCategoryId": "el-2-2-1",
+      "shopifyFullName": "Electronics > Audio > Audio Components > Audio & Video Receivers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "4786",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > Home Audio > Home Audio Components > MiniDisc Decks",
+      "shopifyCategoryId": "el-2-3-2-4",
+      "shopifyFullName": "Electronics > Audio > Audio Players & Recorders > Handheld Players & Recorders > Portable MiniDisc Players",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "14971",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > Home Audio > Home Audio Components > CD Players & Recorders",
+      "shopifyCategoryId": "el-2-3-2-2",
+      "shopifyFullName": "Electronics > Audio > Audio Players & Recorders > Handheld Players & Recorders > Portable CD Players",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "22635",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > Home Audio > Home Audio Components > Radio Tuners",
+      "shopifyCategoryId": "el-2-3-7-1-1",
+      "shopifyFullName": "Electronics > Audio > Audio Players & Recorders > Radios > AM/FM Radios > Clock Radios",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "48645",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > Home Audio > Home Audio Components > Cassette Tape Decks",
+      "shopifyCategoryId": "el-2-3-2-1",
+      "shopifyFullName": "Electronics > Audio > Audio Players & Recorders > Handheld Players & Recorders > Portable Cassette Players",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "48647",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > Home Audio > Home Audio Components > Record Players/Home Turntables",
+      "shopifyCategoryId": "el-2-3-10-1",
+      "shopifyFullName": "Electronics > Audio > Audio Players & Recorders > Turntables & Record Players > Record Players",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "81741",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > Home Audio > Home Audio Components > Other Home Stereo Components",
+      "shopifyCategoryId": "el-2-1-9-12",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > Turntable Accessories > Turntable Dust Covers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175708",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > Home Audio > Home Audio Components > Stereo Component Combos",
+      "shopifyCategoryId": "el-2-3-9",
+      "shopifyFullName": "Electronics > Audio > Audio Players & Recorders > Stereo Systems",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "11071",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV & Video > TVs",
+      "shopifyCategoryId": "el-17-4",
+      "shopifyFullName": "Electronics > Video > Televisions",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "11725",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV & Video > DVRs, Hard Drive Recorders",
+      "shopifyCategoryId": "el-17-8-1",
+      "shopifyFullName": "Electronics > Video > Video Players & Recorders > Digital Video Recorders",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "22610",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV & Video > Home Theater Projectors",
+      "shopifyCategoryId": "el-17-2-1",
+      "shopifyFullName": "Electronics > Video > Projectors > Multimedia Projectors",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "39804",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV & Video > Cable TV Boxes",
+      "shopifyCategoryId": "el-17-3-1",
+      "shopifyFullName": "Electronics > Video > Satellite & Cable TV > Cable TV Receivers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "96969",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV & Video > Satellite TV Receivers",
+      "shopifyCategoryId": "el-17-3-2",
+      "shopifyFullName": "Electronics > Video > Satellite & Cable TV > Satellite Receivers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175711",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV & Video > DVD & Blu-ray Players",
+      "shopifyCategoryId": "el-17-8-2-1",
+      "shopifyFullName": "Electronics > Video > Video Players & Recorders > DVD & Blu-ray Players > Portable DVD Players",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "31197",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Parts > Cassette Player Parts & Comp.",
+      "shopifyCategoryId": "el-2-1-11",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > Cassette Player Accessories",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "64619",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Parts > Record Player, Turntable Parts",
+      "shopifyCategoryId": "el-2-1-9-1",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > Turntable Accessories > Cartridges",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "71585",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Parts > Other TV, Video & Audio Parts",
+      "shopifyCategoryId": "el-17-5-4",
+      "shopifyFullName": "Electronics > Video > Video Accessories > Rewinders",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "122649",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Parts > Amplifier Parts & Components",
+      "shopifyCategoryId": "el-2-1-10",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > Audio Replacement Parts",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "149975",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Parts > Rear-Projection TV Lamps",
+      "shopifyCategoryId": "el-17-5-5-3",
+      "shopifyFullName": "Electronics > Video > Video Accessories > Television Parts & Accessories > TV Replacement Lamps",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "163768",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Parts > TV Boards, Parts & Components",
+      "shopifyCategoryId": "el-17-5-4",
+      "shopifyFullName": "Electronics > Video > Video Accessories > Rewinders",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "184647",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Parts > Speaker Parts & Components",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "12903",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Parts > Speaker Parts & Components > Tweeters",
+      "shopifyCategoryId": "el-2-1-8-2-2",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > Speaker Accessories > Speaker Components & Kits > Speaker Crossovers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "21995",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Parts > Speaker Parts & Components > Speaker Boxes",
+      "shopifyCategoryId": "el-2-1-8-2-4",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > Speaker Accessories > Speaker Components & Kits > Speaker Enclosures & Boxes",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "21997",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Parts > Speaker Parts & Components > Other Speaker Parts & Comp.",
+      "shopifyCategoryId": "el-2-1-8-2-1",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > Speaker Accessories > Speaker Components & Kits > Speaker Connectors & Terminals",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "96273",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Parts > Speaker Parts & Components > Manuals",
+      "shopifyCategoryId": "me-5",
+      "shopifyFullName": "Media > Product Manuals",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "141249",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Parts > Speaker Parts & Components > Speaker Building Components",
+      "shopifyCategoryId": "el-2-1-8-2-1",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > Speaker Accessories > Speaker Components & Kits > Speaker Connectors & Terminals",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "141262",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Parts > Speaker Parts & Components > Woofers",
+      "shopifyCategoryId": "el-2-1-8-2-3",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > Speaker Accessories > Speaker Components & Kits > Speaker Drivers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "169024",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Parts > Speaker Parts & Components > Repair Kits & Consumables",
+      "shopifyCategoryId": "el-2-1-10",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > Audio Replacement Parts",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "169025",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Parts > Speaker Parts & Components > Electronic Parts & Components",
+      "shopifyCategoryId": "el-2-1-10",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > Audio Replacement Parts",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "185025",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Parts > Speaker Parts & Components > Speaker Frames",
+      "shopifyCategoryId": "el-2-1-8-2-4",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > Speaker Accessories > Speaker Components & Kits > Speaker Enclosures & Boxes",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "185026",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Parts > Speaker Parts & Components > Speaker Magnets",
+      "shopifyCategoryId": "el-2-1-8-2-1",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > Speaker Accessories > Speaker Components & Kits > Speaker Connectors & Terminals",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "185027",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Parts > Speaker Parts & Components > Voice Coils",
+      "shopifyCategoryId": "el-2-1-8-2-1",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > Speaker Accessories > Speaker Components & Kits > Speaker Connectors & Terminals",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "48644",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Accessories > Manuals & Resources",
+      "shopifyCategoryId": "me-5",
+      "shopifyFullName": "Media > Product Manuals",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "61312",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Accessories > Remote Controls",
+      "shopifyCategoryId": "el-7-16-5",
+      "shopifyFullName": "Electronics > Electronics Accessories > Remote Controls > TV Remote Controls",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "61395",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Accessories > Other TV, Video & Audio Accs",
+      "shopifyCategoryId": "el-17-5-4",
+      "shopifyFullName": "Electronics > Video > Video Accessories > Rewinders",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "64588",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Accessories > Media Cases & Storage",
+      "shopifyCategoryId": "el-2-1-8-1",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > Speaker Accessories > Speaker Bags, Covers & Cases",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "149958",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Accessories > Audio/Video Transmitters",
+      "shopifyCategoryId": "el-2-2-4-1",
+      "shopifyFullName": "Electronics > Audio > Audio Components > Audio Transmitters > Bluetooth Transmitters",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "149972",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Accessories > Splitters & Combiners",
+      "shopifyCategoryId": "el-7-2-10",
+      "shopifyFullName": "Electronics > Electronics Accessories > Antenna Accessories > Splitters, Combiners & Distribution Systems",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "163826",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Accessories > Video Glasses",
+      "shopifyCategoryId": "el-17-5-1",
+      "shopifyFullName": "Electronics > Video > Video Accessories > 3D Glasses",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "184637",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Accessories > Blank Audio/Video Media",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "184638",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Accessories > TV Tools",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "184975",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Accessories > TV & Video Accessories",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "184976",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Accessories > Home Audio Accessories",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "258042",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Accessories > Audio/Video Media Cleaning",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "258046",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Accessories > Audio/Video Media Repair",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "184612",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Accessories > Audio/Video Media Repair > A/V Buffing & Sanding Pads",
+      "shopifyCategoryId": "el-2-1-10",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > Audio Replacement Parts",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "184613",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Accessories > Audio/Video Media Repair > A/V Repair Kits",
+      "shopifyCategoryId": "el-2-1-10",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > Audio Replacement Parts",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "184614",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Accessories > Audio/Video Media Repair > A/V Repair Machines & Parts",
+      "shopifyCategoryId": "el-2-1-10",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > Audio Replacement Parts",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "184610",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Accessories > Audio/Video Media Cleaning > A/V Cleaning Kits",
+      "shopifyCategoryId": "el-2-1-10",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > Audio Replacement Parts",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "258044",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Accessories > Audio/Video Media Cleaning > A/V Cleaning Cloths & Brushes",
+      "shopifyCategoryId": "el-2-1-10",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > Audio Replacement Parts",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "258045",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Accessories > Audio/Video Media Cleaning > A/V Cleaning Solutions",
+      "shopifyCategoryId": "el-2-1-10",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > Audio Replacement Parts",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "14964",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Accessories > Home Audio Accessories > Audio Cables & Interconnects",
+      "shopifyCategoryId": "el-7-7-1-10",
+      "shopifyFullName": "Electronics > Electronics Accessories > Cables > Audio & Video Cables > Speaker Cables",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "61336",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Accessories > Home Audio Accessories > Speaker Mounts & Stands",
+      "shopifyCategoryId": "el-2-1-8-4",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > Speaker Accessories > Speaker Stands & Mounts",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175721",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Accessories > Home Audio Accessories > Audio Cable Plugs & Jacks",
+      "shopifyCategoryId": "el-2-1-8-2-1",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > Speaker Accessories > Speaker Components & Kits > Speaker Connectors & Terminals",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "32834",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Accessories > TV & Video Accessories > Video Cables & Interconnects",
+      "shopifyCategoryId": "el-7-7-1-10",
+      "shopifyFullName": "Electronics > Electronics Accessories > Cables > Audio & Video Cables > Speaker Cables",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "39803",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Accessories > TV & Video Accessories > Signal Amplifiers & Filters",
+      "shopifyCategoryId": "el-7-17-5",
+      "shopifyFullName": "Electronics > Electronics Accessories > Signal Boosters > TV Antenna Amplifiers & Preamplifiers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "48655",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Accessories > TV & Video Accessories > Projection Screens & Material",
+      "shopifyCategoryId": "el-17-5-3-3",
+      "shopifyFullName": "Electronics > Video > Video Accessories > Projector Accessories > Projection Screens",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "48656",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Accessories > TV & Video Accessories > TV Stands & Mounts",
+      "shopifyCategoryId": "el-17-5-5-1",
+      "shopifyFullName": "Electronics > Video > Video Accessories > Television Parts & Accessories > TV & Monitor Mounts",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "67880",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Accessories > TV & Video Accessories > Satellite Signal Multiswitches",
+      "shopifyCategoryId": "el-7-2-10",
+      "shopifyFullName": "Electronics > Electronics Accessories > Antenna Accessories > Splitters, Combiners & Distribution Systems",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "67882",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Accessories > TV & Video Accessories > Signal Finders",
+      "shopifyCategoryId": "el-17-3-4",
+      "shopifyFullName": "Electronics > Video > Satellite & Cable TV > Satellite Signal Meters & Finders",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "71583",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Accessories > TV & Video Accessories > Projector Lamps & Components",
+      "shopifyCategoryId": "el-17-5-3-5",
+      "shopifyFullName": "Electronics > Video > Video Accessories > Projector Accessories > Projector Replacement Lamps",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "71584",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Accessories > TV & Video Accessories > Projector Mounts & Stands",
+      "shopifyCategoryId": "el-17-5-3-4",
+      "shopifyFullName": "Electronics > Video > Video Accessories > Projector Accessories > Projector Mounts",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "149971",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Accessories > TV & Video Accessories > Satellite LNB Downconverters",
+      "shopifyCategoryId": "el-7-2-3",
+      "shopifyFullName": "Electronics > Electronics Accessories > Antenna Accessories > Satellite LNBs",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "149973",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Accessories > TV & Video Accessories > Antenna & Dish Mounting Gear",
+      "shopifyCategoryId": "el-7-2-1",
+      "shopifyFullName": "Electronics > Electronics Accessories > Antenna Accessories > Antenna Mounts & Brackets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175719",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Accessories > TV & Video Accessories > 3D TV Glasses & Accessories",
+      "shopifyCategoryId": "el-17-5-1",
+      "shopifyFullName": "Electronics > Video > Video Accessories > 3D Glasses",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175720",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Accessories > TV & Video Accessories > Satellite Dishes",
+      "shopifyCategoryId": "el-17-3-3",
+      "shopifyFullName": "Electronics > Video > Satellite & Cable TV > Satellite Dishes",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175835",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Accessories > TV & Video Accessories > Antennas",
+      "shopifyCategoryId": "el-7-3-6",
+      "shopifyFullName": "Electronics > Electronics Accessories > Antennas > TV Antennas",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "184639",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Accessories > TV Tools > Crimpers",
+      "shopifyCategoryId": "el-17-5-4",
+      "shopifyFullName": "Electronics > Video > Video Accessories > Rewinders",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "184640",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Accessories > TV Tools > Strippers",
+      "shopifyCategoryId": "el-17-5-4",
+      "shopifyFullName": "Electronics > Video > Video Accessories > Rewinders",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "184641",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Accessories > TV Tools > Other TV Tools",
+      "shopifyCategoryId": "el-17-5-4",
+      "shopifyFullName": "Electronics > Video > Video Accessories > Rewinders",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "14962",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Accessories > Blank Audio/Video Media > Audio Tapes",
+      "shopifyCategoryId": "el-7-5-1",
+      "shopifyFullName": "Electronics > Electronics Accessories > Blank Media > Blank Audio Cassettes",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "149959",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Accessories > Blank Audio/Video Media > MiniDiscs",
+      "shopifyCategoryId": "el-7-5-2",
+      "shopifyFullName": "Electronics > Electronics Accessories > Blank Media > Blank Blu-ray Discs",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "149960",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Accessories > Blank Audio/Video Media > VHS Video Tapes",
+      "shopifyCategoryId": "el-7-5-6",
+      "shopifyFullName": "Electronics > Electronics Accessories > Blank Media > Blank VHS Tapes",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175718",
+      "ebayFullName": "Consumer Electronics > TV, Video & Home Audio > TV, Video & Audio Accessories > Blank Audio/Video Media > CD, DVD & Blu-ray Discs",
+      "shopifyCategoryId": "el-7-5-3",
+      "shopifyFullName": "Electronics > Electronics Accessories > Blank Media > Blank CDs",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "15053",
+      "ebayFullName": "Consumer Electronics > Portable Audio & Headphones > Personal Cassette Players",
+      "shopifyCategoryId": "el-2-3-2-1",
+      "shopifyFullName": "Electronics > Audio > Audio Players & Recorders > Handheld Players & Recorders > Portable Cassette Players",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "15054",
+      "ebayFullName": "Consumer Electronics > Portable Audio & Headphones > Personal CD Players",
+      "shopifyCategoryId": "el-2-3-2-2",
+      "shopifyFullName": "Electronics > Audio > Audio Players & Recorders > Handheld Players & Recorders > Portable CD Players",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "15056",
+      "ebayFullName": "Consumer Electronics > Portable Audio & Headphones > Personal MiniDisc Recorders",
+      "shopifyCategoryId": "el-2-3-2-4",
+      "shopifyFullName": "Electronics > Audio > Audio Players & Recorders > Handheld Players & Recorders > Portable MiniDisc Players",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "48626",
+      "ebayFullName": "Consumer Electronics > Portable Audio & Headphones > Portable Stereos & Boomboxes",
+      "shopifyCategoryId": "el-2-3-1",
+      "shopifyFullName": "Electronics > Audio > Audio Players & Recorders > Boomboxes",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "56169",
+      "ebayFullName": "Consumer Electronics > Portable Audio & Headphones > Portable Audio Accessories",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "73839",
+      "ebayFullName": "Consumer Electronics > Portable Audio & Headphones > iPods & MP3 Players",
+      "shopifyCategoryId": "el-2-3-2-3",
+      "shopifyFullName": "Electronics > Audio > Audio Players & Recorders > Handheld Players & Recorders > Portable Digital Audio Players",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "96954",
+      "ebayFullName": "Consumer Electronics > Portable Audio & Headphones > Portable AM/FM Radios",
+      "shopifyCategoryId": "el-2-3-7-1-1",
+      "shopifyFullName": "Electronics > Audio > Audio Players & Recorders > Radios > AM/FM Radios > Clock Radios",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "109256",
+      "ebayFullName": "Consumer Electronics > Portable Audio & Headphones > Portable Satellite Radios",
+      "shopifyCategoryId": "el-2-3-7-4",
+      "shopifyFullName": "Electronics > Audio > Audio Players & Recorders > Radios > Satellite Radios",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "111694",
+      "ebayFullName": "Consumer Electronics > Portable Audio & Headphones > Audio Docks & Mini Speakers",
+      "shopifyCategoryId": "el-2-2-10-4",
+      "shopifyFullName": "Electronics > Audio > Audio Components > Speakers > Portable Bluetooth Speakers",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "112529",
+      "ebayFullName": "Consumer Electronics > Portable Audio & Headphones > Headphones",
+      "shopifyCategoryId": "el-2-2-7-1-5",
+      "shopifyFullName": "Electronics > Audio > Audio Components > Headphones & Headsets > Headphones > Over-Ear Headphones",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "163769",
+      "ebayFullName": "Consumer Electronics > Portable Audio & Headphones > Replacement Parts & Tools",
+      "shopifyCategoryId": "el-2-1-2-7",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > Headphone & Headset Accessories > Headphone Replacement Parts",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "184618",
+      "ebayFullName": "Consumer Electronics > Portable Audio & Headphones > Headphone Parts",
+      "shopifyCategoryId": "el-2-1-2-7",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > Headphone & Headset Accessories > Headphone Replacement Parts",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "260318",
+      "ebayFullName": "Consumer Electronics > Portable Audio & Headphones > Headphone Accessories",
+      "shopifyCategoryId": "el-2-1-2-8",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > Headphone & Headset Accessories > Headphone Skins & Wraps",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "48680",
+      "ebayFullName": "Consumer Electronics > Portable Audio & Headphones > Portable Audio Accessories > Other Portable Audio Accs",
+      "shopifyCategoryId": "el-2-1-2-3-1",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > Headphone & Headset Accessories > Headphone Carrying Cases > Earbud & In-Ear Headphone Carrying Cases",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "56170",
+      "ebayFullName": "Consumer Electronics > Portable Audio & Headphones > Portable Audio Accessories > Cases, Covers & Skins",
+      "shopifyCategoryId": "el-2-1-2-3-1",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > Headphone & Headset Accessories > Headphone Carrying Cases > Earbud & In-Ear Headphone Carrying Cases",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "56172",
+      "ebayFullName": "Consumer Electronics > Portable Audio & Headphones > Portable Audio Accessories > Cables & Adapters",
+      "shopifyCategoryId": "el-7-7-1-1",
+      "shopifyFullName": "Electronics > Electronics Accessories > Cables > Audio & Video Cables > AUX Cables",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73834",
+      "ebayFullName": "Consumer Electronics > Portable Audio & Headphones > Portable Audio Accessories > Accessory Bundles",
+      "shopifyCategoryId": "el-2-1-2-3-1",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > Headphone & Headset Accessories > Headphone Carrying Cases > Earbud & In-Ear Headphone Carrying Cases",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73835",
+      "ebayFullName": "Consumer Electronics > Portable Audio & Headphones > Portable Audio Accessories > Cassette Adapters",
+      "shopifyCategoryId": "el-2-1-11",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > Cassette Player Accessories",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73836",
+      "ebayFullName": "Consumer Electronics > Portable Audio & Headphones > Portable Audio Accessories > Transmitters",
+      "shopifyCategoryId": "el-2-2-4-1",
+      "shopifyFullName": "Electronics > Audio > Audio Components > Audio Transmitters > Bluetooth Transmitters",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "79877",
+      "ebayFullName": "Consumer Electronics > Portable Audio & Headphones > Portable Audio Accessories > Remotes",
+      "shopifyCategoryId": "el-2-1-8-7",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > Speaker Accessories > Speaker Volume & Remote Controls",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "118261",
+      "ebayFullName": "Consumer Electronics > Portable Audio & Headphones > Portable Audio Accessories > Device-Specific Batteries",
+      "shopifyCategoryId": "el-7-15-1-7",
+      "shopifyFullName": "Electronics > Electronics Accessories > Power > Batteries > MP3 Player Batteries",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "122654",
+      "ebayFullName": "Consumer Electronics > Portable Audio & Headphones > Portable Audio Accessories > Mini Plug-in Microphones",
+      "shopifyCategoryId": "el-2-2-8",
+      "shopifyFullName": "Electronics > Audio > Audio Components > Microphones",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "124270",
+      "ebayFullName": "Consumer Electronics > Portable Audio & Headphones > Portable Audio Accessories > Chargers & Cradles",
+      "shopifyCategoryId": "el-7-15-5-6",
+      "shopifyFullName": "Electronics > Electronics Accessories > Power > Power Adapters & Chargers > Wall Chargers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "131093",
+      "ebayFullName": "Consumer Electronics > Portable Audio & Headphones > Portable Audio Accessories > Mounts & Holders",
+      "shopifyCategoryId": "el-2-1-2-3-1",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > Headphone & Headset Accessories > Headphone Carrying Cases > Earbud & In-Ear Headphone Carrying Cases",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "168093",
+      "ebayFullName": "Consumer Electronics > Portable Audio & Headphones > Portable Audio Accessories > Armbands",
+      "shopifyCategoryId": "el-2-1-6-3",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > MP3 Player Accessories > MP3 Player Armbands",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "168096",
+      "ebayFullName": "Consumer Electronics > Portable Audio & Headphones > Portable Audio Accessories > Screen Protectors",
+      "shopifyCategoryId": "el-2-1-6-6",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > MP3 Player Accessories > MP3 Player Screen Protectors",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "3314",
+      "ebayFullName": "Consumer Electronics > Home Telephones & Accessories > Pagers",
+      "shopifyCategoryId": "el-4-7",
+      "shopifyFullName": "Electronics > Communications > Pagers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "9425",
+      "ebayFullName": "Consumer Electronics > Home Telephones & Accessories > Home Telephone Parts",
+      "shopifyCategoryId": "el-4-8-7-1-2",
+      "shopifyFullName": "Electronics > Communications > Telephony > Telephone Accessories > Phone Cards > Prepaid Phone Cards",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "15048",
+      "ebayFullName": "Consumer Electronics > Home Telephones & Accessories > Caller ID Devices",
+      "shopifyCategoryId": "el-4-2",
+      "shopifyFullName": "Electronics > Communications > Caller IDs",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "20034",
+      "ebayFullName": "Consumer Electronics > Home Telephones & Accessories > Telephone Batteries",
+      "shopifyCategoryId": "el-7-15-1-2",
+      "shopifyFullName": "Electronics > Electronics Accessories > Power > Batteries > Cordless Phone Batteries",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "33929",
+      "ebayFullName": "Consumer Electronics > Home Telephones & Accessories > Cordless Telephones & Handsets",
+      "shopifyCategoryId": "el-4-8-3",
+      "shopifyFullName": "Electronics > Communications > Telephony > Cordless Phones",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "41373",
+      "ebayFullName": "Consumer Electronics > Home Telephones & Accessories > Corded Telephones",
+      "shopifyCategoryId": "el-4-8-2-1",
+      "shopifyFullName": "Electronics > Communications > Telephony > Corded Phones > Analog Landline Phones",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "58353",
+      "ebayFullName": "Consumer Electronics > Home Telephones & Accessories > Cords, Cables & Adapters",
+      "shopifyCategoryId": "el-7-7-7",
+      "shopifyFullName": "Electronics > Electronics Accessories > Cables > Telephone Cables",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "84079",
+      "ebayFullName": "Consumer Electronics > Home Telephones & Accessories > Telephone Headsets",
+      "shopifyCategoryId": "el-2-2-7-2-4",
+      "shopifyFullName": "Electronics > Audio > Audio Components > Headphones & Headsets > Headsets > Office & Call Center Headsets",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "139968",
+      "ebayFullName": "Consumer Electronics > Home Telephones & Accessories > Answering Machines",
+      "shopifyCategoryId": "el-4-1",
+      "shopifyFullName": "Electronics > Communications > Answering Machines",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "184642",
+      "ebayFullName": "Consumer Electronics > Home Telephones & Accessories > Jacks & Plugs",
+      "shopifyCategoryId": "el-7-7-7",
+      "shopifyFullName": "Electronics > Electronics Accessories > Cables > Telephone Cables",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "1498",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS > Other Vehicle Electronics",
+      "shopifyCategoryId": "vp-1-3-2",
+      "shopifyFullName": "Vehicles & Parts > Vehicle Parts & Accessories > Motor Vehicle Electronics > Motor Vehicle Amplifiers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "14935",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS > Radar & Laser Detectors",
+      "shopifyCategoryId": "el-14",
+      "shopifyFullName": "Electronics > Radar Detectors",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "32806",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS > Car Audio & Video Installation",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "48604",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS > Car Video",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "48610",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS > Car Alarms & Security",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "60207",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS > Car Electronics Accessories",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "73335",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS > 12-Volt Portable Appliances",
+      "shopifyCategoryId": "vp-1-3-2",
+      "shopifyFullName": "Vehicles & Parts > Vehicle Parts & Accessories > Motor Vehicle Electronics > Motor Vehicle Amplifiers",
+      "confidence": 0.5,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "139836",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS > GPS Accessories & Tracking",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "156955",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS > GPS Units",
+      "shopifyCategoryId": "el-8-3",
+      "shopifyFullName": "Electronics > GPS Accessories > GPS Modules & Receivers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "168105",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS > Marine Audio",
+      "shopifyCategoryId": "el-11-2",
+      "shopifyFullName": "Electronics > Marine Electronics > Marine Audio & Video Receivers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175716",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS > Car Audio",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "14936",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS > Car Audio > Car Speakers & Speaker Systems",
+      "shopifyCategoryId": "el-2-1-8-2-3",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > Speaker Accessories > Speaker Components & Kits > Speaker Drivers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "18795",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS > Car Audio > Car Amplifiers",
+      "shopifyCategoryId": "el-2-2-2-2",
+      "shopifyFullName": "Electronics > Audio > Audio Components > Audio Amplifiers > Power Amplifiers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "18805",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS > Car Audio > Car Subwoofers",
+      "shopifyCategoryId": "el-2-2-10-7",
+      "shopifyFullName": "Electronics > Audio > Audio Components > Speakers > Subwoofers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "39746",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS > Car Audio > Car CD Changers",
+      "shopifyCategoryId": "vp-1-3-3",
+      "shopifyFullName": "Vehicles & Parts > Vehicle Parts & Accessories > Motor Vehicle Electronics > Motor Vehicle Cassette Adapters",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "39754",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS > Car Audio > Car Audio In-Dash Units",
+      "shopifyCategoryId": "vp-1-3-3",
+      "shopifyFullName": "Vehicles & Parts > Vehicle Parts & Accessories > Motor Vehicle Electronics > Motor Vehicle Cassette Adapters",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "79839",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS > Car Audio > Signal Processors",
+      "shopifyCategoryId": "el-2-2-9-2",
+      "shopifyFullName": "Electronics > Audio > Audio Components > Signal Processors > Effects Processors",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175717",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS > Car Audio > Other Car Audio",
+      "shopifyCategoryId": "vp-1-3-2",
+      "shopifyFullName": "Vehicles & Parts > Vehicle Parts & Accessories > Motor Vehicle Electronics > Motor Vehicle Amplifiers",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "58049",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS > GPS Accessories & Tracking > Other GPS Accs & Tracking",
+      "shopifyCategoryId": "el-8-1",
+      "shopifyFullName": "Electronics > GPS Accessories > GPS Cases",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73348",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS > GPS Accessories & Tracking > GPS Antennas",
+      "shopifyCategoryId": "el-7-3-3",
+      "shopifyFullName": "Electronics > Electronics Accessories > Antennas > GPS Antennas",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73353",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS > GPS Accessories & Tracking > GPS Holders & Mounts",
+      "shopifyCategoryId": "el-8-2",
+      "shopifyFullName": "Electronics > GPS Accessories > GPS Mounts",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "73362",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS > GPS Accessories & Tracking > Tracking Devices",
+      "shopifyCategoryId": "el-10-2",
+      "shopifyFullName": "Electronics > GPS Tracking Devices > Vehicle GPS Trackers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "139837",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS > GPS Accessories & Tracking > GPS Software & Maps",
+      "shopifyCategoryId": "el-8-3",
+      "shopifyFullName": "Electronics > GPS Accessories > GPS Modules & Receivers",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "168103",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS > GPS Accessories & Tracking > GPS Cases & Skins",
+      "shopifyCategoryId": "el-8-1",
+      "shopifyFullName": "Electronics > GPS Accessories > GPS Cases",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "168104",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS > GPS Accessories & Tracking > GPS Screen Protectors",
+      "shopifyCategoryId": "el-8-1",
+      "shopifyFullName": "Electronics > GPS Accessories > GPS Cases",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175726",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS > GPS Accessories & Tracking > GPS Chargers & Batteries",
+      "shopifyCategoryId": "el-8-1",
+      "shopifyFullName": "Electronics > GPS Accessories > GPS Cases",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "12040",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS > Car Electronics Accessories > Audio/Video Remotes",
+      "shopifyCategoryId": "el-2-1-8-7",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > Speaker Accessories > Speaker Volume & Remote Controls",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "50553",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS > Car Electronics Accessories > Radio Antennas",
+      "shopifyCategoryId": "el-7-3-1",
+      "shopifyFullName": "Electronics > Electronics Accessories > Antennas > Cellular & WiFi Antennas",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "58020",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS > Car Electronics Accessories > Power Inverters",
+      "shopifyCategoryId": "el-7-15-14",
+      "shopifyFullName": "Electronics > Electronics Accessories > Power > Power Inverters",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "60208",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS > Car Electronics Accessories > Adapters",
+      "shopifyCategoryId": "el-7-1-3",
+      "shopifyFullName": "Electronics > Electronics Accessories > Adapters > USB Adapters",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "71535",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS > Car Electronics Accessories > Replacement Faceplates",
+      "shopifyCategoryId": "el-7-9-1-1",
+      "shopifyFullName": "Electronics > Electronics Accessories > Computer Components > Blade Server Enclosures > Server Bezels & Faceplates",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "71536",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS > Car Electronics Accessories > Car Lighting",
+      "shopifyCategoryId": "vp-1-3-5-2",
+      "shopifyFullName": "Vehicles & Parts > Vehicle Parts & Accessories > Motor Vehicle Electronics > Motor Vehicle Equalizers & Crossovers > Digital Sound Processors",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175713",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS > Car Electronics Accessories > Remote Start & Entry Systems",
+      "shopifyCategoryId": "vp-1-6-3-2",
+      "shopifyFullName": "Vehicles & Parts > Vehicle Parts & Accessories > Vehicle Safety & Security > Vehicle Alarms & Locks > Automotive Alarm Systems",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175714",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS > Car Electronics Accessories > Bluetooth, Handsfree Car Kits",
+      "shopifyCategoryId": "el-2-1-1-2",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > Audio & Video Receiver Accessories > Bluetooth Adapters",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175715",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS > Car Electronics Accessories > Other Car Electronics Accs",
+      "shopifyCategoryId": "vp-1-3-2",
+      "shopifyFullName": "Vehicles & Parts > Vehicle Parts & Accessories > Motor Vehicle Electronics > Motor Vehicle Amplifiers",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "60203",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS > Car Alarms & Security > Other Car Alarms & Security",
+      "shopifyCategoryId": "vp-1-6-3-1",
+      "shopifyFullName": "Vehicles & Parts > Vehicle Parts & Accessories > Vehicle Safety & Security > Vehicle Alarms & Locks > Automotive Alarm Accessories",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "71530",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS > Car Alarms & Security > Replacement Remotes",
+      "shopifyCategoryId": "el-7-16-5",
+      "shopifyFullName": "Electronics > Electronics Accessories > Remote Controls > TV Remote Controls",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "75389",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS > Car Alarms & Security > Relays & Sensors",
+      "shopifyCategoryId": "el-5-7",
+      "shopifyFullName": "Electronics > Components > Sensors",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "75390",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS > Car Alarms & Security > Car Alarms & Security Systems",
+      "shopifyCategoryId": "vp-1-6-3-1",
+      "shopifyFullName": "Vehicles & Parts > Vehicle Parts & Accessories > Vehicle Safety & Security > Vehicle Alarms & Locks > Automotive Alarm Accessories",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "94830",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS > Car Alarms & Security > Car Keys & Transponders",
+      "shopifyCategoryId": "vp-1-5-4-17",
+      "shopifyFullName": "Vehicles & Parts > Vehicle Parts & Accessories > Vehicle Maintenance, Care & Decor > Vehicle Decor > Vehicle Shift Knobs",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "48605",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS > Car Video > Other Car Video",
+      "shopifyCategoryId": "vp-1-3-10-1",
+      "shopifyFullName": "Vehicles & Parts > Vehicle Parts & Accessories > Motor Vehicle Electronics > Motor Vehicle Video Monitor Mounts > Dashboard Mounts",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "48606",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS > Car Video > Car Monitors w/o Player",
+      "shopifyCategoryId": "el-17-5-2-3",
+      "shopifyFullName": "Electronics > Video > Video Accessories > Computer Monitor Accessories > Monitor Arms & Mounts",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "79834",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS > Car Video > Video In-Dash Units w/GPS",
+      "shopifyCategoryId": "el-9-1",
+      "shopifyFullName": "Electronics > GPS Navigation Systems > Automotive GPS Navigation Systems",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "79835",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS > Car Video > Video In-Dash Units w/o GPS",
+      "shopifyCategoryId": "vp-1-3-10-1",
+      "shopifyFullName": "Vehicles & Parts > Vehicle Parts & Accessories > Motor Vehicle Electronics > Motor Vehicle Video Monitor Mounts > Dashboard Mounts",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "149976",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS > Car Video > Rear View Monitors/Cams & Kits",
+      "shopifyCategoryId": "vp-1-3-6-2",
+      "shopifyFullName": "Vehicles & Parts > Vehicle Parts & Accessories > Motor Vehicle Electronics > Motor Vehicle Parking Cameras > Backup Cameras",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175712",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS > Car Video > Car Monitors w/Built-in Player",
+      "shopifyCategoryId": "vp-1-3-10-1",
+      "shopifyFullName": "Vehicles & Parts > Vehicle Parts & Accessories > Motor Vehicle Electronics > Motor Vehicle Video Monitor Mounts > Dashboard Mounts",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "32810",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS > Car Audio & Video Installation > Power & Speaker Wire",
+      "shopifyCategoryId": "el-7-7-1-10",
+      "shopifyFullName": "Electronics > Electronics Accessories > Cables > Audio & Video Cables > Speaker Cables",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "50549",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS > Car Audio & Video Installation > Connectors & Terminals",
+      "shopifyCategoryId": "el-2-1-8-2-1",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > Speaker Accessories > Speaker Components & Kits > Speaker Connectors & Terminals",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "50550",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS > Car Audio & Video Installation > Distribution Blocks",
+      "shopifyCategoryId": "vp-1-3-2",
+      "shopifyFullName": "Vehicles & Parts > Vehicle Parts & Accessories > Motor Vehicle Electronics > Motor Vehicle Amplifiers",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "50551",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS > Car Audio & Video Installation > Fuses & Fuse Holders",
+      "shopifyCategoryId": "el-3-5-6",
+      "shopifyFullName": "Electronics > Circuit Boards & Components > Passive Circuit Components > Fuses",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "50552",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS > Car Audio & Video Installation > Other Car A/V Installation",
+      "shopifyCategoryId": "vp-1-3-2",
+      "shopifyFullName": "Vehicles & Parts > Vehicle Parts & Accessories > Motor Vehicle Electronics > Motor Vehicle Amplifiers",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "50564",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS > Car Audio & Video Installation > Speaker/Sub. Enclosures",
+      "shopifyCategoryId": "el-2-1-8-2-4",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > Speaker Accessories > Speaker Components & Kits > Speaker Enclosures & Boxes",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "64578",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS > Car Audio & Video Installation > Wire Harnesses",
+      "shopifyCategoryId": "el-1-5-11",
+      "shopifyFullName": "Electronics > Arcade Equipment > Video Game Arcade Cabinet Accessories > Wiring & Harnesses",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "67773",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS > Car Audio & Video Installation > Speaker/Sub. Grills & Accs",
+      "shopifyCategoryId": "el-2-1-8-2-5",
+      "shopifyFullName": "Electronics > Audio > Audio Accessories > Speaker Accessories > Speaker Components & Kits > Speaker Grilles & Grill Cloths",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "71527",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS > Car Audio & Video Installation > Amplifier Kits",
+      "shopifyCategoryId": "el-2-2-2-2",
+      "shopifyFullName": "Electronics > Audio > Audio Components > Audio Amplifiers > Power Amplifiers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "75386",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS > Car Audio & Video Installation > Capacitors",
+      "shopifyCategoryId": "el-3-5-1",
+      "shopifyFullName": "Electronics > Circuit Boards & Components > Passive Circuit Components > Capacitors",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "85806",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS > Car Audio & Video Installation > Dashboard Installation Kits",
+      "shopifyCategoryId": "vp-1-3-2",
+      "shopifyFullName": "Vehicles & Parts > Vehicle Parts & Accessories > Motor Vehicle Electronics > Motor Vehicle Amplifiers",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "94844",
+      "ebayFullName": "Consumer Electronics > Vehicle Electronics & GPS > Car Audio & Video Installation > Interconnect Cables",
+      "shopifyCategoryId": "el-7-7-1-1",
+      "shopifyFullName": "Electronics > Electronics Accessories > Cables > Audio & Video Cables > AUX Cables",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "296",
+      "ebayFullName": "Consumer Electronics > Radio Communication > Other Radio Communication",
+      "shopifyCategoryId": "el-4-4-3",
+      "shopifyFullName": "Electronics > Communications > Communication Radios > Radio Scanners",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini-retry"
+    },
+    {
+      "ebayId": "4669",
+      "ebayFullName": "Consumer Electronics > Radio Communication > Commercial Radios",
+      "shopifyCategoryId": "el-4-4-2",
+      "shopifyFullName": "Electronics > Communications > Communication Radios > CB Radios",
+      "confidence": 0.85,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "4670",
+      "ebayFullName": "Consumer Electronics > Radio Communication > Ham, Amateur Radio",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "15051",
+      "ebayFullName": "Consumer Electronics > Radio Communication > Shortwave Radios",
+      "shopifyCategoryId": "el-2-3-7-5",
+      "shopifyFullName": "Electronics > Audio > Audio Players & Recorders > Radios > Shortwave Radios",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "20381",
+      "ebayFullName": "Consumer Electronics > Radio Communication > Walkie Talkies, Two-Way Radios",
+      "shopifyCategoryId": "el-4-4-4-2",
+      "shopifyFullName": "Electronics > Communications > Communication Radios > Two-Way Radios > Handheld Two-Way Radios",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "40054",
+      "ebayFullName": "Consumer Electronics > Radio Communication > CB Radios",
+      "shopifyCategoryId": "el-4-4-2",
+      "shopifyFullName": "Electronics > Communications > Communication Radios > CB Radios",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "40979",
+      "ebayFullName": "Consumer Electronics > Radio Communication > Scanners",
+      "shopifyCategoryId": "el-4-4-3",
+      "shopifyFullName": "Electronics > Communications > Communication Radios > Radio Scanners",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "149987",
+      "ebayFullName": "Consumer Electronics > Radio Communication > Marine & Aircraft Radios",
+      "shopifyCategoryId": "el-11-5",
+      "shopifyFullName": "Electronics > Marine Electronics > Marine Radios",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "183502",
+      "ebayFullName": "Consumer Electronics > Radio Communication > Antennas",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "183503",
+      "ebayFullName": "Consumer Electronics > Radio Communication > Parts & Accessories",
+      "shopifyCategoryId": "",
+      "shopifyFullName": "",
+      "confidence": 0,
+      "mappingSource": "skipped"
+    },
+    {
+      "ebayId": "15050",
+      "ebayFullName": "Consumer Electronics > Radio Communication > Parts & Accessories > Manuals & Magazines",
+      "shopifyCategoryId": "me-5",
+      "shopifyFullName": "Media > Product Manuals",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "40059",
+      "ebayFullName": "Consumer Electronics > Radio Communication > Parts & Accessories > Other Radio Communication Accs",
+      "shopifyCategoryId": "el-4-4-2",
+      "shopifyFullName": "Electronics > Communications > Communication Radios > CB Radios",
+      "confidence": 0.75,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "48694",
+      "ebayFullName": "Consumer Electronics > Radio Communication > Parts & Accessories > Mounts",
+      "shopifyCategoryId": "el-4-3-3",
+      "shopifyFullName": "Electronics > Communications > Communication Radio Accessories > Radio Mounts & Brackets",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "48701",
+      "ebayFullName": "Consumer Electronics > Radio Communication > Parts & Accessories > Meters",
+      "shopifyCategoryId": "el-4-4-2",
+      "shopifyFullName": "Electronics > Communications > Communication Radios > CB Radios",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "48703",
+      "ebayFullName": "Consumer Electronics > Radio Communication > Parts & Accessories > Batteries & Chargers",
+      "shopifyCategoryId": "el-7-15-1-4",
+      "shopifyFullName": "Electronics > Electronics Accessories > Power > Batteries > General Purpose Batteries",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "48704",
+      "ebayFullName": "Consumer Electronics > Radio Communication > Parts & Accessories > Coax. Cables & Connectors",
+      "shopifyCategoryId": "el-7-2-4",
+      "shopifyFullName": "Electronics > Electronics Accessories > Antenna Accessories > Antenna Cables & Pigtails",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "48705",
+      "ebayFullName": "Consumer Electronics > Radio Communication > Parts & Accessories > Headsets & Earpieces",
+      "shopifyCategoryId": "el-4-3-1",
+      "shopifyFullName": "Electronics > Communications > Communication Radio Accessories > Earpieces",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "48706",
+      "ebayFullName": "Consumer Electronics > Radio Communication > Parts & Accessories > Code Keyers & Keys",
+      "shopifyCategoryId": "el-4-4-1-2",
+      "shopifyFullName": "Electronics > Communications > Communication Radios > Amateur Radios > Morse Code Keys & Keyers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "48707",
+      "ebayFullName": "Consumer Electronics > Radio Communication > Parts & Accessories > Microphones",
+      "shopifyCategoryId": "el-2-2-8",
+      "shopifyFullName": "Electronics > Audio > Audio Components > Microphones",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "48708",
+      "ebayFullName": "Consumer Electronics > Radio Communication > Parts & Accessories > Power Supplies",
+      "shopifyCategoryId": "el-7-15-4-4",
+      "shopifyFullName": "Electronics > Electronics Accessories > Power > Power Adapter & Charger Accessories > Replacement Charger Tips & Connectors",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "48709",
+      "ebayFullName": "Consumer Electronics > Radio Communication > Parts & Accessories > Speakers",
+      "shopifyCategoryId": "el-2-2-10-1",
+      "shopifyFullName": "Electronics > Audio > Audio Components > Speakers > Bookshelf Speakers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "48710",
+      "ebayFullName": "Consumer Electronics > Radio Communication > Parts & Accessories > Tubes",
+      "shopifyCategoryId": "el-3-10",
+      "shopifyFullName": "Electronics > Circuit Boards & Components > Vacuum Tubes",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "48711",
+      "ebayFullName": "Consumer Electronics > Radio Communication > Parts & Accessories > Tuners",
+      "shopifyCategoryId": "el-4-4-2",
+      "shopifyFullName": "Electronics > Communications > Communication Radios > CB Radios",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175735",
+      "ebayFullName": "Consumer Electronics > Radio Communication > Parts & Accessories > Baluns & Chokes",
+      "shopifyCategoryId": "el-7-2-7",
+      "shopifyFullName": "Electronics > Electronics Accessories > Antenna Accessories > Baluns & Duplexers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175736",
+      "ebayFullName": "Consumer Electronics > Radio Communication > Parts & Accessories > Filters",
+      "shopifyCategoryId": "el-3-4-6",
+      "shopifyFullName": "Electronics > Circuit Boards & Components > Electronic Filters > EMI & RFI Filters",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175737",
+      "ebayFullName": "Consumer Electronics > Radio Communication > Parts & Accessories > Oscillators",
+      "shopifyCategoryId": "el-3-5-2-1",
+      "shopifyFullName": "Electronics > Circuit Boards & Components > Passive Circuit Components > Electronic Oscillators > Clock Oscillators",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175738",
+      "ebayFullName": "Consumer Electronics > Radio Communication > Parts & Accessories > Radio & Scanner Crystals",
+      "shopifyCategoryId": "el-4-4-2",
+      "shopifyFullName": "Electronics > Communications > Communication Radios > CB Radios",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "4672",
+      "ebayFullName": "Consumer Electronics > Radio Communication > Antennas > Ham, Amateur Radio Antennas",
+      "shopifyCategoryId": "el-4-4-1-1",
+      "shopifyFullName": "Electronics > Communications > Communication Radios > Amateur Radios > Amateur Radio Transceivers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "48692",
+      "ebayFullName": "Consumer Electronics > Radio Communication > Antennas > CB Radio Antennas",
+      "shopifyCategoryId": "el-4-4-2",
+      "shopifyFullName": "Electronics > Communications > Communication Radios > CB Radios",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175731",
+      "ebayFullName": "Consumer Electronics > Radio Communication > Antennas > Marine/Air Band Radio Antennas",
+      "shopifyCategoryId": "el-7-3-5",
+      "shopifyFullName": "Electronics > Electronics Accessories > Antennas > Satellite Antennas",
+      "confidence": 0.9,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175732",
+      "ebayFullName": "Consumer Electronics > Radio Communication > Antennas > Walkie Talkie/Two-Way Antennas",
+      "shopifyCategoryId": "el-4-4-4-2",
+      "shopifyFullName": "Electronics > Communications > Communication Radios > Two-Way Radios > Handheld Two-Way Radios",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "175733",
+      "ebayFullName": "Consumer Electronics > Radio Communication > Antennas > Other Radio Antennas",
+      "shopifyCategoryId": "el-7-3-1",
+      "shopifyFullName": "Electronics > Electronics Accessories > Antennas > Cellular & WiFi Antennas",
+      "confidence": 0.7,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "4673",
+      "ebayFullName": "Consumer Electronics > Radio Communication > Ham, Amateur Radio > Ham Radio Receivers",
+      "shopifyCategoryId": "el-4-4-1-1",
+      "shopifyFullName": "Electronics > Communications > Communication Radios > Amateur Radios > Amateur Radio Transceivers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "4675",
+      "ebayFullName": "Consumer Electronics > Radio Communication > Ham, Amateur Radio > Ham Radio Transmitters",
+      "shopifyCategoryId": "el-4-4-1-1",
+      "shopifyFullName": "Electronics > Communications > Communication Radios > Amateur Radios > Amateur Radio Transceivers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "40065",
+      "ebayFullName": "Consumer Electronics > Radio Communication > Ham, Amateur Radio > Ham Radio Transceivers",
+      "shopifyCategoryId": "el-4-4-1-1",
+      "shopifyFullName": "Electronics > Communications > Communication Radios > Amateur Radios > Amateur Radio Transceivers",
+      "confidence": 1,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "96966",
+      "ebayFullName": "Consumer Electronics > Radio Communication > Ham, Amateur Radio > Other Ham Radio Equipment",
+      "shopifyCategoryId": "el-4-4-1-1",
+      "shopifyFullName": "Electronics > Communications > Communication Radios > Amateur Radios > Amateur Radio Transceivers",
+      "confidence": 0.8,
+      "mappingSource": "gpt-4.1-mini"
+    },
+    {
+      "ebayId": "163853",
+      "ebayFullName": "Consumer Electronics > Radio Communication > Ham, Amateur Radio > Ham Radio Amplifiers",
+      "shopifyCategoryId": "el-4-4-1-1",
+      "shopifyFullName": "Electronics > Communications > Communication Radios > Amateur Radios > Amateur Radio Transceivers",
+      "confidence": 0.95,
+      "mappingSource": "gpt-4.1-mini"
+    }
+  ]
+}
