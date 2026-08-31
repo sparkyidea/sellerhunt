@@ -14,8 +14,8 @@ How long-lived credentials and short-lived bearers persist for adapter packages.
 
 | Auth scheme | Table pattern | Cardinality | Examples today |
 |---|---|---|---|
-| **API key** (static, app-level) | none (deployment env, passed by caller) | n/a | `geo`, `shipment-tracking` |
-| **Refresh token — user-owned** (OAuth grant per real user) | `<resource>_token` | 1:1 with the authenticated resource (one row per channel) | `channel_token` |
+| **API key** (static, app-level) | none (deployment env, passed by caller) | n/a | none since the split |
+| **Refresh token — user-owned** (OAuth grant per real user) | `<resource>_token` | 1:1 with the authenticated resource | none since the split (`channel_token` was removed with the official marketplace stack; pattern kept for future adapters) |
 | **HMAC** (signing key per persona) + **Refresh token — app-owned** (guest session per persona) | `<resource>_profile` | N rows, pooled, rotated by app | `mobile_profile` |
 
 Decision tree for a new adapter:
@@ -34,7 +34,7 @@ Is there per-row state (per-user, per-persona)?
 
 The two table shapes look similar (both hold an `access_token` + expiry) but model genuinely different things:
 
-| | `channel_token` (Refresh token, user-owned) | `mobile_profile` (HMAC / Refresh token, app-owned) |
+| | `<resource>_token` (Refresh token, user-owned) | `mobile_profile` (HMAC / Refresh token, app-owned) |
 |---|---|---|
 | Ownership | User-bound (FK to channel) | App-owned (no user FK) |
 | Lifecycle | Created when user OAuths; killed if user revokes | Provisioned by ops; killed when persona's stable secret dies |
@@ -115,7 +115,7 @@ The `refresh_token` + `refresh_token_expires_at` pair has the same shape on both
 
 ### Encryption rule
 
-Everything in `access_token`, `refresh_token`, and `credentials` is encrypted at rest with `env.ENCRYPTION_SECRET` via `@dashseller/marketplace/utils/{encrypt,decrypt}-secret`. Never write plaintext into these columns. Sentinel values (`SENTINEL_NEVER_EXPIRES_AT`, encrypted `SENTINEL_NO_REFRESH_TOKEN`) exist for marketplaces where the field is conceptually absent (Shopify offline access) — see `packages/marketplace/src/utils/token-helpers.ts`.
+Everything in `access_token`, `refresh_token`, and `credentials` is encrypted at rest with `env.ENCRYPTION_SECRET` via `encryptSecret`/`decryptSecret` in `packages/trigger-scan/src/utils/secret-crypto.ts`. Never write plaintext into these columns.
 
 ### The TokenManager loop (shared shape, separate implementations)
 
@@ -158,15 +158,14 @@ Per-row failure routing differs by scheme:
   - 401 on the stable-secret derivation → `markDead()` (the persona's stable secret is rejected); manager continues with the next persona in the pool.
   - 401 on a *data* endpoint → `markDataAuthFailure()` (bearer evicted; the persona's secrets still work).
 
-Reference implementations:
-- Refresh token user-owned → `packages/sync/src/token-manager.ts` (`TokenManager` against `channel_token`)
+Reference implementation:
 - HMAC + Refresh token app-owned → `packages/trigger-scan/src/utils/mobile-profile-manager.ts` (`MobileProfileTokenManager` against `mobile_profile`)
+- (The user-owned `TokenManager` against `channel_token` was removed in the split; the pattern above is kept for future OAuth adapters.)
 
 ### When NOT to add a table
 
-API-key adapters (geo, shipment-tracking) have no per-user / per-persona state. The single app-level secret is resolved from env by the caller and passed into the adapter factory. Do not add a token table just because the package has the word "token" in its surface — only add one when there's per-row state to persist.
+API-key adapters have no per-user / per-persona state. The single app-level secret is resolved from env by the caller and passed into the adapter factory. Do not add a token table just because the package has the word "token" in its surface — only add one when there's per-row state to persist.
 
 ### Reference schemas
 
-- `packages/db/src/schema/channel.ts` — `channel_token` (Refresh token, user-owned)
 - `packages/db/src/schema/mobile-profile.ts` — `mobile_profile` (HMAC + Refresh token, app-owned)

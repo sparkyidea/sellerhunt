@@ -16,29 +16,29 @@ Dashseller uses **horizontal layering** (one package per concern), not cal.diy-s
 | -------------------- | ------------------------------------------------ |
 | Database schema      | `packages/db/src/schema/`                        |
 | Auth                 | `packages/auth/src/`                             |
-| External APIs        | `packages/marketplace/src/adapters/`             |
-| Background jobs      | `apps/worker/src/processors/` (cores in `packages/sync/src/`); tracking polls in `packages/trigger-sync/src/workflows/` |
+| External APIs        | `packages/marketplace-scan/src/adapters/`        |
+| Background jobs      | `packages/trigger-scan/src/workflows/` (self-hosted Trigger.dev, cron-driven) |
 | Domain logic + API   | `packages/trpc/src/routers/`                      |
 | Reusable data UI     | `packages/dataview/src/`                         |
 | Shared UI primitives | `packages/ui/src/components/`                    |
-| App-specific UI      | `apps/app/src/{app,components}/`                 |
+| App-specific UI      | `apps/app/src/{app,components,modules}/`         |
 
 ### Adding a new feature
 
-A new feature like "returns" typically touches **multiple packages** in this order:
+A new feature like "watchlists" typically touches **multiple packages** in this order:
 
-1. Schema in `packages/db/src/schema/return.ts`.
+1. Schema in `packages/db/src/schema/watchlist.ts`.
 2. `bun db:generate` (user applies migration).
-3. tRPC router in `packages/trpc/src/routers/return.ts` — register in `routers/index.ts`.
-4. If async: domain core in `packages/sync/src/`, job contract in `packages/job-client`, processor in `apps/worker/src/processors/`.
-5. Route + UI in `apps/app/src/app/(app)/returns/`.
+3. tRPC router in `packages/trpc/src/routers/watchlist.ts` — register in `routers/index.ts`.
+4. If ingestion-side: adapter method in `packages/marketplace-scan/`, workflow in `packages/trigger-scan/src/workflows/`.
+5. Route + UI in `apps/app/src/app/(app)/watchlists/` and `apps/app/src/modules/`.
 6. Reusable cells/views in `packages/dataview/` only if they generalize.
 
 ### When to introduce a new package
 
 Only when:
 
-- The code is consumed by **multiple apps** (`apps/app`, `apps/web`, `apps/api`).
+- The code is consumed by **multiple apps** (`apps/app`, `apps/api`).
 - Or the code is a clear independent concern (third-party adapter, runtime).
 
 Do **not** create per-feature packages (`packages/returns/`). Keep features inside the existing layer packages.

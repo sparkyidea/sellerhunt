@@ -30,13 +30,13 @@ Which package(s) would this affect?
 
 - [ ] `apps/app`
 - [ ] `apps/api`
-- [ ] `apps/web`
 - [ ] `packages/trpc`
 - [ ] `packages/auth`
 - [ ] `packages/config`
 - [ ] `packages/dataview`
 - [ ] `packages/db`
 - [ ] `packages/env`
-- [ ] `packages/marketplace`
+- [ ] `packages/marketplace-scan`
+- [ ] `packages/trigger-scan`
 - [ ] `packages/ui`
 - [ ] Other: ___

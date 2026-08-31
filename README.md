@@ -1,21 +1,21 @@
-# dashseller
+# dashseller (SellerHunt / Explorer)
 
-This project was created with [Better-T-Stack](https://github.com/AmanVarshney01/create-better-t-stack), a modern TypeScript stack that combines Next.js, Hono, TRPC, and more.
+The **Explorer** stack split out of the original dashseller: competitor-listing
+scanning and product research over *unofficial* marketplace data. There is no
+official-marketplace integration here — orders, listings sync, shipments,
+inventory, channels, and organizations were removed in the split. (Package
+scopes stay `@dashseller/*` until the sellerhunt rename, a separate task.)
 
-## Features
+## Stack
 
-- **TypeScript** - For type safety and improved developer experience
-- **Next.js** - Full-stack React framework
-- **TailwindCSS** - Utility-first CSS for rapid UI development
-- **Shared UI package** - shadcn/ui primitives live in `packages/ui`
-- **Hono** - Lightweight, performant server framework
-- **tRPC** - End-to-end type-safe APIs
-- **Bun** - Runtime environment
-- **Drizzle** - TypeScript-first ORM
-- **PostgreSQL** - Database engine
-- **Authentication** - Better-Auth
-- **Husky** - Git hooks for code quality
-- **Turborepo** - Optimized monorepo build system
+- **TypeScript** + **Bun** + **Turborepo** monorepo
+- **Next.js** — the dashboard app (`apps/app`)
+- **Hono** + **tRPC** — the API (`apps/api`)
+- **Drizzle** + **PostgreSQL** — database (`packages/db`)
+- **Better-Auth** — user authentication (no organizations/tenancy)
+- **Trigger.dev** (self-hosted) — the scan ingestion pipeline (`packages/trigger-scan`)
+- **shadcn/ui** — shared primitives in `packages/ui`
+- **Husky** — git hooks for code quality
 
 ## Getting Started
 
@@ -25,22 +25,21 @@ First, install the dependencies:
 bun install
 ```
 
-## Local services (Postgres + Redis)
+## Local services (Postgres)
 
-Local development runs against Docker-hosted Postgres and Redis defined in
-`docker-compose.dev.yml` (persistent named volumes — unlike the ephemeral
+Local development runs against a Docker-hosted Postgres defined in
+`docker-compose.dev.yml` (persistent named volume — unlike the ephemeral
 `docker-compose.test.yml`, which belongs to the integration tests; the two
 stacks use distinct ports and can run side by side).
 
 ```bash
-bun docker:up    # Postgres on localhost:54320, Redis on localhost:63790
+bun docker:up    # Postgres on localhost:54320
 ```
 
-The env files point at these by default:
+The env files point at it by default:
 
-- `apps/api/.env` — `DATABASE_URL`, `REDIS_QUEUE_URL`. drizzle-kit reads
-  this file too, so `db:generate` / `db:migrate` / `db:studio` follow it.
-- `apps/worker/.env` — `DATABASE_URL`, `REDIS_QUEUE_URL`.
+- `apps/api/.env` — `DATABASE_URL`. drizzle-kit reads this file too, so
+  `db:generate` / `db:migrate` / `db:studio` follow it.
 
 Seed the database one of two ways:
 
@@ -50,12 +49,13 @@ bun db:clone     # exact copy of a remote DB (schema + data) — prompts
 bun db:migrate   # or: start empty and apply migrations
 ```
 
-`bun docker:down` stops the containers and keeps the data. Full
+`bun docker:down` stops the container and keeps the data. Full
 reset: `docker compose -f docker-compose.dev.yml down -v`.
 
-Deployed services keep their own URLs: Dokploy apps use internal Docker
-hostnames, and `packages/trigger-sync/.env` intentionally stays on the
-remote dev DB (its tasks run on the Trigger.dev worker, not your laptop).
+The scan pipeline (`packages/trigger-scan`) runs on a self-hosted Trigger.dev
+instance and populates the scan tables autonomously on cron — the app never
+triggers it. `packages/trigger-scan/.env` points at the deployed DB, not your
+laptop.
 
 Then, run the development server:
 
@@ -63,16 +63,16 @@ Then, run the development server:
 bun run dev
 ```
 
-Open [http://localhost:3001](http://localhost:3001) in your browser to see the web application.
-The API is running at [http://localhost:3000](http://localhost:3000).
+Open [http://localhost:3002](http://localhost:3002) in your browser to see the
+dashboard. The API is running at [http://localhost:3000](http://localhost:3000).
 
 ## UI Customization
 
-React web apps in this stack share shadcn/ui primitives through `packages/ui`.
+The dashboard shares shadcn/ui primitives through `packages/ui`.
 
 - Change design tokens and global styles in `packages/ui/src/styles/globals.css`
 - Update shared primitives in `packages/ui/src/components/*`
-- Adjust shadcn aliases or style config in `packages/ui/components.json` and `apps/web/components.json`
+- Adjust shadcn aliases or style config in `packages/ui/components.json`
 
 ### Add more shared components
 
@@ -90,7 +90,8 @@ import { Button } from "@sparkyidea/ui/components/button";
 
 ### Add app-specific blocks
 
-If you want to add app-specific blocks instead of shared primitives, run the shadcn CLI from `apps/web`.
+If you want to add app-specific blocks instead of shared primitives, run the
+shadcn CLI from `apps/app`.
 
 ## Git Hooks and Formatting
 
@@ -101,22 +102,28 @@ If you want to add app-specific blocks instead of shared primitives, run the sha
 ```
 dashseller/
 ├── apps/
-│   ├── web/         # Frontend application (Next.js)
-│   └── server/      # Backend API (Hono, TRPC)
+│   ├── app/                  # Dashboard (Next.js) — /explorer/listings
+│   └── api/                  # Backend (Hono, tRPC, Better-Auth)
 ├── packages/
-│   ├── ui/          # Shared shadcn/ui components and styles
-│   ├── api/         # API layer / business logic
-│   ├── auth/        # Authentication configuration & logic
-│   └── db/          # Database schema & queries
+│   ├── auth/                 # Better-Auth config + auth UI
+│   ├── dataview/             # Domain query + display abstraction
+│   ├── db/                   # Drizzle schema, migrations, seeds
+│   ├── env/                  # Per-surface T3 env schemas
+│   ├── marketplace-scan/     # Unofficial scraping adapters (eBay, shop)
+│   ├── trigger-scan/         # Trigger.dev scan pipeline (self-hosted)
+│   ├── trpc/                 # tRPC appRouter + dataview query builders
+│   └── ui/                   # Shared shadcn/ui components and styles
 ```
 
 ## Available Scripts
 
 - `bun run dev`: Start all applications in development mode
 - `bun run build`: Build all applications
-- `bun x turbo -F <app> dev`: Start a single app (web, app, api, worker)
+- `bun x turbo -F <app> dev`: Start a single app (app, api)
 - `bun run check-types`: Check TypeScript types across all apps
-- `bun run db:push`: Push schema changes to database
-- `bun run db:generate`: Generate database client/types
-- `bun run db:migrate`: Run database migrations
-- `bun run db:studio`: Open database studio UI
+- `bun run check` / `bun run fix`: Lint + format (ultracite)
+- `bun run test`: Unit tests
+- `bun db:generate`: Generate a migration from schema changes
+- `bun db:migrate`: Run database migrations
+- `bun db:studio`: Open database studio UI
+- `bun trigger-scan:dev` / `bun trigger-scan:deploy`: Run / deploy the scan pipeline

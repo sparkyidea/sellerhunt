@@ -1,19 +1,18 @@
 ---
 title: Adapter Package Explicit Credentials
 impact: HIGH
-tags: [patterns, adapters, marketplace, geo, env, credentials]
+tags: [patterns, adapters, marketplace-scan, env, credentials]
 ---
 
 ## Adapter Package Explicit Credentials
 
 **Impact: HIGH**
 
-Adapter packages (`packages/marketplace`, `packages/geo`,
-`packages/shipment-tracking`, `packages/marketplace-scan`) are pure
-external-service clients. Runtime package code must not resolve secrets from
-env or DB. Callers at deployment boundaries (`apps/api`,
-`packages/trigger-sync`, `packages/trigger-scan`, tests, sandbox setup scripts)
-resolve credentials and pass explicit config into factories/functions.
+Adapter packages (`packages/marketplace-scan` today; any future adapter
+package) are pure external-service clients. Runtime package code must not
+resolve secrets from env or DB. Callers at deployment boundaries
+(`packages/trigger-scan`, tests, sandbox setup scripts) resolve credentials
+and pass explicit config into factories/functions.
 
 For auth-scheme selection see `patterns-adapter-auth.md`. For DB persistence
 shapes see `data-adapter-token-storage.md`.
@@ -53,7 +52,7 @@ export function createX(provider: Provider, config: XConfig): X {
 
 ```ts
 // deployment boundary
-import { env } from "@dashseller/env/trigger";
+import { env } from "@dashseller/env/trigger-scan";
 import { createX } from "@dashseller/x";
 
 const client = createX("provider", { apiKey: env.PROVIDER_API_KEY });
@@ -77,10 +76,5 @@ import { db } from "@dashseller/db";
 
 ### Current package expectations
 
-- `@dashseller/geo`: caller passes `apiKey`.
-- `@dashseller/shipment-tracking`: caller passes provider config.
-- `@dashseller/marketplace`: caller passes OAuth app credentials plus
-  row-owned access/refresh tokens; `client.refresh()` returns tokens for the
-  caller to persist.
 - `@dashseller/marketplace-scan`: caller passes `getAuthToken`; token pools and
   cached bearer persistence live in `MobileProfileTokenManager`.

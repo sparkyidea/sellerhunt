@@ -31,7 +31,7 @@ packages/dataview/src/
   types/          — shared types
 ```
 
-tRPC routers consume the dataview validators directly — see `packages/trpc/src/routers/listing.ts` and `order.ts` for examples.
+tRPC routers consume the dataview validators directly — see `packages/trpc/src/routers/scan-listing.ts` for the canonical example.
 
 ## Adding a new table view
 

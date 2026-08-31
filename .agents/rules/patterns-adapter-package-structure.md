@@ -1,14 +1,14 @@
 ---
 title: Adapter Package Structure
 impact: HIGH
-tags: [patterns, adapters, marketplace, geo, shipment-tracking, marketplace-scan, structure]
+tags: [patterns, adapters, marketplace-scan, structure]
 ---
 
 ## Adapter Package Structure
 
 **Impact: HIGH**
 
-Adapter packages (`packages/marketplace`, `packages/geo`, `packages/shipment-tracking`, `packages/marketplace-scan`) share a structural template so call sites, file locations, and naming stay predictable as we add providers. Drift between these packages costs review time and makes onboarding new adapters slower.
+Adapter packages (`packages/marketplace-scan` today; any future adapter package) share a structural template so call sites, file locations, and naming stay predictable as we add providers. Drift between these packages costs review time and makes onboarding new adapters slower.
 
 This rule covers **layout and naming**. For the boot-time env discipline these packages also obey, see `patterns-adapter-package.md`.
 
@@ -58,20 +58,20 @@ Only include sub-paths whose source file exists. Never barrel-export types or ut
 
 Two valid shapes. The configs across providers decide:
 
-**Uniform configs** (geo, marketplace, marketplace-scan) → take provider as a separate arg:
+**Uniform configs** (marketplace-scan) → take provider as a separate arg:
 
 ```ts
-export function createGeocoder(provider: GeocoderProvider, config: GeoFactoryConfig): Geocoder
+export function createScanClient(provider: ScanProvider, config: ScanFactoryConfig): ScanClient
 ```
 
-**Heterogeneous configs per provider** (shipment-tracking) → discriminator field in config:
+**Heterogeneous configs per provider** → discriminator field in config:
 
 ```ts
-export type ProviderConfig = PackageTrackerConfig /* | NextProviderConfig */;
-// PackageTrackerConfig has { provider: "package-tracker", credential, ... }
+export type ProviderConfig = SomeProviderConfig /* | NextProviderConfig */;
+// SomeProviderConfig has { provider: "some-provider", credential, ... }
 // A future provider with no credential would be { provider: "...", ... }
 
-export function createTrackingClient(config: ProviderConfig): TrackingClient
+export function createClient(config: ProviderConfig): Client
 ```
 
 The discriminator-in-config form gives proper type narrowing when each provider needs structurally different credentials. The two-arg form is cleaner when configs share a shape. Don't force one onto the other.
@@ -114,4 +114,4 @@ Adapter implementations still import the contract from `./base` directly — onl
 
 ### Reference
 
-Canonical example: `packages/shipment-tracking/` (heterogeneous config form).
+Canonical example: `packages/marketplace-scan/` (uniform config form).

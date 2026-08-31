@@ -163,14 +163,14 @@ jobs:
             // Area detection patterns for dashseller
             const areaPatterns = {
               app: [/^apps\/app\//],
-              web: [/^apps\/web\//],
               api: [/^apps\/api\//],
               trpc: [/^packages\/trpc\//],
               auth: [/^packages\/auth\//],
               dataview: [/^packages\/dataview\//],
               db: [/^packages\/db\//],
               env: [/^packages\/env\//],
-              marketplace: [/^packages\/marketplace\//],
+              "marketplace-scan": [/^packages\/marketplace-scan\//],
+              "trigger-scan": [/^packages\/trigger-scan\//],
               ui: [/^packages\/ui\//],
               config: [
                 /^packages\/config\//,

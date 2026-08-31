@@ -16,9 +16,9 @@ For explicit-credential package boundaries see `patterns-adapter-package.md`. Fo
 
 | Scheme | Stable secret | Per-call work | Storage | Examples today |
 |---|---|---|---|---|
-| **API key** | the key itself | none (verbatim) | deployment env, passed by caller | `geo` (Google Maps, Rollo), `shipment-tracking` (package-tracker) |
+| **API key** | the key itself | none (verbatim) | deployment env, passed by caller | none today (the geo / shipment-tracking adapters used this before the split) |
 | **HMAC** | signing key | compute HMAC(key, fresh_timestamp) before every mint | DB (persona pool, ops-managed) | `marketplace-scan` eBay (`hmacKey` Frida-extracted from iOS app) |
-| **Refresh token** | server-issued refresh token | POST refresh_token grant → fresh access token | DB — `<resource>_token` (user-owned OAuth) or `<resource>_profile.refresh_token` (app-owned guest session) | `marketplace` (eBay + Shopify OAuth, user-owned), `marketplace-scan` shop (`SignInAsGuest` → refresh token, app-owned) |
+| **Refresh token** | server-issued refresh token | POST refresh_token grant → fresh access token | DB — `<resource>_token` (user-owned OAuth) or `<resource>_profile.refresh_token` (app-owned guest session) | `marketplace-scan` shop (`SignInAsGuest` → refresh token, app-owned). User-owned OAuth had no surviving example — the official `marketplace` package was removed in the split |
 
 The decision tree:
 
@@ -243,7 +243,6 @@ Each adapter folder owns its `http.ts` (REST adapters) or equivalent (GraphQL ad
 
 ### References
 
-- API key: `packages/geo/src/index.ts`, `packages/shipment-tracking/src/index.ts`
 - HMAC: `packages/marketplace-scan/src/adapters/ebay/auth/get-token.ts`, `packages/marketplace-scan/src/adapters/ebay/auth/get-new-token.ts`, `packages/marketplace-scan/src/adapters/ebay/http.ts`
-- Refresh token (user-owned): `packages/marketplace/src/index.ts`, `packages/sync/src/token-manager.ts`
 - Refresh token (app-owned): `packages/marketplace-scan/src/adapters/shop/auth/get-token.ts`, `packages/marketplace-scan/src/adapters/shop/auth/get-new-token.ts`, `packages/marketplace-scan/src/adapters/shop/auth/refresh-token.ts`, `packages/marketplace-scan/src/adapters/shop/http.ts`, `packages/marketplace-scan/src/index.ts` (the `getScanToken` dispatcher), `packages/trigger-scan/src/utils/mobile-profile-manager.ts`
+- API key and refresh-token-user-owned have no in-repo examples since the split; the pattern text above is kept for future adapters.
