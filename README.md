@@ -13,7 +13,7 @@ scopes stay `@dashseller/*` until the sellerhunt rename, a separate task.)
 - **Hono** + **tRPC** — the API (`apps/api`)
 - **Drizzle** + **PostgreSQL** — database (`packages/db`)
 - **Better-Auth** — user authentication (no organizations/tenancy)
-- **Trigger.dev** (self-hosted) — the scan ingestion pipeline (`packages/trigger-scan`)
+- **Trigger.dev** (self-hosted) — the scan ingestion pipeline (`apps/trigger-scan`)
 - **shadcn/ui** — shared primitives in `packages/ui`
 - **Husky** — git hooks for code quality
 
@@ -52,9 +52,9 @@ bun db:migrate   # or: start empty and apply migrations
 `bun docker:down` stops the container and keeps the data. Full
 reset: `docker compose -f docker-compose.dev.yml down -v`.
 
-The scan pipeline (`packages/trigger-scan`) runs on a self-hosted Trigger.dev
+The scan pipeline (`apps/trigger-scan`) runs on a self-hosted Trigger.dev
 instance and populates the scan tables autonomously on cron — the app never
-triggers it. `packages/trigger-scan/.env` points at the deployed DB, not your
+triggers it. `apps/trigger-scan/.env` points at the deployed DB, not your
 laptop.
 
 Then, run the development server:
@@ -103,14 +103,14 @@ shadcn CLI from `apps/app`.
 dashseller/
 ├── apps/
 │   ├── app/                  # Dashboard (Next.js) — /explorer/listings
-│   └── api/                  # Backend (Hono, tRPC, Better-Auth)
+│   ├── api/                  # Backend (Hono, tRPC, Better-Auth)
+│   └── trigger-scan/         # Trigger.dev scan pipeline (self-hosted)
 ├── packages/
 │   ├── auth/                 # Better-Auth config + auth UI
 │   ├── dataview/             # Domain query + display abstraction
 │   ├── db/                   # Drizzle schema, migrations, seeds
 │   ├── env/                  # Per-surface T3 env schemas
 │   ├── marketplace-scan/     # Unofficial scraping adapters (eBay, shop)
-│   ├── trigger-scan/         # Trigger.dev scan pipeline (self-hosted)
 │   ├── trpc/                 # tRPC appRouter + dataview query builders
 │   └── ui/                   # Shared shadcn/ui components and styles
 ```

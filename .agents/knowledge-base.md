@@ -22,7 +22,7 @@ Two apps, one shared backend:
   Talks to `apps/api` via the tRPC client in `apps/app/src/lib/utils/trpc/client.tsx`
   (`httpBatchLink`, `credentials: "include"`, superjson).
 
-The scan pipeline that fills the explorer's data (`packages/trigger-scan`) runs
+The scan pipeline that fills the explorer's data (`apps/trigger-scan`) runs
 autonomously on self-hosted Trigger.dev — the apps never trigger it.
 
 ---
@@ -82,7 +82,7 @@ views by following `packages/dataview/src/components/views/`, not raw
   unofficial scraping adapters (eBay, shop) that read *other people's* public
   listings. Read-only research data; no seller credentials. Exports
   `createScanClient` / `getScanToken`; types at `/types`, errors at `/errors`.
-- **`@dashseller/trigger-scan`** (`packages/trigger-scan/`) — the scan jobs that
+- **`@dashseller/trigger-scan`** (`apps/trigger-scan/`) — the scan jobs that
   drive the adapters and write `scan_*` rows. Deploys to the **self-hosted**
   Trigger.dev at `https://trigger.sparkyidea.com`. Deliberately tiny secret
   surface (`DATABASE_URL` + `ENCRYPTION_SECRET` only). Runs on cron; the app

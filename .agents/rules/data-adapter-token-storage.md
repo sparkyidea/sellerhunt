@@ -115,7 +115,7 @@ The `refresh_token` + `refresh_token_expires_at` pair has the same shape on both
 
 ### Encryption rule
 
-Everything in `access_token`, `refresh_token`, and `credentials` is encrypted at rest with `env.ENCRYPTION_SECRET` via `encryptSecret`/`decryptSecret` in `packages/trigger-scan/src/utils/secret-crypto.ts`. Never write plaintext into these columns.
+Everything in `access_token`, `refresh_token`, and `credentials` is encrypted at rest with `env.ENCRYPTION_SECRET` via `encryptSecret`/`decryptSecret` in `apps/trigger-scan/src/utils/secret-crypto.ts`. Never write plaintext into these columns.
 
 ### The TokenManager loop (shared shape, separate implementations)
 
@@ -159,7 +159,7 @@ Per-row failure routing differs by scheme:
   - 401 on a *data* endpoint → `markDataAuthFailure()` (bearer evicted; the persona's secrets still work).
 
 Reference implementation:
-- HMAC + Refresh token app-owned → `packages/trigger-scan/src/utils/mobile-profile-manager.ts` (`MobileProfileTokenManager` against `mobile_profile`)
+- HMAC + Refresh token app-owned → `apps/trigger-scan/src/utils/mobile-profile-manager.ts` (`MobileProfileTokenManager` against `mobile_profile`)
 - (The user-owned `TokenManager` against `channel_token` was removed in the split; the pattern above is kept for future OAuth adapters.)
 
 ### When NOT to add a table

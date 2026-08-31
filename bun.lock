@@ -85,6 +85,23 @@
         "typescript": "catalog:",
       },
     },
+    "apps/trigger-scan": {
+      "name": "@dashseller/trigger-scan",
+      "dependencies": {
+        "@dashseller/db": "workspace:*",
+        "@dashseller/env": "workspace:*",
+        "@dashseller/marketplace-scan": "workspace:*",
+        "@trigger.dev/sdk": "catalog:",
+        "drizzle-orm": "catalog:",
+        "jose": "catalog:",
+      },
+      "devDependencies": {
+        "@dashseller/config": "workspace:*",
+        "@trigger.dev/build": "catalog:",
+        "trigger.dev": "catalog:",
+        "typescript": "catalog:",
+      },
+    },
     "packages/auth": {
       "name": "@dashseller/auth",
       "dependencies": {
@@ -235,23 +252,6 @@
         "dotenv": "catalog:",
         "typescript": "catalog:",
         "vitest": "catalog:",
-      },
-    },
-    "packages/trigger-scan": {
-      "name": "@dashseller/trigger-scan",
-      "dependencies": {
-        "@dashseller/db": "workspace:*",
-        "@dashseller/env": "workspace:*",
-        "@dashseller/marketplace-scan": "workspace:*",
-        "@trigger.dev/sdk": "catalog:",
-        "drizzle-orm": "catalog:",
-        "jose": "catalog:",
-      },
-      "devDependencies": {
-        "@dashseller/config": "workspace:*",
-        "@trigger.dev/build": "catalog:",
-        "trigger.dev": "catalog:",
-        "typescript": "catalog:",
       },
     },
     "packages/trpc": {
@@ -585,7 +585,7 @@
 
     "@dashseller/marketplace-scan": ["@dashseller/marketplace-scan@workspace:packages/marketplace-scan"],
 
-    "@dashseller/trigger-scan": ["@dashseller/trigger-scan@workspace:packages/trigger-scan"],
+    "@dashseller/trigger-scan": ["@dashseller/trigger-scan@workspace:apps/trigger-scan"],
 
     "@dashseller/trpc": ["@dashseller/trpc@workspace:packages/trpc"],
 

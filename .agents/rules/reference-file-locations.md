@@ -13,10 +13,11 @@ move.
 
 ### Apps
 
-| App        | Path                 | Purpose                                                              |
-| ---------- | -------------------- | -------------------------------------------------------------------- |
-| `apps/api` | Hono backend         | Only backend. Mounts `/api/auth` (better-auth), `/trpc`, `/health`.  |
-| `apps/app` | Next.js (App Router) | Authenticated dashboard — `/explorer/listings`, `/settings/*`.       |
+| App                 | Path                 | Purpose                                                              |
+| ------------------- | -------------------- | -------------------------------------------------------------------- |
+| `apps/api`          | Hono backend         | Only backend. Mounts `/api/auth` (better-auth), `/trpc`, `/health`.  |
+| `apps/app`          | Next.js (App Router) | Authenticated dashboard — `/explorer/listings`, `/settings/*`.       |
+| `apps/trigger-scan` | Trigger.dev worker   | Standalone deploy target (`@dashseller/trigger-scan`), self-hosted at `https://trigger.sparkyidea.com`. Nothing imports it — cron-driven. `src/workflows/{ebay,scan}/`, `nodes/scan/`, `utils/` (`mobile-profile-manager.ts`, `secret-crypto.ts`). |
 
 ### Packages
 
@@ -29,8 +30,9 @@ move.
 | `@sparkyidea/ui`              | `packages/ui/src/`            | shadcn-based primitives (`components/`), icons, `lib/utils.ts` (`cn`), styles.                   |
 | `@dashseller/env`             | `packages/env/src/`           | T3 env validation. Per-target files: `app.ts`, `server.ts`, `db.ts`, `trigger-scan.ts`.         |
 | `@dashseller/marketplace-scan`| `packages/marketplace-scan/src/` | Unofficial scraping adapters (eBay, shop) for read-only research data. `index.ts` exports `createScanClient`/`getScanToken`; `/types`, `/errors`. |
-| `@dashseller/trigger-scan`    | `packages/trigger-scan/src/`  | Trigger.dev scan jobs (self-hosted at `https://trigger.sparkyidea.com`). `workflows/{ebay,scan}/`, `nodes/scan/`, `utils/` (`mobile-profile-manager.ts`, `secret-crypto.ts`). |
 | `@dashseller/config`          | `packages/config/`            | Shared TS / build config.                                                                        |
+
+> The scan worker lives in **`apps/`** (`apps/trigger-scan`), not here — it's a deploy target, not a consumed library. See the Apps table above.
 
 ### Routes
 
@@ -43,7 +45,7 @@ move.
 
 - `scan-listing` — the explorer's read API (`get`, `getMany`, `getGroup`), all `publicProcedure`.
 
-### Trigger.dev scan workflows (in `packages/trigger-scan/src/workflows/`)
+### Trigger.dev scan workflows (in `apps/trigger-scan/src/workflows/`)
 
 - `ebay/ebay-listings-scanner.ts` — cron that fans out scan jobs.
 - `scan/scan-listings-by-{ids,keyword,seller}.ts` — listing discovery phases.

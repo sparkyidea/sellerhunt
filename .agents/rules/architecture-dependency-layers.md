@@ -22,7 +22,7 @@ Layer 4  apps/app                                      → auth, db, env, trpc, 
          apps/api                                      → auth, db, env, trpc
 ```
 
-**`packages/trigger-scan` isolation:** the scan pipeline runs on a self-hosted
+**`apps/trigger-scan` isolation:** the scan pipeline runs on a self-hosted
 Trigger.dev instance, autonomously on cron. Nothing depends on it — `trpc` and
 the apps only read the scan tables it populates. Keep it that way: the job
 runner depends on lower layers (db, marketplace-scan); nothing depends back

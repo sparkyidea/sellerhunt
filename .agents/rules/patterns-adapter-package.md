@@ -11,7 +11,7 @@ tags: [patterns, adapters, marketplace-scan, env, credentials]
 Adapter packages (`packages/marketplace-scan` today; any future adapter
 package) are pure external-service clients. Runtime package code must not
 resolve secrets from env or DB. Callers at deployment boundaries
-(`packages/trigger-scan`, tests, sandbox setup scripts) resolve credentials
+(`apps/trigger-scan`, tests, sandbox setup scripts) resolve credentials
 and pass explicit config into factories/functions.
 
 For auth-scheme selection see `patterns-adapter-auth.md`. For DB persistence

@@ -37,6 +37,6 @@ Which package(s) would this affect?
 - [ ] `packages/db`
 - [ ] `packages/env`
 - [ ] `packages/marketplace-scan`
-- [ ] `packages/trigger-scan`
+- [ ] `apps/trigger-scan`
 - [ ] `packages/ui`
 - [ ] Other: ___

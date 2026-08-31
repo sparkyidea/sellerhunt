@@ -244,5 +244,5 @@ Each adapter folder owns its `http.ts` (REST adapters) or equivalent (GraphQL ad
 ### References
 
 - HMAC: `packages/marketplace-scan/src/adapters/ebay/auth/get-token.ts`, `packages/marketplace-scan/src/adapters/ebay/auth/get-new-token.ts`, `packages/marketplace-scan/src/adapters/ebay/http.ts`
-- Refresh token (app-owned): `packages/marketplace-scan/src/adapters/shop/auth/get-token.ts`, `packages/marketplace-scan/src/adapters/shop/auth/get-new-token.ts`, `packages/marketplace-scan/src/adapters/shop/auth/refresh-token.ts`, `packages/marketplace-scan/src/adapters/shop/http.ts`, `packages/marketplace-scan/src/index.ts` (the `getScanToken` dispatcher), `packages/trigger-scan/src/utils/mobile-profile-manager.ts`
+- Refresh token (app-owned): `packages/marketplace-scan/src/adapters/shop/auth/get-token.ts`, `packages/marketplace-scan/src/adapters/shop/auth/get-new-token.ts`, `packages/marketplace-scan/src/adapters/shop/auth/refresh-token.ts`, `packages/marketplace-scan/src/adapters/shop/http.ts`, `packages/marketplace-scan/src/index.ts` (the `getScanToken` dispatcher), `apps/trigger-scan/src/utils/mobile-profile-manager.ts`
 - API key and refresh-token-user-owned have no in-repo examples since the split; the pattern text above is kept for future adapters.

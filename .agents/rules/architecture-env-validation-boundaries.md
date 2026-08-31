@@ -37,7 +37,7 @@ The other failure mode: a domain env that overreaches. A domain schema that spre
 ### Incorrect
 
 ```ts
-// packages/trigger-scan/src/some-workflow.ts
+// apps/trigger-scan/src/some-workflow.ts
 import { env } from "@dashseller/env/db"; // BAD — domain env from inside a deployment
 
 const url = env.DATABASE_URL;
@@ -56,7 +56,7 @@ export const someDomainEnvSchema = {
 ### Correct
 
 ```ts
-// packages/trigger-scan/src/some-workflow.ts
+// apps/trigger-scan/src/some-workflow.ts
 import { env } from "@dashseller/env/trigger-scan"; // consolidated deployment env
 
 const url = env.DATABASE_URL; // db var, validated once alongside scan vars

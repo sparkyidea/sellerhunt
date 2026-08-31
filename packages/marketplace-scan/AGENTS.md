@@ -192,7 +192,7 @@ All adapter HTTP failures throw `ScanRequestError` with:
 
 Trigger workflows route on these to decide bearer cache eviction vs.
 cooldown. See `MobileProfileTokenManager` in
-`packages/trigger-scan/src/utils/mobile-profile-manager.ts`.
+`apps/trigger-scan/src/utils/mobile-profile-manager.ts`.
 
 ## Auth — the mobile device-persona pool
 
@@ -277,7 +277,7 @@ file, override with `EBAY_PROFILE=w-00003` / `SHOP_PROFILE=w-00001` (or
 - `.agents/knowledge-base.md` — domain context for dashseller as a whole.
 - `packages/marketplace/AGENTS.md` — sibling package for OAuth-authorized
   marketplace API access (the `ApiClient` factory).
-- `packages/trigger-scan/src/utils/mobile-profile-manager.ts` — the pool manager
+- `apps/trigger-scan/src/utils/mobile-profile-manager.ts` — the pool manager
   that wires `mobile_profile` rows into the factory's `getAuthToken`,
   minting and caching bearers via `getAuthToken`.
 - `packages/db/src/schema/scan.ts` — `scan_seller`, `scan_listing`,
