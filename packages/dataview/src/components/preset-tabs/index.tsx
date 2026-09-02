@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef } from "react";
+import { type ReactNode, useEffect, useMemo, useRef } from "react";
 import { useFilterParams } from "../../hooks/use-filter-params";
 import { useGroupParams } from "../../hooks/use-group-params";
 import { useSortParams } from "../../hooks/use-sort-params";
@@ -59,6 +59,12 @@ interface PresetTabsProps {
   /** Tab options - first option is typically the unfiltered default */
   options: TabOption[];
   /**
+   * Right-aligned content on the tab row (e.g. `<NotionToolbarActions />`).
+   * Stays visible at every breakpoint, including when `mobileSelect`
+   * swaps the tabs for a Select.
+   */
+  trailing?: ReactNode;
+  /**
    * Visual style: "segmented" pill group or "line" underline row.
    * @default "segmented"
    */
@@ -76,6 +82,15 @@ interface PresetTabsProps {
  * tab is active.
  *
  * Coexisting instances must have disjoint owned-property sets.
+ *
+ * @example
+ * ```tsx
+ * <DataViewProvider …>
+ *   <PresetTabs options={presets} trailing={<NotionToolbarActions enableSettings />} />
+ *   <NotionToolbarChips />
+ *   <GalleryView … />
+ * </DataViewProvider>
+ * ```
  */
 function PresetTabsComponent({
   "aria-label": ariaLabel,
@@ -83,6 +98,7 @@ function PresetTabsComponent({
   mobileSelect = true,
   onActiveChange,
   options,
+  trailing,
   variant = "segmented",
 }: PresetTabsProps) {
   const { setGroup, clearGroup } = useGroupParams();
@@ -160,6 +176,54 @@ function PresetTabsComponent({
   };
 
   const isLine = variant === "line";
+  const hasTrailing = trailing !== null && trailing !== undefined;
+
+  const select = mobileSelect ? (
+    <Select onValueChange={handleValueChange} value={activeLabel}>
+      <SelectTrigger
+        aria-label={ariaLabel ?? "View"}
+        className="flex w-fit sm:hidden"
+      >
+        <SelectValue placeholder="Select a view" />
+      </SelectTrigger>
+      <SelectContent>
+        {options.map((option) => (
+          <SelectItem key={option.label} value={option.label}>
+            {option.label}
+          </SelectItem>
+        ))}
+      </SelectContent>
+    </Select>
+  ) : null;
+
+  const tabsList = (
+    <TabsList
+      aria-label={ariaLabel}
+      className={cn(
+        mobileSelect ? "hidden sm:flex" : "flex",
+        isLine && "justify-start gap-4 overflow-x-auto rounded-none p-0",
+        // With trailing content the list shares the row: shrink + scroll
+        // instead of taking the full width, and the underline border moves
+        // to the shared row wrapper so it spans tabs + trailing at one y.
+        isLine && (hasTrailing ? "min-w-0 flex-1" : "w-full border-b")
+      )}
+      variant={isLine ? "line" : "default"}
+    >
+      {options.map((option) => (
+        <TabsTrigger
+          className={
+            isLine
+              ? "flex-none border-0 text-muted-foreground after:bg-primary data-active:font-semibold group-data-horizontal/tabs:after:bottom-[-0.5px]"
+              : undefined
+          }
+          key={option.label}
+          value={option.label}
+        >
+          {option.label}
+        </TabsTrigger>
+      ))}
+    </TabsList>
+  );
 
   return (
     <Tabs
@@ -167,55 +231,42 @@ function PresetTabsComponent({
       onValueChange={handleValueChange}
       value={activeLabel}
     >
-      {mobileSelect && (
-        <Select onValueChange={handleValueChange} value={activeLabel}>
-          <SelectTrigger
-            aria-label={ariaLabel ?? "View"}
-            className="flex w-fit sm:hidden"
-          >
-            <SelectValue placeholder="Select a view" />
-          </SelectTrigger>
-          <SelectContent>
-            {options.map((option) => (
-              <SelectItem key={option.label} value={option.label}>
-                {option.label}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
-      )}
-
-      <TabsList
-        aria-label={ariaLabel}
-        className={cn(
-          mobileSelect ? "hidden sm:flex" : "flex",
-          isLine &&
-            "w-full justify-start gap-4 overflow-x-auto rounded-none border-b p-0"
-        )}
-        variant={isLine ? "line" : "default"}
-      >
-        {options.map((option) => (
-          <TabsTrigger
+      {hasTrailing ? (
+        <div
+          className={
+            isLine
+              ? // Single border on the row: the h-8 list and the 32px icon
+                // buttons are equal height, so tabs + trailing share one
+                // underline instead of two misaligned ones.
+                "flex w-full items-center border-b"
+              : "flex h-9 items-center gap-2"
+          }
+        >
+          {select}
+          {tabsList}
+          <div
             className={
               isLine
-                ? "flex-none border-0 text-muted-foreground after:bg-primary data-active:font-semibold group-data-horizontal/tabs:after:bottom-[-0.5px]"
-                : undefined
+                ? "flex items-center gap-2 pl-2"
+                : "ml-auto flex items-center gap-2"
             }
-            key={option.label}
-            value={option.label}
           >
-            {option.label}
-          </TabsTrigger>
-        ))}
-      </TabsList>
+            {trailing}
+          </div>
+        </div>
+      ) : (
+        <>
+          {select}
+          {tabsList}
+        </>
+      )}
     </Tabs>
   );
 }
 
 // Static slot marker for DataViewProvider child splitting (NotionToolbar
 // pattern): a PresetTabs placed directly under DataViewProvider renders in
-// the toolbar slot, above the content. Ignored when nested inside
-// NotionToolbar.
+// the toolbar slot, above the content.
 PresetTabsComponent.dataViewSlot = "toolbar" as const;
 
 /**

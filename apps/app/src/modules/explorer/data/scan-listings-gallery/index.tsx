@@ -3,7 +3,10 @@
 import { useInfiniteController } from "@sparkyidea/dataview/hooks";
 import { PresetTabs } from "@sparkyidea/dataview/preset-tabs";
 import { DataViewProvider } from "@sparkyidea/dataview/providers";
-import { NotionToolbar } from "@sparkyidea/dataview/toolbars/notion";
+import {
+  NotionToolbarActions,
+  NotionToolbarChips,
+} from "@sparkyidea/dataview/toolbars/notion";
 import type {
   GroupConfigInput,
   Limit,
@@ -77,9 +80,11 @@ export function ScanListingsGallery({
         options={marketplacePresets}
         variant="line"
       />
-      <NotionToolbar enableSettings>
-        <PresetTabs options={scanListingsPresets} />
-      </NotionToolbar>
+      <PresetTabs
+        options={scanListingsPresets}
+        trailing={<NotionToolbarActions enableSettings />}
+      />
+      <NotionToolbarChips />
       <GalleryView
         cardPreview="imageUrls"
         cardSize="small"
