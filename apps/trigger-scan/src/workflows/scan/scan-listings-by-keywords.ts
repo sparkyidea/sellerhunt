@@ -9,20 +9,31 @@
  * keyword isn't re-enqueued within the window. Each single task still self-gates
  * on `scan_keyword.last_scanned_at`.
  */
-import { logger, metadata, task } from "@trigger.dev/sdk";
+import { logger, metadata, schemaTask } from "@trigger.dev/sdk";
+import { z } from "zod";
 import { BATCH_TRIGGER_AND_WAIT_MAX } from "../../utils/batch-trigger-and-wait-in-waves";
 import { setMachineMetadata } from "../../utils/machine-metadata";
-import { loadScanConfig, type ScanConfig } from "../../utils/scan-config";
+import { loadScanConfig, scanConfigSchema } from "../../utils/scan-config";
 import { scanListingsByKeyword } from "./scan-listings-by-keyword";
 
-export interface ScanListingsByKeywordsPayload {
-  config?: ScanConfig;
-  keywords: string[];
-  marketplace: string;
-}
+const scanListingsByKeywordsSchema = z.object({
+  config: scanConfigSchema.optional(),
+  keywords: z
+    .array(z.string())
+    .min(
+      1,
+      "scanListingsByKeywords (bulk launcher) requires a non-empty keywords array; trigger scan-listings-by-keyword (singular) with { marketplace, keyword } to scan one"
+    ),
+  marketplace: z.string().min(1),
+});
 
-export const scanListingsByKeywords = task({
+export type ScanListingsByKeywordsPayload = z.infer<
+  typeof scanListingsByKeywordsSchema
+>;
+
+export const scanListingsByKeywords = schemaTask({
   id: "scan-listings-by-keywords",
+  schema: scanListingsByKeywordsSchema,
   // Pure orchestration: chunk + batchTrigger, no HTTP.
   machine: "micro",
   retry: {
@@ -31,21 +42,9 @@ export const scanListingsByKeywords = task({
     minTimeoutInMs: 1000,
     maxTimeoutInMs: 10_000,
   },
-  run: async (payload: ScanListingsByKeywordsPayload) => {
+  run: async (payload) => {
     await setMachineMetadata();
     const { marketplace, keywords } = payload;
-    if (!marketplace) {
-      throw new Error(
-        "scanListingsByKeywords: payload.marketplace is required"
-      );
-    }
-    if (!Array.isArray(keywords) || keywords.length === 0) {
-      throw new Error(
-        "scanListingsByKeywords (bulk launcher) requires payload.keywords: string[]. " +
-          "To scan a single keyword, trigger `scan-listings-by-keyword` (singular) " +
-          "with { marketplace, keyword }."
-      );
-    }
     const config = payload.config ?? (await loadScanConfig(marketplace));
     const ttl = `${config.keywordRescanAfter}m`;
 

@@ -94,6 +94,7 @@
         "@trigger.dev/sdk": "catalog:",
         "drizzle-orm": "catalog:",
         "jose": "catalog:",
+        "zod": "catalog:",
       },
       "devDependencies": {
         "@dashseller/config": "workspace:*",
