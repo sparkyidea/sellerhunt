@@ -6,6 +6,7 @@ export type { BulkAction } from "./action.type";
 export {
   type FilterCondition,
   isWhereExpression,
+  isWhereRule,
   type Quantifier,
   quantifierValues,
   type SearchQuery,

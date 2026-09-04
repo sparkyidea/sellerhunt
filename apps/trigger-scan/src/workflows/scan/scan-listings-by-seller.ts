@@ -26,8 +26,9 @@
 import { db } from "@dashseller/db";
 import { scanSeller } from "@dashseller/db/schema";
 import { ScanRequestError } from "@dashseller/marketplace-scan/errors";
-import { logger, metadata, tags, task } from "@trigger.dev/sdk";
+import { logger, metadata, schemaTask, tags } from "@trigger.dev/sdk";
 import { and, eq } from "drizzle-orm";
+import { z } from "zod";
 import { upsertScanSeller } from "../../nodes/scan/upsert-scan-seller";
 import {
   BATCH_TRIGGER_AND_WAIT_MAX,
@@ -36,18 +37,27 @@ import {
 import { chunk } from "../../utils/chunk";
 import { setMachineMetadata } from "../../utils/machine-metadata";
 import { MobileProfileTokenManager } from "../../utils/mobile-profile-manager";
-import { loadScanConfig, type ScanConfig } from "../../utils/scan-config";
+import {
+  loadScanConfig,
+  type ScanConfig,
+  scanConfigSchema,
+} from "../../utils/scan-config";
 import { scanListingsByIds } from "./scan-listings-by-ids";
 
-export interface ScanListingsBySellerPayload {
-  config?: ScanConfig;
-  forceRefresh?: boolean;
-  marketplace: string;
-  sellerId: string;
-}
+const scanListingsBySellerSchema = z.object({
+  config: scanConfigSchema.optional(),
+  forceRefresh: z.boolean().optional(),
+  marketplace: z.string().min(1),
+  sellerId: z.string().min(1),
+});
 
-export const scanListingsBySeller = task({
+export type ScanListingsBySellerPayload = z.infer<
+  typeof scanListingsBySellerSchema
+>;
+
+export const scanListingsBySeller = schemaTask({
   id: "scan-listings-by-seller",
+  schema: scanListingsBySellerSchema,
   // One seller at a time across the whole environment (keyword fan-out AND the
   // cron orphan-catch). Each run waits on all of its listings before completing,
   // so the next seller only starts once this seller's listings are done.
@@ -63,15 +73,9 @@ export const scanListingsBySeller = task({
     maxTimeoutInMs: 30_000,
     outOfMemory: { machine: "small-2x" },
   },
-  run: async (payload: ScanListingsBySellerPayload) => {
+  run: async (payload) => {
     await setMachineMetadata();
     const { marketplace, sellerId } = payload;
-    if (!sellerId) {
-      throw new Error("scanListingsBySeller: payload.sellerId is required");
-    }
-    if (!marketplace) {
-      throw new Error("scanListingsBySeller: payload.marketplace is required");
-    }
 
     const config = payload.config ?? (await loadScanConfig(marketplace));
 

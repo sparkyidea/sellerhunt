@@ -2,15 +2,19 @@
  * Seed `mobile_profile` rows from captured iOS device personas.
  *
  * Each persona is one JSON file under
- * `packages/marketplace-scan/sandbox/<app>/profiles/`; this script loads every
+ * `packages/db/src/seed/tmp/<app>/profiles/`; this script loads every
  * file across all apps, encrypts the credentials blob, and upserts it into the
  * `mobile_profile` pool. The filename stem (e.g. `w-00003`, `default`) becomes
  * the row `label`; the directory's app (`ebay`, `shop`) becomes `app`.
  *
+ * `tmp/` is git-ignored (only its `.gitignore` is tracked): duplicate the
+ * captured personas from `packages/marketplace-scan/sandbox/<app>/profiles/`
+ * into `tmp/<app>/profiles/` before seeding — the contents never get committed.
+ *
  * Persona sources (single source of truth per app):
- *   - eBay: `sandbox/ebay/profiles/*.json` — `EbayHmacCredentials`
+ *   - eBay: `tmp/ebay/profiles/*.json` — `EbayHmacCredentials`
  *           (HMAC signing key + device identifiers).
- *   - shop: `sandbox/shop/profiles/*.json` — `ShopRefreshTokenCredentials`
+ *   - shop: `tmp/shop/profiles/*.json` — `ShopRefreshTokenCredentials`
  *           (device-identity headers; the real secret is the refresh token
  *           shop.app mints, stored separately on the row).
  *   The blob carries no `app` discriminator — the directory determines it.
@@ -47,7 +51,7 @@ dotenv.config({
 
 const db = drizzle(process.env.DATABASE_URL || "");
 
-const PROFILES_ROOT = resolve(__dirname, "../../../marketplace-scan/sandbox");
+const PROFILES_ROOT = resolve(__dirname, "tmp");
 const JSON_EXT = /\.json$/;
 
 type ProfileApp = "ebay" | "shop";
@@ -153,7 +157,7 @@ async function seedMobileProfiles(): Promise<void> {
   if (profiles.length === 0) {
     console.warn(
       "No personas found. Add capture files under " +
-        "packages/marketplace-scan/sandbox/<app>/profiles/ (see each dir's README)."
+        "packages/db/src/seed/tmp/<app>/profiles/ (duplicate them from packages/marketplace-scan/sandbox/<app>/profiles/)."
     );
     process.exit(0);
   }

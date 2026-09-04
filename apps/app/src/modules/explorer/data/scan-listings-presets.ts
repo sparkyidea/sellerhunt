@@ -1,4 +1,4 @@
-import type { TabOption } from "@/components/dataview-tab";
+import type { TabOption } from "@sparkyidea/dataview/preset-tabs";
 
 export const scanListingsPresets: TabOption[] = [
   {
