@@ -10,14 +10,17 @@ import { defineConfig } from "@trigger.dev/sdk/v3";
  *
  * Env vars uploaded to the worker. Must mirror the schema
  * `@dashseller/env/trigger-scan` validates against — the scan worker
- * deliberately holds no marketplace API credentials, only the DB URL
- * and the encryption key for `mobile_profile` device secrets.
+ * deliberately holds no marketplace API credentials, only the DB URL,
+ * the encryption key for `mobile_profile` device secrets, and the
+ * (optional) OpenAI key for keyword extraction.
  */
 const INCLUDED_ENV_VARS = new Set([
   // db
   "DATABASE_URL",
   // mobile_profile credential encryption
   "ENCRYPTION_SECRET",
+  // keyword extraction (inline in scan-listings-by-ids); optional
+  "OPENAI_API_KEY",
 ]);
 
 export default defineConfig({

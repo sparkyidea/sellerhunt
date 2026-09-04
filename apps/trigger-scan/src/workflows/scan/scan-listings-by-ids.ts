@@ -17,9 +17,16 @@
  * `<= K` by construction).
  *
  * Pacing is load-bearing, not an optimization: a leaf's `<= K` fetches all leave
- * the SAME box's pinned IP/persona, back-to-back. Sequential + jittered delay
- * (config-driven) reproduces today's per-IP rate so the burst doesn't look like a
- * bot. Small K spreads work across more boxes/IPs; that fan-out IS the IP-spread.
+ * the SAME box's pinned IP/persona, back-to-back. Strictly sequential + jittered
+ * delay (config-driven) reproduces today's per-IP rate so the burst doesn't look
+ * like a bot. K = 50 by default: one box scraping 50 listings per run is accepted.
+ *
+ * Keyword extraction is part of the leaf. After the paced fetches are done,
+ * every listing this run INSERTED (`isNew` — first time seen, never a rescan)
+ * has its title sent to the LLM in one call (`MAX_TITLES_PER_REQUEST` = K, so
+ * normally one), straight from the verdicts held in memory. It runs after the
+ * loop so the LLM never sits between two marketplace requests, and it never
+ * throws, so a scan is never retried and re-scraped because of the LLM.
  *
  * Errors are classified, never thrown for scan failures:
  *   • persona-level (401/403 auth, 429/5xx transient) → the IP is throttled or
@@ -32,6 +39,8 @@
  */
 import { ScanRequestError } from "@dashseller/marketplace-scan/errors";
 import { logger, metadata, tags, task } from "@trigger.dev/sdk";
+import type { UnresolvedListing } from "../../keywords/llm-stage";
+import { resolveKeywordsWithLlm } from "../../nodes/scan/resolve-keywords-with-llm";
 import {
   type ListingVerdict,
   scanOneListing,
@@ -145,7 +154,7 @@ async function fanOut(
   return { marketplace, mode: "fanned", triggered };
 }
 
-/** LEAF branch — paced inline scan of `<= K` ids, returns verdicts. */
+/** LEAF branch — paced inline scan of `<= K` ids, then keyword extraction, returns verdicts. */
 async function scanInline(
   marketplace: string,
   listingIds: string[],
@@ -172,7 +181,6 @@ async function scanInline(
     await tags.add("scan_aborted_persona");
   }
   metadata
-    .set("status", outcome.aborted ? "aborted-persona" : "completed")
     .set("succeeded", outcome.succeeded)
     .set("failed", outcome.failed)
     .set("unfit", outcome.unfit)
@@ -186,6 +194,10 @@ async function scanInline(
     aborted: outcome.aborted,
   });
 
+  // Even an aborted batch may have inserted listings before the persona error.
+  await extractKeywordsForNewListings(marketplace, config, outcome.verdicts);
+
+  metadata.set("status", outcome.aborted ? "aborted-persona" : "completed");
   return {
     aborted: outcome.aborted,
     failed: outcome.failed,
@@ -218,97 +230,44 @@ interface ListingScanContext {
   marketplace: string;
 }
 
-interface BatchState {
-  failed: number;
-  // First persona-level error wins; once set, no new fetches start. A holder
-  // property (not a closure-mutated `let`) keeps TS from narrowing it to `null`.
-  personaError: PersonaError | null;
-  succeeded: number;
-  unfit: number;
-  verdicts: ListingVerdict[];
-}
-
 /**
- * Paced worker pool over the batch's ids. `listingScanConcurrency` workers each
- * pull from a shared queue, jitter-sleep, then scan one listing. The first
- * persona-level error stops all workers (no new fetches start; in-flight ones
- * finish) and is routed once afterward. Never throws on scan failures.
+ * Strictly sequential, paced loop over the batch's ids: jitter-sleep, then
+ * scan one listing. The first persona-level error stops the loop and is
+ * routed once afterward. Never throws on scan failures.
  */
 async function runListingBatch(
   ctx: ListingScanContext,
   listingIds: string[]
 ): Promise<BatchOutcome> {
-  const state: BatchState = {
+  const { config, marketplace } = ctx;
+  const outcome: BatchOutcome = {
+    aborted: false,
     failed: 0,
-    personaError: null,
     succeeded: 0,
     unfit: 0,
     verdicts: [],
   };
-  const queue = [...listingIds];
-  const concurrency = clamp(
-    ctx.config.listingScanConcurrency,
-    1,
-    listingIds.length
-  );
+  let personaError: PersonaError | null = null;
+  let remaining = 0;
 
-  await Promise.all(
-    Array.from({ length: concurrency }, () =>
-      runListingWorker(state, queue, ctx)
-    )
-  );
-
-  if (state.personaError !== null) {
-    // Route ONCE (not once per remaining id). Unscanned ids keep their old
-    // last_scanned_at, so the cron orphan-catch re-picks them next tick.
-    await routePersonaError(ctx.manager, state.personaError);
-    logger.warn("Listing batch aborted on persona-level error", {
-      marketplace: ctx.marketplace,
-      message: state.personaError.message,
-      remaining: queue.length,
-    });
-  }
-
-  return {
-    aborted: state.personaError !== null,
-    failed: state.failed,
-    succeeded: state.succeeded,
-    unfit: state.unfit,
-    verdicts: state.verdicts,
-  };
-}
-
-/** One worker: drain the shared queue, paced, until empty or a persona abort. */
-async function runListingWorker(
-  state: BatchState,
-  queue: string[],
-  ctx: ListingScanContext
-): Promise<void> {
-  const { config, marketplace } = ctx;
-  while (state.personaError === null) {
-    const listingId = queue.shift();
-    if (listingId === undefined) {
-      return;
-    }
+  for (const [index, listingId] of listingIds.entries()) {
     await sleep(
       jitterMs(config.listingScanDelayMinMs, config.listingScanDelayMaxMs)
     );
-    if (state.personaError !== null) {
-      return;
-    }
     try {
       const verdict = await scanOneListing({ ...ctx, listingId });
-      state.verdicts.push(verdict);
-      state.succeeded += 1;
+      outcome.verdicts.push(verdict);
+      outcome.succeeded += 1;
       if (!verdict.fit) {
-        state.unfit += 1;
+        outcome.unfit += 1;
       }
     } catch (error) {
       if (isPersonaLevelError(error)) {
-        state.personaError ??= toPersonaError(error);
-        return;
+        personaError = toPersonaError(error);
+        remaining = listingIds.length - index - 1;
+        break;
       }
-      state.failed += 1;
+      outcome.failed += 1;
       logger.warn("Listing scan failed; left stale", {
         marketplace,
         listingId,
@@ -316,6 +275,20 @@ async function runListingWorker(
       });
     }
   }
+
+  if (personaError !== null) {
+    // Route ONCE (not once per remaining id). Unscanned ids keep their old
+    // last_scanned_at, so the cron orphan-catch re-picks them next tick.
+    await routePersonaError(ctx.manager, personaError);
+    logger.warn("Listing batch aborted on persona-level error", {
+      marketplace,
+      message: personaError.message,
+      remaining,
+    });
+    outcome.aborted = true;
+  }
+
+  return outcome;
 }
 
 /** 401/403 (device rejected) or 429/5xx (IP throttled) → back off the whole IP. */
@@ -357,6 +330,49 @@ function sleep(ms: number): Promise<void> {
   });
 }
 
-function clamp(value: number, min: number, max: number): number {
-  return Math.min(Math.max(value, min), max);
+/**
+ * Keyword extraction for the listings this run INSERTED. Titles come straight
+ * from the verdicts — no read-back. Rescans (`isNew: false`) and unfit
+ * listings are never sent. The node never throws; the try/catch here is
+ * belt-and-braces so nothing in this stage can fail the leaf and cause a
+ * re-scrape.
+ */
+async function extractKeywordsForNewListings(
+  marketplace: string,
+  config: ScanConfig,
+  verdicts: ListingVerdict[]
+): Promise<void> {
+  const fresh: UnresolvedListing[] = [];
+  for (const verdict of verdicts) {
+    if (verdict.fit && verdict.isNew) {
+      fresh.push({
+        id: verdict.scanListingId,
+        title: verdict.title,
+        categoryPath: verdict.categoryPath,
+      });
+    }
+  }
+  if (fresh.length === 0) {
+    return;
+  }
+  metadata.set("status", "extracting-keywords").set("keywordNew", fresh.length);
+  try {
+    const totals = await resolveKeywordsWithLlm(config, fresh);
+    metadata
+      .set("keywordResolvedLlm", totals.resolved)
+      .set("keywordUnresolved", totals.unresolved)
+      .set("keywordFailed", totals.failed)
+      .set("keywordLlmSkipped", totals.llmSkipped);
+    logger.info("Extracted keywords for new listings", {
+      marketplace,
+      newListings: fresh.length,
+      ...totals,
+    });
+  } catch (error) {
+    logger.error("Keyword extraction failed; listings left unresolved", {
+      marketplace,
+      newListings: fresh.length,
+      error: error instanceof Error ? error.message : String(error),
+    });
+  }
 }

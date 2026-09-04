@@ -10,23 +10,22 @@
  * NOT route failures — it rethrows so the batch loop can classify persona-level
  * (429/auth → back off the whole IP) vs per-listing (404/parse → tally + skip).
  *
- * Pipeline (unchanged from the former `scan-listing-by-id` leaf):
+ * Pipeline:
  *   1. `getListing` — authoritative sold/price detail. Rethrows on error.
  *   2. Apply listing-level thresholds (price, item-sold, sold-last-24h) → `fit`.
  *   3. If it fits: ensure the seller ROW exists (bare upsert from the listing's
  *      `sellerReference`, so the listing's seller FK resolves) — but do NOT fetch
  *      seller stats and do NOT trigger `scanListingsBySeller` (that would loop).
- *      Then upsert `scan_listing` + snapshot and extract keywords. If not:
- *      persist nothing.
- *   4. Return `{ listingId, fit, sellerReference, ... }`.
+ *      Then upsert `scan_listing` + snapshot. If not: persist nothing.
+ *   4. Return the verdict. A fitting verdict carries `isNew` plus the title and
+ *      category, so the leaf can send every listing it INSERTED to the LLM at
+ *      the end of the run without reading them back.
  */
 import type { ScanListing } from "@dashseller/marketplace-scan/types";
 import { logger } from "@trigger.dev/sdk";
-import { extractKeywords } from "../../utils/extract-keywords";
 import type { MobileProfileTokenManager } from "../../utils/mobile-profile-manager";
 import type { ScanConfig } from "../../utils/scan-config";
 import { extractListingId } from "./extract-listing-id";
-import { recordExtractedKeywords } from "./upsert-scan-keyword";
 import { upsertScanListing } from "./upsert-scan-listing";
 import { upsertScanSeller } from "./upsert-scan-seller";
 
@@ -34,18 +33,31 @@ type ScanClient = Awaited<
   ReturnType<MobileProfileTokenManager["createScanClient"]>
 >;
 
-export interface ListingVerdict {
-  /** Did the listing clear the config thresholds and get persisted? */
-  fit: boolean;
-  keywordsExtracted?: number;
+interface VerdictBase {
   /** Numeric listing id (already normalized via `extractListingId`). */
   listingId: string;
-  /** Set only when `fit` — the persisted `scan_listing.id`. */
-  scanListingId?: string;
   /** Seller reference from the listing, if any (used to promote sellers). */
   sellerReference: string | null;
-  variantsDiscovered?: number;
 }
+
+/** Cleared the config thresholds and was persisted. */
+export interface FitListingVerdict extends VerdictBase {
+  categoryPath: string[] | null;
+  fit: true;
+  /** True when this scan INSERTED the row (first time seen); false on a rescan. */
+  isNew: boolean;
+  /** The persisted `scan_listing.id`. */
+  scanListingId: string;
+  title: string;
+  variantsDiscovered: number;
+}
+
+/** Below the thresholds (or no title); nothing persisted. */
+export interface UnfitListingVerdict extends VerdictBase {
+  fit: false;
+}
+
+export type ListingVerdict = FitListingVerdict | UnfitListingVerdict;
 
 export interface ScanOneListingParams {
   client: ScanClient;
@@ -124,17 +136,14 @@ export async function scanOneListing(
     soldLast30Days: listing.soldLast30Days,
   });
 
-  const keywords = extractKeywords(listing.title);
-  if (keywords.length > 0) {
-    await recordExtractedKeywords(marketplace, keywords);
-  }
-
   return {
     listingId,
     fit: true,
     sellerReference,
     scanListingId: upserted.id,
-    keywordsExtracted: keywords.length,
+    isNew: upserted.isNew,
+    title: listing.title,
+    categoryPath: listing.categoryPath ?? null,
     variantsDiscovered: listing.variants.length,
   };
 }

@@ -85,9 +85,33 @@ views by following `packages/dataview/src/components/views/`, not raw
 - **`@dashseller/trigger-scan`** (`apps/trigger-scan/`) — the scan jobs that
   drive the adapters and write `scan_*` rows. Deploys to the **self-hosted**
   Trigger.dev at `https://trigger.sparkyidea.com`. Deliberately tiny secret
-  surface (`DATABASE_URL` + `ENCRYPTION_SECRET` only). Runs on cron; the app
-  never triggers it. `utils/mobile-profile-manager.ts` owns the `mobile_profile`
-  persona pool and mints/caches bearers; secret crypto is `utils/secret-crypto.ts`.
+  surface (`DATABASE_URL` + `ENCRYPTION_SECRET`, plus an optional
+  `OPENAI_API_KEY` read only by keyword extraction). Runs on cron;
+  the app never triggers it. `utils/mobile-profile-manager.ts` owns the
+  `mobile_profile` persona pool and mints/caches bearers; secret crypto is
+  `utils/secret-crypto.ts`.
+- **Keywords as knowledge** (`apps/trigger-scan/src/keywords/`) —
+  `scan_keyword` is both the discovery pool and the phrases the LLM learned
+  from listing titles. Extraction is LLM-only: no local normalization, alias
+  matching or scoring. At the end of each `scan-listings-by-ids` leaf, every
+  listing that leaf INSERTED (`isNew` from the upsert — never a rescan) has its
+  title sent verbatim to OpenAI in one structured-output call (50 titles per
+  request max, K = 50, so one call per leaf; model, effort and the cap are
+  constants beside the prompt in `keywords/extract-keywords.ts`, and the only
+  runtime knob is the kill switch). The returned
+  phrase is stored as returned (trimmed; the prompt asks for lowercase) as a
+  `scan_keyword` row — an exact match reuses a manual seed — and linked from
+  `scan_listing.keyword_id`; null means unresolved and `keyword_attempts` caps
+  retries at 3. No status table; per-listing detail is in the run logs. A
+  keyword is a *search term*, **not** a product identity (product matching is
+  identifier-based, UPC/GTIN/MPN, separate work). Learned keywords enter the
+  cron's search rotation like any other. `keyword_llm_enabled` (default on) is
+  the kill switch; off or no key → listings persist unresolved with no attempt
+  spent. `resolve-listing-keywords` is a manual retry tool (`{ marketplace }`
+  or `{ marketplace, listingIds }`). Try the prompt on real titles without
+  writing anything: `bun --cwd apps/trigger-scan keywords:try "title" …`
+  (also `--file`, stdin, `--from-db 50`, `--model`, `--effort low`). Unit
+  tests: vitest, `bun --cwd apps/trigger-scan test`.
 
 Deploy via root scripts `trigger-scan:dev` / `trigger-scan:deploy` (they pass
 `-a https://trigger.sparkyidea.com --profile sparkyidea`; run

@@ -36,4 +36,4 @@ is shipping without cleanup.
 
 ## Currently in flight
 
-_None._
+- `keyword-phrase-extraction/` — LLM keyword extraction (branch `jingerpie/group-listings-by-product`).

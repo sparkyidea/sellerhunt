@@ -8,8 +8,11 @@
   },
   "scripts": {
     "check-types": "tsc --noEmit",
-    "trigger:dev": "trigger dev --env-file .env --profile sparkyidea -a https://trigger.sparkyidea.com",
-    "trigger:deploy": "trigger deploy --env-file .env --profile sparkyidea -a https://trigger.sparkyidea.com"
+    "keywords:try": "bun run scripts/try-keywords.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "trigger:deploy": "trigger deploy --env-file .env --profile sparkyidea -a https://trigger.sparkyidea.com",
+    "trigger:dev": "trigger dev --env-file .env --profile sparkyidea -a https://trigger.sparkyidea.com"
   },
   "dependencies": {
     "@dashseller/db": "workspace:*",
@@ -17,12 +20,15 @@
     "@dashseller/marketplace-scan": "workspace:*",
     "@trigger.dev/sdk": "catalog:",
     "drizzle-orm": "catalog:",
-    "jose": "catalog:"
+    "jose": "catalog:",
+    "openai": "catalog:",
+    "zod": "catalog:"
   },
   "devDependencies": {
     "@dashseller/config": "workspace:*",
     "@trigger.dev/build": "catalog:",
     "trigger.dev": "catalog:",
-    "typescript": "catalog:"
+    "typescript": "catalog:",
+    "vitest": "catalog:"
   }
 }
