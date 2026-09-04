@@ -9,6 +9,7 @@
     "./providers": "./src/lib/providers/index.ts",
     "./views/*": "./src/components/views/*/index.tsx",
     "./toolbars/notion": "./src/components/toolbars/notion/toolbar.tsx",
+    "./preset-tabs": "./src/components/preset-tabs/index.tsx",
     "./properties": "./src/components/ui/properties/index.ts",
     "./hooks": "./src/hooks/index.ts",
     "./types": "./src/types/index.ts",

@@ -38,7 +38,8 @@
  *     fault — the old per-listing leaf marked these too coarsely).
  */
 import { ScanRequestError } from "@dashseller/marketplace-scan/errors";
-import { logger, metadata, tags, task } from "@trigger.dev/sdk";
+import { logger, metadata, schemaTask, tags } from "@trigger.dev/sdk";
+import { z } from "zod";
 import type { UnresolvedListing } from "../../keywords/llm-stage";
 import { resolveKeywordsWithLlm } from "../../nodes/scan/resolve-keywords-with-llm";
 import {
@@ -49,13 +50,24 @@ import { BATCH_TRIGGER_AND_WAIT_MAX } from "../../utils/batch-trigger-and-wait-i
 import { chunk } from "../../utils/chunk";
 import { setMachineMetadata } from "../../utils/machine-metadata";
 import { MobileProfileTokenManager } from "../../utils/mobile-profile-manager";
-import { loadScanConfig, type ScanConfig } from "../../utils/scan-config";
+import {
+  loadScanConfig,
+  type ScanConfig,
+  scanConfigSchema,
+} from "../../utils/scan-config";
 
-export interface ScanListingsByIdsPayload {
-  config?: ScanConfig;
-  listingIds: string[];
-  marketplace: string;
-}
+const scanListingsByIdsSchema = z.object({
+  config: scanConfigSchema.optional(),
+  listingIds: z
+    .array(z.string())
+    .min(
+      1,
+      "scanListingsByIds requires a non-empty listingIds array; pass a 1-element array to scan a single listing"
+    ),
+  marketplace: z.string().min(1),
+});
+
+export type ScanListingsByIdsPayload = z.infer<typeof scanListingsByIdsSchema>;
 
 /**
  * Two shapes, dispatched on input size. Awaiting callers pass `<= K` so they get
@@ -75,8 +87,9 @@ export type ScanListingsByIdsResult =
       verdicts: ListingVerdict[];
     };
 
-export const scanListingsByIds = task({
+export const scanListingsByIds = schemaTask({
   id: "scan-listings-by-ids",
+  schema: scanListingsByIdsSchema,
   // Both branches run on micro: the launcher does no HTTP; the leaf holds one
   // listing blob at a time (persist-and-discard), like the old single leaf.
   // Escalates to small-1x only if a pathological listing blows the 0.25 GB cap.
@@ -88,20 +101,9 @@ export const scanListingsByIds = task({
     maxTimeoutInMs: 30_000,
     outOfMemory: { machine: "small-1x" },
   },
-  run: async (
-    payload: ScanListingsByIdsPayload
-  ): Promise<ScanListingsByIdsResult> => {
+  run: async (payload): Promise<ScanListingsByIdsResult> => {
     await setMachineMetadata();
     const { marketplace, listingIds } = payload;
-    if (!marketplace) {
-      throw new Error("scanListingsByIds: payload.marketplace is required");
-    }
-    if (!Array.isArray(listingIds) || listingIds.length === 0) {
-      throw new Error(
-        "scanListingsByIds requires payload.listingIds: string[]. " +
-          "To scan a single listing, pass a 1-element array."
-      );
-    }
     const config = payload.config ?? (await loadScanConfig(marketplace));
     const batchSize = Math.max(1, config.listingScanBatchSize);
 

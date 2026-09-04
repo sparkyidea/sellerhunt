@@ -14,33 +14,45 @@
 import { db } from "@dashseller/db";
 import { scanConfig } from "@dashseller/db/schema";
 import { eq } from "drizzle-orm";
+import { z } from "zod";
 
-export interface ScanConfig {
-  enabled: boolean;
-  keywordBatchSize: number;
+/**
+ * Runtime tunables for one marketplace scan, mirrored from the `scan_config`
+ * row. This Zod schema is the single source of truth: `ScanConfig` is inferred
+ * from it, and the workflow tasks reuse it (via `scanConfigSchema.optional()`)
+ * to validate an inlined config — parents pass their already-loaded config down
+ * to children so a fan-out doesn't re-fetch the row per run. Deriving the type
+ * from the schema keeps the two from drifting: add a field here and both the
+ * type and `loadScanConfig`'s return stop compiling until it's wired through.
+ */
+export const scanConfigSchema = z.object({
+  enabled: z.boolean(),
+  keywordBatchSize: z.number(),
   /** LLM kill switch. Off → new listings persist unresolved, no attempt spent. */
-  keywordLlmEnabled: boolean;
+  keywordLlmEnabled: z.boolean(),
   /** Minutes after last_scanned_at before a keyword is rescanned. */
-  keywordRescanAfter: number;
-  listingBatchSize: number;
+  keywordRescanAfter: z.number(),
+  listingBatchSize: z.number(),
   /** Minutes after last_scanned_at before a listing is rescanned. */
-  listingRescanAfter: number;
+  listingRescanAfter: z.number(),
   /** Listings scanned per `scan-listings-by-ids` leaf run + fan-out threshold. */
-  listingScanBatchSize: number;
+  listingScanBatchSize: z.number(),
   /** Max jittered delay (ms) before each getListing in a leaf run. */
-  listingScanDelayMaxMs: number;
+  listingScanDelayMaxMs: z.number(),
   /** Min jittered delay (ms) before each getListing in a leaf run. */
-  listingScanDelayMinMs: number;
-  marketplace: string;
-  maxPriceCents: number | null;
-  maxSearchPages: number;
-  minItemSold: number;
-  minPriceCents: number;
-  minSoldLast24h: number | null;
-  sellerBatchSize: number;
+  listingScanDelayMinMs: z.number(),
+  marketplace: z.string(),
+  maxPriceCents: z.number().nullable(),
+  maxSearchPages: z.number(),
+  minItemSold: z.number(),
+  minPriceCents: z.number(),
+  minSoldLast24h: z.number().nullable(),
+  sellerBatchSize: z.number(),
   /** Minutes after last_scanned_at before a seller is rescanned. */
-  sellerRescanAfter: number;
-}
+  sellerRescanAfter: z.number(),
+});
+
+export type ScanConfig = z.infer<typeof scanConfigSchema>;
 
 type ScanConfigRow = typeof scanConfig.$inferSelect;
 

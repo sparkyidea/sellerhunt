@@ -1,0 +1,6 @@
+# Local working copy of captured device personas, duplicated here from
+# packages/marketplace-scan/sandbox/<app>/profiles/ so the seed can read them.
+# The personas hold live credentials — never commit their contents. Only this
+# .gitignore is tracked, which keeps the tmp/ folder present after a fresh clone.
+*
+!.gitignore

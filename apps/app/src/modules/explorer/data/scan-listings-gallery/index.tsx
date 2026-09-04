@@ -1,8 +1,12 @@
 "use client";
 
 import { useInfiniteController } from "@sparkyidea/dataview/hooks";
+import { PresetTabs } from "@sparkyidea/dataview/preset-tabs";
 import { DataViewProvider } from "@sparkyidea/dataview/providers";
-import { NotionToolbar } from "@sparkyidea/dataview/toolbars/notion";
+import {
+  NotionToolbarActions,
+  NotionToolbarChips,
+} from "@sparkyidea/dataview/toolbars/notion";
 import type {
   GroupConfigInput,
   Limit,
@@ -10,9 +14,10 @@ import type {
 } from "@sparkyidea/dataview/types";
 import { getScalarRollups } from "@sparkyidea/dataview/types";
 import { GalleryView } from "@sparkyidea/dataview/views/gallery-view";
-import { DataViewTab } from "@/components/dataview-tab";
 import { useOpenPreview } from "@/hooks/use-open-preview";
 import { useTRPC } from "@/lib/utils/trpc/client";
+
+import { marketplacePresets } from "../marketplaces-presets";
 import { scanListingsPresets } from "../scan-listings-presets";
 import { scanListingsGalleryProperties } from "./scan-listings-gallery-properties";
 
@@ -69,9 +74,17 @@ export function ScanListingsGallery({
       }}
       properties={scanListingsGalleryProperties}
     >
-      <NotionToolbar enableSettings>
-        <DataViewTab options={scanListingsPresets} />
-      </NotionToolbar>
+      <PresetTabs
+        aria-label="Marketplace"
+        mobileSelect={false}
+        options={marketplacePresets}
+        variant="line"
+      />
+      <PresetTabs
+        options={scanListingsPresets}
+        trailing={<NotionToolbarActions enableSettings />}
+      />
+      <NotionToolbarChips />
       <GalleryView
         cardPreview="imageUrls"
         cardSize="small"

@@ -59,6 +59,8 @@ coverage
 *.tgz
 .cache
 tmp
+# Keep the seed personas folder (its own .gitignore excludes the contents).
+!packages/db/src/seed/tmp/
 temp
 .gstack/
 
