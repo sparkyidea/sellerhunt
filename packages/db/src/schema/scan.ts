@@ -12,8 +12,15 @@
  *   - scan_listing            snapshot of a single listing (latest values)
  *   - scan_listing_variant    per-variation row (for multi-SKU listings)
  *   - scan_listing_snapshot   append-only timeseries for velocity calcs
- *   - scan_keyword            keyword pool driving discovery
+ *   - scan_keyword            keyword pool driving discovery + the phrases the
+ *                             LLM learned from titles (one row per marketplace+keyword)
  *   - scan_config             per-marketplace scanner control plane
+ *
+ * Keyword extraction is LLM-only: every newly inserted listing has its title
+ * sent to the model once, and the returned phrase becomes (or reuses) a
+ * `scan_keyword` row linked from `scan_listing.keyword_id` (null = not
+ * resolved; `keyword_attempts` caps retries). Per-listing detail is in the
+ * Trigger.dev run logs, not in a status table.
  *
  * The mobile-app device personas that mint bearer tokens for the unofficial
  * APIs live in `./mobile-profile.ts` — those are reusable beyond the scanner.
@@ -27,15 +34,15 @@
  * default; the column is the *only* place "monitor" appears in the schema,
  * with a single, unambiguous meaning.
  */
-import { relations } from "drizzle-orm";
+import { relations, sql } from "drizzle-orm";
 import {
+  type AnyPgColumn,
   boolean,
   index,
   integer,
   jsonb,
   numeric,
   pgTable,
-  primaryKey,
   text,
   timestamp,
   uniqueIndex,
@@ -103,7 +110,19 @@ export const scanListing = pgTable(
     sellerId: text("seller_id").references(() => scanSeller.id, {
       onDelete: "set null",
     }),
-
+    /**
+     * Keyword the LLM extracted from this title (see scan_keyword). Set once,
+     * by the scan that inserted the row; null = not resolved (switch off, no
+     * key, failed or empty answer). The `resolve-listing-keywords` retry tool
+     * picks nulls with attempts left. Set-null on keyword delete so the
+     * listing simply becomes unresolved again.
+     */
+    keywordId: text("keyword_id").references(
+      (): AnyPgColumn => scanKeyword.id,
+      { onDelete: "set null" }
+    ),
+    /** LLM attempts so far; the retry tool stops at the attempt cap (3). */
+    keywordAttempts: integer("keyword_attempts").notNull().default(0),
     title: text("title").notNull(),
     description: text("description"),
 
@@ -153,6 +172,8 @@ export const scanListing = pgTable(
       t.reference
     ),
     index("scan_listing_seller_id_idx").on(t.sellerId),
+    /** Keyword picker (`keyword_id IS NULL`) + listings-per-keyword lookups. */
+    index("scan_listing_keyword_id_idx").on(t.keywordId),
     index("scan_listing_item_sold_idx").on(t.itemSold),
     index("scan_listing_sold_last_24h_idx").on(t.soldLast24h),
     index("scan_listing_sold_last_30_days_idx").on(t.soldLast30Days),
@@ -239,29 +260,37 @@ export const scanListingSnapshot = pgTable(
 );
 
 /**
- * Keyword pool for scanner discovery. Each row is a (marketplace, keyword)
- * pair. Same word in different marketplaces is two distinct rows.
+ * Keyword pool for scanner discovery **and** the phrases the LLM learned from
+ * listing titles. One row per (marketplace, keyword). The keyword is the
+ * lowercase search phrase exactly as the model returned it (e.g. "mcdonald's
+ * fifa world cup squishmallows") — a search term, never a product identity.
  *
  * Lifecycle:
- *   - Manual seed: `source = "manual"` via a seed script.
- *   - Auto-extracted: `scanOneListing` extracts keywords from listing
- *     titles and upserts with `source = "extracted"`. ON CONFLICT only bumps
- *     `last_seen_at` — never `last_scanned_at` — so re-extraction doesn't
- *     skip the next scheduled scan of that keyword.
+ *   - Manual seed: `source = "manual"` via the seed script.
+ *   - Learned: `source = "llm"` when the scan's LLM stage extracts a phrase no
+ *     row has yet. An exact match reuses the existing row (manual or llm).
+ *   - Linked: listings point at their keyword via `scan_listing.keyword_id`;
+ *     each link bumps `last_seen_at` only — never `last_scanned_at` — so
+ *     learning a keyword doesn't skip its next scheduled search.
  *   - Dead: scanner sets `dead_at` after repeated empty scans, removing the
- *     row from rotation without deleting (history retained).
+ *     row from search rotation without deleting it.
  */
 export const scanKeyword = pgTable(
   "scan_keyword",
   {
+    /**
+     * Surrogate for FKs. DB-side default (not `$defaultFn`) so the column
+     * could be added to an already-populated table.
+     */
+    id: text("id").primaryKey().default(sql`gen_random_uuid()`),
     marketplace: text("marketplace").notNull(),
-    /** Normalized lowercase keyword, e.g. "nintendo switch". */
+    /** Lowercase search phrase, e.g. "nintendo switch". */
     keyword: text("keyword").notNull(),
-    /** "manual" (operator-seeded) or "extracted" (from a listing title). */
+    /** "manual" (operator-seeded) or "llm" (learned from a listing title). */
     source: text("source").notNull(),
 
     firstSeenAt: timestamp("first_seen_at").defaultNow().notNull(),
-    /** Bumped each time the keyword reappears in an extracted listing title. */
+    /** Bumped each time a listing title resolves to this keyword. */
     lastSeenAt: timestamp("last_seen_at").defaultNow().notNull(),
     /** Last time the scanner walked search results for this keyword. */
     lastScannedAt: timestamp("last_scanned_at"),
@@ -275,7 +304,10 @@ export const scanKeyword = pgTable(
       .notNull(),
   },
   (t) => [
-    primaryKey({ columns: [t.marketplace, t.keyword] }),
+    uniqueIndex("scan_keyword_marketplace_keyword_unique").on(
+      t.marketplace,
+      t.keyword
+    ),
     /** Cron tick query: stale keywords per marketplace, ordered oldest first. */
     index("scan_keyword_marketplace_last_scanned_at_idx").on(
       t.marketplace,
@@ -287,6 +319,12 @@ export const scanKeyword = pgTable(
 /**
  * Per-marketplace scanner config. One row per supported marketplace
  * (e.g. "ebay", "shop"). Seeded once via a seed script; tuned via UPDATE.
+ *
+ * Only kill switches, business thresholds and per-marketplace tuning live
+ * here. Anything fixed by the code's design — the LLM model, reasoning
+ * effort and titles-per-request cap (`keywords/extract-keywords.ts`), the
+ * sequential leaf pacing, the retry tool's page size — is a constant next to
+ * that code, not a row value.
  *
  * The cron reads this row first thing on every tick — if `enabled = false`,
  * it returns immediately without triggering any scan tasks.
@@ -304,10 +342,12 @@ export const scanConfig = pgTable("scan_config", {
   /** Minutes after last_scanned_at before a listing is rescanned. */
   listingRescanAfter: integer("listing_rescan_after").notNull().default(1440),
 
-  /** Pages walked per keyword scan (safety cap). */
+  /**
+   * Pages walked per keyword scan (depth of discovery). Seller stores have no
+   * such knob: a seller scan walks the whole store to `pagination.totalPages`
+   * (runaway guard `MAX_SELLER_PAGES` in `scan-listings-by-seller.ts`).
+   */
   maxSearchPages: integer("max_search_pages").notNull().default(10),
-  /** Pages walked per seller-listings scan (safety cap). */
-  maxListingPages: integer("max_listing_pages").notNull().default(50),
 
   /** Drop listings whose itemSold is below this. */
   minItemSold: integer("min_item_sold").notNull().default(0),
@@ -329,16 +369,14 @@ export const scanConfig = pgTable("scan_config", {
    * Listings scanned per `scan-listings-by-ids` leaf run (batch size K). Also
    * the launcher/leaf dispatch threshold: a run handed more than this many ids
    * self-fans into K-sized child runs; one handed `<= K` scans them inline.
-   * Small K spreads fetches across more boxes/IPs (anti-detection); large K
-   * cuts container cold-starts. NOT the same as `listingBatchSize` (cron pick).
+   * 50 by default — one box scraping 50 listings per run is accepted, and it
+   * matches the LLM request cap so a leaf makes one LLM call. Fetches within
+   * a leaf are always sequential. NOT the same as `listingBatchSize` (cron
+   * pick).
    */
   listingScanBatchSize: integer("listing_scan_batch_size")
     .notNull()
-    .default(20),
-  /** Concurrent getListing calls within one leaf run. 1 = strict sequential. */
-  listingScanConcurrency: integer("listing_scan_concurrency")
-    .notNull()
-    .default(1),
+    .default(50),
   /** Min jittered delay (ms) before each getListing in a leaf run. */
   listingScanDelayMinMs: integer("listing_scan_delay_min_ms")
     .notNull()
@@ -347,6 +385,11 @@ export const scanConfig = pgTable("scan_config", {
   listingScanDelayMaxMs: integer("listing_scan_delay_max_ms")
     .notNull()
     .default(800),
+
+  // Keyword extraction (title → scan_keyword). LLM only, once per new listing.
+  // Model, reasoning effort and request size are code constants.
+  /** LLM kill switch. Off → new listings persist unresolved, no attempt spent. */
+  keywordLlmEnabled: boolean("keyword_llm_enabled").notNull().default(true),
 
   createdAt: timestamp("created_at").defaultNow().notNull(),
   updatedAt: timestamp("updated_at")
@@ -366,6 +409,10 @@ export const scanListingRelations = relations(scanListing, ({ many, one }) => ({
   }),
   variants: many(scanListingVariant),
   snapshots: many(scanListingSnapshot),
+  keyword: one(scanKeyword, {
+    fields: [scanListing.keywordId],
+    references: [scanKeyword.id],
+  }),
 }));
 
 export const scanListingVariantRelations = relations(
@@ -387,3 +434,7 @@ export const scanListingSnapshotRelations = relations(
     }),
   })
 );
+
+export const scanKeywordRelations = relations(scanKeyword, ({ many }) => ({
+  listings: many(scanListing),
+}));

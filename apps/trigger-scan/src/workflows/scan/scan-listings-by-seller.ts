@@ -9,8 +9,8 @@
  *   2. Load bearer pool, call `client.getSeller` → upsert `scan_seller`
  *      with the storefront record (totalItemsSold, feedback, etc).
  *      Best-effort — even if fields are null, the listing fan-out still runs.
- *   3. Walk `client.getSellerListings` until `pagination.totalPages` (or the
- *      `maxListingPages` cap). Collect listing IDs.
+ *   3. Walk `client.getSellerListings` until `pagination.totalPages` — the whole
+ *      store, no config cap. `MAX_SELLER_PAGES` is a runaway guard only.
  *   4. Chunk the catalog into `<= K`-id batches and `batchTriggerAndWait` them
  *      over `scanListingsByIds` (one paced leaf run per chunk), waiting for all
  *      to finish — so the next seller doesn't start until this seller's listings
@@ -268,6 +268,12 @@ async function markSellerScanned(
     );
 }
 
+/**
+ * Runaway guard only — the real stop is `pagination.totalPages` / `hasMore`.
+ * 1000 pages ≈ 48k listings; a store past that hits eBay's own result cap first.
+ */
+const MAX_SELLER_PAGES = 1000;
+
 async function collectListingIds(
   client: Awaited<ReturnType<MobileProfileTokenManager["createScanClient"]>>,
   manager: MobileProfileTokenManager,
@@ -275,7 +281,7 @@ async function collectListingIds(
   config: ScanConfig
 ): Promise<Set<string>> {
   const listingIds = new Set<string>();
-  for (let page = 1; page <= config.maxListingPages; page += 1) {
+  for (let page = 1; page <= MAX_SELLER_PAGES; page += 1) {
     let result: Awaited<ReturnType<typeof client.getSellerListings>>;
     try {
       // Same URL-level price band + Buy It Now filter as the keyword search,
@@ -299,12 +305,17 @@ async function collectListingIds(
       }
     }
     if (!result.hasMore) {
-      break;
+      return listingIds;
     }
     if (result.pagination && page >= result.pagination.totalPages) {
-      break;
+      return listingIds;
     }
   }
+  logger.warn("Seller catalog walk hit the page ceiling; store truncated", {
+    sellerId,
+    pages: MAX_SELLER_PAGES,
+    listings: listingIds.size,
+  });
   return listingIds;
 }
 

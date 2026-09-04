@@ -80,12 +80,18 @@ Input: `{ marketplace, listingIds: string[], config? }`. Machine `micro`.
    marketplace, reference: sellerReference })`, so the listing's seller FK resolves. It
    does **not** fetch seller stats and does **not** trigger `scanListingsBySeller` (that
    would loop). The bare row's `last_scanned_at` stays null, so the cron's stale-seller
-   catch scans it for stats later. Then upsert `scan_listing` + snapshot, extract
-   keywords. **If it doesn't fit:** persist nothing.
-4. Contribute `{ listingId, fit, sellerReference }` to the run's `verdicts`.
+   catch scans it for stats later. Then upsert `scan_listing` + snapshot in one
+   insert-on-conflict; `isNew` says whether this scan created the row. **If it
+   doesn't fit:** persist nothing.
+4. Contribute the verdict — `{ listingId, fit, sellerReference }`, plus `scanListingId`,
+   `isNew`, `title`, `categoryPath` when it fit — to the run's `verdicts`.
+5. **After the paced loop**, the leaf sends the titles of the listings it *inserted*
+   (`isNew`; never rescans) to OpenAI in one call (up to 50 titles per request) and
+   links each answer as a `scan_keyword` via `scan_listing.keyword_id`. Never throws;
+   skipped when `keyword_llm_enabled = false`. Details in `docs/task-payloads.md`.
 
 **Pacing (load-bearing, anti-detection):** a leaf's `<= K` fetches all leave the SAME
-box's pinned IP/persona. The loop is sequential (`listingScanConcurrency = 1`) with a
+box's pinned IP/persona. The loop is strictly sequential (by design, not a setting) with a
 jittered delay (`listingScanDelay{Min,Max}Ms`) between fetches, reproducing today's
 per-IP rate. Small K spreads work across more boxes/IPs — that fan-out IS the IP-spread.
 
@@ -144,7 +150,8 @@ Input: `{ marketplace, sellerId, config?, forceRefresh? }`. Queue `concurrencyLi
 
 1. **Freshness self-gate** on `scan_seller.last_scanned_at` → skip if recently scraped.
 2. `getSellerStat` (`getSeller`) → `upsertScanSeller`.
-3. `getSellerListings` — paginate to `maxListingPages`; collect listing ids.
+3. `getSellerListings` — paginate to `pagination.totalPages` (whole store; no config
+   cap, `MAX_SELLER_PAGES = 1000` is a runaway guard only); collect listing ids.
 4. **Awaited** fan-out: chunk the catalog into `<= K`-id pieces and
    `batchTriggerAndWaitInWaves` over `scan-listings-by-ids` (one paced leaf run per
    chunk, each on its own box/IP). The seller run **holds open until its whole catalog
@@ -214,7 +221,7 @@ so the dashboard shows which worker ran each task.
   seller validate in `<= K` chunks (`listingScanBatchSize`), each chunk one paced leaf
   run. This **supersedes** the old `KEYWORD_VALIDATION_WAVE_SIZE = 1` (strict
   one-at-a-time): the keyword now waits ⌈N/K⌉ chunks, paced within each, for IP-spread.
-- **Pacing is the anti-detection knob** — within a leaf, `listingScanConcurrency` (=1)
+- **Pacing is the anti-detection knob** — within a leaf, strict sequencing
   + jittered `listingScanDelay{Min,Max}Ms` keep the shared-IP burst rate sane. Small K
   spreads fetches across more boxes/IPs. Never `Promise.all` a leaf's fetches.
 - **No `scan-listings-by-sellers` launcher** — cron `batchTrigger`s sellers directly.

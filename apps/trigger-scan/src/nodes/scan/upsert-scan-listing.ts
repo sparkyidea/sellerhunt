@@ -2,6 +2,15 @@
  * Upsert a single row into `scan_listing` keyed on `(marketplace, reference)`
  * and append a row to `scan_listing_snapshot` in the same transaction.
  *
+ * One `INSERT … ON CONFLICT DO UPDATE`, so two leaves persisting the same
+ * listing at once (the keyword path, the seller path and the cron
+ * orphan-catch can overlap) cannot race the way a select-then-insert did.
+ * `RETURNING (xmax = 0)` tells the caller whether this call created the row
+ * (`isNew`), which is what gates keyword extraction: a listing goes to the
+ * LLM once, on first insert, never on a rescan. The keyword columns
+ * (`keyword_id`, `keyword_attempts`) are deliberately not in the update set,
+ * so rescans preserve them.
+ *
  * The snapshot is the velocity timeseries — every detail fetch records an
  * append-only point so we can compute item-sold deltas over time even when
  * eBay doesn't surface a 24h hotness signal. Listing-level denormalized
@@ -15,7 +24,7 @@ import {
   scanListingSnapshot,
   scanSeller,
 } from "@dashseller/db/schema";
-import { and, eq } from "drizzle-orm";
+import { and, eq, sql } from "drizzle-orm";
 
 export interface UpsertScanListingInput {
   categoryPath?: string[] | null;
@@ -47,9 +56,15 @@ export interface UpsertScanListingInput {
   variant?: boolean;
 }
 
+export interface UpsertScanListingResult {
+  id: string;
+  /** True when this call inserted the row — first time this listing was seen. */
+  isNew: boolean;
+}
+
 export async function upsertScanListing(
   input: UpsertScanListingInput
-): Promise<{ id: string }> {
+): Promise<UpsertScanListingResult> {
   const sellerId = input.sellerReference
     ? await resolveSellerId(input.marketplace, input.sellerReference)
     : null;
@@ -57,6 +72,8 @@ export async function upsertScanListing(
   const priceCents = input.price ?? null;
   const now = new Date();
 
+  // Everything a rescan may overwrite. `keyword_id` / `keyword_attempts` are
+  // absent on purpose; `updated_at` is applied by the schema's $onUpdate.
   const baseFields = {
     sellerId,
     title: input.title,
@@ -79,10 +96,27 @@ export async function upsertScanListing(
   };
 
   return await db.transaction(async (tx) => {
-    const listingId = await upsertListingRow(tx, input, baseFields);
+    const [row] = await tx
+      .insert(scanListing)
+      .values({
+        marketplace: input.marketplace,
+        reference: input.reference,
+        ...baseFields,
+      })
+      .onConflictDoUpdate({
+        target: [scanListing.marketplace, scanListing.reference],
+        set: baseFields,
+      })
+      // xmax is 0 on a freshly inserted tuple and non-zero on an updated one.
+      .returning({ id: scanListing.id, isNew: sql<boolean>`(xmax = 0)` });
+    if (!row) {
+      throw new Error(
+        `upsertScanListing: upsert returned no row for ${input.marketplace}/${input.reference}`
+      );
+    }
 
     await tx.insert(scanListingSnapshot).values({
-      listingId,
+      listingId: row.id,
       scannedAt: now,
       price: priceCents,
       itemSold: input.itemSold ?? null,
@@ -90,50 +124,8 @@ export async function upsertScanListing(
       soldLast30Days: input.soldLast30Days ?? null,
     });
 
-    return { id: listingId };
+    return { id: row.id, isNew: row.isNew };
   });
-}
-
-type Tx = Parameters<Parameters<typeof db.transaction>[0]>[0];
-
-async function upsertListingRow(
-  tx: Tx,
-  input: UpsertScanListingInput,
-  baseFields: Omit<typeof scanListing.$inferInsert, "marketplace" | "reference">
-): Promise<string> {
-  const [existing] = await tx
-    .select({ id: scanListing.id })
-    .from(scanListing)
-    .where(
-      and(
-        eq(scanListing.marketplace, input.marketplace),
-        eq(scanListing.reference, input.reference)
-      )
-    )
-    .limit(1);
-
-  if (existing) {
-    await tx
-      .update(scanListing)
-      .set(baseFields)
-      .where(eq(scanListing.id, existing.id));
-    return existing.id;
-  }
-
-  const [inserted] = await tx
-    .insert(scanListing)
-    .values({
-      marketplace: input.marketplace,
-      reference: input.reference,
-      ...baseFields,
-    })
-    .returning({ id: scanListing.id });
-  if (!inserted) {
-    throw new Error(
-      `upsertScanListing: insert returned no row for ${input.marketplace}/${input.reference}`
-    );
-  }
-  return inserted.id;
 }
 
 async function resolveSellerId(

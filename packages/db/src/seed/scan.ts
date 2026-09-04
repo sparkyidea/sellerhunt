@@ -37,16 +37,18 @@ const db = drizzle(process.env.DATABASE_URL || "");
 /**
  * Per-marketplace scanner config seed. Values match the column defaults in
  * `scan_config`; included explicitly here so operators can see the full set
- * in one place when reasoning about a new marketplace.
+ * in one place when reasoning about a new marketplace. The LLM model,
+ * reasoning effort and request size are code constants, not rows.
  */
 interface ScanConfigSeed {
   enabled: boolean;
   keywordBatchSize: number;
+  keywordLlmEnabled: boolean;
   keywordRescanAfter: number;
   listingBatchSize: number;
   listingRescanAfter: number;
+  listingScanBatchSize: number;
   marketplace: string;
-  maxListingPages: number;
   maxPriceCents: number | null;
   maxSearchPages: number;
   minItemSold: number;
@@ -64,7 +66,6 @@ const MARKETPLACES: ScanConfigSeed[] = [
     sellerRescanAfter: 1440,
     listingRescanAfter: 1440,
     maxSearchPages: 10,
-    maxListingPages: 50,
     minItemSold: 100,
     minPriceCents: 1000,
     maxPriceCents: null,
@@ -72,12 +73,19 @@ const MARKETPLACES: ScanConfigSeed[] = [
     keywordBatchSize: 20,
     sellerBatchSize: 20,
     listingBatchSize: 50,
+    // Listings per scan leaf (K) — also the LLM request cap, so one leaf
+    // normally makes one OpenAI call.
+    listingScanBatchSize: 50,
+    // Keyword extraction — LLM only, every new listing once. Kill switch.
+    keywordLlmEnabled: true,
   },
 ];
 
 /**
  * Initial keyword pool. Operators can edit and re-run safely — existing
- * keywords keep their scan state.
+ * keywords keep their scan state. Seeds are lowercased to match the phrases
+ * the LLM learns (the prompt asks for lowercase), so an exact match reuses
+ * the seeded row.
  */
 const KEYWORDS: Record<string, string[]> = {
   ebay: [

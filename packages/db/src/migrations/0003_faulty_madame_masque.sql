@@ -1,0 +1,1 @@
+ALTER TABLE "scan_config" DROP COLUMN "max_listing_pages";
