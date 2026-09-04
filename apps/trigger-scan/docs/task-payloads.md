@@ -90,7 +90,7 @@ phrase, status) is in the run logs. Needs `OPENAI_API_KEY`.
 interface ResolveListingKeywordsPayload {
   /** Catch-up mode only: how many unresolved listings to pick (default 200). */
   limit?: number;
-  /** scan_listing.id values. Omit to catch up on unresolved listings. */
+  /** scan_listing.id values; `[]` does nothing. Omit the key to catch up on unresolved listings. */
   listingIds?: string[];
   marketplace: string;
 }

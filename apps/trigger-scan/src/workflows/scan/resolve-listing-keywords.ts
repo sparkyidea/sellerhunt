@@ -5,9 +5,9 @@
  * the switch was off, the key was missing, a batch failed, a leaf died
  * mid-stage. Nothing schedules it; trigger it by hand.
  *
- * Pass `listingIds` to retry specific listings; omit them to catch up on
- * every unresolved listing with attempts left, `limit` at a time (default
- * `DEFAULT_LIMIT`). Both modes only pick `keyword_id IS NULL AND
+ * Pass `listingIds` to retry specific listings (an empty list is a no-op);
+ * omit the key to catch up on every unresolved listing with attempts left,
+ * `limit` at a time (default `DEFAULT_LIMIT`). Both modes only pick `keyword_id IS NULL AND
  * keyword_attempts < MAX_LLM_ATTEMPTS` — explicit ids do not bypass the cap.
  * When `keyword_llm_enabled` is off the run exits without picking or spending
  * an attempt. `concurrencyLimit: 1` keeps two manual runs from
@@ -29,7 +29,10 @@ const DEFAULT_LIMIT = 200;
 export interface ResolveListingKeywordsPayload {
   /** Catch-up mode only: how many unresolved listings to pick (default 200). */
   limit?: number;
-  /** `scan_listing.id`s to retry. Omit to catch up on unresolved listings. */
+  /**
+   * `scan_listing.id`s to retry; `[]` does nothing. Omit the key to catch up
+   * on unresolved listings.
+   */
   listingIds?: string[];
   marketplace: string;
 }
@@ -69,16 +72,18 @@ export const resolveListingKeywords = task({
     }
 
     metadata.set("status", "picking");
+    // Presence of the key selects the mode: `listingIds: []` is an explicit
+    // empty selection and must not fall through to catch-up.
     const picked =
-      payload.listingIds && payload.listingIds.length > 0
-        ? await loadUnresolvedListings(marketplace, payload.listingIds)
-        : await pickUnresolvedListings(
+      payload.listingIds === undefined
+        ? await pickUnresolvedListings(
             marketplace,
             payload.limit ?? DEFAULT_LIMIT
-          );
+          )
+        : await loadUnresolvedListings(marketplace, payload.listingIds);
 
     metadata.set("status", "llm-pass").set("picked", picked.length);
-    const totals = await resolveKeywordsWithLlm(config, picked);
+    const totals = await resolveKeywordsWithLlm(marketplace, config, picked);
 
     metadata
       .set("status", "completed")

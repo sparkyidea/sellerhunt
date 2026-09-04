@@ -27,11 +27,12 @@ import { createOpenAIClient } from "../../keywords/openai-client";
 import type { ScanConfig } from "../../utils/scan-config";
 import { dbKeywordStore } from "./keyword-store";
 
-/** The only runtime knob: the kill switch (plus the marketplace for the keyword rows). */
-export type KeywordLlmConfig = Pick<
-  ScanConfig,
-  "keywordLlmEnabled" | "marketplace"
->;
+/**
+ * The only runtime knob: the kill switch. The marketplace is a separate
+ * argument, taken from the task payload — never from `config`, which a
+ * manual trigger can override with a row for a different marketplace.
+ */
+export type KeywordLlmConfig = Pick<ScanConfig, "keywordLlmEnabled">;
 
 export interface ResolveKeywordsTotals extends LlmKeywordTotals {
   /** Listings not sent: LLM disabled or no API key. No attempt spent. */
@@ -89,10 +90,11 @@ export async function pickUnresolvedListings(
 }
 
 /**
- * Send `listings` through the LLM stage. `parser` defaults to a fresh
- * OpenAI client; inject one in tests.
+ * Send `listings` (rows of `marketplace`) through the LLM stage. `parser`
+ * defaults to a fresh OpenAI client; inject one in tests.
  */
 export async function resolveKeywordsWithLlm(
+  marketplace: string,
   config: KeywordLlmConfig,
   listings: readonly UnresolvedListing[],
   parser?: PhraseParser
@@ -102,7 +104,7 @@ export async function resolveKeywordsWithLlm(
   }
   if (!config.keywordLlmEnabled) {
     logger.info("Keyword LLM disabled; leaving listings unresolved", {
-      marketplace: config.marketplace,
+      marketplace,
       pending: listings.length,
     });
     return skipped(listings.length);
@@ -115,7 +117,7 @@ export async function resolveKeywordsWithLlm(
       parse = (body) => client.responses.parse(body);
     } catch (error) {
       logger.warn("Keyword LLM unavailable; leaving listings unresolved", {
-        marketplace: config.marketplace,
+        marketplace,
         pending: listings.length,
         error: error instanceof Error ? error.message : String(error),
       });
@@ -125,7 +127,7 @@ export async function resolveKeywordsWithLlm(
 
   const totals = await runKeywordLlmStage(
     { parse, store: dbKeywordStore },
-    config.marketplace,
+    marketplace,
     listings
   );
   return { ...totals, llmSkipped: 0 };

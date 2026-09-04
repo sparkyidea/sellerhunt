@@ -54,6 +54,8 @@ function answering(
 }
 
 class MemoryStore implements KeywordStore {
+  /** Listing ids another run already linked; `linkListingKeyword` reports `linked: false`. */
+  alreadyLinked = new Set<string>();
   bumps: string[][] = [];
   failBump = false;
   failLink = false;
@@ -69,12 +71,18 @@ class MemoryStore implements KeywordStore {
 
   linkListingKeyword(
     input: LinkListingKeywordInput
-  ): Promise<{ keywordId: string }> {
+  ): Promise<{ keywordId: string; linked: boolean }> {
     if (this.failLink) {
       return Promise.reject(new Error("unique violation"));
     }
+    if (this.alreadyLinked.has(input.listingId)) {
+      return Promise.resolve({ keywordId: "kw-other-run", linked: false });
+    }
     this.links.push(input);
-    return Promise.resolve({ keywordId: `kw-${this.links.length}` });
+    return Promise.resolve({
+      keywordId: `kw-${this.links.length}`,
+      linked: true,
+    });
   }
 }
 
@@ -102,6 +110,25 @@ describe("runKeywordLlmStage", () => {
       marketplace: "ebay",
       keyword: "phrase 0",
     });
+    expect(store.bumps).toEqual([]);
+  });
+
+  it("keeps a listing another run linked first and spends no attempt on it", async () => {
+    const store = new MemoryStore();
+    store.alreadyLinked.add("listing-1");
+    const { parse } = answering((index) => `phrase ${index}`);
+
+    const totals = await runKeywordLlmStage(
+      { parse, store },
+      MARKETPLACE,
+      listings(3)
+    );
+
+    expect(totals).toEqual({ failed: 0, resolved: 3, unresolved: 0 });
+    expect(store.links.map((link) => link.listingId)).toEqual([
+      "listing-0",
+      "listing-2",
+    ]);
     expect(store.bumps).toEqual([]);
   });
 

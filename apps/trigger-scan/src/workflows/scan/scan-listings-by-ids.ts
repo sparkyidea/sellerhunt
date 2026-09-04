@@ -357,7 +357,9 @@ async function extractKeywordsForNewListings(
   }
   metadata.set("status", "extracting-keywords").set("keywordNew", fresh.length);
   try {
-    const totals = await resolveKeywordsWithLlm(config, fresh);
+    // Payload marketplace, not `config.marketplace`: the listings were
+    // persisted under the former, and a manual `config` override may differ.
+    const totals = await resolveKeywordsWithLlm(marketplace, config, fresh);
     metadata
       .set("keywordResolvedLlm", totals.resolved)
       .set("keywordUnresolved", totals.unresolved)

@@ -7,14 +7,17 @@
  * `last_scanned_at`, so learning a keyword can't skip its next scheduled
  * search; never `source`) — then points the listing at it. New rows are
  * `source = "llm"` with `last_scanned_at` null, so the cron's stale-keyword
- * picker will search them.
+ * picker will search them. The listing update is conditional on
+ * `keyword_id IS NULL`: a scan leaf and a catch-up retry run can both hold
+ * the same freshly inserted listing while awaiting OpenAI, and the first
+ * answer to land must win — `linked: false` tells the stage it lost.
  *
  * `bumpKeywordAttempts` counts one LLM attempt per listing so a poison title
  * stops after `MAX_LLM_ATTEMPTS`.
  */
 import { db } from "@dashseller/db";
 import { scanKeyword, scanListing } from "@dashseller/db/schema";
-import { eq, inArray, sql } from "drizzle-orm";
+import { and, eq, inArray, isNull, sql } from "drizzle-orm";
 import type { KeywordStore } from "../../keywords/llm-stage";
 
 export const dbKeywordStore: KeywordStore = {
@@ -40,11 +43,17 @@ export const dbKeywordStore: KeywordStore = {
           `linkListingKeyword: upsert returned no row for "${input.keyword}"`
         );
       }
-      await tx
+      const claimed = await tx
         .update(scanListing)
         .set({ keywordId: keyword.id })
-        .where(eq(scanListing.id, input.listingId));
-      return { keywordId: keyword.id };
+        .where(
+          and(
+            eq(scanListing.id, input.listingId),
+            isNull(scanListing.keywordId)
+          )
+        )
+        .returning({ id: scanListing.id });
+      return { keywordId: keyword.id, linked: claimed.length > 0 };
     });
   },
 

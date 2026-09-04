@@ -43,10 +43,14 @@ export interface LinkListingKeywordInput {
 export interface KeywordStore {
   /** Count one LLM attempt against each listing. */
   bumpKeywordAttempts(listingIds: readonly string[]): Promise<void>;
-  /** Find-or-create the keyword and point the listing at it. */
+  /**
+   * Find-or-create the keyword and point the listing at it — only if the
+   * listing is still unresolved. `linked: false` means another run got
+   * there first; the listing keeps its earlier keyword.
+   */
   linkListingKeyword(
     input: LinkListingKeywordInput
-  ): Promise<{ keywordId: string }>;
+  ): Promise<{ keywordId: string; linked: boolean }>;
 }
 
 export interface LlmStageDeps {
@@ -139,7 +143,7 @@ async function resolveItem(
   }
 
   try {
-    const { keywordId } = await deps.store.linkListingKeyword({
+    const { keywordId, linked } = await deps.store.linkListingKeyword({
       listingId: row.id,
       marketplace,
       keyword,
@@ -149,7 +153,10 @@ async function resolveItem(
       title: row.title,
       keyword,
       keywordId,
-      status: "resolved",
+      // "already-resolved": a concurrent run linked this listing first; its
+      // keyword stands and this answer is dropped. Either way the listing
+      // ends resolved, so it counts as such.
+      status: linked ? "resolved" : "already-resolved",
     });
     totals.resolved += 1;
   } catch (error) {
