@@ -11,11 +11,11 @@ launcher + paced batch leaf (handed `> K` ids it fans into `<= K` child runs; ha
 `<= K` it scans them inline and returns verdicts). There is no single-listing task.
 
 ```
-scan-keywords-cron → scan-listings-by-keywords → scan-listings-by-keyword
-                                                ├─ await → scan-listings-by-ids
-                                                └─ fitting verdict → scan-listings-by-seller
-scan-sellers-cron → scan-listings-by-seller → await catalog → scan-listings-by-ids
-scan-listings-cron → scan-listings-by-ids (self-fans > K IDs into <=K leaf runs)
+scan-cron ─┬─ stale listings → scan-listings-by-ids (self-fans > K IDs into <=K leaf runs)
+           ├─ stale sellers  → scan-listings-by-seller → await catalog → scan-listings-by-ids
+           └─ stale keywords → scan-listings-by-keywords → scan-listings-by-keyword
+                                                           ├─ await → scan-listings-by-ids
+                                                           └─ fitting verdict → scan-listings-by-seller
 ```
 
 - **keyword** validates in `<= K` chunks: it `triggerAndWait`s `scan-listings-by-ids`
@@ -75,19 +75,21 @@ sequential, and the retry tool's page size is a payload option.
 
 ---
 
-## Marketplace cron tasks
+## Marketplace cron task
 
-`scan-listings-cron`, `scan-sellers-cron`, and `scan-keywords-cron` each have a
-production schedule declared in [scan-crons.ts](../src/workflows/scan/scan-crons.ts).
-They sweep enabled marketplace configs, select stale entities of their own type,
-and launch the existing workflows. Marketplaces whose adapter lacks keyword search
-or seller catalog methods (shop today) are skipped by those two crons and reported
-as `unsupported`; the keyword and seller tasks refuse manual launches for them
-before loading a persona. Trigger.dev supplies the schedule payload;
-there is no custom marketplace or config payload for these tasks.
+`scan-cron` is the one production schedule declared in
+[scan-crons.ts](../src/workflows/scan/scan-crons.ts). Each tick loads the enabled
+marketplace configs once, then sweeps listings, sellers, and keywords in that order,
+selecting stale entities per marketplace and launching the existing workflows.
+Marketplaces whose adapter lacks keyword search or seller catalog methods (shop
+today) are skipped by those two sweeps and reported as `unsupported`; the keyword
+and seller tasks refuse manual launches for them before loading a persona.
+Trigger.dev supplies the schedule payload; there is no custom marketplace or config
+payload for this task. The run output lists one `{ entity, marketplace, status,
+triggered }` entry per sweep and marketplace.
 
 For cadence, cooldown settings and deployment behavior, see
-[architecture](scan-architecture.md#4d-marketplace-cron-tasks) and
+[architecture](scan-architecture.md#4d-marketplace-cron-task) and
 [rollout](scan-cron-rollout.md).
 
 ---
@@ -243,7 +245,7 @@ interface ScanListingsBySellerPayload {
 
 - **Freshness self-gate:** keywords, sellers and listings check `last_scanned_at`
   against the matching inline cooldown and skip if fresh. Intervals are listed in
-  [architecture](scan-architecture.md#4d-marketplace-cron-tasks).
+  [architecture](scan-architecture.md#4d-marketplace-cron-task).
   `forceRefresh: true` bypasses only the keyword/seller parent's check.
   Legacy `*RescanAfter` columns are removed from the schema; old inline config
   fields are ignored.

@@ -16,6 +16,7 @@ const mocks = vi.hoisted(() => ({
   sellers: vi.fn(),
   keywords: vi.fn(),
   keys: vi.fn(),
+  metadata: vi.fn(),
 }));
 vi.mock("@dashseller/db", () => ({ db: mocks.db }));
 vi.mock("@trigger.dev/sdk", () => ({
@@ -26,7 +27,7 @@ vi.mock("@trigger.dev/sdk", () => ({
     },
   },
   logger: { error: vi.fn(), info: vi.fn() },
-  metadata: { set: vi.fn().mockReturnThis() },
+  metadata: { set: mocks.metadata.mockReturnThis() },
 }));
 vi.mock("../machine-metadata", () => ({
   setMachineMetadata: vi.fn(),
@@ -46,6 +47,14 @@ vi.mock("../../workflows/scan/scan-listings-by-keywords", () => ({
 vi.mock("../../workflows/scan/scan-listings-by-seller", () => ({
   scanListingsBySeller: { batchTrigger: mocks.sellers },
 }));
+
+const runCron = () => {
+  const run = mocks.runs.get("scan-cron");
+  if (!run) {
+    throw new Error("scan-cron schedule not registered");
+  }
+  return run();
+};
 
 beforeEach(() => {
   vi.clearAllMocks();
@@ -74,69 +83,51 @@ beforeEach(() => {
 
 afterEach(() => vi.useRealTimers());
 
-it.each([
-  {
-    entity: "listing",
-    cutoff: "2026-09-05T06:00:00.000Z",
-    marketplaces: ["ebay", "shop"],
-  },
-  {
-    entity: "seller",
-    cutoff: "2026-09-04T12:00:00.000Z",
-    marketplaces: ["ebay"],
-  },
-  {
-    entity: "keyword",
-    cutoff: "2026-08-29T12:00:00.000Z",
-    marketplaces: ["ebay"],
-  },
-])("dispatches stale $entity work using task cooldowns, ignoring legacy config", async ({
-  entity,
-  cutoff,
-  marketplaces,
-}) => {
-  await mocks.runs.get(`scan-${entity}s-cron`)?.();
-  const dispatched = {
-    listing: mocks.listings,
-    seller: mocks.sellers,
-    keyword: mocks.keywords,
-  };
-  for (const [name, mock] of Object.entries(dispatched)) {
-    expect(mock).toHaveBeenCalledTimes(
-      name === entity ? marketplaces.length : 0
-    );
-  }
+it("registers exactly one production schedule", () => {
+  expect([...mocks.runs.keys()]).toEqual(["scan-cron"]);
+});
+
+it("sweeps listings, sellers, then keywords with task cooldowns, ignoring legacy config", async () => {
+  await runCron();
+  expect(mocks.configs).toHaveBeenCalledTimes(1);
+  expect(mocks.listings).toHaveBeenCalledTimes(2);
+  expect(mocks.sellers).toHaveBeenCalledTimes(1);
+  expect(mocks.keywords).toHaveBeenCalledTimes(1);
   const queries = mocks.db.where.mock.calls.map(([where]) =>
     new PgDialect().sqlToQuery(where)
   );
-  expect(queries.map((q) => q.params[0])).toEqual(marketplaces);
-  expect(queries.map((q) => q.params[1])).toEqual(
-    marketplaces.map(() => cutoff)
-  );
-  expect(queries[0]?.sql).toContain('"last_scanned_at" is null');
-  expect(queries[0]?.sql).toContain('"last_scanned_at" <=');
-  if (entity === "keyword") {
-    expect(queries[0]?.sql).toContain('"dead_at" is null');
+  expect(queries.map((q) => [q.params[0], q.params[1]])).toEqual([
+    ["ebay", "2026-09-05T06:00:00.000Z"],
+    ["shop", "2026-09-05T06:00:00.000Z"],
+    ["ebay", "2026-09-04T12:00:00.000Z"],
+    ["ebay", "2026-08-29T12:00:00.000Z"],
+  ]);
+  for (const query of queries) {
+    expect(query.sql).toContain('"last_scanned_at" is null');
+    expect(query.sql).toContain('"last_scanned_at" <=');
   }
-  if (entity === "seller") {
-    expect(mocks.keys).toHaveBeenCalledWith("seller", "ebay", "123456789012");
-  }
+  expect(queries[3]?.sql).toContain('"dead_at" is null');
+  expect(mocks.keys).toHaveBeenCalledWith("seller", "ebay", "123456789012");
+  expect(
+    mocks.metadata.mock.calls.map(([key, value]) => `${key}=${value}`)
+  ).toEqual([
+    "status=sweeping-listing",
+    "status=sweeping-seller",
+    "status=sweeping-keyword",
+    "status=completed",
+  ]);
 });
 
 it("does not launch empty batches", async () => {
   mocks.db.limit.mockResolvedValue([]);
-  for (const run of mocks.runs.values()) {
-    await run();
-  }
+  await runCron();
   expect(mocks.listings).not.toHaveBeenCalled();
   expect(mocks.sellers).not.toHaveBeenCalled();
   expect(mocks.keywords).not.toHaveBeenCalled();
 });
 
 it("sets priorities on scan runs while preserving seller launch keys", async () => {
-  for (const run of mocks.runs.values()) {
-    await run();
-  }
+  await runCron();
   for (const marketplace of ["ebay", "shop"]) {
     expect(mocks.listings).toHaveBeenCalledWith(
       expect.objectContaining({ marketplace }),
@@ -159,31 +150,95 @@ it("sets priorities on scan runs while preserving seller launch keys", async () 
   ]);
 });
 
-it("skips keyword and seller sweeps for adapters without those methods", async () => {
-  const seller = await mocks.runs.get("scan-sellers-cron")?.();
-  const keyword = await mocks.runs.get("scan-keywords-cron")?.();
-  for (const result of [seller, keyword]) {
-    expect(result).toMatchObject({
-      results: [
-        { marketplace: "disabled", status: "disabled" },
-        { marketplace: "ebay", status: "completed", triggered: 1 },
-        { marketplace: "shop", status: "unsupported", triggered: 0 },
-      ],
-    });
-  }
-  expect(mocks.sellers).toHaveBeenCalledTimes(1);
-  expect(mocks.keywords).toHaveBeenCalledTimes(1);
-  expect(mocks.db.where).toHaveBeenCalledTimes(2);
-});
-
-it("continues other marketplaces after a dispatch failure", async () => {
-  mocks.listings.mockRejectedValueOnce(new Error("unavailable"));
-  const result = await mocks.runs.get("scan-listings-cron")?.();
-  expect(result).toMatchObject({
+it("reports every entity per marketplace, skipping sweeps the adapter lacks", async () => {
+  await expect(runCron()).resolves.toEqual({
     results: [
-      { marketplace: "disabled", status: "disabled" },
-      { marketplace: "ebay", status: "incomplete" },
-      { marketplace: "shop", status: "completed", triggered: 1 },
+      {
+        entity: "listing",
+        marketplace: "disabled",
+        status: "disabled",
+        triggered: 0,
+      },
+      {
+        entity: "listing",
+        marketplace: "ebay",
+        status: "completed",
+        triggered: 1,
+      },
+      {
+        entity: "listing",
+        marketplace: "shop",
+        status: "completed",
+        triggered: 1,
+      },
+      {
+        entity: "seller",
+        marketplace: "disabled",
+        status: "disabled",
+        triggered: 0,
+      },
+      {
+        entity: "seller",
+        marketplace: "ebay",
+        status: "completed",
+        triggered: 1,
+      },
+      {
+        entity: "seller",
+        marketplace: "shop",
+        status: "unsupported",
+        triggered: 0,
+      },
+      {
+        entity: "keyword",
+        marketplace: "disabled",
+        status: "disabled",
+        triggered: 0,
+      },
+      {
+        entity: "keyword",
+        marketplace: "ebay",
+        status: "completed",
+        triggered: 1,
+      },
+      {
+        entity: "keyword",
+        marketplace: "shop",
+        status: "unsupported",
+        triggered: 0,
+      },
     ],
   });
+  expect(mocks.db.where).toHaveBeenCalledTimes(4);
+});
+
+it("continues other marketplaces and sweeps after a dispatch failure", async () => {
+  mocks.listings.mockRejectedValueOnce(new Error("unavailable"));
+  const result = await runCron();
+  expect(result).toMatchObject({
+    results: expect.arrayContaining([
+      { entity: "listing", marketplace: "ebay", status: "incomplete" },
+      {
+        entity: "listing",
+        marketplace: "shop",
+        status: "completed",
+        triggered: 1,
+      },
+      {
+        entity: "seller",
+        marketplace: "ebay",
+        status: "completed",
+        triggered: 1,
+      },
+      {
+        entity: "keyword",
+        marketplace: "ebay",
+        status: "completed",
+        triggered: 1,
+      },
+    ]),
+  });
+  expect(mocks.sellers).toHaveBeenCalledTimes(1);
+  expect(mocks.keywords).toHaveBeenCalledTimes(1);
+  expect(mocks.metadata).toHaveBeenLastCalledWith("status", "incomplete");
 });
