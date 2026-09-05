@@ -335,13 +335,6 @@ export const scanConfig = pgTable("scan_config", {
   /** Master kill switch — cron exits early when false. */
   enabled: boolean("enabled").notNull().default(true),
 
-  /** Minutes after last_scanned_at before a keyword is rescanned. */
-  keywordRescanAfter: integer("keyword_rescan_after").notNull().default(1440),
-  /** Minutes after last_scanned_at before a seller is rescanned. */
-  sellerRescanAfter: integer("seller_rescan_after").notNull().default(1440),
-  /** Minutes after last_scanned_at before a listing is rescanned. */
-  listingRescanAfter: integer("listing_rescan_after").notNull().default(1440),
-
   /**
    * Pages walked per keyword scan (depth of discovery). Seller stores have no
    * such knob: a seller scan walks the whole store to `pagination.totalPages`

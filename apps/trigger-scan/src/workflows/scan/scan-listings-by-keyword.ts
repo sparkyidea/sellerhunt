@@ -92,11 +92,7 @@ export const scanListingsByKeyword = schemaTask({
       .set("status", "checking-freshness");
 
     if (!payload.forceRefresh) {
-      const fresh = await checkKeywordFreshness(
-        marketplace,
-        keyword,
-        config.keywordRescanAfter
-      );
+      const fresh = await checkKeywordFreshness(marketplace, keyword);
       if (fresh) {
         await tags.add("scan_skip_reason_fresh");
         metadata
@@ -240,11 +236,10 @@ async function validateAndPromoteSellers(
   let failedHandoffs = 0;
 
   for (const ids of chunk([...listingIds], config.listingScanBatchSize)) {
-    const run = await scanListingsByIds.triggerAndWait({
-      marketplace,
-      listingIds: ids,
-      config,
-    });
+    const run = await scanListingsByIds.triggerAndWait(
+      { marketplace, listingIds: ids, config },
+      { priority: 3600 }
+    );
     if (!isListingBatchComplete(run, ids.length)) {
       incompleteBatches += 1;
     }
@@ -282,6 +277,7 @@ async function promoteSeller(
     { marketplace, sellerId: sellerReference, config },
     {
       ...(await scanLaunchOptions("seller", marketplace, sellerReference)),
+      priority: 1800,
       tags: [`scan_seller_${sellerReference}`, `marketplace_${marketplace}`],
     }
   );
@@ -290,13 +286,9 @@ async function promoteSeller(
 
 async function checkKeywordFreshness(
   marketplace: string,
-  keyword: string,
-  rescanAfter: number
+  keyword: string
 ): Promise<{ lastScannedAt: Date } | null> {
-  if (rescanAfter <= 0) {
-    return null;
-  }
-  const freshUntil = new Date(Date.now() - rescanAfter * 60_000);
+  const freshUntil = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
   const [row] = await db
     .select({ lastScannedAt: scanKeyword.lastScannedAt })
     .from(scanKeyword)

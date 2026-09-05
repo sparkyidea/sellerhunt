@@ -141,6 +141,7 @@ async function fanOut(
       wave.map((chunkIds) => ({
         payload: { marketplace, listingIds: chunkIds, config },
         options: {
+          priority: 3600,
           tags: [`marketplace_${marketplace}`, "scan_listing_batch"],
         },
       }))

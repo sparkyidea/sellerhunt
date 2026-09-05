@@ -63,6 +63,7 @@ export const scanListingsByKeywords = schemaTask({
             options: {
               tags: [`scan_keyword_${keyword}`, `marketplace_${marketplace}`],
               ...(await scanLaunchOptions("keyword", marketplace, keyword)),
+              priority: 0,
             },
           }))
         )

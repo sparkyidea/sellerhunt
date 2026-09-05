@@ -1,7 +1,7 @@
 # Scan pipeline — architecture & task contracts
 
-Current scan workflow contracts. The dependent listing-freshness and cadence work
-is tracked in [Issue #11](https://github.com/sparkyidea/sellerhunt/issues/11).
+Current scan workflow contracts. Durable scan ownership and further scheduling
+capacity work are tracked in [Issue #11](https://github.com/sparkyidea/sellerhunt/issues/11).
 
 ## 1. Vocabulary
 
@@ -23,9 +23,21 @@ adapter/bearer pool on it.
 
 ## 2. Freshness and launch suppression
 
-Keyword and seller tasks check their successful `last_scanned_at` against the
-matching configured rescan interval. Listing tasks currently fetch every supplied
-ID; listing freshness and per-ID ownership remain dependent work in Issue #11.
+All three entity types check `last_scanned_at` against the intervals defined inline
+in [scan-crons.ts](../src/workflows/scan/scan-crons.ts) and the matching scan-time
+freshness checks. Crons select null timestamps or timestamps at/before the cutoff; scan
+execution checks again so queued work and discovery paths skip recently scanned
+entities. At the exact cutoff, the entity is eligible. Keyword/seller `forceRefresh`
+bypasses only that parent's gate; its listing children still respect listing cooldown.
+
+Fresh listings return a verdict from stored metrics, evaluated against the current
+thresholds. Fitting cached verdicts retain seller identity and have `isNew: false`:
+parents can complete and promote sellers without another detail fetch, snapshot,
+or keyword extraction. The existing paced leaf still loads a persona/client.
+Missing rows and stale rows fetch as before. Unpersisted rejects/404s have no stored
+cooldown yet. These timestamp checks do not claim concurrent stale work; two runs
+that both check before either persists can still fetch the same listing. Durable
+ownership remains in Issue #11.
 
 [scan-launch-options.ts](../src/utils/scan-launch-options.ts) owns global keyword/seller
 launch keys and their two-hour TTL. All three launch sites share that policy:
@@ -47,10 +59,10 @@ keys would not deduplicate overlapping ID sets, so they are intentionally absent
 ## 3. Call graph
 
 ```
-ebay-listings-scanner (cron, scheduled)
- ├─ stale keywords ─► scan-listings-by-keywords (bulk) ─► scan-listings-by-keyword
- ├─ stale sellers  ─► scan-listings-by-seller            (batchTrigger, one per seller)
- └─ stale listings ─► scan-listings-by-ids               (orphan catch, self-fans to <=K runs)
+scan-listings-cron ─► stale listings ─► scan-listings-by-ids (self-fans to <=K runs)
+scan-sellers-cron  ─► stale sellers  ─► scan-listings-by-seller (one run per seller)
+scan-keywords-cron ─► stale keywords ─► scan-listings-by-keywords ─► scan-listings-by-keyword
+(each cron sweeps all enabled marketplaces)
 
 scan-listings-by-ids (self-recursive)
  ├─ if > K ids: batchTrigger ITSELF, one run per <=K chunk   ← fire-and-forget, fast handoff
@@ -84,9 +96,10 @@ Input: `{ marketplace, listingIds: string[], config? }`. Machine `micro`.
   `{ mode: "scanned", verdicts, succeeded, notFound, failed, unfit, aborted }`. Awaiting callers
   pass `<= K` so they always land here.
 
-**Per listing** (`scanOneListing` node — the former single-leaf pipeline, unchanged):
+**Per listing** (`scanOneListing` node):
 
-1. `getListing` (authoritative detail). **No freshness check — always scan.**
+1. Normalize the ID and check listing freshness. Reuse a stored verdict if fresh;
+   otherwise call `getListing` for authoritative detail.
 2. Evaluate the condition (`minItemSold`, `minSoldLast24h`, price band) → `fit`.
 3. **If it fits:** ensure the seller ROW exists — a **bare** `upsertScanSeller({
    marketplace, reference: sellerReference })`, so the listing's seller FK resolves. It
@@ -180,13 +193,58 @@ normalized verdict IDs. Crashed children and unexpected launcher-mode returns ar
 incomplete; launcher mode is a defensive guard since parents already chunk by K.
 The seller also checks coverage and that every requested batch returned a result.
 
-### 4d. `ebay-listings-scanner` — cron heartbeat
+### 4d. Marketplace cron tasks
 
-Scheduled. Reads `scan_config` (kill switch via `enabled`). Picks stale
-keywords/sellers/listings via `pickStale*` (which read `last_scanned_at`), and fans
-each batch out fire-and-forget. The resilience net: any dropped fan-out is
-re-discovered by later ticks. A retained launch key can return the prior run handle
-instead of creating a new run until its TTL expires.
+[scan-crons.ts](../src/workflows/scan/scan-crons.ts) declares three production schedules:
+`scan-listings-cron`, `scan-sellers-cron`, and `scan-keywords-cron`. Each runs every
+five minutes and selects only its entity type across all enabled `scan_config`
+rows. Disabled marketplaces are skipped; one marketplace dispatch failure does
+not prevent the others from dispatching. Each cron has its own queue limit of one.
+Each uses its entity's batch size from the DB and cooldown from worker code. This heartbeat drains
+bounded batches and picks up newly due entities; it is not the repeat interval.
+
+| Entity | Cooldown |
+| --- | --- |
+| Listing | 6 hours |
+| Seller | 24 hours |
+| Keyword | 7 days |
+
+These are eligibility intervals, not completion-time guarantees. Batch limits,
+queueing, failures and retained global keys can delay scans. Scan launches use the
+[priorities below](#4e-scan-run-priority). At the default 50 listings
+per five-minute tick, the listing cron can select at most 3,600 listing IDs in six
+hours, including repeated selections of work that is still stale.
+
+Declarative schedules and inline cooldowns take effect on Trigger.dev worker
+deployment; see [rollout](scan-cron-rollout.md). The schema removes the legacy
+database cooldown columns, and inline `config` cannot override these intervals.
+The former eBay-only task has been removed. Retire any existing dashboard schedule
+for that task when rolling out the replacement. No live schedules are modified by
+editing these source files.
+
+### 4e. Scan run priority
+
+Every application scan launch sets Trigger.dev's `priority` option inline:
+
+| Scan work | Priority (seconds) |
+| --- | --- |
+| Listings, including self-fan-out and keyword/seller listing children | 3600 |
+| Sellers, including keyword promotions | 1800 |
+| Keywords, including the bulk launcher and its children | 0 |
+
+The values are queue-time offsets: Trigger.dev subtracts the priority from the
+enqueue timestamp, favoring listings, then sellers, then keywords when queued at
+similar times. Older work can still run first, and running tasks are not preempted.
+This is a preference under contention, not a strict sequence. Listing discovery
+and listing refreshes have the same priority. The cron ticks themselves have no
+specified order.
+
+Existing task queues and concurrency limits remain separate. Every child launch
+sets its own priority; it does not inherit its parent's value. Manual or external
+launches default to zero unless the caller supplies a priority option. Priority
+does not change freshness checks, launch keys, or capacity limits. See Trigger.dev's
+[priority contract](https://trigger.dev/docs/runs/priority) and
+[queue concurrency contract](https://trigger.dev/docs/queue-concurrency).
 
 ## 5. Fire-and-forget vs await (the rule)
 
@@ -208,10 +266,12 @@ whole-catalog serialization. The SDK version alone does not establish server
 behavior. Parent task attempts are limited to one; the configured run duration is
 one hour. The launch TTL allows another hour for queueing, which must be measured.
 
-Unit tests cover completion/error classification and the global key-creation
-boundary. They do not prove deployed parent effects. Controlled deployed checks
+Unit tests cover completion/error classification, global key creation, and outgoing
+priority options from crons and parent/child orchestration with mocked boundaries.
+They do not prove deployed scheduling or parent effects. Controlled deployed checks
 must verify incomplete results/timestamps, partial seller promotion, cross-tick
-key reuse/expiry, and queue/wait bounds before cadence activation.
+key reuse/expiry, queue/wait bounds, and priority under contention before cadence
+activation. Verify that waiting parents leave capacity for their listing children.
 
 Every run stamps `hostname` and `boxName` through `setMachineMetadata()` so the
 worker can be identified in the dashboard.
@@ -227,7 +287,8 @@ worker can be identified in the dashboard.
   + jittered `listingScanDelay{Min,Max}Ms` keep the shared-IP burst rate sane. Small K
   spreads fetches across more boxes/IPs. Never `Promise.all` a leaf's fetches.
 - **No `scan-listings-by-sellers` launcher** — cron `batchTrigger`s sellers directly.
-- Listings: **no freshness gate, no idempotency** — only keyword & seller are gated.
+- All three entities have freshness gates; only keywords and sellers have launch
+  idempotency keys. Listing ownership is separate pending work.
 
 ### Resolved
 - Cron orphan listings route through `scan-listings-by-ids`, which now **self-fans** into

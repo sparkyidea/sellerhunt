@@ -80,11 +80,7 @@ export const scanListingsBySeller = schemaTask({
       .set("status", "checking-freshness");
 
     if (!payload.forceRefresh) {
-      const fresh = await checkSellerFreshness(
-        marketplace,
-        sellerId,
-        config.sellerRescanAfter
-      );
+      const fresh = await checkSellerFreshness(marketplace, sellerId);
       if (fresh) {
         await tags.add("scan_skip_reason_fresh");
         metadata
@@ -157,6 +153,7 @@ export const scanListingsBySeller = schemaTask({
       idChunks.map((ids) => ({
         payload: { marketplace, listingIds: ids, config },
         options: {
+          priority: 3600,
           tags: [`scan_seller_${sellerId}`, `marketplace_${marketplace}`],
         },
       })),
@@ -222,13 +219,9 @@ export const scanListingsBySeller = schemaTask({
 
 async function checkSellerFreshness(
   marketplace: string,
-  sellerId: string,
-  rescanAfter: number
+  sellerId: string
 ): Promise<{ lastScannedAt: Date } | null> {
-  if (rescanAfter <= 0) {
-    return null;
-  }
-  const freshUntil = new Date(Date.now() - rescanAfter * 60_000);
+  const freshUntil = new Date(Date.now() - 24 * 60 * 60 * 1000);
   const [row] = await db
     .select({ lastScannedAt: scanSeller.lastScannedAt })
     .from(scanSeller)

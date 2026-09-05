@@ -8,7 +8,9 @@
  * silently scan with surprise values.
  *
  * Only kill switches, business thresholds and per-marketplace tuning are
- * rows. The LLM model, reasoning effort and request cap live in
+ * rows. Cooldowns are inline in the cron tasks and freshness checks; old
+ * cooldown payload fields are ignored. The LLM model, reasoning
+ * effort and request cap live in
  * `keywords/extract-keywords.ts`; leaf fetches are always sequential.
  */
 import { db } from "@dashseller/db";
@@ -30,11 +32,7 @@ export const scanConfigSchema = z.object({
   keywordBatchSize: z.number(),
   /** LLM kill switch. Off → new listings persist unresolved, no attempt spent. */
   keywordLlmEnabled: z.boolean(),
-  /** Minutes after last_scanned_at before a keyword is rescanned. */
-  keywordRescanAfter: z.number(),
   listingBatchSize: z.number(),
-  /** Minutes after last_scanned_at before a listing is rescanned. */
-  listingRescanAfter: z.number(),
   /** Listings scanned per `scan-listings-by-ids` leaf run + fan-out threshold. */
   listingScanBatchSize: z.number(),
   /** Max jittered delay (ms) before each getListing in a leaf run. */
@@ -48,8 +46,6 @@ export const scanConfigSchema = z.object({
   minPriceCents: z.number(),
   minSoldLast24h: z.number().nullable(),
   sellerBatchSize: z.number(),
-  /** Minutes after last_scanned_at before a seller is rescanned. */
-  sellerRescanAfter: z.number(),
 });
 
 export type ScanConfig = z.infer<typeof scanConfigSchema>;
@@ -83,9 +79,6 @@ function toScanConfig(row: ScanConfigRow): ScanConfig {
   return {
     marketplace: row.marketplace,
     enabled: row.enabled,
-    keywordRescanAfter: row.keywordRescanAfter,
-    sellerRescanAfter: row.sellerRescanAfter,
-    listingRescanAfter: row.listingRescanAfter,
     maxSearchPages: row.maxSearchPages,
     minItemSold: row.minItemSold,
     minPriceCents: row.minPriceCents,
