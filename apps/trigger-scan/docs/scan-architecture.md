@@ -198,8 +198,13 @@ The seller also checks coverage and that every requested batch returned a result
 [scan-crons.ts](../src/workflows/scan/scan-crons.ts) declares three production schedules:
 `scan-listings-cron`, `scan-sellers-cron`, and `scan-keywords-cron`. Each runs every
 five minutes and selects only its entity type across all enabled `scan_config`
-rows. Disabled marketplaces are skipped; one marketplace dispatch failure does
-not prevent the others from dispatching. Each cron has its own queue limit of one.
+rows. Disabled marketplaces are skipped. Marketplaces whose adapter does not implement
+an entity's methods are reported as `unsupported` and skipped: `getScanCapabilities` in
+`@dashseller/marketplace-scan` declares this per adapter, and shop serves listing detail
+only today, so its keyword and seller sweeps never launch runs that would reject with an
+unimplemented-method error and count against personas. The keyword and seller tasks
+also refuse such marketplaces before loading a persona. One marketplace dispatch
+failure does not prevent the others from dispatching. Each cron has its own queue limit of one.
 Each uses its entity's batch size from the DB and cooldown from worker code. This heartbeat drains
 bounded batches and picks up newly due entities; it is not the repeat interval.
 
@@ -239,7 +244,16 @@ This is a preference under contention, not a strict sequence. Listing discovery
 and listing refreshes have the same priority. The cron ticks themselves have no
 specified order.
 
-Existing task queues and concurrency limits remain separate. Every child launch
+Existing task queues and concurrency limits remain separate, and that bounds what
+priority establishes. Trigger.dev documents priority as dequeue order within one
+queue, and each scan task has its own queue, so the documented contract does not
+promise that a listing run outranks a seller or keyword run. Cross-entity ordering
+relies on the v4 run engine dequeuing an environment's queues by their earliest
+priority-adjusted enqueue time; that is behaviour to verify on the deployed server
+(section 6), not a contract. The tasks deliberately do not share one queue: the
+deployed server was last observed without checkpoint support, so waiting keyword and
+seller parents hold their slots, and a shared limited queue would let a few waiting
+parents starve the listing children they wait on. Every child launch
 sets its own priority; it does not inherit its parent's value. Manual or external
 launches default to zero unless the caller supplies a priority option. Priority
 does not change freshness checks, launch keys, or capacity limits. See Trigger.dev's
@@ -270,8 +284,9 @@ Unit tests cover completion/error classification, global key creation, and outgo
 priority options from crons and parent/child orchestration with mocked boundaries.
 They do not prove deployed scheduling or parent effects. Controlled deployed checks
 must verify incomplete results/timestamps, partial seller promotion, cross-tick
-key reuse/expiry, queue/wait bounds, and priority under contention before cadence
-activation. Verify that waiting parents leave capacity for their listing children.
+key reuse/expiry, queue/wait bounds, and whether priority orders runs across the
+separate task queues under contention before cadence activation. Verify that waiting
+parents leave capacity for their listing children.
 
 Every run stamps `hostname` and `boxName` through `setMachineMetadata()` so the
 worker can be identified in the dashboard.

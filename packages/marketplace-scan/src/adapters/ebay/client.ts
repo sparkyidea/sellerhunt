@@ -8,6 +8,7 @@
  * single handle instead of four imports.
  */
 import type {
+  ScanCapabilities,
   ScanClient,
   ScanClientConfig,
   ScanGetListingOptions,
@@ -31,6 +32,11 @@ import {
 } from "./api/search-listings";
 
 export class EbayScanClient implements ScanClient {
+  static readonly capabilities: ScanCapabilities = {
+    keywordSearch: true,
+    sellerCatalog: true,
+  };
+
   private readonly config: ScanClientConfig;
 
   constructor(config: ScanClientConfig) {

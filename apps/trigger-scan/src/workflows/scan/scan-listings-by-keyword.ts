@@ -2,7 +2,9 @@
  * Keyword phase task — surface candidate listings via the search endpoint.
  *
  * Marketplace-agnostic. The cron heartbeat fires this with `marketplace` set;
- * the bearer pool + adapter both dispatch on that string.
+ * the bearer pool + adapter both dispatch on that string. Refuses marketplaces
+ * whose adapter has no keyword search (`assertScanEntitySupported`) before
+ * touching config or personas.
  *
  * Pipeline:
  *   1. Self-gate on `scan_keyword.last_scanned_at`. If fresh, exit early.
@@ -35,6 +37,7 @@ import { markKeywordScanned } from "../../nodes/scan/upsert-scan-keyword";
 import { chunk } from "../../utils/chunk";
 import { setMachineMetadata } from "../../utils/machine-metadata";
 import { MobileProfileTokenManager } from "../../utils/mobile-profile-manager";
+import { assertScanEntitySupported } from "../../utils/scan-capabilities";
 import { isListingBatchComplete } from "../../utils/scan-completion";
 import {
   loadScanConfig,
@@ -81,6 +84,7 @@ export const scanListingsByKeyword = schemaTask({
   run: async (payload) => {
     await setMachineMetadata();
     const { marketplace, keyword } = payload;
+    assertScanEntitySupported(marketplace, "keyword");
 
     const config = payload.config ?? (await loadScanConfig(marketplace));
 

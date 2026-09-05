@@ -80,7 +80,10 @@ sequential, and the retry tool's page size is a payload option.
 `scan-listings-cron`, `scan-sellers-cron`, and `scan-keywords-cron` each have a
 production schedule declared in [scan-crons.ts](../src/workflows/scan/scan-crons.ts).
 They sweep enabled marketplace configs, select stale entities of their own type,
-and launch the existing workflows. Trigger.dev supplies the schedule payload;
+and launch the existing workflows. Marketplaces whose adapter lacks keyword search
+or seller catalog methods (shop today) are skipped by those two crons and reported
+as `unsupported`; the keyword and seller tasks refuse manual launches for them
+before loading a persona. Trigger.dev supplies the schedule payload;
 there is no custom marketplace or config payload for these tasks.
 
 For cadence, cooldown settings and deployment behavior, see

@@ -2,7 +2,9 @@
  * Seller phase task — fetch the seller record + paginate their listings.
  *
  * Marketplace-agnostic. Called by `scanListingsByKeyword` (after keyword →
- * seller discovery) or directly by the cron heartbeat (orphan catch).
+ * seller discovery) or directly by the cron heartbeat (orphan catch). Refuses
+ * marketplaces whose adapter has no seller catalog (`assertScanEntitySupported`)
+ * before touching config or personas.
  *
  * Pipeline:
  *   1. Self-gate on `scan_seller.last_scanned_at`. If fresh, exit early.
@@ -34,6 +36,7 @@ import {
 import { chunk } from "../../utils/chunk";
 import { setMachineMetadata } from "../../utils/machine-metadata";
 import { MobileProfileTokenManager } from "../../utils/mobile-profile-manager";
+import { assertScanEntitySupported } from "../../utils/scan-capabilities";
 import { isListingBatchComplete } from "../../utils/scan-completion";
 import {
   loadScanConfig,
@@ -69,6 +72,7 @@ export const scanListingsBySeller = schemaTask({
   run: async (payload) => {
     await setMachineMetadata();
     const { marketplace, sellerId } = payload;
+    assertScanEntitySupported(marketplace, "seller");
 
     const config = payload.config ?? (await loadScanConfig(marketplace));
 

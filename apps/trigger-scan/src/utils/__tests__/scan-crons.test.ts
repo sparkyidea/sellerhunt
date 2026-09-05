@@ -75,10 +75,26 @@ beforeEach(() => {
 afterEach(() => vi.useRealTimers());
 
 it.each([
-  ["listing", "2026-09-05T06:00:00.000Z"],
-  ["seller", "2026-09-04T12:00:00.000Z"],
-  ["keyword", "2026-08-29T12:00:00.000Z"],
-])("dispatches stale %s work using task cooldowns, ignoring legacy config", async (entity, cutoff) => {
+  {
+    entity: "listing",
+    cutoff: "2026-09-05T06:00:00.000Z",
+    marketplaces: ["ebay", "shop"],
+  },
+  {
+    entity: "seller",
+    cutoff: "2026-09-04T12:00:00.000Z",
+    marketplaces: ["ebay"],
+  },
+  {
+    entity: "keyword",
+    cutoff: "2026-08-29T12:00:00.000Z",
+    marketplaces: ["ebay"],
+  },
+])("dispatches stale $entity work using task cooldowns, ignoring legacy config", async ({
+  entity,
+  cutoff,
+  marketplaces,
+}) => {
   await mocks.runs.get(`scan-${entity}s-cron`)?.();
   const dispatched = {
     listing: mocks.listings,
@@ -86,20 +102,24 @@ it.each([
     keyword: mocks.keywords,
   };
   for (const [name, mock] of Object.entries(dispatched)) {
-    expect(mock).toHaveBeenCalledTimes(name === entity ? 2 : 0);
+    expect(mock).toHaveBeenCalledTimes(
+      name === entity ? marketplaces.length : 0
+    );
   }
   const queries = mocks.db.where.mock.calls.map(([where]) =>
     new PgDialect().sqlToQuery(where)
   );
-  expect(queries.map((q) => q.params[0])).toEqual(["ebay", "shop"]);
-  expect(queries.map((q) => q.params[1])).toEqual([cutoff, cutoff]);
+  expect(queries.map((q) => q.params[0])).toEqual(marketplaces);
+  expect(queries.map((q) => q.params[1])).toEqual(
+    marketplaces.map(() => cutoff)
+  );
   expect(queries[0]?.sql).toContain('"last_scanned_at" is null');
   expect(queries[0]?.sql).toContain('"last_scanned_at" <=');
   if (entity === "keyword") {
     expect(queries[0]?.sql).toContain('"dead_at" is null');
   }
   if (entity === "seller") {
-    expect(mocks.keys).toHaveBeenCalledWith("seller", "shop", "123456789012");
+    expect(mocks.keys).toHaveBeenCalledWith("seller", "ebay", "123456789012");
   }
 });
 
@@ -122,21 +142,38 @@ it("sets priorities on scan runs while preserving seller launch keys", async () 
       expect.objectContaining({ marketplace }),
       { priority: 3600 }
     );
-    expect(mocks.keywords).toHaveBeenCalledWith(
-      expect.objectContaining({ marketplace }),
-      { priority: 0 }
-    );
-    expect(mocks.sellers).toHaveBeenCalledWith([
-      {
-        payload: expect.objectContaining({ marketplace }),
-        options: {
-          idempotencyKey: "global",
-          idempotencyKeyTTL: "2h",
-          priority: 1800,
-        },
-      },
-    ]);
   }
+  expect(mocks.keywords).toHaveBeenCalledWith(
+    expect.objectContaining({ marketplace: "ebay" }),
+    { priority: 0 }
+  );
+  expect(mocks.sellers).toHaveBeenCalledWith([
+    {
+      payload: expect.objectContaining({ marketplace: "ebay" }),
+      options: {
+        idempotencyKey: "global",
+        idempotencyKeyTTL: "2h",
+        priority: 1800,
+      },
+    },
+  ]);
+});
+
+it("skips keyword and seller sweeps for adapters without those methods", async () => {
+  const seller = await mocks.runs.get("scan-sellers-cron")?.();
+  const keyword = await mocks.runs.get("scan-keywords-cron")?.();
+  for (const result of [seller, keyword]) {
+    expect(result).toMatchObject({
+      results: [
+        { marketplace: "disabled", status: "disabled" },
+        { marketplace: "ebay", status: "completed", triggered: 1 },
+        { marketplace: "shop", status: "unsupported", triggered: 0 },
+      ],
+    });
+  }
+  expect(mocks.sellers).toHaveBeenCalledTimes(1);
+  expect(mocks.keywords).toHaveBeenCalledTimes(1);
+  expect(mocks.db.where).toHaveBeenCalledTimes(2);
 });
 
 it("continues other marketplaces after a dispatch failure", async () => {

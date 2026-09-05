@@ -28,11 +28,15 @@ declarative cron. This behavior follows
 [Trigger.dev's scheduled task contract](https://trigger.dev/docs/tasks/scheduled).
 
 Check the first ticks for marketplace results and completed scan timestamps.
+The keyword and seller crons skip marketplaces whose adapter lacks those methods
+(shop today: listing detail only) and report them as `unsupported`; that is
+expected, not a failure.
 The [remaining ownership and capacity limits](scan-architecture.md#2-freshness-and-launch-suppression)
 still apply. The three crons have no guaranteed execution order; the scan runs they
-launch use [entity priorities](scan-architecture.md#4e-scan-run-priority). Verify
-queue ordering under contention and parent/child progress on the deployed server.
-Priority favors queued work without preempting running tasks or enforcing a strict
-sequence.
+launch use [entity priorities](scan-architecture.md#4e-scan-run-priority). Priority is
+documented per queue and the scan tasks keep separate queues, so verify on the
+deployed server whether listing runs dequeue ahead of seller and keyword runs under
+contention, and that parent/child progress holds. Priority never preempts running
+tasks or enforces a strict sequence.
 Setting `scan_config.enabled = false` stops subsequent cron dispatch for that
 marketplace; it does not cancel tasks already queued or executing.

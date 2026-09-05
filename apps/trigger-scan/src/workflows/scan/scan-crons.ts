@@ -1,9 +1,18 @@
-/** Marketplace-wide heartbeats with inline per-entity cooldowns. */
+/**
+ * Marketplace-wide heartbeats with inline per-entity cooldowns. Each cron
+ * sweeps every enabled `scan_config` row but only launches an entity where the
+ * marketplace adapter implements it (`supportsScanEntity`); shop serves listing
+ * detail only today, so its keyword and seller sweeps report `unsupported`.
+ */
 import { db } from "@dashseller/db";
 import { scanKeyword, scanListing, scanSeller } from "@dashseller/db/schema";
 import { logger, metadata, schedules } from "@trigger.dev/sdk";
 import { and, asc, eq, isNull, lte, or, sql } from "drizzle-orm";
 import { setMachineMetadata } from "../../utils/machine-metadata";
+import {
+  type ScanEntity,
+  supportsScanEntity,
+} from "../../utils/scan-capabilities";
 import { loadAllScanConfigs, type ScanConfig } from "../../utils/scan-config";
 import { scanLaunchOptions } from "../../utils/scan-launch-options";
 import { scanListingsByIds } from "./scan-listings-by-ids";
@@ -35,11 +44,9 @@ export const scanKeywordsCron = schedules.task({
   run: async () => await runCron("keyword", 7 * 24 * 60 * 60 * 1000),
 });
 
-type ScanEntity = "listing" | "seller" | "keyword";
-
 interface DispatchResult {
   marketplace: string;
-  status: "disabled" | "completed" | "incomplete";
+  status: "disabled" | "unsupported" | "completed" | "incomplete";
   triggered?: number;
 }
 
@@ -54,6 +61,10 @@ async function runCron(entity: ScanEntity, cooldownMs: number) {
       continue;
     }
     try {
+      if (!supportsScanEntity(marketplace, entity)) {
+        results.push({ marketplace, status: "unsupported", triggered: 0 });
+        continue;
+      }
       const triggered = await dispatchStale(entity, config, cooldownMs);
       results.push({ marketplace, status: "completed", triggered });
     } catch (error) {
