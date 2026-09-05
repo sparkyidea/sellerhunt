@@ -195,8 +195,10 @@ The seller also checks coverage and that every requested batch returned a result
 
 ### 4d. Marketplace cron task
 
-[scan-crons.ts](../src/workflows/scan/scan-crons.ts) declares one production schedule,
-`scan-cron`. It runs every five minutes, loads all `scan_config` rows once, and sweeps
+[scan-crons.ts](../src/workflows/scan/scan-crons.ts) declares one scheduled task,
+`scan-cron`, without a declarative cron; its schedule is attached in the Trigger.dev
+dashboard (every five minutes in production), so cadence changes need no deploy.
+Each tick loads all `scan_config` rows once and sweeps
 listings, then sellers, then keywords across the enabled rows. Disabled marketplaces
 are skipped. Marketplaces whose adapter does not implement an entity's methods are
 reported as `unsupported` and skipped: `getScanCapabilities` in
@@ -222,8 +224,8 @@ queueing, failures and retained global keys can delay scans. Scan launches use t
 per five-minute tick, the listing sweep can select at most 3,600 listing IDs in six
 hours, including repeated selections of work that is still stale.
 
-The declarative schedule and inline cooldowns take effect on Trigger.dev worker
-deployment; see [rollout](scan-cron-rollout.md). The schema removes the legacy
+Inline cooldowns take effect on Trigger.dev worker deployment; the schedule itself is
+created and edited in the dashboard, see [rollout](scan-cron-rollout.md). The schema removes the legacy
 database cooldown columns, and inline `config` cannot override these intervals.
 The former eBay-only task and the three per-entity crons it was replaced with have
 been removed. Retire any existing dashboard schedule for those tasks when rolling

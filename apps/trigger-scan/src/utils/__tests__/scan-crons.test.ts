@@ -4,6 +4,7 @@ import "../../workflows/scan/scan-crons";
 
 const mocks = vi.hoisted(() => ({
   runs: new Map<string, () => Promise<unknown>>(),
+  tasks: new Map<string, Record<string, unknown>>(),
   configs: vi.fn(),
   db: {
     select: vi.fn().mockReturnThis(),
@@ -23,6 +24,7 @@ vi.mock("@trigger.dev/sdk", () => ({
   schedules: {
     task: (options: { id: string; run: () => Promise<unknown> }) => {
       mocks.runs.set(options.id, options.run);
+      mocks.tasks.set(options.id, options);
       return options;
     },
   },
@@ -83,8 +85,9 @@ beforeEach(() => {
 
 afterEach(() => vi.useRealTimers());
 
-it("registers exactly one production schedule", () => {
-  expect([...mocks.runs.keys()]).toEqual(["scan-cron"]);
+it("registers exactly one scheduled task with no declarative cron", () => {
+  expect([...mocks.tasks.keys()]).toEqual(["scan-cron"]);
+  expect(mocks.tasks.get("scan-cron")).not.toHaveProperty("cron");
 });
 
 it("sweeps listings, sellers, then keywords with task cooldowns, ignoring legacy config", async () => {

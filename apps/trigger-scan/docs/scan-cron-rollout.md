@@ -1,6 +1,8 @@
 # Marketplace cron rollout
 
-The schedule lives in [scan-crons.ts](../src/workflows/scan/scan-crons.ts).
+The scheduled task `scan-cron` lives in
+[scan-crons.ts](../src/workflows/scan/scan-crons.ts); it declares no cron, so the
+schedule is created in the Trigger.dev dashboard.
 Cooldowns are defined inline per sweep in the `scan-cron` task, with matching
 values in the scan-time freshness checks. See the
 [cadence table](scan-architecture.md#4d-marketplace-cron-task).
@@ -22,11 +24,14 @@ a source task does not establish that an externally created schedule has been
 deleted. Declarative schedules of removed tasks should disappear on deploy; confirm
 that in the dashboard.
 
-Deploy the scan worker with `bun run trigger-scan:deploy`. This registers the one
-declarative production schedule for `scan-cron` and deploys the inline cooldowns;
-deploying the app/API alone does not. Verify one active schedule on `scan-cron` in
-its Schedules tab; do not also create a dashboard schedule for it. Development runs
-have no declarative cron. This behavior follows
+Deploy the scan worker with `bun run trigger-scan:deploy`. This registers the
+`scan-cron` task and deploys the inline cooldowns; deploying the app/API alone does
+not. The task ships without a cron, so no schedule exists until one is created.
+In the dashboard open Schedules, create one schedule with task `scan-cron`, cron
+`*/5 * * * *`, environment production only, then verify it is active and that
+`scan-cron` has exactly one schedule. Development has no schedule unless one is
+created the same way. Cadence changes are dashboard edits, not deploys. This
+behavior follows
 [Trigger.dev's scheduled task contract](https://trigger.dev/docs/tasks/scheduled).
 
 Check the first ticks for per-entity marketplace results and completed scan

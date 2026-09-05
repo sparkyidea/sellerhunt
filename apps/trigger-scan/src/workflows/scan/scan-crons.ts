@@ -1,9 +1,13 @@
 /**
- * Marketplace-wide heartbeat with inline per-entity cooldowns. One schedule
- * sweeps every enabled `scan_config` row for listings, then sellers, then
+ * Marketplace-wide heartbeat with inline per-entity cooldowns. One scheduled
+ * task sweeps every enabled `scan_config` row for listings, then sellers, then
  * keywords, and launches an entity only where the marketplace adapter
  * implements it (`supportsScanEntity`); shop serves listing detail only today,
  * so its keyword and seller sweeps report `unsupported`.
+ *
+ * No declarative cron here: the schedule is attached to `scan-cron` in the
+ * Trigger.dev dashboard (every five minutes in production), so cadence changes
+ * need no deploy.
  */
 import { db } from "@dashseller/db";
 import { scanKeyword, scanListing, scanSeller } from "@dashseller/db/schema";
@@ -32,7 +36,6 @@ const SWEEPS: ReadonlyArray<readonly [ScanEntity, number]> = [
 
 export const scanCron = schedules.task({
   id: "scan-cron",
-  cron: { pattern: "*/5 * * * *", environments: ["PRODUCTION"] },
   machine: "micro",
   queue: { concurrencyLimit: 1 },
   retry: { maxAttempts: 1 },

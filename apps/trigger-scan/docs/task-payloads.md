@@ -77,8 +77,9 @@ sequential, and the retry tool's page size is a payload option.
 
 ## Marketplace cron task
 
-`scan-cron` is the one production schedule declared in
-[scan-crons.ts](../src/workflows/scan/scan-crons.ts). Each tick loads the enabled
+`scan-cron` is the one scheduled task declared in
+[scan-crons.ts](../src/workflows/scan/scan-crons.ts). It has no declarative cron;
+the schedule is attached in the Trigger.dev dashboard. Each tick loads the enabled
 marketplace configs once, then sweeps listings, sellers, and keywords in that order,
 selecting stale entities per marketplace and launching the existing workflows.
 Marketplaces whose adapter lacks keyword search or seller catalog methods (shop
