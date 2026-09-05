@@ -50,7 +50,7 @@ export interface DataCardProps<TData> {
 
   /**
    * Fit image (object-cover) or contain (object-contain)
-   * @default true
+   * @default false
    */
   fitMedia?: boolean;
 
@@ -91,7 +91,7 @@ export function DataCard<TData>({
   cardLayout = "list",
   cardPreview,
   imageHeight,
-  fitMedia = true,
+  fitMedia = false,
   wrapAllProperties = false,
   showPropertyNames = false,
   onCardClick,
