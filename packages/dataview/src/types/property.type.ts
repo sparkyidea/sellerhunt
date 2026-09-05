@@ -23,6 +23,13 @@ export type PropertyType =
   | "button"
   | "rollup";
 
+/** Corner of the card media block where a pinned property renders (Board/Gallery only). */
+export type CardPinPosition =
+  | "top-left"
+  | "top-right"
+  | "bottom-left"
+  | "bottom-right";
+
 /** How a property's name is placed relative to its value. */
 export type ShowNameLayout = "vertical" | "horizontal";
 
@@ -42,6 +49,25 @@ export interface ShowNameConfig {
    * @default "vertical"
    */
   layout?: ShowNameLayout;
+}
+
+/**
+ * Object form of `pin`. Any object (including `{}`) means pinned; the fields
+ * only affect Board/Gallery cards. Table and List ignore them.
+ * Defaults are the same for every property type.
+ */
+export interface PinConfig {
+  /**
+   * Hide until the card is hovered or a descendant has keyboard focus.
+   * @default false
+   */
+  hover?: boolean;
+  /**
+   * Corner of the media block (or of the card when `cardPreview` is omitted).
+   * Pins sharing a corner stack in declaration order.
+   * @default "top-left"
+   */
+  position?: CardPinPosition;
 }
 
 // Base property structure (using _T for type consistency across property types)
@@ -103,6 +129,19 @@ export interface BaseProperty<_T> {
   key?: string;
   /** Display name shown in UI (column headers, filter pickers, etc.) */
   name?: string;
+  /**
+   * Pin this property. `true` or an object (see {@link PinConfig}) pins it;
+   * `{}` is the same as `true`.
+   * - Card (Board/Gallery): rendered as an overlay on the media block using the
+   *   property's normal renderer, and removed from the card body. Defaults to
+   *   the top-left corner, always visible, for every type. `filesMedia` and
+   *   `button` are ignored.
+   * - Table: reserved for sticky-left columns (not implemented yet).
+   * - List: reserved (not implemented yet).
+   * Declaration-driven: renders regardless of `hidden` and visibility toggles.
+   * @default false
+   */
+  pin?: boolean | PinConfig;
   /**
    * Per-property override for `showPropertyNames`.
    * - `true`: Always show this property's name (stacked above the value)
@@ -365,6 +404,8 @@ export interface PropertyMeta {
   key?: string;
   /** Display name shown in UI */
   name?: string;
+  /** Pin flag; see BaseProperty.pin @default false */
+  pin?: boolean | PinConfig;
   /** Per-property override for showPropertyNames; see BaseProperty.showName */
   showName?: boolean | ShowNameConfig;
   /** Display size/width in pixels */

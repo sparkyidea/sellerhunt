@@ -2,15 +2,18 @@
 
 import { ImageIcon } from "lucide-react";
 import Image from "next/image";
+import { useMemo } from "react";
 import { cn } from "../../lib/utils";
 import type { DataViewProperty } from "../../types/property.type";
 import { isPropertyValueEmpty } from "../../utils/is-property-value-empty";
+import { getCardPinIds, resolveCardPins } from "../../utils/resolve-card-pins";
 import {
   getShowNameValueClasses,
   getShowNameWrapperClasses,
   resolveShowName,
 } from "../../utils/resolve-show-name";
 import { Card, CardContent } from "../ui/card";
+import { CardPinOverlay } from "./card-pins";
 import { DataCell } from "./data-cell";
 import { PropertyNameLabel } from "./property-name-label";
 
@@ -107,10 +110,33 @@ export function DataCard<TData>({
     ? previewValue[0]
     : (previewValue as string);
 
+  // Pinned properties (`pin` on the property) render over the media block and
+  // leave the card body. Declaration-driven: read from the full schema, not
+  // from the visibility-filtered displayProperties.
+  const pinSource = allProperties ?? displayProperties;
+  const pins = useMemo(() => resolveCardPins(pinSource), [pinSource]);
+  const pinnedIds = useMemo(() => getCardPinIds(pins), [pins]);
+  const bodyProperties =
+    pinnedIds.size > 0
+      ? displayProperties.filter((p) => !pinnedIds.has(p.id))
+      : displayProperties;
+  // Skip empty values before indexing so `isFirst` lands on the first
+  // property that actually renders (a nullable formula must not steal it).
+  const renderedProperties = bodyProperties.flatMap((property) => {
+    const value = (item as Record<string, unknown>)[property.id];
+    return isPropertyValueEmpty(property, value, item)
+      ? []
+      : [{ property, value }];
+  });
+  const overlay =
+    pinnedIds.size > 0 ? (
+      <CardPinOverlay allProperties={allProperties} item={item} pins={pins} />
+    ) : null;
+
   return (
     <Card
       className={cn(
-        "gap-0 overflow-hidden py-0 transition-all hover:shadow-md",
+        "relative gap-0 overflow-hidden py-0 transition-all hover:shadow-md",
         onCardClick && "cursor-pointer",
         className
       )}
@@ -118,7 +144,10 @@ export function DataCard<TData>({
     >
       {/* Image Preview - only show if cardPreview is provided */}
       {cardPreview && (
-        <div className="relative bg-muted" style={{ height: imageHeight }}>
+        <div
+          className="relative isolate bg-muted"
+          style={{ height: imageHeight }}
+        >
           {imageUrl ? (
             <Image
               alt={String(
@@ -140,8 +169,12 @@ export function DataCard<TData>({
               <ImageIcon className="h-12 w-12 text-muted-foreground/30" />
             </div>
           )}
+          {overlay}
         </div>
       )}
+
+      {/* Without a media block, pins anchor to the card itself */}
+      {!cardPreview && overlay}
 
       {/* Card Content */}
       <CardContent
@@ -150,8 +183,7 @@ export function DataCard<TData>({
           isCompact ? "flex-wrap items-start" : "flex-col"
         )}
       >
-        {displayProperties.map((property, propIndex) => {
-          const value = (item as Record<string, unknown>)[property.id];
+        {renderedProperties.map(({ property, value }, propIndex) => {
           const isFirst = propIndex === 0;
           const resolvedShowName = resolveShowName(
             property.showName,
@@ -159,10 +191,6 @@ export function DataCard<TData>({
           );
           const resolvedWrap = property.wrap ?? wrapAllProperties;
           const valueClasses = getShowNameValueClasses(resolvedShowName);
-
-          if (isPropertyValueEmpty(property, value, item)) {
-            return null;
-          }
 
           const cell = (
             <DataCell
