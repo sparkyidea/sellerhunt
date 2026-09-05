@@ -69,7 +69,7 @@ export function BoardSkeleton({
   const isCompact = cardLayout === "compact";
   const { imageHeight, columnWidth } = getBoardCardDimensions(cardSize);
   const { propertyTypes, propertySizes } = getSkeletonProps(properties ?? [], {
-    excludePinned: true,
+    excludePinned: withImage,
   });
 
   // Grouped board mode: show column headers + accordion group skeletons

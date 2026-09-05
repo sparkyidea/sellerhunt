@@ -11,7 +11,13 @@ import {
   type CardPinsByPosition,
   type ResolvedCardPin,
 } from "../../utils/resolve-card-pins";
+import {
+  getShowNameValueClasses,
+  getShowNameWrapperClasses,
+  resolveShowName,
+} from "../../utils/resolve-show-name";
 import { DataCell } from "./data-cell";
+import { PropertyNameLabel } from "./property-name-label";
 
 const POSITION_CLASSES: Record<CardPinPosition, string> = {
   "bottom-left": "bottom-1.5 left-1.5 items-start",
@@ -28,6 +34,8 @@ interface CardPinOverlayProps<TData> {
   allProperties?: readonly DataViewProperty<TData>[];
   item: TData;
   pins: CardPinsByPosition<TData>;
+  /** View-level default for property names; each property's `showName` overrides it. */
+  showPropertyNames?: boolean;
 }
 
 /**
@@ -39,6 +47,7 @@ export function CardPinOverlay<TData>({
   allProperties,
   item,
   pins,
+  showPropertyNames = false,
 }: CardPinOverlayProps<TData>) {
   return (
     <>
@@ -61,6 +70,7 @@ export function CardPinOverlay<TData>({
                 item={item}
                 key={pin.property.id}
                 pin={pin}
+                showPropertyNames={showPropertyNames}
               />
             ))}
           </div>
@@ -74,14 +84,21 @@ interface CardPinProps<TData> {
   allProperties?: readonly DataViewProperty<TData>[];
   item: TData;
   pin: ResolvedCardPin<TData>;
+  showPropertyNames: boolean;
 }
 
 /**
  * CardPin - a pinned property rendered exactly as it renders anywhere else
  * (through DataCell), inside a chip that holds up over a photo. Badge-like
- * types and formulas skip the chip (see `shouldChipPin`).
+ * types and formulas skip the chip (see `shouldChipPin`). The name label
+ * follows the same `showName` / `showPropertyNames` rules as the card body.
  */
-function CardPin<TData>({ allProperties, item, pin }: CardPinProps<TData>) {
+function CardPin<TData>({
+  allProperties,
+  item,
+  pin,
+  showPropertyNames,
+}: CardPinProps<TData>) {
   const { chip, hover, property } = pin;
   const value = (item as Record<string, unknown>)[property.id];
 
@@ -89,22 +106,39 @@ function CardPin<TData>({ allProperties, item, pin }: CardPinProps<TData>) {
     return null;
   }
 
+  const resolvedShowName = resolveShowName(
+    property.showName,
+    showPropertyNames
+  );
+  const valueClasses = getShowNameValueClasses(resolvedShowName);
+  const cell = (
+    <DataCell
+      allProperties={allProperties}
+      item={item}
+      property={property}
+      showPropertyNames={showPropertyNames}
+      value={value}
+      wrap={false}
+    />
+  );
+
   return (
     <div
       className={cn(
         "pointer-events-auto max-w-full",
+        resolvedShowName && getShowNameWrapperClasses(resolvedShowName),
         chip &&
           "rounded-md bg-card/90 px-1.5 py-0.5 text-xs shadow-sm ring-1 ring-foreground/10 backdrop-blur",
         hover && HOVER_REVEAL
       )}
     >
-      <DataCell
-        allProperties={allProperties}
-        item={item}
-        property={property}
-        value={value}
-        wrap={false}
-      />
+      {resolvedShowName && (
+        <PropertyNameLabel
+          name={property.name ?? String(property.id)}
+          resolved={resolvedShowName}
+        />
+      )}
+      {valueClasses ? <div className={valueClasses}>{cell}</div> : cell}
     </div>
   );
 }

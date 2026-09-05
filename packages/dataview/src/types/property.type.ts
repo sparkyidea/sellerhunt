@@ -63,8 +63,8 @@ export interface PinConfig {
    */
   hover?: boolean;
   /**
-   * Corner of the media block (or of the card when `cardPreview` is omitted).
-   * Pins sharing a corner stack in declaration order.
+   * Corner of the media block. Pins sharing a corner stack in declaration
+   * order.
    * @default "top-left"
    */
   position?: CardPinPosition;
@@ -135,7 +135,8 @@ export interface BaseProperty<_T> {
    * - Card (Board/Gallery): rendered as an overlay on the media block using the
    *   property's normal renderer, and removed from the card body. Defaults to
    *   the top-left corner, always visible, for every type. `filesMedia` and
-   *   `button` are ignored.
+   *   `button` are ignored. Without a media block (`cardPreview` omitted) the
+   *   property stays in the body. `showName` applies to the overlay too.
    * - Table: reserved for sticky-left columns (not implemented yet).
    * - List: reserved (not implemented yet).
    * Declaration-driven: renders regardless of `hidden` and visibility toggles.

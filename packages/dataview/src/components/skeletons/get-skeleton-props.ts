@@ -11,8 +11,9 @@ export interface SkeletonPropertyLike {
 interface GetSkeletonPropsOptions {
   /**
    * Drop properties that resolve to a card pin. Card skeletons (Board/Gallery)
-   * pass true because those render over the media, not in the body. Pins on
-   * ignored types (`filesMedia`, `button`) stay, matching `resolveCardPins`.
+   * pass `withImage` because pins render over the media, not in the body, and
+   * stay in the body when there is no media. Pins on ignored types
+   * (`filesMedia`, `button`) stay, matching `resolveCardPins`.
    * @default false
    */
   excludePinned?: boolean;

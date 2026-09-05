@@ -56,7 +56,7 @@ export function GallerySkeleton({
   const isCompact = cardLayout === "compact";
   const { imageHeight, minWidth } = getGalleryCardDimensions(cardSize);
   const { propertyTypes, propertySizes } = getSkeletonProps(properties ?? [], {
-    excludePinned: true,
+    excludePinned: withImage,
   });
 
   return (

@@ -112,10 +112,18 @@ export function DataCard<TData>({
 
   // Pinned properties (`pin` on the property) render over the media block and
   // leave the card body. Declaration-driven: read from the full schema, not
-  // from the visibility-filtered displayProperties.
+  // from the visibility-filtered displayProperties. Without a media block
+  // there is nothing to overlay, so pins stay in the body.
+  const hasMedia = Boolean(cardPreview);
   const pinSource = allProperties ?? displayProperties;
-  const pins = useMemo(() => resolveCardPins(pinSource), [pinSource]);
-  const pinnedIds = useMemo(() => getCardPinIds(pins), [pins]);
+  const pins = useMemo(
+    () => (hasMedia ? resolveCardPins(pinSource) : null),
+    [hasMedia, pinSource]
+  );
+  const pinnedIds = useMemo(
+    () => (pins ? getCardPinIds(pins) : new Set<string>()),
+    [pins]
+  );
   const bodyProperties =
     pinnedIds.size > 0
       ? displayProperties.filter((p) => !pinnedIds.has(p.id))
@@ -129,14 +137,19 @@ export function DataCard<TData>({
       : [{ property, value }];
   });
   const overlay =
-    pinnedIds.size > 0 ? (
-      <CardPinOverlay allProperties={allProperties} item={item} pins={pins} />
+    pins && pinnedIds.size > 0 ? (
+      <CardPinOverlay
+        allProperties={allProperties}
+        item={item}
+        pins={pins}
+        showPropertyNames={showPropertyNames}
+      />
     ) : null;
 
   return (
     <Card
       className={cn(
-        "relative gap-0 overflow-hidden py-0 transition-all hover:shadow-md",
+        "gap-0 overflow-hidden py-0 transition-all hover:shadow-md",
         onCardClick && "cursor-pointer",
         className
       )}
@@ -172,9 +185,6 @@ export function DataCard<TData>({
           {overlay}
         </div>
       )}
-
-      {/* Without a media block, pins anchor to the card itself */}
-      {!cardPreview && overlay}
 
       {/* Card Content */}
       <CardContent
