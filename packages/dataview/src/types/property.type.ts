@@ -23,6 +23,53 @@ export type PropertyType =
   | "button"
   | "rollup";
 
+/** Corner of the card media block where a pinned property renders (Board/Gallery only). */
+export type CardPinPosition =
+  | "top-left"
+  | "top-right"
+  | "bottom-left"
+  | "bottom-right";
+
+/** How a property's name is placed relative to its value. */
+export type ShowNameLayout = "vertical" | "horizontal";
+
+/** Horizontal only: where the value sits relative to the name. */
+export type ShowNameAlign = "start" | "end";
+
+export interface ShowNameConfig {
+  /**
+   * Horizontal only. `"end"` pushes the value to the far edge (name left,
+   * value right); `"start"` keeps name and value adjacent.
+   * @default "end"
+   */
+  align?: ShowNameAlign;
+  /**
+   * `"vertical"` stacks the name above the value; `"horizontal"` puts both on
+   * one line.
+   * @default "vertical"
+   */
+  layout?: ShowNameLayout;
+}
+
+/**
+ * Object form of `pin`. Any object (including `{}`) means pinned; the fields
+ * only affect Board/Gallery cards. Table and List ignore them.
+ * Defaults are the same for every property type.
+ */
+export interface PinConfig {
+  /**
+   * Hide until the card is hovered or a descendant has keyboard focus.
+   * @default false
+   */
+  hover?: boolean;
+  /**
+   * Corner of the media block. Pins sharing a corner stack in declaration
+   * order.
+   * @default "top-left"
+   */
+  position?: CardPinPosition;
+}
+
 // Base property structure (using _T for type consistency across property types)
 export interface BaseProperty<_T> {
   /**
@@ -83,12 +130,29 @@ export interface BaseProperty<_T> {
   /** Display name shown in UI (column headers, filter pickers, etc.) */
   name?: string;
   /**
+   * Pin this property. `true` or an object (see {@link PinConfig}) pins it;
+   * `{}` is the same as `true`.
+   * - Card (Board/Gallery): rendered as an overlay on the media block using the
+   *   property's normal renderer, and removed from the card body. Defaults to
+   *   the top-left corner, always visible, for every type. `filesMedia` and
+   *   `button` are ignored. Without a media block (`cardPreview` omitted) the
+   *   property stays in the body. `showName` applies to the overlay too.
+   * - Table: reserved for sticky-left columns (not implemented yet).
+   * - List: reserved (not implemented yet).
+   * Declaration-driven: renders regardless of `hidden` and visibility toggles.
+   * @default false
+   */
+  pin?: boolean | PinConfig;
+  /**
    * Per-property override for `showPropertyNames`.
-   * - `true`: Always show this property's name
+   * - `true`: Always show this property's name (stacked above the value)
+   * - `ShowNameConfig`: show it with a specific layout; `{}` is the same as `true`
    * - `false`: Always hide this property's name
    * - `undefined`: Use the global `showPropertyNames` setting
+   * Layout applies to cards and formula sub-properties; table headers only
+   * honour show/hide.
    */
-  showName?: boolean;
+  showName?: boolean | ShowNameConfig;
   /**
    * Display size/width for this property (in pixels).
    * - Table: used as column width (maps to TanStack ColumnDef sizing)
@@ -124,7 +188,14 @@ export type BadgeColor =
   | "green"
   | "green-subtle"
   | "teal"
-  | "teal-subtle";
+  | "teal-subtle"
+  // Base badge variants (mirror `Badge` in `components/ui/badge.tsx`)
+  | "default"
+  | "secondary"
+  | "destructive"
+  | "outline"
+  | "ghost"
+  | "link";
 
 export interface NumberConfig {
   decimalPlaces?: number; // 0-10
@@ -334,8 +405,10 @@ export interface PropertyMeta {
   key?: string;
   /** Display name shown in UI */
   name?: string;
-  /** Per-property override for showPropertyNames */
-  showName?: boolean;
+  /** Pin flag; see BaseProperty.pin @default false */
+  pin?: boolean | PinConfig;
+  /** Per-property override for showPropertyNames; see BaseProperty.showName */
+  showName?: boolean | ShowNameConfig;
   /** Display size/width in pixels */
   size?: number;
   /** Property type for rendering */

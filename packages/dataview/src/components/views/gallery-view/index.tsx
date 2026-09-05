@@ -49,7 +49,7 @@ export interface GalleryViewProps<TData> {
 
   /**
    * Whether to fit media to card (object-cover vs object-contain)
-   * @default true
+   * @default false
    */
   fitMedia?: boolean;
 
@@ -102,7 +102,7 @@ export function GalleryView<
   className,
   cardPreview,
   cardSize = "medium",
-  fitMedia = true,
+  fitMedia = false,
   onCardClick,
   pagination,
   showPropertyNames = false,

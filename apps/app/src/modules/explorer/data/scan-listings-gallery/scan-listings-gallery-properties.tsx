@@ -4,6 +4,7 @@ import type {
   scanSeller,
 } from "@dashseller/db/schema";
 import type { DataViewProperty } from "@sparkyidea/dataview/types";
+import { Icons, type IconType } from "@sparkyidea/ui/icons";
 
 type FlattenToArrays<T> = { [K in keyof T]: T[K][] };
 type ScanListing = typeof scanListing.$inferSelect & {
@@ -17,18 +18,140 @@ const formatCents = (value: number, currency: string | null) =>
     currency: currency ?? "USD",
   });
 
+const MARKETPLACES: Record<string, { icon?: IconType; label: string }> = {
+  ebay: { icon: Icons.ebay.color, label: "eBay" },
+  shop: { icon: Icons.shopify.color, label: "Shopify" },
+};
+
+const marketplaceInfo = (marketplace: string) =>
+  MARKETPLACES[marketplace] ?? { label: marketplace };
+
+const formatPriceRange = (item: ScanListing): string | null => {
+  const variantPrices = (item.variants?.price ?? []).filter(
+    (p): p is number => typeof p === "number"
+  );
+  const currency = item.currency ?? "USD";
+
+  if (variantPrices.length > 0) {
+    const min = Math.min(...variantPrices);
+    const max = Math.max(...variantPrices);
+    return min === max
+      ? formatCents(min, currency)
+      : `${formatCents(min, currency)} – ${formatCents(max, currency)}`;
+  }
+
+  if (typeof item.price === "number") {
+    return formatCents(item.price, currency);
+  }
+
+  return null;
+};
+
+/**
+ * Card layout ("version G" of the Explore Listings design):
+ *
+ *   media  — square, marketplace avatar top-left
+ *   body   — price (large) · title · labelled stats
+ *
+ * Stats are plain properties with `showName`; the card skips empty values, so
+ * a listing shows whichever sold counts it has (eBay: 24h, Shopify: 30d) plus
+ * the lifetime total.
+ */
 export const scanListingsGalleryProperties = [
+  {
+    name: "Price",
+    type: "formula",
+    value: (_property, item) => {
+      const price = formatPriceRange(item);
+      if (price == null) {
+        return null;
+      }
+      return (
+        <span className="font-semibold text-base tabular-nums leading-tight">
+          {price}
+        </span>
+      );
+    },
+  },
   {
     key: "title",
     name: "Title",
     type: "text",
   },
   {
+    key: "itemSold",
+    name: "Lifetime sold",
+    type: "number",
+    config: { numberFormat: "numberWithCommas" },
+    showName: { layout: "horizontal" },
+  },
+  {
+    key: "soldLast24h",
+    name: "Sold (24h)",
+    type: "number",
+    config: { numberFormat: "numberWithCommas" },
+    showName: { layout: "horizontal" },
+  },
+  {
+    key: "soldLast30Days",
+    name: "Sold (30d)",
+    type: "number",
+    config: { numberFormat: "numberWithCommas" },
+    showName: { layout: "horizontal" },
+  },
+  {
+    // Formula (not a rollup): the count is only meaningful above one, and a
+    // rollup cannot hide 0/1.
+    name: "Variants",
+    type: "formula",
+    showName: { layout: "horizontal" },
+    value: (_property, item) => {
+      const count = item.variants?.id?.length ?? 0;
+      return count > 1 ? <span className="text-sm">{count}</span> : null;
+    },
+  },
+  {
+    key: "seller.displayName",
+    name: "Seller",
+    type: "rollup",
+    config: { type: "text", calculation: "showOriginal" },
+    showName: { layout: "horizontal", align: "end" },
+    enableSort: false,
+    enableGroup: false,
+  },
+  {
+    // Data-backed twin of the badge below: formulas are excluded from the
+    // filter/sort/group/search pickers, so this keeps Marketplace queryable.
     key: "marketplace",
     name: "Marketplace",
     type: "select",
     config: {
-      options: [{ value: "ebay", name: "eBay", color: "blue-subtle" }],
+      options: [
+        { value: "ebay", name: "eBay", color: "blue-subtle" },
+        { value: "shop", name: "Shopify", color: "green-subtle" },
+      ],
+    },
+    hidden: true,
+  },
+  {
+    name: "Marketplace badge",
+    type: "formula",
+    pin: { position: "top-left" },
+    hidden: true,
+    value: (_property, item) => {
+      const { icon: Icon, label } = marketplaceInfo(item.marketplace);
+      return (
+        <span
+          className="inline-flex size-6 items-center justify-center overflow-hidden rounded-full bg-white p-0.75 text-neutral-600"
+          title={label}
+        >
+          {Icon ? (
+            <Icon className="size-full" />
+          ) : (
+            label.charAt(0).toUpperCase()
+          )}
+        </span>
+      );
     },
   },
   {
@@ -67,57 +190,7 @@ export const scanListingsGalleryProperties = [
         },
       ],
     },
-  },
-  {
-    name: "Price",
-    type: "formula",
-    value: (_property, item) => {
-      const variantPrices = item.variants?.price ?? [];
-      const validVariantPrices = variantPrices.filter(
-        (p): p is number => typeof p === "number"
-      );
-
-      if (validVariantPrices.length > 0) {
-        const min = Math.min(...validVariantPrices);
-        const max = Math.max(...validVariantPrices);
-        const currency = item.currency ?? "USD";
-        return (
-          <span>
-            {min === max
-              ? formatCents(min, currency)
-              : `${formatCents(min, currency)} – ${formatCents(max, currency)}`}
-          </span>
-        );
-      }
-
-      if (typeof item.price === "number") {
-        return <span>{formatCents(item.price, item.currency)}</span>;
-      }
-
-      return null;
-    },
-  },
-  {
-    name: "Performance",
-    type: "formula",
-    value: (_property, item) => {
-      const sold = item.itemSold ?? 0;
-      const recent = item.soldLast24h ?? item.soldLast30Days ?? 0;
-      const recentLabel =
-        item.soldLast24h == null ? "Sold (30d)" : "Sold (24h)";
-      return (
-        <div className="flex w-full justify-between">
-          <div className="flex flex-col items-center">
-            <span className="text-muted-foreground text-xs">Sold</span>
-            <span>{sold.toLocaleString()}</span>
-          </div>
-          <div className="flex flex-col items-end">
-            <span className="text-muted-foreground text-xs">{recentLabel}</span>
-            <span>{recent.toLocaleString()}</span>
-          </div>
-        </div>
-      );
-    },
+    hidden: true,
   },
   {
     key: "imageUrls",
@@ -141,24 +214,6 @@ export const scanListingsGalleryProperties = [
     key: "currency",
     name: "Currency",
     type: "text",
-    hidden: true,
-  },
-  {
-    key: "soldLast24h",
-    name: "Sold (24h)",
-    type: "number",
-    hidden: true,
-  },
-  {
-    key: "soldLast30Days",
-    name: "Sold (30d)",
-    type: "number",
-    hidden: true,
-  },
-  {
-    key: "itemSold",
-    name: "Lifetime Sold",
-    type: "number",
     hidden: true,
   },
   {

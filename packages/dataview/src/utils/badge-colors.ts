@@ -21,10 +21,78 @@ function buildMap(fn: (base: string) => string): Record<string, string> {
   return map;
 }
 
-const COLOR_CLASSES = buildMap(
-  (c) => `bg-badge-${c}-subtle text-badge-${c}-subtle-foreground`
-);
-const BG_CLASSES = buildMap((c) => `bg-badge-${c}-subtle`);
+/**
+ * Base `Badge` variants have no `--badge-*` token pair; they resolve to the
+ * semantic theme tokens the Badge component itself uses.
+ */
+const BASE_VARIANTS = [
+  "default",
+  "secondary",
+  "destructive",
+  "outline",
+  "ghost",
+  "link",
+] as const;
+
+type BaseVariant = (typeof BASE_VARIANTS)[number];
+
+const BASE_VARIANT_CLASSES: Record<BaseVariant, string> = {
+  default: "bg-primary text-primary-foreground",
+  secondary: "bg-secondary text-secondary-foreground",
+  destructive: "bg-destructive/10 text-destructive",
+  outline: "border-border text-foreground",
+  ghost: "text-foreground",
+  link: "text-primary",
+};
+const BASE_VARIANT_BG: Record<BaseVariant, string> = {
+  default: "bg-primary",
+  secondary: "bg-secondary",
+  destructive: "bg-destructive/10",
+  outline: "bg-transparent",
+  ghost: "bg-transparent",
+  link: "bg-transparent",
+};
+const BASE_VARIANT_BG_TRANSPARENT: Record<BaseVariant, string> = {
+  default: "bg-primary/50",
+  secondary: "bg-secondary/50",
+  destructive: "bg-destructive/5",
+  outline: "bg-transparent",
+  ghost: "bg-transparent",
+  link: "bg-transparent",
+};
+const BASE_VARIANT_BG_VAR: Record<BaseVariant, string> = {
+  default: "var(--primary)",
+  secondary: "var(--secondary)",
+  destructive: "color-mix(in oklab, var(--destructive) 10%, transparent)",
+  outline: "transparent",
+  ghost: "transparent",
+  link: "transparent",
+};
+const BASE_VARIANT_FG_VAR: Record<BaseVariant, string> = {
+  default: "var(--primary-foreground)",
+  secondary: "var(--secondary-foreground)",
+  destructive: "var(--destructive)",
+  outline: "var(--foreground)",
+  ghost: "var(--foreground)",
+  link: "var(--primary)",
+};
+const BASE_VARIANT_TEXT: Record<BaseVariant, string> = {
+  default: "!text-primary-foreground",
+  secondary: "!text-secondary-foreground",
+  destructive: "!text-destructive",
+  outline: "!text-foreground",
+  ghost: "!text-foreground",
+  link: "!text-primary",
+};
+
+const COLOR_CLASSES: Record<string, string> = {
+  ...buildMap((c) => `bg-badge-${c}-subtle text-badge-${c}-subtle-foreground`),
+  ...BASE_VARIANT_CLASSES,
+};
+const BG_CLASSES: Record<string, string> = {
+  ...buildMap((c) => `bg-badge-${c}-subtle`),
+  ...BASE_VARIANT_BG,
+};
 const BG_TRANSPARENT_CLASSES = {
   gray: "bg-badge-gray-subtle/50",
   "gray-subtle": "bg-badge-gray-subtle/50",
@@ -42,9 +110,16 @@ const BG_TRANSPARENT_CLASSES = {
   "green-subtle": "bg-badge-green-subtle/50",
   teal: "bg-badge-teal-subtle/50",
   "teal-subtle": "bg-badge-teal-subtle/50",
+  ...BASE_VARIANT_BG_TRANSPARENT,
 } satisfies Record<BadgeColor, string>;
-const BG_VARS = buildMap((c) => `var(--badge-${c}-subtle)`);
-const FOREGROUND_VARS = buildMap((c) => `var(--badge-${c}-subtle-foreground)`);
+const BG_VARS: Record<string, string> = {
+  ...buildMap((c) => `var(--badge-${c}-subtle)`),
+  ...BASE_VARIANT_BG_VAR,
+};
+const FOREGROUND_VARS: Record<string, string> = {
+  ...buildMap((c) => `var(--badge-${c}-subtle-foreground)`),
+  ...BASE_VARIANT_FG_VAR,
+};
 const TEXT_COLORS = {
   gray: "!text-badge-gray-subtle-foreground",
   "gray-subtle": "!text-badge-gray-subtle-foreground",
@@ -62,6 +137,7 @@ const TEXT_COLORS = {
   "green-subtle": "!text-badge-green-subtle-foreground",
   teal: "!text-badge-teal-subtle-foreground",
   "teal-subtle": "!text-badge-teal-subtle-foreground",
+  ...BASE_VARIANT_TEXT,
 } satisfies Record<BadgeColor, string>;
 
 const FALLBACK_COLOR = "bg-badge-gray-subtle text-badge-gray-subtle-foreground";

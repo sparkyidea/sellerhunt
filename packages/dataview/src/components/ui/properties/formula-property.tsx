@@ -4,7 +4,13 @@ import type {
   DataViewProperty,
   PropertyRenderFunction,
 } from "../../../types/property.type";
+import {
+  getShowNameValueClasses,
+  getShowNameWrapperClasses,
+  resolveShowName,
+} from "../../../utils/resolve-show-name";
 import { DataCell } from "../../views/data-cell";
+import { PropertyNameLabel } from "../../views/property-name-label";
 
 /**
  * Creates a property render function for formula properties.
@@ -45,14 +51,16 @@ export function createFormulaRenderer<T>(
     );
 
     // Resolve name label: property.showName overrides global showPropertyNames
-    const resolvedShowName = prop.showName ?? showPropertyNames;
+    const resolvedShowName = resolveShowName(prop.showName, showPropertyNames);
     if (resolvedShowName) {
+      const valueClasses = getShowNameValueClasses(resolvedShowName);
       return (
-        <div className="flex min-w-0 flex-col items-start">
-          <span className="text-muted-foreground text-xs">
-            {prop.name ?? String(prop.id)}
-          </span>
-          {cell}
+        <div className={getShowNameWrapperClasses(resolvedShowName)}>
+          <PropertyNameLabel
+            name={prop.name ?? String(prop.id)}
+            resolved={resolvedShowName}
+          />
+          {valueClasses ? <div className={valueClasses}>{cell}</div> : cell}
         </div>
       );
     }

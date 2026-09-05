@@ -92,7 +92,7 @@ export interface BoardViewProps<TData> {
 
   /**
    * Whether to fit media to card (object-cover vs object-contain)
-   * @default true
+   * @default false
    */
   fitMedia?: boolean;
 
@@ -151,7 +151,7 @@ export function BoardView<
   className,
   colorColumns = false,
   counts: _counts,
-  fitMedia = true,
+  fitMedia = false,
   keyExtractor = (item: TData, index: number) =>
     String((item as { id?: string }).id || index),
   onCardClick,

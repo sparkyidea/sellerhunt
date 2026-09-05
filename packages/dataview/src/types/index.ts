@@ -32,8 +32,13 @@ export {
 } from "./pagination";
 // Property types used by apps/web
 export {
+  type CardPinPosition,
   type DataViewProperty,
   getScalarRollups,
   isDisplayRollup,
+  type PinConfig,
   type SelectConfig,
+  type ShowNameAlign,
+  type ShowNameConfig,
+  type ShowNameLayout,
 } from "./property.type";

@@ -4,7 +4,7 @@
 
 import type { BadgeColor } from "../types/property.type";
 
-export type BadgeVariant = "secondary" | BadgeColor;
+export type BadgeVariant = BadgeColor;
 
 const BADGE_VARIANT_SET: ReadonlySet<string> = new Set<BadgeColor>([
   "gray",
@@ -23,6 +23,12 @@ const BADGE_VARIANT_SET: ReadonlySet<string> = new Set<BadgeColor>([
   "green-subtle",
   "teal",
   "teal-subtle",
+  "default",
+  "secondary",
+  "destructive",
+  "outline",
+  "ghost",
+  "link",
 ]);
 
 /**
