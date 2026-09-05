@@ -167,7 +167,7 @@ seen; rescans are never re-sent) verbatim to OpenAI in one call (up to 50 titles
 request, so one call at K = 50) and stores each answer as a
 `scan_keyword` linked from `scan_listing.keyword_id`. Only when
 `keyword_llm_enabled = true` and a key is set; otherwise they stay unresolved for the
-retry tool. Returns `{ mode: "scanned", verdicts, succeeded, failed, unfit, aborted }`
+retry tool. Returns `{ mode: "scanned", verdicts, succeeded, notFound, failed, unfit, aborted }`
 — a fitting verdict carries `isNew`, `title` and `categoryPath`. No freshness gate,
 no idempotency key — listing scans are cheap and intentionally ungated. "Scan one
 listing" is a 1-element array. Ids may be bare or full listing URLs.
@@ -227,14 +227,26 @@ interface ScanListingsBySellerPayload {
   the matching `*RescanAfter` (minutes) and skip if fresh — they fan out big trees, so a
   fresh skip is worth it. `forceRefresh: true` bypasses it; `*RescanAfter <= 0` disables
   it. **Listings are ungated** (no freshness gate, no idempotency) — cheap, always scan.
-- **Idempotency:** the keyword launcher (`scan-listings-by-keywords`) stamps a per-keyword
-  key and the cron stamps a per-seller key (TTL = the rescan window) so a still-running
-  entity isn't re-enqueued each tick; seller promotion from the keyword path keys on
-  `["seller", marketplace, sellerReference]`. Listing runs carry no idempotency key.
+- **Launch suppression:** keyword bulk launch and both seller launch paths use
+  explicitly global keys with a fixed two-hour TTL, independent of cadence. This
+  deduplicates the same entity across parent runs and cron ticks within that window.
+  Retained keys, including incomplete/failed/canceled/fresh-skipped runs, may delay
+  redispatch until expiry. No key-reset hooks are used. See the
+  [architecture contract](scan-architecture.md#2-freshness-and-launch-suppression)
+  for queue/wait limits and deployed verification requirements.
+- **Parent output:** keyword and seller tasks return `status: "completed"`,
+  `"incomplete"`, or `"skipped"`. Incomplete results include available coverage and
+  failure counters/reasons and leave `last_scanned_at` unchanged. An incomplete
+  domain result can be a successful Trigger.dev run. Both parents have one task
+  attempt; unexpected failures do not immediately retry the whole tree.
 - **Seller promotion** happens only on the **keyword** path (it reads verdicts and fires
   sellers). The seller-catalog and cron-orphan listing paths never promote sellers from a
   listing — that would loop.
 - **Batch error handling:** within a leaf run, a persona-level error (401/403/429/5xx)
   aborts the rest of the batch and routes once (the unscanned ids stay stale for the cron
-  to re-pick); a per-listing error (404/parse) is tallied and skipped. A leaf never throws
+  to re-pick); a typed listing-detail 404 increments `notFound` and completes that check for this
+  attempt. It does not delete/end a listing or create a snapshot. Parse/unknown
+  errors and other-endpoint 404s remain unresolved `failed`. The completion rule
+  counts verdicts (including threshold rejects) plus `notFound` plus `failed`
+  against the requested count, requiring no abort or unresolved failures. A leaf never throws
   on scan failures — only on infra (profile load, OOM → escalate machine).

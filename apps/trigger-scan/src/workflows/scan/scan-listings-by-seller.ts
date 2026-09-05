@@ -8,7 +8,7 @@
  *   1. Self-gate on `scan_seller.last_scanned_at`. If fresh, exit early.
  *   2. Load bearer pool, call `client.getSeller` → upsert `scan_seller`
  *      with the storefront record (totalItemsSold, feedback, etc).
- *      Best-effort — even if fields are null, the listing fan-out still runs.
+ *      Stats are required; a request failure leaves the seller incomplete.
  *   3. Walk `client.getSellerListings` until `pagination.totalPages` — the whole
  *      store, no config cap. `MAX_SELLER_PAGES` is a runaway guard only.
  *   4. Chunk the catalog into `<= K`-id batches and `batchTriggerAndWait` them
@@ -17,11 +17,8 @@
  *      are done. Each chunk lands on its own box/IP, spreading the catalog
  *      instead of concentrating it on this one.
  *   5. Bump `scan_seller.last_scanned_at = now` ONLY after the whole catalog has
- *      been scanned. If any batch crashed or aborted on a throttled persona, the
- *      run throws instead — a failed run clears the per-seller idempotency key,
- *      leaving the seller stale so the cron re-picks it next tick. (That key,
- *      scoped to the rescan window, keeps the cron from re-enqueuing a
- *      still-running seller; a completed run holds it for the full window.)
+ *      been accounted for. Partial work returns incomplete without replaying the
+ *      whole tree. Global launch keys may delay cron recovery for two hours.
  */
 import { db } from "@dashseller/db";
 import { scanSeller } from "@dashseller/db/schema";
@@ -37,6 +34,7 @@ import {
 import { chunk } from "../../utils/chunk";
 import { setMachineMetadata } from "../../utils/machine-metadata";
 import { MobileProfileTokenManager } from "../../utils/mobile-profile-manager";
+import { isListingBatchComplete } from "../../utils/scan-completion";
 import {
   loadScanConfig,
   type ScanConfig,
@@ -63,15 +61,10 @@ export const scanListingsBySeller = schemaTask({
   // so the next seller only starts once this seller's listings are done.
   queue: { concurrencyLimit: 1 },
   // Paginates a seller's listings (one page held at a time) + listing fan-out.
-  // small-1x baseline; escalates to small-2x for sellers with very large
-  // catalogs / heavy pages.
+  // One attempt; recovery happens through a later cron launch.
   machine: "small-1x",
   retry: {
-    maxAttempts: 3,
-    factor: 2,
-    minTimeoutInMs: 2000,
-    maxTimeoutInMs: 30_000,
-    outOfMemory: { machine: "small-2x" },
+    maxAttempts: 1,
   },
   run: async (payload) => {
     await setMachineMetadata();
@@ -102,7 +95,7 @@ export const scanListingsBySeller = schemaTask({
           sellerId,
           lastScannedAt: fresh.lastScannedAt,
         });
-        return { sellerId, skipped: true, reason: "fresh" };
+        return { status: "skipped", sellerId, skipped: true, reason: "fresh" };
       }
     }
 
@@ -119,7 +112,14 @@ export const scanListingsBySeller = schemaTask({
       sellerResult = await client.getSeller({ sellerId });
     } catch (error) {
       await routeFailure(manager, error);
-      throw error;
+      metadata
+        .set("status", "incomplete")
+        .set("reason", "seller-request-failed");
+      return {
+        status: "incomplete",
+        sellerId,
+        reason: "seller-request-failed",
+      };
     }
     await manager.markUsed();
 
@@ -136,25 +136,13 @@ export const scanListingsBySeller = schemaTask({
 
     metadata.set("status", "paginating-listings");
 
-    const listingIds = await collectListingIds(
+    const { listingIds, complete } = await collectListingIds(
       client,
       manager,
       sellerId,
       config
     );
     metadata.set("listingsDiscovered", listingIds.size);
-
-    if (listingIds.size === 0) {
-      await markSellerScanned(marketplace, sellerId);
-      metadata.set("status", "completed");
-      return {
-        sellerId,
-        listingsDiscovered: 0,
-        listingBatchesTriggered: 0,
-        listingBatchesSucceeded: 0,
-        listingBatchesFailed: 0,
-      };
-    }
 
     metadata.set("status", "triggering-listings");
     // Chunk the catalog into `<= K`-id batches and wave over scanListingsByIds.
@@ -163,6 +151,7 @@ export const scanListingsBySeller = schemaTask({
     // Chunk by K (not the 1000 cap): a `> K` chunk would hit the launcher branch
     // and the await would settle on the fast fan-out, not on listing completion.
     const idChunks = chunk([...listingIds], config.listingScanBatchSize);
+    const requestedCounts = idChunks.map((ids) => ids.length).values();
     const waveResult = await batchTriggerAndWaitInWaves(
       scanListingsByIds,
       idChunks.map((ids) => ({
@@ -172,25 +161,23 @@ export const scanListingsBySeller = schemaTask({
         },
       })),
       BATCH_TRIGGER_AND_WAIT_MAX,
-      // A leaf is "complete" only if it ran inline AND scanned every id. A crash
-      // (`!ok`) or a persona-abort (`aborted` — the run finishes OK) leaves ids
-      // unscanned+unpersisted, which the listing orphan-catch can't see.
-      (run) => run.ok && run.output.mode === "scanned" && !run.output.aborted
+      // Trigger.dev returns batch results in input order, including failed runs.
+      (run) => isListingBatchComplete(run, requestedCounts.next().value ?? -1)
     );
 
-    // Mark scanned only when the WHOLE catalog was scanned. If any batch crashed
-    // or aborted, some listing ids were never persisted (they existed only in
-    // this run's memory), so the listing orphan-catch can't recover them. Throw
-    // instead of marking: a failed run clears the cron's per-seller idempotency
-    // key (a successful run holds it for the rescan-window TTL), so the next tick
-    // re-picks this still-stale seller on fresh boxes.
-    if (waveResult.incomplete > 0) {
+    // Incomplete coverage or missing child results require parent discovery again.
+    if (
+      !complete ||
+      waveResult.incomplete > 0 ||
+      waveResult.succeeded + waveResult.failed !== idChunks.length
+    ) {
       metadata
         .set("status", "incomplete")
         .set("listingBatchesTriggered", waveResult.triggered)
         .set("listingBatchesSucceeded", waveResult.succeeded)
         .set("listingBatchesFailed", waveResult.failed)
-        .set("listingBatchesIncomplete", waveResult.incomplete);
+        .set("listingBatchesIncomplete", waveResult.incomplete)
+        .set("catalogComplete", complete);
       logger.warn(
         "Seller catalog incompletely scanned; leaving stale for re-pick",
         {
@@ -200,9 +187,13 @@ export const scanListingsBySeller = schemaTask({
           ...waveResult,
         }
       );
-      throw new Error(
-        `scanListingsBySeller: ${waveResult.incomplete}/${waveResult.triggered} listing batch(es) failed or aborted for seller="${sellerId}"; leaving stale for re-pick`
-      );
+      return {
+        status: "incomplete",
+        sellerId,
+        listingsDiscovered: listingIds.size,
+        catalogComplete: complete,
+        ...waveResult,
+      };
     }
     await markSellerScanned(marketplace, sellerId);
 
@@ -219,6 +210,7 @@ export const scanListingsBySeller = schemaTask({
     });
 
     return {
+      status: "completed",
       sellerId,
       listingsDiscovered: listingIds.size,
       listingBatchesTriggered: waveResult.triggered,
@@ -279,7 +271,7 @@ async function collectListingIds(
   manager: MobileProfileTokenManager,
   sellerId: string,
   config: ScanConfig
-): Promise<Set<string>> {
+): Promise<{ listingIds: Set<string>; complete: boolean }> {
   const listingIds = new Set<string>();
   for (let page = 1; page <= MAX_SELLER_PAGES; page += 1) {
     let result: Awaited<ReturnType<typeof client.getSellerListings>>;
@@ -295,7 +287,7 @@ async function collectListingIds(
       });
     } catch (error) {
       await routeFailure(manager, error);
-      throw error;
+      return { listingIds, complete: false };
     }
     await manager.markUsed();
 
@@ -305,10 +297,10 @@ async function collectListingIds(
       }
     }
     if (!result.hasMore) {
-      return listingIds;
+      return { listingIds, complete: true };
     }
     if (result.pagination && page >= result.pagination.totalPages) {
-      return listingIds;
+      return { listingIds, complete: true };
     }
   }
   logger.warn("Seller catalog walk hit the page ceiling; store truncated", {
@@ -316,7 +308,7 @@ async function collectListingIds(
     pages: MAX_SELLER_PAGES,
     listings: listingIds.size,
   });
-  return listingIds;
+  return { listingIds, complete: false };
 }
 
 async function routeFailure(

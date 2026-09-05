@@ -33,7 +33,8 @@
  *     the device rejected. Stop the batch, route the failure ONCE, leave the rest
  *     stale for the cron to re-pick (likely on a different box). We do NOT throw —
  *     a thrown run would retry the whole batch immediately on the same bad IP.
- *   • per-listing (404 / parse / unknown) → tally as failed, leave that id stale,
+ *   • listing-detail 404 → completed negative check; persist nothing.
+ *   • per-listing (parse / unknown) → tally as failed, leave that id stale,
  *     keep going. Does NOT degrade the persona (a missing listing is not the IP's
  *     fault — the old per-listing leaf marked these too coarsely).
  */
@@ -50,6 +51,7 @@ import { BATCH_TRIGGER_AND_WAIT_MAX } from "../../utils/batch-trigger-and-wait-i
 import { chunk } from "../../utils/chunk";
 import { setMachineMetadata } from "../../utils/machine-metadata";
 import { MobileProfileTokenManager } from "../../utils/mobile-profile-manager";
+import { isListingNotFound } from "../../utils/scan-completion";
 import {
   loadScanConfig,
   type ScanConfig,
@@ -81,6 +83,7 @@ export type ScanListingsByIdsResult =
       failed: number;
       marketplace: string;
       mode: "scanned";
+      notFound: number;
       succeeded: number;
       triggered: number;
       unfit: number;
@@ -185,6 +188,7 @@ async function scanInline(
   metadata
     .set("succeeded", outcome.succeeded)
     .set("failed", outcome.failed)
+    .set("notFound", outcome.notFound)
     .set("unfit", outcome.unfit)
     .set("aborted", outcome.aborted);
   logger.info("Listing batch scanned", {
@@ -192,6 +196,7 @@ async function scanInline(
     listingCount: listingIds.length,
     succeeded: outcome.succeeded,
     failed: outcome.failed,
+    notFound: outcome.notFound,
     unfit: outcome.unfit,
     aborted: outcome.aborted,
   });
@@ -203,6 +208,7 @@ async function scanInline(
   return {
     aborted: outcome.aborted,
     failed: outcome.failed,
+    notFound: outcome.notFound,
     marketplace,
     mode: "scanned",
     succeeded: outcome.succeeded,
@@ -215,6 +221,7 @@ async function scanInline(
 interface BatchOutcome {
   aborted: boolean;
   failed: number;
+  notFound: number;
   succeeded: number;
   unfit: number;
   verdicts: ListingVerdict[];
@@ -245,6 +252,7 @@ async function runListingBatch(
   const outcome: BatchOutcome = {
     aborted: false,
     failed: 0,
+    notFound: 0,
     succeeded: 0,
     unfit: 0,
     verdicts: [],
@@ -264,6 +272,10 @@ async function runListingBatch(
         outcome.unfit += 1;
       }
     } catch (error) {
+      if (isListingNotFound(error, marketplace)) {
+        outcome.notFound += 1;
+        continue;
+      }
       if (isPersonaLevelError(error)) {
         personaError = toPersonaError(error);
         remaining = listingIds.length - index - 1;

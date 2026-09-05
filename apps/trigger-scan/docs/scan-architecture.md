@@ -1,7 +1,7 @@
 # Scan pipeline — architecture & task contracts
 
-Source-of-truth design for the scan workflows. This is the **agreed target**; the
-"Delta from current code" section at the end lists what changes to reach it.
+Current scan workflow contracts. The dependent listing-freshness and cadence work
+is tracked in [Issue #11](https://github.com/sparkyidea/sellerhunt/issues/11).
 
 ## 1. Vocabulary
 
@@ -21,16 +21,28 @@ Source-of-truth design for the scan workflows. This is the **agreed target**; th
 All workflows are **marketplace-agnostic** — they take `marketplace` and dispatch the
 adapter/bearer pool on it.
 
-## 2. The one check that matters: keyword & seller only
+## 2. Freshness and launch suppression
 
-Only **keyword** and **seller** scans are freshness-gated, because each one fans out a
-**massive** number of child tasks — skipping a fresh one avoids re-triggering that
-whole tree. A **listing** scan is cheap (one `getListing`, then an upsert only if it
-fits), so it has **no** freshness gate and **no** idempotency key — we just scan it.
+Keyword and seller tasks check their successful `last_scanned_at` against the
+matching configured rescan interval. Listing tasks currently fetch every supplied
+ID; listing freshness and per-ID ownership remain dependent work in Issue #11.
 
-Consequence (accepted): a listing may be scanned more than once (keyword validation,
-then again inside its seller's catalog, then maybe the cron orphan catch). That's
-fine — listing scans are cheap, and keyword/seller cadence is what's actually gated.
+[scan-launch-options.ts](../src/utils/scan-launch-options.ts) owns global keyword/seller
+launch keys and their two-hour TTL. All three launch sites share that policy:
+keyword bulk launch, cron seller launch, and keyword seller promotion. Identical
+entities share a key across parent runs and consecutive cron ticks; JSON-encoded
+identity parts keep entity types, marketplaces, and references distinct.
+
+The launch TTL is independent of scan cadence. A completed, incomplete, failed,
+canceled, or fresh-skipped run may retain its key for the remaining TTL. Recovery
+requires expiry plus the next heartbeat and queue service; the code has no reset
+hooks and does not depend on a failed run automatically clearing its key. A fresh
+skip can consequently delay a later due scan by the remaining TTL.
+
+This suppresses duplicate launches within the TTL, not indefinitely while a run
+is queued or executing. Verify actual queue/wait bounds before increasing cadence;
+work that can outlive the window needs stronger parent coordination. Listing-batch
+keys would not deduplicate overlapping ID sets, so they are intentionally absent.
 
 ## 3. Call graph
 
@@ -69,7 +81,7 @@ Input: `{ marketplace, listingIds: string[], config? }`. Machine `micro`.
   what the cron orphan-catch hits — it hands the whole stale array and ignores the
   result.
 - **`<= K` (leaf):** scan the ids inline (below) and return
-  `{ mode: "scanned", verdicts, succeeded, failed, unfit, aborted }`. Awaiting callers
+  `{ mode: "scanned", verdicts, succeeded, notFound, failed, unfit, aborted }`. Awaiting callers
   pass `<= K` so they always land here.
 
 **Per listing** (`scanOneListing` node — the former single-leaf pipeline, unchanged):
@@ -100,8 +112,11 @@ per-IP rate. Small K spreads work across more boxes/IPs — that fan-out IS the 
   rejected → stop the batch, route the failure **once**, leave the rest stale for the
   cron to re-pick (likely on a different box). Does **not** throw — a thrown run would
   retry the whole batch immediately on the same bad IP.
-- **per-listing** (404 / parse / unknown): tally as failed, leave that id stale, keep
-  going. Does **not** degrade the persona (a missing listing is not the IP's fault).
+- **typed listing-detail 404:** increment `notFound`, a completed negative check for
+  this attempt. No verdict, snapshot, deletion, end date, or seller promotion is
+  produced. This does not establish permanent removal or persist a negative cache.
+- **per-listing unresolved error** (parse / unknown / other endpoint 404): increment
+  `failed`, leave that ID stale, and continue without degrading the persona.
 
 The bare `scan_seller` upsert is a DB write, not a task fire — no loop. Only fitting
 listings are persisted; `fit` + `sellerReference` are the verdict the keyword uses to
@@ -114,34 +129,25 @@ Input: `{ marketplace, keyword, config?, forceRefresh? }`. Queue `concurrencyLim
 1. **Freshness self-gate** on `scan_keyword.last_scanned_at`. If fresh → skip.
 2. `getKeywordSearch` — paginate `searchListings` to `maxSearchPages`; collect every
    listing id (deduped). We do **not** trust the search card's "X sold" badge.
-3. **Validate in `<= K` batches** — chunk the ids and await one leaf run per chunk:
-
-   ```
-   for each chunk of <= K listingIds:
-     run = await scanListingsByIds.triggerAndWait({ marketplace, listingIds: chunk, config })
-     if !run.ok or run.output.mode != "scanned": continue
-     for each verdict in run.output.verdicts:
-       if verdict.fit and verdict.sellerReference and seller not already fired this run:
-         scanListingsBySeller.trigger(           // FIRE-AND-FORGET — do not await
-           { marketplace, sellerId: verdict.sellerReference, config },
-           { idempotencyKey: ["seller", marketplace, sellerReference],
-             idempotencyKeyTTL: `${sellerRescanAfter}m` })
-         mark seller fired (in-run Set)
-   ```
-
-   **Progressive and serial across chunks**: wait chunk 1 → fire its sellers → wait
-   chunk 2 → … The keyword `await`s each **chunk**; it never `await`s a **seller**.
+3. **Validate in `<= K` batches** using one awaited leaf at a time. Count completed
+   detail verdicts (including threshold rejects) and listing-detail 404s. Keep
+   fitting partial verdicts even if other IDs failed or the leaf aborted. For each
+   fitting verdict, await the seller launch handoff with shared global launch
+   options; do not wait for seller execution. Only record a seller as fired after
+   the handoff succeeds. Failed handoffs keep the keyword incomplete.
 
 > **Why serial chunks, not parallel:** a Trigger.dev run holds only **one waitpoint at
 > a time** (see `batch-trigger-and-wait-in-waves.ts`), so a run can't `Promise.all` many
 > `triggerAndWait`s. Batching cuts the number of sequential waits from N to ⌈N/K⌉ while
 > keeping the one-waitpoint shape; within a chunk the listings are paced on one IP.
 
-4. `markKeywordScanned` (writes `last_scanned_at = now`) **only after every listing is
-   validated and its seller fired** — a crash mid-validation leaves the keyword stale
-   for the cron to re-pick. (The cron fires keywords through the `scan-listings-by-keywords`
-   launcher, which stamps a per-keyword idempotency key, so a still-running keyword
-   isn't re-enqueued each tick.)
+4. Advance `last_scanned_at` only after search coverage, every listing batch, and
+   every qualifying seller handoff is complete. Search failures retain already
+   collected IDs for partial validation. Return `status: "incomplete"` for partial
+   work, `"completed"` for full completion, or `"skipped"` when fresh. Both parents
+   use one task attempt: unexpected exceptions can fail the run, but do not
+   immediately replay the whole tree. Incomplete-domain results are successful
+   Trigger.dev runs; inspect their status/metadata rather than only `run.ok`.
 
 ### 4c. `scan-listings-by-seller` — full catalog, waits
 
@@ -149,26 +155,38 @@ Input: `{ marketplace, sellerId, config?, forceRefresh? }`. Queue `concurrencyLi
 (one seller across the whole environment).
 
 1. **Freshness self-gate** on `scan_seller.last_scanned_at` → skip if recently scraped.
-2. `getSellerStat` (`getSeller`) → `upsertScanSeller`.
+2. Required `getSeller` → `upsertScanSeller`. A request failure returns incomplete
+   before catalog discovery; stats fetching is not best-effort.
 3. `getSellerListings` — paginate to `pagination.totalPages` (whole store; no config
-   cap, `MAX_SELLER_PAGES = 1000` is a runaway guard only); collect listing ids.
+   cap, `MAX_SELLER_PAGES = 1000` is a safety ceiling); collect listing IDs and coverage
+   status. A request failure or truncation retains partial IDs but is incomplete.
 4. **Awaited** fan-out: chunk the catalog into `<= K`-id pieces and
    `batchTriggerAndWaitInWaves` over `scan-listings-by-ids` (one paced leaf run per
    chunk, each on its own box/IP). The seller run **holds open until its whole catalog
    is scanned**, so with `concurrencyLimit: 1` one seller's store fully finishes before
    the next starts. (Chunk by K, not the 1000 cap — a `> K` chunk would hit the launcher
    branch and the await would settle on the fast fan-out, not on listing completion.)
-5. `markSellerScanned` (writes `last_scanned_at = now`) **only after the whole catalog
-   has been scanned** — a crash mid-catalog leaves the seller stale for the cron to
-   re-pick. The cron stamps a per-seller idempotency key (scoped to the rescan window)
-   so it doesn't re-enqueue a still-running seller.
+5. Advance `last_scanned_at` only when catalog coverage and all listing batches are
+   complete. An empty fully walked catalog completes; an empty failed catalog does
+   not. Return structured `status: "incomplete"` with coverage and batch counters for
+   partial work, without throwing for a retry. Successful work returns `"completed"`;
+   fresh sellers return `"skipped"`.
+
+[scan-completion.ts](../src/utils/scan-completion.ts) owns the completion rule:
+`verdicts.length + notFound + failed` must equal the actual requested count, with
+valid nonnegative integer counts, no abort, and no unresolved `failed`. Threshold
+rejects already have verdicts and are counted once. Raw input URLs need not match
+normalized verdict IDs. Crashed children and unexpected launcher-mode returns are
+incomplete; launcher mode is a defensive guard since parents already chunk by K.
+The seller also checks coverage and that every requested batch returned a result.
 
 ### 4d. `ebay-listings-scanner` — cron heartbeat
 
 Scheduled. Reads `scan_config` (kill switch via `enabled`). Picks stale
 keywords/sellers/listings via `pickStale*` (which read `last_scanned_at`), and fans
 each batch out fire-and-forget. The resilience net: any dropped fan-out is
-re-discovered next tick.
+re-discovered by later ticks. A retained launch key can return the prior run handle
+instead of creating a new run until its TTL expires.
 
 ## 5. Fire-and-forget vs await (the rule)
 
@@ -181,40 +199,24 @@ re-discovered next tick.
 | `scan-listings-by-ids` launcher → itself | **fire-and-forget** | fan `> K` ids across boxes; cron handoff stays fast |
 | leaf branch → anything | (none) | the leaf fires nothing |
 
-## 6. Concurrency (confirmed — self-hosted holds the slot)
+## 6. Concurrency and deployed verification
 
-"One seller's whole store before the next" relies on the **seller** run **holding** its
-`concurrencyLimit: 1` slot through its `batchTriggerAndWait`. **Confirmed:** this
-self-hosted instance (v4.4.6) has **no checkpoint support**, so a waiting parent stays
-`EXECUTING_WITH_WAITPOINTS` and **holds its box** for the whole wait — concurrency is
-released only inside `createCheckpoint`, which never runs here. So strict seller
-serialization works exactly as intended; the cost is just that the seller's `small-1x`
-box is occupied (not released) during the wait. (The keyword is unaffected by the
-serialization question: it fire-and-forgets sellers, never awaits them — but its own
-per-chunk waits likewise hold its `micro` box, which is why batching to ⌈N/K⌉ waits
-matters.)
+The last documented self-hosted observation was server v4.4.6 without checkpoint
+support: waiting parents held their boxes and queue slots. Reverify that behavior
+on the deployed server before treating the seller queue's limit of one as strict
+whole-catalog serialization. The SDK version alone does not establish server
+behavior. Parent task attempts are limited to one; the configured run duration is
+one hour. The launch TTL allows another hour for queueing, which must be measured.
 
-Every run also stamps `hostname` + `boxName` into metadata via `setMachineMetadata()`,
-so the dashboard shows which worker ran each task.
+Unit tests cover completion/error classification and the global key-creation
+boundary. They do not prove deployed parent effects. Controlled deployed checks
+must verify incomplete results/timestamps, partial seller promotion, cross-tick
+key reuse/expiry, and queue/wait bounds before cadence activation.
 
-## 7. Delta from current code (what this revision changes)
+Every run stamps `hostname` and `boxName` through `setMachineMetadata()` so the
+worker can be identified in the dashboard.
 
-> **Historical** — describes the revision that made the leaf return a verdict. The leaf
-> `scan-listing-by-id` has since been folded into the batched `scan-listings-by-ids`
-> (see §1, §4a, §8); read the names below as that task's per-listing core (`scanOneListing`).
-
-1. **Leaf** (`scan-listing-by-id`): **remove the freshness self-gate** (always scan),
-   **remove `discoverSeller` + `maybePromoteSeller`** (fires nothing), persist only
-   when it fits (unchanged), and **return `{ listingId, fit, sellerReference }`**.
-2. **Keyword** (`scan-listings-by-keyword`): replace the fire-and-forget fan-out with a
-   **serial `triggerAndWait` loop**; after each listing that fits, fire-and-forget
-   `scan-listings-by-seller` (deduped in-run + idempotency-keyed).
-3. **Drop the listing idempotency key** on the cron's orphan-listing fan-out (listings
-   aren't gated anymore).
-4. Everything else stays: seller awaited catalog + freshness gate, keyword freshness
-   gate, bulk launchers, cron shape, seller idempotency, hostname metadata.
-
-## 8. Locked decisions
+## 7. Current task structure
 
 - **Listing work is batched** — `scan-listings-by-ids` is the one listing task
   (self-recursive launcher + paced leaf); there is no single-listing task. Keyword and

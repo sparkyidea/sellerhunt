@@ -5,8 +5,8 @@
  * Triggered by the cron heartbeat with the tick's stale keywords (and usable
  * standalone to scan an ad-hoc keyword list). Mirrors `scanListingsByIds`: pure
  * orchestration, self-chunks to Trigger's 1000-item `batchTrigger` cap, and
- * stamps a per-keyword idempotency key (scoped to the rescan window) so the same
- * keyword isn't re-enqueued within the window. Each single task still self-gates
+ * stamps a global per-keyword key with a two-hour launch TTL so the same
+ * keyword isn't re-enqueued within that window. Each single task still self-gates
  * on `scan_keyword.last_scanned_at`.
  */
 import { logger, metadata, schemaTask } from "@trigger.dev/sdk";
@@ -14,6 +14,7 @@ import { z } from "zod";
 import { BATCH_TRIGGER_AND_WAIT_MAX } from "../../utils/batch-trigger-and-wait-in-waves";
 import { setMachineMetadata } from "../../utils/machine-metadata";
 import { loadScanConfig, scanConfigSchema } from "../../utils/scan-config";
+import { scanLaunchOptions } from "../../utils/scan-launch-options";
 import { scanListingsByKeyword } from "./scan-listings-by-keyword";
 
 const scanListingsByKeywordsSchema = z.object({
@@ -46,7 +47,6 @@ export const scanListingsByKeywords = schemaTask({
     await setMachineMetadata();
     const { marketplace, keywords } = payload;
     const config = payload.config ?? (await loadScanConfig(marketplace));
-    const ttl = `${config.keywordRescanAfter}m`;
 
     metadata
       .set("marketplace", marketplace)
@@ -57,14 +57,15 @@ export const scanListingsByKeywords = schemaTask({
     for (let i = 0; i < keywords.length; i += BATCH_TRIGGER_AND_WAIT_MAX) {
       const chunk = keywords.slice(i, i + BATCH_TRIGGER_AND_WAIT_MAX);
       await scanListingsByKeyword.batchTrigger(
-        chunk.map((keyword) => ({
-          payload: { marketplace, keyword, config },
-          options: {
-            tags: [`scan_keyword_${keyword}`, `marketplace_${marketplace}`],
-            idempotencyKey: ["keyword", marketplace, keyword],
-            idempotencyKeyTTL: ttl,
-          },
-        }))
+        await Promise.all(
+          chunk.map(async (keyword) => ({
+            payload: { marketplace, keyword, config },
+            options: {
+              tags: [`scan_keyword_${keyword}`, `marketplace_${marketplace}`],
+              ...(await scanLaunchOptions("keyword", marketplace, keyword)),
+            },
+          }))
+        )
       );
       triggered += chunk.length;
     }

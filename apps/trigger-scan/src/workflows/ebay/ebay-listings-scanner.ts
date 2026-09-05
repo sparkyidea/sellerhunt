@@ -3,9 +3,9 @@
  *
  * Runs on a schedule, picks stale entities (keywords + sellers + listings)
  * for marketplace = "ebay", and `batchTrigger`s the marketplace-agnostic
- * phase tasks under `workflows/scan/`. Each phase task self-gates on its
- * own freshness, so a tick that fires before the previous wave finished is
- * idempotent — child tasks see fresh state and skip.
+ * phase tasks under `workflows/scan/`. Keywords and sellers self-gate on
+ * freshness; listings always fetch supplied IDs. Global launch keys suppress
+ * duplicate keyword/seller runs across parents and ticks for two hours.
  *
  * Three independent fan-outs per tick (keyword + listing go through the plural
  * bulk launchers, which fan out to the singular single-action tasks):
@@ -27,6 +27,7 @@ import { logger, metadata, schedules } from "@trigger.dev/sdk/v3";
 import { and, asc, eq, isNull, lt, or, sql } from "drizzle-orm";
 import { setMachineMetadata } from "../../utils/machine-metadata";
 import { loadScanConfig } from "../../utils/scan-config";
+import { scanLaunchOptions } from "../../utils/scan-launch-options";
 import { scanListingsByIds } from "../scan/scan-listings-by-ids";
 import { scanListingsByKeywords } from "../scan/scan-listings-by-keywords";
 import { scanListingsBySeller } from "../scan/scan-listings-by-seller";
@@ -100,17 +101,16 @@ export const ebayListingsScanner = schedules.task({
         : Promise.resolve(null),
       staleSellers.length > 0
         ? scanListingsBySeller.batchTrigger(
-            staleSellers.map((sellerId) => ({
-              payload: { marketplace: MARKETPLACE, sellerId, config },
-              options: {
-                // Sellers are marked scanned only after their whole catalog
-                // finishes, so a long-running seller stays "stale". This key
-                // (scoped to the rescan window, same key the keyword path uses)
-                // stops the cron from re-enqueuing a still-running seller.
-                idempotencyKey: ["seller", MARKETPLACE, sellerId],
-                idempotencyKeyTTL: `${config.sellerRescanAfter}m`,
-              },
-            }))
+            await Promise.all(
+              staleSellers.map(async (sellerId) => ({
+                payload: { marketplace: MARKETPLACE, sellerId, config },
+                options: await scanLaunchOptions(
+                  "seller",
+                  MARKETPLACE,
+                  sellerId
+                ),
+              }))
+            )
           )
         : Promise.resolve(null),
       staleListings.length > 0
