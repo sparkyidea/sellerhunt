@@ -17,7 +17,7 @@ move.
 | ------------------- | -------------------- | -------------------------------------------------------------------- |
 | `apps/api`          | Hono backend         | Only backend. Mounts `/api/auth` (better-auth), `/trpc`, `/health`.  |
 | `apps/app`          | Next.js (App Router) | Authenticated dashboard — `/explorer/listings`, `/settings/*`.       |
-| `apps/trigger-scan` | Trigger.dev worker   | Standalone deploy target (`@dashseller/trigger-scan`), self-hosted at `https://trigger.sparkyidea.com`. Nothing imports it — cron-driven. `src/workflows/{ebay,scan}/`, `nodes/scan/`, `keywords/` (OpenAI keyword extraction: prompt + schema, pure LLM stage, client), `scripts/try-keywords.ts` (`keywords:try` prompt tryout), `utils/` (`mobile-profile-manager.ts`, `secret-crypto.ts`). |
+| `apps/trigger-scan` | Trigger.dev worker   | Standalone deploy target (`@dashseller/trigger-scan`), self-hosted at `https://trigger.sparkyidea.com`. Nothing imports it — cron-driven. `src/workflows/scan/`, `nodes/scan/`, `keywords/` (OpenAI keyword extraction: prompt + schema, pure LLM stage, client), `scripts/try-keywords.ts` (`keywords:try` prompt tryout), `utils/` (`mobile-profile-manager.ts`, `secret-crypto.ts`). |
 
 ### Packages
 
@@ -47,7 +47,7 @@ move.
 
 ### Trigger.dev scan workflows (in `apps/trigger-scan/src/workflows/`)
 
-- `ebay/ebay-listings-scanner.ts` — cron that fans out scan jobs.
+- `scan/scan-crons.ts` — separate listing, seller, and keyword crons across enabled marketplaces.
 - `scan/scan-listings-by-{ids,keyword,seller}.ts` — listing discovery phases.
 - `scan/resolve-listing-keywords.ts` — manual retry tool for keyword extraction (the `scan-listings-by-ids` leaf extracts inline).
 

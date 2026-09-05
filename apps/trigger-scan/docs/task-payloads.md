@@ -11,13 +11,11 @@ launcher + paced batch leaf (handed `> K` ids it fans into `<= K` child runs; ha
 `<= K` it scans them inline and returns verdicts). There is no single-listing task.
 
 ```
-ebay-listings-scanner (cron)
- ├─ scan-listings-by-keywords  (bulk)  ─► scan-listings-by-keyword (single)
- │                                          └─(await per <=K chunk)─► scan-listings-by-ids
- │                                                  └─(per fitting verdict)─► scan-listings-by-seller
- ├─ scan-listings-by-seller    (single, one run per stale seller)
- │     └─(awaited wave of <=K chunks)─► scan-listings-by-ids
- └─ scan-listings-by-ids       (orphan listings; self-fans > K ids into <=K leaf runs)
+scan-keywords-cron → scan-listings-by-keywords → scan-listings-by-keyword
+                                                ├─ await → scan-listings-by-ids
+                                                └─ fitting verdict → scan-listings-by-seller
+scan-sellers-cron → scan-listings-by-seller → await catalog → scan-listings-by-ids
+scan-listings-cron → scan-listings-by-ids (self-fans > K IDs into <=K leaf runs)
 ```
 
 - **keyword** validates in `<= K` chunks: it `triggerAndWait`s `scan-listings-by-ids`
@@ -44,13 +42,26 @@ await tasks.trigger("scan-listings-by-keywords", {
 
 Or from the Trigger.dev dashboard → the task → **Test** → paste the JSON payload.
 
+Priority is a Trigger.dev launch option, not a payload field. Application launch
+sites set [entity priorities](scan-architecture.md#4e-scan-run-priority) explicitly,
+including child runs. Manual/external launches default to zero unless the caller
+supplies the option, for example:
+
+```ts
+await tasks.trigger(
+  "scan-listings-by-ids",
+  { marketplace: "ebay", listingIds: ["204413360253"] },
+  { priority: 3600 }
+);
+```
+
 ### `config` is optional everywhere
 
-Every task accepts an optional `config` (`ScanConfig`). **Omit it** and the task
+Each scan workflow accepts an optional `config` (`ScanConfig`). **Omit it** and the task
 loads the marketplace's row from `scan_config` itself. The cron pre-loads it once
 and threads it down so child tasks don't re-query. Only pass it inline to override
-the DB values for a one-off run. Fields (money in integer cents, durations in
-minutes): `enabled`, `keywordRescanAfter`, `sellerRescanAfter`, `listingRescanAfter`,
+the DB tunables for a one-off run. Cooldowns are task constants and cannot be
+overridden through `config`. Fields (money in integer cents): `enabled`,
 `maxSearchPages` (keyword depth; seller stores are always walked to the end), `minItemSold`,
 `minPriceCents`, `maxPriceCents`
 (nullable), `minSoldLast24h` (nullable), `keywordBatchSize`, `sellerBatchSize`,
@@ -64,14 +75,20 @@ sequential, and the retry tool's page size is a payload option.
 
 ---
 
-## `ebay-listings-scanner` (cron)
+## Marketplace cron tasks
 
-Scheduled heartbeat. Picks stale keywords/sellers/listings and fires the bulks.
-Schedule-triggered — no custom payload. Trigger manually with `{}` to run a tick now.
+`scan-listings-cron`, `scan-sellers-cron`, and `scan-keywords-cron` each have a
+production schedule declared in [scan-crons.ts](../src/workflows/scan/scan-crons.ts).
+They sweep enabled marketplace configs, select stale entities of their own type,
+and launch the existing workflows. Marketplaces whose adapter lacks keyword search
+or seller catalog methods (shop today) are skipped by those two crons and reported
+as `unsupported`; the keyword and seller tasks refuse manual launches for them
+before loading a persona. Trigger.dev supplies the schedule payload;
+there is no custom marketplace or config payload for these tasks.
 
-```jsonc
-{} // schedule payload is injected by Trigger.dev (timestamp, lastTimestamp, …)
-```
+For cadence, cooldown settings and deployment behavior, see
+[architecture](scan-architecture.md#4d-marketplace-cron-tasks) and
+[rollout](scan-cron-rollout.md).
 
 ---
 
@@ -167,10 +184,11 @@ seen; rescans are never re-sent) verbatim to OpenAI in one call (up to 50 titles
 request, so one call at K = 50) and stores each answer as a
 `scan_keyword` linked from `scan_listing.keyword_id`. Only when
 `keyword_llm_enabled = true` and a key is set; otherwise they stay unresolved for the
-retry tool. Returns `{ mode: "scanned", verdicts, succeeded, failed, unfit, aborted }`
-— a fitting verdict carries `isNew`, `title` and `categoryPath`. No freshness gate,
-no idempotency key — listing scans are cheap and intentionally ungated. "Scan one
-listing" is a 1-element array. Ids may be bare or full listing URLs.
+retry tool. Returns `{ mode: "scanned", verdicts, succeeded, notFound, failed, unfit, aborted }`
+— a fitting verdict carries `isNew`, `title` and `categoryPath`. Each listing checks
+freshness before fetching detail and reuses stored metrics while within its
+cooldown. Listing batches have no idempotency key. "Scan one listing" is a 1-element
+array. Ids may be bare or full listing URLs.
 
 ```ts
 interface ScanListingsByIdsPayload {
@@ -223,18 +241,36 @@ interface ScanListingsBySellerPayload {
 
 ## Notes
 
-- **Freshness self-gate:** only **keyword** and **seller** check `*_last_scanned_at` vs
-  the matching `*RescanAfter` (minutes) and skip if fresh — they fan out big trees, so a
-  fresh skip is worth it. `forceRefresh: true` bypasses it; `*RescanAfter <= 0` disables
-  it. **Listings are ungated** (no freshness gate, no idempotency) — cheap, always scan.
-- **Idempotency:** the keyword launcher (`scan-listings-by-keywords`) stamps a per-keyword
-  key and the cron stamps a per-seller key (TTL = the rescan window) so a still-running
-  entity isn't re-enqueued each tick; seller promotion from the keyword path keys on
-  `["seller", marketplace, sellerReference]`. Listing runs carry no idempotency key.
+- **Freshness self-gate:** keywords, sellers and listings check `last_scanned_at`
+  against the matching inline cooldown and skip if fresh. Intervals are listed in
+  [architecture](scan-architecture.md#4d-marketplace-cron-tasks).
+  `forceRefresh: true` bypasses only the keyword/seller parent's check.
+  Legacy `*RescanAfter` columns are removed from the schema; old inline config
+  fields are ignored.
+  Listing checks apply to discovery and queued runs too.
+  Fresh IDs return stored verdicts with `isNew: false`, counting toward parent
+  completion without fetching detail, writing snapshots or extracting keywords.
+  Listing batches have no idempotency key; timestamp checks do not lock stale IDs.
+- **Launch suppression:** keyword bulk launch and both seller launch paths use
+  explicitly global keys with a fixed two-hour TTL, independent of cadence. This
+  deduplicates the same entity across parent runs and cron ticks within that window.
+  Retained keys, including incomplete/failed/canceled/fresh-skipped runs, may delay
+  redispatch until expiry. No key-reset hooks are used. See the
+  [architecture contract](scan-architecture.md#2-freshness-and-launch-suppression)
+  for queue/wait limits and deployed verification requirements.
+- **Parent output:** keyword and seller tasks return `status: "completed"`,
+  `"incomplete"`, or `"skipped"`. Incomplete results include available coverage and
+  failure counters/reasons and leave `last_scanned_at` unchanged. An incomplete
+  domain result can be a successful Trigger.dev run. Both parents have one task
+  attempt; unexpected failures do not immediately retry the whole tree.
 - **Seller promotion** happens only on the **keyword** path (it reads verdicts and fires
   sellers). The seller-catalog and cron-orphan listing paths never promote sellers from a
   listing — that would loop.
 - **Batch error handling:** within a leaf run, a persona-level error (401/403/429/5xx)
   aborts the rest of the batch and routes once (the unscanned ids stay stale for the cron
-  to re-pick); a per-listing error (404/parse) is tallied and skipped. A leaf never throws
+  to re-pick); a typed listing-detail 404 increments `notFound` and completes that check for this
+  attempt. It does not delete/end a listing or create a snapshot. Parse/unknown
+  errors and other-endpoint 404s remain unresolved `failed`. The completion rule
+  counts verdicts (including threshold rejects) plus `notFound` plus `failed`
+  against the requested count, requiring no abort or unresolved failures. A leaf never throws
   on scan failures — only on infra (profile load, OOM → escalate machine).

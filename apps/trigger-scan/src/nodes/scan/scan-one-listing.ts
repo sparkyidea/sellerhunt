@@ -11,7 +11,7 @@
  * (429/auth → back off the whole IP) vs per-listing (404/parse → tally + skip).
  *
  * Pipeline:
- *   1. `getListing` — authoritative sold/price detail. Rethrows on error.
+ *   1. Reuse a fresh persisted listing; otherwise `getListing` for detail.
  *   2. Apply listing-level thresholds (price, item-sold, sold-last-24h) → `fit`.
  *   3. If it fits: ensure the seller ROW exists (bare upsert from the listing's
  *      `sellerReference`, so the listing's seller FK resolves) — but do NOT fetch
@@ -21,8 +21,11 @@
  *      category, so the leaf can send every listing it INSERTED to the LLM at
  *      the end of the run without reading them back.
  */
+import { db } from "@dashseller/db";
+import { scanListing, scanSeller } from "@dashseller/db/schema";
 import type { ScanListing } from "@dashseller/marketplace-scan/types";
 import { logger } from "@trigger.dev/sdk";
+import { and, eq, gt } from "drizzle-orm";
 import type { MobileProfileTokenManager } from "../../utils/mobile-profile-manager";
 import type { ScanConfig } from "../../utils/scan-config";
 import { extractListingId } from "./extract-listing-id";
@@ -60,11 +63,11 @@ export interface UnfitListingVerdict extends VerdictBase {
 export type ListingVerdict = FitListingVerdict | UnfitListingVerdict;
 
 export interface ScanOneListingParams {
-  client: ScanClient;
+  client: Pick<ScanClient, "getListing">;
   config: ScanConfig;
   /** Bare listing id or full listing URL — normalized via `extractListingId`. */
   listingId: string;
-  manager: MobileProfileTokenManager;
+  manager: Pick<MobileProfileTokenManager, "markUsed">;
   marketplace: string;
 }
 
@@ -77,6 +80,10 @@ export async function scanOneListing(
 ): Promise<ListingVerdict> {
   const { client, config, manager, marketplace } = params;
   const listingId = extractListingId(params.listingId);
+  const cached = await getFreshListingVerdict(marketplace, listingId, config);
+  if (cached) {
+    return cached;
+  }
 
   // Throws on error — the batch loop owns persona-level vs per-listing routing.
   const result = await client.getListing({ listingId });
@@ -148,6 +155,47 @@ export async function scanOneListing(
   };
 }
 
+/** Re-check at execution time, including keyword/seller discovery and queued work. */
+async function getFreshListingVerdict(
+  marketplace: string,
+  listingId: string,
+  config: ScanConfig
+): Promise<ListingVerdict | null> {
+  const [row] = await db
+    .select({ listing: scanListing, sellerReference: scanSeller.reference })
+    .from(scanListing)
+    .leftJoin(scanSeller, eq(scanListing.sellerId, scanSeller.id))
+    .where(
+      and(
+        eq(scanListing.marketplace, marketplace),
+        eq(scanListing.reference, listingId),
+        gt(scanListing.lastScannedAt, new Date(Date.now() - 6 * 60 * 60 * 1000))
+      )
+    )
+    .limit(1);
+  if (!row) {
+    return null;
+  }
+  logger.info("Listing fresh; reusing stored verdict", {
+    marketplace,
+    listingId,
+  });
+  const { listing, sellerReference } = row;
+  if (!listing.title || checkListingThresholds(listing, marketplace, config)) {
+    return { listingId, fit: false, sellerReference };
+  }
+  return {
+    listingId,
+    sellerReference,
+    fit: true,
+    isNew: false,
+    scanListingId: listing.id,
+    title: listing.title,
+    categoryPath: listing.categoryPath,
+    variantsDiscovered: 0,
+  };
+}
+
 /**
  * Apply min-thresholds. Marketplace-aware because shop.app surfaces a 30-day
  * window where eBay surfaces lifetime + 24h — the absolute thresholds in
@@ -157,7 +205,10 @@ export async function scanOneListing(
  * Stop-gap pending a `scan_config.minSoldLast30Days` knob in PR2.
  */
 function checkListingThresholds(
-  listing: ScanListing,
+  listing: Pick<
+    ScanListing,
+    "price" | "itemSold" | "soldLast24h" | "soldLast30Days"
+  >,
   marketplace: string,
   config: ScanConfig
 ): string | null {

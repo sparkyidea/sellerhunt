@@ -6,6 +6,7 @@
  */
 
 export type {
+  ScanCapabilities,
   ScanClient,
   ScanClientConfig,
   ScanCredentials,

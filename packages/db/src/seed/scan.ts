@@ -37,16 +37,15 @@ const db = drizzle(process.env.DATABASE_URL || "");
 /**
  * Per-marketplace scanner config seed. Values match the column defaults in
  * `scan_config`; included explicitly here so operators can see the full set
- * in one place when reasoning about a new marketplace. The LLM model,
+ * in one place when reasoning about a new marketplace. Repeat intervals are
+ * inline in the scan worker. The LLM model,
  * reasoning effort and request size are code constants, not rows.
  */
 interface ScanConfigSeed {
   enabled: boolean;
   keywordBatchSize: number;
   keywordLlmEnabled: boolean;
-  keywordRescanAfter: number;
   listingBatchSize: number;
-  listingRescanAfter: number;
   listingScanBatchSize: number;
   marketplace: string;
   maxPriceCents: number | null;
@@ -55,16 +54,12 @@ interface ScanConfigSeed {
   minPriceCents: number;
   minSoldLast24h: number | null;
   sellerBatchSize: number;
-  sellerRescanAfter: number;
 }
 
 const MARKETPLACES: ScanConfigSeed[] = [
   {
     marketplace: "ebay",
     enabled: true,
-    keywordRescanAfter: 1440,
-    sellerRescanAfter: 1440,
-    listingRescanAfter: 1440,
     maxSearchPages: 10,
     minItemSold: 100,
     minPriceCents: 1000,

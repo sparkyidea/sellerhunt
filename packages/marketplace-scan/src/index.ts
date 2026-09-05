@@ -1,4 +1,5 @@
 import type {
+  ScanCapabilities,
   ScanClient,
   ScanClientConfig,
   ScanMarketplaceType,
@@ -43,6 +44,26 @@ export function createScanClient(
       return new EbayScanClient(config);
     case "shop":
       return new ShopScanClient(config);
+    default:
+      throw new Error(`Unsupported scan marketplace: ${id}`);
+  }
+}
+
+/**
+ * Static capability lookup for a marketplace id: what the adapter behind
+ * `createScanClient` actually implements. Crons use this to skip keyword and
+ * seller sweeps for adapters that only serve listing detail (shop today).
+ * Throws for unknown marketplaces, like `createScanClient`.
+ */
+export function getScanCapabilities(
+  marketplace: ScanMarketplaceType | string
+): ScanCapabilities {
+  const id = marketplace.toLowerCase();
+  switch (id) {
+    case "ebay":
+      return EbayScanClient.capabilities;
+    case "shop":
+      return ShopScanClient.capabilities;
     default:
       throw new Error(`Unsupported scan marketplace: ${id}`);
   }

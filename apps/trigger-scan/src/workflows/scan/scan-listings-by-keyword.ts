@@ -2,7 +2,9 @@
  * Keyword phase task — surface candidate listings via the search endpoint.
  *
  * Marketplace-agnostic. The cron heartbeat fires this with `marketplace` set;
- * the bearer pool + adapter both dispatch on that string.
+ * the bearer pool + adapter both dispatch on that string. Refuses marketplaces
+ * whose adapter has no keyword search (`assertScanEntitySupported`) before
+ * touching config or personas.
  *
  * Pipeline:
  *   1. Self-gate on `scan_keyword.last_scanned_at`. If fresh, exit early.
@@ -20,10 +22,9 @@
  *      sequentially (one waitpoint at a time); sellers run one-at-a-time on their
  *      own `concurrencyLimit: 1` queue.
  *   5. Bump `scan_keyword.last_scanned_at = now` ONLY after every listing has
- *      been validated and its seller fired. If any batch crashed or aborted on a
- *      throttled persona, the run throws instead — a failed run clears the
- *      launcher's per-keyword idempotency key, leaving the keyword stale so the
- *      cron re-picks it next tick.
+ *      been accounted for and its qualifying seller fired. Partial work returns
+ *      incomplete without advancing freshness or immediately retrying the tree.
+ *      Retained global launch keys expire after two hours, permitting cron recovery.
  */
 import { db } from "@dashseller/db";
 import { scanKeyword } from "@dashseller/db/schema";
@@ -36,11 +37,14 @@ import { markKeywordScanned } from "../../nodes/scan/upsert-scan-keyword";
 import { chunk } from "../../utils/chunk";
 import { setMachineMetadata } from "../../utils/machine-metadata";
 import { MobileProfileTokenManager } from "../../utils/mobile-profile-manager";
+import { assertScanEntitySupported } from "../../utils/scan-capabilities";
+import { isListingBatchComplete } from "../../utils/scan-completion";
 import {
   loadScanConfig,
   type ScanConfig,
   scanConfigSchema,
 } from "../../utils/scan-config";
+import { scanLaunchOptions } from "../../utils/scan-launch-options";
 import { scanListingsByIds } from "./scan-listings-by-ids";
 import { scanListingsBySeller } from "./scan-listings-by-seller";
 
@@ -72,18 +76,15 @@ export const scanListingsByKeyword = schemaTask({
   // Holds one search page, then validates listings in `<= K` batches via
   // `triggerAndWait scanListingsByIds`. Self-hosted has no checkpoints, so each
   // wait HOLDS this box — but it's one waitpoint at a time, and batching cuts the
-  // number of waits from N to ceil(N/K). micro; escalates on OOM.
+  // number of waits from N to ceil(N/K). Verify deployed wait behavior before rollout.
   machine: "micro",
   retry: {
-    maxAttempts: 3,
-    factor: 2,
-    minTimeoutInMs: 2000,
-    maxTimeoutInMs: 30_000,
-    outOfMemory: { machine: "small-1x" },
+    maxAttempts: 1,
   },
   run: async (payload) => {
     await setMachineMetadata();
     const { marketplace, keyword } = payload;
+    assertScanEntitySupported(marketplace, "keyword");
 
     const config = payload.config ?? (await loadScanConfig(marketplace));
 
@@ -95,11 +96,7 @@ export const scanListingsByKeyword = schemaTask({
       .set("status", "checking-freshness");
 
     if (!payload.forceRefresh) {
-      const fresh = await checkKeywordFreshness(
-        marketplace,
-        keyword,
-        config.keywordRescanAfter
-      );
+      const fresh = await checkKeywordFreshness(marketplace, keyword);
       if (fresh) {
         await tags.add("scan_skip_reason_fresh");
         metadata
@@ -110,7 +107,7 @@ export const scanListingsByKeyword = schemaTask({
           keyword,
           lastScannedAt: fresh.lastScannedAt,
         });
-        return { keyword, skipped: true, reason: "fresh" };
+        return { status: "skipped", keyword, skipped: true, reason: "fresh" };
       }
     }
 
@@ -119,7 +116,7 @@ export const scanListingsByKeyword = schemaTask({
     metadata.set("profileId", manager.profileId).set("status", "paginating");
 
     const client = await manager.createScanClient();
-    const { listingIds, cardsSeen } = await paginateListingIds(
+    const { listingIds, cardsSeen, complete } = await paginateListingIds(
       client,
       manager,
       keyword,
@@ -130,34 +127,35 @@ export const scanListingsByKeyword = schemaTask({
       .set("listingsDiscovered", listingIds.size);
 
     metadata.set("status", "validating");
-    const { sellersFired, incompleteBatches } = await validateAndPromoteSellers(
-      listingIds,
-      marketplace,
-      config
-    );
+    const { sellersFired, incompleteBatches, failedHandoffs } =
+      await validateAndPromoteSellers(listingIds, marketplace, config);
 
-    // Mark scanned ONLY when every discovered listing was actually scanned. If a
-    // batch crashed or aborted on a throttled/blocked persona, its ids were never
-    // persisted to `scan_listing` (they lived only in this run's memory), so the
-    // listing orphan-catch can't recover them. Throw instead of marking: a failed
-    // run clears the launcher's per-keyword idempotency key (successful runs hold
-    // it for the rescan-window TTL), so the next cron tick re-picks this
-    // still-stale keyword on fresh boxes.
-    if (incompleteBatches > 0) {
+    // Unpersisted IDs require parent discovery to run again after launch-key expiry.
+    if (!complete || incompleteBatches > 0 || failedHandoffs > 0) {
       metadata
         .set("status", "incomplete")
         .set("sellersFired", sellersFired)
-        .set("incompleteBatches", incompleteBatches);
+        .set("incompleteBatches", incompleteBatches)
+        .set("searchComplete", complete)
+        .set("failedHandoffs", failedHandoffs);
       logger.warn("Keyword incompletely scanned; leaving stale for re-pick", {
         marketplace,
         keyword,
         listingsDiscovered: listingIds.size,
         sellersFired,
         incompleteBatches,
+        searchComplete: complete,
+        failedHandoffs,
       });
-      throw new Error(
-        `scanListingsByKeyword: ${incompleteBatches} listing batch(es) failed or aborted for keyword="${keyword}"; leaving stale for re-pick`
-      );
+      return {
+        status: "incomplete",
+        keyword,
+        listingsDiscovered: listingIds.size,
+        searchComplete: complete,
+        sellersFired,
+        incompleteBatches,
+        failedHandoffs,
+      };
     }
     await markKeywordScanned(marketplace, keyword);
 
@@ -169,7 +167,12 @@ export const scanListingsByKeyword = schemaTask({
       sellersFired,
     });
 
-    return { keyword, listingsDiscovered: listingIds.size, sellersFired };
+    return {
+      status: "completed",
+      keyword,
+      listingsDiscovered: listingIds.size,
+      sellersFired,
+    };
   },
 });
 
@@ -179,7 +182,7 @@ async function paginateListingIds(
   manager: MobileProfileTokenManager,
   keyword: string,
   config: ScanConfig
-): Promise<{ listingIds: Set<string>; cardsSeen: number }> {
+): Promise<{ listingIds: Set<string>; cardsSeen: number; complete: boolean }> {
   const listingIds = new Set<string>();
   let cardsSeen = 0;
 
@@ -196,7 +199,7 @@ async function paginateListingIds(
       });
     } catch (error) {
       await routeFailure(manager, error);
-      throw error;
+      return { listingIds, cardsSeen, complete: false };
     }
     await manager.markUsed();
 
@@ -211,7 +214,7 @@ async function paginateListingIds(
     }
   }
 
-  return { listingIds, cardsSeen };
+  return { listingIds, cardsSeen, complete: true };
 }
 
 /**
@@ -227,33 +230,40 @@ async function validateAndPromoteSellers(
   listingIds: Set<string>,
   marketplace: string,
   config: ScanConfig
-): Promise<{ sellersFired: number; incompleteBatches: number }> {
+): Promise<{
+  sellersFired: number;
+  incompleteBatches: number;
+  failedHandoffs: number;
+}> {
   const firedSellers = new Set<string>();
   let incompleteBatches = 0;
+  let failedHandoffs = 0;
 
   for (const ids of chunk([...listingIds], config.listingScanBatchSize)) {
-    const run = await scanListingsByIds.triggerAndWait({
-      marketplace,
-      listingIds: ids,
-      config,
-    });
-    // A batch is "complete" only when the leaf ran inline AND scanned every id.
-    // `!run.ok` (child crashed after retries) and `aborted` (persona throttle
-    // stopped it partway) both leave ids unscanned — and unpersisted, so the
-    // listing orphan-catch can't see them. Tally those so the caller can keep the
-    // keyword stale instead of marking it fully scanned.
-    if (!run.ok || run.output.mode !== "scanned" || run.output.aborted) {
+    const run = await scanListingsByIds.triggerAndWait(
+      { marketplace, listingIds: ids, config },
+      { priority: 3600 }
+    );
+    if (!isListingBatchComplete(run, ids.length)) {
       incompleteBatches += 1;
     }
     // Promote whatever DID scan — an aborted batch still carries partial verdicts.
     if (run.ok && run.output.mode === "scanned") {
       for (const verdict of run.output.verdicts) {
-        await promoteSeller(verdict, marketplace, config, firedSellers);
+        try {
+          await promoteSeller(verdict, marketplace, config, firedSellers);
+        } catch (error) {
+          failedHandoffs += 1;
+          logger.warn("Seller handoff failed", {
+            sellerReference: verdict.sellerReference,
+            error: error instanceof Error ? error.message : String(error),
+          });
+        }
       }
     }
   }
 
-  return { sellersFired: firedSellers.size, incompleteBatches };
+  return { sellersFired: firedSellers.size, incompleteBatches, failedHandoffs };
 }
 
 /** Fire a seller scan for a fitting listing, deduped within this keyword run. */
@@ -267,26 +277,22 @@ async function promoteSeller(
   if (!(fit && sellerReference) || firedSellers.has(sellerReference)) {
     return;
   }
-  firedSellers.add(sellerReference);
   await scanListingsBySeller.trigger(
     { marketplace, sellerId: sellerReference, config },
     {
-      idempotencyKey: ["seller", marketplace, sellerReference],
-      idempotencyKeyTTL: `${config.sellerRescanAfter}m`,
+      ...(await scanLaunchOptions("seller", marketplace, sellerReference)),
+      priority: 1800,
       tags: [`scan_seller_${sellerReference}`, `marketplace_${marketplace}`],
     }
   );
+  firedSellers.add(sellerReference);
 }
 
 async function checkKeywordFreshness(
   marketplace: string,
-  keyword: string,
-  rescanAfter: number
+  keyword: string
 ): Promise<{ lastScannedAt: Date } | null> {
-  if (rescanAfter <= 0) {
-    return null;
-  }
-  const freshUntil = new Date(Date.now() - rescanAfter * 60_000);
+  const freshUntil = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
   const [row] = await db
     .select({ lastScannedAt: scanKeyword.lastScannedAt })
     .from(scanKeyword)

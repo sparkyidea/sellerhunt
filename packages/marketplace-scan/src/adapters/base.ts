@@ -43,6 +43,21 @@ import type { ShopCredentials } from "./shop/auth/get-new-token";
 export type ScanMarketplaceType = "ebay" | "shop";
 
 /**
+ * Discovery surfaces an adapter implements. `getListing` is mandatory for
+ * every adapter; keyword search and seller catalog walks stay optional until
+ * their marketplace-specific shapes are unified. Callers that fan out
+ * keyword or seller work (the scan crons) must check these before launching:
+ * an unimplemented method rejects with a bare error that persona failure
+ * routing would otherwise count against the persona.
+ */
+export interface ScanCapabilities {
+  /** `searchListings` is implemented. */
+  keywordSearch: boolean;
+  /** `getSeller` and `getSellerListings` are implemented. */
+  sellerCatalog: boolean;
+}
+
+/**
  * Per-adapter credential shapes — same blob the caller decrypted to mint
  * the bearer. Each adapter narrows internally (eBay by `"hmacKey" in c`,
  * shop by `"deviceIdHw" in c`); the union carries no in-line discriminator

@@ -12,6 +12,7 @@
  */
 
 import type {
+  ScanCapabilities,
   ScanClient,
   ScanClientConfig,
   ScanGetListingOptions,
@@ -33,6 +34,12 @@ const NOT_IMPLEMENTED =
   "ShopScanClient: method not implemented in PR1 (unification pending follow-up)";
 
 export class ShopScanClient implements ScanClient {
+  /** Flip these when the methods below stop rejecting with NOT_IMPLEMENTED. */
+  static readonly capabilities: ScanCapabilities = {
+    keywordSearch: false,
+    sellerCatalog: false,
+  };
+
   private readonly config: ScanClientConfig;
   private readonly credentials: ShopCredentials;
 
