@@ -5,8 +5,14 @@ import Image from "next/image";
 import { cn } from "../../lib/utils";
 import type { DataViewProperty } from "../../types/property.type";
 import { isPropertyValueEmpty } from "../../utils/is-property-value-empty";
+import {
+  getShowNameValueClasses,
+  getShowNameWrapperClasses,
+  resolveShowName,
+} from "../../utils/resolve-show-name";
 import { Card, CardContent } from "../ui/card";
 import { DataCell } from "./data-cell";
+import { PropertyNameLabel } from "./property-name-label";
 
 export type CardLayout = "list" | "compact";
 
@@ -147,17 +153,32 @@ export function DataCard<TData>({
         {displayProperties.map((property, propIndex) => {
           const value = (item as Record<string, unknown>)[property.id];
           const isFirst = propIndex === 0;
-          const resolvedShowName = property.showName ?? showPropertyNames;
+          const resolvedShowName = resolveShowName(
+            property.showName,
+            showPropertyNames
+          );
           const resolvedWrap = property.wrap ?? wrapAllProperties;
+          const valueClasses = getShowNameValueClasses(resolvedShowName);
 
           if (isPropertyValueEmpty(property, value, item)) {
             return null;
           }
 
+          const cell = (
+            <DataCell
+              allProperties={allProperties}
+              item={item}
+              property={property}
+              showPropertyNames={showPropertyNames}
+              value={value}
+              wrap={resolvedWrap}
+            />
+          );
+
           return (
             <div
               className={cn(
-                "flex min-w-0 flex-col items-start",
+                getShowNameWrapperClasses(resolvedShowName),
                 isCompact
                   ? cn("shrink-0", isFirst && "w-full basis-full")
                   : "w-full",
@@ -176,18 +197,12 @@ export function DataCard<TData>({
               }
             >
               {resolvedShowName && (
-                <span className="text-muted-foreground text-xs">
-                  {property.name ?? String(property.id)}
-                </span>
+                <PropertyNameLabel
+                  name={property.name ?? String(property.id)}
+                  resolved={resolvedShowName}
+                />
               )}
-              <DataCell
-                allProperties={allProperties}
-                item={item}
-                property={property}
-                showPropertyNames={showPropertyNames}
-                value={value}
-                wrap={resolvedWrap}
-              />
+              {valueClasses ? <div className={valueClasses}>{cell}</div> : cell}
             </div>
           );
         })}

@@ -176,7 +176,10 @@ export function TableView<
   const columns = useMemo<ColumnDef<TData>[]>(() => {
     const propertyColumns: ColumnDef<TData>[] = displayProperties.map(
       (property) => {
-        const resolvedShowName = property.showName ?? showPropertyNames;
+        // Table headers only honour show/hide; layout is a card concern.
+        const resolvedShowName = Boolean(
+          property.showName ?? showPropertyNames
+        );
         const resolvedWrap = property.wrap ?? wrapAllProperties;
 
         return {

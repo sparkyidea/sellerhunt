@@ -36,4 +36,7 @@ export {
   getScalarRollups,
   isDisplayRollup,
   type SelectConfig,
+  type ShowNameAlign,
+  type ShowNameConfig,
+  type ShowNameLayout,
 } from "./property.type";

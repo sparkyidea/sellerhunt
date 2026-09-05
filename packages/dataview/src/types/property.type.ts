@@ -23,6 +23,27 @@ export type PropertyType =
   | "button"
   | "rollup";
 
+/** How a property's name is placed relative to its value. */
+export type ShowNameLayout = "vertical" | "horizontal";
+
+/** Horizontal only: where the value sits relative to the name. */
+export type ShowNameAlign = "start" | "end";
+
+export interface ShowNameConfig {
+  /**
+   * Horizontal only. `"end"` pushes the value to the far edge (name left,
+   * value right); `"start"` keeps name and value adjacent.
+   * @default "end"
+   */
+  align?: ShowNameAlign;
+  /**
+   * `"vertical"` stacks the name above the value; `"horizontal"` puts both on
+   * one line.
+   * @default "vertical"
+   */
+  layout?: ShowNameLayout;
+}
+
 // Base property structure (using _T for type consistency across property types)
 export interface BaseProperty<_T> {
   /**
@@ -84,11 +105,14 @@ export interface BaseProperty<_T> {
   name?: string;
   /**
    * Per-property override for `showPropertyNames`.
-   * - `true`: Always show this property's name
+   * - `true`: Always show this property's name (stacked above the value)
+   * - `ShowNameConfig`: show it with a specific layout; `{}` is the same as `true`
    * - `false`: Always hide this property's name
    * - `undefined`: Use the global `showPropertyNames` setting
+   * Layout applies to cards and formula sub-properties; table headers only
+   * honour show/hide.
    */
-  showName?: boolean;
+  showName?: boolean | ShowNameConfig;
   /**
    * Display size/width for this property (in pixels).
    * - Table: used as column width (maps to TanStack ColumnDef sizing)
@@ -341,8 +365,8 @@ export interface PropertyMeta {
   key?: string;
   /** Display name shown in UI */
   name?: string;
-  /** Per-property override for showPropertyNames */
-  showName?: boolean;
+  /** Per-property override for showPropertyNames; see BaseProperty.showName */
+  showName?: boolean | ShowNameConfig;
   /** Display size/width in pixels */
   size?: number;
   /** Property type for rendering */
