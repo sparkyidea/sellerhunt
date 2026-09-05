@@ -49,8 +49,6 @@ const badgeVariants = cva(
         teal: "border-transparent bg-badge-teal text-badge-teal-foreground [a]:hover:bg-badge-teal/80",
         "teal-subtle":
           "border-transparent bg-badge-teal-subtle text-badge-teal-subtle-foreground [a]:hover:border-badge-teal-subtle-foreground",
-        inverted:
-          "border-transparent bg-badge-inverted text-badge-inverted-foreground [a]:hover:bg-badge-inverted/80",
       },
       size: {
         sm: "h-5 gap-1 px-1.5 text-xs [&>svg]:size-3!",

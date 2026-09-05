@@ -124,7 +124,14 @@ export type BadgeColor =
   | "green"
   | "green-subtle"
   | "teal"
-  | "teal-subtle";
+  | "teal-subtle"
+  // Base badge variants (mirror `Badge` in `components/ui/badge.tsx`)
+  | "default"
+  | "secondary"
+  | "destructive"
+  | "outline"
+  | "ghost"
+  | "link";
 
 export interface NumberConfig {
   decimalPlaces?: number; // 0-10
