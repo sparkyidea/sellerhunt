@@ -8,7 +8,10 @@ import type {
   StatusConfig,
   StatusGroup,
 } from "../../../../types/property.type";
-import { getBadgeTextColorClass } from "../../../../utils/badge-colors";
+import {
+  getBadgeClasses,
+  getBadgeTextColorClass,
+} from "../../../../utils/badge-colors";
 
 import { extractSelectValues } from "../../../../utils/filter-variant";
 import { Button } from "../../button";
@@ -146,7 +149,7 @@ function StatusBody({
                         className="[&_svg]:text-current!"
                       />
                       <CommandChip
-                        className={`bg-badge-${group.color}-subtle text-badge-${group.color}-subtle-foreground`}
+                        className={getBadgeClasses(group.color)}
                         showRemove={false}
                       >
                         <Icon className="size-3 text-current" />
@@ -229,7 +232,7 @@ function StatusAdvanceFilter({
               const Icon = option.icon ?? CircleDashed;
               return (
                 <CommandChip
-                  className={`bg-badge-${option.color}-subtle text-badge-${option.color}-subtle-foreground`}
+                  className={getBadgeClasses(option.color)}
                   key={option.value}
                   showRemove={false}
                 >
