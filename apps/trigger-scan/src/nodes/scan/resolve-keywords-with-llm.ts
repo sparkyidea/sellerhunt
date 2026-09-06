@@ -42,7 +42,6 @@ export interface ResolveKeywordsTotals extends LlmKeywordTotals {
 const listingColumns = {
   id: scanListing.id,
   title: scanListing.title,
-  categoryPath: scanListing.categoryPath,
 };
 
 /** Only the given ids, and only those still unresolved with attempts left. */

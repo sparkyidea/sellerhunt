@@ -15,20 +15,18 @@ const ITEMS: ExtractItem[] = [
     index: 0,
     title:
       "2026 McDONALD'S Fifa World Cup Squishmallows Plush HAPPY MEAL TOYS Or Set",
-    category: "Toys & Hobbies > Stuffed Animals",
   },
   {
     index: 1,
     title:
       "Kitchen Faucet Swivel Single Handle Sink Pull Down Sprayer Mixer Tap Deck Plate",
-    category: null,
   },
 ];
 
 const FIXTURE = {
   items: [
-    { index: 0, searchPhrase: "mcdonald's fifa world cup squishmallows" },
-    { index: 1, searchPhrase: "pull down kitchen faucet" },
+    { keyword: "mcdonald's fifa world cup squishmallows", indexes: [0] },
+    { keyword: "pull down kitchen faucet", indexes: [1] },
   ],
 };
 
@@ -48,10 +46,10 @@ function fakeParser(output: unknown): {
 }
 
 describe("buildUserPrompt", () => {
-  it("numbers titles, adds the category when known, and passes titles verbatim", () => {
+  it("numbers titles and passes them verbatim, one per line", () => {
     const prompt = buildUserPrompt(ITEMS);
     expect(prompt).toContain(
-      "[0] (Toys & Hobbies > Stuffed Animals) 2026 McDONALD'S Fifa World Cup Squishmallows Plush HAPPY MEAL TOYS Or Set"
+      "[0] 2026 McDONALD'S Fifa World Cup Squishmallows Plush HAPPY MEAL TOYS Or Set"
     );
     expect(prompt).toContain("[1] Kitchen Faucet Swivel");
     expect(prompt.split("\n")).toHaveLength(2);
@@ -59,7 +57,7 @@ describe("buildUserPrompt", () => {
 });
 
 describe("keywordBatchSchema", () => {
-  it("accepts the fixture and rejects an item without a phrase", () => {
+  it("accepts the fixture and rejects an item without keyword and indexes", () => {
     expect(keywordBatchSchema.safeParse(FIXTURE).success).toBe(true);
     expect(
       keywordBatchSchema.safeParse({ items: [{ index: 0 }] }).success
@@ -97,12 +95,11 @@ describe("extractKeywords", () => {
     const items: ExtractItem[] = Array.from({ length: 50 }, (_, index) => ({
       index,
       title: `Listing title ${index}`,
-      category: null,
     }));
     const { bodies, parse } = fakeParser({
       items: items.map((item) => ({
-        index: item.index,
-        searchPhrase: `phrase ${item.index}`,
+        keyword: `phrase ${item.index}`,
+        indexes: [item.index],
       })),
     });
 
@@ -118,7 +115,7 @@ describe("extractKeywords", () => {
 
   it("returns the phrase exactly as the model returned it", async () => {
     const { parse } = fakeParser({
-      items: [{ index: 0, searchPhrase: "  Pull Down Kitchen Faucet " }],
+      items: [{ keyword: "  Pull Down Kitchen Faucet ", indexes: [0] }],
     });
     const results = await extractKeywords(parse, {
       items: [{ ...(ITEMS[1] as ExtractItem), index: 0 }],
@@ -128,13 +125,21 @@ describe("extractKeywords", () => {
     expect(results.get(0)).toBe("  Pull Down Kitchen Faucet ");
   });
 
+  it("maps every index in a group to that group's keyword", async () => {
+    const { parse } = fakeParser({
+      items: [{ keyword: "shared keyword", indexes: [1, 0] }],
+    });
+    const results = await extractKeywords(parse, { items: ITEMS, model: "m" });
+    expect(results.get(0)).toBe("shared keyword");
+    expect(results.get(1)).toBe("shared keyword");
+    expect(results.size).toBe(2);
+  });
+
   it("ignores out-of-range and duplicate indexes and leaves skipped inputs absent", async () => {
     const { parse } = fakeParser({
       items: [
-        { index: 1, searchPhrase: "first answer" },
-        { index: 1, searchPhrase: "second answer" },
-        { index: 7, searchPhrase: "invented line" },
-        { index: -1, searchPhrase: "negative" },
+        { keyword: "first answer", indexes: [1] },
+        { keyword: "second answer", indexes: [1, 7, -1] },
       ],
     });
     const results = await extractKeywords(parse, { items: ITEMS, model: "m" });
@@ -145,12 +150,12 @@ describe("extractKeywords", () => {
     expect(results.size).toBe(1);
   });
 
-  it("sends low reasoning effort instead of temperature to reasoning models", async () => {
+  it("sends minimal reasoning effort instead of temperature to reasoning models", async () => {
     const { bodies, parse } = fakeParser(FIXTURE);
     await extractKeywords(parse, { items: ITEMS, model: "gpt-5-nano" });
     const sent = bodies[0] as unknown as Record<string, unknown>;
     expect("temperature" in sent).toBe(false);
-    expect(sent.reasoning).toEqual({ effort: "low" });
+    expect(sent.reasoning).toEqual({ effort: "minimal" });
   });
 
   it("passes a requested reasoning effort through to reasoning models", async () => {
@@ -170,6 +175,17 @@ describe("extractKeywords", () => {
     const sent = bodies[0] as unknown as Record<string, unknown>;
     expect(sent.model).toBe(KEYWORD_LLM_MODEL);
     expect(sent.reasoning).toEqual({ effort: KEYWORD_LLM_REASONING_EFFORT });
+  });
+
+  it("sends a custom prompt when instructions are given", async () => {
+    const { bodies, parse } = fakeParser(FIXTURE);
+    await extractKeywords(parse, {
+      items: ITEMS,
+      model: "m",
+      instructions: "custom prompt",
+    });
+    const sent = bodies[0] as unknown as Record<string, unknown>;
+    expect(sent.instructions).toBe("custom prompt");
   });
 
   it("throws with the incomplete reason when nothing parsed", async () => {

@@ -187,7 +187,6 @@ async function main(): Promise<void> {
   const items: ExtractItem[] = titles.map((title, index) => ({
     index,
     title,
-    category: null,
   }));
   const started = performance.now();
   const answers = await extractKeywords(parse, {

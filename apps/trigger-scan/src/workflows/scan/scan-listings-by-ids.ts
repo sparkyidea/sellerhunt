@@ -363,7 +363,6 @@ async function extractKeywordsForNewListings(
       fresh.push({
         id: verdict.scanListingId,
         title: verdict.title,
-        categoryPath: verdict.categoryPath,
       });
     }
   }
