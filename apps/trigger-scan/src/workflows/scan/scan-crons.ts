@@ -1,8 +1,13 @@
 /**
- * Marketplace-wide heartbeats with inline per-entity cooldowns. Each cron
- * sweeps every enabled `scan_config` row but only launches an entity where the
- * marketplace adapter implements it (`supportsScanEntity`); shop serves listing
- * detail only today, so its keyword and seller sweeps report `unsupported`.
+ * Marketplace-wide heartbeat with inline per-entity cooldowns. One scheduled
+ * task sweeps every enabled `scan_config` row for listings, then sellers, then
+ * keywords, and launches an entity only where the marketplace adapter
+ * implements it (`supportsScanEntity`); shop serves listing detail only today,
+ * so its keyword and seller sweeps report `unsupported`.
+ *
+ * No declarative cron here: the schedule is attached to `scan-cron` in the
+ * Trigger.dev dashboard (every five minutes in production), so cadence changes
+ * need no deploy.
  */
 import { db } from "@dashseller/db";
 import { scanKeyword, scanListing, scanSeller } from "@dashseller/db/schema";
@@ -19,66 +24,78 @@ import { scanListingsByIds } from "./scan-listings-by-ids";
 import { scanListingsByKeywords } from "./scan-listings-by-keywords";
 import { scanListingsBySeller } from "./scan-listings-by-seller";
 
-const cronOptions = {
-  cron: { pattern: "*/5 * * * *", environments: ["PRODUCTION" as const] },
-  machine: "micro" as const,
+/**
+ * Sweep order within one tick and the cooldown per entity. Listings go first so
+ * they enqueue ahead of sellers and keywords, matching the run priorities.
+ */
+const SWEEPS: ReadonlyArray<readonly [ScanEntity, number]> = [
+  ["listing", 6 * 60 * 60 * 1000],
+  ["seller", 24 * 60 * 60 * 1000],
+  ["keyword", 7 * 24 * 60 * 60 * 1000],
+];
+
+export const scanCron = schedules.task({
+  id: "scan-cron",
+  machine: "micro",
   queue: { concurrencyLimit: 1 },
   retry: { maxAttempts: 1 },
-};
-
-export const scanListingsCron = schedules.task({
-  id: "scan-listings-cron",
-  ...cronOptions,
-  run: async () => await runCron("listing", 6 * 60 * 60 * 1000),
-});
-
-export const scanSellersCron = schedules.task({
-  id: "scan-sellers-cron",
-  ...cronOptions,
-  run: async () => await runCron("seller", 24 * 60 * 60 * 1000),
-});
-
-export const scanKeywordsCron = schedules.task({
-  id: "scan-keywords-cron",
-  ...cronOptions,
-  run: async () => await runCron("keyword", 7 * 24 * 60 * 60 * 1000),
+  run: async () => {
+    await setMachineMetadata();
+    const configs = await loadAllScanConfigs();
+    const results: DispatchResult[] = [];
+    for (const [entity, cooldownMs] of SWEEPS) {
+      metadata.set("status", `sweeping-${entity}`);
+      results.push(...(await sweep(entity, cooldownMs, configs)));
+    }
+    metadata.set(
+      "status",
+      results.some((r) => r.status === "incomplete")
+        ? "incomplete"
+        : "completed"
+    );
+    logger.info("Scan cron tick completed", { results });
+    return { results };
+  },
 });
 
 interface DispatchResult {
+  entity: ScanEntity;
   marketplace: string;
   status: "disabled" | "unsupported" | "completed" | "incomplete";
   triggered?: number;
 }
 
-async function runCron(entity: ScanEntity, cooldownMs: number) {
-  await setMachineMetadata();
-  metadata.set("entity", entity).set("status", "picking-stale");
+async function sweep(
+  entity: ScanEntity,
+  cooldownMs: number,
+  configs: ScanConfig[]
+): Promise<DispatchResult[]> {
   const results: DispatchResult[] = [];
-  for (const config of await loadAllScanConfigs()) {
+  for (const config of configs) {
     const { marketplace, enabled } = config;
     if (!enabled) {
-      results.push({ marketplace, status: "disabled", triggered: 0 });
+      results.push({ entity, marketplace, status: "disabled", triggered: 0 });
       continue;
     }
     try {
       if (!supportsScanEntity(marketplace, entity)) {
-        results.push({ marketplace, status: "unsupported", triggered: 0 });
+        results.push({
+          entity,
+          marketplace,
+          status: "unsupported",
+          triggered: 0,
+        });
         continue;
       }
       const triggered = await dispatchStale(entity, config, cooldownMs);
-      results.push({ marketplace, status: "completed", triggered });
+      results.push({ entity, marketplace, status: "completed", triggered });
     } catch (error) {
-      // One marketplace outage must not prevent the others from scanning.
+      // One marketplace outage must not prevent the other sweeps from running.
       logger.error("Scan cron dispatch failed", { entity, marketplace, error });
-      results.push({ marketplace, status: "incomplete" });
+      results.push({ entity, marketplace, status: "incomplete" });
     }
   }
-  metadata.set(
-    "status",
-    results.some((r) => r.status === "incomplete") ? "incomplete" : "completed"
-  );
-  logger.info("Scan cron tick completed", { entity, results });
-  return { entity, results };
+  return results;
 }
 
 async function dispatchStale(

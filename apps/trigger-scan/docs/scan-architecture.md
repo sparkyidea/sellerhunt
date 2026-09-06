@@ -59,10 +59,10 @@ keys would not deduplicate overlapping ID sets, so they are intentionally absent
 ## 3. Call graph
 
 ```
-scan-listings-cron ─► stale listings ─► scan-listings-by-ids (self-fans to <=K runs)
-scan-sellers-cron  ─► stale sellers  ─► scan-listings-by-seller (one run per seller)
-scan-keywords-cron ─► stale keywords ─► scan-listings-by-keywords ─► scan-listings-by-keyword
-(each cron sweeps all enabled marketplaces)
+scan-cron ─┬─► stale listings ─► scan-listings-by-ids (self-fans to <=K runs)
+           ├─► stale sellers  ─► scan-listings-by-seller (one run per seller)
+           └─► stale keywords ─► scan-listings-by-keywords ─► scan-listings-by-keyword
+(one tick sweeps all enabled marketplaces, entities in that order)
 
 scan-listings-by-ids (self-recursive)
  ├─ if > K ids: batchTrigger ITSELF, one run per <=K chunk   ← fire-and-forget, fast handoff
@@ -193,20 +193,24 @@ normalized verdict IDs. Crashed children and unexpected launcher-mode returns ar
 incomplete; launcher mode is a defensive guard since parents already chunk by K.
 The seller also checks coverage and that every requested batch returned a result.
 
-### 4d. Marketplace cron tasks
+### 4d. Marketplace cron task
 
-[scan-crons.ts](../src/workflows/scan/scan-crons.ts) declares three production schedules:
-`scan-listings-cron`, `scan-sellers-cron`, and `scan-keywords-cron`. Each runs every
-five minutes and selects only its entity type across all enabled `scan_config`
-rows. Disabled marketplaces are skipped. Marketplaces whose adapter does not implement
-an entity's methods are reported as `unsupported` and skipped: `getScanCapabilities` in
+[scan-crons.ts](../src/workflows/scan/scan-crons.ts) declares one scheduled task,
+`scan-cron`, without a declarative cron; its schedule is attached in the Trigger.dev
+dashboard (every five minutes in production), so cadence changes need no deploy.
+Each tick loads all `scan_config` rows once and sweeps
+listings, then sellers, then keywords across the enabled rows. Disabled marketplaces
+are skipped. Marketplaces whose adapter does not implement an entity's methods are
+reported as `unsupported` and skipped: `getScanCapabilities` in
 `@dashseller/marketplace-scan` declares this per adapter, and shop serves listing detail
 only today, so its keyword and seller sweeps never launch runs that would reject with an
 unimplemented-method error and count against personas. The keyword and seller tasks
 also refuse such marketplaces before loading a persona. One marketplace dispatch
-failure does not prevent the others from dispatching. Each cron has its own queue limit of one.
-Each uses its entity's batch size from the DB and cooldown from worker code. This heartbeat drains
-bounded batches and picks up newly due entities; it is not the repeat interval.
+failure is recorded as `incomplete` and does not prevent the remaining marketplaces or
+sweeps in that tick from dispatching. The cron task has a queue limit of one, so ticks
+never overlap. Each sweep uses its entity's batch size from the DB and cooldown from
+worker code. This heartbeat drains bounded batches and picks up newly due entities; it
+is not the repeat interval.
 
 | Entity | Cooldown |
 | --- | --- |
@@ -217,15 +221,15 @@ bounded batches and picks up newly due entities; it is not the repeat interval.
 These are eligibility intervals, not completion-time guarantees. Batch limits,
 queueing, failures and retained global keys can delay scans. Scan launches use the
 [priorities below](#4e-scan-run-priority). At the default 50 listings
-per five-minute tick, the listing cron can select at most 3,600 listing IDs in six
+per five-minute tick, the listing sweep can select at most 3,600 listing IDs in six
 hours, including repeated selections of work that is still stale.
 
-Declarative schedules and inline cooldowns take effect on Trigger.dev worker
-deployment; see [rollout](scan-cron-rollout.md). The schema removes the legacy
+Inline cooldowns take effect on Trigger.dev worker deployment; the schedule itself is
+created and edited in the dashboard, see [rollout](scan-cron-rollout.md). The schema removes the legacy
 database cooldown columns, and inline `config` cannot override these intervals.
-The former eBay-only task has been removed. Retire any existing dashboard schedule
-for that task when rolling out the replacement. No live schedules are modified by
-editing these source files.
+The former eBay-only task and the three per-entity crons it was replaced with have
+been removed. Retire any existing dashboard schedule for those tasks when rolling
+out the replacement. No live schedules are modified by editing these source files.
 
 ### 4e. Scan run priority
 
@@ -241,8 +245,8 @@ The values are queue-time offsets: Trigger.dev subtracts the priority from the
 enqueue timestamp, favoring listings, then sellers, then keywords when queued at
 similar times. Older work can still run first, and running tasks are not preempted.
 This is a preference under contention, not a strict sequence. Listing discovery
-and listing refreshes have the same priority. The cron ticks themselves have no
-specified order.
+and listing refreshes have the same priority. Within one cron tick the listing sweep
+dispatches first, then sellers, then keywords, so listing runs also enqueue first.
 
 Existing task queues and concurrency limits remain separate, and that bounds what
 priority establishes. Trigger.dev documents priority as dequeue order within one
@@ -281,7 +285,7 @@ behavior. Parent task attempts are limited to one; the configured run duration i
 one hour. The launch TTL allows another hour for queueing, which must be measured.
 
 Unit tests cover completion/error classification, global key creation, and outgoing
-priority options from crons and parent/child orchestration with mocked boundaries.
+priority options from the cron and parent/child orchestration with mocked boundaries.
 They do not prove deployed scheduling or parent effects. Controlled deployed checks
 must verify incomplete results/timestamps, partial seller promotion, cross-tick
 key reuse/expiry, queue/wait bounds, and whether priority orders runs across the
