@@ -44,9 +44,30 @@ export class ListingBatchError extends Error {
   }
 }
 
+type PersonaUnavailableReason = "cooling" | "box-burned" | "pool-empty";
+interface PersonaUnavailableDetails {
+  app: string;
+  label: string;
+  until?: Date;
+}
+export class PersonaUnavailableError extends Error {
+  readonly reason: PersonaUnavailableReason;
+  readonly details: PersonaUnavailableDetails;
+  constructor(
+    reason: PersonaUnavailableReason,
+    details: PersonaUnavailableDetails
+  ) {
+    super(`Persona unavailable for ${details.app}/${details.label}: ${reason}`);
+    this.name = "PersonaUnavailableError";
+    this.reason = reason;
+    this.details = details;
+  }
+}
+
 export function scanCatchError({ error }: { error: unknown }) {
   if (
     error instanceof PersonaScanError ||
+    error instanceof PersonaUnavailableError ||
     (error instanceof ScanIncompleteError && error.reason === "in-flight")
   ) {
     return { retryDelayInMs: PERSONA_RETRY_MS };

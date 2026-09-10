@@ -82,6 +82,7 @@ export async function partitionFreshListings(
     const found = await db
       .select({
         id: scanListing.id,
+        qualified: scanListing.qualified,
         reference: scanListing.reference,
         title: scanListing.title,
         categoryPath: scanListing.categoryPath,

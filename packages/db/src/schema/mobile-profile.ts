@@ -31,26 +31,19 @@
  *     is the refresh token issued by the first `SignInAsGuest` call,
  *     which lives in `refreshToken`, not in `credentials`.
  *
- * Pool semantics:
- *   - Selector: WHERE app = $1 AND status = 'active'
- *               AND (cooldown_until IS NULL OR cooldown_until < now())
- *               ORDER BY last_used_at NULLS FIRST LIMIT 1
- *   - On success: bump `last_used_at`/`last_success_at`, reset `failure_count`,
- *     clear `cooldown_until`.
- *   - On soft failure (429/5xx): increment `failure_count`, set
- *     `cooldown_until = now() + interval '15 minutes'`. Promote to `dead`
- *     after N consecutive soft failures (policy lives in code).
- *   - On hard failure (401/403 from the auth-mint endpoint): set
- *     `status = 'dead'`, capture `failed_at` and `failure_reason`. The
- *     persona's stable auth material is toast — operator must seed a new
- *     persona.
+ * Ownership: one active row per (app, box label), including cooling rows.
+ * Acquisition takes the shared transaction-scoped box lock before reading an
+ * owner. It reuses that owner or claims an eligible unowned row with
+ * FOR UPDATE SKIP LOCKED. Three deaths in 24 hours block replacement claims.
+ * Dead rows retain their label and failure history. New captures enter unclaimed.
+ * See apps/trigger-scan/docs/scan-architecture.md for lifecycle and seed policy.
  *
  * Encryption: `credentials`, `accessToken`, and `refreshToken` are all
  * encrypted JWE strings produced by `encryptSecret()` from
  * `apps/trigger-scan/src/utils/secret-crypto`. Decrypt at read time
  * with `decryptSecret()`. The encryption key is `env.ENCRYPTION_SECRET`.
  */
-import type { InferSelectModel } from "drizzle-orm";
+import { type InferSelectModel, sql } from "drizzle-orm";
 import {
   index,
   integer,
@@ -58,6 +51,7 @@ import {
   pgTable,
   text,
   timestamp,
+  uniqueIndex,
 } from "drizzle-orm/pg-core";
 
 /**
@@ -89,8 +83,11 @@ export const mobileProfile = pgTable(
      * — adding a new mobile app doesn't require a migration.
      */
     app: text("app").notNull(),
-    /** Human-readable label for ops UIs and logs (e.g. "iPhone-1", "burner-3"). */
+    /** Owning box label. Null until claimed; dead rows retain ownership history. */
     label: text("label"),
+    /** Stable seed identity (capture file stem), independent of box assignment. */
+    capture: text("capture"),
+    claimedAt: timestamp("claimed_at"),
 
     /**
      * Encrypted JWE ciphertext (text, NOT jsonb). After `decryptSecret()` →
@@ -159,7 +156,11 @@ export const mobileProfile = pgTable(
       .notNull(),
   },
   (t) => [
-    // Pool selection: filter by app + status, then order by LRU.
+    index("mobile_profile_app_label_idx").on(t.app, t.label),
+    uniqueIndex("mobile_profile_one_active_owner_per_box")
+      .on(t.app, t.label)
+      .where(sql`${t.status} = 'active' AND ${t.label} IS NOT NULL`),
+    // Unowned pool selection also filters by app + status.
     index("mobile_profile_app_status_idx").on(t.app, t.status),
     index("mobile_profile_last_used_at_idx").on(t.lastUsedAt),
     // Ops queries: find profiles in cooldown / dead.

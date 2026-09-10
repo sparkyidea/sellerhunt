@@ -23,8 +23,9 @@ export function getBoxName(timeoutMs = 2000): Promise<string | null> {
 /**
  * The persona label embedded in a box hostname. Box hostnames are
  * `<label>-<role>-<specs>-<org>` (e.g. `w-00001-orc-e2cpu1ram1-sparkyideainc`);
- * the persona label is just the leading `w-NNNNN` prefix, which matches the
- * seeded `mobile_profile.label` and the `w-NNNNN.json` capture filenames.
+ * the ownership label is just the leading `w-NNNNN` prefix. Acquisition stores
+ * it in `mobile_profile.label`; capture filenames identify personas independently
+ * and new seeded captures remain unassigned until a worker claims them.
  *
  * Returns null when the hostname carries no recognizable worker prefix (e.g. a
  * box that isn't part of the scan fleet). Adjust the pattern here if the label

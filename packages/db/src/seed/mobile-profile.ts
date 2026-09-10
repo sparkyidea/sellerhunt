@@ -5,7 +5,7 @@
  * `packages/db/src/seed/tmp/<app>/profiles/`; this script loads every
  * file across all apps, encrypts the credentials blob, and upserts it into the
  * `mobile_profile` pool. The filename stem (e.g. `w-00003`, `default`) becomes
- * the row `label`; the directory's app (`ebay`, `shop`) becomes `app`.
+ * the row `capture`; the directory's app (`ebay`, `shop`) becomes `app`.
  *
  * `tmp/` is git-ignored (only its `.gitignore` is tracked): duplicate the
  * captured personas from `packages/marketplace-scan/sandbox/<app>/profiles/`
@@ -25,9 +25,9 @@
  *   2. `packages/marketplace-scan/sandbox/.env`
  *   3. process.env (also wins for ad-hoc overrides)
  *
- * Re-running the seed updates each row matching `(app, label)` and
- * resets pool state (status=active, failureCount=0, cooldown=null,
- * accessToken=null) — handy after rotating a persona capture.
+ * Re-running matches `(app, capture)`. New captures enter unclaimed.
+ * Owned rows are refreshed under the box ownership lock; dead historical
+ * owners are not revived when a replacement already owns the box.
  *
  * Run:
  *   bun run packages/db/src/seed/mobile-profile.ts
@@ -36,9 +36,10 @@ import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import dotenv from "dotenv";
-import { and, eq } from "drizzle-orm";
-import { drizzle } from "drizzle-orm/node-postgres";
+import { and, isNotNull, isNull } from "drizzle-orm";
 import { EncryptJWT } from "jose";
+import { createDbClient } from "../client";
+import { seedMobileProfile } from "../mobile-profile-ownership";
 import { mobileProfile } from "../schema/mobile-profile";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -49,7 +50,7 @@ dotenv.config({
   path: resolve(__dirname, "../../../marketplace-scan/sandbox/.env"),
 });
 
-const db = drizzle(process.env.DATABASE_URL || "");
+const { db, close } = createDbClient(process.env.DATABASE_URL || "");
 
 const PROFILES_ROOT = resolve(__dirname, "tmp");
 const JSON_EXT = /\.json$/;
@@ -84,14 +85,14 @@ const APP_CONFIG: Record<ProfileApp, AppConfig> = {
 
 interface ProfileSeed {
   app: ProfileApp;
-  label: string;
+  capture: string;
   /** Raw JSON text of the credentials blob, read from a profile file. */
   raw: string;
 }
 
 /**
  * Build the persona work-list across every app's profiles directory
- * (label = filename stem). `*.example.json` placeholders are skipped.
+ * (capture = filename stem). `*.example.json` placeholders are skipped.
  */
 function collectProfiles(): ProfileSeed[] {
   const seeds: ProfileSeed[] = [];
@@ -106,7 +107,7 @@ function collectProfiles(): ProfileSeed[] {
     for (const file of files) {
       seeds.push({
         app,
-        label: file.replace(JSON_EXT, ""),
+        capture: file.replace(JSON_EXT, ""),
         raw: readFileSync(resolve(dir, file), "utf8"),
       });
     }
@@ -159,8 +160,12 @@ async function seedMobileProfiles(): Promise<void> {
       "No personas found. Add capture files under " +
         "packages/db/src/seed/tmp/<app>/profiles/ (duplicate them from packages/marketplace-scan/sandbox/<app>/profiles/)."
     );
-    process.exit(0);
   }
+
+  await db
+    .update(mobileProfile)
+    .set({ capture: mobileProfile.label })
+    .where(and(isNull(mobileProfile.capture), isNotNull(mobileProfile.label)));
 
   console.log(`Seeding ${profiles.length} mobile profile(s)...`);
   let inserted = 0;
@@ -176,7 +181,7 @@ async function seedMobileProfiles(): Promise<void> {
       );
     } catch (err) {
       console.warn(
-        `  skip ${seed.app}/${seed.label}: invalid persona — ${err instanceof Error ? err.message : String(err)}`
+        `  skip ${seed.app}/${seed.capture}: invalid persona — ${err instanceof Error ? err.message : String(err)}`
       );
       skipped++;
       continue;
@@ -187,53 +192,31 @@ async function seedMobileProfiles(): Promise<void> {
       encryptionKey
     );
 
-    const [existing] = await db
-      .select()
-      .from(mobileProfile)
-      .where(
-        and(
-          eq(mobileProfile.app, seed.app),
-          eq(mobileProfile.label, seed.label)
-        )
-      )
-      .limit(1);
-
-    if (existing) {
-      await db
-        .update(mobileProfile)
-        .set({
-          credentials: encryptedCredentials,
-          accessToken: null,
-          accessTokenExpiresAt: null,
-          status: "active",
-          failureCount: 0,
-          cooldownUntil: null,
-          failureReason: null,
-          failedAt: null,
-        })
-        .where(eq(mobileProfile.id, existing.id));
-      console.log(`  update ${seed.app}/${seed.label}`);
+    const result = await seedMobileProfile(db, {
+      app: seed.app,
+      capture: seed.capture,
+      credentials: encryptedCredentials,
+    });
+    if (result === "inserted") {
+      inserted++;
+    } else if (result === "updated") {
       updated++;
     } else {
-      await db.insert(mobileProfile).values({
-        app: seed.app,
-        label: seed.label,
-        credentials: encryptedCredentials,
-      });
-      console.log(`  insert ${seed.app}/${seed.label}`);
-      inserted++;
+      skipped++;
     }
+    console.log(`  ${result} ${seed.app}/${seed.capture}`);
   }
 
   console.log(
     `Done. ${inserted} inserted, ${updated} updated, ${skipped} skipped.`
   );
-  process.exit(0);
 }
 
 try {
   await seedMobileProfiles();
 } catch (error) {
   console.error("Error seeding mobile profiles:", error);
-  process.exit(1);
+  process.exitCode = 1;
+} finally {
+  await close();
 }

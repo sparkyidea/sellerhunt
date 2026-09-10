@@ -5,6 +5,7 @@ import {
   ListingBatchError,
   PERSONA_RETRY_MS,
   PersonaScanError,
+  PersonaUnavailableError,
   routeScanFailure,
   ScanIncompleteError,
   scanCatchError,
@@ -13,6 +14,7 @@ import {
 it("delays persona and sole in-flight blockers 20 minutes and leaves other backoff unchanged", () => {
   for (const error of [
     new PersonaScanError("failed", false),
+    new PersonaUnavailableError("cooling", { app: "ebay", label: "box" }),
     new ScanIncompleteError("in-flight"),
   ]) {
     expect(scanCatchError({ error })).toEqual({

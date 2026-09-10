@@ -8,7 +8,7 @@ const TABLES = {
   listing: {
     table: scanListing,
     reference: scanListing.reference,
-    eligible: undefined,
+    eligible: eq(scanListing.qualified, true),
   },
   seller: {
     table: scanSeller,

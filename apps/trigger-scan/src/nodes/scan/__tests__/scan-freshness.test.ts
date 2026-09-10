@@ -32,6 +32,7 @@ const config: ScanConfig = {
   minSoldLast24h: null,
 };
 const stored = {
+  qualified: true,
   id: "stored-id",
   reference: "123456789012",
   title: "Camera",
@@ -99,6 +100,7 @@ it("re-evaluates stored metrics against the current thresholds", async () => {
       listingId: "123456789012",
       fit: false,
       sellerReference: "seller-1",
+      scanListingId: "stored-id",
     },
   ]);
 
@@ -113,6 +115,7 @@ it("re-evaluates stored metrics against the current thresholds", async () => {
       listingId: "123456789012",
       fit: false,
       sellerReference: "seller-1",
+      scanListingId: "stored-id",
     },
   ]);
   expect(untitled.stale).toEqual([]);
@@ -172,4 +175,20 @@ it("does not query for an empty seller batch", async () => {
     stale: [],
   });
   expect(db.select).not.toHaveBeenCalled();
+});
+
+it("refetches an unqualified listing before promotion, but reuses a fresh rejection", async () => {
+  db.where.mockResolvedValue([{ ...stored, qualified: false }]);
+  await expect(
+    partitionFreshListings("ebay", [stored.reference], config)
+  ).resolves.toEqual({ verdicts: [], stale: [stored.reference] });
+  await expect(
+    partitionFreshListings("ebay", [stored.reference], {
+      ...config,
+      minItemSold: 300,
+    })
+  ).resolves.toMatchObject({
+    stale: [],
+    verdicts: [{ fit: false, scanListingId: stored.id }],
+  });
 });

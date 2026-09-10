@@ -1,8 +1,7 @@
 /**
- * Pool manager for `mobile_profile` rows. Replaces the previous
- * `MonitorTokenManager`: same LRU pool semantics, but the row stores **device
- * credentials** (long-lived, encrypted) instead of bearers, and the manager
- * mints bearers on demand by calling the app's mobile auth endpoint.
+ * Box-owned mobile personas. Acquisition and reseeding serialize on app/label;
+ * the partial unique index enforces one active owner, including during cooldown.
+ * Dead rows retain box history. This does not serialize HTTP or place workers.
  *
  * Typical workflow usage:
  *
@@ -34,6 +33,10 @@
  *     the manager promotes the persona straight to `dead`.
  */
 import { db } from "@dashseller/db";
+import {
+  acquireMobileProfile,
+  lockMobileProfileOwner,
+} from "@dashseller/db/mobile-profile-ownership";
 import type {
   EbayHmacCredentials,
   MobileCredentials,
@@ -50,8 +53,9 @@ import type {
   ScanTokenResult,
 } from "@dashseller/marketplace-scan/types";
 import { logger } from "@trigger.dev/sdk";
-import { and, asc, eq, isNull, lt, or, sql } from "drizzle-orm";
+import { and, eq } from "drizzle-orm";
 import { getBoxName, parseWorkerLabel } from "./box-name";
+import { PersonaUnavailableError } from "./scan-errors";
 import { decryptSecret, encryptSecret } from "./secret-crypto";
 
 /** Default consecutive soft failures before promoting a profile to `dead`. */
@@ -138,7 +142,12 @@ export class MobileProfileTokenManager {
         cooldownUntil: null,
         failureReason: null,
       })
-      .where(eq(mobileProfile.id, this.profile.id));
+      .where(
+        and(
+          eq(mobileProfile.id, this.profile.id),
+          eq(mobileProfile.status, "active")
+        )
+      );
   }
 
   /**
@@ -153,25 +162,46 @@ export class MobileProfileTokenManager {
     const cooldownMs =
       (options.cooldownMinutes ?? DEFAULT_COOLDOWN_MINUTES) * 60_000;
     const now = new Date();
-    const nextCount = this.profile.failureCount + 1;
-    const shouldPromote = nextCount >= promoteAfter;
-
-    await db
-      .update(mobileProfile)
-      .set({
-        lastUsedAt: now,
-        failureCount: nextCount,
-        failureReason: reason.slice(0, 500),
-        cooldownUntil: new Date(now.getTime() + cooldownMs),
-        ...(shouldPromote ? { status: "dead" as const, failedAt: now } : {}),
-      })
-      .where(eq(mobileProfile.id, this.profile.id));
-
-    if (shouldPromote) {
-      logger.warn("Mobile profile promoted to dead after repeated failures", {
-        profileId: this.profile.id,
-        app: this.profile.app,
-        failureCount: nextCount,
+    const changed = await db.transaction(async (tx) => {
+      await lockMobileProfileOwner(tx, this.profile.app, this.profile.label);
+      const [current] = await tx
+        .select()
+        .from(mobileProfile)
+        .where(
+          and(
+            eq(mobileProfile.id, this.profile.id),
+            eq(mobileProfile.status, "active")
+          )
+        )
+        .limit(1)
+        .for("update");
+      if (!current) {
+        return undefined;
+      }
+      const nextCount = current.failureCount + 1;
+      const [row] = await tx
+        .update(mobileProfile)
+        .set({
+          lastUsedAt: now,
+          failureCount: nextCount,
+          failureReason: reason.slice(0, 500),
+          cooldownUntil: new Date(now.getTime() + cooldownMs),
+          ...(nextCount >= promoteAfter
+            ? { status: "dead" as const, failedAt: now }
+            : {}),
+        })
+        .where(eq(mobileProfile.id, current.id))
+        .returning();
+      return row;
+    });
+    if (changed) {
+      this.profile = changed;
+    }
+    if (changed?.status === "dead") {
+      logger.warn("Mobile profile promoted to dead", {
+        profileId: changed.id,
+        app: changed.app,
+        failureCount: changed.failureCount,
       });
     }
   }
@@ -192,7 +222,12 @@ export class MobileProfileTokenManager {
         accessTokenExpiresAt: null,
         failureReason: reason.slice(0, 500),
       })
-      .where(eq(mobileProfile.id, this.profile.id));
+      .where(
+        and(
+          eq(mobileProfile.id, this.profile.id),
+          eq(mobileProfile.status, "active")
+        )
+      );
   }
 
   /**
@@ -201,116 +236,30 @@ export class MobileProfileTokenManager {
    * until an operator seeds a new one.
    */
   async markDead(reason: string): Promise<void> {
-    const now = new Date();
-    await db
-      .update(mobileProfile)
-      .set({
-        status: "dead",
-        lastUsedAt: now,
-        failedAt: now,
-        failureReason: reason.slice(0, 500),
-      })
-      .where(eq(mobileProfile.id, this.profile.id));
-
+    await db.transaction(async (tx) => {
+      await lockMobileProfileOwner(tx, this.profile.app, this.profile.label);
+      await tx
+        .update(mobileProfile)
+        .set({
+          status: "dead",
+          lastUsedAt: new Date(),
+          failedAt: new Date(),
+          failureReason: reason.slice(0, 500),
+        })
+        .where(
+          and(
+            eq(mobileProfile.id, this.profile.id),
+            eq(mobileProfile.status, "active")
+          )
+        );
+    });
     logger.warn("Mobile profile marked dead", {
       profileId: this.profile.id,
       app: this.profile.app,
-      reason: reason.slice(0, 200),
     });
   }
 
-  /**
-   * Pool selector. Returns the least-recently-used active profile for the
-   * given app, skipping any in cooldown. Returns `null` when the pool is
-   * empty.
-   *
-   * No `FOR UPDATE SKIP LOCKED` reservation — two concurrent triggers may
-   * pick the same profile, which is acceptable for read-only research. Add
-   * row locking if concurrent contention starts triggering rate limits.
-   */
-  static async loadNextActive(
-    app: string
-  ): Promise<MobileProfileTokenManager | null> {
-    const now = new Date();
-    const [row] = await db
-      .select()
-      .from(mobileProfile)
-      .where(
-        and(
-          eq(mobileProfile.app, app),
-          eq(mobileProfile.status, "active"),
-          or(
-            isNull(mobileProfile.cooldownUntil),
-            lt(mobileProfile.cooldownUntil, now)
-          )
-        )
-      )
-      .orderBy(
-        sql`${mobileProfile.lastUsedAt} ASC NULLS FIRST`,
-        asc(mobileProfile.id)
-      )
-      .limit(1);
-
-    if (!row) {
-      return null;
-    }
-    return new MobileProfileTokenManager(row);
-  }
-
-  /**
-   * Box-pinned selector. Returns the active, non-cooling-down profile whose
-   * `label` matches `label` for the given app — the persona this specific
-   * worker box owns (label == box hostname). Returns `null` when the row is
-   * missing, `dead`, or in cooldown; the caller turns that into a retryable
-   * task error and the next cron tick re-fires once cooldown clears.
-   *
-   * Unlike `loadNextActive`, there is no rotation: one box ↔ one persona. The
-   * pinning keeps each captured device's traffic on a single machine/IP, which
-   * is what the anti-detection model depends on. The pool failure semantics
-   * (`markSoftFailure` cooldown, `markDead`) still apply — in pinned mode they
-   * mean "this box backs off / is down" rather than "rotate to the next row".
-   */
-  static async loadForLabel(
-    app: string,
-    label: string
-  ): Promise<MobileProfileTokenManager | null> {
-    const now = new Date();
-    const [row] = await db
-      .select()
-      .from(mobileProfile)
-      .where(
-        and(
-          eq(mobileProfile.app, app),
-          eq(mobileProfile.label, label),
-          eq(mobileProfile.status, "active"),
-          or(
-            isNull(mobileProfile.cooldownUntil),
-            lt(mobileProfile.cooldownUntil, now)
-          )
-        )
-      )
-      .limit(1);
-
-    if (!row) {
-      return null;
-    }
-    return new MobileProfileTokenManager(row);
-  }
-
-  /**
-   * Resolve the persona for the box this run executes on: read the box hostname
-   * from the `boxinfo` sidecar, extract its `w-NNNNN` worker-label prefix, then
-   * load the matching `(app, label)` persona. Throws (rather than returning
-   * null) so callers stay one-liners — every failure here is fatal to the run
-   * and surfaces a precise reason:
-   *
-   *   - sidecar unreachable → can't identify the box; we refuse to guess a
-   *     persona (an LRU fallback would break box↔device pinning).
-   *   - hostname has no worker prefix → this box isn't a scan-fleet worker.
-   *   - no eligible persona → the worker has no active persona for `app`
-   *     (unseeded, dead, or in cooldown). Trigger retries; the next cron tick
-   *     re-fires once cooldown clears.
-   */
+  /** Resolve the box first, then atomically reuse or claim its active persona. */
   static async loadForThisBox(app: string): Promise<MobileProfileTokenManager> {
     const boxName = await getBoxName();
     if (!boxName) {
@@ -324,13 +273,22 @@ export class MobileProfileTokenManager {
         `box hostname "${boxName}" has no worker-label prefix (expected "w-NNNNN-...")`
       );
     }
-    const manager = await MobileProfileTokenManager.loadForLabel(app, label);
-    if (!manager) {
-      throw new Error(
-        `no active ${app} mobile profile for worker "${label}" (box "${boxName}": missing, dead, or in cooldown)`
-      );
+    const acquired = await acquireMobileProfile(db, app, label);
+    if ("reason" in acquired) {
+      throw new PersonaUnavailableError(acquired.reason, {
+        app,
+        label,
+        ...("until" in acquired ? { until: acquired.until } : {}),
+      });
     }
-    return manager;
+    if (acquired.claimed) {
+      logger.info("Claimed mobile profile for box", {
+        app,
+        label,
+        profileId: acquired.profile.id,
+      });
+    }
+    return new MobileProfileTokenManager(acquired.profile);
   }
 
   // ============================================================================
@@ -449,7 +407,12 @@ export class MobileProfileTokenManager {
         refreshToken: encryptedRefreshToken,
         refreshTokenExpiresAt,
       })
-      .where(eq(mobileProfile.id, this.profile.id));
+      .where(
+        and(
+          eq(mobileProfile.id, this.profile.id),
+          eq(mobileProfile.status, "active")
+        )
+      );
 
     this.profile = {
       ...this.profile,

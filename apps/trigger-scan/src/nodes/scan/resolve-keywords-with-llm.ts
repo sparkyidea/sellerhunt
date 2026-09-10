@@ -60,6 +60,7 @@ export async function loadUnresolvedListings(
       and(
         eq(scanListing.marketplace, marketplace),
         inArray(scanListing.id, [...listingIds]),
+        eq(scanListing.qualified, true),
         isNull(scanListing.keywordId),
         lt(scanListing.keywordAttempts, MAX_LLM_ATTEMPTS)
       )
@@ -77,6 +78,7 @@ export async function pickUnresolvedListings(
     .where(
       and(
         eq(scanListing.marketplace, marketplace),
+        eq(scanListing.qualified, true),
         isNull(scanListing.keywordId),
         lt(scanListing.keywordAttempts, MAX_LLM_ATTEMPTS)
       )

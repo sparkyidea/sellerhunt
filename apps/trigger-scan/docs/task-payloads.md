@@ -3,7 +3,7 @@
 Task definitions live in `src/workflows/scan`. Pass the marketplace explicitly:
 eBay supports keyword, seller, and listing scans; shop supports listing detail only.
 See [architecture](scan-architecture.md) for completion, freshness, retry, and
-persistence contracts, and [rollout](scan-cron-rollout.md) before scheduling.
+qualification contracts, and [rollout](scan-cron-rollout.md) before scheduling.
 
 ## Pipeline
 
@@ -132,8 +132,9 @@ interface ScanListingsByIdsPayload {
 
 Callers chunk by K; this task always processes its input inline. Fresh stored rows
 supply verdicts with `isNew: false`. Stale detail fetches are sequential and paced.
-Only fitting titled results persist; threshold rejects and missing titles remain
-non-persistent. An all-fresh batch does not acquire a persona.
+Every titled result persists its qualification; missing titles remain non-persistent.
+A previously unqualified row that now passes stored thresholds must refetch before
+promotion. An all-fresh batch does not acquire a persona.
 
 Success returns `{ marketplace, mode: "scanned", triggered, fresh, scanned,
 notFound, unfit, verdicts }`. Fitting verdicts include `isNew`, `scanListingId`,
@@ -161,8 +162,9 @@ interface ResolveListingKeywordsPayload {
 ```
 
 Nothing triggers this tool automatically. Both explicit-ID and catch-up selection
-require listings with unresolved keywords and fewer than three attempts, within
-the requested marketplace. This stage persists only fitting listing observations.
+require qualified listings with unresolved keywords and fewer than three attempts,
+within the requested marketplace. Rejected rows do not consume the selection limit,
+LLM calls, or attempts. Later qualification permits catch-up on an existing row.
 
 The task reloads the LLM switch from the database and has no config override.
 Disabled extraction or a missing API key spends no attempts. Titles are sent in

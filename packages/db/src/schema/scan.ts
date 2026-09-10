@@ -158,6 +158,8 @@ export const scanListing = pgTable(
 
     /** Opt-in: tighten freshness/alerting on this listing. */
     monitored: boolean("monitored").notNull().default(false),
+    /** Admission state; unqualified observations remain available for freshness reuse. */
+    qualified: boolean("qualified").notNull().default(true),
 
     lastScannedAt: timestamp("last_scanned_at"),
     createdAt: timestamp("created_at").defaultNow().notNull(),
@@ -167,6 +169,11 @@ export const scanListing = pgTable(
       .notNull(),
   },
   (t) => [
+    index("scan_listing_marketplace_qualified_last_scanned_at_idx").on(
+      t.marketplace,
+      t.qualified,
+      t.lastScannedAt
+    ),
     uniqueIndex("scan_listing_marketplace_reference_unique").on(
       t.marketplace,
       t.reference

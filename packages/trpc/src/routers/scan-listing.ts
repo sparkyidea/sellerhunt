@@ -119,6 +119,7 @@ export const scanListingRouter = router({
       });
 
       const where = and(
+        eq(scanListing.qualified, true),
         marketplaceWhere,
         filterWhere,
         searchWhere,
@@ -222,6 +223,7 @@ export const scanListingRouter = router({
         scanListingRelations
       );
       const whereCondition = and(
+        eq(scanListing.qualified, true),
         marketplaceWhere,
         filterCondition,
         searchCondition
@@ -231,7 +233,9 @@ export const scanListingRouter = router({
         .selectDistinct({ groupKey, sortValue: orderBy })
         .from(scanListing);
 
-      const distinctBase = hideEmpty ? whereCondition : marketplaceWhere;
+      const distinctBase = hideEmpty
+        ? whereCondition
+        : and(marketplaceWhere, eq(scanListing.qualified, true));
       const distinctCondition = cursorFilter
         ? and(distinctBase, cursorFilter)
         : distinctBase;
