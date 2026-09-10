@@ -85,22 +85,31 @@ beforeEach(() => {
   mocks.inFlight.mockResolvedValue(new Set());
   mocks.listingInFlight.mockResolvedValue(false);
 });
-it("suppresses busy parent launches and overlapping cron listing work", async () => {
+it("passes running references to DB selection and suppresses overlapping cron listing work", async () => {
   mocks.listingInFlight.mockResolvedValue(true);
   mocks.inFlight.mockResolvedValue(new Set(["busy"]));
-  mocks.pick.mockResolvedValue(["busy"]);
   const result = await run();
   expect(result.results[0]).toMatchObject({
     status: "skipped",
     reason: "in-flight",
   });
-  expect(mocks.pick).toHaveBeenCalledWith("seller", "ebay", 20);
-  expect(mocks.pick).toHaveBeenCalledWith("keyword", "ebay", 20);
+  expect(mocks.pick).toHaveBeenCalledWith(
+    "seller",
+    "ebay",
+    20,
+    new Set(["busy"])
+  );
+  expect(mocks.pick).toHaveBeenCalledWith(
+    "keyword",
+    "ebay",
+    20,
+    new Set(["busy"])
+  );
+  expect(mocks.pick.mock.invocationCallOrder[0]).toBeGreaterThan(
+    mocks.inFlight.mock.invocationCallOrder[0] ?? 0
+  );
   expect(mocks.listings).not.toHaveBeenCalled();
-  expect(mocks.sellers).not.toHaveBeenCalled();
-  expect(mocks.keywords).not.toHaveBeenCalled();
 });
-
 it("continues independent sweeps after a run-lookup failure", async () => {
   mocks.inFlight.mockRejectedValueOnce(new Error("lookup"));
   mocks.pick.mockImplementation(async (entity: string) =>

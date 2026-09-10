@@ -255,8 +255,12 @@ it("does not fail marketplace work when LLM extraction fails", async () => {
   await expect(runLeaf(ids)).resolves.toMatchObject({ scanned: 3 });
 });
 
-it("registers four leaf attempts", () => {
+it("registers four attempts and the shared leaf queue", () => {
   expect(mocks.definitions.get("scan-listings-by-ids")?.retry.maxAttempts).toBe(
     4
   );
+  expect(mocks.definitions.get("scan-listings-by-ids")?.queue).toEqual({
+    name: "scan-listing-leaf",
+    concurrencyLimit: 2,
+  });
 });

@@ -149,19 +149,22 @@ Bearer mint/refresh and encrypted storage behavior is described in
 One active persona per box does not mean one executing run per box. Concurrent
 runs placed on a box can use the same persona; ownership is not request serialization.
 
-## Queues and cron selection
+## Queues and cron fairness
 
-Keyword, seller, and cron orchestration queues remain separate. Listing leaves do
-not yet have a shared concurrency cap. Each leaf processes its IDs sequentially;
-this does not establish physical placement or request serialization across runs.
+All listing leaves share `scan-listing-leaf`, initially concurrency 2. Keyword,
+seller, and cron orchestration queues are separate. Queue concurrency bounds
+executing leaves, not physical placement, request rate across all tasks, or a
+`concurrency × K` per-tick throughput ceiling. Leaves can finish and be replaced
+many times during a tick, or span several ticks. Measure real throughput.
 
-Cron queries visible in-flight work and removes busy references from its selected
-batch before dispatch. Selection orders stale rows by
-`last_scanned_at ASC NULLS FIRST, id ASC`, includes never-scanned rows, filters retired
-keywords and unqualified listings, and isolates marketplaces. Suppressed rows can
-consume the selection budget until the fairness stage moves exclusion before SQL
-LIMIT and caps first scans. Overlapping cron listing sweeps are suppressed while
-earlier cron leaves are nonterminal. Selection does not atomically claim work.
+Cron fetches running seller/keyword references before DB selection and excludes
+them before `LIMIT`, including the first-scan subquery. Selection admits at most
+`ceil(batchSize / 2)` never-scanned rows, then fills available slots with stale
+previously scanned rows. Ordering is `last_scanned_at ASC NULLS FIRST, id ASC`.
+Unused first-scan capacity is not borrowed when only never-scanned rows remain.
+Keyword retirement, listing qualification, marketplace, and freshness eligibility
+all apply before limiting. The cron listing sweep is suppressed while its earlier
+leaf runs are nonterminal. Selection is best effort and has no atomic work claims.
 
 ## Deployment prerequisites
 
