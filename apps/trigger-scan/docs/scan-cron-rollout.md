@@ -39,6 +39,12 @@ including `mobile_profile_one_active_owner_per_box`. Obtain approval before appl
 to a shared database. Apply this additive migration before deploying consumers
 that select the new columns. Existing listings default to qualified.
 
+The repository's [DB Migrate workflow](../../../.github/workflows/db-migrate.yml)
+automatically applies committed migrations using its `DATABASE_URL` secret when
+migration changes land on `main` or `dev`. Complete approval and the ownership
+preflight against that target database **before merging this stage into either
+branch**. Opening a draft PR does not apply the migration.
+
 After deployment, run the established persona seed command. It backfills legacy
 `capture` from `label`, keeps existing ownership, and inserts new captures unclaimed.
 A dead capture with an active replacement reports a conflict and retains its dead
