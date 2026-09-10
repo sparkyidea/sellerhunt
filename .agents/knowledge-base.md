@@ -89,12 +89,14 @@ views by following `packages/dataview/src/components/views/`, not raw
   `OPENAI_API_KEY` read only by keyword extraction). Runs on cron;
   the app never triggers it. `utils/mobile-profile-manager.ts` owns the
   `mobile_profile` persona pool and mints/caches bearers; secret crypto is
-  `utils/secret-crypto.ts`.
+  `utils/secret-crypto.ts`. See the
+  [scan architecture](../apps/trigger-scan/docs/scan-architecture.md) for waiting
+  completion contracts and deployment prerequisites.
 - **Keywords as knowledge** (`apps/trigger-scan/src/keywords/`) —
   `scan_keyword` is both the discovery pool and the phrases the LLM learned
   from listing titles. Extraction is LLM-only: no local normalization, alias
   matching or scoring. At the end of each `scan-listings-by-ids` leaf, every
-  listing that leaf INSERTED (`isNew` from the upsert — never a rescan) has its
+  qualifying listing that leaf INSERTED (`isNew` from the upsert — never a rescan) has its
   title sent verbatim to OpenAI in one structured-output call (50 titles per
   request max, K = 50, so one call per leaf; model, effort and the cap are
   constants beside the prompt in `keywords/extract-keywords.ts`, and the only

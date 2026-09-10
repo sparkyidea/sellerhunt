@@ -1,7 +1,7 @@
 /**
  * Split an array into fixed-size chunks. Used to slice listing ids into `<= K`
  * batches for `scan-listings-by-ids` leaf runs (the seller wave, the keyword
- * validation loop, and the launcher's self-fan-out).
+ * validation batches, and cron dispatch).
  */
 export function chunk<T>(items: T[], size: number): T[][] {
   const step = Math.max(1, size);

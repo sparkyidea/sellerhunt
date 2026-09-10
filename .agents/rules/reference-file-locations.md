@@ -47,7 +47,7 @@ move.
 
 ### Trigger.dev scan workflows (in `apps/trigger-scan/src/workflows/`)
 
-- `scan/scan-crons.ts` — separate listing, seller, and keyword crons across enabled marketplaces.
+- `scan/scan-crons.ts` — one scheduled task sweeping listings, sellers, and keywords across enabled marketplaces.
 - `scan/scan-listings-by-{ids,keyword,seller}.ts` — listing discovery phases.
 - `scan/resolve-listing-keywords.ts` — manual retry tool for keyword extraction (the `scan-listings-by-ids` leaf extracts inline).
 

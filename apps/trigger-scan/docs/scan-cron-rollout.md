@@ -1,49 +1,78 @@
-# Marketplace cron rollout
+# Scan pipeline rollout
 
-The scheduled task `scan-cron` lives in
-[scan-crons.ts](../src/workflows/scan/scan-crons.ts); it declares no cron, so the
-schedule is created in the Trigger.dev dashboard.
-Cooldowns are defined inline per sweep in the `scan-cron` task, with matching
-values in the scan-time freshness checks. See the
-[cadence table](scan-architecture.md#4d-marketplace-cron-task).
+`scan-cron` declares no schedule. Keep full production fan-out disabled until all
+three stages below and the deployed checks pass. Worker deployment and database
+migration are separate actions.
 
-No config UPDATE is needed for these intervals. The generated migration in
-[migrations](../../../packages/db/src/migrations/) drops `keyword_rescan_after`,
-`seller_rescan_after`, and `listing_rescan_after` from `scan_config`. This schema
-cleanup is separate from deploying the inline intervals. Old cooldown fields in
-inline task config are ignored. Batch sizes, thresholds and the enabled switch
-still come from each marketplace's `scan_config` row.
+## Stage 1: waiting parents and recoverable intake
 
-Deploy the updated worker and let runs on older worker versions finish before
-applying the reviewed migration: older versions select the removed columns.
-Worker deployment does not apply database migrations.
+Deploy the waiting completion contracts after focused regression tests pass.
+Exercise partial listing failures, partial pagination, and failed seller children:
+healthy sibling work must persist, parents must reject, and parent timestamps must
+stay stale. Hide an older seller during keyword prelaunch lookup and expose it at
+duplicate-child startup; that child must fail as incomplete. Repeat with the older
+seller failing and then a later successful recovery.
 
-Retire any schedule attached to `ebay-listings-scanner`, `scan-listings-cron`,
-`scan-sellers-cron`, or `scan-keywords-cron` in the Trigger.dev dashboard; removing
-a source task does not establish that an externally created schedule has been
-deleted. Declarative schedules of removed tasks should disappear on deploy; confirm
-that in the dashboard.
+Submit a previously unknown manual keyword while run lookup is unavailable.
+Confirm intake persists before failure, retries can dispatch, and exhausted retries
+leave a cron-eligible row. Existing keyword source, timestamps, and retirement must
+remain unchanged. Remove temporary `.plan/scan-waiting-parents/` and the folded
+`.plan/scan-freshness-prefilter/` when creating the stage's PR.
 
-Deploy the scan worker with `bun run trigger-scan:deploy`. This registers the
-`scan-cron` task and deploys the inline cooldowns; deploying the app/API alone does
-not. The task ships without a cron, so no schedule exists until one is created.
-In the dashboard open Schedules, create one schedule with task `scan-cron`, cron
-`*/5 * * * *`, environment production only, then verify it is active and that
-`scan-cron` has exactly one schedule. Development has no schedule unless one is
-created the same way. Cadence changes are dashboard edits, not deploys. This
-behavior follows
-[Trigger.dev's scheduled task contract](https://trigger.dev/docs/tasks/scheduled).
+## Following stages
 
-Check the first ticks for per-entity marketplace results and completed scan
-timestamps. The keyword and seller sweeps skip marketplaces whose adapter lacks
-those methods (shop today: listing detail only) and report them as `unsupported`;
-that is expected, not a failure.
-The [remaining ownership and capacity limits](scan-architecture.md#2-freshness-and-launch-suppression)
-still apply. One tick sweeps listings, then sellers, then keywords; the scan runs it
-launches use [entity priorities](scan-architecture.md#4e-scan-run-priority). Priority is
-documented per queue and the scan tasks keep separate queues, so verify on the
-deployed server whether listing runs dequeue ahead of seller and keyword runs under
-contention, and that parent/child progress holds. Priority never preempts running
-tasks or enforces a strict sequence.
-Setting `scan_config.enabled = false` stops subsequent cron dispatch for that
-marketplace; it does not cancel tasks already queued or executing.
+The second PR introduces automatic persona claiming, the active-owner database
+constraint, and qualification-aware persistence and consumers. Its generated
+migration must be reviewed and approved before shared application. The third PR
+adds a shared listing queue and moves busy-reference exclusion before SQL LIMIT.
+Keep full production scheduling disabled until all stages and the deployed checks
+below pass.
+
+## Local validation
+
+Run types, lint, focused scan tests, then repository tests. Use the disposable
+PostgreSQL service for the keyword registration/recovery integration tests:
+
+```sh
+bun run check-types
+bun x ultracite check
+bun --cwd apps/trigger-scan test
+bun run test
+docker compose -f docker-compose.test.yml up -d --wait
+(cd apps/trigger-scan && bun x vitest run --config vitest.integration.config.ts)
+```
+
+Integration suites apply generated migrations to `TEST_DATABASE_URL` (default is
+the disposable service on localhost:54329). Use a disposable database: these suites
+clear their fixture tables. They never use `DATABASE_URL` for test setup.
+
+## Deployed verification and schedule activation
+
+The official [self-hosting feature table](https://trigger.dev/docs/self-hosting/overview#feature-comparison)
+excludes checkpoints and warm starts. The previous assertion that waiting always
+releases resources conflicts with that table. Keep these checks recorded as pending
+until observed on the deployed server; local SDK tests cannot establish them.
+
+- Record server, supervisor/worker, and SDK versions.
+- Run a parent waiting on a slow child and inspect actual checkpoint creation,
+  CPU/RAM/container lifetime, and parent/child queue slot behavior.
+- Measure elapsed versus billed/active time and `maxDuration` accounting while waiting.
+- Check parent → seller → leaf progress at the configured queue limits, including
+  retries and a leaf exhausting its attempts.
+- Check when newly queued, waiting, delayed, and terminal runs appear/disappear in
+  every `runs.list` page. Record visibility lag; suppression remains best effort.
+- Measure cold and warm startup behavior separately. Do not infer warm starts from
+  checkpoint behavior or infer physical placement from queue concurrency.
+
+Activate exactly one production schedule for `scan-cron`, `*/5 * * * *`, only after
+all stages and these checks pass. Confirm legacy schedules for
+`ebay-listings-scanner`, `scan-listings-cron`, `scan-sellers-cron`, and
+`scan-keywords-cron` are retired. Deleting a task from source does not prove an
+external schedule was removed. Development should have no schedule by default.
+
+Monitor queue age, completion/failure counts, actual detail fetch rate, deferred
+seller references, persona cooldown/death events, and per-marketplace freshness.
+Adjust batch sizes/concurrency from measured capacity. One persona per box does
+not imply one executing run per box, and concurrency times K is not a per-tick cap.
+`scan_config.enabled = false` stops future cron dispatch for that marketplace;
+it does not cancel queued/executing work.

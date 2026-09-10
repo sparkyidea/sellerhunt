@@ -1,196 +1,139 @@
-/**
- * Keyword phase task — surface candidate listings via the search endpoint.
- *
- * Marketplace-agnostic. The cron heartbeat fires this with `marketplace` set;
- * the bearer pool + adapter both dispatch on that string. Refuses marketplaces
- * whose adapter has no keyword search (`assertScanEntitySupported`) before
- * touching config or personas.
- *
- * Pipeline:
- *   1. Self-gate on `scan_keyword.last_scanned_at`. If fresh, exit early.
- *      Cron and direct triggers can both call this; the gate prevents
- *      double-scans without coordination.
- *   2. Load bearer pool, call `client.searchListings` once per page until
- *      `pagination.hasMore = false` or `maxSearchPages` is hit.
- *   3. Collect EVERY listing id from the search cards (deduped). We no longer
- *      trust the card's "X sold" badge — it's unreliable (understated/recent).
- *      The real condition is judged downstream by `scanListingsByIds`, which
- *      fetches authoritative detail and returns whether each listing fit.
- *   4. Validate in `<= K` batches — `triggerAndWait scanListingsByIds` per chunk
- *      (one paced leaf run, verdicts back), and for each listing that fits,
- *      fire-and-forget its `scanListingsBySeller` (deduped). Chunks are awaited
- *      sequentially (one waitpoint at a time); sellers run one-at-a-time on their
- *      own `concurrencyLimit: 1` queue.
- *   5. Bump `scan_keyword.last_scanned_at = now` ONLY after every listing has
- *      been accounted for and its qualifying seller fired. Partial work returns
- *      incomplete without advancing freshness or immediately retrying the tree.
- *      Retained global launch keys expire after two hours, permitting cron recovery.
+/** Keyword scan waits for its listing checks and every required seller.
+ * Active dependencies are incomplete until freshness or child completion proves otherwise.
  */
 import { db } from "@dashseller/db";
 import { scanKeyword } from "@dashseller/db/schema";
-import { ScanRequestError } from "@dashseller/marketplace-scan/errors";
 import { logger, metadata, schemaTask, tags } from "@trigger.dev/sdk";
 import { and, eq } from "drizzle-orm";
 import { z } from "zod";
-import type { ListingVerdict } from "../../nodes/scan/scan-one-listing";
-import { markKeywordScanned } from "../../nodes/scan/upsert-scan-keyword";
-import { chunk } from "../../utils/chunk";
+import type { ListingVerdict } from "../../nodes/scan/listing-verdict";
+import {
+  partitionFreshListings,
+  partitionFreshSellers,
+} from "../../nodes/scan/scan-freshness";
+import {
+  markKeywordScanned,
+  registerScanKeywords,
+} from "../../nodes/scan/upsert-scan-keyword";
+import { waitForListingBatches } from "../../nodes/scan/wait-for-listing-batches";
 import { setMachineMetadata } from "../../utils/machine-metadata";
 import { MobileProfileTokenManager } from "../../utils/mobile-profile-manager";
+import { batchWaves } from "../../utils/scan-batch";
 import { assertScanEntitySupported } from "../../utils/scan-capabilities";
-import { isListingBatchComplete } from "../../utils/scan-completion";
 import {
   loadScanConfig,
   type ScanConfig,
   scanConfigSchema,
 } from "../../utils/scan-config";
-import { scanLaunchOptions } from "../../utils/scan-launch-options";
-import { scanListingsByIds } from "./scan-listings-by-ids";
+import { freshnessCutoff } from "../../utils/scan-cooldowns";
+import {
+  isInFlightFailure,
+  routeScanFailure,
+  ScanIncompleteError,
+  scanCatchError,
+} from "../../utils/scan-errors";
+import { inFlight, olderSiblingRunning } from "../../utils/scan-in-flight";
+import { launchTags } from "../../utils/scan-tags";
 import { scanListingsBySeller } from "./scan-listings-by-seller";
 
-type ScanClient = Awaited<
-  ReturnType<MobileProfileTokenManager["createScanClient"]>
->;
-
 const scanListingsByKeywordSchema = z.object({
-  /** Pre-loaded config; cron fills this so child tasks don't re-fetch. */
   config: scanConfigSchema.optional(),
-  /** Bypass the freshness self-gate. */
   forceRefresh: z.boolean().optional(),
-  /** Search query (single keyword per task). */
-  keyword: z.string().min(1),
   marketplace: z.string().min(1),
+  keyword: z.string().min(1),
 });
-
 export type ScanListingsByKeywordPayload = z.infer<
   typeof scanListingsByKeywordSchema
 >;
-
 export const scanListingsByKeyword = schemaTask({
   id: "scan-listings-by-keyword",
   schema: scanListingsByKeywordSchema,
-  // One keyword at a time — serializes the rate-limited search pagination, then
-  // the run holds through a serial batched-validation loop (one waitpoint at a
-  // time; see `validateAndPromoteSellers`).
   queue: { concurrencyLimit: 1 },
-  // Holds one search page, then validates listings in `<= K` batches via
-  // `triggerAndWait scanListingsByIds`. Self-hosted has no checkpoints, so each
-  // wait HOLDS this box — but it's one waitpoint at a time, and batching cuts the
-  // number of waits from N to ceil(N/K). Verify deployed wait behavior before rollout.
   machine: "micro",
-  retry: {
-    maxAttempts: 1,
-  },
-  run: async (payload) => {
-    await setMachineMetadata();
+  retry: { maxAttempts: 3 },
+  catchError: scanCatchError,
+  run: async (payload, { ctx }) => {
     const { marketplace, keyword } = payload;
     assertScanEntitySupported(marketplace, "keyword");
-
+    await registerScanKeywords(marketplace, [keyword]);
+    await setMachineMetadata();
     const config = payload.config ?? (await loadScanConfig(marketplace));
-
-    await tags.add(`scan_keyword_${keyword}`);
-    await tags.add(`marketplace_${marketplace}`);
-    metadata
-      .set("keyword", keyword)
-      .set("marketplace", marketplace)
-      .set("status", "checking-freshness");
-
-    if (!payload.forceRefresh) {
-      const fresh = await checkKeywordFreshness(marketplace, keyword);
-      if (fresh) {
-        await tags.add("scan_skip_reason_fresh");
-        metadata
-          .set("status", "skipped-fresh")
-          .set("lastScannedAt", fresh.lastScannedAt.toISOString());
-        logger.info("Keyword fresh; skipping scan", {
-          marketplace,
-          keyword,
-          lastScannedAt: fresh.lastScannedAt,
-        });
-        return { status: "skipped", keyword, skipped: true, reason: "fresh" };
-      }
+    const scanTags = launchTags(marketplace, "keyword", keyword);
+    await tags.add(scanTags);
+    if (!payload.forceRefresh && (await keywordFresh(marketplace, keyword))) {
+      return { status: "skipped", keyword, reason: "fresh" } as const;
     }
-
-    metadata.set("status", "loading-profile");
-    const manager = await MobileProfileTokenManager.loadForThisBox(marketplace);
-    metadata.set("profileId", manager.profileId).set("status", "paginating");
-
-    const client = await manager.createScanClient();
-    const { listingIds, cardsSeen, complete } = await paginateListingIds(
-      client,
-      manager,
+    const olderRunId = await olderSiblingRunning(
+      "keyword",
       keyword,
+      marketplace,
+      ctx.run
+    );
+    if (olderRunId) {
+      throw new ScanIncompleteError("in-flight", { keyword, olderRunId });
+    }
+    const manager = await MobileProfileTokenManager.loadForThisBox(marketplace);
+    const client = await manager.createScanClient();
+    const search = await paginateListingIds(client, manager, keyword, config);
+    const { verdicts, stale } = await partitionFreshListings(
+      marketplace,
+      [...search.listingIds],
+      config
+    );
+    const children = await waitForListingBatches(
+      marketplace,
+      stale,
+      config,
+      scanTags
+    );
+    const sellers = await launchSellers(
+      [...verdicts, ...children.verdicts],
+      marketplace,
       config
     );
     metadata
-      .set("cardsSeen", cardsSeen)
-      .set("listingsDiscovered", listingIds.size);
-
-    metadata.set("status", "validating");
-    const { sellersFired, incompleteBatches, failedHandoffs } =
-      await validateAndPromoteSellers(listingIds, marketplace, config);
-
-    // Unpersisted IDs require parent discovery to run again after launch-key expiry.
-    if (!complete || incompleteBatches > 0 || failedHandoffs > 0) {
-      metadata
-        .set("status", "incomplete")
-        .set("sellersFired", sellersFired)
-        .set("incompleteBatches", incompleteBatches)
-        .set("searchComplete", complete)
-        .set("failedHandoffs", failedHandoffs);
-      logger.warn("Keyword incompletely scanned; leaving stale for re-pick", {
-        marketplace,
+      .set("listingsDiscovered", search.listingIds.size)
+      .set("listingsFresh", verdicts.length)
+      .set("sellersDeferred", sellers.deferred);
+    if (search.error) {
+      throw search.error;
+    }
+    if (children.failed > 0 || sellers.failed > 0 || sellers.lookupFailed) {
+      throw new ScanIncompleteError("children-incomplete", {
         keyword,
-        listingsDiscovered: listingIds.size,
-        sellersFired,
-        incompleteBatches,
-        searchComplete: complete,
-        failedHandoffs,
+        failedListingBatches: children.failed,
+        ...sellers,
       });
-      return {
-        status: "incomplete",
+    }
+    if (sellers.deferred.length > 0) {
+      throw new ScanIncompleteError("in-flight", {
         keyword,
-        listingsDiscovered: listingIds.size,
-        searchComplete: complete,
-        sellersFired,
-        incompleteBatches,
-        failedHandoffs,
-      };
+        sellersDeferred: sellers.deferred,
+      });
     }
     await markKeywordScanned(marketplace, keyword);
-
-    metadata.set("status", "completed").set("sellersFired", sellersFired);
-    logger.info("Keyword scan completed", {
-      marketplace,
-      keyword,
-      listingsDiscovered: listingIds.size,
-      sellersFired,
-    });
-
+    metadata.set("status", "completed");
     return {
       status: "completed",
       keyword,
-      listingsDiscovered: listingIds.size,
-      sellersFired,
-    };
+      listingsDiscovered: search.listingIds.size,
+      listingsFresh: verdicts.length,
+      sellersLaunched: sellers.launched,
+      sellersSkippedFresh: sellers.fresh,
+    } as const;
   },
 });
 
-/** Paginate the keyword search, collecting every (deduped) listing id. */
 async function paginateListingIds(
-  client: ScanClient,
+  client: Awaited<ReturnType<MobileProfileTokenManager["createScanClient"]>>,
   manager: MobileProfileTokenManager,
   keyword: string,
   config: ScanConfig
-): Promise<{ listingIds: Set<string>; cardsSeen: number; complete: boolean }> {
+): Promise<{ listingIds: Set<string>; error?: Error }> {
   const listingIds = new Set<string>();
-  let cardsSeen = 0;
-
   for (let page = 1; page <= config.maxSearchPages; page += 1) {
     let result: Awaited<ReturnType<typeof client.searchListings>>;
     try {
-      // Price band + Buy It Now are pushed into the search URL so eBay narrows
-      // results server-side — out-of-band / auction listings never reach here.
       result = await client.searchListings({
         keyword,
         page,
@@ -198,13 +141,10 @@ async function paginateListingIds(
         maxPriceCents: config.maxPriceCents,
       });
     } catch (error) {
-      await routeFailure(manager, error);
-      return { listingIds, cardsSeen, complete: false };
+      return { listingIds, error: await routeScanFailure(manager, error) };
     }
     await manager.markUsed();
-
     for (const listing of result.listings) {
-      cardsSeen += 1;
       if (listing.listingId) {
         listingIds.add(listing.listingId);
       }
@@ -213,86 +153,87 @@ async function paginateListingIds(
       break;
     }
   }
-
-  return { listingIds, cardsSeen, complete: true };
+  return { listingIds };
 }
 
-/**
- * Validate listings in `<= K` batches and, for each that fits, fire-and-forget
- * its seller scan. Each chunk is one paced `scanListingsByIds` leaf run that
- * returns its verdicts; chunks are awaited sequentially, so the keyword run
- * holds only one waitpoint at a time. Chunk by K (the leaf threshold) so each
- * child hits the leaf branch and returns verdicts — a `> K` chunk would fan out
- * and come back empty. Returns how many distinct sellers were fired. In-run
- * `Set` dedup + the seller idempotency key keep the seller queue from flooding.
- */
-async function validateAndPromoteSellers(
-  listingIds: Set<string>,
+async function launchSellers(
+  verdicts: ListingVerdict[],
   marketplace: string,
   config: ScanConfig
-): Promise<{
-  sellersFired: number;
-  incompleteBatches: number;
-  failedHandoffs: number;
-}> {
-  const firedSellers = new Set<string>();
-  let incompleteBatches = 0;
-  let failedHandoffs = 0;
-
-  for (const ids of chunk([...listingIds], config.listingScanBatchSize)) {
-    const run = await scanListingsByIds.triggerAndWait(
-      { marketplace, listingIds: ids, config },
-      { priority: 3600 }
-    );
-    if (!isListingBatchComplete(run, ids.length)) {
-      incompleteBatches += 1;
+) {
+  const candidates = new Set<string>();
+  for (const verdict of verdicts) {
+    if (verdict.fit && verdict.sellerReference) {
+      candidates.add(verdict.sellerReference);
     }
-    // Promote whatever DID scan — an aborted batch still carries partial verdicts.
-    if (run.ok && run.output.mode === "scanned") {
-      for (const verdict of run.output.verdicts) {
-        try {
-          await promoteSeller(verdict, marketplace, config, firedSellers);
-        } catch (error) {
-          failedHandoffs += 1;
-          logger.warn("Seller handoff failed", {
-            sellerReference: verdict.sellerReference,
-            error: error instanceof Error ? error.message : String(error),
-          });
+  }
+  const { fresh, stale } = await partitionFreshSellers(marketplace, [
+    ...candidates,
+  ]);
+  const result = {
+    fresh: fresh.length,
+    launched: 0,
+    failed: 0,
+    lookupFailed: false,
+    deferred: [] as string[],
+  };
+  if (stale.length === 0) {
+    return result;
+  }
+  let running: Set<string>;
+  try {
+    running = await inFlight("seller", marketplace);
+  } catch (error) {
+    logger.warn("Cannot determine seller dependency coverage", {
+      marketplace,
+      error,
+    });
+    result.lookupFailed = true;
+    return result;
+  }
+  const busy = new Set(stale.filter((reference) => running.has(reference)));
+  for (const wave of batchWaves(
+    stale.filter((reference) => !running.has(reference))
+  )) {
+    try {
+      const batch = await scanListingsBySeller.batchTriggerAndWait(
+        wave.map((sellerId) => ({
+          payload: { marketplace, sellerId, config },
+          options: { tags: launchTags(marketplace, "seller", sellerId) },
+        }))
+      );
+      result.launched += wave.length;
+      for (const [index, run] of batch.runs.entries()) {
+        if (run.ok) {
+          continue;
+        }
+        const reference = wave[index];
+        if (isInFlightFailure(run.error) && reference) {
+          busy.add(reference);
+        } else {
+          result.failed += 1;
         }
       }
+      result.failed += Math.max(0, wave.length - batch.runs.length);
+    } catch (error) {
+      result.failed += wave.length;
+      logger.warn("Seller batch handoff failed", { marketplace, error });
     }
   }
-
-  return { sellersFired: firedSellers.size, incompleteBatches, failedHandoffs };
-}
-
-/** Fire a seller scan for a fitting listing, deduped within this keyword run. */
-async function promoteSeller(
-  verdict: ListingVerdict,
-  marketplace: string,
-  config: ScanConfig,
-  firedSellers: Set<string>
-): Promise<void> {
-  const { fit, sellerReference } = verdict;
-  if (!(fit && sellerReference) || firedSellers.has(sellerReference)) {
-    return;
+  // A busy seller may have completed while healthy siblings ran. Only persisted
+  // completion can discharge that dependency; run-list visibility is insufficient.
+  if (busy.size > 0) {
+    const checked = await partitionFreshSellers(marketplace, [...busy]);
+    result.deferred = checked.stale;
+    result.fresh += checked.fresh.length;
   }
-  await scanListingsBySeller.trigger(
-    { marketplace, sellerId: sellerReference, config },
-    {
-      ...(await scanLaunchOptions("seller", marketplace, sellerReference)),
-      priority: 1800,
-      tags: [`scan_seller_${sellerReference}`, `marketplace_${marketplace}`],
-    }
-  );
-  firedSellers.add(sellerReference);
+  return result;
 }
 
-async function checkKeywordFreshness(
+async function keywordFresh(
   marketplace: string,
   keyword: string
-): Promise<{ lastScannedAt: Date } | null> {
-  const freshUntil = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
+): Promise<boolean> {
   const [row] = await db
     .select({ lastScannedAt: scanKeyword.lastScannedAt })
     .from(scanKeyword)
@@ -303,20 +244,5 @@ async function checkKeywordFreshness(
       )
     )
     .limit(1);
-  if (row?.lastScannedAt && row.lastScannedAt > freshUntil) {
-    return { lastScannedAt: row.lastScannedAt };
-  }
-  return null;
-}
-
-async function routeFailure(
-  manager: MobileProfileTokenManager,
-  error: unknown
-): Promise<void> {
-  if (error instanceof ScanRequestError && error.isAuthFailure()) {
-    await manager.markDataAuthFailure(error.message);
-    return;
-  }
-  const message = error instanceof Error ? error.message : String(error);
-  await manager.markSoftFailure(message);
+  return !!row?.lastScannedAt && row.lastScannedAt > freshnessCutoff("keyword");
 }

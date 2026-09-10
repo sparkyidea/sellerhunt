@@ -8,10 +8,11 @@
  * silently scan with surprise values.
  *
  * Only kill switches, business thresholds and per-marketplace tuning are
- * rows. Cooldowns are inline in the cron tasks and freshness checks; old
- * cooldown payload fields are ignored. The LLM model, reasoning
- * effort and request cap live in
- * `keywords/extract-keywords.ts`; leaf fetches are always sequential.
+ * rows. Cooldowns are code constants in `utils/scan-cooldowns.ts` (shared by
+ * the cron sweep, the parent prefilters and the child self-gates); old
+ * cooldown payload fields are ignored. The LLM model, reasoning effort and
+ * request cap live in `keywords/extract-keywords.ts`; leaf fetches are always
+ * sequential.
  */
 import { db } from "@dashseller/db";
 import { scanConfig } from "@dashseller/db/schema";
