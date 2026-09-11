@@ -27,7 +27,6 @@ import {
 export const MAX_LLM_ATTEMPTS = 3;
 
 export interface UnresolvedListing {
-  categoryPath: string[] | null;
   id: string;
   title: string;
 }
@@ -87,7 +86,6 @@ async function resolveChunk(
   const items: ExtractItem[] = batch.map((row, index) => ({
     index,
     title: row.title,
-    category: row.categoryPath?.join(" > ") ?? null,
   }));
 
   let answers: Map<number, string>;

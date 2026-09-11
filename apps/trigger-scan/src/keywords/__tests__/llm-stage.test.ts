@@ -18,7 +18,6 @@ function listings(count: number): UnresolvedListing[] {
   return Array.from({ length: count }, (_, i) => ({
     id: `listing-${i}`,
     title: `Listing title ${i}`,
-    categoryPath: i % 2 === 0 ? ["Root", "Leaf"] : null,
   }));
 }
 
@@ -46,7 +45,9 @@ function answering(
     }
     const items = indexes.flatMap((index) => {
       const phrase = phraseFor(index);
-      return phrase === undefined ? [] : [{ index, searchPhrase: phrase }];
+      return phrase === undefined
+        ? []
+        : [{ keyword: phrase, indexes: [index] }];
     });
     return Promise.resolve({ output_parsed: { items }, status: "completed" });
   };

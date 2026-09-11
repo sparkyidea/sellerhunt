@@ -8,6 +8,7 @@
   },
   "scripts": {
     "check-types": "tsc --noEmit",
+    "keywords:bench": "bun run scripts/bench-keywords.ts",
     "keywords:try": "bun run scripts/try-keywords.ts",
     "test": "vitest run",
     "test:watch": "vitest",
