@@ -215,14 +215,16 @@ it("excludes running sellers before LIMIT and caps first scans while retaining s
     "d-first",
     "f-old",
   ]);
-  expect(await pickStale("seller", "ebay", 0, exclude)).toEqual([]);
+  await expect(pickStale("seller", "ebay", 0, exclude)).rejects.toThrow(
+    "at least 2"
+  );
 });
 it("filters unqualified listings, fresh rows, retired keywords, and other marketplaces before selection", async () => {
   await listing("a-rejected", { qualified: false });
   await listing("b-fresh", { lastScannedAt: new Date() });
   await listing("c-shop", { marketplace: "shop" });
   await listing("d-eligible");
-  expect(await pickStale("listing", "ebay", 1, new Set())).toEqual([
+  expect(await pickStale("listing", "ebay", 2, new Set())).toEqual([
     "d-eligible",
   ]);
   await connection.db.insert(scanKeyword).values([
@@ -236,9 +238,25 @@ it("filters unqualified listings, fresh rows, retired keywords, and other market
     { id: "b", marketplace: "ebay", keyword: "busy", source: "manual" },
     { id: "c", marketplace: "ebay", keyword: "ready", source: "manual" },
   ]);
-  expect(await pickStale("keyword", "ebay", 1, new Set(["busy"]))).toEqual([
+  expect(await pickStale("keyword", "ebay", 2, new Set(["busy"]))).toEqual([
     "ready",
   ]);
+});
+
+it.each([
+  "listing",
+  "seller",
+  "keyword",
+] as const)("rejects a one-item %s cron batch before querying", async (entity) => {
+  const select = vi.spyOn(connection.db, "select");
+  try {
+    await expect(pickStale(entity, "ebay", 1, new Set())).rejects.toThrow(
+      "at least 2"
+    );
+    expect(select).not.toHaveBeenCalled();
+  } finally {
+    select.mockRestore();
+  }
 });
 
 it.each([
@@ -281,6 +299,10 @@ it.each([
   expect(await pickStale(entity, "ebay", 3, exclude)).toEqual([
     "b-first",
     "c-first",
+    "f-refresh",
+  ]);
+  expect(await pickStale(entity, "ebay", 2, exclude)).toEqual([
+    "b-first",
     "f-refresh",
   ]);
 });

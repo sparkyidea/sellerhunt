@@ -19,21 +19,27 @@ import { scanConfig } from "@dashseller/db/schema";
 import { eq } from "drizzle-orm";
 import { z } from "zod";
 
+/** Cron selection needs room for both first scans and refreshes. */
+export const cronBatchSizeSchema = z
+  .number()
+  .int()
+  .min(2, "Cron batch size must be at least 2 to reserve refresh capacity");
+
 /**
  * Runtime tunables for one marketplace scan, mirrored from the `scan_config`
  * row. This Zod schema is the single source of truth: `ScanConfig` is inferred
  * from it, and the workflow tasks reuse it (via `scanConfigSchema.optional()`)
  * to validate an inlined config — parents pass their already-loaded config down
- * to children so a fan-out doesn't re-fetch the row per run. Deriving the type
- * from the schema keeps the two from drifting: add a field here and both the
- * type and `loadScanConfig`'s return stop compiling until it's wired through.
+ * to children so a fan-out doesn't re-fetch the row per run. Both database
+ * loaders parse rows with this schema, keeping stored and inline configuration
+ * subject to the same validation.
  */
 export const scanConfigSchema = z.object({
   enabled: z.boolean(),
-  keywordBatchSize: z.number(),
+  keywordBatchSize: cronBatchSizeSchema,
   /** LLM kill switch. Off → new listings persist unresolved, no attempt spent. */
   keywordLlmEnabled: z.boolean(),
-  listingBatchSize: z.number(),
+  listingBatchSize: cronBatchSizeSchema,
   /** Listings scanned per `scan-listings-by-ids` leaf run + fan-out threshold. */
   listingScanBatchSize: z.number(),
   /** Max jittered delay (ms) before each getListing in a leaf run. */
@@ -46,7 +52,7 @@ export const scanConfigSchema = z.object({
   minItemSold: z.number(),
   minPriceCents: z.number(),
   minSoldLast24h: z.number().nullable(),
-  sellerBatchSize: z.number(),
+  sellerBatchSize: cronBatchSizeSchema,
 });
 
 export type ScanConfig = z.infer<typeof scanConfigSchema>;
@@ -77,20 +83,5 @@ export async function loadAllScanConfigs(): Promise<ScanConfig[]> {
 }
 
 function toScanConfig(row: ScanConfigRow): ScanConfig {
-  return {
-    marketplace: row.marketplace,
-    enabled: row.enabled,
-    maxSearchPages: row.maxSearchPages,
-    minItemSold: row.minItemSold,
-    minPriceCents: row.minPriceCents,
-    maxPriceCents: row.maxPriceCents,
-    minSoldLast24h: row.minSoldLast24h,
-    keywordBatchSize: row.keywordBatchSize,
-    sellerBatchSize: row.sellerBatchSize,
-    listingBatchSize: row.listingBatchSize,
-    listingScanBatchSize: row.listingScanBatchSize,
-    listingScanDelayMinMs: row.listingScanDelayMinMs,
-    listingScanDelayMaxMs: row.listingScanDelayMaxMs,
-    keywordLlmEnabled: row.keywordLlmEnabled,
-  };
+  return scanConfigSchema.parse(row);
 }

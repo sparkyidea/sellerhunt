@@ -12,6 +12,7 @@ import {
   sql,
 } from "drizzle-orm";
 import type { ScanEntity } from "../../utils/scan-capabilities";
+import { cronBatchSizeSchema } from "../../utils/scan-config";
 import { freshnessCutoff } from "../../utils/scan-cooldowns";
 
 const TABLES = {
@@ -33,7 +34,7 @@ const TABLES = {
 };
 
 export function firstScanCap(batchSize: number): number {
-  return Math.ceil(batchSize / 2);
+  return Math.ceil(cronBatchSizeSchema.parse(batchSize) / 2);
 }
 
 /** Busy rows are excluded BEFORE LIMIT, including inside the first-scan allowance. */
@@ -43,16 +44,14 @@ export async function pickStale(
   batchSize: number,
   exclude: ReadonlySet<string>
 ): Promise<string[]> {
-  if (!Number.isSafeInteger(batchSize) || batchSize <= 0) {
-    return [];
-  }
+  const firstScanLimit = firstScanCap(batchSize);
   const { table, reference, eligible } = TABLES[entity];
   // Reused in two predicates: bind arrays so backlog size cannot exhaust SQL parameters.
   const notBusy =
     exclude.size > 0
       ? sql`${reference} <> ALL(${sql.param([...exclude])}::text[])`
       : undefined;
-  const firstScans = sql`(select ${table.id} from ${table} where ${and(eq(table.marketplace, marketplace), isNull(table.lastScannedAt), notBusy, eligible)} order by ${table.id} limit ${firstScanCap(batchSize)})`;
+  const firstScans = sql`(select ${table.id} from ${table} where ${and(eq(table.marketplace, marketplace), isNull(table.lastScannedAt), notBusy, eligible)} order by ${table.id} limit ${firstScanLimit})`;
   const rows = await db
     .select({ reference })
     .from(table)

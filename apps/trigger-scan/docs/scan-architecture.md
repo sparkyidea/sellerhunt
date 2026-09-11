@@ -157,6 +157,10 @@ executing leaves, not physical placement, request rate across all tasks, or a
 `concurrency × K` per-tick throughput ceiling. Leaves can finish and be replaced
 many times during a tick, or span several ticks. Measure real throughput.
 
+Cron batch sizes must be integers of at least 2, reserving capacity for both first
+scans and refreshes. Database-loaded and inline configurations, and direct picker
+calls, reject smaller sizes. Listing leaf chunk size K may still be 1.
+
 Cron fetches running seller/keyword references before DB selection and excludes
 them before `LIMIT`, including the first-scan subquery. Selection admits at most
 `ceil(batchSize / 2)` never-scanned rows, then fills available slots with stale

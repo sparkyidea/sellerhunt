@@ -41,6 +41,12 @@ Money uses integer cents. Cooldowns, leaf queue concurrency, and LLM model/reque
 size are code constants. K is caller chunk size; a larger manual leaf payload logs
 a warning and runs sequentially on its assigned box.
 
+The cron batch sizes (`keywordBatchSize`, `sellerBatchSize`, and
+`listingBatchSize`) follow the
+[fair selection policy](scan-architecture.md#queues-and-cron-fairness).
+Invalid database configuration fails loading before cron dispatch; correct the
+configured values before retrying.
+
 ## `scan-cron`
 
 Trigger.dev provides the schedule payload; there is no custom marketplace/config
