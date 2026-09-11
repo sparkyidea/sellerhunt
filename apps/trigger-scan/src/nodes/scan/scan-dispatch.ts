@@ -8,7 +8,6 @@ import {
   isNotNull,
   isNull,
   lte,
-  notInArray,
   or,
   sql,
 } from "drizzle-orm";
@@ -48,8 +47,11 @@ export async function pickStale(
     return [];
   }
   const { table, reference, eligible } = TABLES[entity];
+  // Reused in two predicates: bind arrays so backlog size cannot exhaust SQL parameters.
   const notBusy =
-    exclude.size > 0 ? notInArray(reference, [...exclude]) : undefined;
+    exclude.size > 0
+      ? sql`${reference} <> ALL(${sql.param([...exclude])}::text[])`
+      : undefined;
   const firstScans = sql`(select ${table.id} from ${table} where ${and(eq(table.marketplace, marketplace), isNull(table.lastScannedAt), notBusy, eligible)} order by ${table.id} limit ${firstScanCap(batchSize)})`;
   const rows = await db
     .select({ reference })

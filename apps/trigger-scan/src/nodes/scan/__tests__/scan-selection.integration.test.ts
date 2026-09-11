@@ -240,3 +240,47 @@ it("filters unqualified listings, fresh rows, retired keywords, and other market
     "ready",
   ]);
 });
+
+it.each([
+  "seller",
+  "keyword",
+] as const)("selects %s first scans and refreshes with more than 33,000 exclusions", async (entity) => {
+  const busyFirst = 'a-busy,"quoted"\\{value}';
+  const busyRefresh = "e-busy-refresh";
+  const references = [
+    busyFirst,
+    "b-first",
+    "c-first",
+    "d-first",
+    busyRefresh,
+    "f-refresh",
+  ];
+  const rows = references.map((reference, index) => ({
+    id: reference,
+    marketplace: "ebay",
+    reference,
+    lastScannedAt: index < 4 ? null : old,
+  }));
+  if (entity === "seller") {
+    await connection.db.insert(scanSeller).values(rows);
+  } else {
+    await connection.db.insert(scanKeyword).values(
+      rows.map(({ reference, ...row }) => ({
+        ...row,
+        keyword: reference,
+        source: "manual" as const,
+      }))
+    );
+  }
+  const exclude = new Set(
+    Array.from({ length: 33_000 }, (_, index) => `busy-${index}`)
+  );
+  exclude.add(busyFirst);
+  exclude.add(busyRefresh);
+
+  expect(await pickStale(entity, "ebay", 3, exclude)).toEqual([
+    "b-first",
+    "c-first",
+    "f-refresh",
+  ]);
+});
