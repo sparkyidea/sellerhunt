@@ -1,18 +1,25 @@
-import type { ScanGetListingResult } from "@dashseller/marketplace-scan/types";
-import { PgDialect } from "drizzle-orm/pg-core";
-import { afterEach, beforeEach, expect, it, vi } from "vitest";
+import type {
+  ScanGetListingResult,
+  ScanListing,
+} from "@dashseller/marketplace-scan/types";
+import { beforeEach, expect, it, vi } from "vitest";
 import type { ScanConfig } from "../../../utils/scan-config";
 import { scanOneListing } from "../scan-one-listing";
 
-const db = vi.hoisted(() => ({
-  select: vi.fn().mockReturnThis(),
-  from: vi.fn().mockReturnThis(),
-  leftJoin: vi.fn().mockReturnThis(),
-  where: vi.fn().mockReturnThis(),
-  limit: vi.fn(),
+const mocks = vi.hoisted(() => ({
+  upsertScanListing: vi.fn(),
+  upsertScanSeller: vi.fn(),
 }));
-vi.mock("@dashseller/db", () => ({ db }));
-vi.mock("@trigger.dev/sdk", () => ({ logger: { info: vi.fn() } }));
+vi.mock("@trigger.dev/sdk", () => ({
+  logger: { info: vi.fn(), warn: vi.fn() },
+}));
+vi.mock("../upsert-scan-listing", () => ({
+  upsertScanListing: mocks.upsertScanListing,
+}));
+vi.mock("../upsert-scan-seller", () => ({
+  upsertScanSeller: mocks.upsertScanSeller,
+}));
+
 const config: ScanConfig = {
   marketplace: "ebay",
   enabled: true,
@@ -29,14 +36,27 @@ const config: ScanConfig = {
   maxPriceCents: null,
   minSoldLast24h: null,
 };
-const listing = {
-  id: "stored-id",
-  title: "Camera",
+const listing: ScanListing = {
   categoryPath: ["Cameras"],
-  price: 2000,
+  condition: "New",
+  currency: "USD",
+  description: null,
+  endedAt: null,
+  goodTillCancelled: true,
+  imageUrls: null,
   itemSold: 200,
+  marketplace: "ebay",
+  marketplaceCategoryReference: "31388",
+  price: 2000,
+  reference: "123456789012",
+  sellerReference: "seller-1",
   soldLast24h: null,
   soldLast30Days: null,
+  startedAt: null,
+  title: "Camera",
+  url: null,
+  variant: false,
+  variants: [],
 };
 const client = { getListing: vi.fn<() => Promise<ScanGetListingResult>>() };
 const manager = { markUsed: vi.fn() };
@@ -50,71 +70,84 @@ const params = {
 
 beforeEach(() => {
   vi.clearAllMocks();
-  vi.useFakeTimers();
-  vi.setSystemTime(new Date(Date.UTC(2026, 8, 5, 12)));
-  db.limit.mockResolvedValue([{ listing, sellerReference: "seller-1" }]);
-  client.getListing.mockRejectedValue(new Error("detail requested"));
+  client.getListing.mockResolvedValue({ listing, raw: null });
+  mocks.upsertScanSeller.mockResolvedValue({ id: "seller-row" });
+  mocks.upsertScanListing.mockResolvedValue({ id: "stored-id", isNew: true });
 });
-afterEach(() => vi.useRealTimers());
 
-it("accounts for a fresh listing without fetching or writing, retaining seller discovery", async () => {
-  const verdict = await scanOneListing(params);
-  expect(verdict).toMatchObject({
+it("fetches the normalized id, persists a fitting listing and reports isNew", async () => {
+  await expect(scanOneListing(params)).resolves.toEqual({
     listingId: "123456789012",
     fit: true,
     sellerReference: "seller-1",
-    isNew: false,
     scanListingId: "stored-id",
+    isNew: true,
+    title: "Camera",
+    categoryPath: ["Cameras"],
+    variantsDiscovered: 0,
   });
-  expect(client.getListing).not.toHaveBeenCalled();
-  expect(manager.markUsed).not.toHaveBeenCalled();
-  const query = new PgDialect().sqlToQuery(db.where.mock.calls[0]?.[0]);
-  expect(query.params).toEqual([
-    "ebay",
-    "123456789012",
-    "2026-09-05T06:00:00.000Z",
-  ]);
-  expect(query.sql).toContain('"last_scanned_at" >');
+  expect(client.getListing).toHaveBeenCalledWith({ listingId: "123456789012" });
+  expect(manager.markUsed).toHaveBeenCalledTimes(1);
+  expect(mocks.upsertScanSeller).toHaveBeenCalledWith({
+    marketplace: "ebay",
+    reference: "seller-1",
+  });
+  expect(mocks.upsertScanListing).toHaveBeenCalledWith(
+    expect.objectContaining({
+      marketplace: "ebay",
+      reference: "123456789012",
+      sellerReference: "seller-1",
+      title: "Camera",
+      price: 2000,
+      itemSold: 200,
+    })
+  );
 });
 
-it("re-evaluates stored metrics against the current thresholds without fetching", async () => {
-  const verdict = await scanOneListing({
-    ...params,
-    config: { ...config, minItemSold: 300 },
+it("rejects below-threshold listings without persistence", async () => {
+  client.getListing.mockResolvedValue({
+    listing: { ...listing, itemSold: 50 },
+    raw: null,
   });
-  expect(verdict).toEqual({
+  await expect(scanOneListing(params)).resolves.toEqual({
     listingId: "123456789012",
     fit: false,
     sellerReference: "seller-1",
   });
-  expect(client.getListing).not.toHaveBeenCalled();
+  expect(mocks.upsertScanSeller).not.toHaveBeenCalled();
+  expect(mocks.upsertScanListing).not.toHaveBeenCalled();
 });
 
-it("fetches normalized IDs when the freshness query finds no row", async () => {
-  db.limit.mockResolvedValue([]);
+it("rejects a listing with no title without persisting", async () => {
+  client.getListing.mockResolvedValue({
+    listing: { ...listing, title: "" },
+    raw: null,
+  });
+  await expect(scanOneListing(params)).resolves.toEqual({
+    listingId: "123456789012",
+    fit: false,
+    sellerReference: "seller-1",
+  });
+  expect(mocks.upsertScanListing).not.toHaveBeenCalled();
+});
+
+it("uses marketplace-specific metrics", async () => {
+  client.getListing.mockResolvedValue({
+    listing: { ...listing, itemSold: null, soldLast30Days: 200 },
+    raw: null,
+  });
+  await expect(
+    scanOneListing({ ...params, marketplace: "shop" })
+  ).resolves.toMatchObject({ fit: true, isNew: true });
+  expect(mocks.upsertScanListing).toHaveBeenCalledWith(
+    expect.objectContaining({ marketplace: "shop", soldLast30Days: 200 })
+  );
+});
+
+it("rethrows fetch failures without touching the store or the persona", async () => {
+  client.getListing.mockRejectedValue(new Error("detail requested"));
   await expect(scanOneListing(params)).rejects.toThrow("detail requested");
-  expect(client.getListing).toHaveBeenCalledWith({ listingId: "123456789012" });
-});
-
-it("uses marketplace-specific metrics and scopes the cache lookup", async () => {
-  db.limit.mockResolvedValue([
-    { listing: { ...listing, soldLast30Days: 200 }, sellerReference: null },
-  ]);
-  expect(
-    await scanOneListing({ ...params, marketplace: "shop" })
-  ).toMatchObject({ fit: true, sellerReference: null });
-  expect(
-    new PgDialect().sqlToQuery(db.where.mock.calls[0]?.[0]).params[0]
-  ).toBe("shop");
-});
-
-it("ignores legacy cooldown overrides and keeps fresh listings cached", async () => {
-  const legacyConfig = { ...config, listingRescanAfter: 0 };
-  expect(
-    await scanOneListing({ ...params, config: legacyConfig })
-  ).toMatchObject({ fit: true, isNew: false });
-  expect(client.getListing).not.toHaveBeenCalled();
-  expect(
-    new PgDialect().sqlToQuery(db.where.mock.calls[0]?.[0]).params[2]
-  ).toBe("2026-09-05T06:00:00.000Z");
+  expect(manager.markUsed).not.toHaveBeenCalled();
+  expect(mocks.upsertScanSeller).not.toHaveBeenCalled();
+  expect(mocks.upsertScanListing).not.toHaveBeenCalled();
 });

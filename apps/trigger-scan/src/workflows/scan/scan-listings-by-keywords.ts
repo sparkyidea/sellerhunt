@@ -1,41 +1,23 @@
-/**
- * Bulk launcher (plural) — fan out an array of keywords to the
- * `scanListingsByKeyword` single-action task, fire-and-forget.
- *
- * Triggered by the cron heartbeat with the tick's stale keywords (and usable
- * standalone to scan an ad-hoc keyword list). Mirrors `scanListingsByIds`: pure
- * orchestration, self-chunks to Trigger's 1000-item `batchTrigger` cap, and
- * stamps a global per-keyword key with a two-hour launch TTL so the same
- * keyword isn't re-enqueued within that window. Each single task still self-gates
- * on `scan_keyword.last_scanned_at`.
- */
-import { logger, metadata, schemaTask } from "@trigger.dev/sdk";
+/** Bulk manual/cron intake. A successful return confirms dispatch or existing work. */
+import { logger, schemaTask } from "@trigger.dev/sdk";
 import { z } from "zod";
-import { BATCH_TRIGGER_AND_WAIT_MAX } from "../../utils/batch-trigger-and-wait-in-waves";
-import { setMachineMetadata } from "../../utils/machine-metadata";
-import { loadScanConfig, scanConfigSchema } from "../../utils/scan-config";
-import { scanLaunchOptions } from "../../utils/scan-launch-options";
+import { registerScanKeywords } from "../../nodes/scan/upsert-scan-keyword";
+import { batchWaves } from "../../utils/scan-batch";
+import { assertScanEntitySupported } from "../../utils/scan-capabilities";
+import { scanConfigSchema } from "../../utils/scan-config";
+import { inFlight } from "../../utils/scan-in-flight";
+import { launchTags } from "../../utils/scan-tags";
 import { scanListingsByKeyword } from "./scan-listings-by-keyword";
 
-const scanListingsByKeywordsSchema = z.object({
+const schema = z.object({
   config: scanConfigSchema.optional(),
-  keywords: z
-    .array(z.string())
-    .min(
-      1,
-      "scanListingsByKeywords (bulk launcher) requires a non-empty keywords array; trigger scan-listings-by-keyword (singular) with { marketplace, keyword } to scan one"
-    ),
   marketplace: z.string().min(1),
+  keywords: z.array(z.string().min(1)).min(1),
 });
-
-export type ScanListingsByKeywordsPayload = z.infer<
-  typeof scanListingsByKeywordsSchema
->;
-
+export type ScanListingsByKeywordsPayload = z.infer<typeof schema>;
 export const scanListingsByKeywords = schemaTask({
   id: "scan-listings-by-keywords",
-  schema: scanListingsByKeywordsSchema,
-  // Pure orchestration: chunk + batchTrigger, no HTTP.
+  schema,
   machine: "micro",
   retry: {
     maxAttempts: 3,
@@ -43,36 +25,32 @@ export const scanListingsByKeywords = schemaTask({
     minTimeoutInMs: 1000,
     maxTimeoutInMs: 10_000,
   },
-  run: async (payload) => {
-    await setMachineMetadata();
-    const { marketplace, keywords } = payload;
-    const config = payload.config ?? (await loadScanConfig(marketplace));
-
-    metadata
-      .set("marketplace", marketplace)
-      .set("keywordCount", keywords.length)
-      .set("status", "launching");
-
-    let triggered = 0;
-    for (let i = 0; i < keywords.length; i += BATCH_TRIGGER_AND_WAIT_MAX) {
-      const chunk = keywords.slice(i, i + BATCH_TRIGGER_AND_WAIT_MAX);
+  run: async ({ marketplace, keywords, config }) => {
+    assertScanEntitySupported(marketplace, "keyword");
+    const distinct = [...new Set(keywords)];
+    await registerScanKeywords(marketplace, distinct);
+    // Failures throw: SDK retries, and registered rows also remain recoverable by cron.
+    const running = await inFlight("keyword", marketplace);
+    const pending = distinct.filter((keyword) => !running.has(keyword));
+    for (const wave of batchWaves(pending)) {
+      if (wave.length === 0) {
+        continue;
+      }
       await scanListingsByKeyword.batchTrigger(
-        await Promise.all(
-          chunk.map(async (keyword) => ({
-            payload: { marketplace, keyword, config },
-            options: {
-              tags: [`scan_keyword_${keyword}`, `marketplace_${marketplace}`],
-              ...(await scanLaunchOptions("keyword", marketplace, keyword)),
-              priority: 0,
-            },
-          }))
-        )
+        wave.map((keyword) => ({
+          payload: { marketplace, keyword, config },
+          options: { tags: launchTags(marketplace, "keyword", keyword) },
+        }))
       );
-      triggered += chunk.length;
     }
-
-    metadata.set("status", "completed").set("triggered", triggered);
-    logger.info("Launched keyword scans", { marketplace, triggered });
-    return { marketplace, triggered };
+    logger.info("Dispatched keywords", {
+      marketplace,
+      triggered: pending.length,
+    });
+    return {
+      marketplace,
+      triggered: pending.length,
+      skippedInFlight: distinct.length - pending.length,
+    };
   },
 });

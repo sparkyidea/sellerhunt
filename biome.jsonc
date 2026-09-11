@@ -8,6 +8,9 @@
     // produces a clean diff. tsc still covers these paths — see
     // packages/auth/README.md. Excludes lint/format only, not type-checking.
     "includes": [
+      // Workspace scratch files and Drizzle output are not maintained source.
+      "!.context",
+      "!packages/db/src/migrations",
       "!packages/taxonomy/data",
       "!packages/auth/src/components/auth",
       "!packages/auth/src/lib/auth"
