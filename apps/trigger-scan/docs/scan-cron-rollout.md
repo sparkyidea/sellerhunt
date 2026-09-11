@@ -19,19 +19,62 @@ leave a cron-eligible row. Existing keyword source, timestamps, and retirement m
 remain unchanged. Remove temporary `.plan/scan-waiting-parents/` and the folded
 `.plan/scan-freshness-prefilter/` when creating the stage's PR.
 
-## Following stages
+## Stage 2: persona ownership and qualification
 
-The second PR introduces automatic persona claiming, the active-owner database
-constraint, and qualification-aware persistence and consumers. Its generated
-migration must be reviewed and approved before shared application. The third PR
-adds a shared listing queue and moves busy-reference exclusion before SQL LIMIT.
-Keep full production scheduling disabled until all stages and the deployed checks
-below pass.
+Pause acquisition and reseeding while preflighting and applying the ownership
+constraint. The preflight is read-only and deliberately does not choose survivors:
+
+```sh
+bun run packages/db/src/preflight/mobile-profile-owners.ts
+```
+
+It reads `DATABASE_URL` from `apps/api/.env` unless supplied explicitly, reports
+all conflicting `(app, label)` groups, and exits nonzero on conflict. Resolve those
+groups explicitly and rerun before applying the index. Do not automatically kill,
+unclaim, or delete a conflicting owner.
+
+Review generated [0005_cultured_manta.sql](../../../packages/db/src/migrations/0005_cultured_manta.sql):
+three added columns (`capture`, `claimed_at`, `qualified`) and three indexes,
+including `mobile_profile_one_active_owner_per_box`. Obtain approval before applying
+to a shared database. Apply this additive migration before deploying consumers
+that select the new columns. Existing listings default to qualified.
+
+The repository's [DB Migrate workflow](../../../.github/workflows/db-migrate.yml)
+automatically applies committed migrations using its `DATABASE_URL` secret when
+migration changes land on `main` or `dev`. Complete approval and the ownership
+preflight against that target database **before merging this stage into either
+branch**. Opening a draft PR does not apply the migration.
+
+After deployment, run the established persona seed command. It backfills legacy
+`capture` from `label`, keeps existing ownership, and inserts new captures unclaimed.
+A dead capture with an active replacement reports a conflict and retains its dead
+status and failure history. No automatic survivor selection is permitted.
+
+Verify simultaneous acquisitions reuse one owner; different boxes cannot claim the
+same persona; cooling owners do not rotate; three deaths in 24 hours block another
+claim. Confirm both catch-up pickers and explorer list/group views exclude rejected
+listings, and a later promotion enables catch-up. Remove
+`.plan/scan-persona-claiming/` when creating this stage's PR.
+
+## Stage 3: shared leaf queue and fair selection
+
+Before deploying, ensure `scan_config.keyword_batch_size`, `seller_batch_size`,
+and `listing_batch_size` are all at least 2. Existing values of 1 now fail config
+validation before cron dispatch. The listing leaf's `listing_scan_batch_size`
+may remain 1.
+
+Deploy the shared listing queue at concurrency 2 with separate parent queues.
+Confirm a visible busy seller/keyword is excluded before the DB limit and cannot
+consume the tick's selection budget. Check the first-scan allowance and stable
+refresh ordering described in [architecture](scan-architecture.md#queues-and-cron-fairness).
+A dashboard queue override is operational state; record it and confirm effective
+concurrency after later deployments. Remove `.plan/scan-dispatch-fairness/` when
+creating this stage's PR.
 
 ## Local validation
 
 Run types, lint, focused scan tests, then repository tests. Use the disposable
-PostgreSQL service for the keyword registration/recovery integration tests:
+PostgreSQL service for real multi-connection ownership and selection tests:
 
 ```sh
 bun run check-types
@@ -39,6 +82,7 @@ bun x ultracite check
 bun --cwd apps/trigger-scan test
 bun run test
 docker compose -f docker-compose.test.yml up -d --wait
+bun --cwd packages/db test:integration
 (cd apps/trigger-scan && bun x vitest run --config vitest.integration.config.ts)
 ```
 

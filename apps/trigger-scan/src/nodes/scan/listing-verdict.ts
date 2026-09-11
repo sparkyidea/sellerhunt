@@ -28,9 +28,10 @@ export interface FitListingVerdict extends VerdictBase {
   variantsDiscovered: number;
 }
 
-/** Below thresholds or missing a title; not persisted by this scan. */
+/** Below thresholds, or missing title (the latter has no persisted row). */
 export interface UnfitListingVerdict extends VerdictBase {
   fit: false;
+  scanListingId?: string;
 }
 
 export type ListingVerdict = FitListingVerdict | UnfitListingVerdict;
@@ -41,6 +42,7 @@ export interface StoredListingRow {
   id: string;
   itemSold: number | null;
   price: number | null;
+  qualified: boolean;
   reference: string;
   sellerReference: string | null;
   soldLast24h: number | null;
@@ -51,7 +53,8 @@ export interface StoredListingRow {
 /**
  * Verdict for a listing whose stored row is still within its cooldown: no
  * fetch, no persist. Stored metrics are re-evaluated against the CURRENT
- * thresholds. Fitting stored verdicts are always
+ * thresholds; previously unqualified rows return null when promotion needs a fetch.
+ * Fitting stored verdicts are always
  * `isNew: false` (the row exists) and `variantsDiscovered: 0` (nothing was
  * fetched), so the leaf never sends it to the LLM.
  */
@@ -59,10 +62,14 @@ export function verdictFromStoredListing(
   row: StoredListingRow,
   marketplace: string,
   config: ScanConfig
-): ListingVerdict {
+): ListingVerdict | null {
   const { reference: listingId, sellerReference } = row;
   if (!row.title || checkListingThresholds(row, marketplace, config)) {
-    return { listingId, fit: false, sellerReference };
+    return { listingId, fit: false, sellerReference, scanListingId: row.id };
+  }
+  // Promotion needs a fetch: no synthetic fitting verdict from an unqualified row.
+  if (!row.qualified) {
+    return null;
   }
   return {
     listingId,

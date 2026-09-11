@@ -7,7 +7,8 @@
  * orphan-catch can overlap) cannot race the way a select-then-insert did.
  * `RETURNING (xmax = 0)` tells the caller whether this call created the row
  * (`isNew`), which is what gates keyword extraction: a listing goes to the
- * LLM once, on first insert, never on a rescan. The keyword columns
+ * inline LLM on its first qualifying insert. Promoted/existing rows use catch-up.
+ * The keyword columns
  * (`keyword_id`, `keyword_attempts`) are deliberately not in the update set,
  * so rescans preserve them.
  *
@@ -39,6 +40,7 @@ export interface UpsertScanListingInput {
   marketplaceCategoryReference?: string | null;
   /** Display price in **integer cents** (mapper-converted). Stored as-is. */
   price?: number | null;
+  qualified: boolean;
   reference: string;
   /**
    * eBay seller username (or marketplace equivalent). Resolved to
@@ -75,6 +77,7 @@ export async function upsertScanListing(
   // Everything a rescan may overwrite. `keyword_id` / `keyword_attempts` are
   // absent on purpose; `updated_at` is applied by the schema's $onUpdate.
   const baseFields = {
+    qualified: input.qualified,
     sellerId,
     title: input.title,
     description: input.description ?? null,

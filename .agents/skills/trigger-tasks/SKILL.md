@@ -7,6 +7,24 @@ description: Build AI agents, workflows and durable background tasks with Trigge
 
 Build durable background tasks that run reliably with automatic retries, queuing, and observability.
 
+## Installed SDK reference
+
+Before writing or changing Trigger.dev code, read the authoring skill bundled
+with the installed SDK so API guidance matches the project's dependency version.
+From the repository root, resolve the SDK through the scan app's dependencies:
+
+```bash
+node -p 'require.resolve("@trigger.dev/sdk/package.json", { paths: ["./apps/trigger-scan"] })'
+```
+
+Relative to the directory containing that `package.json`, read
+`skills/trigger-authoring-tasks/SKILL.md`. The SDK also bundles documentation under
+`docs/`; the bundled skill's `sources` frontmatter identifies relevant pages.
+This resolution works with the monorepo's non-hoisted dependencies.
+
+Keep repository-specific guidance in this shared skill. Claude accesses it through
+the existing `.claude/skills/trigger-tasks` symlink.
+
 ## When to Use
 
 - Creating background jobs or async workflows

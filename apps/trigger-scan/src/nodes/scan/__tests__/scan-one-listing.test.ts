@@ -104,7 +104,7 @@ it("fetches the normalized id, persists a fitting listing and reports isNew", as
   );
 });
 
-it("rejects below-threshold listings without persistence", async () => {
+it("persists a below-threshold listing without promoting its seller", async () => {
   client.getListing.mockResolvedValue({
     listing: { ...listing, itemSold: 50 },
     raw: null,
@@ -112,10 +112,14 @@ it("rejects below-threshold listings without persistence", async () => {
   await expect(scanOneListing(params)).resolves.toEqual({
     listingId: "123456789012",
     fit: false,
+    scanListingId: "stored-id",
     sellerReference: "seller-1",
   });
+  expect(manager.markUsed).toHaveBeenCalledTimes(1);
   expect(mocks.upsertScanSeller).not.toHaveBeenCalled();
-  expect(mocks.upsertScanListing).not.toHaveBeenCalled();
+  expect(mocks.upsertScanListing).toHaveBeenCalledWith(
+    expect.objectContaining({ qualified: false })
+  );
 });
 
 it("rejects a listing with no title without persisting", async () => {

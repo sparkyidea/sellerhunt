@@ -88,10 +88,12 @@ views by following `packages/dataview/src/components/views/`, not raw
   surface (`DATABASE_URL` + `ENCRYPTION_SECRET`, plus an optional
   `OPENAI_API_KEY` read only by keyword extraction). Runs on cron;
   the app never triggers it. `utils/mobile-profile-manager.ts` owns the
-  `mobile_profile` persona pool and mints/caches bearers; secret crypto is
-  `utils/secret-crypto.ts`. See the
+  `mobile_profile` persona pool and mints/caches bearers; ownership acquisition
+  and reseeding share transactional locks and the active-owner constraint in
+  `packages/db/src/mobile-profile-ownership.ts`. See the
   [scan architecture](../apps/trigger-scan/docs/scan-architecture.md) for waiting
-  completion contracts and deployment prerequisites.
+  completion contracts, qualification, and deployment prerequisites. Secret crypto is
+  `utils/secret-crypto.ts`.
 - **Keywords as knowledge** (`apps/trigger-scan/src/keywords/`) —
   `scan_keyword` is both the discovery pool and the phrases the LLM learned
   from listing titles. Extraction is LLM-only: no local normalization, alias

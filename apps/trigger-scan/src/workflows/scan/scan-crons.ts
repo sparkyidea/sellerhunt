@@ -83,9 +83,12 @@ async function sweep(
       });
       return { ...base, status: "skipped", reason: "in-flight-unknown" };
     }
-    const references = (
-      await pickStale(entity, marketplace, config[`${entity}BatchSize`])
-    ).filter((reference) => !exclude.has(reference));
+    const references = await pickStale(
+      entity,
+      marketplace,
+      config[`${entity}BatchSize`],
+      exclude
+    );
     if (references.length === 0) {
       return { ...base, status: "completed", triggered: 0 };
     }

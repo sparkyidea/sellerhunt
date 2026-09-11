@@ -16,7 +16,7 @@ How long-lived credentials and short-lived bearers persist for adapter packages.
 |---|---|---|---|
 | **API key** (static, app-level) | none (deployment env, passed by caller) | n/a | none since the split |
 | **Refresh token — user-owned** (OAuth grant per real user) | `<resource>_token` | 1:1 with the authenticated resource | none since the split (`channel_token` was removed with the official marketplace stack; pattern kept for future adapters) |
-| **HMAC** (signing key per persona) + **Refresh token — app-owned** (guest session per persona) | `<resource>_profile` | N rows, pooled, rotated by app | `mobile_profile` |
+| **HMAC** (signing key per persona) + **Refresh token — app-owned** (guest session per persona) | `<resource>_profile` | N rows, claimed per app/box | `mobile_profile` |
 
 Decision tree for a new adapter:
 
@@ -43,7 +43,7 @@ The two table shapes look similar (both hold an `access_token` + expiry) but mod
 | `refresh_token` column | Always populated (it IS the OAuth grant) | Populated only when the upstream issues one (shop yes, eBay no) |
 | Derivation on expiry | OAuth refresh-token grant | HMAC-sign + POST (eBay) OR refresh-token grant if cached + persona mint as fallback (shop) |
 | Health tracking | None — if dead, user re-auths | `status`, `cooldown_until`, `failure_count` |
-| Failure routing | 401 → surface to user | 401 on data call → evict bearer; 401 on derivation → mark persona dead, fall through to next in pool |
+| Failure routing | 401 → surface to user | 401 on data call → evict bearer; 401 on derivation → mark persona dead, fail the run; next attempt may claim a replacement |
 
 Forcing them into one table costs either schema-level type safety (sparse columns) or the schema-level distinction between "user-owned auth" and "ops-managed scraper persona."
 
@@ -93,6 +93,9 @@ Both table types agree on these columns:
 
 | Column | Type | Notes |
 |---|---|---|
+| `capture` | text nullable | Stable seed identity within an app; independent of box assignment. |
+| `label` | text nullable | Owning box; NULL until claimed. Dead rows retain it as history. |
+| `claimed_at` | timestamp nullable | Time the persona was assigned to its box. |
 | `app` | text | Which mobile app this persona impersonates (e.g. "ebay", "shop"). Single source of truth for narrowing `MobileCredentials` at read time — the blob itself carries no in-line tag. |
 | `credentials` | text (encrypted) | Per-persona auth-material blob. Encrypted JWE; decrypts to a per-app TS shape (see `MobileCredentials` for the union). Contents are scheme-specific — HMAC key + identifiers for eBay; identity-only for shop. |
 | `refresh_token` | text (encrypted) nullable | Cached upstream-issued refresh token from a prior mint. Null for HMAC-only personas (eBay). Distinct from `credentials` because this value *rotates* per mint cycle. |
@@ -155,7 +158,7 @@ Per-row failure routing differs by scheme:
 - **Refresh token — user-owned**: 401 on refresh → user's grant is revoked; surface to user, no auto-recovery.
 - **HMAC / Refresh token — app-owned**:
   - 401 on refresh-token path → clear cached refresh token, fall through to stable-secret derivation.
-  - 401 on the stable-secret derivation → `markDead()` (the persona's stable secret is rejected); manager continues with the next persona in the pool.
+  - 401 on the stable-secret derivation → `markDead()` (the persona's stable secret is rejected); the run fails, and a later attempt may claim a replacement under the box lock.
   - 401 on a *data* endpoint → `markDataAuthFailure()` (bearer evicted; the persona's secrets still work).
 
 Reference implementation:
@@ -169,3 +172,9 @@ API-key adapters have no per-user / per-persona state. The single app-level secr
 ### Reference schemas
 
 - `packages/db/src/schema/mobile-profile.ts` — `mobile_profile` (HMAC + Refresh token, app-owned)
+
+Ownership acquisition, death transitions, and owned reseeding share the transaction-scoped
+`(app, label)` advisory lock in `packages/db/src/mobile-profile-ownership.ts`. The partial
+unique index enforces one active owner, including cooling personas. Reseeding a dead
+owner whose replacement is active reports a conflict and preserves the dead row. See
+[scan architecture](../../apps/trigger-scan/docs/scan-architecture.md#persona-ownership).

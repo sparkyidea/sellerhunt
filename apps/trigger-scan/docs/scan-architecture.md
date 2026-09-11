@@ -39,14 +39,14 @@ leaves already-discovered IDs available for downstream validation. Healthy sibli
 finish before parents throw. Parent `last_scanned_at` advances only after complete
 coverage; updating seller stats alone does not mark its catalog scanned.
 
-## Freshness
+## Freshness and qualification
 
 Cooldowns in [scan-cooldowns.ts](../src/utils/scan-cooldowns.ts) are shared by cron,
 parents, and leaves:
 
 | Entity | Cooldown | Timestamp means |
 | --- | --- | --- |
-| Listing | 6 hours | Fitting titled detail persisted |
+| Listing | 6 hours | Titled detail persisted with qualification |
 | Seller | 24 hours | Stats and catalog checks complete, or confirmed seller gone |
 | Keyword | 7 days | Configured search and all required listing/seller work complete |
 
@@ -54,16 +54,21 @@ Freshness checks include marketplace identity. Parents prefilter before enqueuei
 leaves check again before loading a persona. `forceRefresh` bypasses only the
 keyword/seller parent's freshness gate; listing freshness still applies.
 
-Only titled listings passing the current thresholds are persisted. Missing titles
-and threshold rejections complete a check without storing a row. Stored metrics
-are re-evaluated against current thresholds while fresh; reused verdicts perform
-no write, snapshot, HTTP request, or inline extraction. Listing-detail 404s complete
-the current check but create no negative-cache row and do not delete existing data.
+Every titled detail result is persisted with `qualified`, including threshold
+rejects. Missing titles remain non-persistent. Existing rows default to qualified
+when the migration is applied. Stored metrics are re-evaluated against current
+thresholds while fresh: still-unfit rows reuse a negative verdict; a previously
+unqualified row that now passes must fetch detail before promotion. Snapshots and
+variants retain the existing upsert behavior. A fresh check performs no write,
+snapshot, HTTP request, or inline extraction. Listing-detail 404s complete the
+current check but create no negative-cache row and do not delete existing data.
 
-Inline LLM extraction runs only for newly inserted fitting listings. Existing rows
-with unresolved keywords and remaining attempts can use the manual catch-up task.
-Extraction failures never fail a scan. Persistence of unqualified observations and
-qualification-aware catch-up selection are a later stage.
+Cron listing refresh and explorer list/group queries select qualified rows only.
+Both LLM catch-up pickers apply marketplace, `qualified = true`, unresolved keyword,
+and remaining-attempt predicates before ordering/limiting. Inline extraction runs
+only for newly inserted fitting listings. A row later promoted to qualified can
+enter catch-up despite `isNew: false`; rejected rows consume no catch-up attempts
+and contribute no discovery phrases. Extraction failures never fail a scan.
 
 ## Best-effort duplicate suppression
 
@@ -111,31 +116,59 @@ skip one sweep as `in-flight-unknown` and continue because its inputs already ex
 | Failed child, lookup, pagination | Throw; leave parent stale |
 
 Leaves retain four attempts and OOM escalation from micro to small-1x. Parents
-retain three attempts. Persona-level request failures retry after 20 minutes,
+retain three attempts. Persona failures/unavailability retry after 20 minutes,
 longer than the 15-minute cooldown. Other errors use the task's normal backoff.
 After attempts are exhausted, scans remain visibly failed and stale for recovery.
 Successful leaf output includes `mode: scanned`, `triggered`, `fresh`, `scanned`,
 `notFound`, `unfit`, and `verdicts`; no successful output represents an abort.
 
-## Persona selection and queues
+## Persona ownership
 
-This stage retains the existing box-label persona selection. The manager identifies
-the worker using the boxinfo sidecar and loads its matching active, non-cooling
-profile. Automatic claims from an unassigned pool and a database ownership constraint
-are a later stage. Bearer mint/refresh and encrypted storage are described in
+`mobile_profile.capture` is seed identity within an app. `label` identifies the
+owning box, and `claimed_at` records acquisition. New captures are unclaimed.
+The manager and seed use the shared helper in
+[mobile-profile-ownership.ts](../../../packages/db/src/mobile-profile-ownership.ts).
+
+Acquisition takes a transaction-scoped advisory lock for `(app, label)` before
+owner lookup. An existing active owner is reused; a cooling owner causes failure
+without replacement. Otherwise three deaths on this box/app in the previous
+24 hours prevent another claim. An eligible unowned active row is claimed using
+`FOR UPDATE SKIP LOCKED`. No network calls occur inside these transactions.
+
+A partial unique index on `(app, label)` where status is active and label is
+non-null enforces one active persona per box/app, including cooling personas.
+Dead rows retain labels and failure history and are excluded from that index.
+Death/activation transitions take the same lock. Reseeding an owned capture
+rechecks ownership under that lock. If an active replacement exists, seed reports
+a conflict and preserves the dead capture; it neither evicts the replacement nor
+returns the old capture to the free pool. Concurrent seed insertion also serializes
+by `(app, capture)`. Ambiguous existing capture identities require operator repair.
+
+Bearer mint/refresh and encrypted storage behavior is described in
 [token storage](../../../.agents/rules/data-adapter-token-storage.md).
+One active persona per box does not mean one executing run per box. Concurrent
+runs placed on a box can use the same persona; ownership is not request serialization.
 
-Keyword, seller, and cron orchestration queues remain separate. Listing leaves do
-not yet have a shared concurrency cap. Each leaf processes its IDs sequentially;
-this does not establish physical placement or request serialization across runs.
+## Queues and cron fairness
 
-Cron queries visible in-flight work and removes busy references from its selected
-batch before dispatch. Selection orders stale rows by
-`last_scanned_at ASC NULLS FIRST, id ASC`, includes never-scanned rows, filters retired
-keywords, and isolates marketplaces. Suppressed rows can consume the selection
-budget until the later fairness stage moves exclusion before SQL LIMIT and caps
-first scans. Overlapping cron listing sweeps are suppressed while earlier cron
-leaves are nonterminal. Freshness and run lookup are not atomic work claims.
+All listing leaves share `scan-listing-leaf`, initially concurrency 2. Keyword,
+seller, and cron orchestration queues are separate. Queue concurrency bounds
+executing leaves, not physical placement, request rate across all tasks, or a
+`concurrency × K` per-tick throughput ceiling. Leaves can finish and be replaced
+many times during a tick, or span several ticks. Measure real throughput.
+
+Cron batch sizes must be integers of at least 2, reserving capacity for both first
+scans and refreshes. Database-loaded and inline configurations, and direct picker
+calls, reject smaller sizes. Listing leaf chunk size K may still be 1.
+
+Cron fetches running seller/keyword references before DB selection and excludes
+them before `LIMIT`, including the first-scan subquery. Selection admits at most
+`ceil(batchSize / 2)` never-scanned rows, then fills available slots with stale
+previously scanned rows. Ordering is `last_scanned_at ASC NULLS FIRST, id ASC`.
+Unused first-scan capacity is not borrowed when only never-scanned rows remain.
+Keyword retirement, listing qualification, marketplace, and freshness eligibility
+all apply before limiting. The cron listing sweep is suppressed while its earlier
+leaf runs are nonterminal. Selection is best effort and has no atomic work claims.
 
 ## Deployment prerequisites
 

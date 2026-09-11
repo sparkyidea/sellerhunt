@@ -25,6 +25,7 @@ import {
   routeScanFailure,
   scanCatchError,
 } from "../../utils/scan-errors";
+import { LISTING_LEAF_QUEUE } from "../../utils/scan-queues";
 import { marketplaceTag } from "../../utils/scan-tags";
 
 const scanListingsByIdsSchema = z.object({
@@ -47,6 +48,7 @@ export interface ScanListingsByIdsResult {
 export const scanListingsByIds = schemaTask({
   id: "scan-listings-by-ids",
   schema: scanListingsByIdsSchema,
+  queue: LISTING_LEAF_QUEUE,
   machine: "micro",
   retry: {
     maxAttempts: 4,

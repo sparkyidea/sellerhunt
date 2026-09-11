@@ -1,5 +1,5 @@
-/** Fetch detail, apply shared thresholds, and persist fitting titled observations.
- * Fitting listings ensure a seller row and newly inserted rows feed the LLM.
+/** Fetch authoritative detail and persist any titled observation with its qualification.
+ * Only fitting listings ensure a seller row and newly inserted fitting rows feed the LLM.
  * Freshness is partitioned once by the leaf, before persona loading.
  */
 import { logger } from "@trigger.dev/sdk";
@@ -57,18 +57,12 @@ export async function scanOneListing(
   }
 
   const dropReason = checkListingThresholds(listing, marketplace, config);
-  if (dropReason) {
-    logger.info("Listing below scan thresholds", {
-      marketplace,
-      listingId,
-      dropReason,
-    });
-    return { listingId, fit: false, sellerReference };
-  }
-  if (sellerReference) {
+  const qualified = dropReason === null;
+  if (qualified && sellerReference) {
     await upsertScanSeller({ marketplace, reference: sellerReference });
   }
   const upserted = await upsertScanListing({
+    qualified,
     marketplace,
     reference: listingId,
     sellerReference: listing.sellerReference,
@@ -90,6 +84,19 @@ export async function scanOneListing(
     soldLast30Days: listing.soldLast30Days,
   });
 
+  if (!qualified) {
+    logger.info("Persisted unqualified listing observation", {
+      marketplace,
+      listingId,
+      dropReason,
+    });
+    return {
+      listingId,
+      fit: false,
+      sellerReference,
+      scanListingId: upserted.id,
+    };
+  }
   return {
     listingId,
     fit: true,

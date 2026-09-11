@@ -3,7 +3,7 @@
 Task definitions live in `src/workflows/scan`. Pass the marketplace explicitly:
 eBay supports keyword, seller, and listing scans; shop supports listing detail only.
 See [architecture](scan-architecture.md) for completion, freshness, retry, and
-persistence contracts, and [rollout](scan-cron-rollout.md) before scheduling.
+qualification contracts, and [rollout](scan-cron-rollout.md) before scheduling.
 
 ## Pipeline
 
@@ -37,22 +37,28 @@ Config fields: `marketplace`, `enabled`, `maxSearchPages`, `minItemSold`,
 `minPriceCents`, `maxPriceCents` (nullable), `minSoldLast24h` (nullable),
 `keywordBatchSize`, `sellerBatchSize`, `listingBatchSize`, `listingScanBatchSize` (K),
 `listingScanDelayMinMs`, `listingScanDelayMaxMs`, and `keywordLlmEnabled`.
-Money uses integer cents. Cooldowns, LLM model/request
+Money uses integer cents. Cooldowns, leaf queue concurrency, and LLM model/request
 size are code constants. K is caller chunk size; a larger manual leaf payload logs
 a warning and runs sequentially on its assigned box.
+
+The cron batch sizes (`keywordBatchSize`, `sellerBatchSize`, and
+`listingBatchSize`) follow the
+[fair selection policy](scan-architecture.md#queues-and-cron-fairness).
+Invalid database configuration fails loading before cron dispatch; correct the
+configured values before retrying.
 
 ## `scan-cron`
 
 Trigger.dev provides the schedule payload; there is no custom marketplace/config
 payload. Each tick sweeps listings, sellers, then keywords across configured
 marketplaces. It checks capability/enablement and in-flight work before selecting
-eligible stale references and suppresses busy references before launch. It does not
-wait or advance scan timestamps.
+eligible stale references. It does not wait or advance scan timestamps.
 
 Output: `{ results: [{ entity, marketplace, status, triggered?, reason? }] }`.
 Statuses include `completed`, `disabled`, `unsupported`, `incomplete` for dispatch
 failure, and `skipped` with `in-flight` or `in-flight-unknown`. These are dispatch
-outcomes, not the entity scan completion contract. Busy references can still consume SQL selection capacity in this stage.
+outcomes, not the entity scan completion contract. Seller/keyword references already
+in flight are excluded before LIMIT, so there is no successful skip counter for them.
 
 ## `scan-listings-by-keywords`
 
@@ -132,15 +138,16 @@ interface ScanListingsByIdsPayload {
 
 Callers chunk by K; this task always processes its input inline. Fresh stored rows
 supply verdicts with `isNew: false`. Stale detail fetches are sequential and paced.
-Only fitting titled results persist; threshold rejects and missing titles remain
-non-persistent. An all-fresh batch does not acquire a persona.
+Every titled result persists its qualification; missing titles remain non-persistent.
+A previously unqualified row that now passes stored thresholds must refetch before
+promotion. An all-fresh batch does not acquire a persona.
 
 Success returns `{ marketplace, mode: "scanned", triggered, fresh, scanned,
 notFound, unfit, verdicts }`. Fitting verdicts include `isNew`, `scanListingId`,
 `title`, and `categoryPath`. Exact listing-detail 404s complete a check without a
 persisted negative row. Scan failures are thrown after healthy work and inline LLM
-extraction; there is no successful `fanned`/`aborted`/incomplete result. There is no shared
-listing-leaf concurrency cap in this stage.
+extraction; there is no successful `fanned`/`aborted`/incomplete result. All leaves
+share queue concurrency 2, independent of parent queues.
 
 ## `resolve-listing-keywords` (manual catch-up)
 
@@ -161,8 +168,9 @@ interface ResolveListingKeywordsPayload {
 ```
 
 Nothing triggers this tool automatically. Both explicit-ID and catch-up selection
-require listings with unresolved keywords and fewer than three attempts, within
-the requested marketplace. This stage persists only fitting listing observations.
+require qualified listings with unresolved keywords and fewer than three attempts,
+within the requested marketplace. Rejected rows do not consume the selection limit,
+LLM calls, or attempts. Later qualification permits catch-up on an existing row.
 
 The task reloads the LLM switch from the database and has no config override.
 Disabled extraction or a missing API key spends no attempts. Titles are sent in
