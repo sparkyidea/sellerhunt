@@ -176,7 +176,7 @@ it("persists ad hoc intake through lookup failures, exhausted retries, and event
     ).rejects.toThrow("lookup unavailable");
   }
   expect(mocks.launch).not.toHaveBeenCalled();
-  expect(await pickStale("keyword", "ebay", 2)).toEqual(["ad hoc"]);
+  expect(await pickStale("keyword", "ebay", 2, new Set())).toEqual(["ad hoc"]);
   expect(await connection.db.select().from(scanKeyword)).toEqual([
     expect.objectContaining({
       keyword: "ad hoc",
@@ -190,13 +190,43 @@ it("persists ad hoc intake through lookup failures, exhausted retries, and event
   ).resolves.toMatchObject({ triggered: 1 });
   expect(mocks.launch).toHaveBeenCalledTimes(1);
 });
-
+it("excludes running sellers before LIMIT and caps first scans while retaining stable refresh order", async () => {
+  for (const id of ["a-busy", "b-busy", "c-first", "d-first", "e-first"]) {
+    await connection.db
+      .insert(scanSeller)
+      .values({ id, marketplace: "ebay", reference: id });
+  }
+  for (const id of ["f-old", "g-old", "h-old"]) {
+    await connection.db
+      .insert(scanSeller)
+      .values({ id, marketplace: "ebay", reference: id, lastScannedAt: old });
+  }
+  await connection.db
+    .insert(scanSeller)
+    .values({ marketplace: "shop", reference: "other" });
+  const exclude = new Set(["a-busy", "b-busy"]);
+  expect(await pickStale("seller", "ebay", 3, exclude)).toEqual([
+    "c-first",
+    "d-first",
+    "f-old",
+  ]);
+  expect(await pickStale("seller", "ebay", 3, exclude)).toEqual([
+    "c-first",
+    "d-first",
+    "f-old",
+  ]);
+  await expect(pickStale("seller", "ebay", 0, exclude)).rejects.toThrow(
+    "at least 2"
+  );
+});
 it("filters unqualified listings, fresh rows, retired keywords, and other marketplaces before selection", async () => {
   await listing("a-rejected", { qualified: false });
   await listing("b-fresh", { lastScannedAt: new Date() });
   await listing("c-shop", { marketplace: "shop" });
   await listing("d-eligible");
-  expect(await pickStale("listing", "ebay", 1)).toEqual(["d-eligible"]);
+  expect(await pickStale("listing", "ebay", 2, new Set())).toEqual([
+    "d-eligible",
+  ]);
   await connection.db.insert(scanKeyword).values([
     {
       id: "a",
@@ -205,14 +235,74 @@ it("filters unqualified listings, fresh rows, retired keywords, and other market
       source: "manual",
       deadAt: old,
     },
-    {
-      id: "b",
-      marketplace: "ebay",
-      keyword: "fresh",
-      source: "manual",
-      lastScannedAt: new Date(),
-    },
+    { id: "b", marketplace: "ebay", keyword: "busy", source: "manual" },
     { id: "c", marketplace: "ebay", keyword: "ready", source: "manual" },
   ]);
-  expect(await pickStale("keyword", "ebay", 1)).toEqual(["ready"]);
+  expect(await pickStale("keyword", "ebay", 2, new Set(["busy"]))).toEqual([
+    "ready",
+  ]);
+});
+
+it.each([
+  "listing",
+  "seller",
+  "keyword",
+] as const)("rejects a one-item %s cron batch before querying", async (entity) => {
+  const select = vi.spyOn(connection.db, "select");
+  try {
+    await expect(pickStale(entity, "ebay", 1, new Set())).rejects.toThrow(
+      "at least 2"
+    );
+    expect(select).not.toHaveBeenCalled();
+  } finally {
+    select.mockRestore();
+  }
+});
+
+it.each([
+  "seller",
+  "keyword",
+] as const)("selects %s first scans and refreshes with more than 33,000 exclusions", async (entity) => {
+  const busyFirst = 'a-busy,"quoted"\\{value}';
+  const busyRefresh = "e-busy-refresh";
+  const references = [
+    busyFirst,
+    "b-first",
+    "c-first",
+    "d-first",
+    busyRefresh,
+    "f-refresh",
+  ];
+  const rows = references.map((reference, index) => ({
+    id: reference,
+    marketplace: "ebay",
+    reference,
+    lastScannedAt: index < 4 ? null : old,
+  }));
+  if (entity === "seller") {
+    await connection.db.insert(scanSeller).values(rows);
+  } else {
+    await connection.db.insert(scanKeyword).values(
+      rows.map(({ reference, ...row }) => ({
+        ...row,
+        keyword: reference,
+        source: "manual" as const,
+      }))
+    );
+  }
+  const exclude = new Set(
+    Array.from({ length: 33_000 }, (_, index) => `busy-${index}`)
+  );
+  exclude.add(busyFirst);
+  exclude.add(busyRefresh);
+
+  expect(await pickStale(entity, "ebay", 3, exclude)).toEqual([
+    "b-first",
+    "c-first",
+    "f-refresh",
+  ]);
+  expect(await pickStale(entity, "ebay", 2, exclude)).toEqual([
+    "b-first",
+    "f-refresh",
+  ]);
 });

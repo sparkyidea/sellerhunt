@@ -1,5 +1,9 @@
 import { expect, it, vi } from "vitest";
-import { loadScanConfig, scanConfigSchema } from "../scan-config";
+import {
+  loadAllScanConfigs,
+  loadScanConfig,
+  scanConfigSchema,
+} from "../scan-config";
 
 const db = vi.hoisted(() => ({
   select: vi.fn().mockReturnThis(),
@@ -9,23 +13,24 @@ const db = vi.hoisted(() => ({
 }));
 vi.mock("@dashseller/db", () => ({ db }));
 
+const row = {
+  marketplace: "ebay",
+  enabled: true,
+  keywordBatchSize: 20,
+  sellerBatchSize: 20,
+  listingBatchSize: 50,
+  listingScanBatchSize: 50,
+  listingScanDelayMinMs: 200,
+  listingScanDelayMaxMs: 800,
+  keywordLlmEnabled: true,
+  maxSearchPages: 10,
+  minItemSold: 100,
+  minPriceCents: 1000,
+  maxPriceCents: null,
+  minSoldLast24h: null,
+};
+
 it("loads configuration without cooldown columns and ignores old inline fields", async () => {
-  const row = {
-    marketplace: "ebay",
-    enabled: true,
-    keywordBatchSize: 20,
-    sellerBatchSize: 20,
-    listingBatchSize: 50,
-    listingScanBatchSize: 50,
-    listingScanDelayMinMs: 200,
-    listingScanDelayMaxMs: 800,
-    keywordLlmEnabled: true,
-    maxSearchPages: 10,
-    minItemSold: 100,
-    minPriceCents: 1000,
-    maxPriceCents: null,
-    minSoldLast24h: null,
-  };
   db.limit.mockResolvedValue([row]);
   const config = await loadScanConfig("ebay");
   expect(
@@ -44,4 +49,39 @@ it("loads configuration without cooldown columns and ignores old inline fields",
   ]) {
     expect(config).not.toHaveProperty(field);
   }
+});
+
+const invalidCronBatches = [
+  "keywordBatchSize",
+  "sellerBatchSize",
+  "listingBatchSize",
+].flatMap((field) => [-1, 0, 1, 2.5].map((value) => ({ field, value })));
+
+it.each(
+  invalidCronBatches
+)("rejects $field=$value in inline config and both database loaders", async ({
+  field,
+  value,
+}) => {
+  const invalid = { ...row, [field]: value };
+  expect(() => scanConfigSchema.parse(invalid)).toThrow(field);
+  db.limit.mockResolvedValueOnce([invalid]);
+  await expect(loadScanConfig("ebay")).rejects.toThrow(field);
+  db.from.mockResolvedValueOnce([invalid]);
+  await expect(loadAllScanConfigs()).rejects.toThrow(field);
+});
+
+it("accepts minimum cron batches while preserving single-listing leaf batches", async () => {
+  const config = {
+    ...row,
+    keywordBatchSize: 2,
+    sellerBatchSize: 2,
+    listingBatchSize: 2,
+    listingScanBatchSize: 1,
+  };
+  expect(scanConfigSchema.parse(config)).toEqual(config);
+  db.limit.mockResolvedValueOnce([config]);
+  await expect(loadScanConfig("ebay")).resolves.toEqual(config);
+  db.from.mockResolvedValueOnce([config]);
+  await expect(loadAllScanConfigs()).resolves.toEqual([config]);
 });

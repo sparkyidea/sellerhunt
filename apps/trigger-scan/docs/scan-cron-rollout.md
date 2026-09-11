@@ -56,12 +56,20 @@ claim. Confirm both catch-up pickers and explorer list/group views exclude rejec
 listings, and a later promotion enables catch-up. Remove
 `.plan/scan-persona-claiming/` when creating this stage's PR.
 
-## Following stage: shared queue and fairness
+## Stage 3: shared leaf queue and fair selection
 
-The third PR adds a shared listing queue at concurrency 2 and moves busy-reference
-exclusion before SQL LIMIT, with a capped first-scan allowance and stable refresh
-ordering. Keep full production scheduling disabled until that stage and the deployed
-checks below pass. Queue concurrency does not establish worker placement.
+Before deploying, ensure `scan_config.keyword_batch_size`, `seller_batch_size`,
+and `listing_batch_size` are all at least 2. Existing values of 1 now fail config
+validation before cron dispatch. The listing leaf's `listing_scan_batch_size`
+may remain 1.
+
+Deploy the shared listing queue at concurrency 2 with separate parent queues.
+Confirm a visible busy seller/keyword is excluded before the DB limit and cannot
+consume the tick's selection budget. Check the first-scan allowance and stable
+refresh ordering described in [architecture](scan-architecture.md#queues-and-cron-fairness).
+A dashboard queue override is operational state; record it and confirm effective
+concurrency after later deployments. Remove `.plan/scan-dispatch-fairness/` when
+creating this stage's PR.
 
 ## Local validation
 

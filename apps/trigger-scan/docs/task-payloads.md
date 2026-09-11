@@ -37,22 +37,28 @@ Config fields: `marketplace`, `enabled`, `maxSearchPages`, `minItemSold`,
 `minPriceCents`, `maxPriceCents` (nullable), `minSoldLast24h` (nullable),
 `keywordBatchSize`, `sellerBatchSize`, `listingBatchSize`, `listingScanBatchSize` (K),
 `listingScanDelayMinMs`, `listingScanDelayMaxMs`, and `keywordLlmEnabled`.
-Money uses integer cents. Cooldowns, LLM model/request
+Money uses integer cents. Cooldowns, leaf queue concurrency, and LLM model/request
 size are code constants. K is caller chunk size; a larger manual leaf payload logs
 a warning and runs sequentially on its assigned box.
+
+The cron batch sizes (`keywordBatchSize`, `sellerBatchSize`, and
+`listingBatchSize`) follow the
+[fair selection policy](scan-architecture.md#queues-and-cron-fairness).
+Invalid database configuration fails loading before cron dispatch; correct the
+configured values before retrying.
 
 ## `scan-cron`
 
 Trigger.dev provides the schedule payload; there is no custom marketplace/config
 payload. Each tick sweeps listings, sellers, then keywords across configured
 marketplaces. It checks capability/enablement and in-flight work before selecting
-eligible stale references and suppresses busy references before launch. It does not
-wait or advance scan timestamps.
+eligible stale references. It does not wait or advance scan timestamps.
 
 Output: `{ results: [{ entity, marketplace, status, triggered?, reason? }] }`.
 Statuses include `completed`, `disabled`, `unsupported`, `incomplete` for dispatch
 failure, and `skipped` with `in-flight` or `in-flight-unknown`. These are dispatch
-outcomes, not the entity scan completion contract. Busy references can still consume SQL selection capacity in this stage.
+outcomes, not the entity scan completion contract. Seller/keyword references already
+in flight are excluded before LIMIT, so there is no successful skip counter for them.
 
 ## `scan-listings-by-keywords`
 
@@ -140,8 +146,8 @@ Success returns `{ marketplace, mode: "scanned", triggered, fresh, scanned,
 notFound, unfit, verdicts }`. Fitting verdicts include `isNew`, `scanListingId`,
 `title`, and `categoryPath`. Exact listing-detail 404s complete a check without a
 persisted negative row. Scan failures are thrown after healthy work and inline LLM
-extraction; there is no successful `fanned`/`aborted`/incomplete result. There is no shared
-listing-leaf concurrency cap in this stage.
+extraction; there is no successful `fanned`/`aborted`/incomplete result. All leaves
+share queue concurrency 2, independent of parent queues.
 
 ## `resolve-listing-keywords` (manual catch-up)
 
