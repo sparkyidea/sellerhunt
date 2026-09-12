@@ -158,7 +158,7 @@ export function DataTableStickyHeader<TData>({
                     const isSelect = header.column.id === "__row_select__";
                     return (
                       <TableHead
-                        className={isSelect ? "w-0 pr-0" : "truncate"}
+                        className={isSelect ? "w-0" : "truncate"}
                         colSpan={header.colSpan}
                         key={header.id}
                         style={{
