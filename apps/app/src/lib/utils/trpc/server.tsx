@@ -48,6 +48,8 @@ export const trpc = createTRPCOptionsProxy<AppRouter>({
 //
 // Behavior:
 //   - NOT_FOUND → Next.js `notFound()` (swaps in the 404 route).
+//   - FORBIDDEN → also `notFound()`: admin-only pages should not reveal
+//     that a resource exists to users without the role.
 //   - other errors → rethrown, hits `error.tsx`.
 //   - success → query is cached and ready for useSuspenseQuery hydration.
 //
@@ -68,7 +70,8 @@ export async function prefetch<T extends ReturnType<TRPCQueryOptions<any>>>(
   const state = queryClient.getQueryState(queryOptions.queryKey);
   if (
     state?.error instanceof TRPCClientError &&
-    state.error.data?.code === "NOT_FOUND"
+    (state.error.data?.code === "NOT_FOUND" ||
+      state.error.data?.code === "FORBIDDEN")
   ) {
     notFound();
   }

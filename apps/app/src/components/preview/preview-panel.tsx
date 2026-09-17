@@ -13,10 +13,9 @@ import { Suspense, useEffect, useRef } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { ErrorView } from "@/components/error-view";
 import { type Preview, usePreviewStore } from "@/hooks/use-preview-store";
-import { ScanListingPreviewView } from "@/modules/explorer/views/scan-listing/scan-listing-panel";
-import { ScanListingPreviewViewSkeleton } from "@/modules/explorer/views/scan-listing/scan-listing-panel-skeleton";
+import { PREVIEW_REGISTRY } from "./preview-registry";
 
-// Mounted once in the (app) layout. Owns the right-side preview Panel and
+// Mounted once in the shared AppShell. Owns the right-side preview Panel and
 // dispatches to the right view based on the open preview kind. Pages and
 // tables don't render their own preview panel — they call useOpenPreview()
 // to set the store and let this host render.
@@ -57,7 +56,7 @@ export function PreviewPanel() {
       <Panel>
         {preview && (
           <ErrorBoundary FallbackComponent={PreviewErrorFallback}>
-            <Suspense fallback={<PreviewSkeleton />}>
+            <Suspense fallback={<PreviewSkeleton kind={preview.kind} />}>
               <PreviewContent onClose={close} preview={preview} />
             </Suspense>
           </ErrorBoundary>
@@ -74,11 +73,13 @@ function PreviewContent({
   preview: Preview;
   onClose: () => void;
 }) {
-  return <ScanListingPreviewView id={preview.id} onClose={onClose} />;
+  const { View } = PREVIEW_REGISTRY[preview.kind];
+  return <View id={preview.id} onClose={onClose} />;
 }
 
-function PreviewSkeleton() {
-  return <ScanListingPreviewViewSkeleton />;
+function PreviewSkeleton({ kind }: { kind: Preview["kind"] }) {
+  const { Skeleton } = PREVIEW_REGISTRY[kind];
+  return <Skeleton />;
 }
 
 // Route detail pages convert NOT_FOUND into a real 404 via prefetch +

@@ -9,17 +9,20 @@ import {
 } from "@sparkyidea/ui/components/sidebar";
 import { cn } from "@sparkyidea/ui/lib/utils";
 import type * as React from "react";
+import { AdminNavConfig } from "@/configs/admin-nav.config";
 import { AppNavConfig } from "@/configs/app-nav.config";
 import { SidebarSecondary } from "./app-sidebar-secondary";
 import { SidebarMain } from "./sidebar-main";
 
 export function AppSidebar({
+  navigation = "app",
   className,
   style,
   ...props
-}: React.ComponentProps<typeof Sidebar>) {
+}: React.ComponentProps<typeof Sidebar> & { navigation?: "app" | "admin" }) {
   const { isMobile } = useSidebar();
-  const { appNavMain, appNavSecondary } = AppNavConfig();
+  const { appNavMain, appNavSecondary } =
+    navigation === "admin" ? AdminNavConfig() : AppNavConfig();
 
   const mobileStyle = isMobile
     ? ({

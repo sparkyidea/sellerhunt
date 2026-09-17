@@ -1,12 +1,11 @@
 import { create } from "zustand";
+import type { PreviewKind } from "@/components/preview/preview-registry";
 
-// Add new preview kinds here as new previews are implemented. Each variant
-// carries the minimum data needed for both the route fallback (mobile) and
-// the in-place preview render (desktop) — see use-open-preview.ts and
-// preview-host.tsx.
+// A new preview kind is one entry in components/preview/preview-registry.tsx.
+// Nothing here changes: `kind` is the registry's key set.
 export interface Preview {
   id: string;
-  kind: "scan-listing";
+  kind: PreviewKind;
 }
 
 interface PreviewStore {
