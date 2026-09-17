@@ -64,8 +64,8 @@ short and current.
      to its `package.json`. None of that belongs to this package.
    - Re-remove the dead `@better-auth-ui/*` / `@better-auth/passkey` / `better-auth`
      deps from `packages/ui/package.json` (nothing in its `src/` imports them).
-     **Leave `apps/app`'s `@better-auth/passkey`** — it is a real dependency now
-     (`auth-client.ts` imports `passkeyClient`).
+     **Leave `packages/auth`'s `@better-auth/passkey`** — it is a real dependency
+     (`src/auth-client.ts` imports `passkeyClient`); the apps do not list it.
    - If the CLI rewrote `packages/auth/package.json` `catalog:` deps to literals,
      restore `catalog:`.
    - If it wrote a stray `src/components/ui/` into `packages/auth`, delete it.
@@ -122,7 +122,8 @@ short and current.
 Three wiring points decide whether a plugin does anything:
 
 - **Server** — `packages/auth/src/auth-server.ts` `plugins: [...]`
-- **Client** — `apps/app/src/lib/auth-client.ts` `plugins: [...]`
+- **Client** — `packages/auth/src/auth-client.ts` `buildAuthClient()` `plugins: [...]`
+  (each app instantiates it in `src/lib/auth-client.ts` with its own API URL)
 - **UI mount** — `apps/app/src/components/providers/wrappers/better-auth-providers.tsx`
   `<AuthProvider plugins={[...]}>` (a plugin's cards/buttons/views only render
   when it is mounted here)

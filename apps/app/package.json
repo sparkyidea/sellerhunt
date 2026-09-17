@@ -39,8 +39,7 @@
     "usehooks-ts": "catalog:",
     "zod": "catalog:",
     "zustand": "catalog:",
-    "@better-auth-ui/core": "catalog:",
-    "@better-auth/passkey": "catalog:"
+    "@better-auth-ui/core": "catalog:"
   },
   "devDependencies": {
     "@dashseller/config": "workspace:*",

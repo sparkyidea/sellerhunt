@@ -41,7 +41,6 @@
       "version": "0.1.0",
       "dependencies": {
         "@better-auth-ui/core": "catalog:",
-        "@better-auth/passkey": "catalog:",
         "@dashseller/auth": "workspace:*",
         "@dashseller/db": "workspace:*",
         "@dashseller/env": "workspace:*",
@@ -274,6 +273,7 @@
         "@dashseller/config": "workspace:*",
         "hono": "catalog:",
         "typescript": "catalog:",
+        "vitest": "catalog:",
       },
     },
     "packages/ui": {
