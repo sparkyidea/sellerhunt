@@ -6,7 +6,14 @@ export const env = createEnv({
   server: {
     ...dbEnvSchema,
     BETTER_AUTH_SECRET: z.string().min(32),
+    /**
+     * JWE key for `mobile_profile` credentials/bearers. Must equal the scan
+     * worker's `ENCRYPTION_SECRET` (`@dashseller/env/trigger-scan`) — the
+     * admin router writes blobs the worker later decrypts.
+     */
+    ENCRYPTION_SECRET: z.string().min(32),
     API_URL: z.url(),
+    /** Public origin of `apps/app`. */
     APP_URL: z.url(),
 
     NODE_ENV: z

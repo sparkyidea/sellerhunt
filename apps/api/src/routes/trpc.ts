@@ -1,4 +1,5 @@
 import { authServer } from "@dashseller/auth/auth-server";
+import { env } from "@dashseller/env/server";
 import { createContext } from "@dashseller/trpc/context";
 import { appRouter } from "@dashseller/trpc/routers/index";
 import { trpcServer } from "@hono/trpc-server";
@@ -11,8 +12,10 @@ trpcRoutes.use(
   trpcServer({
     router: appRouter,
     createContext: (_opts, context) => {
-      return createContext(context.req.raw.headers, (headers) =>
-        authServer.api.getSession({ headers })
+      return createContext(
+        context.req.raw.headers,
+        (headers) => authServer.api.getSession({ headers }),
+        { encryptionKey: env.ENCRYPTION_SECRET }
       );
     },
   })
