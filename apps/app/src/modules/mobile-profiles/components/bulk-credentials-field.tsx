@@ -9,9 +9,8 @@ import { toast } from "sonner";
 import { bulkPlaceholder, mergeCaptureText } from "../bulk-merge";
 
 /**
- * The bulk pane's one input: the same slot as the single-profile dialog's
- * `CredentialsJsonField` — paste, drop, or pick — except it takes several
- * files and appends each one's entries to whatever the pane already holds.
+ * The bulk pane's one input — paste, drop, or pick — taking several files and
+ * appending each one's entries to whatever the pane already holds.
  *
  * Controlled, because the dialog parses on every keystroke and the row list
  * below is that parse.

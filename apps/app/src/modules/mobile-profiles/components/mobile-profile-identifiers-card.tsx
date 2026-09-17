@@ -1,7 +1,5 @@
-import { Button } from "@sparkyidea/ui/components/button";
 import {
   Card,
-  CardAction,
   CardContent,
   CardDescription,
   CardHeader,
@@ -12,10 +10,8 @@ import { DetailRow } from "./detail-row";
 
 export function MobileProfileIdentifiersCard({
   profile,
-  onReplace,
 }: {
   profile: MobileProfileData;
-  onReplace?: () => void;
 }) {
   const entries = Object.entries(profile.identifiers ?? {});
 
@@ -27,13 +23,6 @@ export function MobileProfileIdentifiersCard({
           Stored encrypted. Only device identifiers are shown; secrets are never
           returned.
         </CardDescription>
-        {onReplace && (
-          <CardAction>
-            <Button onClick={onReplace} size="sm" variant="outline">
-              Replace…
-            </Button>
-          </CardAction>
-        )}
       </CardHeader>
       <CardContent className="flex flex-col gap-3">
         {profile.credentialsReadable ? (
@@ -53,7 +42,7 @@ export function MobileProfileIdentifiersCard({
         ) : (
           <p className="text-destructive text-sm">
             Credentials could not be decrypted with this server's encryption
-            key. Replace them to restore scanning for this profile.
+            key. Delete this profile and upload the capture again.
           </p>
         )}
       </CardContent>

@@ -91,9 +91,9 @@ export function MobileProfileStatusForm({
           </Button>
         </div>
         <FieldDescription>
-          Reviving does not clear failure counters — use Reset failures.
-          Changing status aborts a scan currently using this profile; it retries
-          in 20 minutes.
+          Reviving does not clear failure counters — use Reset failures. A scan
+          already using this profile finishes its run; the next run honours the
+          new status.
         </FieldDescription>
       </Field>
     </form>

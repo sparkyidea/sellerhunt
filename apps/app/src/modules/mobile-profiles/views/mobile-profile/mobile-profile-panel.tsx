@@ -37,21 +37,14 @@ export function MobileProfileDetailView({ id }: { id: number }) {
   const { data: profile } = useSuspenseQuery(
     trpc.mobileProfile.get.queryOptions({ id })
   );
-  const { actions, dialogs, openAssign, openReplace } = useMobileProfileActions(
-    profile,
-    {
-      onDeleted: () => router.push("/admin/mobile-profiles"),
-    }
-  );
+  const { actions, dialogs } = useMobileProfileActions(profile, {
+    onDeleted: () => router.push("/admin/mobile-profiles"),
+  });
 
   return (
     <>
       <MobileProfilePageHeader actions={actions} profile={profile} />
-      <MobileProfilePanelContent
-        onAssign={openAssign}
-        onReplace={openReplace}
-        profile={profile}
-      />
+      <MobileProfilePanelContent profile={profile} />
       {dialogs}
     </>
   );
@@ -69,10 +62,9 @@ export function MobileProfilePreviewView({
   const { data: profile } = useSuspenseQuery(
     trpc.mobileProfile.get.queryOptions({ id: parseProfileId(id) })
   );
-  const { actions, dialogs, openAssign, openReplace } = useMobileProfileActions(
-    profile,
-    { onDeleted: onClose }
-  );
+  const { actions, dialogs } = useMobileProfileActions(profile, {
+    onDeleted: onClose,
+  });
 
   return (
     <>
@@ -81,11 +73,7 @@ export function MobileProfilePreviewView({
         onClose={onClose}
         profile={profile}
       />
-      <MobileProfilePanelContent
-        onAssign={openAssign}
-        onReplace={openReplace}
-        profile={profile}
-      />
+      <MobileProfilePanelContent profile={profile} />
       {dialogs}
     </>
   );
@@ -149,23 +137,16 @@ function MobileProfilePreviewHeader({
 
 function MobileProfilePanelContent({
   profile,
-  onAssign,
-  onReplace,
 }: {
   profile: MobileProfileData;
-  onAssign: () => void;
-  onReplace: () => void;
 }) {
   return (
     <PanelContent>
       <div className="@container">
         <div className="grid @3xl:grid-cols-7 grid-cols-1 gap-6">
           <div className="@3xl:col-span-4 flex min-w-0 flex-col gap-6">
-            <MobileProfileInfoCard onAssign={onAssign} profile={profile} />
-            <MobileProfileIdentifiersCard
-              onReplace={onReplace}
-              profile={profile}
-            />
+            <MobileProfileInfoCard profile={profile} />
+            <MobileProfileIdentifiersCard profile={profile} />
           </div>
           <div className="@3xl:col-span-3 flex min-w-0 flex-col gap-6">
             <MobileProfileHealthCard profile={profile} />

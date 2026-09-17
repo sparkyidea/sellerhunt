@@ -9,7 +9,6 @@ const ENCRYPTION_SECRET = "0123456789abcdef0123456789abcdef";
 const mocks = vi.hoisted(() => ({
   returning: vi.fn(),
   set: vi.fn(),
-  fencedProfileWhere: vi.fn(() => "fenced-where"),
   getScanToken: vi.fn(),
   /** Rows a `db.select()…limit()` resolves to, one call at a time. */
   rows: vi.fn(),
@@ -36,9 +35,6 @@ vi.mock("../db", () => {
 vi.mock("../box-name", () => ({ getBoxName: mocks.getBoxName }));
 vi.mock("@dashseller/db/lib/mobile-profile-claim", () => ({
   claimFreeProfile: mocks.claimFreeProfile,
-}));
-vi.mock("@dashseller/db/lib/mobile-profile-fence", () => ({
-  fencedProfileWhere: mocks.fencedProfileWhere,
 }));
 vi.mock("@dashseller/env/trigger-scan", () => ({
   env: {
@@ -73,7 +69,6 @@ function profile(
     failureReason: null,
     failureCount: 0,
     cooldownUntil: null,
-    revision: 3,
     createdAt: new Date("2026-01-01T00:00:00Z"),
     updatedAt: new Date("2026-01-01T00:00:00Z"),
     ...overrides,
@@ -83,7 +78,6 @@ function profile(
 beforeEach(() => {
   mocks.returning.mockReset();
   mocks.set.mockReset();
-  mocks.fencedProfileWhere.mockClear();
   mocks.getScanToken.mockReset();
   mocks.rows.mockReset();
   mocks.getBoxName.mockReset();
@@ -131,18 +125,6 @@ it("fails plainly when the box's profile is dead or it has none and nothing is f
   expect((none as Error).message).toContain("no unassigned active profile");
 });
 
-it("fences every write on the revision loaded with the row", async () => {
-  mocks.returning.mockResolvedValue([{ id: 1 }]);
-  const manager = new MobileProfileTokenManager(profile({ revision: 7 }));
-  await manager.markUsed();
-  await manager.markDataAuthFailure("401");
-  await manager.markDead("mint rejected");
-  expect(mocks.fencedProfileWhere).toHaveBeenCalledTimes(3);
-  for (const call of mocks.fencedProfileWhere.mock.calls) {
-    expect(call).toEqual([1, 7]);
-  }
-});
-
 it("keeps in-memory state in sync so consecutive soft failures count up", async () => {
   mocks.returning.mockResolvedValue([{ id: 1 }]);
   const manager = new MobileProfileTokenManager(profile());
@@ -159,7 +141,7 @@ it("keeps in-memory state in sync so consecutive soft failures count up", async 
   });
 });
 
-it("throws StaleMobileProfileError when the fenced write matches no row and leaves memory untouched", async () => {
+it("throws StaleMobileProfileError when the row is gone and leaves memory untouched", async () => {
   const manager = new MobileProfileTokenManager(profile());
   mocks.returning.mockResolvedValueOnce([]);
   await expect(manager.markSoftFailure("429")).rejects.toBeInstanceOf(
@@ -171,7 +153,7 @@ it("throws StaleMobileProfileError when the fenced write matches no row and leav
   expect(mocks.set.mock.calls.at(-1)?.[0]).toMatchObject({ failureCount: 1 });
 });
 
-it("refuses to persist a freshly minted bearer once an admin changed the row", async () => {
+it("refuses to persist a freshly minted bearer once the row is gone", async () => {
   const credentials = await encryptSecret(
     JSON.stringify({
       clientId: "c",

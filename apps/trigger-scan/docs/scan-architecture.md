@@ -107,7 +107,7 @@ skip one sweep as `in-flight-unknown` and continue because its inputs already ex
 | Exact seller-detail 404 | Persist bare seller if needed; stamp; `seller-gone` |
 | Listing parse/other failure | Finish healthy IDs and extraction, then `ListingBatchError` |
 | Persona-level 401/403/429/5xx | Route once; stop further requests on that persona; finish usable downstream work; throw |
-| Profile changed by admin (`revision` mismatch on a fenced write) | Throw `StaleMobileProfileError`; stop using that persona; retry after 20 minutes with a fresh load |
+| Profile deleted by admin (a worker write matches no row) | Throw `StaleMobileProfileError`; stop using that persona; retry after 20 minutes with a fresh load |
 | In-flight dependency only | `ScanIncompleteError(in-flight)`; retry after 20 minutes |
 | Failed child, lookup, pagination | Throw; leave parent stale |
 
@@ -154,8 +154,9 @@ the environment limit. Throughput is therefore bounded by the live persona pool,
 not by the queues: runs that land on the same box share that box's one
 `mobile_profile`, so a box can drive its persona with more than one run at a time.
 Persona failure bookkeeping is last-write-wins (`markSoftFailure` computes the next
-`failure_count` in memory, and worker writes do not bump `revision`), so overlapping
-runs on one persona can lose failure counts and delay cooldown or dead promotion. Each leaf processes its IDs sequentially;
+`failure_count` in memory, and admin status changes and failure resets are not fenced
+against it), so overlapping runs on one persona can lose failure counts and delay
+cooldown or dead promotion. Each leaf processes its IDs sequentially;
 this does not establish physical placement or request serialization across runs.
 
 Cron queries visible in-flight work and removes busy references from its selected

@@ -17,7 +17,7 @@ move.
 | ------------------- | -------------------- | -------------------------------------------------------------------- |
 | `apps/api`          | Hono backend         | Only backend. Mounts `/api/auth` (better-auth), `/trpc`, `/health`.  |
 | `apps/app`          | Next.js (App Router) | User and admin app — `/explorer/listings`, `/settings/*`. Admin routes under `admin` at `/admin/mobile-profiles`. Port 3002. (`web`/`www` is reserved for a marketing site.) |
-| `apps/trigger-scan` | Trigger.dev worker   | Standalone deploy target (`@dashseller/trigger-scan`), self-hosted at `https://trigger.sparkyidea.com`. Nothing imports it — cron-driven. `src/workflows/scan/`, `nodes/scan/`, `keywords/` (OpenAI keyword extraction: prompt + schema, pure LLM stage, client), `scripts/try-keywords.ts` (`keywords:try` prompt tryout), `utils/` (`mobile-profile-manager.ts`, `box-name.ts`). Secret crypto and the worker-hostname check live in `packages/db/src/lib/`. |
+| `apps/trigger-scan` | Trigger.dev worker   | Standalone deploy target (`@dashseller/trigger-scan`), self-hosted at `https://trigger.sparkyidea.com`. Nothing imports it — cron-driven. `src/workflows/scan/`, `nodes/scan/`, `keywords/` (OpenAI keyword extraction: prompt + schema, pure LLM stage, client), `scripts/try-keywords.ts` (`keywords:try` prompt tryout), `utils/` (`mobile-profile-manager.ts`, `box-name.ts`). Secret crypto lives in `packages/db/src/lib/`. |
 
 ### Packages
 
@@ -25,7 +25,7 @@ move.
 | ----------------------------- | ----------------------------- | ------------------------------------------------------------------------------------------------ |
 | `@dashseller/trpc`            | `packages/trpc/src/`          | tRPC routers (`routers/`), `context.ts`, `index.ts` exports `router`/`publicProcedure`/`protectedProcedure`/`adminProcedure`/`permissionProcedure(perms)`. `appRouter` in `routers/index.ts` = `{ healthCheck, scanListing, mobileProfile }`. Query builders in `lib/`. |
 | `@dashseller/auth`            | `packages/auth/src/`          | better-auth server config (`auth-server.ts`), shared client factory (`auth-client.ts`, `buildAuthClient`), role helpers (`lib/auth/roles.ts`), access control (`lib/auth/permissions.ts`: `statement`, `ac`, `roles`, `hasPermission`), UI components (`components/`), UI plugins (`lib/auth/`). No organization plugin. |
-| `@dashseller/db`              | `packages/db/src/`            | Drizzle schema (`schema/{auth,mobile-profile,scan}.ts`; `lib/secret-crypto.ts` (JWE encrypt/decrypt for `mobile_profile`, shared by worker, seed and tRPC), `lib/worker-hostname.ts` (hostname check for `mobile_profile.assigned_worker`); `scan_keyword` doubles as the LLM-learned keyword pool, `scan_listing.keyword_id` links listings), migrations (`migrations/`), client (`index.ts`, `client.ts`), seeds (`seed/{scan,mobile-profile}.ts`). |
+| `@dashseller/db`              | `packages/db/src/`            | Drizzle schema (`schema/{auth,mobile-profile,scan}.ts`; `lib/secret-crypto.ts` (JWE encrypt/decrypt for `mobile_profile`, shared by worker, seed and tRPC), `lib/mobile-profile-claim.ts` (a box claims its own row); `scan_keyword` doubles as the LLM-learned keyword pool, `scan_listing.keyword_id` links listings), migrations (`migrations/`), client (`index.ts`, `client.ts`), seeds (`seed/{scan,mobile-profile}.ts`). |
 | `@sparkyidea/dataview`        | `packages/dataview/src/`      | Filtering / pagination / grouping abstraction. `components/{views,toolbars,skeletons,ui}`, `hooks/`, `parsers/`, `validators/`, `types/`. |
 | `@sparkyidea/ui`              | `packages/ui/src/`            | shadcn-based primitives (`components/`), icons, `lib/utils.ts` (`cn`), styles.                   |
 | `@dashseller/env`             | `packages/env/src/`           | T3 env validation. Per-target files: `app.ts` (user and admin UI), `server.ts`, `db.ts`, `trigger-scan.ts`.         |
@@ -49,7 +49,7 @@ move.
 ### tRPC routers (in `packages/trpc/src/routers/`)
 
 - `scan-listing` — the explorer's read API (`get`, `getMany`, `getGroup`), all `publicProcedure`.
-- `mobile-profile` — admin CRUD over the persona pool (`get`, `getMany`, `create`, `update`, `replaceCredentials`, `resetFailures`, `resetFailuresMany`, `delete`), each `permissionProcedure({ mobileProfile: [verb] })`; ops mutations are `update`.
+- `mobile-profile` — admin CRUD over the persona pool (`get`, `getMany`, `create`, `createMany`, `update` (status only), `resetFailures`, `resetFailuresMany`, `delete`, `deleteMany`), each `permissionProcedure({ mobileProfile: [verb] })`; ops mutations are `update`. No credential replace and no manual worker assignment: delete and upload again.
 
 ### Trigger.dev scan workflows (in `apps/trigger-scan/src/workflows/`)
 

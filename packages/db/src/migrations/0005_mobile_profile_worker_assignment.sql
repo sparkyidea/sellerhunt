@@ -8,10 +8,9 @@
 -- them, so the text id is dropped and a fresh identity column becomes the
 -- primary key: the database numbers every row, and that number is how the
 -- admin UI, URLs and logs name a profile. `label` goes with the old id (rows
--- are numbered, not named); `assigned_worker` and `revision` arrive for worker
--- claims and the worker/admin write fence. The remaining statements are
--- drizzle-kit's, reordered so the column changes precede the index.
-ALTER TABLE "mobile_profile" ADD COLUMN "revision" integer DEFAULT 0 NOT NULL;--> statement-breakpoint
+-- are numbered, not named); `assigned_worker` arrives for the box's own claim.
+-- The remaining statements are drizzle-kit's, reordered so the column changes
+-- precede the index.
 ALTER TABLE "mobile_profile" ADD COLUMN "assigned_worker" text;--> statement-breakpoint
 CREATE UNIQUE INDEX "mobile_profile_app_assigned_worker_uidx" ON "mobile_profile" USING btree ("app","assigned_worker");--> statement-breakpoint
 ALTER TABLE "mobile_profile" DROP COLUMN "label";--> statement-breakpoint

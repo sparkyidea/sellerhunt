@@ -25,7 +25,3 @@ export const STATUS_LABELS = {
   active: "Active",
   dead: "Dead",
 } as const;
-
-/** Single source for every form hint about what the worker assignment means. */
-export const ASSIGNED_WORKER_HELP =
-  "A scan box uses the profile whose assigned worker equals its hostname exactly. A box with no profile claims the lowest-numbered unassigned one on its next run.";

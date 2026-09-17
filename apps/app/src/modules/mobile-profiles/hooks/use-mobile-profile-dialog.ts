@@ -5,9 +5,8 @@ import { create } from "zustand";
  * (see `WidgetProvider`), so any call site opens it without owning open state.
  *
  * There is no single-profile create path any more: captures arrive per box, in
- * batches, and every entry carries only its app and credentials. Replacing the
- * credentials of one existing profile is a different act — see
- * [useReplaceCredentialsDialog].
+ * batches, and every entry carries only its app and credentials. Nothing
+ * edits a profile's credentials afterwards — delete it and upload again.
  */
 interface MobileProfileDialogStore {
   isOpen: boolean;

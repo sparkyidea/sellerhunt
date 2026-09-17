@@ -100,8 +100,7 @@ Both table types agree on these columns:
 | `status` | enum (`active` \| `dead`) | Pool inclusion flag |
 | `cooldown_until` | timestamptz nullable | Soft-failure cooldown |
 | `failure_count` | int | Consecutive failures; promote to `dead` past a threshold |
-| `assigned_worker` | text nullable | Hostname of the scan box that owns the persona; unique per `app`. Null = unassigned, claimable by the next box without one. |
-| `revision` | int | Optimistic-concurrency fence between worker and admin writes (see below). |
+| `assigned_worker` | text nullable | Hostname of the scan box that owns the persona; unique per `app`, written only by the box's own claim. Null = unassigned, claimable by the next box without one. |
 
 The shared `access_token` + `access_token_expires_at` columns let the TS contract overlap:
 
@@ -119,18 +118,17 @@ The `refresh_token` + `refresh_token_expires_at` pair has the same shape on both
 
 Everything in `access_token`, `refresh_token`, and `credentials` is encrypted at rest with `env.ENCRYPTION_SECRET` via `encryptSecret`/`decryptSecret` in `packages/db/src/lib/secret-crypto.ts` (shared by the scan worker, the DB seed and the tRPC admin router — each passes its own deployment's `ENCRYPTION_SECRET`, which must be the same value). Never write plaintext into these columns.
 
-### Revision fence (worker vs. admin writes)
+### Worker vs. admin writes (no fence)
 
-`mobile_profile.revision` is an optimistic-concurrency counter. The worker loads
-a row once per run and keeps credentials, tokens and failure bookkeeping in
-memory. Admin mutations that invalidate that view — replace credentials, reset
-failures, change status, move the row to another box — bump `revision`. Every
-worker write goes through `fencedProfileWhere(id, revision)`
-(`packages/db/src/lib/mobile-profile-fence.ts`); zero rows →
-`StaleMobileProfileError` → the run stops using the persona and Trigger retries
-after 20 minutes with a fresh load. Reassignment bumps on purpose: worker writes
-are id-keyed, so without it a run on the old box would keep writing while the
-new box loads the same persona — one device identity on two machines.
+The worker loads its row once per run and keeps credentials, tokens and failure
+bookkeeping in memory; every worker write is `WHERE id = $1`. The admin surface
+never changes what a run holds: credentials and the box are fixed for the row's
+life (a capture that must change is deleted and uploaded again; a box claims its
+own row). The two admin writes that remain — status and failure reset — are
+last-write-wins against the run's bookkeeping, and the next load honours the
+row. A worker write that matches zero rows means the persona was deleted:
+`StaleMobileProfileError`, the run stops using it, and Trigger retries after 20
+minutes with a fresh load.
 
 ### The TokenManager loop (shared shape, separate implementations)
 

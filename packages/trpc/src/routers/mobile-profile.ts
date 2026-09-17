@@ -1,11 +1,9 @@
 import { db } from "@dashseller/db";
-import { isUniqueViolation } from "@dashseller/db/lib/pg-errors";
 import { decryptSecret, encryptSecret } from "@dashseller/db/lib/secret-crypto";
-import { isWorkerHostname } from "@dashseller/db/lib/worker-hostname";
 import { mobileProfile, type SelectMobileProfile } from "@dashseller/db/schema";
 import { getCursorParams } from "@sparkyidea/dataview/types";
 import { TRPCError } from "@trpc/server";
-import { and, eq, inArray, sql } from "drizzle-orm";
+import { and, eq, inArray } from "drizzle-orm";
 import { z } from "zod";
 import { permissionProcedure, router } from "../index";
 import { buildWhere } from "../lib/build-filter";
@@ -22,16 +20,17 @@ import { getManyInput } from "../lib/schemas";
 /**
  * Admin CRUD over the `mobile_profile` persona pool. Every procedure names
  * its `mobileProfile` verb via `permissionProcedure`. Ciphertext columns never
- * leave this file; credentials are
- * encrypted on write with `ctx.encryptionKey` and only an allowlist of
- * identifiers is ever decrypted for display.
+ * leave this file; credentials are encrypted on write with
+ * `ctx.encryptionKey` and only an allowlist of identifiers is ever decrypted
+ * for display.
  *
- * Mutations that invalidate a running worker's in-memory view bump
- * `revision` (see `fencedProfileWhere` in `@dashseller/db`); the worker's next
- * write then fails closed instead of undoing the admin change.
+ * A persona's credentials and its box are fixed for the row's life: there is
+ * no replace and no manual assignment. A capture that must change is deleted
+ * and uploaded again; a box claims its own row. Status and failure
+ * bookkeeping are the only admin writes, and they are not fenced against a
+ * run in flight — the worker's writes are id-keyed and last-write-wins, and a
+ * run whose row was deleted underneath it stops at its next write.
  */
-
-const WORKER_UNIQUE_INDEX = "mobile_profile_app_assigned_worker_uidx";
 
 /** The database-assigned profile number — the id everywhere, "#12" on screen. */
 const profileId = z.number().int().positive();
@@ -39,23 +38,10 @@ const idInput = z.object({ id: profileId });
 /** Bulk ops take ids the table already listed, so one page is the natural cap. */
 const idsInput = z.object({ ids: z.array(profileId).min(1).max(100) });
 /**
- * A box hostname as the `boxinfo` sidecar reports it. Validated so a typo
- * cannot produce an assignment no box will ever match; `null` unassigns.
- */
-const assignedWorkerSchema = z
-  .string()
-  .trim()
-  .refine(isWorkerHostname, {
-    message:
-      "Not a hostname: lowercase letters, digits and hyphens only, up to 63",
-  })
-  .nullable();
-
-/**
  * One capture entry as the bulk pane reads it: the file carries its own app
  * and the credentials, nothing else. The profile's number (`id`) comes from
- * the database, and no worker — upload never assigns; the operator does that
- * from the profile afterwards.
+ * the database, and no worker — upload never assigns; the next box without a
+ * row for the app claims it.
  */
 const entryInput = credentialsInputSchema;
 
@@ -82,9 +68,6 @@ function profileCursor(value: string | undefined): string | undefined {
   return value;
 }
 
-/** `revision + 1` — fences out runs that loaded the row before this write. */
-const bumpRevision = { revision: sql`${mobileProfile.revision} + 1` };
-
 /** Strip ciphertext columns; expose presence booleans instead. */
 function toPublic(row: SelectMobileProfile) {
   const { credentials: _credentials, accessToken, refreshToken, ...rest } = row;
@@ -108,13 +91,6 @@ async function requireProfile(id: number): Promise<SelectMobileProfile> {
     });
   }
   return row;
-}
-
-function workerConflict(app: string, hostname: string): TRPCError {
-  return new TRPCError({
-    code: "CONFLICT",
-    message: `Box ${hostname} already has a ${app} profile`,
-  });
 }
 
 function firstRow<T>(rows: T[]): T {
@@ -148,8 +124,8 @@ async function decryptIdentifiers(
 }
 
 // One procedure per statement verb (packages/auth lib/auth/permissions.ts).
-// Operational mutations — reset failures, replace credentials — are `update`:
-// they change the row, never its identity.
+// Operational mutations — change status, reset failures — are `update`: they
+// change the row's bookkeeping, never its identity or its credentials.
 const readProfiles = permissionProcedure({ mobileProfile: ["read"] });
 const createProfiles = permissionProcedure({ mobileProfile: ["create"] });
 const updateProfiles = permissionProcedure({ mobileProfile: ["update"] });
@@ -267,85 +243,18 @@ export const mobileProfileRouter = router({
     }),
 
   /**
-   * Worker assignment and/or status. `app` is immutable. A status change
-   * bumps `revision` (a running worker's view of "active" is now wrong), and
-   * so does a reassignment: a run on the old box still holds the row in
-   * memory, and without the bump its fenced writes would keep succeeding
-   * while the new box loads the same persona — one device identity on two
-   * machines. With it, that run fails its next write, stops, and retries on
-   * whatever its box owns then. Writing the same value again bumps nothing.
-   * `assignedWorker: null` unassigns.
+   * Status only: revive a dead persona or retire an active one. `app`,
+   * credentials and the box are immutable. Not fenced against a run in
+   * flight: a scan already using the row finishes its run, and the next load
+   * honours the new status (a dead row is never selected or claimed).
    */
   update: updateProfiles
-    .input(
-      idInput
-        .extend({
-          assignedWorker: assignedWorkerSchema.optional(),
-          status: mobileProfileStatusSchema.optional(),
-        })
-        .refine(
-          (value) =>
-            value.assignedWorker !== undefined || value.status !== undefined,
-          { message: "Nothing to update" }
-        )
-    )
+    .input(idInput.extend({ status: mobileProfileStatusSchema }))
     .mutation(async ({ input }) => {
-      const row = await requireProfile(input.id);
-      const statusChanged =
-        input.status !== undefined && input.status !== row.status;
-      const workerChanged =
-        input.assignedWorker !== undefined &&
-        input.assignedWorker !== row.assignedWorker;
-      try {
-        const rows = await db
-          .update(mobileProfile)
-          .set({
-            ...(input.assignedWorker === undefined
-              ? {}
-              : { assignedWorker: input.assignedWorker }),
-            ...(input.status === undefined ? {} : { status: input.status }),
-            ...(statusChanged || workerChanged ? bumpRevision : {}),
-          })
-          .where(eq(mobileProfile.id, input.id))
-          .returning();
-        return toPublic(firstRow(rows));
-      } catch (error) {
-        if (isUniqueViolation(error, WORKER_UNIQUE_INDEX)) {
-          throw workerConflict(row.app, input.assignedWorker ?? "");
-        }
-        throw error;
-      }
-    }),
-
-  /**
-   * Full credential set for the row's app. Also drops the cached bearer and
-   * refresh token (they belonged to the previous persona) and bumps
-   * `revision` so a run still holding the old capture cannot write back.
-   */
-  replaceCredentials: updateProfiles
-    .input(idInput.and(credentialsInputSchema))
-    .mutation(async ({ ctx, input }) => {
-      const row = await requireProfile(input.id);
-      if (row.app !== input.app) {
-        throw new TRPCError({
-          code: "BAD_REQUEST",
-          message: `Profile app is ${row.app}; credentials were for ${input.app}`,
-        });
-      }
-      const encrypted = await encryptSecret(
-        JSON.stringify(input.credentials),
-        ctx.encryptionKey
-      );
+      await requireProfile(input.id);
       const rows = await db
         .update(mobileProfile)
-        .set({
-          credentials: encrypted,
-          accessToken: null,
-          accessTokenExpiresAt: null,
-          refreshToken: null,
-          refreshTokenExpiresAt: null,
-          ...bumpRevision,
-        })
+        .set({ status: input.status })
         .where(eq(mobileProfile.id, input.id))
         .returning();
       return toPublic(firstRow(rows));
@@ -361,7 +270,6 @@ export const mobileProfileRouter = router({
         cooldownUntil: null,
         failureReason: null,
         failedAt: null,
-        ...bumpRevision,
       })
       .where(eq(mobileProfile.id, input.id))
       .returning();
@@ -379,7 +287,6 @@ export const mobileProfileRouter = router({
           cooldownUntil: null,
           failureReason: null,
           failedAt: null,
-          ...bumpRevision,
         })
         .where(inArray(mobileProfile.id, input.ids))
         .returning({ id: mobileProfile.id });

@@ -120,8 +120,8 @@ views by following `packages/dataview/src/components/views/`, not raw
   `packages/db/src/lib/secret-crypto.ts` (shared with the seed and the tRPC
   admin router). A box selects the persona whose `assigned_worker` equals its
   hostname exactly, claiming a free one on first run
-  (`packages/db/src/lib/mobile-profile-claim.ts`); the hostname check the
-  admin UI applies is `packages/db/src/lib/worker-hostname.ts`. See the
+  (`packages/db/src/lib/mobile-profile-claim.ts`); nothing else writes the
+  assignment. See the
   [scan architecture](../apps/trigger-scan/docs/scan-architecture.md) for waiting
   completion contracts and deployment prerequisites.
 - **Keywords as knowledge** (`apps/trigger-scan/src/keywords/`) —

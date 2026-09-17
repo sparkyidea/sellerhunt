@@ -1,5 +1,5 @@
 {
-  "id": "cb03b564-676c-4e45-8899-d671cae2987a",
+  "id": "987b82e8-fea8-4694-a7e3-ee666112542a",
   "prevId": "aded002a-d497-4c41-8307-4354a5b14bda",
   "version": "7",
   "dialect": "postgresql",
@@ -758,13 +758,6 @@
           "type": "timestamp",
           "primaryKey": false,
           "notNull": false
-        },
-        "revision": {
-          "name": "revision",
-          "type": "integer",
-          "primaryKey": false,
-          "notNull": true,
-          "default": 0
         },
         "created_at": {
           "name": "created_at",

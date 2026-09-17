@@ -10,8 +10,8 @@ import { parseRoles } from "./roles";
  *
  * Shape: resource × CRUD verb. `defaultStatements` (`user`, `session`) stay
  * in so the admin UI plugin's ban / impersonate / set-role keep working.
- * Operational mutations on a resource (reset failures, evict a bearer,
- * replace credentials) are `update`.
+ * Operational mutations on a resource (change status, reset failures) are
+ * `update`.
  */
 export const statement = {
   ...defaultStatements,

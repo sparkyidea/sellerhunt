@@ -35,7 +35,6 @@
  */
 
 import { claimFreeProfile } from "@dashseller/db/lib/mobile-profile-claim";
-import { fencedProfileWhere } from "@dashseller/db/lib/mobile-profile-fence";
 import { decryptSecret, encryptSecret } from "@dashseller/db/lib/secret-crypto";
 import type {
   EbayHmacCredentials,
@@ -128,22 +127,22 @@ export class MobileProfileTokenManager {
   }
 
   /**
-   * Every write to this row goes through here. The statement is fenced on
-   * `revision` (`fencedProfileWhere`): if an admin replaced the credentials,
-   * evicted the bearer, reset failures or changed the status since this run
-   * loaded the row, the in-memory persona is stale and the update matches no
-   * row — throw `StaleMobileProfileError` rather than overwrite the admin's
-   * change (Trigger retries with a fresh load, see `scanCatchError`). On
+   * Every write to this row goes through here, keyed by id. Zero rows means
+   * an admin deleted the persona since this run loaded it: throw
+   * `StaleMobileProfileError` so the run stops using it and Trigger retries
+   * with a fresh load (see `scanCatchError`). Admin status changes and
+   * failure resets are not fenced — they and this run's bookkeeping are
+   * last-write-wins, and the next load honours whatever is in the row. On
    * success the change is mirrored into `this.profile` so later writes in the
    * same run build on current values.
    */
-  private async writeFenced(
-    set: Partial<Omit<SelectMobileProfile, "id" | "revision">>
+  private async writeRow(
+    set: Partial<Omit<SelectMobileProfile, "id">>
   ): Promise<void> {
     const updated = await db
       .update(mobileProfile)
       .set(set)
-      .where(fencedProfileWhere(this.profile.id, this.profile.revision))
+      .where(eq(mobileProfile.id, this.profile.id))
       .returning({ id: mobileProfile.id });
     if (updated.length === 0) {
       throw new StaleMobileProfileError(this.profile.id, this.profile.app);
@@ -157,7 +156,7 @@ export class MobileProfileTokenManager {
    */
   async markUsed(): Promise<void> {
     const now = new Date();
-    await this.writeFenced({
+    await this.writeRow({
       lastUsedAt: now,
       lastSuccessAt: now,
       failureCount: 0,
@@ -181,7 +180,7 @@ export class MobileProfileTokenManager {
     const nextCount = this.profile.failureCount + 1;
     const shouldPromote = nextCount >= promoteAfter;
 
-    await this.writeFenced({
+    await this.writeRow({
       lastUsedAt: now,
       failureCount: nextCount,
       failureReason: reason.slice(0, 500),
@@ -207,7 +206,7 @@ export class MobileProfileTokenManager {
    * directly — the device credentials are toast.
    */
   async markDataAuthFailure(reason: string): Promise<void> {
-    await this.writeFenced({
+    await this.writeRow({
       accessToken: null,
       accessTokenExpiresAt: null,
       failureReason: reason.slice(0, 500),
@@ -221,7 +220,7 @@ export class MobileProfileTokenManager {
    */
   async markDead(reason: string): Promise<void> {
     const now = new Date();
-    await this.writeFenced({
+    await this.writeRow({
       status: "dead",
       lastUsedAt: now,
       failedAt: now,
@@ -503,7 +502,7 @@ export class MobileProfileTokenManager {
 
   /**
    * Encrypt and persist the access + (optional) refresh token from a
-   * derive-bearer result (fenced; `writeFenced` keeps in-memory state in sync).
+   * derive-bearer result (`writeRow` keeps in-memory state in sync).
    */
   private async persistTokenResult(result: ScanTokenResult): Promise<void> {
     const encryptedBearer = await encryptSecret(
@@ -515,7 +514,7 @@ export class MobileProfileTokenManager {
       : null;
     const refreshTokenExpiresAt = result.refreshTokenExpiresAt ?? null;
 
-    await this.writeFenced({
+    await this.writeRow({
       accessToken: encryptedBearer,
       accessTokenExpiresAt: result.expiresAt,
       refreshToken: encryptedRefreshToken,

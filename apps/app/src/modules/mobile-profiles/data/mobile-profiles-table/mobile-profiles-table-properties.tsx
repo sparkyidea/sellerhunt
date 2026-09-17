@@ -85,7 +85,6 @@ export const mobileProfilesTableProperties = [
     enableGroup: false,
     hidden: true,
   },
-  { key: "revision", name: "Rev", type: "number", enableGroup: false },
   {
     key: "hasRefreshToken",
     name: "Refresh token",

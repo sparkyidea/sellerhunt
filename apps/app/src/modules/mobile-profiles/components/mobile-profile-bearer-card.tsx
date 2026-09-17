@@ -52,11 +52,11 @@ export function MobileProfileBearerCard({
               : "—"
           }
         />
-        <DetailRow label="Revision" value={profile.revision} />
         <p className="text-muted-foreground text-xs leading-relaxed">
           Token values are never returned by the API. The scan worker owns this
           cache: it re-mints on expiry and drops the bearer itself on a 401 from
-          a data endpoint. Replace credentials to reset it from here.
+          a data endpoint. To start over, delete the profile and upload the
+          capture again.
         </p>
       </CardContent>
     </Card>

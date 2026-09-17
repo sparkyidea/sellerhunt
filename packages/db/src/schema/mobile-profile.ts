@@ -100,9 +100,9 @@ export const mobileProfile = pgTable(
      * Hostname of the scan box that owns this persona
      * (e.g. "w-00001-orc-e2cpu1ram1-sparkyideainc"), or null while unassigned.
      * `loadForThisBox` matches it exactly against the hostname the `boxinfo`
-     * sidecar reports. Never set by the upload: a box with no row for the
-     * app claims the lowest-numbered free one on its next run
-     * (`lib/mobile-profile-claim.ts`), and the admin UI can pin or move it.
+     * sidecar reports. Never set by the upload or the admin UI: a box with no
+     * row for the app claims the lowest-numbered free one on its next run
+     * (`lib/mobile-profile-claim.ts`), and keeps it until the row is deleted.
      */
     assignedWorker: text("assigned_worker"),
 
@@ -165,17 +165,6 @@ export const mobileProfile = pgTable(
      * selector skips it until the timestamp passes. Cleared on next success.
      */
     cooldownUntil: timestamp("cooldown_until"),
-    /**
-     * Optimistic-concurrency fence between the scan worker and the admin UI.
-     * The worker loads a row once per run and keeps credentials/tokens in
-     * memory; admin mutations that invalidate that view (credentials replaced,
-     * failures reset, status changed, worker reassigned) bump this counter. Every
-     * worker write is `WHERE id = $1 AND revision = $2`
-     * (`lib/mobile-profile-fence.ts`); zero rows → `StaleMobileProfileError`,
-     * the run stops using the persona and retries with a fresh load.
-     */
-    revision: integer("revision").notNull().default(0),
-
     createdAt: timestamp("created_at").defaultNow().notNull(),
     updatedAt: timestamp("updated_at")
       .defaultNow()

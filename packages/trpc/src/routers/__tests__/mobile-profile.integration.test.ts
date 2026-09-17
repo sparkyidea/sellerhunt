@@ -1,6 +1,5 @@
 import { db } from "@dashseller/db";
 import { claimFreeProfile } from "@dashseller/db/lib/mobile-profile-claim";
-import { fencedProfileWhere } from "@dashseller/db/lib/mobile-profile-fence";
 import { decryptSecret } from "@dashseller/db/lib/secret-crypto";
 import { mobileProfile } from "@dashseller/db/schema";
 import { migrateTestDb } from "@dashseller/db/testing";
@@ -14,7 +13,7 @@ import { appRouter } from "../index";
  * Router-level contract for the admin `mobileProfile` API against a real
  * Postgres (service DB from docker-compose.test.yml / CI). Covers the
  * boundaries the unit tests cannot: authorization, encrypted storage,
- * response redaction, mutation effects, and the worker-write fence.
+ * response redaction, mutation effects, and the worker claim statement.
  */
 
 const KEY = "integration-test-encryption-key-0123456789";
@@ -307,7 +306,6 @@ describe("create / get / getMany", () => {
     expect(created).toMatchObject({
       app: "ebay",
       status: "active",
-      revision: 0,
       hasCachedBearer: false,
       hasRefreshToken: false,
     });
@@ -368,27 +366,6 @@ describe("create / get / getMany", () => {
     expect(next.id).toBeGreaterThan(created.id);
   });
 
-  it("assigns and unassigns a worker hostname through update", async () => {
-    const created = await createProfile({
-      app: "shop",
-      credentials: shopCredentials,
-    });
-    const box = hostname();
-    const assigned = await admin.mobileProfile.update({
-      id: created.id,
-      assignedWorker: box,
-    });
-    expect(assigned.assignedWorker).toBe(box);
-    // A run on another box holding the row must stop using it.
-    expect(assigned.revision).toBe(1);
-
-    const unassigned = await admin.mobileProfile.update({
-      id: created.id,
-      assignedWorker: null,
-    });
-    expect(unassigned.assignedWorker).toBeNull();
-  });
-
   it("rejects a cursor that is not a profile id", async () => {
     for (const cursor of ["abc", "12abc", "0", "-1", "99999999999"]) {
       await expect(
@@ -400,53 +377,6 @@ describe("create / get / getMany", () => {
       cursor: { after: "2147483647" },
     });
     expect(page.items).toEqual([]);
-  });
-
-  it("rejects a worker value that is not a hostname", async () => {
-    const created = await createProfile({
-      app: "shop",
-      credentials: shopCredentials,
-    });
-    for (const bad of [
-      "w-00001 orc",
-      "box.example",
-      "-w-00001",
-      "",
-      // The sidecar reports lowercase and the match is case-sensitive.
-      "W-00001-ORC",
-    ]) {
-      await expect(
-        admin.mobileProfile.update({ id: created.id, assignedWorker: bad })
-      ).rejects.toMatchObject({ code: "BAD_REQUEST" });
-    }
-  });
-
-  it("returns CONFLICT when two profiles of one app claim the same box", async () => {
-    const box = hostname();
-    const first = await createProfile({
-      app: "shop",
-      credentials: shopCredentials,
-    });
-    await admin.mobileProfile.update({ id: first.id, assignedWorker: box });
-
-    const second = await createProfile({
-      app: "shop",
-      credentials: shopCredentials,
-    });
-    await expect(
-      admin.mobileProfile.update({ id: second.id, assignedWorker: box })
-    ).rejects.toMatchObject({ code: "CONFLICT" });
-
-    // Another app on the same box is its own persona.
-    const ebay = await createProfile({
-      app: "ebay",
-      credentials: ebayCredentials,
-    });
-    const shared = await admin.mobileProfile.update({
-      id: ebay.id,
-      assignedWorker: box,
-    });
-    expect(shared.assignedWorker).toBe(box);
   });
 
   it("rejects an hmacKey the signer would truncate", async () => {
@@ -476,44 +406,6 @@ describe("mutations", () => {
       .where(eq(mobileProfile.id, id));
   }
 
-  it("replaceCredentials re-encrypts, drops both tokens and bumps revision", async () => {
-    const created = await createProfile({
-      app: "shop",
-      credentials: shopCredentials,
-    });
-    await seedTokens(created.id);
-    const before = await rawRow(created.id);
-
-    const next = { ...shopCredentials, deviceName: "Apple iPhone 15" };
-    const updated = await admin.mobileProfile.replaceCredentials({
-      id: created.id,
-      app: "shop",
-      credentials: next,
-    });
-    expectRedacted(updated);
-    expect(updated.revision).toBe(before.revision + 1);
-    expect(updated.hasCachedBearer).toBe(false);
-    expect(updated.hasRefreshToken).toBe(false);
-
-    const row = await rawRow(created.id);
-    expect(row.credentials).not.toBe(before.credentials);
-    expect(JSON.parse(await decryptSecret(row.credentials, KEY))).toEqual(next);
-    expect(row.accessToken).toBeNull();
-    expect(row.accessTokenExpiresAt).toBeNull();
-    expect(row.refreshToken).toBeNull();
-    expect(row.refreshTokenExpiresAt).toBeNull();
-    // Failure bookkeeping is untouched by a credential swap.
-    expect(row.failureCount).toBe(2);
-
-    await expect(
-      admin.mobileProfile.replaceCredentials({
-        id: created.id,
-        app: "ebay",
-        credentials: ebayCredentials,
-      })
-    ).rejects.toMatchObject({ code: "BAD_REQUEST" });
-  });
-
   it("resetFailures clears only bookkeeping, never the token cache", async () => {
     const created = await createProfile({
       app: "shop",
@@ -521,8 +413,7 @@ describe("mutations", () => {
     });
     await seedTokens(created.id);
 
-    const reset = await admin.mobileProfile.resetFailures({ id: created.id });
-    expect(reset.revision).toBe(1);
+    await admin.mobileProfile.resetFailures({ id: created.id });
     const row = await rawRow(created.id);
     expect(row.failureCount).toBe(0);
     expect(row.failureReason).toBeNull();
@@ -533,40 +424,26 @@ describe("mutations", () => {
     expect(row.refreshToken).toBe("cached-refresh");
   });
 
-  it("update bumps revision on a status change and a reassignment, not on a no-op", async () => {
+  it("update changes status and nothing else", async () => {
     const created = await createProfile({
       app: "shop",
       credentials: shopCredentials,
     });
-    const box = hostname();
-    const assigned = await admin.mobileProfile.update({
-      id: created.id,
-      assignedWorker: box,
-    });
-    expect(assigned.revision).toBe(1);
-
-    const sameBox = await admin.mobileProfile.update({
-      id: created.id,
-      assignedWorker: box,
-    });
-    expect(sameBox.revision).toBe(1);
-
     const dead = await admin.mobileProfile.update({
       id: created.id,
       status: "dead",
     });
     expect(dead.status).toBe("dead");
-    expect(dead.revision).toBe(2);
-
-    const same = await admin.mobileProfile.update({
+    const revived = await admin.mobileProfile.update({
       id: created.id,
-      status: "dead",
+      status: "active",
     });
-    expect(same.revision).toBe(2);
+    expect(revived.status).toBe("active");
+    expect(revived.assignedWorker).toBeNull();
 
     await expect(
-      admin.mobileProfile.update({ id: created.id })
-    ).rejects.toMatchObject({ code: "BAD_REQUEST" });
+      admin.mobileProfile.update({ id: MISSING_ID, status: "dead" })
+    ).rejects.toMatchObject({ code: "NOT_FOUND" });
   });
 
   it("delete removes the row once and then reports NOT_FOUND", async () => {
@@ -583,58 +460,6 @@ describe("mutations", () => {
     await expect(
       admin.mobileProfile.get({ id: created.id })
     ).rejects.toMatchObject({ code: "NOT_FOUND" });
-  });
-});
-
-describe("worker fence", () => {
-  it("a worker write carrying the pre-mutation revision matches no row", async () => {
-    const created = await createProfile({
-      app: "shop",
-      credentials: shopCredentials,
-    });
-    await seedTokensFor(created.id);
-    const loadedByWorker = await rawRow(created.id);
-
-    await admin.mobileProfile.replaceCredentials({
-      id: created.id,
-      app: "shop",
-      credentials: shopCredentials,
-    });
-
-    // Exactly the statement MobileProfileTokenManager.writeFenced runs.
-    const staleWrite = await db
-      .update(mobileProfile)
-      .set({ accessToken: "stale-bearer-from-old-run" })
-      .where(fencedProfileWhere(created.id, loadedByWorker.revision))
-      .returning({ id: mobileProfile.id });
-    expect(staleWrite).toEqual([]);
-
-    const row = await rawRow(created.id);
-    expect(row.accessToken).toBeNull();
-
-    // A worker that reloaded the row writes through.
-    const freshWrite = await db
-      .update(mobileProfile)
-      .set({ lastUsedAt: new Date() })
-      .where(fencedProfileWhere(created.id, row.revision))
-      .returning({ id: mobileProfile.id });
-    expect(freshWrite).toHaveLength(1);
-  });
-
-  it("resetFailures fences out a stale run too", async () => {
-    const created = await createProfile({
-      app: "shop",
-      credentials: shopCredentials,
-    });
-    const loaded = await rawRow(created.id);
-    await admin.mobileProfile.resetFailures({ id: created.id });
-    const stale = await db
-      .update(mobileProfile)
-      .set({ failureCount: 99 })
-      .where(fencedProfileWhere(created.id, loaded.revision))
-      .returning({ id: mobileProfile.id });
-    expect(stale).toEqual([]);
-    expect((await rawRow(created.id)).failureCount).toBe(0);
   });
 });
 
@@ -691,25 +516,15 @@ describe("worker claim", () => {
       app: "shop",
       credentials: shopCredentials,
     });
-    await admin.mobileProfile.update({
-      id: taken.id,
-      assignedWorker: hostname(),
-    });
+    await db
+      .update(mobileProfile)
+      .set({ assignedWorker: hostname() })
+      .where(eq(mobileProfile.id, taken.id));
 
     expect(await claimFreeProfile(db, "shop", hostname())).toBeNull();
     for (const row of [dead, cooling]) {
       expect((await rawRow(row.id)).assignedWorker).toBeNull();
     }
-  });
-
-  it("does not bump revision: nothing had loaded the row yet", async () => {
-    const created = await createProfile({
-      app: "shop",
-      credentials: shopCredentials,
-    });
-    const claimed = await claimFreeProfile(db, "shop", hostname());
-    expect(claimed?.id).toBe(created.id);
-    expect(claimed?.revision).toBe(0);
   });
 
   it("settles concurrent claims from different boxes without sharing a row", async () => {
@@ -726,16 +541,6 @@ describe("worker claim", () => {
     expect(winners[0]?.id).toBe(created.id);
   });
 });
-
-async function seedTokensFor(id: number) {
-  await db
-    .update(mobileProfile)
-    .set({
-      accessToken: "cached-bearer",
-      accessTokenExpiresAt: new Date(Date.now() + 3_600_000),
-    })
-    .where(eq(mobileProfile.id, id));
-}
 
 describe("token fleet view", () => {
   /**
@@ -815,10 +620,9 @@ describe("token fleet view", () => {
     expect(page.items.map((item) => item.id)).toEqual([seeded.uncached]);
   });
 
-  it("resetFailuresMany clears backoff bookkeeping and bumps revision", async () => {
+  it("resetFailuresMany clears backoff bookkeeping", async () => {
     const app = `${APP_PREFIX}${counter}-reset`;
     const seeded = await seedRows(app);
-    const before = await rawRow(seeded.uncached);
 
     const result = await admin.mobileProfile.resetFailuresMany({
       ids: [seeded.uncached],
@@ -830,6 +634,5 @@ describe("token fleet view", () => {
     expect(row.cooldownUntil).toBeNull();
     expect(row.failureReason).toBeNull();
     expect(row.failedAt).toBeNull();
-    expect(row.revision).toBe(before.revision + 1);
   });
 });

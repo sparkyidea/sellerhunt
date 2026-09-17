@@ -31,9 +31,8 @@ import { BulkWritePass } from "./bulk-write-pass";
  * assigns: the database numbers each row, and a box is attached from the
  * profile afterwards.
  *
- * Replacing the credentials of a profile that already exists is a different
- * act with different consequences; it keeps its own dialog
- * (`ReplaceCredentialsDialog`).
+ * There is no way to change a profile's credentials afterwards: a capture
+ * that must change is deleted and uploaded again.
  */
 export function MobileProfileDialog() {
   const isOpen = useMobileProfileDialog((s) => s.isOpen);

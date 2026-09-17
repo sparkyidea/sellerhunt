@@ -1,7 +1,5 @@
-import { Button } from "@sparkyidea/ui/components/button";
 import {
   Card,
-  CardAction,
   CardContent,
   CardHeader,
   CardTitle,
@@ -12,22 +10,13 @@ import { DetailRow, formatDate } from "./detail-row";
 
 export function MobileProfileInfoCard({
   profile,
-  onAssign,
 }: {
   profile: MobileProfileData;
-  onAssign?: () => void;
 }) {
   return (
     <Card>
       <CardHeader>
         <CardTitle>Profile</CardTitle>
-        {onAssign && (
-          <CardAction>
-            <Button onClick={onAssign} size="sm" variant="outline">
-              {profile.assignedWorker ? "Reassign worker…" : "Assign worker…"}
-            </Button>
-          </CardAction>
-        )}
       </CardHeader>
       <CardContent className="flex flex-col gap-3">
         <DetailRow label="Number" mono value={profileNumber(profile.id)} />

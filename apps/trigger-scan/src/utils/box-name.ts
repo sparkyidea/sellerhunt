@@ -20,8 +20,7 @@ export function getBoxName(timeoutMs = 2000): Promise<string | null> {
 
 // The full hostname (e.g. `w-00001-orc-e2cpu1ram1-sparkyideainc`) is the
 // persona assignment key: `mobile_profile.assigned_worker` must equal it
-// exactly. The admin UI validates what it stores against
-// `@dashseller/db/lib/worker-hostname`.
+// exactly, and only the box's own claim ever writes it.
 
 async function fetchBoxName(timeoutMs: number): Promise<string | null> {
   try {

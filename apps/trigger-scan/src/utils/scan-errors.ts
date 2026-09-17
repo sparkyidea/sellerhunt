@@ -31,17 +31,17 @@ export class PersonaScanError extends Error {
 }
 
 /**
- * A fenced `mobile_profile` write matched zero rows: an admin replaced the
- * credentials, reset failures, changed the status or moved the row to another
- * box after this run loaded it. The in-memory persona is no longer trustworthy;
- * stop using it for this run and let Trigger retry with a fresh load.
+ * A `mobile_profile` write matched zero rows: an admin deleted the persona
+ * after this run loaded it. The in-memory persona is gone from the pool; stop
+ * using it for this run and let Trigger retry with a fresh load, which claims
+ * whatever the box owns then.
  */
 export class StaleMobileProfileError extends Error {
   readonly profileId: number;
   readonly app: string;
   constructor(profileId: number, app: string) {
     super(
-      `mobile profile ${profileId} (${app}) changed underneath this run (revision mismatch); reloading on retry`
+      `mobile profile ${profileId} (${app}) was deleted underneath this run (write matched no row); reloading on retry`
     );
     this.name = "StaleMobileProfileError";
     this.profileId = profileId;
