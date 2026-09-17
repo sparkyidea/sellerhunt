@@ -51,7 +51,7 @@ const mocks = vi.hoisted(() => ({
   markKeyword: vi.fn(),
   upsertSeller: vi.fn(),
 }));
-vi.mock("@dashseller/db", () => ({ db: mocks.db }));
+vi.mock("@dashseller/db/trigger", () => ({ db: mocks.db }));
 vi.mock("@trigger.dev/sdk", () => ({
   schemaTask: (definition: Definition) => {
     mocks.definitions.set(definition.id, definition);
@@ -70,6 +70,16 @@ vi.mock("../../../utils/machine-metadata", () => ({
 }));
 vi.mock("../../../utils/mobile-profile-manager", () => ({
   MobileProfileTokenManager: { loadForThisBox: mocks.load },
+}));
+vi.mock("../../../utils/scan-session", () => ({
+  createScanSession: () => ({
+    get: async () => {
+      const manager = await mocks.load();
+      const client = await manager.createScanClient();
+      return { client, manager };
+    },
+  }),
+  resumeScanSession: vi.fn(),
 }));
 vi.mock("../../../utils/scan-in-flight", () => ({
   inFlight: mocks.inFlight,

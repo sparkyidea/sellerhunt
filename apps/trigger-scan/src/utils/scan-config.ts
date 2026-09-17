@@ -14,8 +14,9 @@
  * request cap live in `keywords/extract-keywords.ts`; leaf fetches are always
  * sequential.
  */
-import { db } from "@dashseller/db";
+
 import { scanConfig } from "@dashseller/db/schema";
+import { db } from "@dashseller/db/trigger";
 import { eq } from "drizzle-orm";
 import { z } from "zod";
 

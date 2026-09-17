@@ -1,8 +1,9 @@
 /** Seller scan: successful returns account for stats, catalog, and listing children.
  * Waiting resource/queue behavior must be verified on the deployed server.
  */
-import { db } from "@dashseller/db";
+
 import { scanSeller } from "@dashseller/db/schema";
+import { db } from "@dashseller/db/trigger";
 import { logger, metadata, schemaTask, tags } from "@trigger.dev/sdk";
 import { and, eq } from "drizzle-orm";
 import { z } from "zod";
@@ -13,7 +14,6 @@ import {
 import { upsertScanSeller } from "../../nodes/scan/upsert-scan-seller";
 import { waitForListingBatches } from "../../nodes/scan/wait-for-listing-batches";
 import { setMachineMetadata } from "../../utils/machine-metadata";
-import { MobileProfileTokenManager } from "../../utils/mobile-profile-manager";
 import { assertScanEntitySupported } from "../../utils/scan-capabilities";
 import { isSellerNotFound } from "../../utils/scan-completion";
 import {
@@ -27,6 +27,8 @@ import {
   scanCatchError,
 } from "../../utils/scan-errors";
 import { olderSiblingRunning } from "../../utils/scan-in-flight";
+import type { ScanSessionResources } from "../../utils/scan-session";
+import { createScanSession, resumeScanSession } from "../../utils/scan-session";
 import { launchTags } from "../../utils/scan-tags";
 
 const scanListingsBySellerSchema = z.object({
@@ -41,10 +43,13 @@ export type ScanListingsBySellerPayload = z.infer<
 export const scanListingsBySeller = schemaTask({
   id: "scan-listings-by-seller",
   schema: scanListingsBySellerSchema,
-  queue: { concurrencyLimit: 1 },
-  machine: "small-1x",
-  retry: { maxAttempts: 3 },
+  machine: "micro",
+  retry: {
+    maxAttempts: 3,
+    outOfMemory: { machine: "small-1x" },
+  },
   catchError: scanCatchError,
+  onResume: resumeScanSession,
   run: async (payload, { ctx }) => {
     await setMachineMetadata();
     const { marketplace, sellerId } = payload;
@@ -67,8 +72,8 @@ export const scanListingsBySeller = schemaTask({
     if (olderRunId) {
       throw new ScanIncompleteError("in-flight", { sellerId, olderRunId });
     }
-    const manager = await MobileProfileTokenManager.loadForThisBox(marketplace);
-    const client = await manager.createScanClient();
+    const session = createScanSession(marketplace);
+    const { client, manager } = await session.get();
     let result: Awaited<ReturnType<typeof client.getSeller>>;
     try {
       result = await client.getSeller({ sellerId });
@@ -147,8 +152,8 @@ async function markSellerScanned(
 }
 const MAX_SELLER_PAGES = 1000;
 async function collectListingIds(
-  client: Awaited<ReturnType<MobileProfileTokenManager["createScanClient"]>>,
-  manager: MobileProfileTokenManager,
+  client: ScanSessionResources["client"],
+  manager: ScanSessionResources["manager"],
   sellerId: string,
   config: ScanConfig
 ): Promise<{ listingIds: Set<string>; complete: boolean; error?: Error }> {

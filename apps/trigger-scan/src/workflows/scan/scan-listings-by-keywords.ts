@@ -24,6 +24,7 @@ export const scanListingsByKeywords = schemaTask({
     factor: 2,
     minTimeoutInMs: 1000,
     maxTimeoutInMs: 10_000,
+    outOfMemory: { machine: "small-1x" },
   },
   run: async ({ marketplace, keywords, config }) => {
     assertScanEntitySupported(marketplace, "keyword");

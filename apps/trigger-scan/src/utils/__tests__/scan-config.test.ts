@@ -7,7 +7,7 @@ const db = vi.hoisted(() => ({
   where: vi.fn().mockReturnThis(),
   limit: vi.fn(),
 }));
-vi.mock("@dashseller/db", () => ({ db }));
+vi.mock("@dashseller/db/trigger", () => ({ db }));
 
 it("loads configuration without cooldown columns and ignores old inline fields", async () => {
   const row = {

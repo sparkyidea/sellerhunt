@@ -14,8 +14,9 @@
  * These reads do not claim work: two runs that both partition before either
  * persists can still scan the same entity. Durable ownership is Issue #11.
  */
-import { db } from "@dashseller/db";
+
 import { scanListing, scanSeller } from "@dashseller/db/schema";
+import { db } from "@dashseller/db/trigger";
 import { logger } from "@trigger.dev/sdk";
 import { and, eq, gt, inArray } from "drizzle-orm";
 import { chunk } from "../../utils/chunk";

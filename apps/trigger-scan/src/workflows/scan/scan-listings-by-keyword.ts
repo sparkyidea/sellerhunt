@@ -1,8 +1,9 @@
 /** Keyword scan waits for its listing checks and every required seller.
  * Active dependencies are incomplete until freshness or child completion proves otherwise.
  */
-import { db } from "@dashseller/db";
+
 import { scanKeyword } from "@dashseller/db/schema";
+import { db } from "@dashseller/db/trigger";
 import { logger, metadata, schemaTask, tags } from "@trigger.dev/sdk";
 import { and, eq } from "drizzle-orm";
 import { z } from "zod";
@@ -17,7 +18,6 @@ import {
 } from "../../nodes/scan/upsert-scan-keyword";
 import { waitForListingBatches } from "../../nodes/scan/wait-for-listing-batches";
 import { setMachineMetadata } from "../../utils/machine-metadata";
-import { MobileProfileTokenManager } from "../../utils/mobile-profile-manager";
 import { batchWaves } from "../../utils/scan-batch";
 import { assertScanEntitySupported } from "../../utils/scan-capabilities";
 import {
@@ -33,6 +33,8 @@ import {
   scanCatchError,
 } from "../../utils/scan-errors";
 import { inFlight, olderSiblingRunning } from "../../utils/scan-in-flight";
+import type { ScanSessionResources } from "../../utils/scan-session";
+import { createScanSession, resumeScanSession } from "../../utils/scan-session";
 import { launchTags } from "../../utils/scan-tags";
 import { scanListingsBySeller } from "./scan-listings-by-seller";
 
@@ -48,10 +50,13 @@ export type ScanListingsByKeywordPayload = z.infer<
 export const scanListingsByKeyword = schemaTask({
   id: "scan-listings-by-keyword",
   schema: scanListingsByKeywordSchema,
-  queue: { concurrencyLimit: 1 },
   machine: "micro",
-  retry: { maxAttempts: 3 },
+  retry: {
+    maxAttempts: 3,
+    outOfMemory: { machine: "small-1x" },
+  },
   catchError: scanCatchError,
+  onResume: resumeScanSession,
   run: async (payload, { ctx }) => {
     const { marketplace, keyword } = payload;
     assertScanEntitySupported(marketplace, "keyword");
@@ -72,8 +77,8 @@ export const scanListingsByKeyword = schemaTask({
     if (olderRunId) {
       throw new ScanIncompleteError("in-flight", { keyword, olderRunId });
     }
-    const manager = await MobileProfileTokenManager.loadForThisBox(marketplace);
-    const client = await manager.createScanClient();
+    const session = createScanSession(marketplace);
+    const { client, manager } = await session.get();
     const search = await paginateListingIds(client, manager, keyword, config);
     const { verdicts, stale } = await partitionFreshListings(
       marketplace,
@@ -125,8 +130,8 @@ export const scanListingsByKeyword = schemaTask({
 });
 
 async function paginateListingIds(
-  client: Awaited<ReturnType<MobileProfileTokenManager["createScanClient"]>>,
-  manager: MobileProfileTokenManager,
+  client: ScanSessionResources["client"],
+  manager: ScanSessionResources["manager"],
   keyword: string,
   config: ScanConfig
 ): Promise<{ listingIds: Set<string>; error?: Error }> {

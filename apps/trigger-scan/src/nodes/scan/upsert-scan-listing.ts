@@ -18,12 +18,13 @@
  *
  * Money is stored as integer cents.
  */
-import { db } from "@dashseller/db";
+
 import {
   scanListing,
   scanListingSnapshot,
   scanSeller,
 } from "@dashseller/db/schema";
+import { db } from "@dashseller/db/trigger";
 import { and, eq, sql } from "drizzle-orm";
 
 export interface UpsertScanListingInput {

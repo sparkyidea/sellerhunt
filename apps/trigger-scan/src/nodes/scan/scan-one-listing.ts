@@ -56,13 +56,7 @@ export async function scanOneListing(
     return { listingId, fit: false, sellerReference };
   }
 
-  const dropReason = checkListingThresholds(listing, marketplace, config);
-  if (dropReason) {
-    logger.info("Listing below scan thresholds", {
-      marketplace,
-      listingId,
-      dropReason,
-    });
+  if (checkListingThresholds(listing, marketplace, config)) {
     return { listingId, fit: false, sellerReference };
   }
   if (sellerReference) {

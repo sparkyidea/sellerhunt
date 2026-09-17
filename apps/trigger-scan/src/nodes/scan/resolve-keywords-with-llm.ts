@@ -12,8 +12,9 @@
  *
  * Also owns the two DB pickers the retry task uses.
  */
-import { db } from "@dashseller/db";
+
 import { scanListing } from "@dashseller/db/schema";
+import { db } from "@dashseller/db/trigger";
 import { logger } from "@trigger.dev/sdk";
 import { and, asc, eq, inArray, isNull, lt, sql } from "drizzle-orm";
 import type { PhraseParser } from "../../keywords/extract-keywords";

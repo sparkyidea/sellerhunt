@@ -32,7 +32,7 @@ const mocks = vi.hoisted(() => ({
   },
 }));
 // `scan-config` (loaded for its schema) imports the db client; never touched here.
-vi.mock("@dashseller/db", () => ({ db: {} }));
+vi.mock("@dashseller/db/trigger", () => ({ db: {} }));
 vi.mock("@trigger.dev/sdk", () => ({
   schemaTask: (definition: TaskDefinition) => {
     mocks.runs.set(definition.id, definition.run);
@@ -49,6 +49,15 @@ vi.mock("../../../utils/machine-metadata", () => ({
 }));
 vi.mock("../../../utils/mobile-profile-manager", () => ({
   MobileProfileTokenManager: { loadForThisBox: mocks.loadForThisBox },
+}));
+vi.mock("../../../utils/scan-session", () => ({
+  createScanSession: () => ({
+    get: async () => {
+      const manager = await mocks.loadForThisBox();
+      const client = await manager.createScanClient();
+      return { client, manager };
+    },
+  }),
 }));
 vi.mock("../../../nodes/scan/scan-freshness", () => ({
   partitionFreshListings: mocks.partitionFreshListings,

@@ -11,7 +11,6 @@ import {
   scanOneListing,
 } from "../../nodes/scan/scan-one-listing";
 import { setMachineMetadata } from "../../utils/machine-metadata";
-import { MobileProfileTokenManager } from "../../utils/mobile-profile-manager";
 import { isListingNotFound } from "../../utils/scan-completion";
 import {
   loadScanConfig,
@@ -25,6 +24,7 @@ import {
   routeScanFailure,
   scanCatchError,
 } from "../../utils/scan-errors";
+import { createScanSession } from "../../utils/scan-session";
 import { marketplaceTag } from "../../utils/scan-tags";
 
 const scanListingsByIdsSchema = z.object({
@@ -82,10 +82,8 @@ export const scanListingsByIds = schemaTask({
       .set("fresh", fresh)
       .set("stale", stale.length);
     if (stale.length > 0) {
-      const manager =
-        await MobileProfileTokenManager.loadForThisBox(marketplace);
-      const client = await manager.createScanClient();
-      metadata.set("profileId", manager.profileId);
+      const session = createScanSession(marketplace);
+      const { client, manager } = await session.get();
       for (const [index, listingId] of stale.entries()) {
         await sleep(
           jitterMs(config.listingScanDelayMinMs, config.listingScanDelayMaxMs)

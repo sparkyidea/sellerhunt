@@ -15,8 +15,9 @@
  * `bumpKeywordAttempts` counts one LLM attempt per listing so a poison title
  * stops after `MAX_LLM_ATTEMPTS`.
  */
-import { db } from "@dashseller/db";
+
 import { scanKeyword, scanListing } from "@dashseller/db/schema";
+import { db } from "@dashseller/db/trigger";
 import { and, eq, inArray, isNull, sql } from "drizzle-orm";
 import type { KeywordStore } from "../../keywords/llm-stage";
 
