@@ -8,11 +8,6 @@ import { TRPCError } from "@trpc/server";
 import { and, eq, inArray, sql } from "drizzle-orm";
 import { z } from "zod";
 import { permissionProcedure, router } from "../index";
-import {
-  bearerStateOf,
-  bearerStateWhere,
-  splitBearerStateFilter,
-} from "../lib/bearer-state";
 import { buildWhere } from "../lib/build-filter";
 import { buildGroupWhere } from "../lib/build-group";
 import { buildSearchFilter } from "../lib/build-search";
@@ -37,7 +32,6 @@ import { getManyInput } from "../lib/schemas";
  */
 
 const WORKER_UNIQUE_INDEX = "mobile_profile_app_assigned_worker_uidx";
-const FAILURE_REASON_MAX = 500;
 
 /** The database-assigned profile number — the id everywhere, "#12" on screen. */
 const profileId = z.number().int().positive();
@@ -70,17 +64,13 @@ const entriesInput = z.object({ entries: z.array(entryInput).min(1).max(100) });
 /** `revision + 1` — fences out runs that loaded the row before this write. */
 const bumpRevision = { revision: sql`${mobileProfile.revision} + 1` };
 
-/** Strip ciphertext columns; expose booleans and the derived bearer state instead. */
+/** Strip ciphertext columns; expose presence booleans instead. */
 function toPublic(row: SelectMobileProfile) {
   const { credentials: _credentials, accessToken, refreshToken, ...rest } = row;
   return {
     ...rest,
     hasCachedBearer: accessToken !== null,
     hasRefreshToken: refreshToken !== null,
-    bearerState: bearerStateOf({
-      accessToken,
-      accessTokenExpiresAt: row.accessTokenExpiresAt,
-    }),
   };
 }
 
@@ -137,8 +127,8 @@ async function decryptIdentifiers(
 }
 
 // One procedure per statement verb (packages/auth lib/auth/permissions.ts).
-// Operational mutations — reset failures, evict a bearer, replace credentials —
-// are `update`: they change the row, never its identity.
+// Operational mutations — reset failures, replace credentials — are `update`:
+// they change the row, never its identity.
 const readProfiles = permissionProcedure({ mobileProfile: ["read"] });
 const createProfiles = permissionProcedure({ mobileProfile: ["create"] });
 const updateProfiles = permissionProcedure({ mobileProfile: ["update"] });
@@ -155,11 +145,7 @@ export const mobileProfileRouter = router({
     const { cursor, limit, search, filter, sort, groupBy } = input;
     const { after, before } = getCursorParams(cursor);
 
-    // `bearerState` is derived, not a column: it leaves the tree before
-    // `buildWhere` and becomes its own SQL predicate.
-    const { rest: columnFilter, states } = splitBearerStateFilter(filter);
-    const filterWhere = buildWhere(mobileProfile, columnFilter);
-    const stateWhere = states === null ? undefined : bearerStateWhere(states);
+    const filterWhere = buildWhere(mobileProfile, filter);
     const searchQuery = buildSearchFilter(
       search?.search ?? "",
       search?.searchFields ?? []
@@ -190,7 +176,7 @@ export const mobileProfileRouter = router({
     });
 
     const rows = await db.query.mobileProfile.findMany({
-      where: and(filterWhere, stateWhere, searchWhere, cursorWhere, groupWhere),
+      where: and(filterWhere, searchWhere, cursorWhere, groupWhere),
       orderBy,
       limit: limit + 1,
     });
@@ -352,66 +338,6 @@ export const mobileProfileRouter = router({
       .returning();
     return toPublic(firstRow(rows));
   }),
-
-  /** Mirror of the worker's `markDataAuthFailure`: next scan re-mints. */
-  evictBearer: updateProfiles.input(idInput).mutation(async ({ input }) => {
-    await requireProfile(input.id);
-    const rows = await db
-      .update(mobileProfile)
-      .set({
-        accessToken: null,
-        accessTokenExpiresAt: null,
-        failureReason: "bearer evicted by admin".slice(0, FAILURE_REASON_MAX),
-        ...bumpRevision,
-      })
-      .where(eq(mobileProfile.id, input.id))
-      .returning();
-    return toPublic(firstRow(rows));
-  }),
-
-  /** Bulk `evictBearer`: one statement, same fence bump per row. */
-  evictBearerMany: updateProfiles
-    .input(idsInput)
-    .mutation(async ({ input }) => {
-      const rows = await db
-        .update(mobileProfile)
-        .set({
-          accessToken: null,
-          accessTokenExpiresAt: null,
-          failureReason: "bearer evicted by admin".slice(0, FAILURE_REASON_MAX),
-          ...bumpRevision,
-        })
-        .where(inArray(mobileProfile.id, input.ids))
-        .returning({ id: mobileProfile.id });
-      return { count: rows.length };
-    }),
-
-  /**
-   * Every bearer the database clock calls expired. Scoped by `app` when given
-   * so the fleet view's app tab and this action agree on what "expired" covers.
-   */
-  evictExpiredBearers: updateProfiles
-    .input(z.object({ app: z.string().min(1).optional() }))
-    .mutation(async ({ input }) => {
-      const rows = await db
-        .update(mobileProfile)
-        .set({
-          accessToken: null,
-          accessTokenExpiresAt: null,
-          failureReason: "bearer evicted by admin".slice(0, FAILURE_REASON_MAX),
-          ...bumpRevision,
-        })
-        .where(
-          and(
-            bearerStateWhere(["expired"]),
-            input.app === undefined
-              ? undefined
-              : eq(mobileProfile.app, input.app)
-          )
-        )
-        .returning({ id: mobileProfile.id });
-      return { count: rows.length };
-    }),
 
   /** Bulk `resetFailures`. */
   resetFailuresMany: updateProfiles

@@ -1,8 +1,8 @@
 import type { TabOption } from "@sparkyidea/dataview/preset-tabs";
 
 /**
- * App tabs for the token fleet view. Each option owns only the `app` rule, so
- * it composes with the bearer-state tabs and any filter the operator adds.
+ * App tabs for the profile fleet view. Each option owns only the `app` rule,
+ * so it composes with the status tabs and any filter the operator adds.
  *
  * `inArray` with a single-element array, not `eq`: `app` is a `select`
  * property, and the filter toolbar encodes select/status rules as arrays. A
@@ -23,35 +23,18 @@ export const mobileProfileAppPresets: TabOption[] = [
 ];
 
 /**
- * Bearer-state tabs. `bearerState` is derived server-side from the token-cache
- * columns (see `packages/trpc/src/lib/bearer-state.ts`); the router translates
- * these rules into SQL against the database clock. Array-encoded for the same
- * reason as the app tabs — `bearerState` is a `status` property.
+ * Lifecycle tabs over `mobile_profile.status`. Array-encoded for the same
+ * reason as the app tabs — `status` is a `status` property, and the filter
+ * toolbar encodes those as arrays.
  */
-export const mobileProfileStatePresets: TabOption[] = [
+export const mobileProfileStatusPresets: TabOption[] = [
   { label: "All", filter: null },
   {
-    label: "Valid",
-    filter: [
-      { property: "bearerState", condition: "inArray", value: ["valid"] },
-    ],
+    label: "Active",
+    filter: [{ property: "status", condition: "inArray", value: ["active"] }],
   },
   {
-    label: "Expiring",
-    filter: [
-      { property: "bearerState", condition: "inArray", value: ["expiring"] },
-    ],
-  },
-  {
-    label: "Expired",
-    filter: [
-      { property: "bearerState", condition: "inArray", value: ["expired"] },
-    ],
-  },
-  {
-    label: "No bearer",
-    filter: [
-      { property: "bearerState", condition: "inArray", value: ["none"] },
-    ],
+    label: "Dead",
+    filter: [{ property: "status", condition: "inArray", value: ["dead"] }],
   },
 ];

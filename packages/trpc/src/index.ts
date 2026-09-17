@@ -60,7 +60,7 @@ export const adminProcedure = protectedProcedure.use(({ ctx, next }) => {
  * must be granted by one of the user's roles.
  *
  *   const updateProfiles = permissionProcedure({ mobileProfile: ["update"] });
- *   evictBearer: updateProfiles.input(idInput).mutation(...)
+ *   resetFailures: updateProfiles.input(idInput).mutation(...)
  */
 export function permissionProcedure(permissions: Permissions) {
   return protectedProcedure.use(({ ctx, next }) => {

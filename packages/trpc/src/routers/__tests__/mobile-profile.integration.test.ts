@@ -493,29 +493,22 @@ describe("mutations", () => {
     ).rejects.toMatchObject({ code: "BAD_REQUEST" });
   });
 
-  it("evictBearer clears only the access pair; resetFailures clears only bookkeeping", async () => {
+  it("resetFailures clears only bookkeeping, never the token cache", async () => {
     const created = await createProfile({
       app: "shop",
       credentials: shopCredentials,
     });
     await seedTokens(created.id);
 
-    const evicted = await admin.mobileProfile.evictBearer({ id: created.id });
-    expect(evicted.revision).toBe(1);
-    let row = await rawRow(created.id);
-    expect(row.accessToken).toBeNull();
-    expect(row.accessTokenExpiresAt).toBeNull();
-    expect(row.refreshToken).toBe("cached-refresh");
-    expect(row.failureCount).toBe(2);
-
     const reset = await admin.mobileProfile.resetFailures({ id: created.id });
-    expect(reset.revision).toBe(2);
-    row = await rawRow(created.id);
+    expect(reset.revision).toBe(1);
+    const row = await rawRow(created.id);
     expect(row.failureCount).toBe(0);
     expect(row.failureReason).toBeNull();
     expect(row.cooldownUntil).toBeNull();
     expect(row.failedAt).toBeNull();
     expect(row.status).toBe("active");
+    expect(row.accessToken).not.toBeNull();
     expect(row.refreshToken).toBe("cached-refresh");
   });
 
@@ -600,22 +593,20 @@ describe("worker fence", () => {
     expect(freshWrite).toHaveLength(1);
   });
 
-  it("evictBearer and resetFailures fence out a stale run too", async () => {
-    for (const action of ["evictBearer", "resetFailures"] as const) {
-      const created = await createProfile({
-        app: "shop",
-        credentials: shopCredentials,
-      });
-      const loaded = await rawRow(created.id);
-      await admin.mobileProfile[action]({ id: created.id });
-      const stale = await db
-        .update(mobileProfile)
-        .set({ failureCount: 99 })
-        .where(fencedProfileWhere(created.id, loaded.revision))
-        .returning({ id: mobileProfile.id });
-      expect(stale).toEqual([]);
-      expect((await rawRow(created.id)).failureCount).toBe(0);
-    }
+  it("resetFailures fences out a stale run too", async () => {
+    const created = await createProfile({
+      app: "shop",
+      credentials: shopCredentials,
+    });
+    const loaded = await rawRow(created.id);
+    await admin.mobileProfile.resetFailures({ id: created.id });
+    const stale = await db
+      .update(mobileProfile)
+      .set({ failureCount: 99 })
+      .where(fencedProfileWhere(created.id, loaded.revision))
+      .returning({ id: mobileProfile.id });
+    expect(stale).toEqual([]);
+    expect((await rawRow(created.id)).failureCount).toBe(0);
   });
 });
 
@@ -751,117 +742,66 @@ describe("token fleet view", () => {
     return new Date(Date.now() + n * 60_000);
   }
 
-  async function seedStates(app: string) {
+  /** Four rows differing only in their bearer cache, for the reads below. */
+  async function seedRows(app: string) {
     return {
-      valid: await seedProfile(app, {
+      cached: await seedProfile(app, {
         accessToken: "bearer",
         accessTokenExpiresAt: minutes(42),
       }),
-      expiring: await seedProfile(app, {
+      cachedSoon: await seedProfile(app, {
         accessToken: "bearer",
         accessTokenExpiresAt: minutes(9),
       }),
-      expired: await seedProfile(app, {
+      cachedStale: await seedProfile(app, {
         accessToken: "bearer",
         accessTokenExpiresAt: minutes(-26),
       }),
-      none: await seedProfile(app, {
+      uncached: await seedProfile(app, {
         accessToken: null,
         accessTokenExpiresAt: null,
       }),
     };
   }
 
-  async function idsForState(app: string, state: string) {
-    const page = await admin.mobileProfile.getMany({
-      filter: [
-        { property: "app", condition: "eq", value: app },
-        { property: "bearerState", condition: "eq", value: state },
-      ],
-      limit: 100,
-    });
-    return page.items.map((item) => item.id);
-  }
+  it("exposes bearer presence, never the token, and filters by status", async () => {
+    const app = `${APP_PREFIX}${counter}-public`;
+    const seeded = await seedRows(app);
+    await admin.mobileProfile.update({ id: seeded.uncached, status: "dead" });
 
-  it("derives bearerState on the row and filters by it in SQL", async () => {
-    const app = `${APP_PREFIX}${counter}-states`;
-    const seeded = await seedStates(app);
+    const detail = await admin.mobileProfile.get({ id: seeded.cached });
+    expect(detail.hasCachedBearer).toBe(true);
+    expect(detail).not.toHaveProperty("accessToken");
+    expect(detail).not.toHaveProperty("credentials");
 
-    expect(await idsForState(app, "valid")).toEqual([seeded.valid]);
-    expect(await idsForState(app, "expiring")).toEqual([seeded.expiring]);
-    expect(await idsForState(app, "expired")).toEqual([seeded.expired]);
-    expect(await idsForState(app, "none")).toEqual([seeded.none]);
-
-    const detail = await admin.mobileProfile.get({ id: seeded.expired });
-    expect(detail.bearerState).toBe("expired");
+    const uncached = await admin.mobileProfile.get({ id: seeded.uncached });
+    expect(uncached.hasCachedBearer).toBe(false);
 
     const page = await admin.mobileProfile.getMany({
       filter: [
         { property: "app", condition: "eq", value: app },
-        {
-          property: "bearerState",
-          condition: "inArray",
-          value: ["expired", "none"],
-        },
+        { property: "status", condition: "inArray", value: ["dead"] },
       ],
       limit: 100,
     });
-    expect(page.items.map((item) => item.id).sort()).toEqual(
-      [seeded.expired, seeded.none].sort()
-    );
-  });
-
-  it("evictBearerMany clears only the listed rows and bumps their revision", async () => {
-    const app = `${APP_PREFIX}${counter}-evict`;
-    const seeded = await seedStates(app);
-    const before = await rawRow(seeded.valid);
-
-    const result = await admin.mobileProfile.evictBearerMany({
-      ids: [seeded.valid, seeded.expired],
-    });
-    expect(result.count).toBe(2);
-
-    const cleared = await rawRow(seeded.valid);
-    expect(cleared.accessToken).toBeNull();
-    expect(cleared.accessTokenExpiresAt).toBeNull();
-    expect(cleared.revision).toBe(before.revision + 1);
-
-    const untouched = await rawRow(seeded.expiring);
-    expect(untouched.accessToken).not.toBeNull();
+    expect(page.items.map((item) => item.id)).toEqual([seeded.uncached]);
   });
 
   it("resetFailuresMany clears backoff bookkeeping and bumps revision", async () => {
     const app = `${APP_PREFIX}${counter}-reset`;
-    const seeded = await seedStates(app);
-    const before = await rawRow(seeded.none);
+    const seeded = await seedRows(app);
+    const before = await rawRow(seeded.uncached);
 
     const result = await admin.mobileProfile.resetFailuresMany({
-      ids: [seeded.none],
+      ids: [seeded.uncached],
     });
     expect(result.count).toBe(1);
 
-    const row = await rawRow(seeded.none);
+    const row = await rawRow(seeded.uncached);
     expect(row.failureCount).toBe(0);
     expect(row.cooldownUntil).toBeNull();
     expect(row.failureReason).toBeNull();
     expect(row.failedAt).toBeNull();
     expect(row.revision).toBe(before.revision + 1);
-  });
-
-  it("evictExpiredBearers evicts expired bearers in the given app only", async () => {
-    const app = `${APP_PREFIX}${counter}-expired`;
-    const other = `${app}-other`;
-    const seeded = await seedStates(app);
-    const otherExpired = await seedProfile(other, {
-      accessToken: "bearer",
-      accessTokenExpiresAt: minutes(-5),
-    });
-
-    const result = await admin.mobileProfile.evictExpiredBearers({ app });
-    expect(result.count).toBe(1);
-
-    expect((await rawRow(seeded.expired)).accessToken).toBeNull();
-    expect((await rawRow(seeded.valid)).accessToken).not.toBeNull();
-    expect((await rawRow(otherExpired)).accessToken).not.toBeNull();
   });
 });

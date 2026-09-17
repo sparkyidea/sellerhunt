@@ -2,11 +2,11 @@ import type { DataViewProperty } from "@sparkyidea/dataview/types";
 import type { MobileProfileRow } from "../../types";
 
 /**
- * The single admin list over `mobile_profile`, led by the token cache: what
- * state each persona's bearer is in and when it runs out, with the lifecycle
- * columns (status, failures, cooldown) alongside. Grouping is off everywhere
- * (no `getGroup` procedure), and sorting is off for the derived `bearerState`
- * — the router filters it in SQL but has no column to order by.
+ * The single admin list over `mobile_profile`, led by the pool lifecycle:
+ * each persona's status, when its cached bearer runs out, and the failure
+ * bookkeeping alongside. Grouping is off everywhere (no `getGroup`
+ * procedure); every column here maps to a real column, so filtering and
+ * sorting go straight through `buildWhere`/`buildCursor`.
  */
 export const mobileProfilesTableProperties = [
   { key: "id", name: "#", type: "number", enableGroup: false },
@@ -27,21 +27,6 @@ export const mobileProfilesTableProperties = [
         { value: "shop", name: "Shopify", color: "green-subtle" },
       ],
     },
-    enableGroup: false,
-  },
-  {
-    key: "bearerState",
-    name: "Bearer",
-    type: "status",
-    config: {
-      groups: [
-        { name: "Valid", options: ["valid"], color: "green-subtle" },
-        { name: "Expiring", options: ["expiring"], color: "yellow-subtle" },
-        { name: "Expired", options: ["expired"], color: "red-subtle" },
-        { name: "No bearer", options: ["none"], color: "gray-subtle" },
-      ],
-    },
-    enableSort: false,
     enableGroup: false,
   },
   {

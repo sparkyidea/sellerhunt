@@ -49,7 +49,7 @@ move.
 ### tRPC routers (in `packages/trpc/src/routers/`)
 
 - `scan-listing` — the explorer's read API (`get`, `getMany`, `getGroup`), all `publicProcedure`.
-- `mobile-profile` — admin CRUD over the persona pool (`get`, `getMany`, `create`, `update`, `replaceCredentials`, `resetFailures`, `evictBearer`, `evictBearerMany`, `evictExpiredBearers`, `resetFailuresMany`, `delete`), each `permissionProcedure({ mobileProfile: [verb] })`; ops mutations are `update`.
+- `mobile-profile` — admin CRUD over the persona pool (`get`, `getMany`, `create`, `update`, `replaceCredentials`, `resetFailures`, `resetFailuresMany`, `delete`), each `permissionProcedure({ mobileProfile: [verb] })`; ops mutations are `update`.
 
 ### Trigger.dev scan workflows (in `apps/trigger-scan/src/workflows/`)
 

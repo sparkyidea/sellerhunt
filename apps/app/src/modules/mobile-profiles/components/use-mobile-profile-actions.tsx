@@ -3,7 +3,6 @@
 import type { ActionItem } from "@sparkyidea/ui/components/panel";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import {
-  KeyRoundIcon,
   LockKeyholeIcon,
   RotateCcwIcon,
   ServerIcon,
@@ -16,7 +15,6 @@ import { useReplaceCredentialsDialog } from "../hooks/use-replace-credentials-di
 import type { MobileProfileData } from "../types";
 import { AssignWorkerDialog } from "./assign-worker-dialog";
 import { DeleteMobileProfileDialog } from "./delete-mobile-profile-dialog";
-import { EvictBearerDialog } from "./evict-bearer-dialog";
 
 /**
  * Owns the ops mutations and dialogs for one profile so both panel wrappers
@@ -37,7 +35,6 @@ export function useMobileProfileActions(
   const queryClient = useQueryClient();
   const [assignOpen, setAssignOpen] = useState(false);
   const [deleteOpen, setDeleteOpen] = useState(false);
-  const [evictOpen, setEvictOpen] = useState(false);
 
   const openReplace = () =>
     useReplaceCredentialsDialog.getState().onOpen(profile.id);
@@ -69,12 +66,6 @@ export function useMobileProfileActions(
       onSelect: () => resetFailures.mutate({ id: profile.id }),
     },
     {
-      icon: <KeyRoundIcon />,
-      label: "Evict cached bearer…",
-      disabled: !profile.hasCachedBearer,
-      onSelect: () => setEvictOpen(true),
-    },
-    {
       icon: <ServerIcon />,
       label: profile.assignedWorker ? "Reassign worker…" : "Assign worker…",
       onSelect: () => setAssignOpen(true),
@@ -96,11 +87,6 @@ export function useMobileProfileActions(
       <AssignWorkerDialog
         onOpenChange={setAssignOpen}
         open={assignOpen}
-        profile={profile}
-      />
-      <EvictBearerDialog
-        onOpenChange={setEvictOpen}
-        open={evictOpen}
         profile={profile}
       />
       <DeleteMobileProfileDialog

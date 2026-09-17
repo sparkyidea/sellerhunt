@@ -9,8 +9,8 @@ import {
 } from "@sparkyidea/dataview/toolbars/notion";
 import { TableView } from "@sparkyidea/dataview/views/table-view";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { KeyRoundIcon, RotateCcwIcon, Trash2Icon } from "lucide-react";
-import { useCallback, useState } from "react";
+import { RotateCcwIcon, Trash2Icon } from "lucide-react";
+import { useState } from "react";
 import { toast } from "sonner";
 import { useOpenPreview } from "@/hooks/use-open-preview";
 import { useTRPC } from "@/lib/utils/trpc/client";
@@ -18,19 +18,11 @@ import { DeleteMobileProfilesDialog } from "../../components/delete-mobile-profi
 import type { MobileProfileRow } from "../../types";
 import {
   mobileProfileAppPresets,
-  mobileProfileStatePresets,
+  mobileProfileStatusPresets,
 } from "../mobile-profiles-presets";
 import { mobileProfilesTableProperties } from "./mobile-profiles-table-properties";
 
-/** App tab label → the `app` value page-level actions should be scoped to. */
-const APP_BY_LABEL: Record<string, string> = { eBay: "ebay", Shopify: "shop" };
-
-export function MobileProfilesTable({
-  onAppChange,
-}: {
-  /** Reports the active app tab so the panel header can scope its actions. */
-  onAppChange?: (app: string | undefined) => void;
-}) {
+export function MobileProfilesTable() {
   const trpc = useTRPC();
   const queryClient = useQueryClient();
   const openPreview = useOpenPreview();
@@ -45,17 +37,6 @@ export function MobileProfilesTable({
   const refresh = () =>
     queryClient.invalidateQueries(trpc.mobileProfile.pathFilter());
 
-  const evictMany = useMutation(
-    trpc.mobileProfile.evictBearerMany.mutationOptions({
-      onSuccess: async ({ count }) => {
-        toast.success(
-          `${count} cached ${count === 1 ? "bearer" : "bearers"} evicted; the next scan re-mints`
-        );
-        await refresh();
-      },
-      onError: (error) => toast.error(error.message),
-    })
-  );
   const resetMany = useMutation(
     trpc.mobileProfile.resetFailuresMany.mutationOptions({
       onSuccess: async ({ count }) => {
@@ -66,15 +47,6 @@ export function MobileProfilesTable({
       },
       onError: (error) => toast.error(error.message),
     })
-  );
-
-  // PresetTabs reports the active option by label; null means the filter no
-  // longer matches any tab (an operator edited the app rule by hand).
-  const handleAppChange = useCallback(
-    (label: string | null) => {
-      onAppChange?.(label === null ? undefined : APP_BY_LABEL[label]);
-    },
-    [onAppChange]
   );
 
   return (
@@ -91,24 +63,16 @@ export function MobileProfilesTable({
       <PresetTabs
         aria-label="App"
         mobileSelect={false}
-        onActiveChange={handleAppChange}
         options={mobileProfileAppPresets}
         variant="line"
       />
       <PresetTabs
-        options={mobileProfileStatePresets}
+        options={mobileProfileStatusPresets}
         trailing={<NotionToolbarActions enableSettings />}
       />
       <NotionToolbarChips />
       <TableView
         bulkActions={[
-          {
-            icon: <KeyRoundIcon />,
-            isPending: evictMany.isPending,
-            label: "Evict bearer",
-            onClick: (rows: MobileProfileRow[]) =>
-              evictMany.mutate({ ids: rows.map((row) => row.id) }),
-          },
           {
             icon: <RotateCcwIcon />,
             isPending: resetMany.isPending,

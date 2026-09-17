@@ -1,27 +1,3 @@
-import type { MobileProfileData } from "./types";
-
-/** Display names for the derived `bearerState` (see `@dashseller/trpc`). */
-export const BEARER_STATE_LABELS: Record<
-  MobileProfileData["bearerState"],
-  string
-> = {
-  valid: "Valid",
-  expiring: "Expiring",
-  expired: "Expired",
-  none: "No bearer",
-};
-
-/** Badge variants, shared with the token table's status colours. */
-export const BEARER_STATE_BADGE: Record<
-  MobileProfileData["bearerState"],
-  "green-subtle" | "yellow-subtle" | "red-subtle" | "outline"
-> = {
-  valid: "green-subtle",
-  expiring: "yellow-subtle",
-  expired: "red-subtle",
-  none: "outline",
-};
-
 const MINUTE = 60_000;
 const HOUR = 60 * MINUTE;
 const DAY = 24 * HOUR;
