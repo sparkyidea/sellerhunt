@@ -45,6 +45,7 @@ export function MobileProfileDialog() {
   const entries = parse.ok ? parse.entries : [];
   const creatable = useMemo(() => creatableEntries(entries), [entries]);
   const counts = stagedCounts(entries);
+  const remaining = creatable.length - write.created;
 
   function handleOpenChange(next: boolean) {
     if (next || write.phase === "writing") {
@@ -64,10 +65,18 @@ export function MobileProfileDialog() {
         <div className="flex flex-col gap-6">
           <DialogHeader>
             <DialogTitle>
-              <BulkTitle created={write.created} phase={write.phase} />
+              <BulkTitle
+                created={write.created}
+                phase={write.phase}
+                total={creatable.length}
+              />
             </DialogTitle>
             <DialogDescription>
-              <BulkDescription phase={write.phase} />
+              <BulkDescription
+                failure={write.failure}
+                phase={write.phase}
+                remaining={remaining}
+              />
             </DialogDescription>
           </DialogHeader>
 
@@ -82,6 +91,7 @@ export function MobileProfileDialog() {
           ) : (
             <BulkWritePass
               creatable={creatable}
+              failure={write.failure}
               outcomes={write.outcomes}
               phase={write.phase}
             />
@@ -127,8 +137,19 @@ export function MobileProfileDialog() {
           {write.phase === "result" && (
             <>
               <span className="mr-auto text-muted-foreground text-sm">
-                Created profiles are already in the list behind this dialog.
+                {remaining > 0
+                  ? "Created profiles are already in the list. Writing again sends only the entries not yet created."
+                  : "Created profiles are already in the list behind this dialog."}
               </span>
+              {remaining > 0 && (
+                <Button
+                  onClick={() => write.start(creatable)}
+                  type="button"
+                  variant="outline"
+                >
+                  Write remaining {remaining}
+                </Button>
+              )}
               <Button onClick={() => handleOpenChange(false)} type="button">
                 Done
               </Button>
@@ -143,15 +164,24 @@ export function MobileProfileDialog() {
 function BulkTitle({
   created,
   phase,
+  total,
 }: {
   created: number;
   phase: ReturnType<typeof useBulkWrite>["phase"];
+  total: number;
 }) {
   if (phase === "stage") {
     return <>New mobile profiles</>;
   }
   if (phase === "writing") {
     return <>Creating profiles</>;
+  }
+  if (created < total) {
+    return (
+      <>
+        {created} of {total} profiles created
+      </>
+    );
   }
   return (
     <>
@@ -161,9 +191,13 @@ function BulkTitle({
 }
 
 function BulkDescription({
+  failure,
   phase,
+  remaining,
 }: {
+  failure: string | null;
   phase: ReturnType<typeof useBulkWrite>["phase"];
+  remaining: number;
 }) {
   if (phase === "stage") {
     return (
@@ -176,6 +210,17 @@ function BulkDescription({
   }
   if (phase === "writing") {
     return <>Entries land in small batches, each batch all or nothing.</>;
+  }
+  if (failure) {
+    return (
+      <>
+        A batch failed: {failure}. Entries that landed are created; the rest are
+        not.
+      </>
+    );
+  }
+  if (remaining > 0) {
+    return <>Stopped. Entries that landed are created; the rest are not.</>;
   }
   return (
     <>

@@ -131,21 +131,21 @@ never takes a second one. Bearer mint/refresh and encrypted storage are describe
 
 Worker identity is discovered afresh from `boxinfo` whenever it is needed. Trigger
 checkpoints preserve task memory and may restore a run on another worker, so keyword
-and seller tasks run `resumeScanWorker` in `onResume`: it rotates the database pool,
-invalidates the run-scoped scan session, replaces the worker metadata, and fails
+and seller tasks run `resumeScanSession` in `onResume`: it invalidates the run-scoped
+scan session, clears the `profileId` metadata, reads the box name again, and fails
 closed if the new identity cannot be discovered. The next marketplace request lazily
 loads or claims that worker's profile and rebuilds the complete client, including
 device credentials and its bearer provider. Metadata and logs record worker names and
 profile IDs only, never credentials or tokens.
 
-Database sockets do not survive a restore either. `@dashseller/db` always registers a
-pool `error` listener, so an idle client that dies is dropped by `pg-pool` and logged
-instead of killing the process with an uncaught exception, and it exposes a stable
-`db` facade whose pool can be swapped. The scan worker tunes that pool for
-checkpointing in `utils/db-pool.ts` (small `max`, short `idleTimeoutMillis`) and
-rotates it on resume; retired pools drain with a bounded timeout and report the
-outcome rather than being abandoned silently. API and app processes keep the pg
-defaults.
+Database sockets do not survive a restore either. The worker imports its client from
+`@dashseller/db/trigger`, a singleton tuned for checkpointing (`max: 1`,
+`idleTimeoutMillis: 10_000`) so an idle connection closes on its own before a
+checkpoint instead of being carried across the restore. `createDbClient` always
+registers a pool `error` listener: an idle client that dies is dropped by `pg-pool`
+and logged instead of killing the process with an uncaught exception, and the next
+query opens a fresh connection. Nothing is rotated or drained on resume. API and app
+processes keep the pg defaults.
 
 Keyword, seller, and cron orchestration queues remain separate. Only `scan-cron`
 caps concurrency (1); keyword, seller, and listing leaves have no cap and run at

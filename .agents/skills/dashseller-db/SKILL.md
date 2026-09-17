@@ -17,6 +17,12 @@ Workflow:
 
 1. Edit a schema file in `packages/db/src/schema/<entity>.ts`.
 2. Run `bun db:generate` — produces a new file in `packages/db/src/migrations/`.
+   If drizzle-kit's SQL would be wrong for the data (a type change it can only
+   express as `SET DATA TYPE` over values that do not cast), keep the file it
+   generated — its `meta/` snapshot and journal entry are what the next diff
+   builds on — and replace the SQL body, with a header comment saying what was
+   generated and why it was replaced. Never `generate --custom` for a schema
+   change: it copies the previous snapshot. Never edit `meta/`.
 3. **Stop.** Show the user the migration. Wait.
 4. User runs `bun db:migrate` (or `db:push` for early dev) when ready.
 
@@ -37,7 +43,8 @@ packages/db/
                                   scan_listing (+ snapshot, variant)
     seed/
       scan.ts, mobile-profile.ts
-    migrations/                 — GENERATED. Don't hand-edit.
+    migrations/                 — GENERATED. Never edit meta/; a SQL body is
+                                  replaced by hand only per the rule above.
 ```
 
 ## Schema conventions

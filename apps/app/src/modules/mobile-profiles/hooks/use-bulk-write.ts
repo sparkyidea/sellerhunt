@@ -3,7 +3,6 @@
 import type { CreatableEntry } from "@dashseller/trpc/lib/bulk-credentials";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useRef, useState } from "react";
-import { toast } from "sonner";
 import { useTRPC } from "@/lib/utils/trpc/client";
 
 /**
@@ -11,8 +10,11 @@ import { useTRPC } from "@/lib/utils/trpc/client";
  * than one call, so the counter moves while a long paste lands. Each batch is
  * one insert: every entry in it lands or none does.
  *
- * A failed batch is never retried here: whatever landed stays landed, the
- * outcome list says which entries did, and the operator decides.
+ * A failed batch is never retried on its own: whatever landed stays landed and
+ * keeps its outcome, the pane says which entries did not, and the operator
+ * decides. Starting again writes only the entries without an outcome, so a
+ * second pass cannot insert a persona twice — `createMany` has no duplicate
+ * check.
  */
 
 /** Entries per `createMany` call: small enough that the counter actually moves. */
@@ -41,12 +43,20 @@ function batches(entries: CreatableEntry[]): CreatableEntry[][] {
   return out;
 }
 
+function failureMessage(error: unknown): string {
+  return error instanceof Error ? error.message : "Could not create profiles";
+}
+
 export function useBulkWrite() {
   const trpc = useTRPC();
   const queryClient = useQueryClient();
   const [phase, setPhase] = useState<BulkPhase>("stage");
   const [outcomes, setOutcomes] = useState<WriteOutcome[]>([]);
+  /** Why the last pass ended early, until the next pass starts. */
+  const [failure, setFailure] = useState<string | null>(null);
   const stopped = useRef(false);
+  // The loop reads outcomes across awaits, where state would be stale.
+  const landed = useRef<WriteOutcome[]>([]);
 
   const createMany = useMutation(
     trpc.mobileProfile.createMany.mutationOptions()
@@ -55,54 +65,58 @@ export function useBulkWrite() {
   const refresh = () =>
     queryClient.invalidateQueries(trpc.mobileProfile.pathFilter());
 
+  function record(next: WriteOutcome[]) {
+    landed.current = next;
+    setOutcomes(next);
+  }
+
   async function start(entries: CreatableEntry[]) {
     stopped.current = false;
-    setOutcomes([]);
+    setFailure(null);
     setPhase("writing");
 
-    const collected: WriteOutcome[] = [];
+    // A later pass writes only what has not landed yet.
+    const done = new Set(landed.current.map((outcome) => outcome.position));
+    const pending = entries.filter((entry) => !done.has(entry.position));
     try {
-      for (const batch of batches(entries)) {
+      for (const batch of batches(pending)) {
         const result = await createMany.mutateAsync({
           entries: batch.map(toCreateEntry),
         });
+        const collected = [...landed.current];
         for (const row of result.results) {
           const entry = batch[row.position];
           if (entry) {
             collected.push({ id: row.id, position: entry.position });
           }
         }
-        setOutcomes([...collected]);
+        record(collected);
         if (stopped.current) {
           break;
         }
       }
     } catch (error) {
-      toast.error(
-        error instanceof Error ? error.message : "Could not create profiles"
-      );
-      setPhase("stage");
-      await refresh();
-      return;
+      setFailure(failureMessage(error));
     }
-
     await refresh();
     setPhase("result");
   }
 
   return {
     created: outcomes.length,
+    failure,
     outcomes,
     phase,
     reset: () => {
       setPhase("stage");
-      setOutcomes([]);
+      record([]);
+      setFailure(null);
       stopped.current = false;
     },
     start: (entries: CreatableEntry[]) => {
-      start(entries).catch(() => {
-        toast.error("Could not create profiles");
-        setPhase("stage");
+      start(entries).catch((error: unknown) => {
+        setFailure(failureMessage(error));
+        setPhase("result");
       });
     },
     stop: () => {

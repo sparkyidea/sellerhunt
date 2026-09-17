@@ -1,4 +1,5 @@
 import { Panel, PanelProvider } from "@sparkyidea/ui/components/panel";
+import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { ErrorView } from "@/components/error-view";
@@ -14,6 +15,9 @@ export default async function AdminMobileProfilePage({
 }) {
   const { profileId } = await params;
   const id = parseProfileId(profileId);
+  if (Number.isNaN(id)) {
+    notFound();
+  }
   await prefetch(trpc.mobileProfile.get.queryOptions({ id }));
 
   return (

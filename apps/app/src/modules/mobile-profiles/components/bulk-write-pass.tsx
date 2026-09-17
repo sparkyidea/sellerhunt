@@ -14,10 +14,13 @@ import { BulkEntryRow, type EntryTone } from "./bulk-entry-row";
  */
 export function BulkWritePass({
   creatable,
+  failure,
   outcomes,
   phase,
 }: {
   creatable: CreatableEntry[];
+  /** Why the pass ended early; rows without an outcome then read as failed. */
+  failure: string | null;
   outcomes: WriteOutcome[];
   phase: BulkPhase;
 }) {
@@ -30,6 +33,9 @@ export function BulkWritePass({
     if (byPosition.has(position)) {
       return "created";
     }
+    if (phase === "result") {
+      return failure ? "failed" : "queued";
+    }
     return offset === settled ? "writing" : "queued";
   };
 
@@ -37,6 +43,11 @@ export function BulkWritePass({
     const outcome = byPosition.get(position);
     if (outcome) {
       return `Created as ${profileNumber(outcome.id)}`;
+    }
+    if (phase === "result") {
+      return failure
+        ? "Not created — the batch failed"
+        : "Not created — stopped";
     }
     return tone === "writing" ? "Writing…" : "Queued";
   };

@@ -76,7 +76,7 @@ Both table types agree on these columns:
 
 | Column | Type | Notes |
 |---|---|---|
-| `id` | uuid | PK |
+| `id` | uuid (`*_token`) / integer identity (`*_profile`) | PK. A profile's id is its number in the admin UI, URLs and logs ("#12"): assigned by the database on insert, never by an upload, never reused. |
 | `access_token` | text (encrypted) | Cached short-lived bearer. `text` not `jsonb` for the same reason as `credentials`. |
 | `access_token_expires_at` | timestamptz | When the cached bearer dies |
 | `created_at`, `updated_at` | timestamptz | Auto-managed |
@@ -100,6 +100,8 @@ Both table types agree on these columns:
 | `status` | enum (`active` \| `dead`) | Pool inclusion flag |
 | `cooldown_until` | timestamptz nullable | Soft-failure cooldown |
 | `failure_count` | int | Consecutive failures; promote to `dead` past a threshold |
+| `assigned_worker` | text nullable | Hostname of the scan box that owns the persona; unique per `app`. Null = unassigned, claimable by the next box without one. |
+| `revision` | int | Optimistic-concurrency fence between worker and admin writes (see below). |
 
 The shared `access_token` + `access_token_expires_at` columns let the TS contract overlap:
 

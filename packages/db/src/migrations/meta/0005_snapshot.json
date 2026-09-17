@@ -1,5 +1,5 @@
 {
-  "id": "1268e285-0f67-4982-a1a7-68b46c3e9d5f",
+  "id": "cb03b564-676c-4e45-8899-d671cae2987a",
   "prevId": "aded002a-d497-4c41-8307-4354a5b14bda",
   "version": "7",
   "dialect": "postgresql",
@@ -657,9 +657,20 @@
       "columns": {
         "id": {
           "name": "id",
-          "type": "text",
+          "type": "integer",
           "primaryKey": true,
-          "notNull": true
+          "notNull": true,
+          "identity": {
+            "type": "always",
+            "name": "mobile_profile_id_seq",
+            "schema": "public",
+            "increment": "1",
+            "startWith": "1",
+            "minValue": "1",
+            "maxValue": "2147483647",
+            "cache": "1",
+            "cycle": false
+          }
         },
         "app": {
           "name": "app",
@@ -667,8 +678,8 @@
           "primaryKey": false,
           "notNull": true
         },
-        "label": {
-          "name": "label",
+        "assigned_worker": {
+          "name": "assigned_worker",
           "type": "text",
           "primaryKey": false,
           "notNull": false
@@ -822,8 +833,8 @@
           "method": "btree",
           "with": {}
         },
-        "mobile_profile_app_label_uidx": {
-          "name": "mobile_profile_app_label_uidx",
+        "mobile_profile_app_assigned_worker_uidx": {
+          "name": "mobile_profile_app_assigned_worker_uidx",
           "columns": [
             {
               "expression": "app",
@@ -832,7 +843,7 @@
               "nulls": "last"
             },
             {
-              "expression": "label",
+              "expression": "assigned_worker",
               "isExpression": false,
               "asc": true,
               "nulls": "last"

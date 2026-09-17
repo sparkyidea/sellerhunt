@@ -13,9 +13,12 @@ export function profileNumber(id: number): string {
   return `#${id}`;
 }
 
-/** Route params are strings; the id is an integer. NaN falls through to NOT_FOUND. */
+/** The whole segment, as a positive integer — `parseInt` would read "12foo" as 12. */
+const PROFILE_ID = /^[1-9]\d*$/;
+
+/** Route params are strings; the id is an integer. Anything else is NaN, which the page turns into a 404. */
 export function parseProfileId(raw: string): number {
-  return Number.parseInt(raw, 10);
+  return PROFILE_ID.test(raw) ? Number(raw) : Number.NaN;
 }
 
 export const STATUS_LABELS = {

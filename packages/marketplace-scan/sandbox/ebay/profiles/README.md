@@ -36,7 +36,6 @@ Both consumers glob `*.json` here (skipping `*.example.json`), using the
   the `mobile_profile` pool, encrypting and inserting each (the database
   numbers rows; re-running inserts again). Rows land unassigned; attach a box
   from the admin UI.
-  Re-running is idempotent and resets pool state.
 
 ## Adding a persona
 
