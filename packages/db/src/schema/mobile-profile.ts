@@ -47,8 +47,10 @@
  *
  * Encryption: `credentials`, `accessToken`, and `refreshToken` are all
  * encrypted JWE strings produced by `encryptSecret()` from
- * `apps/trigger-scan/src/utils/secret-crypto`. Decrypt at read time
- * with `decryptSecret()`. The encryption key is `env.ENCRYPTION_SECRET`.
+ * `packages/db/src/lib/secret-crypto.ts` (shared by the scan worker, the seed
+ * and the tRPC admin router). Decrypt at read time with `decryptSecret()`.
+ * The encryption key is each deployment's `ENCRYPTION_SECRET` — one value
+ * everywhere.
  */
 import type { InferSelectModel } from "drizzle-orm";
 import {
@@ -58,6 +60,7 @@ import {
   pgTable,
   text,
   timestamp,
+  uniqueIndex,
 } from "drizzle-orm/pg-core";
 
 /**
@@ -79,9 +82,13 @@ export const mobileProfileStatusEnum = pgEnum("mobile_profile_status", [
 export const mobileProfile = pgTable(
   "mobile_profile",
   {
-    id: text("id")
-      .primaryKey()
-      .$defaultFn(() => crypto.randomUUID()),
+    /**
+     * The profile's number — how ops UIs, URLs and logs refer to it ("#12").
+     * Assigned by the database on insert, never by the upload, never reused.
+     * Carries no operational meaning: which box uses the row is
+     * `assignedWorker`.
+     */
+    id: integer("id").primaryKey().generatedAlwaysAsIdentity(),
     /**
      * Which mobile app this persona impersonates (e.g. "ebay", "shop"). Used
      * as the pool-selector discriminator and as the runtime tag the manager
@@ -89,8 +96,15 @@ export const mobileProfile = pgTable(
      * — adding a new mobile app doesn't require a migration.
      */
     app: text("app").notNull(),
-    /** Human-readable label for ops UIs and logs (e.g. "iPhone-1", "burner-3"). */
-    label: text("label"),
+    /**
+     * Hostname of the scan box that owns this persona
+     * (e.g. "w-00001-orc-e2cpu1ram1-sparkyideainc"), or null while unassigned.
+     * `loadForThisBox` matches it exactly against the hostname the `boxinfo`
+     * sidecar reports. Never set by the upload: a box with no row for the
+     * app claims the lowest-numbered free one on its next run
+     * (`lib/mobile-profile-claim.ts`), and the admin UI can pin or move it.
+     */
+    assignedWorker: text("assigned_worker"),
 
     /**
      * Encrypted JWE ciphertext (text, NOT jsonb). After `decryptSecret()` →
@@ -151,6 +165,16 @@ export const mobileProfile = pgTable(
      * selector skips it until the timestamp passes. Cleared on next success.
      */
     cooldownUntil: timestamp("cooldown_until"),
+    /**
+     * Optimistic-concurrency fence between the scan worker and the admin UI.
+     * The worker loads a row once per run and keeps credentials/tokens in
+     * memory; admin mutations that invalidate that view (credentials replaced,
+     * bearer evicted, failures reset, status changed) bump this counter. Every
+     * worker write is `WHERE id = $1 AND revision = $2`
+     * (`lib/mobile-profile-fence.ts`); zero rows → `StaleMobileProfileError`,
+     * the run stops using the persona and retries with a fresh load.
+     */
+    revision: integer("revision").notNull().default(0),
 
     createdAt: timestamp("created_at").defaultNow().notNull(),
     updatedAt: timestamp("updated_at")
@@ -164,6 +188,12 @@ export const mobileProfile = pgTable(
     index("mobile_profile_last_used_at_idx").on(t.lastUsedAt),
     // Ops queries: find profiles in cooldown / dead.
     index("mobile_profile_cooldown_until_idx").on(t.cooldownUntil),
+    // One persona per (app, box): `loadForThisBox` resolves to at most one
+    // row. NULL = unassigned, unconstrained.
+    uniqueIndex("mobile_profile_app_assigned_worker_uidx").on(
+      t.app,
+      t.assignedWorker
+    ),
   ]
 );
 

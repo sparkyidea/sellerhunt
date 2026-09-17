@@ -24,6 +24,7 @@
     "@dashseller/env": "workspace:*",
     "dotenv": "catalog:",
     "drizzle-orm": "catalog:",
+    "jose": "catalog:",
     "pg": "catalog:",
     "zod": "catalog:"
   },
@@ -33,7 +34,6 @@
     "@types/pg": "catalog:",
     "drizzle-dbml-generator": "catalog:",
     "drizzle-kit": "catalog:",
-    "jose": "catalog:",
     "papaparse": "catalog:",
     "typescript": "catalog:",
     "vitest": "catalog:"

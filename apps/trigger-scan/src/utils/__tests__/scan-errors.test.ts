@@ -7,6 +7,7 @@ import {
   PersonaScanError,
   routeScanFailure,
   ScanIncompleteError,
+  StaleMobileProfileError,
   scanCatchError,
 } from "../scan-errors";
 
@@ -14,6 +15,7 @@ it("delays persona and sole in-flight blockers 20 minutes and leaves other backo
   for (const error of [
     new PersonaScanError("failed", false),
     new ScanIncompleteError("in-flight"),
+    new StaleMobileProfileError(1, "ebay"),
   ]) {
     expect(scanCatchError({ error })).toEqual({
       retryDelayInMs: 20 * 60 * 1000,

@@ -7,34 +7,21 @@
 // the task subprocess env from a fixed whitelist, so NO env var reaches run(). A plain
 // network fetch to the sidecar bypasses that. See deploy/worker/*/docker-compose.yml.
 
-let cached: Promise<string | null> | null = null;
-
 /**
  * The box this run is executing on — the `boxinfo` sidecar's hostname (== the host
- * /etc/hostname == the Tailscale node name). Memoised once per runner process (shared
- * across every task in the process); never throws — returns null if the sidecar is
- * unreachable, so callers can fall back.
+ * /etc/hostname == the Tailscale node name). Performs a fresh lookup on every call
+ * because a checkpointed task may resume on another worker. Never throws; callers
+ * selecting worker-bound resources must treat `null` as an error and must not reuse
+ * a previously resolved identity.
  */
 export function getBoxName(timeoutMs = 2000): Promise<string | null> {
-  cached ??= fetchBoxName(timeoutMs);
-  return cached;
+  return fetchBoxName(timeoutMs);
 }
 
-/**
- * The persona label embedded in a box hostname. Box hostnames are
- * `<label>-<role>-<specs>-<org>` (e.g. `w-00001-orc-e2cpu1ram1-sparkyideainc`);
- * the persona label is just the leading `w-NNNNN` prefix, which matches the
- * seeded `mobile_profile.label` and the `w-NNNNN.json` capture filenames.
- *
- * Returns null when the hostname carries no recognizable worker prefix (e.g. a
- * box that isn't part of the scan fleet). Adjust the pattern here if the label
- * convention ever changes — this is the one place that knows it.
- */
-const WORKER_LABEL_RE = /^w-\d+/;
-
-export function parseWorkerLabel(boxName: string): string | null {
-  return boxName.match(WORKER_LABEL_RE)?.[0] ?? null;
-}
+// The full hostname (e.g. `w-00001-orc-e2cpu1ram1-sparkyideainc`) is the
+// persona assignment key: `mobile_profile.assigned_worker` must equal it
+// exactly. The admin UI validates what it stores against
+// `@dashseller/db/lib/worker-hostname`.
 
 async function fetchBoxName(timeoutMs: number): Promise<string | null> {
   try {
@@ -47,7 +34,7 @@ async function fetchBoxName(timeoutMs: number): Promise<string | null> {
     const name = (await res.text()).trim();
     return name || null;
   } catch {
-    // sidecar not running / not reachable on this network — caller falls back
+    // Identity cannot be established; worker-bound resource selection must stop.
     return null;
   }
 }

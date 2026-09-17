@@ -36,6 +36,27 @@
       "when": 1788613208339,
       "tag": "0004_cloudy_marten_broadcloak",
       "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1789144331418,
+      "tag": "0005_confused_annihilus",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1789324626362,
+      "tag": "0006_classy_lord_tyger",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1789350688869,
+      "tag": "0007_regular_james_howlett",
+      "breakpoints": true
     }
   ]
 }

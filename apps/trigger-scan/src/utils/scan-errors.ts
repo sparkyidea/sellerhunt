@@ -30,6 +30,25 @@ export class PersonaScanError extends Error {
   }
 }
 
+/**
+ * A fenced `mobile_profile` write matched zero rows: an admin replaced the
+ * credentials, evicted the bearer, reset failures or changed the status after
+ * this run loaded the row. The in-memory persona is no longer trustworthy;
+ * stop using it for this run and let Trigger retry with a fresh load.
+ */
+export class StaleMobileProfileError extends Error {
+  readonly profileId: number;
+  readonly app: string;
+  constructor(profileId: number, app: string) {
+    super(
+      `mobile profile ${profileId} (${app}) changed underneath this run (revision mismatch); reloading on retry`
+    );
+    this.name = "StaleMobileProfileError";
+    this.profileId = profileId;
+    this.app = app;
+  }
+}
+
 export class ListingBatchError extends Error {
   readonly marketplace: string;
   readonly failed: readonly { listingId: string; message: string }[];
@@ -47,6 +66,7 @@ export class ListingBatchError extends Error {
 export function scanCatchError({ error }: { error: unknown }) {
   if (
     error instanceof PersonaScanError ||
+    error instanceof StaleMobileProfileError ||
     (error instanceof ScanIncompleteError && error.reason === "in-flight")
   ) {
     return { retryDelayInMs: PERSONA_RETRY_MS };

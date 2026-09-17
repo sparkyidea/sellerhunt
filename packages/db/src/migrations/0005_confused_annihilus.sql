@@ -1,0 +1,2 @@
+ALTER TABLE "mobile_profile" ADD COLUMN "revision" integer DEFAULT 0 NOT NULL;--> statement-breakpoint
+CREATE UNIQUE INDEX "mobile_profile_app_label_uidx" ON "mobile_profile" USING btree ("app","label");

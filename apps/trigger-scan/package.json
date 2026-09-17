@@ -21,7 +21,6 @@
     "@dashseller/marketplace-scan": "workspace:*",
     "@trigger.dev/sdk": "catalog:",
     "drizzle-orm": "catalog:",
-    "jose": "catalog:",
     "openai": "catalog:",
     "zod": "catalog:"
   },
