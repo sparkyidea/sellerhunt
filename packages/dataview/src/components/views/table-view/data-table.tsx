@@ -21,6 +21,7 @@ import {
   TableRow,
 } from "../../ui/table";
 import { DataTableStickyHeader } from "./data-table-sticky-header";
+import { rowId } from "./row-id";
 
 /**
  * Calculate column width from explicit property.size.
@@ -157,6 +158,7 @@ export function DataTable<TData>({
     data,
     columns,
     getCoreRowModel: getCoreRowModel(),
+    getRowId: rowId,
     enableRowSelection,
     state: {
       rowSelection,
