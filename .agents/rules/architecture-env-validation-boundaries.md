@@ -17,13 +17,13 @@ tags: [architecture, env, t3-env, boot, deployments]
 | `env/src/db.ts`           | domain     | `dbEnvSchema` + standalone `env` (DB-only consumers)          |
 | `env/src/server.ts`       | deployment | `apps/api` — spreads db + auth/server vars                    |
 | `env/src/trigger-scan.ts` | deployment | scan pipeline (self-hosted Trigger.dev) — spreads db + scan vars |
-| `env/src/app.ts`          | deployment | `apps/app` — `NEXT_PUBLIC_*` client vars                      |
+| `env/src/app.ts`          | deployment | `apps/app` — `NEXT_PUBLIC_APP_URL`, `NEXT_PUBLIC_API_URL`      |
 
 Each domain module exports an `xxxEnvSchema` shape (composable) and an `env` constant (its own `createEnv` call). Deployment modules import the **schemas**, spread them into a single `createEnv`, and re-export one `env`.
 
 ### Rules
 
-1. **Deployment code imports its deployment env.** Trigger workflows → `@dashseller/env/trigger-scan`. `apps/api` server code → `@dashseller/env/server`. Next client code → `@dashseller/env/app`. *Never* import a domain env (e.g. `@dashseller/env/db`) from inside a deployment that already has a consolidated env.
+1. **Deployment code imports its deployment env.** Trigger workflows → `@dashseller/env/trigger-scan`. `apps/api` server code → `@dashseller/env/server`. `apps/app` client code → `@dashseller/env/app`. *Never* import a domain env (e.g. `@dashseller/env/db`) from inside a deployment that already has a consolidated env.
 2. **Domain envs are for code that runs outside any deployment** — sandbox scripts that don't boot through the server, one-off scripts, tests that need just one schema.
 3. **Domain schemas never spread other domain schemas.** Composition happens at the deployment level. If a domain's code needed another domain's env, that would mean the *consumer* (deployment) needs both — which is already the case via the deployment's consolidation.
 4. **Adapter packages don't import env at all.** See `patterns-adapter-package.md` — `packages/marketplace-scan` receives its credentials/config explicitly from callers.

@@ -1,8 +1,8 @@
 // biome-ignore-all lint/performance/noBarrelFile: Public API for external consumers
 
-// Action types used by apps/app
+// Action types used by the Next.js app (apps/app)
 export type { BulkAction } from "./action.type";
-// Filter types used by packages/trpc and apps/web
+// Filter types used by packages/trpc and apps/app
 export {
   type FilterCondition,
   isWhereExpression,
@@ -17,20 +17,20 @@ export {
   type WhereRule,
   whereNodeSchema,
 } from "./filter.type";
-// Group types used by packages/trpc and apps/web
+// Group types used by packages/trpc and apps/app
 export {
   type ColumnConfigInput,
   type GroupByConfig,
   type GroupConfigInput,
   groupByConfigSchema,
 } from "./group.type";
-// Pagination types used by packages/trpc and apps/web
+// Pagination types used by packages/trpc and apps/app
 export {
   cursorValueSchema,
   getCursorParams,
   type Limit,
 } from "./pagination";
-// Property types used by apps/web
+// Property types used by apps/app
 export {
   type CardPinPosition,
   type DataViewProperty,

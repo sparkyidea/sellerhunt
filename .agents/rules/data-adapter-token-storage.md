@@ -115,7 +115,19 @@ The `refresh_token` + `refresh_token_expires_at` pair has the same shape on both
 
 ### Encryption rule
 
-Everything in `access_token`, `refresh_token`, and `credentials` is encrypted at rest with `env.ENCRYPTION_SECRET` via `encryptSecret`/`decryptSecret` in `apps/trigger-scan/src/utils/secret-crypto.ts`. Never write plaintext into these columns.
+Everything in `access_token`, `refresh_token`, and `credentials` is encrypted at rest with `env.ENCRYPTION_SECRET` via `encryptSecret`/`decryptSecret` in `packages/db/src/lib/secret-crypto.ts` (shared by the scan worker, the DB seed and the tRPC admin router — each passes its own deployment's `ENCRYPTION_SECRET`, which must be the same value). Never write plaintext into these columns.
+
+### Revision fence (worker vs. admin writes)
+
+`mobile_profile.revision` is an optimistic-concurrency counter. The worker loads
+a row once per run and keeps credentials, tokens and failure bookkeeping in
+memory. Admin mutations that invalidate that view — replace credentials, evict
+bearer, reset failures, change status — bump `revision`. Every worker write goes
+through `fencedProfileWhere(id, revision)` (`packages/db/src/lib/mobile-profile-fence.ts`);
+zero rows → `StaleMobileProfileError` → the run stops using the persona and
+Trigger retries after 20 minutes with a fresh load. Label-only renames do not
+bump: worker writes are id-keyed, so the box that loaded the row keeps a valid
+view; the old box simply fails to load a persona on its *next* run.
 
 ### The TokenManager loop (shared shape, separate implementations)
 

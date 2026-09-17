@@ -33,7 +33,9 @@ Both consumers glob `*.json` here (skipping `*.example.json`), using the
   Default is the first file; override with `EBAY_PROFILE=w-00003` (or
   `EBAY_PROFILE=random` to rotate).
 - **Seed** — `packages/db/src/seed/mobile-profile.ts` loads *every* file into
-  the `mobile_profile` pool, encrypting each and upserting on `(app, label)`.
+  the `mobile_profile` pool, encrypting and inserting each (the database
+  numbers rows; re-running inserts again). Rows land unassigned; attach a box
+  from the admin UI.
   Re-running is idempotent and resets pool state.
 
 ## Adding a persona

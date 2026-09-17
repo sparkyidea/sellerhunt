@@ -29,6 +29,7 @@ Add any other context, mockups, or screenshots about the feature request here.
 Which package(s) would this affect?
 
 - [ ] `apps/app`
+- [ ] Admin routes (`apps/app/src/app/admin`)
 - [ ] `apps/api`
 - [ ] `packages/trpc`
 - [ ] `packages/auth`

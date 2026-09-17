@@ -9,7 +9,7 @@ scopes stay `@dashseller/*` until the sellerhunt rename, a separate task.)
 ## Stack
 
 - **TypeScript** + **Bun** + **Turborepo** monorepo
-- **Next.js** — the dashboard app (`apps/app`)
+- **Next.js** — user and admin routes in one app (`apps/app`)
 - **Hono** + **tRPC** — the API (`apps/api`)
 - **Drizzle** + **PostgreSQL** — database (`packages/db`)
 - **Better-Auth** — user authentication (no organizations/tenancy)
@@ -102,7 +102,7 @@ shadcn CLI from `apps/app`.
 ```
 dashseller/
 ├── apps/
-│   ├── app/                  # Dashboard (Next.js) — /explorer/listings
+│   ├── app/                  # Next.js — Explorer, settings, role-gated /admin routes
 │   ├── api/                  # Backend (Hono, tRPC, Better-Auth)
 │   └── trigger-scan/         # Trigger.dev scan pipeline (self-hosted)
 ├── packages/
