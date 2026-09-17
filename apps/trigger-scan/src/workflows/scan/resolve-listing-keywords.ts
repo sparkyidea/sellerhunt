@@ -10,9 +10,12 @@
  * `limit` at a time (default `DEFAULT_LIMIT`). Both modes only pick `keyword_id IS NULL AND
  * keyword_attempts < MAX_LLM_ATTEMPTS` — explicit ids do not bypass the cap.
  * When `keyword_llm_enabled` is off the run exits without picking or spending
- * an attempt. `concurrencyLimit: 1` keeps two manual runs from
- * double-spending. Unlike the scan tasks it does not accept a `config` in its
- * payload: the `scan_config` row is read fresh on every run.
+ * an attempt. The task has no concurrency cap: `pickUnresolvedListings` is a
+ * plain `SELECT`, not a claim, so two overlapping catch-up runs can pick the
+ * same rows and spend two attempts (and two OpenAI calls) on them. Run
+ * catch-up mode one at a time, or pass explicit `listingIds`. Unlike the scan
+ * tasks it does not accept a `config` in its payload: the `scan_config` row is
+ * read fresh on every run.
  */
 import { logger, metadata, tags, task } from "@trigger.dev/sdk";
 import {
@@ -39,8 +42,6 @@ export interface ResolveListingKeywordsPayload {
 
 export const resolveListingKeywords = task({
   id: "resolve-listing-keywords",
-  // Two manual runs must not double-spend on the same listings.
-  queue: { concurrencyLimit: 1 },
   // DB queries + small HTTP batches; no marketplace scraping, no persona.
   machine: "micro",
   retry: {

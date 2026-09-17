@@ -16,9 +16,10 @@
  * silently suppress later seller scans. `updatedAt` is auto-bumped by the
  * schema on every write, which is the correct "we touched this row" signal.
  */
-import { db } from "@dashseller/db";
+
 import { scanSeller } from "@dashseller/db/schema";
 import { and, eq } from "drizzle-orm";
+import { db } from "../../utils/db";
 
 export interface UpsertScanSellerInput {
   displayName?: string | null;

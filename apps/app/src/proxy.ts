@@ -6,6 +6,12 @@ export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const isAuthRoute = pathname.startsWith("/auth");
 
+  // Let the admin layout validate the session and return the general 404 for
+  // every denied visitor, including those without a session cookie.
+  if (pathname === "/admin" || pathname.startsWith("/admin/")) {
+    return NextResponse.next();
+  }
+
   // Unauthenticated users on protected routes -> redirect to sign-in
   if (!(sessionCookie || isAuthRoute)) {
     const signInUrl = new URL("/auth/sign-in", request.url);
@@ -23,7 +29,7 @@ export function proxy(request: NextRequest) {
     pathname !== "/auth/callback" &&
     pathname !== "/auth/sign-out"
   ) {
-    return NextResponse.redirect(new URL("/products", request.url));
+    return NextResponse.redirect(new URL("/explorer/listings", request.url));
   }
 
   return NextResponse.next();

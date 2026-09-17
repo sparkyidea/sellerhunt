@@ -2,7 +2,11 @@
 # Area labels - which part of the codebase
 - name: "area: app"
   color: "26b5ce"
-  description: "Changes to the main app (apps/app)"
+  description: "Changes to the user app (apps/app)"
+
+- name: "area: admin"
+  color: "26b5ce"
+  description: "Changes to the admin routes (apps/app/src/app/admin)"
 
 - name: "area: api"
   color: "26b5ce"

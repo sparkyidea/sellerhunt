@@ -30,6 +30,25 @@ export class PersonaScanError extends Error {
   }
 }
 
+/**
+ * A `mobile_profile` write matched zero rows: an admin deleted the persona
+ * after this run loaded it. The in-memory persona is gone from the pool; stop
+ * using it for this run and let Trigger retry with a fresh load, which claims
+ * whatever the box owns then.
+ */
+export class StaleMobileProfileError extends Error {
+  readonly profileId: number;
+  readonly app: string;
+  constructor(profileId: number, app: string) {
+    super(
+      `mobile profile ${profileId} (${app}) was deleted underneath this run (write matched no row); reloading on retry`
+    );
+    this.name = "StaleMobileProfileError";
+    this.profileId = profileId;
+    this.app = app;
+  }
+}
+
 export class ListingBatchError extends Error {
   readonly marketplace: string;
   readonly failed: readonly { listingId: string; message: string }[];
@@ -47,6 +66,7 @@ export class ListingBatchError extends Error {
 export function scanCatchError({ error }: { error: unknown }) {
   if (
     error instanceof PersonaScanError ||
+    error instanceof StaleMobileProfileError ||
     (error instanceof ScanIncompleteError && error.reason === "in-flight")
   ) {
     return { retryDelayInMs: PERSONA_RETRY_MS };

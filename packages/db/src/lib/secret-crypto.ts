@@ -1,11 +1,13 @@
 import { EncryptJWT, jwtDecrypt } from "jose";
 
 /**
- * JWE (JSON Web Encryption) helpers for the small secret surface the scan
- * worker holds: the device credentials and minted bearers stored on
- * `mobile_profile`. Encrypted with the standalone `ENCRYPTION_SECRET`
- * (see `@dashseller/env/trigger-scan`) so the self-hosted box never needs
- * the marketplace API credential schema.
+ * JWE (JSON Web Encryption) helpers for the `mobile_profile` secret surface:
+ * device credentials and minted bearers. Shared by the scan worker
+ * (`apps/trigger-scan`), the DB seed (`seed/mobile-profile.ts`) and the tRPC
+ * admin router (`packages/trpc/src/routers/mobile-profile.ts`). Every caller
+ * passes the same `ENCRYPTION_SECRET` (validated by its own deployment env:
+ * `@dashseller/env/trigger-scan` for the worker, `@dashseller/env/server` for
+ * the API) — the key is a function argument here so this module stays env-free.
  */
 
 /**

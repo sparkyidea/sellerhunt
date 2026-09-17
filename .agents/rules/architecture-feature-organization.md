@@ -21,7 +21,8 @@ Dashseller uses **horizontal layering** (one package per concern), not cal.diy-s
 | Domain logic + API   | `packages/trpc/src/routers/`                      |
 | Reusable data UI     | `packages/dataview/src/`                         |
 | Shared UI primitives | `packages/ui/src/components/`                    |
-| App-specific UI      | `apps/app/src/{app,components,modules}/`         |
+| User-facing UI       | `apps/app/src/{app,components,modules}/`         |
+| Admin UI             | `apps/app/src/app/admin/` + app components/modules       |
 
 ### Adding a new feature
 
@@ -31,7 +32,8 @@ A new feature like "watchlists" typically touches **multiple packages** in this 
 2. `bun db:generate` (user applies migration).
 3. tRPC router in `packages/trpc/src/routers/watchlist.ts` — register in `routers/index.ts`.
 4. If ingestion-side: adapter method in `packages/marketplace-scan/`, workflow in `apps/trigger-scan/src/workflows/`.
-5. Route + UI in `apps/app/src/app/(app)/watchlists/` and `apps/app/src/modules/`.
+5. Route + UI in `apps/app/src/app/(app)/watchlists/` and `apps/app/src/modules/`
+   (admin-only routes go in `apps/app/src/app/admin/`, guarded by its layout).
 6. Reusable cells/views in `packages/dataview/` only if they generalize.
 
 ### When to introduce a new package

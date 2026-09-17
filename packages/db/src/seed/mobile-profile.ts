@@ -3,9 +3,10 @@
  *
  * Each persona is one JSON file under
  * `packages/db/src/seed/tmp/<app>/profiles/`; this script loads every
- * file across all apps, encrypts the credentials blob, and upserts it into the
- * `mobile_profile` pool. The filename stem (e.g. `w-00003`, `default`) becomes
- * the row `label`; the directory's app (`ebay`, `shop`) becomes `app`.
+ * file across all apps, encrypts the credentials blob, and inserts it into the
+ * `mobile_profile` pool. The directory's app (`ebay`, `shop`) becomes `app`;
+ * the database numbers each row (`id`). The filename is only used in the
+ * log. Rows land unassigned — a worker is attached from the admin UI.
  *
  * `tmp/` is git-ignored (only its `.gitignore` is tracked): duplicate the
  * captured personas from `packages/marketplace-scan/sandbox/<app>/profiles/`
@@ -25,9 +26,9 @@
  *   2. `packages/marketplace-scan/sandbox/.env`
  *   3. process.env (also wins for ad-hoc overrides)
  *
- * Re-running the seed updates each row matching `(app, label)` and
- * resets pool state (status=active, failureCount=0, cooldown=null,
- * accessToken=null) — handy after rotating a persona capture.
+ * The seed only inserts: a row carries nothing that identifies its source
+ * file, so re-running adds every file again. Rotate a persona capture from
+ * the admin UI ("Replace credentials") instead.
  *
  * Run:
  *   bun run packages/db/src/seed/mobile-profile.ts
@@ -36,9 +37,8 @@ import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import dotenv from "dotenv";
-import { and, eq } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/node-postgres";
-import { EncryptJWT } from "jose";
+import { encryptSecret } from "../lib/secret-crypto";
 import { mobileProfile } from "../schema/mobile-profile";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -84,14 +84,15 @@ const APP_CONFIG: Record<ProfileApp, AppConfig> = {
 
 interface ProfileSeed {
   app: ProfileApp;
-  label: string;
+  /** Filename stem, for the log only. */
+  file: string;
   /** Raw JSON text of the credentials blob, read from a profile file. */
   raw: string;
 }
 
 /**
  * Build the persona work-list across every app's profiles directory
- * (label = filename stem). `*.example.json` placeholders are skipped.
+ * `*.example.json` placeholders are skipped.
  */
 function collectProfiles(): ProfileSeed[] {
   const seeds: ProfileSeed[] = [];
@@ -106,24 +107,12 @@ function collectProfiles(): ProfileSeed[] {
     for (const file of files) {
       seeds.push({
         app,
-        label: file.replace(JSON_EXT, ""),
+        file: file.replace(JSON_EXT, ""),
         raw: readFileSync(resolve(dir, file), "utf8"),
       });
     }
   }
   return seeds;
-}
-
-async function encrypt(plaintext: string, key: string): Promise<string> {
-  if (key.length < 32) {
-    throw new Error("ENCRYPTION_SECRET must be at least 32 characters");
-  }
-  const keyBytes = new TextEncoder().encode(key.slice(0, 32));
-  return await new EncryptJWT({ secret: plaintext })
-    .setProtectedHeader({ alg: "dir", enc: "A256GCM" })
-    .setIssuedAt()
-    .setExpirationTime("10y")
-    .encrypt(keyBytes);
 }
 
 /**
@@ -164,7 +153,6 @@ async function seedMobileProfiles(): Promise<void> {
 
   console.log(`Seeding ${profiles.length} mobile profile(s)...`);
   let inserted = 0;
-  let updated = 0;
   let skipped = 0;
 
   for (const seed of profiles) {
@@ -176,58 +164,26 @@ async function seedMobileProfiles(): Promise<void> {
       );
     } catch (err) {
       console.warn(
-        `  skip ${seed.app}/${seed.label}: invalid persona — ${err instanceof Error ? err.message : String(err)}`
+        `  skip ${seed.app}/${seed.file}: invalid persona — ${err instanceof Error ? err.message : String(err)}`
       );
       skipped++;
       continue;
     }
 
-    const encryptedCredentials = await encrypt(
+    const encryptedCredentials = await encryptSecret(
       JSON.stringify(credentials),
       encryptionKey
     );
 
-    const [existing] = await db
-      .select()
-      .from(mobileProfile)
-      .where(
-        and(
-          eq(mobileProfile.app, seed.app),
-          eq(mobileProfile.label, seed.label)
-        )
-      )
-      .limit(1);
-
-    if (existing) {
-      await db
-        .update(mobileProfile)
-        .set({
-          credentials: encryptedCredentials,
-          accessToken: null,
-          accessTokenExpiresAt: null,
-          status: "active",
-          failureCount: 0,
-          cooldownUntil: null,
-          failureReason: null,
-          failedAt: null,
-        })
-        .where(eq(mobileProfile.id, existing.id));
-      console.log(`  update ${seed.app}/${seed.label}`);
-      updated++;
-    } else {
-      await db.insert(mobileProfile).values({
-        app: seed.app,
-        label: seed.label,
-        credentials: encryptedCredentials,
-      });
-      console.log(`  insert ${seed.app}/${seed.label}`);
-      inserted++;
-    }
+    const [row] = await db
+      .insert(mobileProfile)
+      .values({ app: seed.app, credentials: encryptedCredentials })
+      .returning({ id: mobileProfile.id });
+    console.log(`  insert ${seed.app}/${seed.file} as #${row?.id}`);
+    inserted++;
   }
 
-  console.log(
-    `Done. ${inserted} inserted, ${updated} updated, ${skipped} skipped.`
-  );
+  console.log(`Done. ${inserted} inserted, ${skipped} skipped.`);
   process.exit(0);
 }
 

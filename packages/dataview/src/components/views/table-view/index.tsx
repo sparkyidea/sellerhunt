@@ -49,6 +49,9 @@ export interface TableViewProps<TData> {
    * - Row selection with checkboxes
    * - Floating action bar for bulk operations
    *
+   * Selection is keyed by each row's `id` (see `row-id.ts`), so it follows the
+   * records across refetches and drops rows that disappear.
+   *
    * For row-level actions, use button property type instead.
    */
   bulkActions?: BulkAction<TData>[];

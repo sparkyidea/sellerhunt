@@ -14,7 +14,8 @@
     "./styles.css": "./src/style.css"
   },
   "scripts": {
-    "check-types": "tsc --noEmit"
+    "check-types": "tsc --noEmit",
+    "test": "bun test src/lib/auth"
   },
   "dependencies": {
     "@better-auth-ui/core": "catalog:",

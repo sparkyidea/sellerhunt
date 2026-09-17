@@ -107,6 +107,7 @@ skip one sweep as `in-flight-unknown` and continue because its inputs already ex
 | Exact seller-detail 404 | Persist bare seller if needed; stamp; `seller-gone` |
 | Listing parse/other failure | Finish healthy IDs and extraction, then `ListingBatchError` |
 | Persona-level 401/403/429/5xx | Route once; stop further requests on that persona; finish usable downstream work; throw |
+| Profile deleted by admin (a worker write matches no row) | Throw `StaleMobileProfileError`; stop using that persona; retry after 20 minutes with a fresh load |
 | In-flight dependency only | `ScanIncompleteError(in-flight)`; retry after 20 minutes |
 | Failed child, lookup, pagination | Throw; leave parent stale |
 
@@ -119,14 +120,43 @@ Successful leaf output includes `mode: scanned`, `triggered`, `fresh`, `scanned`
 
 ## Persona selection and queues
 
-This stage retains the existing box-label persona selection. The manager identifies
-the worker using the boxinfo sidecar and loads its matching active, non-cooling
-profile. Automatic claims from an unassigned pool and a database ownership constraint
-are a later stage. Bearer mint/refresh and encrypted storage are described in
+The manager identifies the worker using the boxinfo sidecar and loads the active,
+non-cooling profile whose `assigned_worker` equals the box hostname. A box that owns
+no row for the app claims the lowest-numbered unassigned active one in a single
+`UPDATE … WHERE id = (SELECT … FOR UPDATE SKIP LOCKED)` statement
+(`packages/db/src/lib/mobile-profile-claim.ts`); the unique index on
+`(app, assigned_worker)` keeps one row per box. A box whose row is dead or cooling
+never takes a second one. Bearer mint/refresh and encrypted storage are described in
 [token storage](../../../.agents/rules/data-adapter-token-storage.md).
 
-Keyword, seller, and cron orchestration queues remain separate. Listing leaves do
-not yet have a shared concurrency cap. Each leaf processes its IDs sequentially;
+Worker identity is discovered afresh from `boxinfo` whenever it is needed. Trigger
+checkpoints preserve task memory and may restore a run on another worker, so keyword
+and seller tasks run `resumeScanSession` in `onResume`: it invalidates the run-scoped
+scan session, clears the `profileId` metadata, reads the box name again, and fails
+closed if the new identity cannot be discovered. The next marketplace request lazily
+loads or claims that worker's profile and rebuilds the complete client, including
+device credentials and its bearer provider. Metadata and logs record worker names and
+profile IDs only, never credentials or tokens.
+
+Database sockets do not survive a restore either. The worker builds its client in
+`utils/db.ts` from the deployment env (`createDbClient` from `@dashseller/db/client`),
+tuned for checkpointing (`max: 1`, `idleTimeoutMillis: 10_000`) so an idle connection
+closes on its own before a checkpoint instead of being carried across the restore.
+`createDbClient` always
+registers a pool `error` listener: an idle client that dies is dropped by `pg-pool`
+and logged instead of killing the process with an uncaught exception, and the next
+query opens a fresh connection. Nothing is rotated or drained on resume. API and app
+processes keep the pg defaults.
+
+Keyword, seller, and cron orchestration queues remain separate. Only `scan-cron`
+caps concurrency (1); keyword, seller, and listing leaves have no cap and run at
+the environment limit. Throughput is therefore bounded by the live persona pool,
+not by the queues: runs that land on the same box share that box's one
+`mobile_profile`, so a box can drive its persona with more than one run at a time.
+Persona failure bookkeeping is last-write-wins (`markSoftFailure` computes the next
+`failure_count` in memory, and admin status changes and failure resets are not fenced
+against it), so overlapping runs on one persona can lose failure counts and delay
+cooldown or dead promotion. Each leaf processes its IDs sequentially;
 this does not establish physical placement or request serialization across runs.
 
 Cron queries visible in-flight work and removes busy references from its selected

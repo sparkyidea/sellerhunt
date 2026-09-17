@@ -33,7 +33,9 @@
  *   - On 401/403 from the *mint* endpoint, the device credentials are dead;
  *     the manager promotes the persona straight to `dead`.
  */
-import { db } from "@dashseller/db";
+
+import { claimFreeProfile } from "@dashseller/db/lib/mobile-profile-claim";
+import { decryptSecret, encryptSecret } from "@dashseller/db/lib/secret-crypto";
 import type {
   EbayHmacCredentials,
   MobileCredentials,
@@ -51,8 +53,9 @@ import type {
 } from "@dashseller/marketplace-scan/types";
 import { logger } from "@trigger.dev/sdk";
 import { and, asc, eq, isNull, lt, or, sql } from "drizzle-orm";
-import { getBoxName, parseWorkerLabel } from "./box-name";
-import { decryptSecret, encryptSecret } from "./secret-crypto";
+import { getBoxName } from "./box-name";
+import { db } from "./db";
+import { PersonaScanError, StaleMobileProfileError } from "./scan-errors";
 
 /** Default consecutive soft failures before promoting a profile to `dead`. */
 const DEFAULT_DEAD_THRESHOLD = 3;
@@ -76,7 +79,7 @@ export class MobileProfileTokenManager {
     this.profile = profile;
   }
 
-  get profileId(): string {
+  get profileId(): number {
     return this.profile.id;
   }
 
@@ -124,21 +127,42 @@ export class MobileProfileTokenManager {
   }
 
   /**
+   * Every write to this row goes through here, keyed by id. Zero rows means
+   * an admin deleted the persona since this run loaded it: throw
+   * `StaleMobileProfileError` so the run stops using it and Trigger retries
+   * with a fresh load (see `scanCatchError`). Admin status changes and
+   * failure resets are not fenced — they and this run's bookkeeping are
+   * last-write-wins, and the next load honours whatever is in the row. On
+   * success the change is mirrored into `this.profile` so later writes in the
+   * same run build on current values.
+   */
+  private async writeRow(
+    set: Partial<Omit<SelectMobileProfile, "id">>
+  ): Promise<void> {
+    const updated = await db
+      .update(mobileProfile)
+      .set(set)
+      .where(eq(mobileProfile.id, this.profile.id))
+      .returning({ id: mobileProfile.id });
+    if (updated.length === 0) {
+      throw new StaleMobileProfileError(this.profile.id, this.profile.app);
+    }
+    this.profile = { ...this.profile, ...set };
+  }
+
+  /**
    * Successful call. Bumps `lastUsedAt` + `lastSuccessAt`, resets
    * `failureCount`, clears any active cooldown.
    */
   async markUsed(): Promise<void> {
     const now = new Date();
-    await db
-      .update(mobileProfile)
-      .set({
-        lastUsedAt: now,
-        lastSuccessAt: now,
-        failureCount: 0,
-        cooldownUntil: null,
-        failureReason: null,
-      })
-      .where(eq(mobileProfile.id, this.profile.id));
+    await this.writeRow({
+      lastUsedAt: now,
+      lastSuccessAt: now,
+      failureCount: 0,
+      cooldownUntil: null,
+      failureReason: null,
+    });
   }
 
   /**
@@ -156,16 +180,13 @@ export class MobileProfileTokenManager {
     const nextCount = this.profile.failureCount + 1;
     const shouldPromote = nextCount >= promoteAfter;
 
-    await db
-      .update(mobileProfile)
-      .set({
-        lastUsedAt: now,
-        failureCount: nextCount,
-        failureReason: reason.slice(0, 500),
-        cooldownUntil: new Date(now.getTime() + cooldownMs),
-        ...(shouldPromote ? { status: "dead" as const, failedAt: now } : {}),
-      })
-      .where(eq(mobileProfile.id, this.profile.id));
+    await this.writeRow({
+      lastUsedAt: now,
+      failureCount: nextCount,
+      failureReason: reason.slice(0, 500),
+      cooldownUntil: new Date(now.getTime() + cooldownMs),
+      ...(shouldPromote ? { status: "dead" as const, failedAt: now } : {}),
+    });
 
     if (shouldPromote) {
       logger.warn("Mobile profile promoted to dead after repeated failures", {
@@ -185,14 +206,11 @@ export class MobileProfileTokenManager {
    * directly — the device credentials are toast.
    */
   async markDataAuthFailure(reason: string): Promise<void> {
-    await db
-      .update(mobileProfile)
-      .set({
-        accessToken: null,
-        accessTokenExpiresAt: null,
-        failureReason: reason.slice(0, 500),
-      })
-      .where(eq(mobileProfile.id, this.profile.id));
+    await this.writeRow({
+      accessToken: null,
+      accessTokenExpiresAt: null,
+      failureReason: reason.slice(0, 500),
+    });
   }
 
   /**
@@ -202,15 +220,12 @@ export class MobileProfileTokenManager {
    */
   async markDead(reason: string): Promise<void> {
     const now = new Date();
-    await db
-      .update(mobileProfile)
-      .set({
-        status: "dead",
-        lastUsedAt: now,
-        failedAt: now,
-        failureReason: reason.slice(0, 500),
-      })
-      .where(eq(mobileProfile.id, this.profile.id));
+    await this.writeRow({
+      status: "dead",
+      lastUsedAt: now,
+      failedAt: now,
+      failureReason: reason.slice(0, 500),
+    });
 
     logger.warn("Mobile profile marked dead", {
       profileId: this.profile.id,
@@ -259,10 +274,9 @@ export class MobileProfileTokenManager {
 
   /**
    * Box-pinned selector. Returns the active, non-cooling-down profile whose
-   * `label` matches `label` for the given app — the persona this specific
-   * worker box owns (label == box hostname). Returns `null` when the row is
-   * missing, `dead`, or in cooldown; the caller turns that into a retryable
-   * task error and the next cron tick re-fires once cooldown clears.
+   * `assignedWorker` equals `hostname` for the given app — the persona this
+   * specific worker box owns. Returns `null` when the row is missing, `dead`,
+   * or in cooldown; `loadForThisBox` tells those apart before failing.
    *
    * Unlike `loadNextActive`, there is no rotation: one box ↔ one persona. The
    * pinning keeps each captured device's traffic on a single machine/IP, which
@@ -270,9 +284,9 @@ export class MobileProfileTokenManager {
    * (`markSoftFailure` cooldown, `markDead`) still apply — in pinned mode they
    * mean "this box backs off / is down" rather than "rotate to the next row".
    */
-  static async loadForLabel(
+  static async loadForWorker(
     app: string,
-    label: string
+    hostname: string
   ): Promise<MobileProfileTokenManager | null> {
     const now = new Date();
     const [row] = await db
@@ -281,7 +295,7 @@ export class MobileProfileTokenManager {
       .where(
         and(
           eq(mobileProfile.app, app),
-          eq(mobileProfile.label, label),
+          eq(mobileProfile.assignedWorker, hostname),
           eq(mobileProfile.status, "active"),
           or(
             isNull(mobileProfile.cooldownUntil),
@@ -299,17 +313,21 @@ export class MobileProfileTokenManager {
 
   /**
    * Resolve the persona for the box this run executes on: read the box hostname
-   * from the `boxinfo` sidecar, extract its `w-NNNNN` worker-label prefix, then
-   * load the matching `(app, label)` persona. Throws (rather than returning
-   * null) so callers stay one-liners — every failure here is fatal to the run
-   * and surfaces a precise reason:
+   * from the `boxinfo` sidecar, load the persona assigned to exactly that
+   * hostname (`mobile_profile.assigned_worker`), and if the box owns none,
+   * claim the lowest-numbered free one (`claimFreeProfile`) — that claim is
+   * the assignment from then on. Throws (rather than returning null) so
+   * callers stay one-liners — every failure here is fatal to the run and
+   * surfaces a precise reason:
    *
    *   - sidecar unreachable → can't identify the box; we refuse to guess a
    *     persona (an LRU fallback would break box↔device pinning).
-   *   - hostname has no worker prefix → this box isn't a scan-fleet worker.
-   *   - no eligible persona → the worker has no active persona for `app`
-   *     (unseeded, dead, or in cooldown). Trigger retries; the next cron tick
-   *     re-fires once cooldown clears.
+   *   - the box's row is in cooldown (a box never takes a second row) →
+   *     `PersonaScanError`, so `scanCatchError` retries after the persona
+   *     delay instead of burning the run's attempts within seconds.
+   *   - the box's row is dead, or it has none and the pool has nothing free →
+   *     plain error; an operator has to revive, upload or reassign, and the
+   *     next cron tick re-fires.
    */
   static async loadForThisBox(app: string): Promise<MobileProfileTokenManager> {
     const boxName = await getBoxName();
@@ -318,19 +336,74 @@ export class MobileProfileTokenManager {
         `cannot resolve box identity (boxinfo sidecar unreachable); refusing to pick a ${app} persona`
       );
     }
-    const label = parseWorkerLabel(boxName);
-    if (!label) {
-      throw new Error(
-        `box hostname "${boxName}" has no worker-label prefix (expected "w-NNNNN-...")`
+    const assigned = await MobileProfileTokenManager.loadForWorker(
+      app,
+      boxName
+    );
+    if (assigned) {
+      return assigned;
+    }
+
+    const claimed = await claimFreeProfile(db, app, boxName);
+    if (claimed) {
+      logger.info("mobile profile claimed", {
+        app,
+        box: boxName,
+        profileId: claimed.id,
+      });
+      return new MobileProfileTokenManager(claimed);
+    }
+
+    // `null` also covers a concurrent run of this same box that claimed first:
+    // its row is ours now, so look once more before giving up.
+    const raced = await MobileProfileTokenManager.loadForWorker(app, boxName);
+    if (raced) {
+      return raced;
+    }
+    throw await MobileProfileTokenManager.unusableProfileError(app, boxName);
+  }
+
+  /**
+   * Why `loadForWorker` found nothing usable, as the error the run should
+   * throw. A row in cooldown is temporary: the run gets `PersonaScanError` and
+   * the 20-minute persona retry. A dead row or an empty pool needs an operator
+   * and fails plainly.
+   */
+  private static async unusableProfileError(
+    app: string,
+    hostname: string
+  ): Promise<Error> {
+    const [owned] = await db
+      .select({
+        id: mobileProfile.id,
+        status: mobileProfile.status,
+        cooldownUntil: mobileProfile.cooldownUntil,
+      })
+      .from(mobileProfile)
+      .where(
+        and(
+          eq(mobileProfile.app, app),
+          eq(mobileProfile.assignedWorker, hostname)
+        )
+      )
+      .limit(1);
+    if (!owned) {
+      return new Error(
+        `no usable ${app} mobile profile for box "${hostname}": it has none and no unassigned active profile is free to claim`
       );
     }
-    const manager = await MobileProfileTokenManager.loadForLabel(app, label);
-    if (!manager) {
-      throw new Error(
-        `no active ${app} mobile profile for worker "${label}" (box "${boxName}": missing, dead, or in cooldown)`
+    if (owned.status === "active") {
+      // Active but not loadable: in cooldown (or it cleared between the two
+      // reads, which the retry will simply find usable).
+      const until = owned.cooldownUntil?.toISOString() ?? "now";
+      return new PersonaScanError(
+        `${app} mobile profile ${owned.id} for box "${hostname}" is in cooldown until ${until}; retrying after the persona delay`,
+        false
       );
     }
-    return manager;
+    return new Error(
+      `no usable ${app} mobile profile for box "${hostname}": its assigned profile ${owned.id} is dead`
+    );
   }
 
   // ============================================================================
@@ -429,7 +502,7 @@ export class MobileProfileTokenManager {
 
   /**
    * Encrypt and persist the access + (optional) refresh token from a
-   * derive-bearer result, keeping in-memory profile state in sync.
+   * derive-bearer result (`writeRow` keeps in-memory state in sync).
    */
   private async persistTokenResult(result: ScanTokenResult): Promise<void> {
     const encryptedBearer = await encryptSecret(
@@ -441,23 +514,12 @@ export class MobileProfileTokenManager {
       : null;
     const refreshTokenExpiresAt = result.refreshTokenExpiresAt ?? null;
 
-    await db
-      .update(mobileProfile)
-      .set({
-        accessToken: encryptedBearer,
-        accessTokenExpiresAt: result.expiresAt,
-        refreshToken: encryptedRefreshToken,
-        refreshTokenExpiresAt,
-      })
-      .where(eq(mobileProfile.id, this.profile.id));
-
-    this.profile = {
-      ...this.profile,
+    await this.writeRow({
       accessToken: encryptedBearer,
       accessTokenExpiresAt: result.expiresAt,
       refreshToken: encryptedRefreshToken,
       refreshTokenExpiresAt,
-    };
+    });
   }
 
   private async loadCredentials(): Promise<MobileCredentials> {

@@ -12,7 +12,7 @@ const db = vi.hoisted(() => ({
   leftJoin: vi.fn().mockReturnThis(),
   where: vi.fn(),
 }));
-vi.mock("@dashseller/db", () => ({ db }));
+vi.mock("../../../utils/db", () => ({ db }));
 vi.mock("@trigger.dev/sdk", () => ({ logger: { info: vi.fn() } }));
 
 const config: ScanConfig = {

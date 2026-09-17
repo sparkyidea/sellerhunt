@@ -14,10 +14,11 @@
  * request cap live in `keywords/extract-keywords.ts`; leaf fetches are always
  * sequential.
  */
-import { db } from "@dashseller/db";
+
 import { scanConfig } from "@dashseller/db/schema";
 import { eq } from "drizzle-orm";
 import { z } from "zod";
+import { db } from "./db";
 
 /**
  * Runtime tunables for one marketplace scan, mirrored from the `scan_config`

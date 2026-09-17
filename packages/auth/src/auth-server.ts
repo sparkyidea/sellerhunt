@@ -10,6 +10,7 @@ import { admin, emailOTP, twoFactor } from "better-auth/plugins";
 import { createElement } from "react";
 import { DeleteAccountVerificationEmail } from "./components/auth/email/delete-account-verification";
 import { OtpEmail } from "./components/auth/email/otp-email";
+import { ac, roles } from "./lib/auth/permissions";
 import { sendEmail } from "./lib/send-email";
 
 const otpSubjects: Record<
@@ -22,9 +23,8 @@ const otpSubjects: Record<
   "change-email": "Confirm your new email",
 };
 
-// WebAuthn ceremonies run at the APP origin, not the API origin. Under
-// cross-subdomain cookies (app.X + api.X) the rpID must be the shared
-// registrable domain; in dev it is the app hostname (localhost).
+// WebAuthn runs on the shared app origin. Keep the existing relying-party ID
+// so previously registered passkeys continue to work after consolidation.
 const passkeyRpID = env.COOKIE_DOMAIN
   ? env.COOKIE_DOMAIN.replace(/^\./, "")
   : new URL(env.APP_URL).hostname;
@@ -105,7 +105,9 @@ export const authServer = betterAuth({
     },
   },
   plugins: [
-    admin(),
+    // Statements + roles in lib/auth/permissions.ts; the client mounts the
+    // same pair so `checkRolePermission` and the API agree.
+    admin({ ac, roles }),
     emailOTP({
       // OTP is a passwordless sign-in for existing accounts only; sign-up stays
       // on the email+password path. Prevents OTP from silently creating accounts

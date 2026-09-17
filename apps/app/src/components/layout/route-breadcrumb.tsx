@@ -14,6 +14,11 @@ interface RootSegment {
 }
 
 const ROOT_SEGMENTS: Record<string, RootSegment> = {
+  admin: {
+    href: "/admin",
+    icon: <Icons.security className="size-4" />,
+    label: "Admin",
+  },
   explorer: {
     href: "/explorer/listings",
     icon: <Icons.radar className="size-4" />,

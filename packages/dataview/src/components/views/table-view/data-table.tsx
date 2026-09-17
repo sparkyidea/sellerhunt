@@ -21,6 +21,7 @@ import {
   TableRow,
 } from "../../ui/table";
 import { DataTableStickyHeader } from "./data-table-sticky-header";
+import { rowId } from "./row-id";
 
 /**
  * Calculate column width from explicit property.size.
@@ -157,6 +158,7 @@ export function DataTable<TData>({
     data,
     columns,
     getCoreRowModel: getCoreRowModel(),
+    getRowId: rowId,
     enableRowSelection,
     state: {
       rowSelection,
@@ -189,10 +191,7 @@ export function DataTable<TData>({
                 const isSelect = header.column.id === "__row_select__";
                 return (
                   <TableHead
-                    className={cn(
-                      !isSelect && "truncate",
-                      isSelect && "w-0 pr-0"
-                    )}
+                    className={cn(!isSelect && "truncate", isSelect && "w-0")}
                     colSpan={header.colSpan}
                     key={header.id}
                     style={
@@ -245,7 +244,7 @@ export function DataTable<TData>({
                   className={cn(
                     showVerticalLines && "border-r last:border-r-0",
                     cellWrap ? "whitespace-normal" : "truncate",
-                    isSelect && "w-0 pr-0"
+                    isSelect && "w-0"
                   )}
                   key={cell.id}
                   style={

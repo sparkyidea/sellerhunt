@@ -7,9 +7,10 @@
  * bumps `last_seen_at` only — never `last_scanned_at` — so resolution can't
  * skip the next scheduled scan.
  */
-import { db } from "@dashseller/db";
+
 import { scanKeyword } from "@dashseller/db/schema";
 import { chunk } from "../../utils/chunk";
+import { db } from "../../utils/db";
 
 /**
  * UPSERTs to handle the manual-trigger case where someone fires

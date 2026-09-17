@@ -1,24 +1,7 @@
-import { passkeyClient } from "@better-auth/passkey/client";
-import type { authServer } from "@dashseller/auth/auth-server";
+import { buildAuthClient } from "@dashseller/auth/auth-client";
 import { env } from "@dashseller/env/app";
-import {
-  adminClient,
-  emailOTPClient,
-  inferAdditionalFields,
-  twoFactorClient,
-} from "better-auth/client/plugins";
-import { createAuthClient } from "better-auth/react";
 
-export const authClient = createAuthClient({
-  baseURL: env.NEXT_PUBLIC_API_URL,
-  plugins: [
-    inferAdditionalFields<typeof authServer>(),
-    emailOTPClient(),
-    adminClient(),
-    passkeyClient(),
-    twoFactorClient(),
-  ],
-});
+export const authClient = buildAuthClient(env.NEXT_PUBLIC_API_URL);
 
 export const {
   signIn,

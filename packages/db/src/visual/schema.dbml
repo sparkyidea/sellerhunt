@@ -26,9 +26,9 @@ table account {
 }
 
 table mobile_profile {
-  id text [pk, not null]
+  id integer [pk, not null]
   app text [not null]
-  label text
+  assigned_worker text
   credentials text [not null]
   access_token text
   access_token_expires_at timestamp
@@ -48,6 +48,7 @@ table mobile_profile {
     (app, status) [name: 'mobile_profile_app_status_idx']
     last_used_at [name: 'mobile_profile_last_used_at_idx']
     cooldown_until [name: 'mobile_profile_cooldown_until_idx']
+    (app, assigned_worker) [name: 'mobile_profile_app_assigned_worker_uidx', unique]
   }
 }
 

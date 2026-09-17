@@ -31,7 +31,10 @@ export const scanCron = schedules.task({
   id: "scan-cron",
   machine: "micro",
   queue: { concurrencyLimit: 1 },
-  retry: { maxAttempts: 1 },
+  retry: {
+    maxAttempts: 2,
+    outOfMemory: { machine: "small-1x" },
+  },
   run: async () => {
     await setMachineMetadata();
     const configs = await loadAllScanConfigs();

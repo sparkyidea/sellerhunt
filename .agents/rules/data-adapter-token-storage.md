@@ -76,7 +76,7 @@ Both table types agree on these columns:
 
 | Column | Type | Notes |
 |---|---|---|
-| `id` | uuid | PK |
+| `id` | uuid (`*_token`) / integer identity (`*_profile`) | PK. A profile's id is its number in the admin UI, URLs and logs ("#12"): assigned by the database on insert, never by an upload, never reused. |
 | `access_token` | text (encrypted) | Cached short-lived bearer. `text` not `jsonb` for the same reason as `credentials`. |
 | `access_token_expires_at` | timestamptz | When the cached bearer dies |
 | `created_at`, `updated_at` | timestamptz | Auto-managed |
@@ -100,6 +100,7 @@ Both table types agree on these columns:
 | `status` | enum (`active` \| `dead`) | Pool inclusion flag |
 | `cooldown_until` | timestamptz nullable | Soft-failure cooldown |
 | `failure_count` | int | Consecutive failures; promote to `dead` past a threshold |
+| `assigned_worker` | text nullable | Hostname of the scan box that owns the persona; unique per `app`, written only by the box's own claim. Null = unassigned, claimable by the next box without one. |
 
 The shared `access_token` + `access_token_expires_at` columns let the TS contract overlap:
 
@@ -115,7 +116,19 @@ The `refresh_token` + `refresh_token_expires_at` pair has the same shape on both
 
 ### Encryption rule
 
-Everything in `access_token`, `refresh_token`, and `credentials` is encrypted at rest with `env.ENCRYPTION_SECRET` via `encryptSecret`/`decryptSecret` in `apps/trigger-scan/src/utils/secret-crypto.ts`. Never write plaintext into these columns.
+Everything in `access_token`, `refresh_token`, and `credentials` is encrypted at rest with `env.ENCRYPTION_SECRET` via `encryptSecret`/`decryptSecret` in `packages/db/src/lib/secret-crypto.ts` (shared by the scan worker, the DB seed and the tRPC admin router — each passes its own deployment's `ENCRYPTION_SECRET`, which must be the same value). Never write plaintext into these columns.
+
+### Worker vs. admin writes (no fence)
+
+The worker loads its row once per run and keeps credentials, tokens and failure
+bookkeeping in memory; every worker write is `WHERE id = $1`. The admin surface
+never changes what a run holds: credentials and the box are fixed for the row's
+life (a capture that must change is deleted and uploaded again; a box claims its
+own row). The two admin writes that remain — status and failure reset — are
+last-write-wins against the run's bookkeeping, and the next load honours the
+row. A worker write that matches zero rows means the persona was deleted:
+`StaleMobileProfileError`, the run stops using it, and Trigger retries after 20
+minutes with a fresh load.
 
 ### The TokenManager loop (shared shape, separate implementations)
 

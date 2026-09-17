@@ -41,7 +41,8 @@ Both consumers glob `*.json` here (skipping `*.example.json`), using the
   `SHOP_PROFILE=random` to rotate).
 - **Seed** — `packages/db/src/seed/mobile-profile.ts` loads *every* file into
   the `mobile_profile` pool (app=`shop`), encrypting each and upserting on
-  `(app, label)`. Re-running is idempotent and resets pool state.
+  numbered by the database. Re-running inserts every file again. Rows land
+  unassigned; attach a box from the admin UI.
 
 ## Adding a persona
 

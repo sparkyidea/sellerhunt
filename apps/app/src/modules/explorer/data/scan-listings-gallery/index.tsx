@@ -89,7 +89,9 @@ export function ScanListingsGallery({
         cardPreview="imageUrls"
         cardSize="small"
         fitMedia
-        onCardClick={(item: { id: string }) => openPreview.scanListing(item.id)}
+        onCardClick={(item: { id: string }) =>
+          openPreview("scan-listing", item.id)
+        }
         pagination="infiniteScroll"
         stickyHeader={{ enabled: true, offset: 0 }}
       />

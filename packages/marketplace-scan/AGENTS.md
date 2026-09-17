@@ -228,7 +228,7 @@ the sandbox scripts and the seed. The directories are git-ignored; see each
   capture; the real secret is the refresh token shop mints, stored on the row).
 
 Then `bun run packages/db/src/seed/mobile-profile.ts` — loads every file
-across all apps, upserts by `(app, label)` with `label` = filename stem and
+across all apps and inserts each (the database numbers rows; re-running inserts again) and
 `app` = the directory's app, encrypts the persona, and resets pool state on
 re-run.
 
