@@ -55,4 +55,12 @@ describe("hasPermission", () => {
       false
     );
   });
+  it("denies names that only exist on Object.prototype", () => {
+    for (const name of ["constructor", "__proto__", "toString", "hasOwnProperty"]) {
+      expect(hasPermission(name, { mobileProfile: ["read"] })).toBe(false);
+      expect(hasPermission(`user,${name}`, { mobileProfile: ["read"] })).toBe(
+        false
+      );
+    }
+  });
 });

@@ -20,7 +20,7 @@ const mocks = vi.hoisted(() => ({
     }
   >(),
 }));
-vi.mock("@dashseller/db/trigger", () => ({
+vi.mock("../../../utils/db", () => ({
   get db() {
     return mocks.getDb();
   },

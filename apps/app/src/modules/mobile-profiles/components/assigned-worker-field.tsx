@@ -27,7 +27,7 @@ export function describeAssignment(hostname: string): string {
   if (isWorkerHostname(trimmed)) {
     return `Box ${trimmed} selects this profile on its next run.`;
   }
-  return "Not a hostname: letters, digits and hyphens only.";
+  return "Not a hostname: lowercase letters, digits and hyphens only.";
 }
 
 /**
@@ -40,7 +40,7 @@ export function describeReassignment(
   next: string
 ): string[] {
   const loses = current
-    ? `Box ${current} loses this profile immediately; on its next run it claims a free profile, or fails to load one if none is free.`
+    ? `Box ${current} loses this profile immediately: a scan using it stops at its next write and, on retry, claims a free profile or fails to load one if none is free.`
     : "No box currently uses this profile; the next box without one would claim it.";
   const trimmed = next.trim();
   let gains = "Enter the box hostname to see what changes.";

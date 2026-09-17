@@ -51,7 +51,7 @@ const mocks = vi.hoisted(() => ({
   markKeyword: vi.fn(),
   upsertSeller: vi.fn(),
 }));
-vi.mock("@dashseller/db/trigger", () => ({ db: mocks.db }));
+vi.mock("../../../utils/db", () => ({ db: mocks.db }));
 vi.mock("@trigger.dev/sdk", () => ({
   schemaTask: (definition: Definition) => {
     mocks.definitions.set(definition.id, definition);

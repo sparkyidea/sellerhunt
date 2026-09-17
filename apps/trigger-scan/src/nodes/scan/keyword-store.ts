@@ -17,9 +17,9 @@
  */
 
 import { scanKeyword, scanListing } from "@dashseller/db/schema";
-import { db } from "@dashseller/db/trigger";
 import { and, eq, inArray, isNull, sql } from "drizzle-orm";
 import type { KeywordStore } from "../../keywords/llm-stage";
+import { db } from "../../utils/db";
 
 export const dbKeywordStore: KeywordStore = {
   async linkListingKeyword(input) {

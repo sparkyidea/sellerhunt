@@ -24,8 +24,8 @@ import {
   scanListingSnapshot,
   scanSeller,
 } from "@dashseller/db/schema";
-import { db } from "@dashseller/db/trigger";
 import { and, eq, sql } from "drizzle-orm";
+import { db } from "../../utils/db";
 
 export interface UpsertScanListingInput {
   categoryPath?: string[] | null;

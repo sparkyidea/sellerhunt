@@ -14,7 +14,6 @@
  */
 
 import { scanListing } from "@dashseller/db/schema";
-import { db } from "@dashseller/db/trigger";
 import { logger } from "@trigger.dev/sdk";
 import { and, asc, eq, inArray, isNull, lt, sql } from "drizzle-orm";
 import type { PhraseParser } from "../../keywords/extract-keywords";
@@ -25,6 +24,7 @@ import {
   type UnresolvedListing,
 } from "../../keywords/llm-stage";
 import { createOpenAIClient } from "../../keywords/openai-client";
+import { db } from "../../utils/db";
 import type { ScanConfig } from "../../utils/scan-config";
 import { dbKeywordStore } from "./keyword-store";
 

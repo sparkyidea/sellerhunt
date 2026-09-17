@@ -379,7 +379,8 @@ describe("create / get / getMany", () => {
       assignedWorker: box,
     });
     expect(assigned.assignedWorker).toBe(box);
-    expect(assigned.revision).toBe(0);
+    // A run on another box holding the row must stop using it.
+    expect(assigned.revision).toBe(1);
 
     const unassigned = await admin.mobileProfile.update({
       id: created.id,
@@ -388,12 +389,32 @@ describe("create / get / getMany", () => {
     expect(unassigned.assignedWorker).toBeNull();
   });
 
+  it("rejects a cursor that is not a profile id", async () => {
+    for (const cursor of ["abc", "12abc", "0", "-1", "99999999999"]) {
+      await expect(
+        admin.mobileProfile.getMany({ cursor: { after: cursor } })
+      ).rejects.toMatchObject({ code: "BAD_REQUEST" });
+    }
+    // A stale but well-formed cursor is just an empty page.
+    const page = await admin.mobileProfile.getMany({
+      cursor: { after: "2147483647" },
+    });
+    expect(page.items).toEqual([]);
+  });
+
   it("rejects a worker value that is not a hostname", async () => {
     const created = await createProfile({
       app: "shop",
       credentials: shopCredentials,
     });
-    for (const bad of ["w-00001 orc", "box.example", "-w-00001", ""]) {
+    for (const bad of [
+      "w-00001 orc",
+      "box.example",
+      "-w-00001",
+      "",
+      // The sidecar reports lowercase and the match is case-sensitive.
+      "W-00001-ORC",
+    ]) {
       await expect(
         admin.mobileProfile.update({ id: created.id, assignedWorker: bad })
       ).rejects.toMatchObject({ code: "BAD_REQUEST" });
@@ -512,29 +533,36 @@ describe("mutations", () => {
     expect(row.refreshToken).toBe("cached-refresh");
   });
 
-  it("update bumps revision on a status change but not on an assignment", async () => {
+  it("update bumps revision on a status change and a reassignment, not on a no-op", async () => {
     const created = await createProfile({
       app: "shop",
       credentials: shopCredentials,
     });
+    const box = hostname();
     const assigned = await admin.mobileProfile.update({
       id: created.id,
-      assignedWorker: hostname(),
+      assignedWorker: box,
     });
-    expect(assigned.revision).toBe(0);
+    expect(assigned.revision).toBe(1);
+
+    const sameBox = await admin.mobileProfile.update({
+      id: created.id,
+      assignedWorker: box,
+    });
+    expect(sameBox.revision).toBe(1);
 
     const dead = await admin.mobileProfile.update({
       id: created.id,
       status: "dead",
     });
     expect(dead.status).toBe("dead");
-    expect(dead.revision).toBe(1);
+    expect(dead.revision).toBe(2);
 
     const same = await admin.mobileProfile.update({
       id: created.id,
       status: "dead",
     });
-    expect(same.revision).toBe(1);
+    expect(same.revision).toBe(2);
 
     await expect(
       admin.mobileProfile.update({ id: created.id })

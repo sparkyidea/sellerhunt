@@ -46,7 +46,8 @@ const assignedWorkerSchema = z
   .string()
   .trim()
   .refine(isWorkerHostname, {
-    message: "Not a hostname: letters, digits and hyphens only, up to 63",
+    message:
+      "Not a hostname: lowercase letters, digits and hyphens only, up to 63",
   })
   .nullable();
 
@@ -60,6 +61,26 @@ const entryInput = credentialsInputSchema;
 
 /** A paste is one operator's capture batch, not an import job — one page of entries. */
 const entriesInput = z.object({ entries: z.array(entryInput).min(1).max(100) });
+
+/** A profile id as the dataview carries it in a cursor: digits only, int4 range. */
+const PROFILE_CURSOR = /^[1-9]\d{0,9}$/;
+const INT4_MAX = 2_147_483_647;
+
+/**
+ * `buildCursor` interpolates the cursor into `WHERE "id" = $n` against the
+ * integer id, so anything but a profile id would surface as a Postgres cast
+ * error (a 500) rather than the bad request it is — a stale or edited URL is
+ * the usual source.
+ */
+function profileCursor(value: string | undefined): string | undefined {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (!PROFILE_CURSOR.test(value) || Number(value) > INT4_MAX) {
+    throw new TRPCError({ code: "BAD_REQUEST", message: "Invalid cursor" });
+  }
+  return value;
+}
 
 /** `revision + 1` — fences out runs that loaded the row before this write. */
 const bumpRevision = { revision: sql`${mobileProfile.revision} + 1` };
@@ -143,7 +164,9 @@ export const mobileProfileRouter = router({
 
   getMany: readProfiles.input(getManyInput).query(async ({ input }) => {
     const { cursor, limit, search, filter, sort, groupBy } = input;
-    const { after, before } = getCursorParams(cursor);
+    const raw = getCursorParams(cursor);
+    const after = profileCursor(raw.after);
+    const before = profileCursor(raw.before);
 
     const filterWhere = buildWhere(mobileProfile, filter);
     const searchQuery = buildSearchFilter(
@@ -244,11 +267,14 @@ export const mobileProfileRouter = router({
     }),
 
   /**
-   * Worker assignment and/or status. `app` is immutable. A
-   * status change bumps `revision` (a running worker's view of "active" is
-   * now wrong); a reassignment does not — worker writes are id-keyed, the box
-   * that loaded the row keeps a valid view, and the old box simply fails to
-   * load a persona next run. `assignedWorker: null` unassigns.
+   * Worker assignment and/or status. `app` is immutable. A status change
+   * bumps `revision` (a running worker's view of "active" is now wrong), and
+   * so does a reassignment: a run on the old box still holds the row in
+   * memory, and without the bump its fenced writes would keep succeeding
+   * while the new box loads the same persona — one device identity on two
+   * machines. With it, that run fails its next write, stops, and retries on
+   * whatever its box owns then. Writing the same value again bumps nothing.
+   * `assignedWorker: null` unassigns.
    */
   update: updateProfiles
     .input(
@@ -267,6 +293,9 @@ export const mobileProfileRouter = router({
       const row = await requireProfile(input.id);
       const statusChanged =
         input.status !== undefined && input.status !== row.status;
+      const workerChanged =
+        input.assignedWorker !== undefined &&
+        input.assignedWorker !== row.assignedWorker;
       try {
         const rows = await db
           .update(mobileProfile)
@@ -275,7 +304,7 @@ export const mobileProfileRouter = router({
               ? {}
               : { assignedWorker: input.assignedWorker }),
             ...(input.status === undefined ? {} : { status: input.status }),
-            ...(statusChanged ? bumpRevision : {}),
+            ...(statusChanged || workerChanged ? bumpRevision : {}),
           })
           .where(eq(mobileProfile.id, input.id))
           .returning();

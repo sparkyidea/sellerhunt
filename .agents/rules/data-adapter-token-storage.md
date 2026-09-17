@@ -123,13 +123,14 @@ Everything in `access_token`, `refresh_token`, and `credentials` is encrypted at
 
 `mobile_profile.revision` is an optimistic-concurrency counter. The worker loads
 a row once per run and keeps credentials, tokens and failure bookkeeping in
-memory. Admin mutations that invalidate that view — replace credentials, evict
-bearer, reset failures, change status — bump `revision`. Every worker write goes
-through `fencedProfileWhere(id, revision)` (`packages/db/src/lib/mobile-profile-fence.ts`);
-zero rows → `StaleMobileProfileError` → the run stops using the persona and
-Trigger retries after 20 minutes with a fresh load. Label-only renames do not
-bump: worker writes are id-keyed, so the box that loaded the row keeps a valid
-view; the old box simply fails to load a persona on its *next* run.
+memory. Admin mutations that invalidate that view — replace credentials, reset
+failures, change status, move the row to another box — bump `revision`. Every
+worker write goes through `fencedProfileWhere(id, revision)`
+(`packages/db/src/lib/mobile-profile-fence.ts`); zero rows →
+`StaleMobileProfileError` → the run stops using the persona and Trigger retries
+after 20 minutes with a fresh load. Reassignment bumps on purpose: worker writes
+are id-keyed, so without it a run on the old box would keep writing while the
+new box loads the same persona — one device identity on two machines.
 
 ### The TokenManager loop (shared shape, separate implementations)
 

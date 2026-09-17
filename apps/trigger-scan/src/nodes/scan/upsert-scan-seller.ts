@@ -18,8 +18,8 @@
  */
 
 import { scanSeller } from "@dashseller/db/schema";
-import { db } from "@dashseller/db/trigger";
 import { and, eq } from "drizzle-orm";
+import { db } from "../../utils/db";
 
 export interface UpsertScanSellerInput {
   displayName?: string | null;

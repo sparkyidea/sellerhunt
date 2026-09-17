@@ -3,7 +3,6 @@
  */
 
 import { scanSeller } from "@dashseller/db/schema";
-import { db } from "@dashseller/db/trigger";
 import { logger, metadata, schemaTask, tags } from "@trigger.dev/sdk";
 import { and, eq } from "drizzle-orm";
 import { z } from "zod";
@@ -13,6 +12,7 @@ import {
 } from "../../nodes/scan/scan-freshness";
 import { upsertScanSeller } from "../../nodes/scan/upsert-scan-seller";
 import { waitForListingBatches } from "../../nodes/scan/wait-for-listing-batches";
+import { db } from "../../utils/db";
 import { setMachineMetadata } from "../../utils/machine-metadata";
 import { assertScanEntitySupported } from "../../utils/scan-capabilities";
 import { isSellerNotFound } from "../../utils/scan-completion";

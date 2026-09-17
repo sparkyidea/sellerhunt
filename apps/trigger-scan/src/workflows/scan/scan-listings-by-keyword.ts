@@ -3,7 +3,6 @@
  */
 
 import { scanKeyword } from "@dashseller/db/schema";
-import { db } from "@dashseller/db/trigger";
 import { logger, metadata, schemaTask, tags } from "@trigger.dev/sdk";
 import { and, eq } from "drizzle-orm";
 import { z } from "zod";
@@ -17,6 +16,7 @@ import {
   registerScanKeywords,
 } from "../../nodes/scan/upsert-scan-keyword";
 import { waitForListingBatches } from "../../nodes/scan/wait-for-listing-batches";
+import { db } from "../../utils/db";
 import { setMachineMetadata } from "../../utils/machine-metadata";
 import { batchWaves } from "../../utils/scan-batch";
 import { assertScanEntitySupported } from "../../utils/scan-capabilities";

@@ -138,10 +138,11 @@ loads or claims that worker's profile and rebuilds the complete client, includin
 device credentials and its bearer provider. Metadata and logs record worker names and
 profile IDs only, never credentials or tokens.
 
-Database sockets do not survive a restore either. The worker imports its client from
-`@dashseller/db/trigger`, a singleton tuned for checkpointing (`max: 1`,
-`idleTimeoutMillis: 10_000`) so an idle connection closes on its own before a
-checkpoint instead of being carried across the restore. `createDbClient` always
+Database sockets do not survive a restore either. The worker builds its client in
+`utils/db.ts` from the deployment env (`createDbClient` from `@dashseller/db/client`),
+tuned for checkpointing (`max: 1`, `idleTimeoutMillis: 10_000`) so an idle connection
+closes on its own before a checkpoint instead of being carried across the restore.
+`createDbClient` always
 registers a pool `error` listener: an idle client that dies is dropped by `pg-pool`
 and logged instead of killing the process with an uncaught exception, and the next
 query opens a fresh connection. Nothing is rotated or drained on resume. API and app

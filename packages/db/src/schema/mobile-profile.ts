@@ -169,7 +169,7 @@ export const mobileProfile = pgTable(
      * Optimistic-concurrency fence between the scan worker and the admin UI.
      * The worker loads a row once per run and keeps credentials/tokens in
      * memory; admin mutations that invalidate that view (credentials replaced,
-     * bearer evicted, failures reset, status changed) bump this counter. Every
+     * failures reset, status changed, worker reassigned) bump this counter. Every
      * worker write is `WHERE id = $1 AND revision = $2`
      * (`lib/mobile-profile-fence.ts`); zero rows → `StaleMobileProfileError`,
      * the run stops using the persona and retries with a fresh load.

@@ -9,8 +9,8 @@
  */
 
 import { scanKeyword } from "@dashseller/db/schema";
-import { db } from "@dashseller/db/trigger";
 import { chunk } from "../../utils/chunk";
+import { db } from "../../utils/db";
 
 /**
  * UPSERTs to handle the manual-trigger case where someone fires

@@ -33,7 +33,14 @@ export type RoleName = keyof typeof roles;
 /** A permission request: `{ mobileProfile: ["update"] }`. */
 export type Permissions = Parameters<typeof roles.admin.authorize>[0];
 
-const roleTable: Record<string, Role | undefined> = roles;
+/**
+ * The role behind a name, or undefined. An own-property check, not a plain
+ * lookup: `roles["constructor"]` would resolve to `Object`, and a role string
+ * like that must deny, not throw.
+ */
+function roleFor(name: string): Role | undefined {
+  return Object.hasOwn(roles, name) ? roles[name as RoleName] : undefined;
+}
 
 /**
  * True when any of the user's comma-separated roles grants every requested
@@ -45,6 +52,6 @@ export function hasPermission(
   permissions: Permissions
 ): boolean {
   return parseRoles(role).some(
-    (name) => roleTable[name]?.authorize(permissions).success === true
+    (name) => roleFor(name)?.authorize(permissions).success === true
   );
 }

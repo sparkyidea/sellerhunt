@@ -32,7 +32,7 @@ const mocks = vi.hoisted(() => ({
   },
 }));
 // `scan-config` (loaded for its schema) imports the db client; never touched here.
-vi.mock("@dashseller/db/trigger", () => ({ db: {} }));
+vi.mock("../../../utils/db", () => ({ db: {} }));
 vi.mock("@trigger.dev/sdk", () => ({
   schemaTask: (definition: TaskDefinition) => {
     mocks.runs.set(definition.id, definition.run);

@@ -16,9 +16,9 @@
  */
 
 import { scanConfig } from "@dashseller/db/schema";
-import { db } from "@dashseller/db/trigger";
 import { eq } from "drizzle-orm";
 import { z } from "zod";
+import { db } from "./db";
 
 /**
  * Runtime tunables for one marketplace scan, mirrored from the `scan_config`

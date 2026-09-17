@@ -1,6 +1,6 @@
 import { scanKeyword, scanListing, scanSeller } from "@dashseller/db/schema";
-import { db } from "@dashseller/db/trigger";
 import { and, asc, eq, isNull, lte, or, sql } from "drizzle-orm";
+import { db } from "../../utils/db";
 import type { ScanEntity } from "../../utils/scan-capabilities";
 import { freshnessCutoff } from "../../utils/scan-cooldowns";
 

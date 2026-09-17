@@ -32,8 +32,8 @@ export class PersonaScanError extends Error {
 
 /**
  * A fenced `mobile_profile` write matched zero rows: an admin replaced the
- * credentials, evicted the bearer, reset failures or changed the status after
- * this run loaded the row. The in-memory persona is no longer trustworthy;
+ * credentials, reset failures, changed the status or moved the row to another
+ * box after this run loaded it. The in-memory persona is no longer trustworthy;
  * stop using it for this run and let Trigger retry with a fresh load.
  */
 export class StaleMobileProfileError extends Error {

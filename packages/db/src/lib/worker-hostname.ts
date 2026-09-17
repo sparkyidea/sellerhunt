@@ -13,9 +13,13 @@
  * assignment no box will ever match.
  */
 
-/** RFC 1123 hostname label: letters, digits, hyphens; 1–63 chars; no edge hyphen. */
-export const WORKER_HOSTNAME_PATTERN =
-  /^[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?$/i;
+/**
+ * RFC 1123 hostname label: lowercase letters, digits, hyphens; 1–63 chars; no
+ * edge hyphen. Lowercase only, deliberately: `loadForWorker` compares
+ * `assigned_worker` with the sidecar's hostname by plain SQL equality, so an
+ * uppercase value would be stored and never matched.
+ */
+export const WORKER_HOSTNAME_PATTERN = /^[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?$/;
 
 /** True when `value` is a hostname a box could report. */
 export function isWorkerHostname(value: string | null | undefined): boolean {

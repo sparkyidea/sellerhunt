@@ -44,7 +44,6 @@ import type {
   ShopRefreshTokenCredentials,
 } from "@dashseller/db/schema";
 import { mobileProfile } from "@dashseller/db/schema";
-import { db } from "@dashseller/db/trigger";
 import { env } from "@dashseller/env/trigger-scan";
 import { createScanClient, getScanToken } from "@dashseller/marketplace-scan";
 import { ScanRequestError } from "@dashseller/marketplace-scan/errors";
@@ -56,7 +55,8 @@ import type {
 import { logger } from "@trigger.dev/sdk";
 import { and, asc, eq, isNull, lt, or, sql } from "drizzle-orm";
 import { getBoxName } from "./box-name";
-import { StaleMobileProfileError } from "./scan-errors";
+import { db } from "./db";
+import { PersonaScanError, StaleMobileProfileError } from "./scan-errors";
 
 /** Default consecutive soft failures before promoting a profile to `dead`. */
 const DEFAULT_DEAD_THRESHOLD = 3;
@@ -277,8 +277,7 @@ export class MobileProfileTokenManager {
    * Box-pinned selector. Returns the active, non-cooling-down profile whose
    * `assignedWorker` equals `hostname` for the given app — the persona this
    * specific worker box owns. Returns `null` when the row is missing, `dead`,
-   * or in cooldown; the caller turns that into a retryable task error and the
-   * next cron tick re-fires once cooldown clears.
+   * or in cooldown; `loadForThisBox` tells those apart before failing.
    *
    * Unlike `loadNextActive`, there is no rotation: one box ↔ one persona. The
    * pinning keeps each captured device's traffic on a single machine/IP, which
@@ -324,10 +323,12 @@ export class MobileProfileTokenManager {
    *
    *   - sidecar unreachable → can't identify the box; we refuse to guess a
    *     persona (an LRU fallback would break box↔device pinning).
-   *   - no eligible persona → the box's row is dead or in cooldown (a box
-   *     never takes a second row), or it has none and the pool has nothing
-   *     free. Trigger retries; the next cron tick re-fires once cooldown
-   *     clears or an operator uploads / reassigns.
+   *   - the box's row is in cooldown (a box never takes a second row) →
+   *     `PersonaScanError`, so `scanCatchError` retries after the persona
+   *     delay instead of burning the run's attempts within seconds.
+   *   - the box's row is dead, or it has none and the pool has nothing free →
+   *     plain error; an operator has to revive, upload or reassign, and the
+   *     next cron tick re-fires.
    */
   static async loadForThisBox(app: string): Promise<MobileProfileTokenManager> {
     const boxName = await getBoxName();
@@ -360,8 +361,49 @@ export class MobileProfileTokenManager {
     if (raced) {
       return raced;
     }
-    throw new Error(
-      `no usable ${app} mobile profile for box "${boxName}": its assigned profile is dead or in cooldown, or it has none and no unassigned active profile is free to claim`
+    throw await MobileProfileTokenManager.unusableProfileError(app, boxName);
+  }
+
+  /**
+   * Why `loadForWorker` found nothing usable, as the error the run should
+   * throw. A row in cooldown is temporary: the run gets `PersonaScanError` and
+   * the 20-minute persona retry. A dead row or an empty pool needs an operator
+   * and fails plainly.
+   */
+  private static async unusableProfileError(
+    app: string,
+    hostname: string
+  ): Promise<Error> {
+    const [owned] = await db
+      .select({
+        id: mobileProfile.id,
+        status: mobileProfile.status,
+        cooldownUntil: mobileProfile.cooldownUntil,
+      })
+      .from(mobileProfile)
+      .where(
+        and(
+          eq(mobileProfile.app, app),
+          eq(mobileProfile.assignedWorker, hostname)
+        )
+      )
+      .limit(1);
+    if (!owned) {
+      return new Error(
+        `no usable ${app} mobile profile for box "${hostname}": it has none and no unassigned active profile is free to claim`
+      );
+    }
+    if (owned.status === "active") {
+      // Active but not loadable: in cooldown (or it cleared between the two
+      // reads, which the retry will simply find usable).
+      const until = owned.cooldownUntil?.toISOString() ?? "now";
+      return new PersonaScanError(
+        `${app} mobile profile ${owned.id} for box "${hostname}" is in cooldown until ${until}; retrying after the persona delay`,
+        false
+      );
+    }
+    return new Error(
+      `no usable ${app} mobile profile for box "${hostname}": its assigned profile ${owned.id} is dead`
     );
   }
 
