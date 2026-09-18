@@ -19,7 +19,9 @@ export function AppShell({
         <div
           className={cn(
             "@container/main flex flex-1",
-            "not-has-data-[slot=panel]:rounded-tr-xl not-has-data-[slot=panel]:border-t not-has-data-[slot=panel]:border-r not-has-data-[slot=panel]:bg-background"
+            // The persistent preview has data-state even when closed; only a
+            // non-collapsible main panel should suppress the fallback surface.
+            "not-has-[[data-slot=panel-provider]:not([data-state])]:rounded-tr-xl not-has-[[data-slot=panel-provider]:not([data-state])]:border-t not-has-[[data-slot=panel-provider]:not([data-state])]:border-r not-has-[[data-slot=panel-provider]:not([data-state])]:bg-background"
           )}
         >
           {children}
