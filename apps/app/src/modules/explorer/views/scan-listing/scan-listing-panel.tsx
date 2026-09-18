@@ -7,19 +7,19 @@ import {
   PanelAction,
   PanelClose,
   PanelContent,
-  PanelExpand,
   PanelGroup,
   PanelHeader,
   PanelTags,
-  PanelTitle,
   PanelToolbar,
 } from "@sparkyidea/ui/components/panel";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { ExternalLinkIcon } from "lucide-react";
-import type { Route } from "next";
-import Link from "next/link";
 import { DynamicLink } from "@/components/layout/dynamic-link";
 import { RouteBreadcrumb } from "@/components/layout/route-breadcrumb";
+import {
+  PreviewExpand,
+  usePanelView,
+} from "@/components/preview/panel-view-context";
 import { useTRPC } from "@/lib/utils/trpc/client";
 import { ScanListingClassificationCard } from "../../components/scan-listing-classification-card";
 import { ScanListingInfoCard } from "../../components/scan-listing-info-card";
@@ -52,83 +52,63 @@ function getScanListingActions(listing: ScanListingData): ActionItem[] {
   ];
 }
 
-export function ScanListingDetailView({ id }: { id: string }) {
-  const trpc = useTRPC();
-  const { data: listing } = useSuspenseQuery(
-    trpc.scanListing.get.queryOptions({ id })
-  );
-
-  return (
-    <>
-      <ScanListingPageHeader listing={listing} />
-      <ScanListingPanelContent listing={listing} />
-    </>
-  );
-}
-
-export function ScanListingPreviewView({
+function ScanListingPanelView({
   id,
   onClose,
 }: {
   id: string;
-  onClose: () => void;
+  onClose?: () => void;
 }) {
   const trpc = useTRPC();
   const { data: listing } = useSuspenseQuery(
     trpc.scanListing.get.queryOptions({ id })
   );
-
   return (
     <>
-      <ScanListingPreviewHeader listing={listing} onClose={onClose} />
+      <ScanListingHeader listing={listing} onClose={onClose} />
       <ScanListingPanelContent listing={listing} />
     </>
   );
 }
 
-function ScanListingPageHeader({ listing }: { listing: ScanListingData }) {
-  const actions = getScanListingActions(listing);
-  return (
-    <PanelGroup>
-      <PanelHeader>
-        <RouteBreadcrumb currentLabel={listing.title} />
-        <ScanListingTags listing={listing} />
-      </PanelHeader>
-      {actions.length > 0 && (
-        <PanelAction>
-          <MoreActions items={actions} />
-        </PanelAction>
-      )}
-    </PanelGroup>
-  );
-}
+export {
+  ScanListingPanelView as ScanListingDetailView,
+  ScanListingPanelView as ScanListingPreviewView,
+};
 
-function ScanListingPreviewHeader({
+function ScanListingHeader({
   listing,
   onClose,
 }: {
   listing: ScanListingData;
-  onClose: () => void;
+  onClose?: () => void;
 }) {
+  const { mode } = usePanelView();
+  const preview = mode === "preview";
   const actions = getScanListingActions(listing);
   return (
     <>
-      <PanelToolbar>
-        <PanelClose onClose={onClose} />
-        <PanelExpand
-          render={<Link href={`/explorer/listings/${listing.id}` as Route} />}
-        />
-        {actions.length > 0 && (
-          <PanelAction>
-            <MoreActions hidePinned items={actions} variant="ghost" />
-          </PanelAction>
-        )}
-      </PanelToolbar>
+      {preview && onClose && (
+        <PanelToolbar>
+          <PanelClose onClose={onClose} />
+          <PreviewExpand href={`/explorer/listings/${listing.id}`} />
+          {actions.length > 0 && (
+            <PanelAction>
+              <MoreActions hidePinned items={actions} variant="ghost" />
+            </PanelAction>
+          )}
+        </PanelToolbar>
+      )}
       <PanelGroup>
         <PanelHeader>
-          <PanelTitle>{listing.title}</PanelTitle>
+          <RouteBreadcrumb currentLabel={listing.title} showRoot={!preview} />
           <ScanListingTags listing={listing} />
         </PanelHeader>
+        {!preview && actions.length > 0 && (
+          <PanelAction>
+            <MoreActions items={actions} />
+          </PanelAction>
+        )}
       </PanelGroup>
     </>
   );

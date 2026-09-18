@@ -1,7 +1,8 @@
-import { Panel, PanelProvider } from "@sparkyidea/ui/components/panel";
+import { Panel } from "@sparkyidea/ui/components/panel";
 import { Suspense } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { ErrorView } from "@/components/error-view";
+import { PanelRoute } from "@/components/preview/panel-route";
 import { HydrateClient, prefetch, trpc } from "@/lib/utils/trpc/server";
 import { ScanListingDetailView } from "@/modules/explorer/views/scan-listing/scan-listing-panel";
 import { ScanListingDetailViewSkeleton } from "@/modules/explorer/views/scan-listing/scan-listing-panel-skeleton";
@@ -15,8 +16,8 @@ export default async function ScanListingPage({
   await prefetch(trpc.scanListing.get.queryOptions({ id: listingId }));
 
   return (
-    <HydrateClient>
-      <PanelProvider>
+    <PanelRoute>
+      <HydrateClient>
         <Panel>
           <ErrorBoundary
             fallback={<ErrorView message="Failed to load listing" />}
@@ -26,7 +27,7 @@ export default async function ScanListingPage({
             </Suspense>
           </ErrorBoundary>
         </Panel>
-      </PanelProvider>
-    </HydrateClient>
+      </HydrateClient>
+    </PanelRoute>
   );
 }

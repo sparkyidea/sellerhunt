@@ -6,17 +6,17 @@ import {
   PanelAction,
   PanelClose,
   PanelContent,
-  PanelExpand,
   PanelGroup,
   PanelHeader,
-  PanelTitle,
   PanelToolbar,
 } from "@sparkyidea/ui/components/panel";
 import { useSuspenseQuery } from "@tanstack/react-query";
-import type { Route } from "next";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { RouteBreadcrumb } from "@/components/layout/route-breadcrumb";
+import {
+  PreviewExpand,
+  usePanelView,
+} from "@/components/preview/panel-view-context";
 import { useTRPC } from "@/lib/utils/trpc/client";
 import { MobileProfileBearerCard } from "../../components/mobile-profile-bearer-card";
 import { MobileProfileHealthCard } from "../../components/mobile-profile-health-card";
@@ -31,44 +31,33 @@ function profileTitle(profile: MobileProfileData): string {
   return profileNumber(profile.id);
 }
 
-export function MobileProfileDetailView({ id }: { id: number }) {
-  const trpc = useTRPC();
-  const router = useRouter();
-  const { data: profile } = useSuspenseQuery(
-    trpc.mobileProfile.get.queryOptions({ id })
-  );
-  const { actions, dialogs } = useMobileProfileActions(profile, {
-    onDeleted: () => router.push("/admin/mobile-profiles"),
-  });
-
-  return (
-    <>
-      <MobileProfilePageHeader actions={actions} profile={profile} />
-      <MobileProfilePanelContent profile={profile} />
-      {dialogs}
-    </>
-  );
-}
-
-export function MobileProfilePreviewView({
+function MobileProfilePanelView({
   id,
   onClose,
 }: {
-  /** String because the preview registry is generic over kinds. */
-  id: string;
-  onClose: () => void;
+  id: number | string;
+  onClose?: () => void;
 }) {
   const trpc = useTRPC();
+  const router = useRouter();
+  const { mode } = usePanelView();
   const { data: profile } = useSuspenseQuery(
-    trpc.mobileProfile.get.queryOptions({ id: parseProfileId(id) })
+    trpc.mobileProfile.get.queryOptions({
+      id: typeof id === "string" ? parseProfileId(id) : id,
+    })
   );
   const { actions, dialogs } = useMobileProfileActions(profile, {
-    onDeleted: onClose,
+    onDeleted: () => {
+      if (mode === "main") {
+        router.push("/admin/mobile-profiles");
+      } else {
+        onClose?.();
+      }
+    },
   });
-
   return (
     <>
-      <MobileProfilePreviewHeader
+      <MobileProfileHeader
         actions={actions}
         onClose={onClose}
         profile={profile}
@@ -79,57 +68,57 @@ export function MobileProfilePreviewView({
   );
 }
 
-function MobileProfilePageHeader({
-  profile,
-  actions,
-}: {
-  profile: MobileProfileData;
-  actions: ActionItem[];
-}) {
-  return (
-    <PanelGroup>
-      <PanelHeader>
-        <RouteBreadcrumb currentLabel={profileTitle(profile)} />
-        <MobileProfileTags profile={profile} />
-      </PanelHeader>
-      {actions.length > 0 && (
-        <PanelAction>
-          <MoreActions items={actions} />
-        </PanelAction>
-      )}
-    </PanelGroup>
-  );
+export function MobileProfileDetailView({ id }: { id: number }) {
+  return <MobileProfilePanelView id={id} />;
 }
 
-function MobileProfilePreviewHeader({
+export function MobileProfilePreviewView({
+  id,
+  onClose,
+}: {
+  id: string;
+  onClose: () => void;
+}) {
+  return <MobileProfilePanelView id={id} onClose={onClose} />;
+}
+
+function MobileProfileHeader({
   profile,
   actions,
   onClose,
 }: {
   profile: MobileProfileData;
   actions: ActionItem[];
-  onClose: () => void;
+  onClose?: () => void;
 }) {
+  const { mode } = usePanelView();
+  const preview = mode === "preview";
   return (
     <>
-      <PanelToolbar>
-        <PanelClose onClose={onClose} />
-        <PanelExpand
-          render={
-            <Link href={`/admin/mobile-profiles/${profile.id}` as Route} />
-          }
-        />
-        {actions.length > 0 && (
-          <PanelAction>
-            <MoreActions hidePinned items={actions} variant="ghost" />
-          </PanelAction>
-        )}
-      </PanelToolbar>
+      {preview && onClose && (
+        <PanelToolbar>
+          <PanelClose onClose={onClose} />
+          <PreviewExpand href={`/admin/mobile-profiles/${profile.id}`} />
+          {actions.length > 0 && (
+            <PanelAction>
+              <MoreActions hidePinned items={actions} variant="ghost" />
+            </PanelAction>
+          )}
+        </PanelToolbar>
+      )}
       <PanelGroup>
         <PanelHeader>
-          <PanelTitle>{profileTitle(profile)}</PanelTitle>
+          <RouteBreadcrumb
+            currentLabel={profileTitle(profile)}
+            showRoot={!preview}
+          />
           <MobileProfileTags profile={profile} />
         </PanelHeader>
+        {!preview && actions.length > 0 && (
+          <PanelAction>
+            <MoreActions items={actions} />
+          </PanelAction>
+        )}
       </PanelGroup>
     </>
   );

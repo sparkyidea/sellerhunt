@@ -84,6 +84,12 @@ Query builders shared by routers live in `packages/trpc/src/lib/`
 (`build-filter`, `build-group`, `build-rollup`, `build-search`, `build-sort`,
 `schemas`), with `bun:test` coverage in `lib/__tests__/`.
 
+### Panel lifecycle
+
+The shared shell owns route and preview surfaces. See the
+[panel structure and lifetime rules](rules/patterns-panel-structure.md) before
+adding a page, changing panel motion, or placing providers around route content.
+
 ### tRPC + React Query patterns
 
 **Page-level data:** `useQuery`. **Inside dataview tables:** `useSuspenseQuery`

@@ -4,10 +4,10 @@ import {
   PanelContent,
   PanelGroup,
   PanelHeader,
-  PanelProvider,
   PanelTitle,
 } from "@sparkyidea/ui/components/panel";
 import dynamic from "next/dynamic";
+import { PanelRoute } from "@/components/preview/panel-route";
 import { ScanListingsGallerySkeleton } from "@/modules/explorer/data/scan-listings-gallery/scan-listings-gallery-skeleton";
 
 const ScanListingsGallery = dynamic(
@@ -23,7 +23,7 @@ const ScanListingsGallery = dynamic(
 
 export default function ExplorerListingsPage() {
   return (
-    <PanelProvider>
+    <PanelRoute>
       <Panel className="max-w-none">
         <PanelGroup>
           <PanelHeader>
@@ -34,6 +34,6 @@ export default function ExplorerListingsPage() {
           <ScanListingsGallery />
         </PanelContent>
       </Panel>
-    </PanelProvider>
+    </PanelRoute>
   );
 }

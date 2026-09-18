@@ -31,9 +31,11 @@ const ROOT_SEGMENTS: Record<string, RootSegment> = {
 export function RouteBreadcrumb({
   currentLabel,
   parentLabel,
+  showRoot = true,
 }: {
   currentLabel: ReactNode;
   parentLabel?: ReactNode;
+  showRoot?: boolean;
 }) {
   const pathname = usePathname();
   const segments = pathname.split("/").filter(Boolean);
@@ -53,7 +55,7 @@ export function RouteBreadcrumb({
           : undefined
       }
       root={
-        root
+        root && showRoot
           ? {
               icon: root.icon,
               label: root.label,

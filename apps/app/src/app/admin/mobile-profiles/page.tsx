@@ -7,11 +7,11 @@ import {
   PanelContent,
   PanelGroup,
   PanelHeader,
-  PanelProvider,
   PanelTitle,
 } from "@sparkyidea/ui/components/panel";
 import { UploadIcon } from "lucide-react";
 import dynamic from "next/dynamic";
+import { PanelRoute } from "@/components/preview/panel-route";
 import { MobileProfilesTableSkeleton } from "@/modules/mobile-profiles/data/mobile-profiles-table/mobile-profiles-table-skeleton";
 import { useMobileProfileDialog } from "@/modules/mobile-profiles/hooks/use-mobile-profile-dialog";
 
@@ -34,7 +34,7 @@ const MobileProfilesTable = dynamic(
  */
 export default function AdminMobileProfilesPage() {
   return (
-    <PanelProvider>
+    <PanelRoute>
       <Panel className="max-w-none">
         <PanelGroup>
           <PanelHeader>
@@ -54,6 +54,6 @@ export default function AdminMobileProfilesPage() {
           <MobileProfilesTable />
         </PanelContent>
       </Panel>
-    </PanelProvider>
+    </PanelRoute>
   );
 }
