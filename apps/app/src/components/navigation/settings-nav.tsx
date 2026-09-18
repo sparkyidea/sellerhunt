@@ -7,12 +7,16 @@ import {
   CardTitle,
 } from "@sparkyidea/ui/components/card";
 import { cn } from "@sparkyidea/ui/lib/utils";
+import type { Route } from "next";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import { useSettingsNavConfig } from "@/configs/settings-nav.config";
+import { getSettingsReturnTo } from "@/lib/navigation-area";
 import type { SettingsNavItem } from "@/types/settings-nav.type";
 export function SettingsSidebar({ className }: { className?: string }) {
   const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const returnTo = getSettingsReturnTo(searchParams.get("from"));
   const { items } = useSettingsNavConfig();
 
   return (
@@ -33,7 +37,9 @@ export function SettingsSidebar({ className }: { className?: string }) {
                   ? "bg-accent font-medium text-accent-foreground"
                   : "text-muted-foreground"
               )}
-              href={item.href}
+              href={
+                `${item.href}?from=${encodeURIComponent(returnTo)}` as Route
+              }
               key={item.href}
             >
               <item.icon className="h-4 w-4" />

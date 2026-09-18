@@ -12,17 +12,19 @@ import type * as React from "react";
 import { AdminNavConfig } from "@/configs/admin-nav.config";
 import { AppNavConfig } from "@/configs/app-nav.config";
 import { SidebarSecondary } from "./app-sidebar-secondary";
+import { useNavigationArea } from "./navigation-area";
 import { SidebarMain } from "./sidebar-main";
 
 export function AppSidebar({
-  navigation = "app",
   className,
   style,
   ...props
-}: React.ComponentProps<typeof Sidebar> & { navigation?: "app" | "admin" }) {
+}: React.ComponentProps<typeof Sidebar>) {
+  const isAdmin = useNavigationArea() === "admin";
   const { isMobile } = useSidebar();
-  const { appNavMain, appNavSecondary } =
-    navigation === "admin" ? AdminNavConfig() : AppNavConfig();
+  const { appNavMain, appNavSecondary } = isAdmin
+    ? AdminNavConfig()
+    : AppNavConfig();
 
   const mobileStyle = isMobile
     ? ({

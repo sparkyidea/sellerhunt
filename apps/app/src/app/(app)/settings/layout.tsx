@@ -1,6 +1,5 @@
 "use client";
 
-import { Panel, PanelProvider } from "@sparkyidea/ui/components/panel";
 import {
   Sheet,
   SheetContent,
@@ -8,8 +7,9 @@ import {
 } from "@sparkyidea/ui/components/sheet";
 import type { Route } from "next";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { SettingsSidebar } from "@/components/navigation/settings-nav";
+import { getSettingsReturnTo } from "@/lib/navigation-area";
 
 interface SettingsLayoutProps {
   children: React.ReactNode;
@@ -18,40 +18,46 @@ interface SettingsLayoutProps {
 export default function Settings({ children }: SettingsLayoutProps) {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(true);
+  const returnTo = useRef("/explorer/listings");
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Capture the origin once for this sheet's lifetime.
+  useEffect(() => {
+    setIsOpen(true);
+    returnTo.current = getSettingsReturnTo(
+      new URLSearchParams(window.location.search).get("from")
+    );
+    return () => {
+      if (closeTimer.current !== null) {
+        clearTimeout(closeTimer.current);
+      }
+    };
+  }, []);
 
   const handleClose = () => {
     setIsOpen(false);
-    const history = new URLSearchParams(window.location.search).get("from");
-    setTimeout(() => {
-      router.push((history || "/products") as Route);
+    if (closeTimer.current !== null) {
+      clearTimeout(closeTimer.current);
+    }
+    closeTimer.current = setTimeout(() => {
+      router.push(returnTo.current as Route);
     }, 200);
   };
 
   return (
-    <>
-      {/* Surface panel behind the sheet: the Sheet portals to <body>, so this
-          route renders nothing in the app content area on its own. Without a
-          panel here the area falls back to the dark app shell
-          (bg-header-background), which flashes through during the sheet's
-          open/close animation. An empty Panel gives it the same white surface
-          every other page uses. */}
-      <PanelProvider>
-        <Panel className="max-w-none" />
-      </PanelProvider>
-      <Sheet onOpenChange={handleClose} open={isOpen}>
-        <SheetContent
-          className="flex flex-row gap-2 overflow-hidden rounded-t-xl data-[side=bottom]:h-[calc(100vh-3.5rem)]"
-          side="bottom"
-        >
-          <SheetTitle className="sr-only">Settings</SheetTitle>
-          <div className="h-full p-4 pr-0">
-            <SettingsSidebar />
-          </div>
-          <div className="h-full w-full overflow-y-auto p-4 pt-6 pr-6">
-            {children}
-          </div>
-        </SheetContent>
-      </Sheet>
-    </>
+    <Sheet onOpenChange={handleClose} open={isOpen}>
+      <SheetContent
+        className="flex flex-row gap-2 overflow-hidden rounded-t-xl data-[side=bottom]:h-[calc(100vh-3.5rem)]"
+        side="bottom"
+      >
+        <SheetTitle className="sr-only">Settings</SheetTitle>
+        <div className="h-full p-4 pr-0">
+          <SettingsSidebar />
+        </div>
+        <div className="h-full w-full overflow-y-auto p-4 pt-6 pr-6">
+          {children}
+        </div>
+      </SheetContent>
+    </Sheet>
   );
 }

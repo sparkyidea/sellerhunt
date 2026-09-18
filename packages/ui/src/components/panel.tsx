@@ -9,14 +9,14 @@ import {
 } from "lucide-react";
 import {
   type ComponentProps,
-  createContext,
   type ReactNode,
   type PointerEvent as ReactPointerEvent,
-  useContext,
+  useCallback,
   useLayoutEffect,
   useRef,
   useState,
 } from "react";
+import { usePanelMotion } from "../hooks/use-panel-motion";
 import { cn } from "../lib/utils";
 import {
   Breadcrumb,
@@ -35,17 +35,7 @@ import {
 } from "./dropdown-menu";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./tooltip";
 
-interface PanelContextValue {
-  contentKey: string | null | undefined;
-  isTransitioning: boolean;
-}
-
-const PanelContext = createContext<PanelContextValue>({
-  isTransitioning: false,
-  contentKey: undefined,
-});
-
-const DEFAULT_PANEL_WIDTH = 380;
+export const DEFAULT_PREVIEW_WIDTH = 380;
 const DEFAULT_MIN_PANEL_WIDTH = 320;
 const DEFAULT_MAX_PANEL_WIDTH = 720;
 // Pointer travel (px) that distinguishes a click from a drag.
@@ -55,145 +45,178 @@ function clamp(value: number, min: number, max: number): number {
   return Math.min(Math.max(value, min), max);
 }
 
-export function PanelProvider({
-  open,
-  id,
+/** Persistent canvas. Routing and panel lifetimes belong to its consumer. */
+export function PanelCanvas({
+  className,
+  previewState = "none",
+  previewWidth = DEFAULT_PREVIEW_WIDTH,
+  resizing = false,
+  onMotionComplete,
+  style,
+  ref,
+  ...props
+}: ComponentProps<"div"> & {
+  previewState?: "none" | "open" | "closed" | "expanding";
+  previewWidth?: number;
+  resizing?: boolean;
+  onMotionComplete?: () => void;
+}) {
+  const layoutRef = useRef<HTMLDivElement>(null);
+  const setLayoutRef = useCallback(
+    (node: HTMLDivElement | null) => {
+      layoutRef.current = node;
+      if (typeof ref === "function") {
+        return ref(node);
+      }
+      if (ref) {
+        ref.current = node;
+      }
+    },
+    [ref]
+  );
+  usePanelMotion(
+    layoutRef,
+    previewState,
+    previewWidth,
+    resizing,
+    onMotionComplete
+  );
+  return (
+    <div
+      className={cn(
+        "@container/main relative isolate min-h-0 min-w-0 flex-1 overflow-hidden [--panel-reserved:0px]",
+        "not-has-data-[slot=panel-provider]:rounded-tr-xl not-has-data-[slot=panel-provider]:border-t not-has-data-[slot=panel-provider]:border-r not-has-data-[slot=panel-provider]:bg-background",
+        className
+      )}
+      data-slot="panel-layout"
+      ref={setLayoutRef}
+      style={
+        {
+          ...style,
+          "--panel-preview-width": `${previewWidth}px`,
+        } as React.CSSProperties
+      }
+      {...props}
+    />
+  );
+}
+
+/**
+ * A surface's key must survive preview → main promotion. Explicit variants
+ * replace sibling-order styling: leaving siblings may still be mounted.
+ * Children are retained by PanelRoot, never snapshotted during render.
+ */
+export function PanelFrame({
   className,
   children,
-  resizable,
-  defaultWidth = DEFAULT_PANEL_WIDTH,
+  variant = "main",
+  state = "open",
+  width = DEFAULT_PREVIEW_WIDTH,
   minWidth = DEFAULT_MIN_PANEL_WIDTH,
   maxWidth = DEFAULT_MAX_PANEL_WIDTH,
+  onWidthChange,
+  onResizeChange,
   onClose,
+  ref,
+  style,
   ...props
-}: Omit<ComponentProps<"div">, "id"> & {
-  open?: boolean;
-  id?: string | null;
-  resizable?: boolean;
-  defaultWidth?: number;
+}: ComponentProps<"div"> & {
+  variant?: "main" | "preview";
+  state?: "open" | "closed" | "expanding";
+  width?: number;
   minWidth?: number;
   maxWidth?: number;
+  onWidthChange?: (width: number) => void;
+  onResizeChange?: (resizing: boolean) => void;
   onClose?: () => void;
 }) {
-  const collapsible = open !== undefined;
-
-  // Snapshot children while open so the panel keeps its last contents
-  // visible mid-close — otherwise it empties out as the width animates.
-  const snapshotRef = useRef(children);
-  if (open) {
-    snapshotRef.current = children;
-  }
-  const visibleChildren = open === false ? snapshotRef.current : children;
-  // Freeze the scroll container's key while closed so the inner div stays
-  // mounted through the close animation. When open it tracks id, remounting
-  // the inner div to reset scroll between selections.
-  const stableIdRef = useRef(id);
-  if (open !== false) {
-    stableIdRef.current = id;
-  }
-  let dataState: "open" | "closed" | undefined;
-  if (collapsible) {
-    dataState = open ? "open" : "closed";
-  }
-
-  const [width, setWidth] = useState(() =>
-    clamp(Math.round(defaultWidth), minWidth, maxWidth)
+  const [exitWidth, setExitWidth] = useState<number | null>(null);
+  const surfaceRef = useRef<HTMLDivElement>(null);
+  const setSurfaceRef = useCallback(
+    (node: HTMLDivElement | null) => {
+      surfaceRef.current = node;
+      if (typeof ref === "function") {
+        return ref(node);
+      }
+      if (ref) {
+        ref.current = node;
+      }
+    },
+    [ref]
   );
-  const [isResizing, setIsResizing] = useState(false);
-  const [isTransitioning, setIsTransitioning] = useState(false);
-  const [prevOpen, setPrevOpen] = useState(open);
-  const outerRef = useRef<HTMLDivElement>(null);
 
-  // Detect open changes synchronously at render time so isTransitioning flips
-  // true on the same render that schedules the CSS transition. The
-  // onTransitionEnd handler below clears it when the browser finishes.
-  if (open !== prevOpen) {
-    setPrevOpen(open);
-    if (collapsible) {
-      setIsTransitioning(true);
-    }
-  }
-
-  const outerStyle = resizable
-    ? { width: open === false ? 0 : width }
-    : undefined;
-
+  // Freeze the rendered width, including an interrupted opening/resize.
+  // Only position changes during exit, so children never reflow as they leave.
+  useLayoutEffect(() => {
+    setExitWidth(
+      state === "closed" && surfaceRef.current
+        ? surfaceRef.current.getBoundingClientRect().width
+        : null
+    );
+  }, [state]);
   return (
-    <PanelContext.Provider
-      value={{ isTransitioning, contentKey: stableIdRef.current }}
+    <div
+      className={cn(
+        "group/panel absolute inset-y-0 flex min-h-0 min-w-0",
+        variant === "main"
+          ? "right-(--panel-reserved) w-[max(0px,calc(100%-var(--panel-reserved)))]"
+          : "left-[calc(100%-var(--panel-reserved)+0.5rem)] z-10 w-[max(var(--panel-preview-width),calc(var(--panel-reserved)-0.5rem))]",
+        className
+      )}
+      data-slot="panel-provider"
+      data-state={state}
+      data-variant={variant}
+      ref={setSurfaceRef}
+      style={exitWidth === null ? style : { ...style, width: exitWidth }}
+      {...props}
     >
+      {variant === "preview" && state === "open" && onWidthChange && (
+        <PanelResizeHandle
+          initialWidth={width}
+          maxWidth={maxWidth}
+          minWidth={minWidth}
+          onClick={onClose}
+          onDragWidth={onWidthChange}
+          onResizeEnd={(final) => {
+            onResizeChange?.(false);
+            onWidthChange(final);
+          }}
+          onResizeStart={() => {
+            onResizeChange?.(true);
+          }}
+        />
+      )}
       <div
         className={cn(
-          "group/panel relative not-first:ml-2 flex min-h-0 min-w-0 first:flex-1",
-          collapsible &&
-            "hidden transition-[width,margin] duration-200 ease-linear data-[state=closed]:ml-0 md:flex",
-          !resizable && "not-first:w-95 data-[state=closed]:w-0",
-          resizable && "first:flex-none",
-          isResizing && "transition-none",
-          className
+          "relative flex w-full min-w-0 flex-col overflow-hidden rounded-t-xl border border-b-0 bg-background",
+          // Keep an explicit clip for canvases and preserve corners during motion.
+          "[clip-path:inset(0_round_var(--radius-xl)_var(--radius-xl)_0_0)]",
+          "group-data-[variant=main]/panel:rounded-tl-none group-data-[variant=main]/panel:border-l-0 group-data-[variant=main]/panel:[clip-path:inset(0_round_0_var(--radius-xl)_0_0)]"
         )}
-        data-slot="panel-provider"
-        data-state={dataState}
-        id={id ?? undefined}
-        onTransitionEnd={(e) => {
-          if (e.propertyName === "width") {
-            setIsTransitioning(false);
-          }
-        }}
-        ref={outerRef}
-        style={outerStyle}
-        {...props}
+        data-slot="panel-provider-inner"
       >
-        {resizable && open !== false && (
-          <PanelResize
-            initialWidth={width}
-            maxWidth={maxWidth}
-            minWidth={minWidth}
-            onClick={onClose}
-            onDragWidth={(next) => {
-              if (outerRef.current) {
-                outerRef.current.style.width = `${next}px`;
-              }
-            }}
-            onResizeEnd={(final) => {
-              setIsResizing(false);
-              setWidth(final);
-            }}
-            onResizeStart={() => setIsResizing(true)}
-          />
-        )}
-        <div
-          className={cn(
-            "flex w-full min-w-0 flex-col overflow-hidden rounded-t-xl border border-b-0 bg-background",
-            // Explicit clip-path: WebGL canvases (e.g. MapLibre) skip Chromium's
-            // border-radius compositor clip when the padding-box geometry is
-            // asymmetric (rounded-t + border-b-0). clip-path is an explicit
-            // primitive the compositor always honors.
-            "[clip-path:inset(0_round_var(--radius-xl)_var(--radius-xl)_0_0)]",
-            "group-first/panel:rounded-l-none group-first/panel:border-l-0",
-            "group-first/panel:[clip-path:inset(0_round_0_var(--radius-xl)_0_0)]"
-          )}
-          data-slot="panel-provider-inner"
-        >
-          {visibleChildren}
-        </div>
+        {children}
       </div>
-    </PanelContext.Provider>
+    </div>
+  );
+}
+
+/** Content stays mounted and opaque while its surface changes role. */
+export function PanelLayer({ className, ...props }: ComponentProps<"div">) {
+  return (
+    <div
+      className={cn("absolute inset-0 min-w-0", className)}
+      data-slot="panel-layer"
+      {...props}
+    />
   );
 }
 
 export function Panel({ className, ...props }: ComponentProps<"div">) {
-  const { isTransitioning, contentKey } = useContext(PanelContext);
   return (
     <div
-      className={cn(
-        "flex h-full w-full min-w-0 flex-col",
-        isTransitioning
-          ? "overflow-hidden"
-          : "overflow-y-auto overflow-x-hidden"
-      )}
+      className="flex h-full w-full min-w-0 flex-col overflow-y-auto overflow-x-hidden"
       data-slot="panel"
-      key={contentKey ?? undefined}
     >
       <div
         className={cn(
@@ -207,7 +230,7 @@ export function Panel({ className, ...props }: ComponentProps<"div">) {
   );
 }
 
-function PanelResize({
+function PanelResizeHandle({
   initialWidth,
   minWidth,
   maxWidth,
@@ -229,18 +252,17 @@ function PanelResize({
     width: number;
     dragged: boolean;
   } | null>(null);
-  // The drag owns its width via this ref so the parent doesn't have to re-render
-  // on every pointer move — onDragWidth writes to the DOM directly instead.
+  // Keep the latest drag width for pointer release/cancel between renders.
   const latestWidthRef = useRef(initialWidth);
 
-  const handlePointerDown = (e: ReactPointerEvent<HTMLDivElement>) => {
+  const handlePointerDown = (e: ReactPointerEvent<HTMLHRElement>) => {
     e.preventDefault();
     e.currentTarget.setPointerCapture(e.pointerId);
     startRef.current = { x: e.clientX, width: initialWidth, dragged: false };
     latestWidthRef.current = initialWidth;
   };
 
-  const handlePointerMove = (e: ReactPointerEvent<HTMLDivElement>) => {
+  const handlePointerMove = (e: ReactPointerEvent<HTMLHRElement>) => {
     if (!startRef.current) {
       return;
     }
@@ -264,7 +286,7 @@ function PanelResize({
     onDragWidth(next);
   };
 
-  const handlePointerUp = (e: ReactPointerEvent<HTMLDivElement>) => {
+  const handlePointerUp = (e: ReactPointerEvent<HTMLHRElement>) => {
     if (!startRef.current) {
       return;
     }
@@ -278,16 +300,39 @@ function PanelResize({
     }
   };
 
+  const handlePointerCancel = () => {
+    if (startRef.current?.dragged) {
+      onResizeEnd(latestWidthRef.current);
+    }
+    startRef.current = null;
+  };
+
   return (
     <Tooltip>
       <TooltipTrigger
         render={
-          <div
-            className="absolute inset-y-0 z-10 w-3 -translate-x-1/2 cursor-col-resize touch-none"
-            onPointerCancel={handlePointerUp}
+          <hr
+            aria-label="Resize preview panel"
+            aria-orientation="vertical"
+            aria-valuemax={maxWidth}
+            aria-valuemin={minWidth}
+            aria-valuenow={initialWidth}
+            className="absolute inset-y-0 z-10 m-0 h-full w-3 -translate-x-1/2 cursor-col-resize touch-none border-0"
+            onKeyDown={(event) => {
+              if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+                event.preventDefault();
+                const step = event.shiftKey ? 50 : 10;
+                const delta = event.key === "ArrowLeft" ? step : -step;
+                onResizeEnd(clamp(initialWidth + delta, minWidth, maxWidth));
+              } else if (event.key === "Escape") {
+                onClick?.();
+              }
+            }}
+            onPointerCancel={handlePointerCancel}
             onPointerDown={handlePointerDown}
             onPointerMove={handlePointerMove}
             onPointerUp={handlePointerUp}
+            tabIndex={0}
           />
         }
       />

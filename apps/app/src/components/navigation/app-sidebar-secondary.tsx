@@ -7,7 +7,7 @@ import {
 } from "@sparkyidea/ui/components/sidebar";
 import type { Route } from "next";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import type { ComponentPropsWithoutRef } from "react";
 import { ThemeSwitcher } from "@/components/layout/theme-switcher";
 import type { AppNavSecondaryItem } from "@/types/app-nav.type";
@@ -19,6 +19,9 @@ export function SidebarSecondary({
   items: AppNavSecondaryItem[];
 } & ComponentPropsWithoutRef<typeof SidebarGroup>) {
   const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const query = searchParams.toString();
+  const returnTo = query ? `${pathname}?${query}` : pathname;
 
   return (
     <SidebarGroup {...props}>
@@ -32,7 +35,7 @@ export function SidebarSecondary({
                   <Link
                     href={
                       item.isTracked
-                        ? (`${item.url}?from=${encodeURIComponent(pathname)}` as Route)
+                        ? (`${item.url}?from=${encodeURIComponent(returnTo)}` as Route)
                         : item.url
                     }
                   />

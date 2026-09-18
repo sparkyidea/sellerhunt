@@ -7,15 +7,10 @@ let session: TestSession | null = null;
 const notFound = mock(() => {
   throw new Error("NEXT_HTTP_ERROR_FALLBACK;404");
 });
-function AppShell() {
-  return null;
-}
-
 mock.module("@/lib/session.server", () => ({
   getServerSession: async () => session,
 }));
 mock.module("next/navigation", () => ({ notFound }));
-mock.module("@/components/layout/app-shell", () => ({ AppShell }));
 mock.module("@/components/providers/wrappers/widget-provider", () => ({
   WidgetProvider: () => null,
 }));
@@ -50,12 +45,10 @@ describe("admin route access", () => {
     );
   });
 
-  it("renders the shared shell for active admins, including multiple roles", async () => {
+  it("renders the admin layout for active admins, including multiple roles", async () => {
     for (const role of ["admin", "user, admin"]) {
       session = { user: { role, banned: false } };
       const result = await AdminLayout({ children: "private content" });
-      expect(result.type).toBe(AppShell);
-      expect(result.props.navigation).toBe("admin");
       expect(result.props.children[0]).toBe("private content");
     }
     expect(notFound).not.toHaveBeenCalled();
