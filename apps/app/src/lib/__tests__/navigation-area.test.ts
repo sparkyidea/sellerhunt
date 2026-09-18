@@ -40,8 +40,29 @@ describe("settings navigation context", () => {
       "/admin\\evil",
       "/settings/account",
       "/auth/sign-in",
+      "explorer/listings",
+      "admin",
     ]) {
       expect(getSettingsReturnTo(invalid)).toBe("/explorer/listings");
     }
+  });
+
+  it("allow-lists the normalized pathname so dot segments cannot escape a dashboard", () => {
+    for (const escaping of [
+      "/explorer/../auth/sign-in",
+      "/admin/%2e%2e/settings/security",
+      "/admin/.%2E/settings/security",
+      "/admin/mobile-profiles/../../auth",
+      "/admin%2Fx/../../y",
+      "/explorer/..",
+    ]) {
+      expect(getSettingsReturnTo(escaping)).toBe("/explorer/listings");
+    }
+    expect(getSettingsReturnTo("/explorer/./listings?search=shoes")).toBe(
+      "/explorer/listings?search=shoes"
+    );
+    expect(
+      getSettingsReturnTo("/admin/mobile-profiles/../mobile-profiles")
+    ).toBe("/admin/mobile-profiles");
   });
 });
