@@ -18,13 +18,15 @@ One Next.js app and a shared API:
 - **`apps/api`** (Hono) — the backend. Hosts `/api/auth`, `/trpc`, and `/health`.
   CORS and better-auth `trustedOrigins` accept `APP_URL`.
 - **`apps/app`** (Next.js, App Router) — user and admin UI in one deployment.
-  `(app)` holds Explorer and settings; `admin` holds `/admin/mobile-profiles` and
-  `/admin/mobile-profiles/[profileId]`. `/admin` redirects to the profile list.
+  `(app)` shares the shell for Explorer, settings and admin; `(app)/admin` holds
+  `/admin/mobile-profiles` and `/admin/mobile-profiles/[profileId]`.
+  `/admin` redirects to the profile list.
   `admin/layout.tsx` reads the session from the API and returns the general
   404 for signed-out, banned, or non-admin users. The proxy lets admin paths reach
   this gate instead of redirecting signed-out visitors to sign-in.
-  Both areas share shell primitives but have separate sidebar lists. Active admins
-  enter through “Admin dashboard” in the avatar menu; the regular sidebar has no
+  Both areas share one shell and panel root but have separate sidebar lists.
+  Settings preserves its originating area through the `from` query parameter.
+  Active admins enter through “Admin dashboard” in the avatar menu; the regular sidebar has no
   admin entry. Inside admin, that avatar entry becomes “Back to app”. The admin
   sidebar defines its own Help and Settings links and retains the Mode control.
   tRPC permissions enforce access to every profile operation.

@@ -9,6 +9,7 @@ import type { Route } from "next";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { SettingsSidebar } from "@/components/navigation/settings-nav";
+import { getSettingsReturnTo } from "@/lib/navigation-area";
 
 interface SettingsLayoutProps {
   children: React.ReactNode;
@@ -20,12 +21,12 @@ export default function Settings({ children }: SettingsLayoutProps) {
   const returnTo = useRef("/explorer/listings");
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // Settings tabs share this layout but do not retain the `from` query string.
+  // Capture the origin once for this sheet's lifetime.
   useEffect(() => {
     setIsOpen(true);
-    returnTo.current =
-      new URLSearchParams(window.location.search).get("from") ||
-      "/explorer/listings";
+    returnTo.current = getSettingsReturnTo(
+      new URLSearchParams(window.location.search).get("from")
+    );
     return () => {
       if (closeTimer.current !== null) {
         clearTimeout(closeTimer.current);

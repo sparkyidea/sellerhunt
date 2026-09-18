@@ -29,6 +29,19 @@ function withPreview() {
 }
 
 describe("panel lifecycle", () => {
+  it("preserves both surfaces when the same route returns after settings", () => {
+    const beforeSettings = withPreview();
+    // Settings declares no main content. Closing republishes the origin route.
+    const afterSettings = reduce(beforeSettings, {
+      type: "navigate",
+      content: route("items"),
+    });
+    expect(afterSettings.preview).toBe(beforeSettings.preview);
+    expect(afterSettings.main?.id).toBe(beforeSettings.main?.id);
+    expect(afterSettings.phase).toBe("idle");
+    expect(afterSettings.revision).toBe(beforeSettings.revision);
+  });
+
   it("updates a preview's content without restarting its closing animation", () => {
     const closing = reduce(withPreview(), { type: "close" });
     const content = { ...listing, children: "Updated content" };

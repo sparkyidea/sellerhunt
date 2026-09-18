@@ -7,24 +7,10 @@ let session: TestSession | null = null;
 const notFound = mock(() => {
   throw new Error("NEXT_HTTP_ERROR_FALLBACK;404");
 });
-function SidebarProvider() {
-  return null;
-}
-
 mock.module("@/lib/session.server", () => ({
   getServerSession: async () => session,
 }));
 mock.module("next/navigation", () => ({ notFound }));
-mock.module("@sparkyidea/ui/components/sidebar", () => ({ SidebarProvider }));
-mock.module("@/components/navigation/app-header", () => ({
-  AppHeader: () => null,
-}));
-mock.module("@/components/navigation/app-sidebar", () => ({
-  AppSidebar: () => null,
-}));
-mock.module("@/components/panels/app-panels", () => ({
-  AppPanels: () => null,
-}));
 mock.module("@/components/providers/wrappers/widget-provider", () => ({
   WidgetProvider: () => null,
 }));
@@ -63,10 +49,7 @@ describe("admin route access", () => {
     for (const role of ["admin", "user, admin"]) {
       session = { user: { role, banned: false } };
       const result = await AdminLayout({ children: "private content" });
-      expect(result.type).toBe(SidebarProvider);
-      const body = result.props.children[1];
-      const workspace = body.props.children[1];
-      expect(workspace.props.children[0]).toBe("private content");
+      expect(result.props.children[0]).toBe("private content");
     }
     expect(notFound).not.toHaveBeenCalled();
   });

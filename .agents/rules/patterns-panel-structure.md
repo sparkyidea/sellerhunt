@@ -6,10 +6,15 @@ tags: [patterns, layout, panel, detail-page, preview-pane]
 
 ## Panel structure
 
-Each app/admin layout mounts an app adapter around the reusable UI
-`PanelRoot`. Routes declare content with `PanelRoute`; they do not own panel
-surfaces. The root is scoped to its layout, so leaving the authenticated/admin layout disposes its
-contents along with that layout's access boundary.
+The shared `(app)/layout.tsx` mounts one `AppPanels` adapter around the reusable
+UI `PanelRoot` for Explorer, admin and settings. The nested `admin/layout.tsx`
+retains the server role gate and admin dialogs, without a second shell.
+Routes declare content with `PanelRoute`; they do not own panel surfaces.
+`NavigationAreaProvider` derives the dashboard from the route or settings' `from`
+parameter, which settings tabs preserve. `AppPanels` keys the root by dashboard
+and session user: switching areas or users disposes the old surfaces; opening
+settings within an area preserves them. Previews from another area are cleared,
+and loss of admin access discards retained admin surfaces.
 
 ### Ownership
 

@@ -8,11 +8,11 @@ import {
   useSidebar,
 } from "@sparkyidea/ui/components/sidebar";
 import { cn } from "@sparkyidea/ui/lib/utils";
-import { usePathname } from "next/navigation";
 import type * as React from "react";
 import { AdminNavConfig } from "@/configs/admin-nav.config";
 import { AppNavConfig } from "@/configs/app-nav.config";
 import { SidebarSecondary } from "./app-sidebar-secondary";
+import { useNavigationArea } from "./navigation-area";
 import { SidebarMain } from "./sidebar-main";
 
 export function AppSidebar({
@@ -20,8 +20,7 @@ export function AppSidebar({
   style,
   ...props
 }: React.ComponentProps<typeof Sidebar>) {
-  const pathname = usePathname();
-  const isAdmin = pathname === "/admin" || pathname.startsWith("/admin/");
+  const isAdmin = useNavigationArea() === "admin";
   const { isMobile } = useSidebar();
   const { appNavMain, appNavSecondary } = isAdmin
     ? AdminNavConfig()
