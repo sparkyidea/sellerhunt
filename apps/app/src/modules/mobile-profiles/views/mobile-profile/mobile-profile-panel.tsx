@@ -10,13 +10,11 @@ import {
   PanelHeader,
   PanelToolbar,
 } from "@sparkyidea/ui/components/panel";
+import { usePanel } from "@sparkyidea/ui/components/panel-root";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
 import { RouteBreadcrumb } from "@/components/layout/route-breadcrumb";
-import {
-  PreviewExpand,
-  usePanelView,
-} from "@/components/preview/panel-view-context";
+import { PreviewExpandLink } from "@/components/panels/preview-expand-link";
 import { useTRPC } from "@/lib/utils/trpc/client";
 import { MobileProfileBearerCard } from "../../components/mobile-profile-bearer-card";
 import { MobileProfileHealthCard } from "../../components/mobile-profile-health-card";
@@ -40,7 +38,7 @@ function MobileProfilePanelView({
 }) {
   const trpc = useTRPC();
   const router = useRouter();
-  const { mode } = usePanelView();
+  const { mode } = usePanel();
   const { data: profile } = useSuspenseQuery(
     trpc.mobileProfile.get.queryOptions({
       id: typeof id === "string" ? parseProfileId(id) : id,
@@ -91,14 +89,14 @@ function MobileProfileHeader({
   actions: ActionItem[];
   onClose?: () => void;
 }) {
-  const { mode } = usePanelView();
+  const { mode } = usePanel();
   const preview = mode === "preview";
   return (
     <>
       {preview && onClose && (
         <PanelToolbar>
           <PanelClose onClose={onClose} />
-          <PreviewExpand href={`/admin/mobile-profiles/${profile.id}`} />
+          <PreviewExpandLink href={`/admin/mobile-profiles/${profile.id}`} />
           {actions.length > 0 && (
             <PanelAction>
               <MoreActions hidePinned items={actions} variant="ghost" />

@@ -1,6 +1,6 @@
 import { NotFound as NotFoundContent } from "@sparkyidea/ui/components/not-found";
 import Link from "next/link";
-import { PanelRoute } from "@/components/preview/panel-route";
+import { PanelRoute } from "@/components/panels/panel-route";
 
 export default function NotFound() {
   return (

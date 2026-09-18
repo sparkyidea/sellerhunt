@@ -1,6 +1,6 @@
 "use client";
 
-import { PanelRouteError } from "@/components/preview/panel-route-error";
+import { PanelRouteError } from "@/components/panels/panel-route-error";
 
 export default function PageError({ reset }: { reset: () => void }) {
   return <PanelRouteError reset={reset} />;

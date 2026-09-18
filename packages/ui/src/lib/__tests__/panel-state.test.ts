@@ -1,66 +1,87 @@
 import { describe, expect, it } from "bun:test";
 import {
-  initialPanelWorkspace,
-  type PanelContent,
-  type PanelWorkspaceState,
-  panelWorkspaceReducer as reduce,
-} from "../panel-workspace-state";
+  initialPanelState,
+  type PanelSource,
+  type PanelState,
+  panelReducer as reduce,
+} from "../panel-state";
 
-function route(href: string): PanelContent {
-  return { type: "route", href, children: href };
+function route(id: string): PanelSource {
+  return { type: "main", id, children: id };
 }
 
-const listing: PanelContent = {
+const listing: PanelSource = {
   type: "preview",
-  href: "/explorer/listings/listing-1",
-  preview: { kind: "scan-listing", id: "listing-1" },
+  id: "item-1",
+  children: "Preview content",
 };
 
-function finish(state: PanelWorkspaceState) {
+function finish(state: PanelState) {
   return reduce(state, { type: "finish", revision: state.revision });
 }
 
 function withPreview() {
-  const main = reduce(initialPanelWorkspace, {
+  const main = reduce(initialPanelState, {
     type: "navigate",
-    content: route("/explorer/listings"),
+    content: route("items"),
   });
   return finish(reduce(main, { type: "open", content: listing }));
 }
 
-describe("panel workspace lifecycle", () => {
+describe("panel lifecycle", () => {
+  it("updates a preview's content without restarting its closing animation", () => {
+    const closing = reduce(withPreview(), { type: "close" });
+    const content = { ...listing, children: "Updated content" };
+    const updated = reduce(closing, { type: "update-preview", content });
+    expect(updated.phase).toBe("closing");
+    expect(updated.revision).toBe(closing.revision);
+    expect(updated.preview?.id).toBe(closing.preview?.id);
+    expect(updated.preview?.content).toBe(content);
+    expect(finish(updated).preview).toBeNull();
+  });
+
+  it("does not reopen a promoted preview on an ordinary parent rerender", () => {
+    const promoted = finish(reduce(withPreview(), { type: "expand" }));
+    expect(
+      reduce(promoted, {
+        type: "update-preview",
+        content: { ...listing, children: "Rerendered content" },
+      })
+    ).toBe(promoted);
+  });
+
   it("returns from a direct detail route to its list without starting a transition", () => {
-    const detail = reduce(initialPanelWorkspace, {
+    const detail = reduce(initialPanelState, {
       type: "navigate",
-      content: route(listing.href),
+      content: route(listing.id),
     });
     const list = reduce(detail, {
       type: "navigate",
-      content: route("/explorer/listings"),
+      content: route("items"),
     });
     expect(list.main?.id).toBe(detail.main?.id);
-    expect(list.main?.content.href).toBe("/explorer/listings");
+    expect(list.main?.content.id).toBe("items");
     expect(list.phase).toBe("idle");
     expect(list.preview).toBeNull();
   });
   it("replaces errors and recovered content immediately in the same surface", () => {
-    const initial = reduce(initialPanelWorkspace, {
+    const initial = reduce(initialPanelState, {
       type: "navigate",
-      content: route("/explorer/listings"),
+      content: route("items"),
     });
-    const error: PanelContent = {
-      type: "route",
-      href: "/explorer/listings",
+    const error: PanelSource = {
+      type: "main",
+      id: "items",
       children: "Failed",
-      error: true,
+      replace: true,
     };
     const failed = reduce(initial, { type: "navigate", content: error });
     const recovered = reduce(failed, {
       type: "navigate",
-      content: route("/explorer/listings"),
+      content: route("items"),
     });
     expect(failed.main?.content).toBe(error);
-    expect(recovered.main?.content).toEqual(route("/explorer/listings"));
+    expect(recovered.main?.content).toEqual(route("items"));
     expect(recovered.main?.id).toBe(initial.main?.id);
     expect(recovered.phase).toBe("idle");
   });
@@ -80,7 +101,7 @@ describe("panel workspace lifecycle", () => {
     const expanding = reduce(start, { type: "expand" });
     const arrived = reduce(expanding, {
       type: "navigate",
-      content: route(listing.href),
+      content: route(listing.id),
     });
     expect(arrived.phase).toBe("expanding");
     expect(finish(arrived).main).toBe(start.preview);
@@ -90,7 +111,7 @@ describe("panel workspace lifecycle", () => {
     const promoted = finish(reduce(withPreview(), { type: "expand" }));
     const arrived = reduce(promoted, {
       type: "navigate",
-      content: route(listing.href),
+      content: route(listing.id),
     });
     expect(arrived).toBe(promoted);
   });
@@ -99,10 +120,10 @@ describe("panel workspace lifecycle", () => {
     const promoted = finish(reduce(withPreview(), { type: "expand" }));
     const navigating = reduce(promoted, {
       type: "navigate",
-      content: route("/explorer/listings"),
+      content: route("items"),
     });
     expect(navigating.main?.id).toBe(promoted.main?.id);
-    expect(navigating.main?.content).toEqual(route("/explorer/listings"));
+    expect(navigating.main?.content).toEqual(route("items"));
     expect(navigating.preview).toBeNull();
     expect(navigating.phase).toBe("idle");
     expect(finish(navigating)).toBe(navigating);
@@ -113,14 +134,14 @@ describe("panel workspace lifecycle", () => {
     const expanding = reduce(start, { type: "expand" });
     const interrupted = reduce(expanding, {
       type: "navigate",
-      content: route("/settings/account"),
+      content: route("account"),
     });
     expect(interrupted.main).toBe(start.main);
     const settled = finish(interrupted);
     expect(settled.main?.id).toBe(start.preview?.id);
     expect(settled.phase).toBe("idle");
     expect(settled.preview).toBeNull();
-    expect(settled.main?.content.href).toBe("/settings/account");
+    expect(settled.main?.content.id).toBe("account");
   });
 
   it("keeps closing content mounted and ignores stale transition completions after reopening", () => {
@@ -138,7 +159,7 @@ describe("panel workspace lifecycle", () => {
     const promoted = finish(reduce(withPreview(), { type: "expand" }));
     const next = reduce(promoted, {
       type: "open",
-      content: { ...listing, href: "/explorer/listings/listing-2" },
+      content: { ...listing, id: "item-2" },
     });
     expect(next.main).toBe(promoted.main);
     expect(next.preview?.id).not.toBe(next.main?.id);
@@ -146,11 +167,11 @@ describe("panel workspace lifecycle", () => {
 
   it("surfaces server errors instead of retaining an invalid or forbidden promoted view", () => {
     const start = reduce(withPreview(), { type: "expand" });
-    const error: PanelContent = {
-      type: "route",
-      href: listing.href,
+    const error: PanelSource = {
+      type: "main",
+      id: listing.id,
       children: "Not found",
-      error: true,
+      replace: true,
     };
     const arrived = reduce(start, { type: "navigate", content: error });
     expect(finish(arrived).main?.content).toBe(error);
@@ -162,20 +183,20 @@ describe("panel workspace lifecycle", () => {
     const initial = withPreview();
     const first = reduce(initial, {
       type: "navigate",
-      content: route("/settings/account"),
+      content: route("account"),
     });
     const second = reduce(first, {
       type: "navigate",
-      content: route("/settings/security"),
+      content: route("security"),
     });
-    expect(first.main?.content.href).toBe("/settings/account");
-    expect(second.main?.content.href).toBe("/settings/security");
+    expect(first.main?.content.id).toBe("account");
+    expect(second.main?.content.id).toBe("security");
     expect(second.preview).toBe(initial.preview);
     expect(second.phase).toBe("closing");
     expect(reduce(second, { type: "finish", revision: first.revision })).toBe(
       second
     );
-    expect(finish(second).main?.content.href).toBe("/settings/security");
+    expect(finish(second).main?.content.id).toBe("security");
     expect(finish(second).preview).toBeNull();
   });
 });

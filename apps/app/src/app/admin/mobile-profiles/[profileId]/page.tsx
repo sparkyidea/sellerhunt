@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { ErrorView } from "@/components/error-view";
-import { PanelRoute } from "@/components/preview/panel-route";
+import { PanelRoute } from "@/components/panels/panel-route";
 import { HydrateClient, prefetch, trpc } from "@/lib/utils/trpc/server";
 import { parseProfileId } from "@/modules/mobile-profiles/constants";
 import { MobileProfileDetailView } from "@/modules/mobile-profiles/views/mobile-profile/mobile-profile-panel";

@@ -1,24 +1,29 @@
 import type { ReactNode } from "react";
-import type { Preview } from "@/hooks/use-preview-store";
 
-export type PanelContent =
-  | { type: "route"; href: string; children: ReactNode; error?: boolean }
-  | { type: "preview"; href: string; preview: Preview };
+/** An opaque identity shared by main and preview content for promotion. */
+export interface PanelEntry {
+  children: ReactNode;
+  id: string;
+  /** Replace promoted content even when the identity matches (e.g. errors). */
+  replace?: boolean;
+}
+
+export type PanelSource = PanelEntry & { type: "main" | "preview" };
 
 export interface PanelSurface {
-  content: PanelContent;
+  content: PanelSource;
   id: number;
 }
 
-export interface PanelWorkspaceState {
+export interface PanelState {
   main: PanelSurface | null;
   phase: "idle" | "opening" | "closing" | "expanding";
   preview: PanelSurface | null;
-  queued: PanelContent | null;
+  queued: PanelSource | null;
   revision: number;
 }
 
-export const initialPanelWorkspace: PanelWorkspaceState = {
+export const initialPanelState: PanelState = {
   main: null,
   preview: null,
   queued: null,
@@ -26,19 +31,17 @@ export const initialPanelWorkspace: PanelWorkspaceState = {
   revision: 0,
 };
 
-export type PanelWorkspaceEvent =
-  | { type: "navigate"; content: PanelContent }
-  | { type: "open"; content: PanelContent }
+export type PanelEvent =
+  | { type: "navigate"; content: PanelSource }
+  | { type: "open"; content: PanelSource }
+  | { type: "update-preview"; content: PanelSource }
   | { type: "close" }
   | { type: "expand" }
   | { type: "finish"; revision: number };
 
 // Surface identity is independent of route identity. Promotion moves the
 // preview record into main without changing its React key or its content.
-export function panelWorkspaceReducer(
-  state: PanelWorkspaceState,
-  event: PanelWorkspaceEvent
-): PanelWorkspaceState {
+export function panelReducer(state: PanelState, event: PanelEvent): PanelState {
   switch (event.type) {
     case "navigate":
       return navigate(state, event.content);
@@ -54,6 +57,14 @@ export function panelWorkspaceReducer(
         phase: state.preview ? "idle" : "opening",
       };
     }
+    case "update-preview":
+      if (!state.preview || state.preview.content.id !== event.content.id) {
+        return state;
+      }
+      return {
+        ...state,
+        preview: { ...state.preview, content: event.content },
+      };
     case "close":
       if (!state.preview || state.phase === "expanding") {
         return state;
@@ -75,33 +86,30 @@ export function panelWorkspaceReducer(
   }
 }
 
-function navigate(
-  state: PanelWorkspaceState,
-  content: PanelContent
-): PanelWorkspaceState {
+function navigate(state: PanelState, content: PanelSource): PanelState {
   if (state.phase === "expanding") {
     return {
       ...state,
       queued:
-        content.href === state.preview?.content.href &&
-        !(content.type === "route" && content.error)
+        content.id === state.preview?.content.id &&
+        !(content.type === "main" && content.replace)
           ? null
           : content,
     };
   }
-  if (state.main?.content.href === content.href) {
-    // The server route can arrive before OR after the expansion ends.
+  if (state.main?.content.id === content.id) {
+    // Main content can arrive before OR after expansion ends.
     // Keep the already mounted preview, including its local state.
     if (
       state.main.content.type === "preview" &&
-      !(content.type === "route" && content.error)
+      !(content.type === "main" && content.replace)
     ) {
       return state;
     }
     if (
-      state.main.content.type === "route" &&
-      content.type === "route" &&
-      Boolean(state.main.content.error) === Boolean(content.error)
+      state.main.content.type === "main" &&
+      content.type === "main" &&
+      Boolean(state.main.content.replace) === Boolean(content.replace)
     ) {
       return { ...state, main: { ...state.main, content } };
     }
@@ -115,15 +123,12 @@ function navigate(
   };
 }
 
-function finish(
-  state: PanelWorkspaceState,
-  revision: number
-): PanelWorkspaceState {
+function finish(state: PanelState, revision: number): PanelState {
   if (revision !== state.revision || state.phase === "idle") {
     return state;
   }
   if (state.phase === "expanding") {
-    const promoted: PanelWorkspaceState = {
+    const promoted: PanelState = {
       ...state,
       main: state.preview,
       preview: null,
@@ -131,7 +136,7 @@ function finish(
       phase: "idle",
     };
     return state.queued
-      ? panelWorkspaceReducer(promoted, {
+      ? panelReducer(promoted, {
           type: "navigate",
           content: state.queued,
         })

@@ -11,7 +11,7 @@ import {
 } from "@sparkyidea/ui/components/panel";
 import { UploadIcon } from "lucide-react";
 import dynamic from "next/dynamic";
-import { PanelRoute } from "@/components/preview/panel-route";
+import { PanelRoute } from "@/components/panels/panel-route";
 import { MobileProfilesTableSkeleton } from "@/modules/mobile-profiles/data/mobile-profiles-table/mobile-profiles-table-skeleton";
 import { useMobileProfileDialog } from "@/modules/mobile-profiles/hooks/use-mobile-profile-dialog";
 

@@ -7,7 +7,7 @@ import {
   PanelTitle,
 } from "@sparkyidea/ui/components/panel";
 import dynamic from "next/dynamic";
-import { PanelRoute } from "@/components/preview/panel-route";
+import { PanelRoute } from "@/components/panels/panel-route";
 import { ScanListingsGallerySkeleton } from "@/modules/explorer/data/scan-listings-gallery/scan-listings-gallery-skeleton";
 
 const ScanListingsGallery = dynamic(

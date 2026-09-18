@@ -22,8 +22,8 @@ mock.module("@/components/navigation/app-header", () => ({
 mock.module("@/components/navigation/app-sidebar", () => ({
   AppSidebar: () => null,
 }));
-mock.module("@/components/preview/panel-workspace", () => ({
-  PanelWorkspace: () => null,
+mock.module("@/components/panels/app-panels", () => ({
+  AppPanels: () => null,
 }));
 mock.module("@/components/providers/wrappers/widget-provider", () => ({
   WidgetProvider: () => null,

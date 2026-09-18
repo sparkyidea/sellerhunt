@@ -1,7 +1,7 @@
 import { SidebarProvider } from "@sparkyidea/ui/components/sidebar";
 import { AppHeader } from "@/components/navigation/app-header";
 import { AppSidebar } from "@/components/navigation/app-sidebar";
-import { PanelWorkspace } from "@/components/preview/panel-workspace";
+import { AppPanels } from "@/components/panels/app-panels";
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -9,7 +9,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
       <AppHeader />
       <div className="relative flex min-h-0 flex-1 overflow-hidden">
         <AppSidebar collapsible="icon" />
-        <PanelWorkspace>{children}</PanelWorkspace>
+        <AppPanels>{children}</AppPanels>
       </div>
     </SidebarProvider>
   );

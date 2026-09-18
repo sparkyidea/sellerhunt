@@ -25,7 +25,7 @@ interface PreviewEntry {
 
 /**
  * Every preview kind, in one place. A new kind is one entry here and nothing
- * else: `PreviewKind` is the key set, `PreviewPanel` renders `View`/`Skeleton`,
+ * else: `PreviewKind` is the key set, `PreviewContent` renders `View`/`Skeleton`,
  * and `useOpenPreview` navigates to `page` on mobile. `satisfies` makes a
  * half-filled entry a type error, so no kind can reach the panel without a view.
  */

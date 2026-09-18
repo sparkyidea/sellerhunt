@@ -35,7 +35,7 @@ import {
 } from "./dropdown-menu";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./tooltip";
 
-export const DEFAULT_PANEL_WIDTH = 380;
+export const DEFAULT_PREVIEW_WIDTH = 380;
 const DEFAULT_MIN_PANEL_WIDTH = 320;
 const DEFAULT_MAX_PANEL_WIDTH = 720;
 // Pointer travel (px) that distinguishes a click from a drag.
@@ -46,10 +46,10 @@ function clamp(value: number, min: number, max: number): number {
 }
 
 /** Persistent canvas. Routing and panel lifetimes belong to its consumer. */
-export function PanelLayout({
+export function PanelCanvas({
   className,
   previewState = "none",
-  previewWidth = DEFAULT_PANEL_WIDTH,
+  previewWidth = DEFAULT_PREVIEW_WIDTH,
   resizing = false,
   onMotionComplete,
   style,
@@ -104,14 +104,14 @@ export function PanelLayout({
 /**
  * A surface's key must survive preview → main promotion. Explicit variants
  * replace sibling-order styling: leaving siblings may still be mounted.
- * Children are retained by the workspace, never snapshotted during render.
+ * Children are retained by PanelRoot, never snapshotted during render.
  */
-export function PanelProvider({
+export function PanelFrame({
   className,
   children,
   variant = "main",
   state = "open",
-  width = DEFAULT_PANEL_WIDTH,
+  width = DEFAULT_PREVIEW_WIDTH,
   minWidth = DEFAULT_MIN_PANEL_WIDTH,
   maxWidth = DEFAULT_MAX_PANEL_WIDTH,
   onWidthChange,
@@ -171,7 +171,7 @@ export function PanelProvider({
       {...props}
     >
       {variant === "preview" && state === "open" && onWidthChange && (
-        <PanelResize
+        <PanelResizeHandle
           initialWidth={width}
           maxWidth={maxWidth}
           minWidth={minWidth}
@@ -230,7 +230,7 @@ export function Panel({ className, ...props }: ComponentProps<"div">) {
   );
 }
 
-function PanelResize({
+function PanelResizeHandle({
   initialWidth,
   minWidth,
   maxWidth,

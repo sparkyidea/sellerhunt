@@ -12,14 +12,12 @@ import {
   PanelTags,
   PanelToolbar,
 } from "@sparkyidea/ui/components/panel";
+import { usePanel } from "@sparkyidea/ui/components/panel-root";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { ExternalLinkIcon } from "lucide-react";
 import { DynamicLink } from "@/components/layout/dynamic-link";
 import { RouteBreadcrumb } from "@/components/layout/route-breadcrumb";
-import {
-  PreviewExpand,
-  usePanelView,
-} from "@/components/preview/panel-view-context";
+import { PreviewExpandLink } from "@/components/panels/preview-expand-link";
 import { useTRPC } from "@/lib/utils/trpc/client";
 import { ScanListingClassificationCard } from "../../components/scan-listing-classification-card";
 import { ScanListingInfoCard } from "../../components/scan-listing-info-card";
@@ -83,7 +81,7 @@ function ScanListingHeader({
   listing: ScanListingData;
   onClose?: () => void;
 }) {
-  const { mode } = usePanelView();
+  const { mode } = usePanel();
   const preview = mode === "preview";
   const actions = getScanListingActions(listing);
   return (
@@ -91,7 +89,7 @@ function ScanListingHeader({
       {preview && onClose && (
         <PanelToolbar>
           <PanelClose onClose={onClose} />
-          <PreviewExpand href={`/explorer/listings/${listing.id}`} />
+          <PreviewExpandLink href={`/explorer/listings/${listing.id}`} />
           {actions.length > 0 && (
             <PanelAction>
               <MoreActions hidePinned items={actions} variant="ghost" />
