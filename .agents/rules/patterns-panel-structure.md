@@ -11,9 +11,9 @@ UI `PanelRoot` for Explorer, admin and settings. The nested `admin/layout.tsx`
 retains the server role gate and admin dialogs, without a second shell.
 Routes declare content with `PanelRoute`; they do not own panel surfaces.
 `NavigationAreaProvider` derives the dashboard from the route or settings' `from`
-parameter, which settings tabs preserve. `AppPanels` keys the root by dashboard
-and session user: switching areas or users disposes the old surfaces; opening
-settings within an area preserves them. Previews from another area are cleared,
+parameter, which settings tabs preserve. `AppPanels` keeps a stable root;
+route declarations replace the main content when navigating between areas,
+while settings preserves the underlying panels. Previews from another area are cleared,
 and loss of admin access discards retained admin surfaces.
 
 ### Ownership
@@ -145,7 +145,16 @@ keep it inside the published view. Content is mounted by the root after
 hydration; server routes still validate and prefetch data before publishing it.
 
 Settings renders a sheet without a `PanelRoute` declaration, preserving the
-existing main and preview surfaces behind it. Error/404 content uses
+existing main and preview surfaces behind it. `PanelRoute` wraps its published content in `PanelQueryScope`, which captures
+the owning pathname and compares it to the live pathname. It supplies the
+generic dataview `QuerySyncProvider`: nested dataviews automatically retain their
+validated query and block URL writes while their owning route is inactive.
+Query-string changes on the owning route continue to synchronize through nuqs;
+resuming waits for nuqs URL synchronization before releasing the retained query.
+Tables do not declare paths or pass synchronization flags. Dataviews outside a
+query-sync boundary synchronize normally. Settings is outside the retained
+content's boundary and can own its own query state independently.
+Error/404 content uses
 `<PanelRoute error>` so it can replace a promoted
 view even when the pathname is unchanged. Outside a root, `PanelRoute`
 renders its children normally (including the root 404).

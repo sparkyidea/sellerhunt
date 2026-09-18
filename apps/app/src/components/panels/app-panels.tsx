@@ -72,11 +72,7 @@ export function AppPanels({ children }: { children: ReactNode }) {
     );
   }
   return (
-    <PanelRoot
-      key={`${area}:${session?.user.id ?? "anonymous"}`}
-      onPreviewOpenChange={onPreviewOpenChange}
-      preview={preview}
-    >
+    <PanelRoot onPreviewOpenChange={onPreviewOpenChange} preview={preview}>
       {children}
     </PanelRoot>
   );
