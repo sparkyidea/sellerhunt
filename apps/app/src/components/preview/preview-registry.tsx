@@ -1,18 +1,8 @@
-import dynamic from "next/dynamic";
 import type { ComponentType } from "react";
 import { ScanListingPreviewView } from "@/modules/explorer/views/scan-listing/scan-listing-panel";
 import { ScanListingPreviewViewSkeleton } from "@/modules/explorer/views/scan-listing/scan-listing-panel-skeleton";
-
-const MobileProfilePreviewView = dynamic(() =>
-  import(
-    "@/modules/mobile-profiles/views/mobile-profile/mobile-profile-panel"
-  ).then((mod) => mod.MobileProfilePreviewView)
-);
-const MobileProfilePreviewViewSkeleton = dynamic(() =>
-  import(
-    "@/modules/mobile-profiles/views/mobile-profile/mobile-profile-panel-skeleton"
-  ).then((mod) => mod.MobileProfilePreviewViewSkeleton)
-);
+import { MobileProfilePreviewView } from "@/modules/mobile-profiles/views/mobile-profile/mobile-profile-panel";
+import { MobileProfilePreviewViewSkeleton } from "@/modules/mobile-profiles/views/mobile-profile/mobile-profile-panel-skeleton";
 
 interface PreviewEntry {
   /** Route this kind falls back to on mobile, where there is no side panel. */
