@@ -7,7 +7,7 @@ import {
 } from "@sparkyidea/ui/components/sheet";
 import type { Route } from "next";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { SettingsSidebar } from "@/components/navigation/settings-nav";
 
 interface SettingsLayoutProps {
@@ -17,12 +17,29 @@ interface SettingsLayoutProps {
 export default function Settings({ children }: SettingsLayoutProps) {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(true);
+  const returnTo = useRef("/explorer/listings");
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Settings tabs share this layout but do not retain the `from` query string.
+  useEffect(() => {
+    setIsOpen(true);
+    returnTo.current =
+      new URLSearchParams(window.location.search).get("from") ||
+      "/explorer/listings";
+    return () => {
+      if (closeTimer.current !== null) {
+        clearTimeout(closeTimer.current);
+      }
+    };
+  }, []);
 
   const handleClose = () => {
     setIsOpen(false);
-    const history = new URLSearchParams(window.location.search).get("from");
-    setTimeout(() => {
-      router.push((history || "/products") as Route);
+    if (closeTimer.current !== null) {
+      clearTimeout(closeTimer.current);
+    }
+    closeTimer.current = setTimeout(() => {
+      router.push(returnTo.current as Route);
     }, 200);
   };
 
