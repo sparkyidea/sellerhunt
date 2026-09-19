@@ -6,15 +6,14 @@ import {
 } from "../extract-keywords";
 import {
   type KeywordStore,
-  type LinkListingKeywordInput,
+  type ListingTitle,
   runKeywordLlmStage,
-  type UnresolvedListing,
 } from "../llm-stage";
 
 const MARKETPLACE = "ebay";
 const INPUT_LINE = /^\[(\d+)\]/gm;
 
-function listings(count: number): UnresolvedListing[] {
+function listings(count: number): ListingTitle[] {
   return Array.from({ length: count }, (_, i) => ({
     id: `listing-${i}`,
     title: `Listing title ${i}`,
@@ -55,194 +54,109 @@ function answering(
 }
 
 class MemoryStore implements KeywordStore {
-  /** Listing ids another run already linked; `linkListingKeyword` reports `linked: false`. */
-  alreadyLinked = new Set<string>();
-  bumps: string[][] = [];
-  failBump = false;
-  failLink = false;
-  links: LinkListingKeywordInput[] = [];
+  failSave = false;
+  keywords: { keyword: string; marketplace: string }[] = [];
 
-  bumpKeywordAttempts(listingIds: readonly string[]): Promise<void> {
-    if (this.failBump) {
+  saveKeyword(input: {
+    keyword: string;
+    marketplace: string;
+  }): Promise<{ keywordId: string }> {
+    if (this.failSave) {
       return Promise.reject(new Error("db down"));
     }
-    this.bumps.push([...listingIds]);
-    return Promise.resolve();
-  }
-
-  linkListingKeyword(
-    input: LinkListingKeywordInput
-  ): Promise<{ keywordId: string; linked: boolean }> {
-    if (this.failLink) {
-      return Promise.reject(new Error("unique violation"));
-    }
-    if (this.alreadyLinked.has(input.listingId)) {
-      return Promise.resolve({ keywordId: "kw-other-run", linked: false });
-    }
-    this.links.push(input);
-    return Promise.resolve({
-      keywordId: `kw-${this.links.length}`,
-      linked: true,
-    });
+    this.keywords.push(input);
+    return Promise.resolve({ keywordId: String(this.keywords.length) });
   }
 }
 
 describe("runKeywordLlmStage", () => {
-  it("links every listing with the phrase as returned and spends no attempt", async () => {
+  it("saves phrases to the pool without listing links or attempt tracking", async () => {
     const store = new MemoryStore();
     const { calls, models, parse } = answering((index) => `phrase ${index}`);
-
+    const input = listings(3);
+    const before = structuredClone(input);
     const totals = await runKeywordLlmStage(
       { parse, store },
       MARKETPLACE,
-      listings(3)
+      input
     );
-
     expect(totals).toEqual({ failed: 0, resolved: 3, unresolved: 0 });
     expect(calls).toEqual([3]);
     expect(models).toEqual([KEYWORD_LLM_MODEL]);
-    expect(store.links.map((link) => link.keyword)).toEqual([
-      "phrase 0",
-      "phrase 1",
-      "phrase 2",
-    ]);
-    expect(store.links[0]).toEqual({
-      listingId: "listing-0",
-      marketplace: "ebay",
-      keyword: "phrase 0",
-    });
-    expect(store.bumps).toEqual([]);
-  });
-
-  it("keeps a listing another run linked first and spends no attempt on it", async () => {
-    const store = new MemoryStore();
-    store.alreadyLinked.add("listing-1");
-    const { parse } = answering((index) => `phrase ${index}`);
-
-    const totals = await runKeywordLlmStage(
-      { parse, store },
-      MARKETPLACE,
-      listings(3)
+    expect(store.keywords).toEqual(
+      [0, 1, 2].map((index) => ({
+        marketplace: "ebay",
+        keyword: `phrase ${index}`,
+      }))
     );
-
-    expect(totals).toEqual({ failed: 0, resolved: 3, unresolved: 0 });
-    expect(store.links.map((link) => link.listingId)).toEqual([
-      "listing-0",
-      "listing-2",
-    ]);
-    expect(store.bumps).toEqual([]);
+    expect(input).toEqual(before);
   });
 
-  it("trims the phrase but leaves its casing and punctuation alone", async () => {
+  it("trims the phrase but preserves casing and punctuation", async () => {
     const store = new MemoryStore();
     const { parse } = answering(() => "  McDonald's FIFA Squishmallows ");
-
     await runKeywordLlmStage({ parse, store }, MARKETPLACE, listings(1));
-
-    expect(store.links[0]?.keyword).toBe("McDonald's FIFA Squishmallows");
+    expect(store.keywords[0]?.keyword).toBe("McDonald's FIFA Squishmallows");
   });
 
-  it("counts a missing answer as a failed attempt", async () => {
+  it("counts missing answers as failures without extra writes", async () => {
     const store = new MemoryStore();
     const { parse } = answering((index) =>
       index === 1 ? undefined : `phrase ${index}`
     );
-
     const totals = await runKeywordLlmStage(
       { parse, store },
       MARKETPLACE,
       listings(3)
     );
-
     expect(totals).toEqual({ failed: 1, resolved: 2, unresolved: 0 });
-    expect(store.bumps).toEqual([["listing-1"]]);
-    expect(store.links.map((link) => link.listingId)).toEqual([
-      "listing-0",
-      "listing-2",
+    expect(store.keywords.map((row) => row.keyword)).toEqual([
+      "phrase 0",
+      "phrase 2",
     ]);
   });
 
-  it("counts an empty or whitespace-only phrase as unresolved without linking", async () => {
+  it("does not save empty phrases", async () => {
     const store = new MemoryStore();
     const { parse } = answering((index) => (index === 0 ? "" : "   "));
-
-    const totals = await runKeywordLlmStage(
-      { parse, store },
-      MARKETPLACE,
-      listings(2)
-    );
-
-    expect(totals).toEqual({ failed: 0, resolved: 0, unresolved: 2 });
-    expect(store.links).toEqual([]);
-    expect(store.bumps).toEqual([["listing-0"], ["listing-1"]]);
+    expect(
+      await runKeywordLlmStage({ parse, store }, MARKETPLACE, listings(2))
+    ).toEqual({ failed: 0, resolved: 0, unresolved: 2 });
+    expect(store.keywords).toEqual([]);
   });
 
-  it("charges the whole chunk when the model call throws and keeps going", async () => {
+  it("continues subsequent chunks after an LLM failure", async () => {
     const store = new MemoryStore();
     const { calls, parse } = answering((index) => `phrase ${index}`, 1);
-    const count = MAX_TITLES_PER_REQUEST + 3;
-
-    const totals = await runKeywordLlmStage(
-      { parse, store },
-      MARKETPLACE,
-      listings(count)
-    );
-
+    expect(
+      await runKeywordLlmStage(
+        { parse, store },
+        MARKETPLACE,
+        listings(MAX_TITLES_PER_REQUEST + 3)
+      )
+    ).toEqual({ failed: MAX_TITLES_PER_REQUEST, resolved: 3, unresolved: 0 });
     expect(calls).toEqual([MAX_TITLES_PER_REQUEST, 3]);
-    expect(totals).toEqual({
-      failed: MAX_TITLES_PER_REQUEST,
-      resolved: 3,
-      unresolved: 0,
-    });
-    expect(store.bumps).toHaveLength(1);
-    expect(store.bumps[0]).toHaveLength(MAX_TITLES_PER_REQUEST);
-    expect(store.links.map((link) => link.listingId)).toEqual([
-      `listing-${MAX_TITLES_PER_REQUEST}`,
-      `listing-${MAX_TITLES_PER_REQUEST + 1}`,
-      `listing-${MAX_TITLES_PER_REQUEST + 2}`,
-    ]);
+    expect(store.keywords).toHaveLength(3);
   });
 
-  it("counts a failed write as a failed attempt and never rethrows", async () => {
+  it("counts failed pool writes without failing the scan", async () => {
     const store = new MemoryStore();
-    store.failLink = true;
-    const { parse } = answering((index) => `phrase ${index}`);
-
-    const totals = await runKeywordLlmStage(
-      { parse, store },
-      MARKETPLACE,
-      listings(2)
-    );
-
-    expect(totals).toEqual({ failed: 2, resolved: 0, unresolved: 0 });
-    expect(store.bumps).toEqual([["listing-0"], ["listing-1"]]);
-  });
-
-  it("swallows a failing attempt counter", async () => {
-    const store = new MemoryStore();
-    store.failBump = true;
-    const { parse } = answering(() => "");
-
-    const totals = await runKeywordLlmStage(
-      { parse, store },
-      MARKETPLACE,
-      listings(1)
-    );
-
-    expect(totals).toEqual({ failed: 0, resolved: 0, unresolved: 1 });
+    store.failSave = true;
+    const { parse } = answering(() => "camera");
+    expect(
+      await runKeywordLlmStage({ parse, store }, MARKETPLACE, listings(2))
+    ).toEqual({ failed: 2, resolved: 0, unresolved: 0 });
   });
 
   it("makes one call per MAX_TITLES_PER_REQUEST titles", async () => {
     const store = new MemoryStore();
     const { calls, parse } = answering((index) => `phrase ${index}`);
     const count = MAX_TITLES_PER_REQUEST * 2 + 20;
-
     const totals = await runKeywordLlmStage(
       { parse, store },
       MARKETPLACE,
       listings(count)
     );
-
     expect(calls).toEqual([MAX_TITLES_PER_REQUEST, MAX_TITLES_PER_REQUEST, 20]);
     expect(totals.resolved).toBe(count);
   });
@@ -250,10 +164,9 @@ describe("runKeywordLlmStage", () => {
   it("does nothing for an empty list", async () => {
     const store = new MemoryStore();
     const { calls, parse } = answering(() => "x");
-
-    const totals = await runKeywordLlmStage({ parse, store }, MARKETPLACE, []);
-
-    expect(totals).toEqual({ failed: 0, resolved: 0, unresolved: 0 });
+    expect(await runKeywordLlmStage({ parse, store }, MARKETPLACE, [])).toEqual(
+      { failed: 0, resolved: 0, unresolved: 0 }
+    );
     expect(calls).toEqual([]);
   });
 });

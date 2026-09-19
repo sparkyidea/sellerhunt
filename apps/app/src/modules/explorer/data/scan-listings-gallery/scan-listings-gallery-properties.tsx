@@ -5,18 +5,16 @@ import type {
 } from "@dashseller/db/schema";
 import type { DataViewProperty } from "@sparkyidea/dataview/types";
 import { Icons, type IconType } from "@sparkyidea/ui/icons";
+import { formatScanPriceRange } from "../../components/scan-price";
 
 type FlattenToArrays<T> = { [K in keyof T]: T[K][] };
 type ScanListing = typeof scanListing.$inferSelect & {
+  priceMin: number | null;
+  priceMax: number | null;
+  currency: string | null;
   variants: FlattenToArrays<typeof scanListingVariant.$inferSelect>;
   seller: FlattenToArrays<typeof scanSeller.$inferSelect> | null;
 };
-
-const formatCents = (value: number, currency: string | null) =>
-  (value / 100).toLocaleString("en-US", {
-    style: "currency",
-    currency: currency ?? "USD",
-  });
 
 const MARKETPLACES: Record<string, { icon?: IconType; label: string }> = {
   ebay: { icon: Icons.ebay.color, label: "eBay" },
@@ -26,26 +24,7 @@ const MARKETPLACES: Record<string, { icon?: IconType; label: string }> = {
 const marketplaceInfo = (marketplace: string) =>
   MARKETPLACES[marketplace] ?? { label: marketplace };
 
-const formatPriceRange = (item: ScanListing): string | null => {
-  const variantPrices = (item.variants?.price ?? []).filter(
-    (p): p is number => typeof p === "number"
-  );
-  const currency = item.currency ?? "USD";
-
-  if (variantPrices.length > 0) {
-    const min = Math.min(...variantPrices);
-    const max = Math.max(...variantPrices);
-    return min === max
-      ? formatCents(min, currency)
-      : `${formatCents(min, currency)} – ${formatCents(max, currency)}`;
-  }
-
-  if (typeof item.price === "number") {
-    return formatCents(item.price, currency);
-  }
-
-  return null;
-};
+const formatPriceRange = (item: ScanListing) => formatScanPriceRange(item);
 
 /**
  * Card layout ("version G" of the Explore Listings design):
@@ -201,18 +180,6 @@ export const scanListingsGalleryProperties = [
   {
     key: "url",
     name: "URL",
-    type: "text",
-    hidden: true,
-  },
-  {
-    key: "price",
-    name: "Listing Price",
-    type: "text",
-    hidden: true,
-  },
-  {
-    key: "currency",
-    name: "Currency",
     type: "text",
     hidden: true,
   },

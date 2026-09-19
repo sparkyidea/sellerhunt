@@ -25,7 +25,7 @@ move.
 | ----------------------------- | ----------------------------- | ------------------------------------------------------------------------------------------------ |
 | `@dashseller/trpc`            | `packages/trpc/src/`          | tRPC routers (`routers/`), `context.ts`, `index.ts` exports `router`/`publicProcedure`/`protectedProcedure`/`adminProcedure`/`permissionProcedure(perms)`. `appRouter` in `routers/index.ts` = `{ healthCheck, scanListing, mobileProfile }`. Query builders in `lib/`. |
 | `@dashseller/auth`            | `packages/auth/src/`          | better-auth server config (`auth-server.ts`), shared client factory (`auth-client.ts`, `buildAuthClient`), role helpers (`lib/auth/roles.ts`), access control (`lib/auth/permissions.ts`: `statement`, `ac`, `roles`, `hasPermission`), UI components (`components/`), UI plugins (`lib/auth/`). No organization plugin. |
-| `@dashseller/db`              | `packages/db/src/`            | Drizzle schema (`schema/{auth,mobile-profile,scan}.ts`; `lib/secret-crypto.ts` (JWE encrypt/decrypt for `mobile_profile`, shared by worker, seed and tRPC), `lib/mobile-profile-claim.ts` (a box claims its own row); `scan_keyword` doubles as the LLM-learned keyword pool, `scan_listing.keyword_id` links listings), migrations (`migrations/`), client (`index.ts`, `client.ts`), seeds (`seed/{scan,mobile-profile}.ts`). |
+| `@dashseller/db`              | `packages/db/src/`            | Drizzle schema (`schema/{auth,mobile-profile,scan}.ts`; `lib/secret-crypto.ts` (JWE encrypt/decrypt for `mobile_profile`, shared by worker, seed and tRPC), `lib/mobile-profile-claim.ts` (a box claims its own row); `scan_keyword` is an independent discovery/LLM-learned keyword pool), migrations (`migrations/`), client (`index.ts`, `client.ts`), seeds (`seed/{scan,mobile-profile}.ts`). |
 | `@sparkyidea/dataview`        | `packages/dataview/src/`      | Filtering / pagination / grouping abstraction. `components/{views,toolbars,skeletons,ui}`, `hooks/`, `parsers/`, `validators/`, `types/`. |
 | `@sparkyidea/ui`              | `packages/ui/src/`            | shadcn-based primitives (`components/`), icons, `lib/utils.ts` (`cn`), styles.                   |
 | `@dashseller/env`             | `packages/env/src/`           | T3 env validation. Per-target files: `app.ts` (user and admin UI), `server.ts`, `db.ts`, `trigger-scan.ts`.         |
@@ -55,7 +55,6 @@ move.
 
 - `scan/scan-crons.ts` — one scheduled task sweeping listings, sellers, and keywords across enabled marketplaces.
 - `scan/scan-listings-by-{ids,keyword,seller}.ts` — listing discovery phases.
-- `scan/resolve-listing-keywords.ts` — manual retry tool for keyword extraction (the `scan-listings-by-ids` leaf extracts inline).
 
 ### Notable client setup
 

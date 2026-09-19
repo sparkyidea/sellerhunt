@@ -9,31 +9,20 @@
 import type { ScanListing } from "@dashseller/marketplace-scan/types";
 import type { ScanConfig } from "../../utils/scan-config";
 
-interface VerdictBase {
-  /** Numeric listing id (already normalized via `extractListingId`). */
-  listingId: string;
-  /** Seller reference from the listing, if any (used to promote sellers). */
-  sellerReference: string | null;
-}
-
-/** Cleared the config thresholds and was persisted. */
-export interface FitListingVerdict extends VerdictBase {
+/** A qualifying listing with a stored identity; rejected listings are omitted. */
+export interface ListingVerdict {
   categoryPath: string[] | null;
-  fit: true;
   /** True when this scan INSERTED the row (first time seen); false on a rescan. */
   isNew: boolean;
+  /** Numeric listing id (already normalized via `extractListingId`). */
+  listingId: string;
   /** The persisted `scan_listing.id`. */
   scanListingId: string;
+  /** Seller reference from the listing, if any (used to promote sellers). */
+  sellerReference: string | null;
   title: string;
   variantsDiscovered: number;
 }
-
-/** Below thresholds or missing a title; not persisted by this scan. */
-export interface UnfitListingVerdict extends VerdictBase {
-  fit: false;
-}
-
-export type ListingVerdict = FitListingVerdict | UnfitListingVerdict;
 
 /** The narrow `scan_listing` projection a stored verdict is built from. */
 export interface StoredListingRow {
@@ -59,15 +48,14 @@ export function verdictFromStoredListing(
   row: StoredListingRow,
   marketplace: string,
   config: ScanConfig
-): ListingVerdict {
+): ListingVerdict | null {
   const { reference: listingId, sellerReference } = row;
   if (!row.title || checkListingThresholds(row, marketplace, config)) {
-    return { listingId, fit: false, sellerReference };
+    return null;
   }
   return {
     listingId,
     sellerReference,
-    fit: true,
     isNew: false,
     scanListingId: row.id,
     title: row.title,
@@ -83,10 +71,9 @@ export function verdictFromStoredListing(
  * on shop. The 24-hour threshold applies only to eBay.
  */
 export function checkListingThresholds(
-  listing: Pick<
-    ScanListing,
-    "price" | "itemSold" | "soldLast24h" | "soldLast30Days"
-  >,
+  listing: Pick<ScanListing, "itemSold" | "soldLast24h" | "soldLast30Days"> & {
+    price: number | null;
+  },
   marketplace: string,
   config: ScanConfig
 ): string | null {
@@ -109,7 +96,7 @@ export function checkListingThresholds(
       return `soldLast24h ${listing.soldLast24h} < ${config.minSoldLast24h}`;
     }
   }
-  // listing.price is already cents (mapper-converted), matches scan_config thresholds.
+  // The complete current variant minimum is in cents, matching config thresholds.
   if (listing.price === null || listing.price < config.minPriceCents) {
     return `price ${listing.price} < ${config.minPriceCents}`;
   }

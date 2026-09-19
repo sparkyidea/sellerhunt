@@ -1,70 +1,67 @@
+import { Badge } from "@sparkyidea/ui/components/badge";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
 } from "@sparkyidea/ui/components/card";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@sparkyidea/ui/components/table";
 import type { ScanListingData } from "../types";
+import { formatScanPrice, variantLabel } from "./scan-price";
 
-function formatPrice(cents: number | null, currency: string | null) {
-  if (cents == null) {
-    return "—";
-  }
-  return (cents / 100).toLocaleString("en-US", {
-    style: "currency",
-    currency: currency ?? "USD",
-  });
-}
+const STATUS_LABELS = {
+  in_stock: "In stock",
+  out_of_stock: "Out of stock",
+  removed: "Removed",
+};
 
 export function ScanListingVariantsCard({
   listing,
 }: {
   listing: ScanListingData;
 }) {
-  const variants = listing.variants;
-  const attributeKeys = Array.from(
-    new Set(variants.flatMap((v) => Object.keys(v.attributes ?? {})))
-  );
-
   return (
-    <Card className="gap-2">
+    <Card>
       <CardHeader>
-        <CardTitle>Variants ({variants.length})</CardTitle>
+        <CardTitle>
+          {listing.hasVariations ? "Variants" : "Default variant"} (
+          {listing.variants.length})
+        </CardTitle>
       </CardHeader>
-      <CardContent className="px-0">
-        <div className="overflow-x-auto">
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="border-b">
-                {attributeKeys.map((key) => (
-                  <th
-                    className="px-4 py-2 text-left font-medium text-muted-foreground text-xs uppercase tracking-wide"
-                    key={key}
-                  >
-                    {key}
-                  </th>
-                ))}
-                <th className="px-4 py-2 text-right font-medium text-muted-foreground text-xs uppercase tracking-wide">
-                  Price
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {variants.map((variant) => (
-                <tr className="border-b last:border-0" key={variant.id}>
-                  {attributeKeys.map((key) => (
-                    <td className="px-4 py-2" key={key}>
-                      {variant.attributes?.[key] ?? "—"}
-                    </td>
-                  ))}
-                  <td className="px-4 py-2 text-right tabular-nums">
-                    {formatPrice(variant.price, listing.currency)}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+      <CardContent>
+        <Table>
+          <TableHeader>
+            <TableRow>
+              <TableHead>Variant</TableHead>
+              <TableHead>Status</TableHead>
+              <TableHead>Price</TableHead>
+              <TableHead>Lifetime sold</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {listing.variants.map((v) => (
+              <TableRow key={v.id}>
+                <TableCell>{variantLabel(v)}</TableCell>
+                <TableCell>
+                  <Badge variant="secondary">
+                    {v.status ? STATUS_LABELS[v.status] : "Unknown"}
+                  </Badge>
+                </TableCell>
+                <TableCell>{formatScanPrice(v.price, v.currency)}</TableCell>
+                <TableCell>
+                  {v.itemSold?.toLocaleString() ?? "Unknown"}
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
       </CardContent>
     </Card>
   );

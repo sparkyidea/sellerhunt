@@ -125,27 +125,16 @@ views by following `packages/dataview/src/components/views/`, not raw
   [scan architecture](../apps/trigger-scan/docs/scan-architecture.md) for waiting
   completion contracts and deployment prerequisites.
 - **Keywords as knowledge** (`apps/trigger-scan/src/keywords/`) —
-  `scan_keyword` is both the discovery pool and the phrases the LLM learned
-  from listing titles. Extraction is LLM-only: no local normalization, alias
-  matching or scoring. At the end of each `scan-listings-by-ids` leaf, every
-  qualifying listing that leaf INSERTED (`isNew` from the upsert — never a rescan) has its
-  title sent verbatim to OpenAI in one structured-output call (50 titles per
-  request max, K = 50, so one call per leaf; model, effort and the cap are
-  constants beside the prompt in `keywords/extract-keywords.ts`, and the only
-  runtime knob is the kill switch). The returned
-  phrase is stored as returned (trimmed; the prompt asks for lowercase) as a
-  `scan_keyword` row — an exact match reuses a manual seed — and linked from
-  `scan_listing.keyword_id`; null means unresolved and `keyword_attempts` caps
-  retries at 3. No status table; per-listing detail is in the run logs. A
-  keyword is a *search term*, **not** a product identity (product matching is
-  identifier-based, UPC/GTIN/MPN, separate work). Learned keywords enter the
-  cron's search rotation like any other. `keyword_llm_enabled` (default on) is
-  the kill switch; off or no key → listings persist unresolved with no attempt
-  spent. `resolve-listing-keywords` is a manual retry tool (`{ marketplace }`
-  or `{ marketplace, listingIds }`). Try the prompt on real titles without
-  writing anything: `bun --cwd apps/trigger-scan keywords:try "title" …`
-  (also `--file`, stdin, `--from-db 50`, `--model`, `--effort low`). Unit
-  tests: vitest, `bun --cwd apps/trigger-scan test`.
+  `scan_keyword` is an independent discovery pool, not a product identity.
+  Each newly inserted qualifying listing supplies its ID and title to one
+  batched LLM extraction stage (up to 50 titles per request). Extracted phrases
+  are stored as returned, trimmed; exact marketplace/phrase matches reuse the
+  existing keyword and update only `last_seen_at`. There is no listing FK,
+  attempt counter, unresolved selector, or manual keyword retry task.
+  Extraction errors are nonfatal and do not refresh listing timestamps.
+  `keyword_llm_enabled` disables extraction; a missing API key skips it.
+  Try the prompt without writes using `bun --cwd apps/trigger-scan keywords:try "title" …`.
+  Unit tests: `bun --cwd apps/trigger-scan test`.
 
 Deploy via root scripts `trigger-scan:dev` / `trigger-scan:deploy` (they pass
 `-a https://trigger.sparkyidea.com --profile sparkyidea`; run
@@ -154,6 +143,41 @@ Deploy via root scripts `trigger-scan:dev` / `trigger-scan:deploy` (they pass
 ---
 
 ## Database operations
+
+### Listing observations
+
+`scan_listing` holds current descriptive fields and source-reported listing sales.
+Every saved full listing has at least one `scan_listing_variant`: a native default
+or a generated `__default__` for source-confirmed simple listings without a native
+variant ID. Variants hold current price/currency, attributes, and nullable status
+(`in_stock`, `out_of_stock`, `removed`, or NULL for unknown). They have no sales,
+title, or synthetic flag. Missing variants become removed; reappearance reuses IDs.
+
+`scan_listing_snapshot` holds listing lifetime sales, source-reported 24-hour and
+30-day sales, and `created_at`. One full saved scan appends one snapshot, including
+unchanged or unknown measurements. No variant snapshots or price history exist.
+Nonnegative integer sales are validated by the worker, not duplicate DB checks.
+
+Listing/variant updates and the snapshot are atomic, with one save timestamp for
+listing `last_scanned_at`, observed/changed variant `updated_at`, and snapshot
+`created_at`. Listing freshness and scheduling use `last_scanned_at`; only completed
+scans write listing rows. Keywords are saved independently. Seller/keyword scan
+clocks are unchanged. There is no listing updated-at column, scan-start timestamp,
+sequence, or start-order rejection. Transaction locks prevent interleaved writes,
+but freshness checks are not atomic claims; overlapping completed scans can both
+save, with the last transaction determining current values.
+
+Discovery thresholds gate new listings, not valid rescans of existing listings.
+Current price ranges exclude removed variants, include unknown/out-of-stock units,
+and require all current prices known in one currency. Standard relation filters
+and scalar rollups remain unscoped and include removed variants.
+
+The schema and worker use this contract. The tRPC history reader and Explorer UI
+still require the planned switch from variant history to listing sales history;
+the checkout is not ready for coordinated deployment until those follow-up changes
+and their tests are complete.
+
+### Migration workflow
 
 **Never run `drizzle-kit push` or `drizzle-kit migrate` without explicit user
 approval.**

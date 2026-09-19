@@ -1,20 +1,4 @@
-/**
- * Freshness prefilters — split a batch of references into "fresh" (stored
- * row scanned after the cooldown cutoff) and "stale" (everything else) in one
- * query per 1000 references, instead of one query per id.
- *
- * Parents call these BEFORE enqueueing children ("stale at enqueue time"), so
- * fresh sellers can avoid an unnecessary child run, and the listing leaf
- * calls them ONCE before loading a persona ("stale at run time"), so a batch
- * of already-fresh ids costs no sleeps, no persona load and no HTTP.
- *
- * Cutoff semantics match the child gates these replace: fresh means
- * `last_scanned_at > cutoff` (strict). A null timestamp never matches, so a
- * bare seller row (created by the listing leaf to satisfy the FK) is stale.
- * These reads do not claim work: two runs that both partition before either
- * persists can still scan the same entity. Durable ownership is Issue #11.
- */
-
+import { listingPriceMin } from "@dashseller/db/lib/scan-listing-observation";
 import { scanListing, scanSeller } from "@dashseller/db/schema";
 import { logger } from "@trigger.dev/sdk";
 import { and, eq, gt, inArray } from "drizzle-orm";
@@ -35,7 +19,7 @@ const FRESHNESS_QUERY_CHUNK = 1000;
 export interface FreshListingPartition {
   /** Inputs with no fresh row, as ORIGINALLY given (URLs stay URLs). */
   stale: string[];
-  /** One stored verdict per fresh input occurrence, in input order. */
+  /** Qualifying fresh listings only, preserving input occurrence order. */
   verdicts: ListingVerdict[];
 }
 
@@ -53,7 +37,7 @@ export interface FreshSellerPartition {
 
 /**
  * Partition listing ids (bare or URL) by listing freshness. Duplicated inputs
- * yield duplicated verdicts to preserve an outcome per input occurrence; an
+ * yield duplicated qualifying verdicts; cached nonqualifying rows are not stale. An
  * input `extractListingId` rejects is passed
  * through to `stale` untouched, so the leaf reports it the same way it did
  * before (as a per-listing failure).
@@ -83,10 +67,10 @@ export async function partitionFreshListings(
     const found = await db
       .select({
         id: scanListing.id,
+        price: listingPriceMin(),
         reference: scanListing.reference,
         title: scanListing.title,
         categoryPath: scanListing.categoryPath,
-        price: scanListing.price,
         itemSold: scanListing.itemSold,
         soldLast24h: scanListing.soldLast24h,
         soldLast30Days: scanListing.soldLast30Days,
@@ -111,20 +95,20 @@ export async function partitionFreshListings(
   for (const [index, input] of ids.entries()) {
     const reference = normalized[index] ?? null;
     const row = reference === null ? undefined : rows.get(reference);
-    const verdict = row
-      ? verdictFromStoredListing(row, marketplace, config)
-      : null;
+    if (!row) {
+      stale.push(input);
+      continue;
+    }
+    const verdict = verdictFromStoredListing(row, marketplace, config);
     if (verdict) {
       verdicts.push(verdict);
-    } else {
-      stale.push(input);
     }
   }
 
   logger.info("Partitioned listings by freshness", {
     marketplace,
     requested: ids.length,
-    fresh: verdicts.length,
+    fresh: ids.length - stale.length,
     stale: stale.length,
     cutoff,
   });

@@ -22,6 +22,7 @@ import { DynamicLink } from "@/components/layout/dynamic-link";
 import { RouteBreadcrumb } from "@/components/layout/route-breadcrumb";
 import { useTRPC } from "@/lib/utils/trpc/client";
 import { ScanListingClassificationCard } from "../../components/scan-listing-classification-card";
+import { ScanListingHistoryCard } from "../../components/scan-listing-history-card";
 import { ScanListingInfoCard } from "../../components/scan-listing-info-card";
 import { ScanListingPerformanceCard } from "../../components/scan-listing-performance-card";
 import { ScanListingPricingCard } from "../../components/scan-listing-pricing-card";
@@ -146,19 +147,15 @@ function ScanListingTags({ listing }: { listing: ScanListingData }) {
 }
 
 function ScanListingPanelContent({ listing }: { listing: ScanListingData }) {
-  const hasVariants = listing.variants.length > 0;
-
   return (
     <PanelContent>
       <div className="@container">
         <div className="grid @3xl:grid-cols-7 grid-cols-1 gap-6">
           <div className="@3xl:col-span-5 flex min-w-0 flex-col gap-6">
             <ScanListingInfoCard listing={listing} />
-            {hasVariants ? (
-              <ScanListingVariantsCard listing={listing} />
-            ) : (
-              <ScanListingPricingCard listing={listing} />
-            )}
+            <ScanListingPricingCard listing={listing} />
+            <ScanListingVariantsCard listing={listing} />
+            <ScanListingHistoryCard key={listing.id} listing={listing} />
           </div>
           <div className="@3xl:col-span-2 flex min-w-0 flex-col gap-6">
             <ScanListingSellerCard listing={listing} />

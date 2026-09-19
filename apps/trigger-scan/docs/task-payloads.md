@@ -131,40 +131,29 @@ interface ScanListingsByIdsPayload {
 ```
 
 Callers chunk by K; this task always processes its input inline. Fresh stored rows
-supply verdicts with `isNew: false`. Stale detail fetches are sequential and paced.
-Only fitting titled results persist; threshold rejects and missing titles remain
-non-persistent. An all-fresh batch does not acquire a persona.
+supply qualifying verdicts with `isNew: false`. Stale detail fetches are sequential
+and paced. New listings must qualify to be saved; existing listings retain valid
+full observations even below thresholds. Invalid titles fail the scan. An all-fresh
+batch does not acquire a persona, including when no cached listings qualify.
 
 Success returns `{ marketplace, mode: "scanned", triggered, fresh, scanned,
-notFound, unfit, verdicts }`. Fitting verdicts include `isNew`, `scanListingId`,
-`title`, and `categoryPath`. Exact listing-detail 404s complete a check without a
+notFound, verdicts }`. Only qualifying listings appear in `verdicts`, with
+`listingId`, `sellerReference`, `isNew`, `scanListingId`, `title`, `categoryPath`,
+and `variantsDiscovered`. No `fit`, `unfit`, or `persisted` fields are returned.
+The fresh/scanned counts include nonqualifying checks; `scanned` does not mean saved.
+Exact listing-detail 404s complete a check without a
 persisted negative row. Scan failures are thrown after healthy work and inline LLM
 extraction; there is no successful `fanned`/`aborted`/incomplete result. There is no shared
 listing-leaf concurrency cap in this stage.
 
-## `resolve-listing-keywords` (manual catch-up)
+## Sales persistence and keyword extraction
 
-```ts
-interface ResolveListingKeywordsPayload {
-  marketplace: string;
-  limit?: number; // catch-up only; default 200
-  listingIds?: string[]; // scan_listing.id, not marketplace reference; [] does nothing
-}
-```
+Each successfully saved full listing scan updates current listing sales and variants,
+then appends one listing sales snapshot in the same transaction. The snapshot stores
+`itemSold`, `soldLast24h`, `soldLast30Days`, and its creation time. Prices remain
+current-only on variants. Listing `lastScannedAt` determines scan freshness.
 
-```json
-{ "marketplace": "ebay", "limit": 500 }
-```
-
-```json
-{ "marketplace": "ebay", "listingIds": ["<scan_listing.id>"] }
-```
-
-Nothing triggers this tool automatically. Both explicit-ID and catch-up selection
-require listings with unresolved keywords and fewer than three attempts, within
-the requested marketplace. This stage persists only fitting listing observations.
-
-The task reloads the LLM switch from the database and has no config override.
-Disabled extraction or a missing API key spends no attempts. Titles are sent in
-requests of up to 50; phrases are linked to `scan_keyword` without normalization.
-Needs `OPENAI_API_KEY`. LLM errors do not fail listing scans; logs record each answer.
+Newly inserted qualifying listings feed ID and title into inline keyword extraction.
+It writes only to the independent keyword pool. There is no manual keyword retry
+task, listing-to-keyword relationship, or attempt tracking. Failed extraction does
+not roll back a scan or advance listing timestamps.

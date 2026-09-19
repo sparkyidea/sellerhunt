@@ -16,7 +16,9 @@
  * GraphQL shape can change without notice, bearer-token auth is unofficial.
  */
 import { convert } from "html-to-text";
+import { validateListingObservation } from "../../../listing-observation";
 import type { ScanListing } from "../../../types";
+import { parseShopifyGid } from "../../../utils/parse-shopify-gid";
 import { shopGraphqlFetch } from "../http";
 import {
   type GetAdjacentVariantsResult,
@@ -38,8 +40,8 @@ const DEFAULT_IMAGE_WIDTH = 1242;
  * Cap on AdjacentVariantsQuery iterations. Single-axis products converge in
  * one call; multi-axis products may need more because shop.app's adjacency
  * is undocumented and may only return one-option-different siblings per
- * call. Hitting the cap with the set still growing emits a console.warn
- * with the listingId — surface as a follow-up if it ever fires.
+ * call. Reaching the cap without the exact reported count fails the scan;
+ * a partial set must never drive removal reconciliation.
  */
 const MAX_ADJACENT_ITERATIONS = 4;
 
@@ -99,6 +101,13 @@ export async function getListing(
   });
 
   const parsedProduct = parseProduct(productRaw);
+  const productId = productRaw.data?.storefrontProduct?.id;
+  if (
+    !productId ||
+    (parseShopifyGid(productId) ?? productId) !== options.listingId
+  ) {
+    throw new Error("Unexpected Shop product identity");
+  }
   const firstVariant = extractFirstVariant(productRaw);
 
   const { variants, adjacentPages } = await collectAllVariants({
@@ -118,6 +127,7 @@ export async function getListing(
     variants,
   });
 
+  validateListingObservation(listing);
   return {
     listing,
     listingId: options.listingId,
@@ -163,9 +173,17 @@ async function collectAllVariants(
     knownById.set(input.firstVariant.id, input.firstVariant);
   }
 
-  // Single-variant products (or no variant info) skip adjacency entirely.
-  const expectedCount = input.variantsCount ?? 0;
-  if (expectedCount <= 1) {
+  // A known single-variant product skips adjacency; missing counts fail closed.
+  const expectedCount = input.variantsCount;
+  if (
+    expectedCount === null ||
+    !Number.isSafeInteger(expectedCount) ||
+    expectedCount < 1 ||
+    !input.firstVariant?.id
+  ) {
+    throw new Error("Shop variant count or initial identity is missing");
+  }
+  if (expectedCount === 1) {
     return { variants: [...knownById.values()], adjacentPages };
   }
 
@@ -199,8 +217,10 @@ async function collectAllVariants(
     queue = nextQueue;
   }
 
-  if (knownById.size < expectedCount) {
-    warnIncompleteAdjacency(input.listingId, expectedCount, knownById.size);
+  if (knownById.size !== expectedCount) {
+    throw new Error(
+      `Incomplete Shop variants: expected ${expectedCount}, received ${knownById.size}`
+    );
   }
 
   return { variants: [...knownById.values()], adjacentPages };
@@ -251,7 +271,11 @@ function mergeNewVariants(
   nextQueue: ShopVariantOption[][]
 ): void {
   for (const v of found) {
-    if (knownById.has(v.id)) {
+    const previous = knownById.get(v.id);
+    if (previous) {
+      if (JSON.stringify(previous) !== JSON.stringify(v)) {
+        throw new Error("Conflicting Shop variant observations");
+      }
       continue;
     }
     knownById.set(v.id, v);
@@ -259,16 +283,6 @@ function mergeNewVariants(
       nextQueue.push(v.selectedOptions);
     }
   }
-}
-
-function warnIncompleteAdjacency(
-  listingId: string,
-  expected: number,
-  got: number
-): void {
-  console.warn(
-    `[shop.get-listing] adjacency incomplete: listingId=${listingId} expected=${expected} got=${got} iterations=${MAX_ADJACENT_ITERATIONS}`
-  );
 }
 
 function optionsKey(options: ShopVariantOption[]): string {

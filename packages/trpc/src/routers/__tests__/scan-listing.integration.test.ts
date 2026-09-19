@@ -1,0 +1,215 @@
+import { db } from "@dashseller/db";
+import {
+  scanListing,
+  scanListingVariant,
+  scanListingVariantSnapshot,
+} from "@dashseller/db/schema";
+import { migrateTestDb } from "@dashseller/db/testing";
+import { eq } from "drizzle-orm";
+import { afterAll, afterEach, beforeAll, beforeEach, expect, it } from "vitest";
+import { createCallerFactory } from "../../index";
+import { appRouter } from "../index";
+
+const caller = createCallerFactory(appRouter)({
+  session: null,
+  encryptionKey: "integration-only",
+}).scanListing;
+const marketplace = "itest-variant-reads";
+let listingId: string;
+let variantId: string;
+let removedId: string;
+
+beforeAll(async () => {
+  await migrateTestDb();
+});
+beforeEach(async () => {
+  listingId = crypto.randomUUID();
+  variantId = crypto.randomUUID();
+  removedId = crypto.randomUUID();
+  await db.insert(scanListing).values({
+    id: listingId,
+    marketplace,
+    reference: listingId,
+    title: "Research listing",
+    hasVariations: true,
+    lastObservationSequence: 3n,
+  });
+  await db.insert(scanListingVariant).values([
+    {
+      id: variantId,
+      listingId,
+      reference: "a",
+      isSynthetic: false,
+      price: 100,
+      currency: "USD",
+      status: null,
+    },
+    {
+      listingId,
+      reference: "b",
+      isSynthetic: false,
+      price: 300,
+      currency: "USD",
+      status: "out_of_stock",
+    },
+    {
+      id: removedId,
+      listingId,
+      reference: "c",
+      isSynthetic: false,
+      price: 999,
+      currency: "USD",
+      status: "removed",
+    },
+  ]);
+});
+afterEach(async () => {
+  await db.delete(scanListing).where(eq(scanListing.marketplace, marketplace));
+});
+afterAll(async () => {
+  await db.$client.end();
+});
+
+it("excludes removed units but retains unknown/out-of-stock units in detail and gallery ranges", async () => {
+  const detail = await caller.get({ id: listingId });
+  expect(detail).toMatchObject({
+    priceMin: 100,
+    priceMax: 300,
+    currency: "USD",
+  });
+  expect(detail.variants.map((v) => v.reference).sort()).toEqual(["a", "b"]);
+  const page = await caller.getMany({
+    marketplace,
+    rollups: [
+      { key: "variants.price", extrasKey: "unitMax", calculation: "max" },
+    ],
+  });
+  expect(page.items).toHaveLength(1);
+  expect(page.items[0]).toMatchObject({
+    priceMin: 100,
+    priceMax: 300,
+    unitMax: 999,
+  });
+  await db
+    .update(scanListingVariant)
+    .set({ currency: "EUR" })
+    .where(eq(scanListingVariant.id, variantId));
+  expect(await caller.get({ id: listingId })).toMatchObject({
+    priceMin: null,
+    priceMax: null,
+    currency: null,
+  });
+});
+
+it("includes all related variants in positive, negative and quantified filters", async () => {
+  for (const condition of ["eq", "ne"] as const) {
+    const page = await caller.getMany({
+      marketplace,
+      filter: [{ property: "variants.price", condition, value: 999 }],
+    });
+    expect(page.items).toHaveLength(condition === "eq" ? 1 : 0);
+  }
+  for (const quantifier of ["any", "none", "every"] as const) {
+    const page = await caller.getMany({
+      marketplace,
+      filter: [
+        { property: "variants.price", condition: "lt", value: 400, quantifier },
+      ],
+    });
+    expect(page.items).toHaveLength(quantifier === "any" ? 1 : 0);
+  }
+});
+
+it("includes removed variants in rollup filters before pagination", async () => {
+  const page = await caller.getMany({
+    marketplace,
+    limit: 1,
+    rollups: [
+      { key: "variants.price", extrasKey: "unitMax", calculation: "max" },
+    ],
+    filter: [{ property: "variants.price", condition: "lt", value: 400 }],
+  });
+  expect(page.items).toEqual([]);
+});
+
+it("includes removed variants in relation filters when counting groups", async () => {
+  const result = await caller.getGroup({
+    marketplace,
+    groupBy: { propertyId: "marketplace", propertyType: "text" },
+    filter: [{ property: "variants.price", condition: "eq", value: 999 }],
+  });
+  expect(result.counts).toEqual({
+    [marketplace]: { count: 1, hasMore: false },
+  });
+  const current = await caller.getGroup({
+    marketplace,
+    groupBy: { propertyId: "marketplace", propertyType: "text" },
+    filter: [{ property: "variants.price", condition: "eq", value: 300 }],
+  });
+  expect(current.counts).toEqual({
+    [marketplace]: { count: 1, hasMore: false },
+  });
+});
+
+it("paginates tied history timestamps without overlap and retains snapshot currency and reset semantics", async () => {
+  const scannedAt = new Date("2026-09-01T00:00:00Z");
+  await db.insert(scanListingVariantSnapshot).values(
+    [null, 10, 15, 2].map((itemSold, index) => ({
+      id: `${listingId}-${index}`,
+      variantId,
+      observationSequence: BigInt(index + 1),
+      scanStartedAt: scannedAt,
+      scannedAt,
+      itemSold,
+      price: 200,
+      currency: "EUR",
+    }))
+  );
+  const first = await caller.getVariantHistory({
+    listingId,
+    variantId,
+    limit: 2,
+  });
+  expect(first.items.map((row) => row.salesDelta)).toEqual([null, 5]);
+  expect(first.items[0]?.currency).toBe("EUR");
+  const second = await caller.getVariantHistory({
+    listingId,
+    variantId,
+    limit: 2,
+    cursor: first.nextCursor,
+  });
+  expect(second.items.map((row) => row.salesDelta)).toEqual([null, null]);
+  expect(
+    new Set([...first.items, ...second.items].map((row) => row.id)).size
+  ).toBe(4);
+  expect(second.nextCursor).toBeNull();
+  expect(
+    (
+      await caller.getVariantHistory({
+        listingId,
+        variantId,
+        from: new Date("2026-09-02"),
+      })
+    ).items
+  ).toEqual([]);
+});
+
+it("permits history for removed units but rejects mismatched ownership and invalid input", async () => {
+  expect(
+    (await caller.getVariantHistory({ listingId, variantId: removedId })).items
+  ).toEqual([]);
+  await expect(
+    caller.getVariantHistory({ listingId: "other", variantId })
+  ).rejects.toMatchObject({ code: "NOT_FOUND" });
+  await expect(
+    caller.getVariantHistory({ listingId, variantId, limit: 501 })
+  ).rejects.toMatchObject({ code: "BAD_REQUEST" });
+  await expect(
+    caller.getVariantHistory({
+      listingId,
+      variantId,
+      from: new Date("2026-09-02"),
+      to: new Date("2026-09-01"),
+    })
+  ).rejects.toMatchObject({ code: "BAD_REQUEST" });
+});

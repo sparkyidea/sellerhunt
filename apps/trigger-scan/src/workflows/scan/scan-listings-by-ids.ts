@@ -3,7 +3,7 @@
  */
 import { logger, metadata, schemaTask, tags } from "@trigger.dev/sdk";
 import { z } from "zod";
-import type { UnresolvedListing } from "../../keywords/llm-stage";
+import type { ListingTitle } from "../../keywords/llm-stage";
 import { resolveKeywordsWithLlm } from "../../nodes/scan/resolve-keywords-with-llm";
 import { partitionFreshListings } from "../../nodes/scan/scan-freshness";
 import {
@@ -40,7 +40,6 @@ export interface ScanListingsByIdsResult {
   notFound: number;
   scanned: number;
   triggered: number;
-  unfit: number;
   verdicts: ListingVerdict[];
 }
 
@@ -67,12 +66,13 @@ export const scanListingsByIds = schemaTask({
         { marketplace, count: listingIds.length }
       );
     }
-    const { verdicts, stale } = await partitionFreshListings(
+    const { verdicts: cached, stale } = await partitionFreshListings(
       marketplace,
       listingIds,
       config
     );
-    const fresh = verdicts.length;
+    const results: (ListingVerdict | null)[] = [...cached];
+    const fresh = listingIds.length - stale.length;
     let scanned = 0;
     let notFound = 0;
     let personaError: Error | undefined;
@@ -89,7 +89,7 @@ export const scanListingsByIds = schemaTask({
           jitterMs(config.listingScanDelayMinMs, config.listingScanDelayMaxMs)
         );
         try {
-          verdicts.push(
+          results.push(
             await scanOneListing({
               client,
               manager,
@@ -122,6 +122,7 @@ export const scanListingsByIds = schemaTask({
         }
       }
     }
+    const verdicts = results.filter((result) => result !== null);
     await extractKeywordsForNewListings(marketplace, config, verdicts);
     metadata
       .set("scanned", scanned)
@@ -142,7 +143,6 @@ export const scanListingsByIds = schemaTask({
       fresh,
       scanned,
       notFound,
-      unfit: verdicts.filter((v) => !v.fit).length,
       verdicts,
     };
   },
@@ -165,9 +165,9 @@ async function extractKeywordsForNewListings(
   config: ScanConfig,
   verdicts: ListingVerdict[]
 ): Promise<void> {
-  const fresh: UnresolvedListing[] = [];
+  const fresh: ListingTitle[] = [];
   for (const verdict of verdicts) {
-    if (verdict.fit && verdict.isNew) {
+    if (verdict.isNew) {
       fresh.push({
         id: verdict.scanListingId,
         title: verdict.title,
@@ -193,7 +193,7 @@ async function extractKeywordsForNewListings(
       ...totals,
     });
   } catch (error) {
-    logger.error("Keyword extraction failed; listings left unresolved", {
+    logger.error("Keyword extraction failed; scan results remain saved", {
       marketplace,
       newListings: fresh.length,
       error: error instanceof Error ? error.message : String(error),

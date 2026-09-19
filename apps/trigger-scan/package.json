@@ -11,6 +11,7 @@
     "keywords:bench": "bun run scripts/bench-keywords.ts",
     "keywords:try": "bun run scripts/try-keywords.ts",
     "test": "vitest run",
+    "test:integration": "vitest run --config vitest.integration.config.ts",
     "test:watch": "vitest",
     "trigger:deploy": "trigger deploy --env-file .env --profile sparkyidea -a https://trigger.sparkyidea.com",
     "trigger:dev": "trigger dev --env-file .env --profile sparkyidea -a https://trigger.sparkyidea.com"

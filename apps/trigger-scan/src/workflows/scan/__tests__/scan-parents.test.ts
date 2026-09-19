@@ -118,7 +118,6 @@ const config = {
 const listingId = "123456789012";
 const verdict = {
   listingId,
-  fit: true,
   sellerReference: "seller-1",
   isNew: false,
   scanListingId: "row",
@@ -199,6 +198,21 @@ it("waits for fitting sellers before marking a keyword complete", async () => {
   expect(mocks.markKeyword.mock.invocationCallOrder[0]).toBeGreaterThan(
     mocks.sellers.mock.invocationCallOrder[0] ?? 0
   );
+});
+
+it("counts nonqualifying cached listings as fresh and launches no sellers for them", async () => {
+  mocks.partitionListings.mockResolvedValue({ verdicts: [], stale: [] });
+  await expect(run("keyword")).resolves.toMatchObject({
+    status: "completed",
+    listingsFresh: 1,
+    sellersLaunched: 0,
+  });
+  expect(mocks.listings).not.toHaveBeenCalled();
+  expect(mocks.sellers).not.toHaveBeenCalled();
+  await expect(run("seller")).resolves.toMatchObject({
+    status: "completed",
+    listingsFresh: 1,
+  });
 });
 it("launches sellers from healthy listing siblings before reporting another leaf's failure", async () => {
   mocks.partitionListings.mockResolvedValue({

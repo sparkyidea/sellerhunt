@@ -261,6 +261,7 @@
       "dependencies": {
         "@dashseller/auth": "workspace:*",
         "@dashseller/db": "workspace:*",
+        "@dashseller/marketplace-scan": "workspace:*",
         "@sparkyidea/dataview": "workspace:*",
         "@trpc/client": "catalog:",
         "@trpc/server": "catalog:",

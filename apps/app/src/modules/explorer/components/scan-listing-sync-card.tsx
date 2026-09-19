@@ -32,6 +32,7 @@ export function ScanListingSyncCard({ listing }: { listing: ScanListingData }) {
         <CardTitle>Lifecycle</CardTitle>
       </CardHeader>
       <CardContent className="flex flex-col gap-3">
+        <Row label="Created" value={fmtDate(listing.createdAt)} />
         <Row label="Last scanned" value={fmtDate(listing.lastScannedAt)} />
         <Row label="Started" value={fmtDate(listing.startedAt)} />
         <Row label="Ended" value={fmtDate(listing.endedAt)} />

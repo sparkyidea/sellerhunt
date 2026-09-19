@@ -44,7 +44,6 @@ const stored = {
 };
 const storedVerdict = {
   listingId: "123456789012",
-  fit: true,
   sellerReference: "seller-1",
   isNew: false,
   scanListingId: "stored-id",
@@ -87,20 +86,22 @@ it("answers URL, bare, invalid and duplicate inputs in order from one query", as
   ]);
   expect(sql).toContain('"reference" in (');
   expect(sql).toContain('"last_scanned_at" >');
+  expect(sql).not.toContain('"updated_at"');
+  expect(sql).not.toContain("scan_listing_snapshot");
+  expect(sql).not.toContain("scan_listing_variant_snapshot");
 });
 
 it("re-evaluates stored metrics against the current thresholds", async () => {
-  const { verdicts } = await partitionFreshListings("ebay", ["123456789012"], {
-    ...config,
-    minItemSold: 300,
-  });
-  expect(verdicts).toEqual([
+  const { verdicts, stale } = await partitionFreshListings(
+    "ebay",
+    ["123456789012"],
     {
-      listingId: "123456789012",
-      fit: false,
-      sellerReference: "seller-1",
-    },
-  ]);
+      ...config,
+      minItemSold: 300,
+    }
+  );
+  expect(verdicts).toEqual([]);
+  expect(stale).toEqual([]);
 
   db.where.mockResolvedValue([{ ...stored, title: "" }]);
   const untitled = await partitionFreshListings(
@@ -108,13 +109,7 @@ it("re-evaluates stored metrics against the current thresholds", async () => {
     ["123456789012"],
     config
   );
-  expect(untitled.verdicts).toEqual([
-    {
-      listingId: "123456789012",
-      fit: false,
-      sellerReference: "seller-1",
-    },
-  ]);
+  expect(untitled.verdicts).toEqual([]);
   expect(untitled.stale).toEqual([]);
 });
 

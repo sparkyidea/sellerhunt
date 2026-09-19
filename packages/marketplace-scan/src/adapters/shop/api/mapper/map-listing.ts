@@ -1,26 +1,4 @@
-/**
- * Shop.app parsed product + variants → unified `ScanListing` (the form for
- * one `scan_listing` row + its nested variant children).
- *
- * Pure function — exported separately so it's unit-testable and so the
- * shape-mapping logic stays out of the network/orchestration code in
- * `getListing`. Field-level decisions documented inline.
- *
- * The mapper sets `listing.sellerReference` to the shop's `sellerId` so the
- * FK to `scan_seller` resolves at the upsert boundary. (shop.app's GraphQL
- * calls this value `brokerId` internally; we use `sellerId` for parity with
- * the eBay adapter.) The full seller form (display name, logo, reputation)
- * is NOT produced here — that's the job of the `getSeller` adapter, called
- * separately.
- *
- * Variant pattern: always emits at least one variant row, mirroring
- * `packages/marketplace`'s seller-side mapper (`Listing.listingVariants`).
- * Single-variant Shopify products (incl. the "Default Title" placeholder)
- * still get one variant entry with `attributes: null`; the listing-level
- * `variant: boolean` only flips true when there are MULTIPLE variants.
- */
 import type { ScanListing } from "../../../../types";
-import { toCents } from "../../../../utils/to-cents";
 import type { ParsedVariant } from "../get-adjacent-variants";
 import { mapVariants } from "./map-variants";
 
@@ -76,21 +54,20 @@ export interface MapListingInput {
    */
   listingId: string;
   product: ParsedProduct;
-  /**
-   * All variants for this product, in any order. The orchestrator should
-   * have merged the first variant from `ProductDetailsQuery` with adjacent
-   * variants from `AdjacentVariantsQuery`. The mapper picks the first
-   * non-null-priced variant for listing-level `price`/`currency`, and
-   * emits one `ScanListingVariant` per entry — single-variant products
-   * (incl. "Default Title" placeholder) still produce one variant row;
-   * `attributes` is set to null for placeholder option sets.
-   */
+  /** Complete set including the native default. */
   variants: ParsedVariant[];
 }
 
 export function mapListing(input: MapListingInput): ScanListing {
   const { product, listingId, variants } = input;
-  const headlineVariant = pickHeadlineVariant(variants);
+  const mappedVariants = mapVariants(variants);
+  if (
+    variants.length === 0 ||
+    variants.length !== product.variantsCount ||
+    new Set(mappedVariants.map((v) => v.reference)).size !== variants.length
+  ) {
+    throw new Error("Incomplete or duplicate Shop variants");
+  }
 
   return {
     marketplace: MARKETPLACE_ID,
@@ -108,45 +85,16 @@ export function mapListing(input: MapListingInput): ScanListing {
     categoryPath: null,
     imageUrls: product.imageUrls.length > 0 ? product.imageUrls : null,
     url: product.onlineStoreUrl,
-    // True only when the product has MULTIPLE variations — single-variant
-    // products (incl. "Default Title" placeholder) still get one variant row,
-    // but `variant: false` flags them as no-real-variation. Mirrors the
-    // marketplace seller-side pattern.
-    variant: variants.length > 1,
 
     // Shopify products don't have eBay-style auction lifecycle.
-    goodTillCancelled: null,
     startedAt: null,
     endedAt: null,
 
-    price: toCents(headlineVariant?.price ?? null),
-    currency: headlineVariant?.currency ?? null,
     // shop.app only surfaces a 30-day window, not lifetime or 24h.
     itemSold: null,
     soldLast24h: null,
     soldLast30Days: product.soldLast30Days,
 
-    // Always at least one variant — shop.app's API returns at least the
-    // selected/first-available variant, so no synthesis is needed (unlike
-    // the eBay seller-side mapper, which synthesizes via `mapSingleVariant`
-    // for single-item listings). Pass-through via the dedicated mapper.
-    variants: mapVariants(variants),
+    variants: mappedVariants,
   };
-}
-
-/**
- * Prefer the first variant with a non-null price; fall back to the first
- * variant overall. Both `price` and `currency` come from the same source,
- * so `price/currency` on `ScanListing` represent the same variant.
- */
-function pickHeadlineVariant(variants: ParsedVariant[]): ParsedVariant | null {
-  if (variants.length === 0) {
-    return null;
-  }
-  for (const v of variants) {
-    if (v.price !== null) {
-      return v;
-    }
-  }
-  return variants[0] ?? null;
 }

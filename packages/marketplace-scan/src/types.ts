@@ -44,8 +44,7 @@ export interface ScanTokenResult {
  * Excluded from each form (the upsert/DB layer owns them):
  *   - `id` (uuid PK)
  *   - `createdAt`, `updatedAt` (auto-managed)
- *   - `lastScannedAt` (set on upsert)
- *   - `monitored` (operator opt-in, not adapter-driven)
+ *   - seller `monitored` (operator opt-in, not adapter-driven)
  *
  * `sellerId` (the FK on scan_listing) is replaced by `sellerReference` (the
  * marketplace's seller identifier as a string); the upsert layer looks up
@@ -73,13 +72,9 @@ export interface ScanListing {
   categoryPath: string[] | null;
   /** Human-readable condition string (e.g. "New/Factory Sealed"). Null when the marketplace doesn't surface condition. */
   condition: string | null;
-  /** ISO-4217 currency code. */
-  currency: string | null;
   description: string | null;
   endedAt: Date | null;
 
-  /** True when the marketplace flags this listing as Good-Till-Cancelled (eBay-specific concept). */
-  goodTillCancelled: boolean | null;
   imageUrls: string[] | null;
   /** Lifetime sold count. eBay surfaces this; shop.app does not. */
   itemSold: number | null;
@@ -88,8 +83,6 @@ export interface ScanListing {
   /** Marketplace's leaf category id. Null when not surfaced (shop.app, etc). */
   marketplaceCategoryReference: string | null;
 
-  /** Display price in **integer cents** (e.g. $5.99 → 599). Mapper converts. */
-  price: number | null;
   /** Marketplace's listing identifier (eBay item id, Shopify product id, etc.). */
   reference: string;
 
@@ -108,14 +101,8 @@ export interface ScanListing {
 
   title: string;
   url: string | null;
-  /** True when the listing has multiple variations — drives variant fan-out at the upsert layer. */
-  variant: boolean;
 
-  /**
-   * Children — `scan_listing_variant` rows. Empty array when the listing has
-   * no real variation (Shopify "Default Title" placeholder is suppressed).
-   * Mirrors the `Listing.listingVariants` pattern in `@dashseller/marketplace`.
-   */
+  /** Complete nonempty set, including native or synthetic defaults and out-of-stock units. */
   variants: ScanListingVariant[];
 }
 
@@ -123,12 +110,16 @@ export interface ScanListing {
 export interface ScanListingVariant {
   /** Option name → value, e.g. {"Color": "Red", "Size": "M"}. Null when the variant has no options. */
   attributes: Record<string, string> | null;
+  currency: string | null;
   /** Variant images (typically 0 or 1). Null when the variant has no image. */
   imageUrls: string[] | null;
   /** Display price in **integer cents** (e.g. $5.99 → 599). */
   price: number | null;
   /** Marketplace's variant identifier (Shopify variant gid, eBay variationId, etc.). */
   reference: string;
+  sku: string | null;
+  /** Removal is a persistence decision; adapters report only observed stock state. */
+  status: "in_stock" | "out_of_stock" | null;
 }
 
 /**

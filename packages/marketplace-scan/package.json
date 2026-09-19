@@ -8,6 +8,9 @@
     "./types": {
       "default": "./src/types.ts"
     },
+    "./listing-observation": {
+      "default": "./src/listing-observation.ts"
+    },
     "./errors": {
       "default": "./src/errors.ts"
     }
