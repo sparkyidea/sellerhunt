@@ -38,7 +38,7 @@ it.each(models)("enforces the exact column contract: $columns", (model) => {
   ).toEqual(["id"]);
 });
 
-it("keeps nullable integer measurements and supported nullable status", () => {
+it("keeps nullable integer measurements and required status", () => {
   for (const table of [schema.scanListing, schema.scanListingSnapshot]) {
     for (const column of [
       table.itemSold,
@@ -52,7 +52,7 @@ it("keeps nullable integer measurements and supported nullable status", () => {
   }
   expect(schema.scanListingVariant.price.getSQLType()).toBe("integer");
   expect(schema.scanListingVariant.price.notNull).toBe(false);
-  expect(schema.scanListingVariant.status.notNull).toBe(false);
+  expect(schema.scanListingVariant.status.notNull).toBe(true);
   expect(
     getTableConfig(schema.scanListingVariant).checks.map((check) => check.name)
   ).toEqual([

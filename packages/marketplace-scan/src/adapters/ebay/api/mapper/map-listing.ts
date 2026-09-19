@@ -60,7 +60,8 @@ function mapSingleVariant(parsed: ParsedListing): ScanListingVariant {
     imageUrls: parsed.imageUrls.length > 0 ? parsed.imageUrls : null,
     price: toCents(parsed.price),
     currency: parsed.currency,
-    status: null,
+    // Simple listings expose no unit quantity; an active listing is purchasable.
+    status: "in_stock",
   };
 }
 

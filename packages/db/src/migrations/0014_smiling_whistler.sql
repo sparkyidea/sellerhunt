@@ -1,0 +1,1 @@
+ALTER TABLE "scan_listing_variant" ALTER COLUMN "status" SET NOT NULL;

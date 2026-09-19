@@ -120,7 +120,7 @@ it("appends one sales snapshot per listing, not per variant, and reuses removed 
       itemSold: 210,
       variants: [
         unit(),
-        unit({ reference: "blue", price: 3500, status: null }),
+        unit({ reference: "blue", price: 3500, status: "out_of_stock" }),
       ],
     })
   );
@@ -132,7 +132,7 @@ it("appends one sales snapshot per listing, not per variant, and reuses removed 
   ).toEqual([
     expect.objectContaining({
       id: blue?.id,
-      status: null,
+      status: "out_of_stock",
       price: 3500,
       createdAt: blue?.createdAt,
     }),
@@ -254,7 +254,7 @@ it("cached SQL prices match fetched prices for unknown, mixed-currency and remov
       .from(scanListing);
     expect(row?.price).toBe(variantPriceRange(input.variants).priceMin);
   }
-  await observe(listing({ variants: [unit({ price: 5000, status: null })] }));
+  await observe(listing({ variants: [unit({ price: 5000 })] }));
   expect(
     await database.select({ price: listingPriceMin() }).from(scanListing)
   ).toEqual([{ price: 5000 }]);

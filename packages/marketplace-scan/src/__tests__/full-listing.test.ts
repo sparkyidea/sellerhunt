@@ -198,7 +198,7 @@ it("creates a synthetic default only for a confirmed simple eBay listing", async
     expect.objectContaining({
       reference: "__default__",
       price: 2000,
-      status: null,
+      status: "in_stock",
     }),
   ]);
 });
@@ -241,4 +241,55 @@ it("preserves native variant prices and rejects duplicate or malformed identitie
     vi.fn(async () => Response.json(ebayRaw(true, [{}])))
   );
   await expect(getEbayListing(ebayOptions)).rejects.toThrow("identity");
+});
+
+it("derives eBay variation stock from the remaining quantity", async () => {
+  const variation = (variationId: number, remainingQuantity?: number) => ({
+    variationId,
+    priceSettings: {
+      computations: { price: { basePrice: { value: 25, currency: "USD" } } },
+    },
+    quantityAndAvailabilityByLogisticsPlans: [
+      { quantityAndAvailability: { remainingQuantity } },
+    ],
+  });
+  vi.stubGlobal(
+    "fetch",
+    vi.fn(async () =>
+      Response.json(
+        ebayRaw(true, [variation(1, 3), variation(2, 0), variation(3)])
+      )
+    )
+  );
+  const { listing } = await getEbayListing(ebayOptions);
+  expect(listing.variants.map((v) => [v.reference, v.status])).toEqual([
+    ["1", "in_stock"],
+    ["2", "out_of_stock"],
+    ["3", "in_stock"],
+  ]);
+});
+
+it("lets Shop's purchasable flag override the reported quantity", async () => {
+  vi.stubGlobal(
+    "fetch",
+    vi
+      .fn()
+      .mockResolvedValueOnce(Response.json(shopProduct(3)))
+      .mockResolvedValueOnce(
+        Response.json({
+          data: {
+            storefrontProductAdjacentVariants: {
+              adjacentVariants: [
+                { ...shopVariant("2", 0), availableForSale: true },
+                { ...shopVariant("3", 5), availableForSale: false },
+              ],
+            },
+          },
+        })
+      )
+  );
+  const { listing } = await getShopListing(shopOptions);
+  expect(
+    Object.fromEntries(listing.variants.map((v) => [v.reference, v.status]))
+  ).toEqual({ "1": "in_stock", "2": "in_stock", "3": "out_of_stock" });
 });

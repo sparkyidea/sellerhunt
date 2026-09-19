@@ -149,9 +149,10 @@ Deploy via root scripts `trigger-scan:dev` / `trigger-scan:deploy` (they pass
 `scan_listing` holds current descriptive fields and source-reported listing sales.
 Every saved full listing has at least one `scan_listing_variant`: a native default
 or a generated `__default__` for source-confirmed simple listings without a native
-variant ID. Variants hold current price/currency, attributes, and nullable status
-(`in_stock`, `out_of_stock`, `removed`, or NULL for unknown). They have no sales,
-title, or synthetic flag. Missing variants become removed; reappearance reuses IDs.
+variant ID. Variants hold current price/currency, attributes, and a required status
+(`in_stock`, `out_of_stock`, or `removed`). A shown unit is in stock unless the
+source reports it sold out. They have no sales, title, or synthetic flag. Units
+missing from a complete scan become removed; reappearance reuses IDs.
 
 `scan_listing_snapshot` holds listing lifetime sales, source-reported 24-hour and
 30-day sales, and `created_at`. One full saved scan appends one snapshot, including
@@ -168,14 +169,12 @@ but freshness checks are not atomic claims; overlapping completed scans can both
 save, with the last transaction determining current values.
 
 Discovery thresholds gate new listings, not valid rescans of existing listings.
-Current price ranges exclude removed variants, include unknown/out-of-stock units,
+Current price ranges exclude removed variants, include out-of-stock units,
 and require all current prices known in one currency. Standard relation filters
 and scalar rollups remain unscoped and include removed variants.
 
-The schema and worker use this contract. The tRPC history reader and Explorer UI
-still require the planned switch from variant history to listing sales history;
-the checkout is not ready for coordinated deployment until those follow-up changes
-and their tests are complete.
+The schema, worker, tRPC `getListingHistory` reader and Explorer listing cards all
+use this contract.
 
 ### Migration workflow
 

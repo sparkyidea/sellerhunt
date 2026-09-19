@@ -48,9 +48,7 @@ export function ScanListingVariantsCard({
                 <TableCell>{variantLabel(v)}</TableCell>
                 <TableCell>{v.sku ?? "—"}</TableCell>
                 <TableCell>
-                  <Badge variant="secondary">
-                    {v.status ? STATUS_LABELS[v.status] : "Unknown"}
-                  </Badge>
+                  <Badge variant="secondary">{STATUS_LABELS[v.status]}</Badge>
                 </TableCell>
                 <TableCell>{formatScanPrice(v.price, v.currency)}</TableCell>
               </TableRow>

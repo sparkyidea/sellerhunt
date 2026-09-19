@@ -1,5 +1,6 @@
 import type { ScanListingVariant } from "../../../../types";
 import { parseShopifyGid } from "../../../../utils/parse-shopify-gid";
+import { stockStatus } from "../../../../utils/stock-status";
 import { toCents } from "../../../../utils/to-cents";
 import type {
   ParsedVariant,
@@ -18,7 +19,7 @@ function toScanVariant(v: ParsedVariant): ScanListingVariant {
     reference: parseShopifyGid(v.id) ?? v.id,
     sku: null,
     currency: v.currency,
-    status: stockStatus(v.quantityAvailable),
+    status: stockStatus(v.quantityAvailable, v.availableForSale),
     attributes: isPlaceholderOptions(v.selectedOptions)
       ? null
       : Object.fromEntries(v.selectedOptions.map((o) => [o.name, o.value])),
@@ -45,12 +46,4 @@ function isPlaceholderOptions(options: ShopVariantOption[]): boolean {
     return true;
   }
   return false;
-}
-
-/** Exact reported quantity establishes stock; availability alone may allow backorders. */
-function stockStatus(quantity: number | null): ScanListingVariant["status"] {
-  if (quantity === null || !Number.isSafeInteger(quantity) || quantity < 0) {
-    return null;
-  }
-  return quantity > 0 ? "in_stock" : "out_of_stock";
 }

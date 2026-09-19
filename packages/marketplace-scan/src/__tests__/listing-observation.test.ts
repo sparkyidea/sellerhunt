@@ -1,10 +1,10 @@
 import { expect, it } from "vitest";
 import { variantPriceRange } from "../listing-observation";
 
-it("computes a range including unknown-stock and sold-out variants, excluding removed ones", () => {
+it("computes a range including in-stock and sold-out variants, excluding removed ones", () => {
   expect(
     variantPriceRange([
-      { price: 100, currency: "USD", status: null },
+      { price: 100, currency: "USD", status: "in_stock" },
       { price: 200, currency: "USD", status: "out_of_stock" },
       { price: 1, currency: "USD", status: "removed" },
     ])

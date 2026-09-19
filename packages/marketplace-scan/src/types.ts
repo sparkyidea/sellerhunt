@@ -119,7 +119,7 @@ export interface ScanListingVariant {
   reference: string;
   sku: string | null;
   /** Removal is a persistence decision; adapters report only observed stock state. */
-  status: "in_stock" | "out_of_stock" | null;
+  status: "in_stock" | "out_of_stock";
 }
 
 /**

@@ -37,7 +37,7 @@ beforeEach(async () => {
       reference: "a",
       price: 100,
       currency: "USD",
-      status: null,
+      status: "in_stock",
     },
     {
       listingId,
@@ -62,7 +62,7 @@ afterAll(async () => {
   await db.$client.end();
 });
 
-it("excludes removed units but retains unknown/out-of-stock units in detail and gallery ranges", async () => {
+it("excludes removed units but retains in-stock/out-of-stock units in detail and gallery ranges", async () => {
   const detail = await caller.get({ id: listingId });
   expect(detail).toMatchObject({
     priceMin: 100,

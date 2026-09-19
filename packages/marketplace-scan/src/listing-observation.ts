@@ -47,11 +47,7 @@ export function validateListingObservation(listing: ScanListing): void {
     if (v.reference === "__default__" && listing.variants.length !== 1) {
       throw new Error("A default variant must be the only variant");
     }
-    if (
-      v.status !== null &&
-      v.status !== "in_stock" &&
-      v.status !== "out_of_stock"
-    ) {
+    if (v.status !== "in_stock" && v.status !== "out_of_stock") {
       throw new Error("Invalid observed variant status");
     }
     validateMeasurement(v.price);

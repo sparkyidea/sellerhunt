@@ -136,7 +136,9 @@ export const scanListingVariant = pgTable(
     imageUrls: text("image_urls").array(),
     price: integer("price"),
     currency: text("currency"),
-    status: text("status").$type<"in_stock" | "out_of_stock" | "removed">(),
+    status: text("status")
+      .$type<"in_stock" | "out_of_stock" | "removed">()
+      .notNull(),
     createdAt: timestamp("created_at").defaultNow().notNull(),
     updatedAt: timestamp("updated_at")
       .defaultNow()
