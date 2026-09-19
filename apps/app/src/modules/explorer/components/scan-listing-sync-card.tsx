@@ -18,13 +18,6 @@ function Row({ label, value }: { label: string; value: React.ReactNode }) {
 const fmtDate = (d: Date | null | undefined) =>
   d ? new Date(d).toLocaleString() : "—";
 
-const fmtBool = (b: boolean | null | undefined) => {
-  if (b === null || b === undefined) {
-    return "—";
-  }
-  return b ? "Yes" : "No";
-};
-
 export function ScanListingSyncCard({ listing }: { listing: ScanListingData }) {
   return (
     <Card>
@@ -36,10 +29,6 @@ export function ScanListingSyncCard({ listing }: { listing: ScanListingData }) {
         <Row label="Last scanned" value={fmtDate(listing.lastScannedAt)} />
         <Row label="Started" value={fmtDate(listing.startedAt)} />
         <Row label="Ended" value={fmtDate(listing.endedAt)} />
-        <Row
-          label="Good 'til cancelled"
-          value={fmtBool(listing.goodTillCancelled)}
-        />
       </CardContent>
     </Card>
   );

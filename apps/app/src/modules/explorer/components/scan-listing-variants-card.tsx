@@ -30,34 +30,29 @@ export function ScanListingVariantsCard({
   return (
     <Card>
       <CardHeader>
-        <CardTitle>
-          {listing.hasVariations ? "Variants" : "Default variant"} (
-          {listing.variants.length})
-        </CardTitle>
+        <CardTitle>Variants ({listing.variants.length})</CardTitle>
       </CardHeader>
       <CardContent>
         <Table>
           <TableHeader>
             <TableRow>
               <TableHead>Variant</TableHead>
+              <TableHead>SKU</TableHead>
               <TableHead>Status</TableHead>
               <TableHead>Price</TableHead>
-              <TableHead>Lifetime sold</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
             {listing.variants.map((v) => (
               <TableRow key={v.id}>
                 <TableCell>{variantLabel(v)}</TableCell>
+                <TableCell>{v.sku ?? "—"}</TableCell>
                 <TableCell>
                   <Badge variant="secondary">
                     {v.status ? STATUS_LABELS[v.status] : "Unknown"}
                   </Badge>
                 </TableCell>
                 <TableCell>{formatScanPrice(v.price, v.currency)}</TableCell>
-                <TableCell>
-                  {v.itemSold?.toLocaleString() ?? "Unknown"}
-                </TableCell>
               </TableRow>
             ))}
           </TableBody>

@@ -33,12 +33,10 @@ export function formatScanPriceRange({
 
 export function variantLabel(v: {
   attributes: Record<string, string> | null;
-  title: string | null;
   reference: string;
 }) {
   return (
     Object.values(v.attributes ?? {}).join(" / ") ||
-    v.title ||
     (v.reference === "__default__" ? "Default" : v.reference)
   );
 }

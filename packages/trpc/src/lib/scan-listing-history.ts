@@ -1,26 +1,26 @@
 import type { Database } from "@dashseller/db/client";
 import {
-  scanListingVariant,
-  scanListingVariantSnapshot as snapshot,
+  scanListing,
+  scanListingSnapshot as snapshot,
 } from "@dashseller/db/schema";
 import { TRPCError } from "@trpc/server";
 import { and, desc, eq, gte, lt, lte, or } from "drizzle-orm";
 import { z } from "zod";
 
-export const variantHistoryInput = z
+export const listingHistoryInput = z
   .object({
     listingId: z.string().min(1),
-    variantId: z.string().min(1),
     from: z.date().optional(),
     to: z.date().optional(),
     limit: z.number().int().min(1).max(500).default(100),
-    cursor: z.object({ scannedAt: z.date(), id: z.string().min(1) }).nullish(),
+    cursor: z.object({ createdAt: z.date(), id: z.string().min(1) }).nullish(),
   })
   .refine(
     (v) => !(v.from && v.to) || v.from <= v.to,
     "Invalid history date range"
   );
 
+/** Sales since the older snapshot; unknown or decreasing counters yield null. */
 export function salesDelta(
   current: number | null,
   previous: number | null | undefined
@@ -30,25 +30,18 @@ export function salesDelta(
     : null;
 }
 
-export async function readVariantHistory(
+/** Newest-first listing sales snapshots, paged by a createdAt/id cursor. */
+export async function readListingHistory(
   database: Database,
-  input: z.infer<typeof variantHistoryInput>
+  input: z.infer<typeof listingHistoryInput>
 ) {
-  const [variant] = await database
-    .select({ id: scanListingVariant.id })
-    .from(scanListingVariant)
-    .where(
-      and(
-        eq(scanListingVariant.id, input.variantId),
-        eq(scanListingVariant.listingId, input.listingId)
-      )
-    )
+  const [listing] = await database
+    .select({ id: scanListing.id })
+    .from(scanListing)
+    .where(eq(scanListing.id, input.listingId))
     .limit(1);
-  if (!variant) {
-    throw new TRPCError({
-      code: "NOT_FOUND",
-      message: "Variant does not belong to this listing",
-    });
+  if (!listing) {
+    throw new TRPCError({ code: "NOT_FOUND", message: "Listing not found" });
   }
   const cursor = input.cursor;
   const rows = await database
@@ -56,21 +49,21 @@ export async function readVariantHistory(
     .from(snapshot)
     .where(
       and(
-        eq(snapshot.variantId, input.variantId),
-        input.from ? gte(snapshot.scannedAt, input.from) : undefined,
-        input.to ? lte(snapshot.scannedAt, input.to) : undefined,
+        eq(snapshot.listingId, input.listingId),
+        input.from ? gte(snapshot.createdAt, input.from) : undefined,
+        input.to ? lte(snapshot.createdAt, input.to) : undefined,
         cursor
           ? or(
-              lt(snapshot.scannedAt, cursor.scannedAt),
+              lt(snapshot.createdAt, cursor.createdAt),
               and(
-                eq(snapshot.scannedAt, cursor.scannedAt),
+                eq(snapshot.createdAt, cursor.createdAt),
                 lt(snapshot.id, cursor.id)
               )
             )
           : undefined
       )
     )
-    .orderBy(desc(snapshot.scannedAt), desc(snapshot.id))
+    .orderBy(desc(snapshot.createdAt), desc(snapshot.id))
     .limit(input.limit + 1);
   const items = rows.slice(0, input.limit).map((row, index) => ({
     ...row,
@@ -81,7 +74,7 @@ export async function readVariantHistory(
     items,
     nextCursor:
       rows.length > input.limit && last
-        ? { scannedAt: last.scannedAt, id: last.id }
+        ? { createdAt: last.createdAt, id: last.id }
         : null,
   };
 }

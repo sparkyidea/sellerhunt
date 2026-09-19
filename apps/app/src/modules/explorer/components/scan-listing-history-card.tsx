@@ -13,14 +13,6 @@ import {
   EmptyHeader,
   EmptyTitle,
 } from "@sparkyidea/ui/components/empty";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@sparkyidea/ui/components/select";
 import { Skeleton } from "@sparkyidea/ui/components/skeleton";
 import {
   Table,
@@ -31,79 +23,38 @@ import {
   TableRow,
 } from "@sparkyidea/ui/components/table";
 import { useInfiniteQuery } from "@tanstack/react-query";
-import { useState } from "react";
 import { useTRPC } from "@/lib/utils/trpc/client";
 import type { ScanListingData } from "../types";
-import { formatScanPrice, variantLabel } from "./scan-price";
+
+const formatCount = (value: number | null) =>
+  value?.toLocaleString() ?? "Unknown";
 
 export function ScanListingHistoryCard({
   listing,
 }: {
   listing: ScanListingData;
 }) {
-  const [selected, setSelected] = useState<string | null>(null);
-  const variantId = selected ?? listing.variants[0]?.id;
-  const items = listing.variants.map((v) => ({
-    value: v.id,
-    label: variantLabel(v),
-  }));
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Price and sales history</CardTitle>
+        <CardTitle>Sales history</CardTitle>
         <CardDescription>
-          Recorded variant prices and lifetime sales. Unknown sales are not
+          Sales counters recorded on each completed scan. Unknown sales are not
           estimated.
         </CardDescription>
       </CardHeader>
       <CardContent className="flex flex-col gap-4">
-        <Select
-          items={items}
-          onValueChange={setSelected}
-          value={variantId ?? null}
-        >
-          <SelectTrigger aria-label="Variant history">
-            <SelectValue />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectGroup>
-              {items.map((item) => (
-                <SelectItem key={item.value} value={item.value}>
-                  {item.label}
-                </SelectItem>
-              ))}
-            </SelectGroup>
-          </SelectContent>
-        </Select>
-        {variantId ? (
-          <VariantHistory
-            key={variantId}
-            listingId={listing.id}
-            variantId={variantId}
-          />
-        ) : (
-          <Empty>
-            <EmptyHeader>
-              <EmptyTitle>No variants</EmptyTitle>
-            </EmptyHeader>
-          </Empty>
-        )}
+        <ListingHistory listingId={listing.id} />
       </CardContent>
     </Card>
   );
 }
 
-function VariantHistory({
-  listingId,
-  variantId,
-}: {
-  listingId: string;
-  variantId: string;
-}) {
+function ListingHistory({ listingId }: { listingId: string }) {
   const trpc = useTRPC();
   const history = useInfiniteQuery(
-    trpc.scanListing.getVariantHistory.infiniteQueryOptions(
-      { listingId, variantId, limit: 50 },
+    trpc.scanListing.getListingHistory.infiniteQueryOptions(
+      { listingId, limit: 50 },
       { getNextPageParam: (page) => page.nextCursor }
     )
   );
@@ -125,7 +76,7 @@ function VariantHistory({
     return (
       <Empty>
         <EmptyHeader>
-          <EmptyTitle>No observations yet</EmptyTitle>
+          <EmptyTitle>No scans recorded yet</EmptyTitle>
         </EmptyHeader>
       </Empty>
     );
@@ -135,21 +86,21 @@ function VariantHistory({
       <Table>
         <TableHeader>
           <TableRow>
-            <TableHead>Observed</TableHead>
-            <TableHead>Price</TableHead>
+            <TableHead>Scanned</TableHead>
             <TableHead>Lifetime sold</TableHead>
             <TableHead>Sales change</TableHead>
+            <TableHead>Sold last 24h</TableHead>
+            <TableHead>Sold last 30 days</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
           {rows.map((row) => (
             <TableRow key={row.id}>
-              <TableCell>{new Date(row.scannedAt).toLocaleString()}</TableCell>
-              <TableCell>{formatScanPrice(row.price, row.currency)}</TableCell>
-              <TableCell>
-                {row.itemSold?.toLocaleString() ?? "Unknown"}
-              </TableCell>
+              <TableCell>{new Date(row.createdAt).toLocaleString()}</TableCell>
+              <TableCell>{formatCount(row.itemSold)}</TableCell>
               <TableCell>{row.salesDelta?.toLocaleString() ?? "—"}</TableCell>
+              <TableCell>{formatCount(row.soldLast24h)}</TableCell>
+              <TableCell>{formatCount(row.soldLast30Days)}</TableCell>
             </TableRow>
           ))}
         </TableBody>
@@ -160,7 +111,7 @@ function VariantHistory({
           onClick={() => history.fetchNextPage()}
           variant="outline"
         >
-          {history.isFetchingNextPage ? "Loading…" : "Load older observations"}
+          {history.isFetchingNextPage ? "Loading…" : "Load older scans"}
         </Button>
       ) : null}
     </>

@@ -1,8 +1,8 @@
 import { db } from "@dashseller/db";
 import {
   scanListing,
+  scanListingSnapshot,
   scanListingVariant,
-  scanListingVariantSnapshot,
 } from "@dashseller/db/schema";
 import { migrateTestDb } from "@dashseller/db/testing";
 import { eq } from "drizzle-orm";
@@ -17,7 +17,6 @@ const caller = createCallerFactory(appRouter)({
 const marketplace = "itest-variant-reads";
 let listingId: string;
 let variantId: string;
-let removedId: string;
 
 beforeAll(async () => {
   await migrateTestDb();
@@ -25,21 +24,17 @@ beforeAll(async () => {
 beforeEach(async () => {
   listingId = crypto.randomUUID();
   variantId = crypto.randomUUID();
-  removedId = crypto.randomUUID();
   await db.insert(scanListing).values({
     id: listingId,
     marketplace,
     reference: listingId,
     title: "Research listing",
-    hasVariations: true,
-    lastObservationSequence: 3n,
   });
   await db.insert(scanListingVariant).values([
     {
       id: variantId,
       listingId,
       reference: "a",
-      isSynthetic: false,
       price: 100,
       currency: "USD",
       status: null,
@@ -47,16 +42,13 @@ beforeEach(async () => {
     {
       listingId,
       reference: "b",
-      isSynthetic: false,
       price: 300,
       currency: "USD",
       status: "out_of_stock",
     },
     {
-      id: removedId,
       listingId,
       reference: "c",
-      isSynthetic: false,
       price: 999,
       currency: "USD",
       status: "removed",
@@ -151,30 +143,26 @@ it("includes removed variants in relation filters when counting groups", async (
   });
 });
 
-it("paginates tied history timestamps without overlap and retains snapshot currency and reset semantics", async () => {
-  const scannedAt = new Date("2026-09-01T00:00:00Z");
-  await db.insert(scanListingVariantSnapshot).values(
+it("paginates tied history timestamps without overlap and applies date bounds", async () => {
+  const createdAt = new Date("2026-09-01T00:00:00Z");
+  await db.insert(scanListingSnapshot).values(
     [null, 10, 15, 2].map((itemSold, index) => ({
       id: `${listingId}-${index}`,
-      variantId,
-      observationSequence: BigInt(index + 1),
-      scanStartedAt: scannedAt,
-      scannedAt,
+      listingId,
+      createdAt,
       itemSold,
-      price: 200,
-      currency: "EUR",
+      soldLast24h: index,
+      soldLast30Days: null,
     }))
   );
-  const first = await caller.getVariantHistory({
-    listingId,
-    variantId,
-    limit: 2,
-  });
+  const first = await caller.getListingHistory({ listingId, limit: 2 });
   expect(first.items.map((row) => row.salesDelta)).toEqual([null, 5]);
-  expect(first.items[0]?.currency).toBe("EUR");
-  const second = await caller.getVariantHistory({
+  expect(first.items[0]).toMatchObject({
+    soldLast24h: 3,
+    soldLast30Days: null,
+  });
+  const second = await caller.getListingHistory({
     listingId,
-    variantId,
     limit: 2,
     cursor: first.nextCursor,
   });
@@ -185,29 +173,28 @@ it("paginates tied history timestamps without overlap and retains snapshot curre
   expect(second.nextCursor).toBeNull();
   expect(
     (
-      await caller.getVariantHistory({
+      await caller.getListingHistory({
         listingId,
-        variantId,
         from: new Date("2026-09-02"),
       })
     ).items
   ).toEqual([]);
+  expect(
+    (await caller.getListingHistory({ listingId, to: createdAt })).items
+  ).toHaveLength(4);
 });
 
-it("permits history for removed units but rejects mismatched ownership and invalid input", async () => {
-  expect(
-    (await caller.getVariantHistory({ listingId, variantId: removedId })).items
-  ).toEqual([]);
+it("returns empty history for an unscanned listing but rejects unknown listings and invalid input", async () => {
+  expect((await caller.getListingHistory({ listingId })).items).toEqual([]);
   await expect(
-    caller.getVariantHistory({ listingId: "other", variantId })
+    caller.getListingHistory({ listingId: "other" })
   ).rejects.toMatchObject({ code: "NOT_FOUND" });
   await expect(
-    caller.getVariantHistory({ listingId, variantId, limit: 501 })
+    caller.getListingHistory({ listingId, limit: 501 })
   ).rejects.toMatchObject({ code: "BAD_REQUEST" });
   await expect(
-    caller.getVariantHistory({
+    caller.getListingHistory({
       listingId,
-      variantId,
       from: new Date("2026-09-02"),
       to: new Date("2026-09-01"),
     })

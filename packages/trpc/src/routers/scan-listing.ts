@@ -20,9 +20,9 @@ import { buildRollupExtras, flattenRelationArrays } from "../lib/build-rollup";
 import { buildSearchFilter } from "../lib/build-search";
 import { buildCursor } from "../lib/build-sort";
 import {
-  readVariantHistory,
-  variantHistoryInput,
-} from "../lib/scan-variant-history";
+  listingHistoryInput,
+  readListingHistory,
+} from "../lib/scan-listing-history";
 import { getGroupInput, getManyInput } from "../lib/schemas";
 
 /**
@@ -44,9 +44,9 @@ const scanListingRelations: RelationMap = {
 };
 
 export const scanListingRouter = router({
-  getVariantHistory: publicProcedure
-    .input(variantHistoryInput)
-    .query(async ({ input }) => await readVariantHistory(db, input)),
+  getListingHistory: publicProcedure
+    .input(listingHistoryInput)
+    .query(async ({ input }) => await readListingHistory(db, input)),
   get: publicProcedure
     .input(z.object({ id: z.string() }))
     .query(async ({ input }) => {

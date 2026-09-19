@@ -27,7 +27,6 @@ export function ScanListingClassificationCard({
       </CardHeader>
       <CardContent className="flex flex-col gap-3">
         <Row label="Condition" value={listing.condition ?? "—"} />
-        <Row label="Variations" value={listing.hasVariations ? "Yes" : "No"} />
         <Row
           label="Category ID"
           value={listing.marketplaceCategoryReference ?? "—"}

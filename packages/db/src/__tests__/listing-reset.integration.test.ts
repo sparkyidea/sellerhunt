@@ -50,14 +50,14 @@ it("resets only listing data when upgrading a populated old schema", async () =>
     for (const table of [
       "scan_listing",
       "scan_listing_variant",
-      "scan_listing_variant_snapshot",
+      "scan_listing_snapshot",
     ]) {
       expect((await pool.query(`SELECT * FROM "${table}"`)).rows).toEqual([]);
     }
     expect(
       (
         await pool.query(
-          "SELECT to_regclass('public.scan_listing_snapshot') AS old"
+          "SELECT to_regclass('public.scan_listing_variant_snapshot') AS old"
         )
       ).rows[0].old
     ).toBeNull();
