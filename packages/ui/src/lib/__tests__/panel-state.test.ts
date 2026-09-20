@@ -29,9 +29,9 @@ function withPreview() {
 }
 
 describe("panel lifecycle", () => {
-  it("preserves both surfaces when the same route returns after settings", () => {
+  it("does not start a transition when the current route is republished", () => {
     const beforeSettings = withPreview();
-    // Settings declares no main content. Closing republishes the origin route.
+    // A rerender republishes the same route id; both surfaces must stay put.
     const afterSettings = reduce(beforeSettings, {
       type: "navigate",
       content: route("items"),

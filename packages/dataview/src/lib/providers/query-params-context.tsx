@@ -10,7 +10,6 @@ import {
   useMemo,
   useTransition,
 } from "react";
-import { useRetainedQueryState } from "../../hooks/use-retained-query-state";
 import { parseAsColumnBy } from "../../parsers/column";
 import { parseAsFilter } from "../../parsers/filter";
 import { parseAsGroupBy } from "../../parsers/group";
@@ -29,10 +28,8 @@ import type { Limit } from "../../types/pagination";
 import type { Cursors, CursorValue } from "../../types/pagination-types";
 import type { DataViewProperty, PropertyMeta } from "../../types/property.type";
 import { validate } from "../../validators";
-import { useQuerySyncPaused } from "./query-sync-context";
 
 const THROTTLE_MS = 50;
-const EMPTY_SORT: SortQuery[] = [];
 
 // ============================================================================
 // Types
@@ -192,14 +189,13 @@ export function QueryParamsProvider({
   defaults,
   properties,
 }: QueryParamsProviderProps) {
-  const pauseQuerySync = useQuerySyncPaused();
   const {
     column: defaultColumn = null,
     filter: defaultFilter = null,
     group: defaultGroup = null,
     limit: defaultLimit = 25,
     search: defaultSearch = "",
-    sort: defaultSort = EMPTY_SORT,
+    sort: defaultSort = [],
   } = defaults ?? {};
 
   const [isPending, startTransition] = useTransition();
@@ -278,7 +274,6 @@ export function QueryParamsProvider({
     isPending,
     rawSearch,
   ]);
-  const retainedState = useRetainedQueryState(state, !pauseQuerySync);
 
   // ============================================================================
   // Setters (stable references)
@@ -286,21 +281,15 @@ export function QueryParamsProvider({
 
   const setColumn = useCallback(
     (newColumn: ColumnConfigInput | null) => {
-      if (pauseQuerySync) {
-        return;
-      }
       startTransition(() => {
         void setUrlColumn(newColumn);
       });
     },
-    [setUrlColumn, pauseQuerySync]
+    [setUrlColumn]
   );
 
   const setCursor = useCallback(
     (groupKey: string, cursor: CursorValue | null) => {
-      if (pauseQuerySync) {
-        return;
-      }
       startTransition(() => {
         if (cursor === null) {
           void setUrlCursors((prev) => {
@@ -316,24 +305,18 @@ export function QueryParamsProvider({
         }
       });
     },
-    [setUrlCursors, pauseQuerySync]
+    [setUrlCursors]
   );
 
   const clearCursors = useCallback(() => {
-    if (pauseQuerySync) {
-      return;
-    }
     startTransition(() => {
       void setUrlCursors(null);
     });
-  }, [setUrlCursors, pauseQuerySync]);
+  }, [setUrlCursors]);
 
   // Setters clear cursors to reset pagination on query changes
   const setFilter = useCallback(
     (newFilter: WhereNode[] | null) => {
-      if (pauseQuerySync) {
-        return;
-      }
       startTransition(() => {
         // When defaults exist and user clears filter, write explicit empty []
         // to prevent fallback to defaults. null means "no URL param" which
@@ -348,53 +331,41 @@ export function QueryParamsProvider({
         void setUrlCursors(null);
       });
     },
-    [setUrlFilter, setUrlCursors, defaultFilter, pauseQuerySync]
+    [setUrlFilter, setUrlCursors, defaultFilter]
   );
 
   const setGroup = useCallback(
     (newGroup: GroupConfigInput | null) => {
-      if (pauseQuerySync) {
-        return;
-      }
       startTransition(() => {
         void setUrlGroup(newGroup);
         void setUrlCursors(null);
       });
     },
-    [setUrlGroup, setUrlCursors, pauseQuerySync]
+    [setUrlGroup, setUrlCursors]
   );
 
   const setLimit = useCallback(
     (newLimit: Limit) => {
-      if (pauseQuerySync) {
-        return;
-      }
       startTransition(() => {
         void setUrlLimit(newLimit);
         void setUrlCursors(null);
       });
     },
-    [setUrlLimit, setUrlCursors, pauseQuerySync]
+    [setUrlLimit, setUrlCursors]
   );
 
   const setSearch = useCallback(
     (newSearch: string) => {
-      if (pauseQuerySync) {
-        return;
-      }
       startTransition(() => {
         void setUrlSearch(newSearch || null);
         void setUrlCursors(null);
       });
     },
-    [setUrlSearch, setUrlCursors, pauseQuerySync]
+    [setUrlSearch, setUrlCursors]
   );
 
   const setSort = useCallback(
     (newSort: SortQuery[]) => {
-      if (pauseQuerySync) {
-        return;
-      }
       startTransition(() => {
         // When defaults exist and user clears sort, write explicit empty
         // to prevent fallback to defaults. null means "no URL param" which
@@ -409,7 +380,7 @@ export function QueryParamsProvider({
         void setUrlCursors(null);
       });
     },
-    [setUrlSort, setUrlCursors, defaultSort, pauseQuerySync]
+    [setUrlSort, setUrlCursors, defaultSort]
   );
 
   // ============================================================================
@@ -444,7 +415,7 @@ export function QueryParamsProvider({
   // ============================================================================
 
   return (
-    <QueryParamsStateContext.Provider value={retainedState}>
+    <QueryParamsStateContext.Provider value={state}>
       <QueryParamsActionsContext.Provider value={actions}>
         {children}
       </QueryParamsActionsContext.Provider>
