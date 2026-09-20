@@ -15,7 +15,7 @@ const models = [
     table: schema.scanListingVariant,
     columns:
       "id listing_id reference sku attributes image_urls price currency status created_at updated_at",
-    required: "id listing_id reference created_at updated_at",
+    required: "id listing_id reference status created_at updated_at",
   },
   {
     table: schema.scanListingSnapshot,

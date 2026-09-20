@@ -14,11 +14,11 @@ import { dbEnvSchema } from "./db";
  *    (Same key the sync worker uses, validated standalone here so we
  *    don't drag in the EBAY_/SHOPIFY_ marketplace credential schema.)
  *  - `OPENAI_API_KEY` — optional. Only read by keyword extraction
- *    (`resolve-keywords-with-llm`, run inline by `scan-listings-by-ids` and
- *    by the `resolve-listing-keywords` retry tool), and only when
- *    `scan_config.keyword_llm_enabled` is true. Enabled without a key, the
- *    stage logs a warning and leaves the listings unresolved; the scan itself
- *    still succeeds.
+ *    (`resolve-keywords-with-llm`, run inline by `scan-listings-by-ids` for
+ *    newly inserted listings), and only when `scan_config.keyword_llm_enabled`
+ *    is true. Enabled without a key, the stage logs a warning and skips
+ *    extraction for those listings; the scan itself still succeeds. There is
+ *    no retry tool or persisted unresolved state.
  */
 export const env = createEnv({
   server: {

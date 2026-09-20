@@ -143,20 +143,29 @@ it("includes removed variants in relation filters when counting groups", async (
   });
 });
 
-it("paginates tied history timestamps without overlap and applies date bounds", async () => {
-  const createdAt = new Date("2026-09-01T00:00:00Z");
+it("paginates history newest-first without overlap and applies date bounds", async () => {
+  const base = new Date("2026-09-01T00:00:00Z");
+  const at = (seconds: number) => new Date(base.getTime() + seconds * 1000);
   await db.insert(scanListingSnapshot).values(
-    [null, 10, 15, 2].map((itemSold, index) => ({
+    [
+      { itemSold: null, createdAt: at(0) },
+      { itemSold: 10, createdAt: at(1) },
+      { itemSold: 15, createdAt: at(2) },
+      { itemSold: 20, createdAt: at(3) },
+    ].map((row, index) => ({
       id: `${listingId}-${index}`,
       listingId,
-      createdAt,
-      itemSold,
       soldLast24h: index,
       soldLast30Days: null,
+      ...row,
     }))
   );
   const first = await caller.getListingHistory({ listingId, limit: 2 });
-  expect(first.items.map((row) => row.salesDelta)).toEqual([null, 5]);
+  expect(first.items.map((row) => row.id)).toEqual([
+    `${listingId}-3`,
+    `${listingId}-2`,
+  ]);
+  expect(first.items.map((row) => row.salesDelta)).toEqual([5, 5]);
   expect(first.items[0]).toMatchObject({
     soldLast24h: 3,
     soldLast30Days: null,
@@ -172,16 +181,11 @@ it("paginates tied history timestamps without overlap and applies date bounds", 
   ).toBe(4);
   expect(second.nextCursor).toBeNull();
   expect(
-    (
-      await caller.getListingHistory({
-        listingId,
-        from: new Date("2026-09-02"),
-      })
-    ).items
+    (await caller.getListingHistory({ listingId, from: at(4) })).items
   ).toEqual([]);
   expect(
-    (await caller.getListingHistory({ listingId, to: createdAt })).items
-  ).toHaveLength(4);
+    (await caller.getListingHistory({ listingId, to: at(0) })).items
+  ).toHaveLength(1);
 });
 
 it("returns empty history for an unscanned listing but rejects unknown listings and invalid input", async () => {
