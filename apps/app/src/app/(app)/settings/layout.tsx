@@ -5,28 +5,21 @@ import {
   SheetContent,
   SheetTitle,
 } from "@sparkyidea/ui/components/sheet";
-import type { Route } from "next";
-import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { useSettingsNavigation } from "@/components/navigation/navigation-area";
 import { SettingsSidebar } from "@/components/navigation/settings-nav";
-import { getSettingsReturnTo } from "@/lib/navigation-area";
 
 interface SettingsLayoutProps {
   children: React.ReactNode;
 }
 
 export default function Settings({ children }: SettingsLayoutProps) {
-  const router = useRouter();
+  const { closeSettings } = useSettingsNavigation();
   const [isOpen, setIsOpen] = useState(true);
-  const returnTo = useRef("/explorer/listings");
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // Capture the origin once for this sheet's lifetime.
   useEffect(() => {
     setIsOpen(true);
-    returnTo.current = getSettingsReturnTo(
-      new URLSearchParams(window.location.search).get("from")
-    );
     return () => {
       if (closeTimer.current !== null) {
         clearTimeout(closeTimer.current);
@@ -34,14 +27,13 @@ export default function Settings({ children }: SettingsLayoutProps) {
     };
   }, []);
 
+  // Let the sheet animate out, then return to where settings was opened from.
   const handleClose = () => {
     setIsOpen(false);
     if (closeTimer.current !== null) {
       clearTimeout(closeTimer.current);
     }
-    closeTimer.current = setTimeout(() => {
-      router.push(returnTo.current as Route);
-    }, 200);
+    closeTimer.current = setTimeout(closeSettings, 200);
   };
 
   return (

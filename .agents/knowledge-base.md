@@ -25,7 +25,9 @@ One Next.js app and a shared API:
   404 for signed-out, banned, or non-admin users. The proxy lets admin paths reach
   this gate instead of redirecting signed-out visitors to sign-in.
   Both areas share one shell and panel root but have separate sidebar lists.
-  Settings preserves its originating area through the `from` query parameter.
+  Settings remembers the page it was opened from in memory (pathname, filters
+  and area) for the session; a reload or fresh tab closes settings to
+  `/explorer/listings` in the app area.
   Active admins enter through “Admin dashboard” in the avatar menu; the regular sidebar has no
   admin entry. Inside admin, that avatar entry becomes “Back to app”. The admin
   sidebar defines its own Help and Settings links and retains the Mode control.
