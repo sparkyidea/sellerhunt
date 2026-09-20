@@ -63,7 +63,9 @@ it("includes out-of-stock Shop variants in a complete enumeration", async () => 
       Response.json({
         data: {
           storefrontProductAdjacentVariants: {
-            adjacentVariants: [shopVariant("2", 0)],
+            adjacentVariants: [
+              { ...shopVariant("2"), availableForSale: false },
+            ],
           },
         },
       })
@@ -269,7 +271,7 @@ it("derives eBay variation stock from the remaining quantity", async () => {
   ]);
 });
 
-it("lets Shop's purchasable flag override the reported quantity", async () => {
+it("derives Shop stock from the purchasable flag", async () => {
   vi.stubGlobal(
     "fetch",
     vi
@@ -280,8 +282,8 @@ it("lets Shop's purchasable flag override the reported quantity", async () => {
           data: {
             storefrontProductAdjacentVariants: {
               adjacentVariants: [
-                { ...shopVariant("2", 0), availableForSale: true },
-                { ...shopVariant("3", 5), availableForSale: false },
+                { ...shopVariant("2"), availableForSale: true },
+                { ...shopVariant("3"), availableForSale: false },
               ],
             },
           },

@@ -1,6 +1,5 @@
 import type { ScanListingVariant } from "../../../../types";
 import { parseShopifyGid } from "../../../../utils/parse-shopify-gid";
-import { stockStatus } from "../../../../utils/stock-status";
 import { toCents } from "../../../../utils/to-cents";
 import type {
   ParsedVariant,
@@ -19,7 +18,7 @@ function toScanVariant(v: ParsedVariant): ScanListingVariant {
     reference: parseShopifyGid(v.id) ?? v.id,
     sku: null,
     currency: v.currency,
-    status: stockStatus(v.quantityAvailable, v.availableForSale),
+    status: v.availableForSale === false ? "out_of_stock" : "in_stock",
     attributes: isPlaceholderOptions(v.selectedOptions)
       ? null
       : Object.fromEntries(v.selectedOptions.map((o) => [o.name, o.value])),
