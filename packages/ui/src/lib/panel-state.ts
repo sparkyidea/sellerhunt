@@ -33,6 +33,7 @@ export const initialPanelState: PanelState = {
 
 export type PanelEvent =
   | { type: "navigate"; content: PanelSource }
+  | { type: "route"; id: string }
   | { type: "open"; content: PanelSource }
   | { type: "update-preview"; content: PanelSource }
   | { type: "close" }
@@ -43,6 +44,24 @@ export type PanelEvent =
 // preview record into main without changing its React key or its content.
 export function panelReducer(state: PanelState, event: PanelEvent): PanelState {
   switch (event.type) {
+    case "route": {
+      // Live route children have already changed. Settle an interrupted
+      // expansion before showing them; never replay a stale finish callback.
+      let settled = state;
+      if (state.phase === "expanding") {
+        settled =
+          event.id === state.preview?.content.id
+            ? finish(state, state.revision)
+            : {
+                ...state,
+                preview: null,
+                queued: null,
+                phase: "idle",
+                revision: state.revision + 1,
+              };
+      }
+      return navigate(settled, { type: "main", id: event.id, children: null });
+    }
     case "navigate":
       return navigate(state, event.content);
     case "open": {

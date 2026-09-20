@@ -15,8 +15,8 @@ of the app area and admin has no settings entry. The page settings was opened
 from is captured in the `useSettingsOrigin` store when the settings link is
 clicked (`Link onNavigate`); the settings layout returns there on close, or to
 `/explorer/listings` after a reload or in a fresh tab. `AppPanels` keeps a stable root;
-route declarations replace the main content when navigating between areas,
-while settings preserves the underlying panels. Previews from another area are cleared,
+route navigation replaces the main content, including on settings.
+The outgoing page unmounts. Previews from another area are cleared,
 and loss of admin access discards retained admin surfaces.
 
 ### Static shell and search params
@@ -29,7 +29,9 @@ params in shell-wide components (layout, header, sidebar). State that must
 survive a route change, such as the settings origin, lives in a client store in
 memory (`hooks/use-settings-origin.ts`), never in `?from=`. Verify with
 `next build`: app routes stay `○` and
-`.next/server/app/explorer/listings.html` contains the header.
+`.next/server/app/explorer/listings.html` contains the header and “Explore Listings”
+inside the main surface. Route bodies render on the server; client-only data
+views still use their own Suspense/loading boundaries.
 
 ### Ownership
 
@@ -37,12 +39,13 @@ memory (`hooks/use-settings-origin.ts`), never in `?from=`. Verify with
   resizing, scrolling, headers and actions.
 - **Reusable root:** `packages/ui/src/components/panel-root.tsx` and
   `packages/ui/src/lib/panel-state.ts` own surface identity, retention,
-  promotion, focus and interrupted animations. Content is `{ id, children }`;
-  IDs are opaque strings, not necessarily URLs. No app or router imports.
+  promotion, focus and interrupted animations. `mainId` identifies the live
+  route rendered through `children`; only preview elements are captured in
+  memory. IDs are opaque strings, not necessarily URLs. No app/router imports.
 - **App adapter:** `apps/app/src/components/panels/app-panels.tsx`
-  connects the preview store/registry and sidebar policy. `PanelRoute` supplies
-  Next.js pathname identity to the generic `PanelMain` declaration.
-  `PreviewExpandLink` connects the generic view context to a Next link.
+  connects the preview store/registry and sidebar policy and supplies `mainId`
+  from the pathname. `PanelRoute` marks the route body and errors with
+  `PanelMain`. `PreviewExpandLink` prefetches and expands before navigating.
 - **Entity registry:** `apps/app/src/components/preview/preview-registry.tsx`
   supplies `page`, `View`, and `Skeleton` for each kind. `useOpenPreview` opens
   a side preview on desktop and navigates directly on mobile.
@@ -52,7 +55,7 @@ memory (`hooks/use-settings-origin.ts`), never in `?from=`. Verify with
 | Name | Responsibility |
 | --- | --- |
 | `PanelRoot` | Owns the main/preview lifecycle and composes their surfaces. |
-| `PanelMain` | Declares the root's main content and identity; adds no wrapper DOM. |
+| `PanelMain` | Renders the route body, suppresses its duplicate after promotion, and signals errors. |
 | `usePanel` | Reads the current mode and exposes expand/close commands. |
 | `PanelCanvas` | Positions and clips the animated surfaces. |
 | `PanelFrame` | Renders one surface, its border, corners and resize handle. |
@@ -61,7 +64,7 @@ memory (`hooks/use-settings-origin.ts`), never in `?from=`. Verify with
 | `AppPanels` | App adapter for registry/store commands and sidebar behavior. |
 | `PanelRoute` | Next.js adapter that supplies pathname identity to `PanelMain`. |
 | `PanelRouteError` | Retryable route error content declared through `PanelRoute`. |
-| `PreviewExpandLink` | Next.js link that starts expansion during navigation. |
+| `PreviewExpandLink` | Next.js link that prefetches, expands, then navigates. |
 | `PreviewContent` | Renders registry-selected entity content with loading/error boundaries. |
 
 Keep `PanelHeader`, `PanelTitle`, `PanelContent`, `PanelToolbar`, `PanelGroup`,
@@ -77,6 +80,7 @@ Import `PanelRoot`, `PanelMain`, and `usePanel` from
 
 ```tsx
 <PanelRoot
+  mainId="items"
   preview={selected ? { id: selected.id, children: <ItemView item={selected} /> } : null}
   onPreviewOpenChange={(open) => { if (!open) setSelected(null); }}
 >
@@ -87,7 +91,8 @@ Import `PanelRoot`, `PanelMain`, and `usePanel` from
 ```
 
 Views supply their own `Panel` scroll container and header. `usePanel()`
-provides `mode`, `expand()` and `close()` without requiring navigation. Use the
+provides `mode`, `expand(navigate?)` and `close()` without requiring navigation.
+The optional callback runs once after promotion. Use the
 same main/preview ID to preserve the promoted content when a destination arrives;
 use `replace` on `PanelMain` to override it, such as for an error.
 The open-change callback reports surface presence: closing and promotion report
@@ -121,12 +126,19 @@ throughout entry, exit and expansion. Do not animate their positions independent
 - Completion removes the old main and promotes the **same** keyed preview
   surface, scroll container and entity component to main. Never collapse and
   recreate the preview to implement expansion.
-- The detail route may arrive before or after expansion. A matching successful
-  route does not replace the promoted component. Server error/404 content does.
+- Normal expansion waits for motion completion before committing navigation;
+  `PreviewExpandLink` requests prefetch immediately. While waiting for that
+  route, the outgoing body is not remounted in the promoted surface.
+- The matching route boundary renders but `PanelMain` returns null, so no
+  duplicate detail body, queries or effects mount. Error/404 boundaries still
+  signal `replace` and take over. No hidden copy of the route body is used.
 - Navigation after promotion replaces content **inside that full-width surface**.
   Content changes immediately without a fade; no side-panel close animation.
-- A different destination arriving during expansion is queued until promotion
-  finishes, then replaces the main content immediately.
+- A different live route takes over immediately, settling expansion before
+  rendering its body. Link clicks and browser Back cancel deferred expansion
+  navigation even if the next route is slow. Modified/new-tab clicks do not.
+  The generic reducer still supports queued `navigate` events for captured
+  content; the live route adapter uses `route` events instead.
 - Explicit `variant` controls main/preview geometry. Do not infer role from DOM
   sibling order: an outgoing main may still be present.
 
@@ -153,22 +165,17 @@ Detail routes keep server-side validation and prefetch. The composition is:
 </PanelRoute>
 ```
 
-Providers required by retained content must live **inside** `PanelRoute` or
-above `PanelRoot`. Pass IDs/route params explicitly to entity views.
-Do not put page-owned state above the declaration if it must survive a handover;
-keep it inside the published view. Content is mounted by the root after
-hydration; server routes still validate and prefetch data before publishing it.
+Providers required by a promoted preview must live inside `PreviewContent`
+or above `PanelRoot`. Pass IDs/route params explicitly to entity views.
+Wrap each route's body in `PanelRoute`, below server validation/prefetch and
+above client data views. That boundary can suppress a successful duplicate
+without hiding or mounting the data view; server errors still reach it.
 
-Settings renders a sheet without a `PanelRoute` declaration, preserving the
-existing main and preview surfaces behind it. `PanelRoute` wraps its published content in `PanelQueryScope`, which captures
-the owning pathname and compares it to the live pathname. It supplies the
-generic dataview `QuerySyncProvider`: nested dataviews automatically retain their
-validated query and block URL writes while their owning route is inactive.
-Query-string changes on the owning route continue to synchronize through nuqs;
-resuming waits for nuqs URL synchronization before releasing the retained query.
-Tables do not declare paths or pass synchronization flags. Dataviews outside a
-query-sync boundary synchronize normally. Settings is outside the retained
-content's boundary and can own its own query state independently.
+Settings renders an empty panel next to its sheet. Opening it unmounts the
+originating page and closes its preview. Closing restores the full origin URL;
+the page mounts with its restored query and can reuse React Query's cache.
+There is no query-sync pause for a table retained across settings, since no
+such table remains mounted.
 Error/404 content uses
 `<PanelRoute error>` so it can replace a promoted
 view even when the pathname is unchanged. Outside a root, `PanelRoute`
@@ -217,7 +224,9 @@ preview toolbars. `PanelNav` accepts render slots for navigation links.
 ### Validation
 
 The reducer's regression tests live in
-`packages/ui/src/lib/__tests__/panel-state.test.ts`.
+`packages/ui/src/lib/__tests__/panel-state.test.ts`. Mounted React and hydration
+regressions live in `packages/ui/src/components/__tests__/panel-root.test.tsx`
+(Vitest + happy-dom); run both with `bun --cwd packages/ui test`.
 Verify both route-arrival orders, stale completion events, navigation during
 expansion, server errors, closing and reopening, and navigation after promotion.
 Browser verification must also cover actual opacity/width during expansion,

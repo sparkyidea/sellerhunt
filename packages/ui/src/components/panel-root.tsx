@@ -3,11 +3,13 @@
 import {
   type ComponentProps,
   createContext,
+  Fragment,
   type ReactNode,
   useCallback,
   useContext,
   useEffect,
   useLayoutEffect,
+  useMemo,
   useReducer,
   useRef,
   useState,
@@ -16,7 +18,6 @@ import { useIsMobile } from "../hooks/use-mobile";
 import {
   initialPanelState,
   type PanelEntry,
-  type PanelSource,
   type PanelState,
   panelReducer,
 } from "../lib/panel-state";
@@ -29,12 +30,14 @@ import {
 
 export type { PanelEntry } from "../lib/panel-state";
 
-const MainContentContext = createContext<
-  ((content: PanelSource) => void) | null
->(null);
+interface MainContentValue {
+  promoted: boolean;
+  replace: (id: string) => void;
+}
+const MainContentContext = createContext<MainContentValue | null>(null);
 const PanelContext = createContext<{
   mode: "main" | "preview";
-  expand?: () => void;
+  expand?: (navigate?: () => void) => void;
   close?: () => void;
 }>({ mode: "main" });
 
@@ -42,13 +45,31 @@ export function usePanel() {
   return useContext(PanelContext);
 }
 
-/** Declare main content inside PanelRoot, retaining concrete children. */
+/** Render route content on the server; suppress a promoted route's duplicate body. */
 export function PanelMain({ id, children, replace }: PanelEntry) {
-  const publish = useContext(MainContentContext);
+  const main = useContext(MainContentContext);
+  const promoted = main?.promoted ?? false;
+  const replaceMain = main?.replace;
   useLayoutEffect(() => {
-    publish?.({ type: "main", id, children, replace });
-  }, [children, id, replace, publish]);
-  return publish ? null : children;
+    if (replace && promoted) {
+      replaceMain?.(id);
+    }
+  }, [id, promoted, replace, replaceMain]);
+  // Keep the route boundary alive for server errors, without mounting its body.
+  return promoted ? null : <Fragment key={id}>{children}</Fragment>;
+}
+
+function seed(mainId: string): PanelState {
+  return panelReducer(initialPanelState, {
+    type: "navigate",
+    content: { type: "main", id: mainId, children: null },
+  });
+}
+
+interface ExpansionNavigation {
+  navigate: () => void;
+  origin: string;
+  target: string;
 }
 
 function frameState(phase: PanelState["phase"], preview: boolean) {
@@ -58,9 +79,14 @@ function frameState(phase: PanelState["phase"], preview: boolean) {
   return preview && phase === "closing" ? "closed" : "open";
 }
 
-/** Own the panel lifecycle independently of routing. IDs need not be URLs. */
+/**
+ * Render live route content on the server; retain only a promoted preview.
+ * Route bodies use PanelMain so matching arrivals cannot mount duplicates.
+ * IDs are opaque. Router navigation is supplied through expand's callback.
+ */
 export function PanelRoot({
   children,
+  mainId,
   preview = null,
   onPreviewOpenChange,
   defaultPreviewWidth = DEFAULT_PREVIEW_WIDTH,
@@ -75,24 +101,52 @@ export function PanelRoot({
   | "ref"
 > & {
   children: ReactNode;
+  /** Identity of the live route. Content itself flows through children. */
+  mainId: string;
   preview?: PanelEntry | null;
   /** Reports surface presence, including after closing or promotion completes. */
   onPreviewOpenChange?: (open: boolean) => void;
   defaultPreviewWidth?: number;
 }) {
-  const [state, dispatch] = useReducer(panelReducer, initialPanelState);
+  const [state, dispatch] = useReducer(panelReducer, mainId, seed);
   const [width, setWidth] = useState(defaultPreviewWidth);
   const [resizing, setResizing] = useState(false);
   const isMobile = useIsMobile();
   const canvasRef = useRef<HTMLDivElement>(null);
   const focusAfterTransition = useRef(false);
-  const publish = useCallback((content: PanelSource) => {
-    dispatch({ type: "navigate", content });
+  const pendingNavigation = useRef<ExpansionNavigation | null>(null);
+  const [knownMainId, setKnownMainId] = useState(mainId);
+  // Reconcile before rendering descendants, never commit a new route inside an
+  // old/closing surface. Unlike reducer-only consumers, a live router cannot
+  // retain its old children after it commits a different route.
+  if (knownMainId !== mainId) {
+    setKnownMainId(mainId);
+    dispatch({ type: "route", id: mainId });
+  }
+  const replace = useCallback((id: string) => {
+    pendingNavigation.current = null;
+    dispatch({
+      type: "navigate",
+      content: { type: "main", id, children: null, replace: true },
+    });
   }, []);
-  const expand = useCallback(() => {
-    focusAfterTransition.current = true;
-    dispatch({ type: "expand" });
-  }, []);
+  const expand = useCallback(
+    (navigate?: () => void) => {
+      if (state.phase === "expanding" || pendingNavigation.current) {
+        return;
+      }
+      if (!state.preview) {
+        navigate?.();
+        return;
+      }
+      focusAfterTransition.current = true;
+      pendingNavigation.current = navigate
+        ? { origin: mainId, target: state.preview.content.id, navigate }
+        : null;
+      dispatch({ type: "expand" });
+    },
+    [mainId, state.phase, state.preview]
+  );
   const close = useCallback(() => dispatch({ type: "close" }), []);
 
   const requestedId = useRef<string | null>(null);
@@ -110,6 +164,48 @@ export function PanelRoot({
     }
   }, [isMobile, preview]);
 
+  // A new link/Back intent must win even if its route takes longer to load
+  // than this animation. Do not let our deferred navigation overwrite it.
+  useEffect(() => {
+    if (state.phase !== "expanding") {
+      return;
+    }
+    const cancel = () => {
+      pendingNavigation.current = null;
+      focusAfterTransition.current = false;
+      dispatch({ type: "route", id: mainId });
+    };
+    const onClick = (event: MouseEvent) => {
+      if (
+        event.defaultPrevented ||
+        event.button !== 0 ||
+        event.metaKey ||
+        event.ctrlKey ||
+        event.shiftKey ||
+        event.altKey
+      ) {
+        return;
+      }
+      const link =
+        event.target instanceof Element
+          ? event.target.closest<HTMLAnchorElement>("a[href]")
+          : null;
+      if (
+        link &&
+        !link.hasAttribute("download") &&
+        (!link.target || link.target === "_self")
+      ) {
+        cancel();
+      }
+    };
+    document.addEventListener("click", onClick, true);
+    window.addEventListener("popstate", cancel);
+    return () => {
+      document.removeEventListener("click", onClick, true);
+      window.removeEventListener("popstate", cancel);
+    };
+  }, [mainId, state.phase]);
+
   const previewOpen = state.preview !== null;
   const wasPreviewOpen = useRef(false);
   useEffect(() => {
@@ -122,21 +218,31 @@ export function PanelRoot({
   const finishMotion = useCallback(() => {
     dispatch({ type: "finish", revision: state.revision });
   }, [state.revision]);
+  const promoted = state.main?.content.type === "preview";
+  const promotedId = promoted ? state.main?.content.id : null;
   useEffect(() => {
-    if (state.phase === "idle" && focusAfterTransition.current) {
+    if (state.phase !== "idle") {
+      return;
+    }
+    const pending = pendingNavigation.current;
+    pendingNavigation.current = null;
+    if (focusAfterTransition.current) {
       focusAfterTransition.current = false;
       canvasRef.current
         ?.querySelector<HTMLElement>('[data-variant="main"]')
         ?.focus({ preventScroll: true });
     }
-  }, [state.phase]);
+    if (pending?.origin === mainId && pending.target === promotedId) {
+      pending.navigate();
+    }
+  }, [mainId, promotedId, state.phase]);
+  const main = useMemo(() => ({ promoted, replace }), [promoted, replace]);
 
   const surfaces = [state.main, state.preview].filter(
     (surface) => surface !== null
   );
   return (
-    <MainContentContext.Provider value={publish}>
-      {children}
+    <MainContentContext.Provider value={main}>
       <PanelCanvas
         {...props}
         onMotionComplete={finishMotion}
@@ -163,7 +269,11 @@ export function PanelRoot({
               width={width}
             >
               <PanelLayer
-                key={`${surface.content.type}:${surface.content.id}:${Boolean(surface.content.replace)}`}
+                key={
+                  surface.content.type === "preview"
+                    ? `preview:${surface.content.id}`
+                    : "main"
+                }
               >
                 <PanelContext.Provider
                   value={{
@@ -175,7 +285,12 @@ export function PanelRoot({
                     close,
                   }}
                 >
-                  {surface.content.children}
+                  {surface.content.type === "preview"
+                    ? surface.content.children
+                    : null}
+                  {!isPreview && (!promoted || mainId === promotedId)
+                    ? children
+                    : null}
                 </PanelContext.Provider>
               </PanelLayer>
             </PanelFrame>

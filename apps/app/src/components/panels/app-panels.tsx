@@ -6,6 +6,7 @@ import { PanelRoot } from "@sparkyidea/ui/components/panel-root";
 import { useSidebar } from "@sparkyidea/ui/components/sidebar";
 import { useIsMobile } from "@sparkyidea/ui/hooks/use-mobile";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { type ReactNode, useCallback, useEffect, useMemo } from "react";
 import { PreviewContent } from "@/components/preview/preview-content";
 import { PREVIEW_REGISTRY } from "@/components/preview/preview-registry";
@@ -19,6 +20,7 @@ export function AppPanels({ children }: { children: ReactNode }) {
   const requestedPreview = usePreviewStore((s) => s.preview);
   const close = usePreviewStore((s) => s.close);
   const area = useNavigationArea();
+  const pathname = usePathname();
   const { data: session, isPending } = authClient.useSession();
   const accessLost =
     area === "admin" &&
@@ -66,7 +68,11 @@ export function AppPanels({ children }: { children: ReactNode }) {
     return <NotFound homeLink={<Link href="/" />} />;
   }
   return (
-    <PanelRoot onPreviewOpenChange={onPreviewOpenChange} preview={preview}>
+    <PanelRoot
+      mainId={pathname}
+      onPreviewOpenChange={onPreviewOpenChange}
+      preview={preview}
+    >
       {children}
     </PanelRoot>
   );
