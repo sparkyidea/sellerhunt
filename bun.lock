@@ -80,6 +80,7 @@
         "@types/papaparse": "catalog:",
         "@types/react": "catalog:",
         "@types/react-dom": "catalog:",
+        "happy-dom": "catalog:",
         "tailwindcss": "catalog:",
         "typescript": "catalog:",
       },

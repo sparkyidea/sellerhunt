@@ -11,6 +11,7 @@ import {
   type ComponentProps,
   type ReactNode,
   type PointerEvent as ReactPointerEvent,
+  type RefObject,
   useCallback,
   useLayoutEffect,
   useRef,
@@ -35,9 +36,7 @@ import {
 } from "./dropdown-menu";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./tooltip";
 
-export const DEFAULT_PREVIEW_WIDTH = 380;
-const DEFAULT_MIN_PANEL_WIDTH = 320;
-const DEFAULT_MAX_PANEL_WIDTH = 720;
+export const DEFAULT_PREVIEW_RATIO = 1 / 3;
 // Pointer travel (px) that distinguishes a click from a drag.
 const DRAG_THRESHOLD = 4;
 
@@ -49,7 +48,7 @@ function clamp(value: number, min: number, max: number): number {
 export function PanelCanvas({
   className,
   previewState = "none",
-  previewWidth = DEFAULT_PREVIEW_WIDTH,
+  previewRatio = DEFAULT_PREVIEW_RATIO,
   resizing = false,
   onMotionComplete,
   style,
@@ -57,7 +56,7 @@ export function PanelCanvas({
   ...props
 }: ComponentProps<"div"> & {
   previewState?: "none" | "open" | "closed" | "expanding";
-  previewWidth?: number;
+  previewRatio?: number;
   resizing?: boolean;
   onMotionComplete?: () => void;
 }) {
@@ -74,17 +73,15 @@ export function PanelCanvas({
     },
     [ref]
   );
-  usePanelMotion(
-    layoutRef,
-    previewState,
-    previewWidth,
-    resizing,
-    onMotionComplete
-  );
+  usePanelMotion(layoutRef, previewState, resizing, onMotionComplete);
   return (
     <div
       className={cn(
-        "@container/main relative isolate min-h-0 min-w-0 flex-1 overflow-hidden [--panel-reserved:0px]",
+        "@container/main relative isolate min-h-0 min-w-0 flex-1 gap-(--panel-gap) overflow-hidden",
+        "[--panel-gap:0.5rem] [--panel-min-width:320px] [--panel-progress:0]",
+        "[--panel-preview-width:min(calc((100%-var(--panel-gap))*0.5),max(var(--panel-min-width),calc((100%-var(--panel-gap))*var(--panel-preview-ratio))))]",
+        "[--panel-expand:clamp(0,calc(var(--panel-progress)-1),1)] [--panel-open:clamp(0,var(--panel-progress),1)]",
+        "[--panel-reserved:calc((var(--panel-preview-width)+var(--panel-gap))*var(--panel-open)+(100%-var(--panel-preview-width))*var(--panel-expand))]",
         "not-has-data-[slot=panel-provider]:rounded-tr-xl not-has-data-[slot=panel-provider]:border-t not-has-data-[slot=panel-provider]:border-r not-has-data-[slot=panel-provider]:bg-background",
         className
       )}
@@ -93,7 +90,7 @@ export function PanelCanvas({
       style={
         {
           ...style,
-          "--panel-preview-width": `${previewWidth}px`,
+          "--panel-preview-ratio": Math.max(0, Math.min(previewRatio, 0.5)),
         } as React.CSSProperties
       }
       {...props}
@@ -111,10 +108,8 @@ export function PanelFrame({
   children,
   variant = "main",
   state = "open",
-  width = DEFAULT_PREVIEW_WIDTH,
-  minWidth = DEFAULT_MIN_PANEL_WIDTH,
-  maxWidth = DEFAULT_MAX_PANEL_WIDTH,
-  onWidthChange,
+  ratio = DEFAULT_PREVIEW_RATIO,
+  onRatioChange,
   onResizeChange,
   onClose,
   ref,
@@ -123,10 +118,8 @@ export function PanelFrame({
 }: ComponentProps<"div"> & {
   variant?: "main" | "preview";
   state?: "open" | "closed" | "expanding";
-  width?: number;
-  minWidth?: number;
-  maxWidth?: number;
-  onWidthChange?: (width: number) => void;
+  ratio?: number;
+  onRatioChange?: (ratio: number) => void;
   onResizeChange?: (resizing: boolean) => void;
   onClose?: () => void;
 }) {
@@ -160,7 +153,7 @@ export function PanelFrame({
         "group/panel absolute inset-y-0 flex min-h-0 min-w-0",
         variant === "main"
           ? "right-(--panel-reserved) w-[max(0px,calc(100%-var(--panel-reserved)))]"
-          : "left-[calc(100%-var(--panel-reserved)+0.5rem)] z-10 w-[max(var(--panel-preview-width),calc(var(--panel-reserved)-0.5rem))]",
+          : "left-[calc(100%-var(--panel-reserved)+var(--panel-gap))] z-10 w-[max(var(--panel-preview-width),calc(var(--panel-reserved)-var(--panel-gap)))] max-w-full",
         className
       )}
       data-slot="panel-provider"
@@ -170,20 +163,19 @@ export function PanelFrame({
       style={exitWidth === null ? style : { ...style, width: exitWidth }}
       {...props}
     >
-      {variant === "preview" && state === "open" && onWidthChange && (
+      {variant === "preview" && state === "open" && onRatioChange && (
         <PanelResizeHandle
-          initialWidth={width}
-          maxWidth={maxWidth}
-          minWidth={minWidth}
+          frameRef={surfaceRef}
           onClick={onClose}
-          onDragWidth={onWidthChange}
+          onDragRatio={onRatioChange}
           onResizeEnd={(final) => {
             onResizeChange?.(false);
-            onWidthChange(final);
+            onRatioChange(final);
           }}
           onResizeStart={() => {
             onResizeChange?.(true);
           }}
+          ratio={ratio}
         />
       )}
       <div
@@ -231,59 +223,86 @@ export function Panel({ className, ...props }: ComponentProps<"div">) {
 }
 
 function PanelResizeHandle({
-  initialWidth,
-  minWidth,
-  maxWidth,
-  onDragWidth,
+  frameRef,
+  ratio,
+  onDragRatio,
   onResizeStart,
   onResizeEnd,
   onClick,
 }: {
-  initialWidth: number;
-  minWidth: number;
-  maxWidth: number;
-  onDragWidth: (width: number) => void;
+  frameRef: RefObject<HTMLDivElement | null>;
+  ratio: number;
+  onDragRatio: (ratio: number) => void;
   onResizeStart: () => void;
-  onResizeEnd: (finalWidth: number) => void;
+  onResizeEnd: (finalRatio: number) => void;
   onClick?: () => void;
 }) {
   const startRef = useRef<{
     x: number;
     width: number;
+    available: number;
+    minRatio: number;
     dragged: boolean;
   } | null>(null);
-  // Keep the latest drag width for pointer release/cancel between renders.
-  const latestWidthRef = useRef(initialWidth);
+  const latestRatioRef = useRef(ratio);
+
+  // Read geometry only for user input; CSS owns all responsive layout updates.
+  const measure = () => {
+    const frame = frameRef.current;
+    const canvas = frame?.parentElement;
+    if (!(frame && canvas)) {
+      return null;
+    }
+    const styles = getComputedStyle(canvas);
+    const available = canvas.clientWidth - Number.parseFloat(styles.columnGap);
+    if (!(available > 0)) {
+      return null;
+    }
+    return {
+      width: frame.getBoundingClientRect().width,
+      available,
+      minRatio: Math.min(
+        Number.parseFloat(styles.getPropertyValue("--panel-min-width")) /
+          available,
+        0.5
+      ),
+    };
+  };
 
   const handlePointerDown = (e: ReactPointerEvent<HTMLHRElement>) => {
+    const geometry = measure();
+    if (!geometry) {
+      return;
+    }
     e.preventDefault();
     e.currentTarget.setPointerCapture(e.pointerId);
-    startRef.current = { x: e.clientX, width: initialWidth, dragged: false };
-    latestWidthRef.current = initialWidth;
+    startRef.current = { ...geometry, x: e.clientX, dragged: false };
+    latestRatioRef.current = ratio;
   };
 
   const handlePointerMove = (e: ReactPointerEvent<HTMLHRElement>) => {
-    if (!startRef.current) {
+    const start = startRef.current;
+    if (!start) {
       return;
     }
-    const delta = e.clientX - startRef.current.x;
-    if (!startRef.current.dragged) {
+    const delta = e.clientX - start.x;
+    if (!start.dragged) {
       if (Math.abs(delta) < DRAG_THRESHOLD) {
         return;
       }
-      startRef.current.dragged = true;
+      start.dragged = true;
       onResizeStart();
     }
     const next = clamp(
-      Math.round(startRef.current.width - delta),
-      minWidth,
-      maxWidth
+      (start.width - delta) / start.available,
+      start.minRatio,
+      0.5
     );
-    if (next === latestWidthRef.current) {
+    if (next === latestRatioRef.current) {
       return;
     }
-    latestWidthRef.current = next;
-    onDragWidth(next);
+    latestRatioRef.current = next;
+    onDragRatio(next);
   };
 
   const handlePointerUp = (e: ReactPointerEvent<HTMLHRElement>) => {
@@ -294,7 +313,7 @@ function PanelResizeHandle({
     const wasDragged = startRef.current.dragged;
     startRef.current = null;
     if (wasDragged) {
-      onResizeEnd(latestWidthRef.current);
+      onResizeEnd(latestRatioRef.current);
     } else {
       onClick?.();
     }
@@ -302,7 +321,7 @@ function PanelResizeHandle({
 
   const handlePointerCancel = () => {
     if (startRef.current?.dragged) {
-      onResizeEnd(latestWidthRef.current);
+      onResizeEnd(latestRatioRef.current);
     }
     startRef.current = null;
   };
@@ -314,16 +333,26 @@ function PanelResizeHandle({
           <hr
             aria-label="Resize preview panel"
             aria-orientation="vertical"
-            aria-valuemax={maxWidth}
-            aria-valuemin={minWidth}
-            aria-valuenow={initialWidth}
+            aria-valuemax={50}
+            aria-valuemin={0}
+            aria-valuenow={Math.round(ratio * 100)}
+            aria-valuetext={`${Math.round(ratio * 100)}% preferred preview width`}
             className="absolute inset-y-0 z-10 m-0 h-full w-3 -translate-x-1/2 cursor-col-resize touch-none border-0"
             onKeyDown={(event) => {
               if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
                 event.preventDefault();
                 const step = event.shiftKey ? 50 : 10;
                 const delta = event.key === "ArrowLeft" ? step : -step;
-                onResizeEnd(clamp(initialWidth + delta, minWidth, maxWidth));
+                const geometry = measure();
+                if (geometry) {
+                  onResizeEnd(
+                    clamp(
+                      (geometry.width + delta) / geometry.available,
+                      geometry.minRatio,
+                      0.5
+                    )
+                  );
+                }
               } else if (event.key === "Escape") {
                 onClick?.();
               }

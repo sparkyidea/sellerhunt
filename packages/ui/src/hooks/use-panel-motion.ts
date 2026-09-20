@@ -9,11 +9,11 @@ const PANEL_TRANSITION_SECONDS = 0.2;
 export function usePanelMotion(
   ref: RefObject<HTMLDivElement | null>,
   state: "none" | "open" | "closed" | "expanding",
-  width: number,
   resizing: boolean,
   onComplete?: () => void
 ) {
-  const position = useRef(0);
+  // CSS resolves 0 = closed, 1 = split, 2 = full width against the live canvas.
+  const progress = useRef(0);
 
   useLayoutEffect(() => {
     const element = ref.current;
@@ -23,19 +23,15 @@ export function usePanelMotion(
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     const mobile = window.matchMedia("(max-width: 767px)");
     const write = (value: number) => {
-      position.current = value;
-      element.style.setProperty("--panel-reserved", `${value}px`);
+      progress.current = value;
+      element.style.setProperty("--panel-progress", `${value}`);
     };
     let animation: ReturnType<typeof animate> | undefined;
     let lastTarget: number | undefined;
     const update = () => {
-      const gap =
-        Number.parseFloat(getComputedStyle(document.documentElement).fontSize) *
-        0.5;
       let target = 0;
       if (!mobile.matches && state !== "none" && state !== "closed") {
-        target =
-          state === "expanding" ? element.clientWidth + gap : width + gap;
+        target = state === "expanding" ? 2 : 1;
       }
       if (
         reducedMotion.matches ||
@@ -54,11 +50,11 @@ export function usePanelMotion(
       }
       lastTarget = target;
       animation?.stop();
-      if (target === position.current) {
+      if (target === progress.current) {
         onComplete?.();
         return;
       }
-      animation = animate(position.current, target, {
+      animation = animate(progress.current, target, {
         type: "tween",
         ease: "linear",
         duration: PANEL_TRANSITION_SECONDS,
@@ -66,19 +62,16 @@ export function usePanelMotion(
         onComplete,
       });
     };
-    write(position.current);
+    write(progress.current);
     update();
-    const observer = new ResizeObserver(update);
-    observer.observe(element);
     reducedMotion.addEventListener("change", update);
     mobile.addEventListener("change", update);
     document.addEventListener("visibilitychange", update);
     return () => {
       animation?.stop();
-      observer.disconnect();
       reducedMotion.removeEventListener("change", update);
       mobile.removeEventListener("change", update);
       document.removeEventListener("visibilitychange", update);
     };
-  }, [onComplete, ref, resizing, state, width]);
+  }, [onComplete, ref, resizing, state]);
 }

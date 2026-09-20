@@ -14,7 +14,6 @@ vi.mock("../../hooks/use-panel-motion", () => ({
   usePanelMotion: (
     _ref: unknown,
     _state: unknown,
-    _width: unknown,
     _resizing: unknown,
     finish: () => void
   ) => {

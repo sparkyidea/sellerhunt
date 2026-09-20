@@ -16,7 +16,8 @@ from is captured in the `useSettingsOrigin` store when the settings link is
 clicked (`Link onNavigate`); the settings layout returns there on close, or to
 `/explorer/listings` after a reload or in a fresh tab. `AppPanels` keeps a stable root;
 route navigation replaces the main content, including on settings.
-The outgoing page unmounts. Previews from another area are cleared,
+The outgoing page unmounts. Leaving the shared shell clears the preview store.
+Previews from another area are cleared,
 and loss of admin access discards retained admin surfaces.
 
 ### Static shell and search params
@@ -102,16 +103,30 @@ The UI supports mobile presentation; the app decides mobile routing policy.
 
 ### Lifetimes and motion
 
+`PanelRoot` remembers the preview size as a proportion of the canvas after
+subtracting the inter-panel gap. The default is one-third (`defaultPreviewRatio`);
+dragging or keyboard resizing can reach an equal 50/50 split. The canvas excludes
+the sidebar, so the selected proportion follows both window and sidebar changes.
+The usual 320px minimum yields to the 50% maximum on narrow canvases.
+Tailwind arbitrary properties resolve that proportion and its limits in CSS.
+No resize observer or React pixel-width state is needed. Only pointer/keyboard
+input reads the canvas to convert movement into a ratio; outgoing surfaces read
+their width once to freeze content during exit. Open-panel size changes update
+the shared edge immediately.
+
 `usePanelMotion` in the UI package drives a single linear Motion animation.
 `PANEL_TRANSITION_SECONDS` sets a fixed 200ms duration for opening, closing and
 expansion, matching the original CSS transition with linear easing.
-The layout measures its width only to determine the expansion destination.
+Motion animates dimensionless progress: 0 is closed, 1 is the chosen split, and
+2 is full width. CSS resolves these against the current canvas, so window and
+sidebar changes need no JavaScript retargeting.
 `PanelCanvas.onMotionComplete` settles the controller when Motion finishes.
 Reduced motion, direct resizing and hidden documents settle immediately.
-Resize observation retargets expansion; cleanup cancels superseded animations.
+Cleanup cancels superseded animations.
 
-Motion writes `--panel-reserved` directly each frame, without `@property` or
-`CSS.registerProperty()`. This shared boundary keeps facing edges 8px apart
+Motion writes `--panel-progress` directly each frame, without `@property` or
+`CSS.registerProperty()`. CSS derives `--panel-reserved` from that progress,
+the preferred ratio and the gap. This shared boundary keeps facing edges 8px apart
 throughout entry, exit and expansion. Do not animate their positions independently.
 
 - Opening slides a second keyed surface in from the right. Closing freezes its
@@ -207,9 +222,9 @@ Change header chrome in place; preserve the content component and its key.
 
 ### Primitive composition
 
-`PanelCanvas` is the positioned canvas; its `previewWidth` prop supplies both
-the animation destination and the CSS width. `PanelFrame` is an explicitly controlled surface
-(`variant`, `state`, `width`, `onWidthChange`, `onResizeChange`).
+`PanelCanvas` is the positioned canvas; its `previewRatio` prop supplies the
+preferred CSS split. `PanelFrame` is an explicitly controlled surface
+(`variant`, `state`, `ratio`, `onRatioChange`, `onResizeChange`).
 `PanelLayer` retains fully opaque content during expansion; the root makes
 the outgoing main content inert. Ordinary route changes also have no opacity animation.
 `Panel` is the scroll container, with `max-w-240` inner content by default.

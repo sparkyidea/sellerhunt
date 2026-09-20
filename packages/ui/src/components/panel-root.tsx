@@ -22,7 +22,7 @@ import {
   panelReducer,
 } from "../lib/panel-state";
 import {
-  DEFAULT_PREVIEW_WIDTH,
+  DEFAULT_PREVIEW_RATIO,
   PanelCanvas,
   PanelFrame,
   PanelLayer,
@@ -89,13 +89,13 @@ export function PanelRoot({
   mainId,
   preview = null,
   onPreviewOpenChange,
-  defaultPreviewWidth = DEFAULT_PREVIEW_WIDTH,
+  defaultPreviewRatio = DEFAULT_PREVIEW_RATIO,
   ...props
 }: Omit<
   ComponentProps<typeof PanelCanvas>,
   | "children"
   | "previewState"
-  | "previewWidth"
+  | "previewRatio"
   | "resizing"
   | "onMotionComplete"
   | "ref"
@@ -106,13 +106,16 @@ export function PanelRoot({
   preview?: PanelEntry | null;
   /** Reports surface presence, including after closing or promotion completes. */
   onPreviewOpenChange?: (open: boolean) => void;
-  defaultPreviewWidth?: number;
+  /** Share of the canvas after subtracting the gap; capped at an equal split. */
+  defaultPreviewRatio?: number;
 }) {
   const [state, dispatch] = useReducer(panelReducer, mainId, seed);
-  const [width, setWidth] = useState(defaultPreviewWidth);
   const [resizing, setResizing] = useState(false);
   const isMobile = useIsMobile();
   const canvasRef = useRef<HTMLDivElement>(null);
+  const [ratio, setRatio] = useState(() =>
+    Math.max(0, Math.min(defaultPreviewRatio, 0.5))
+  );
   const focusAfterTransition = useRef(false);
   const pendingNavigation = useRef<ExpansionNavigation | null>(null);
   const [knownMainId, setKnownMainId] = useState(mainId);
@@ -246,8 +249,8 @@ export function PanelRoot({
       <PanelCanvas
         {...props}
         onMotionComplete={finishMotion}
+        previewRatio={ratio}
         previewState={state.preview ? frameState(state.phase, true) : "none"}
-        previewWidth={width}
         ref={canvasRef}
         resizing={resizing}
       >
@@ -261,12 +264,12 @@ export function PanelRoot({
               inert={surfaceState === "closed" || undefined}
               key={surface.id}
               onClose={close}
+              onRatioChange={setRatio}
               onResizeChange={setResizing}
-              onWidthChange={setWidth}
+              ratio={ratio}
               state={surfaceState}
               tabIndex={-1}
               variant={isPreview ? "preview" : "main"}
-              width={width}
             >
               <PanelLayer
                 key={

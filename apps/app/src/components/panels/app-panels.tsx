@@ -62,6 +62,8 @@ export function AppPanels({ children }: { children: ReactNode }) {
       close();
     }
   }, [accessLost, close, isMobile, previewInArea]);
+  // The store outlives this shell during client-side auth navigation.
+  useEffect(() => close, [close]);
   // The server layout still gates routes; this also discards retained admin
   // surfaces if the client session loses admin access in place.
   if (accessLost) {
