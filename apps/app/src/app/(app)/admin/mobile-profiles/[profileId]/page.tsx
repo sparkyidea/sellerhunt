@@ -1,8 +1,9 @@
-import { Panel, PanelProvider } from "@sparkyidea/ui/components/panel";
+import { Panel } from "@sparkyidea/ui/components/panel";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { ErrorView } from "@/components/error-view";
+import { PanelRoute } from "@/components/panels/panel-route";
 import { HydrateClient, prefetch, trpc } from "@/lib/utils/trpc/server";
 import { parseProfileId } from "@/modules/mobile-profiles/constants";
 import { MobileProfileDetailView } from "@/modules/mobile-profiles/views/mobile-profile/mobile-profile-panel";
@@ -21,8 +22,8 @@ export default async function AdminMobileProfilePage({
   await prefetch(trpc.mobileProfile.get.queryOptions({ id }));
 
   return (
-    <HydrateClient>
-      <PanelProvider>
+    <PanelRoute>
+      <HydrateClient>
         <Panel>
           <ErrorBoundary
             fallback={<ErrorView message="Failed to load mobile profile" />}
@@ -32,7 +33,7 @@ export default async function AdminMobileProfilePage({
             </Suspense>
           </ErrorBoundary>
         </Panel>
-      </PanelProvider>
-    </HydrateClient>
+      </HydrateClient>
+    </PanelRoute>
   );
 }

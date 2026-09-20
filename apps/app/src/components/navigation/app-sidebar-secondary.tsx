@@ -5,11 +5,10 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@sparkyidea/ui/components/sidebar";
-import type { Route } from "next";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import type { ComponentPropsWithoutRef } from "react";
 import { ThemeSwitcher } from "@/components/layout/theme-switcher";
+import { useSettingsOrigin } from "@/hooks/use-settings-origin";
 import type { AppNavSecondaryItem } from "@/types/app-nav.type";
 
 export function SidebarSecondary({
@@ -18,7 +17,7 @@ export function SidebarSecondary({
 }: {
   items: AppNavSecondaryItem[];
 } & ComponentPropsWithoutRef<typeof SidebarGroup>) {
-  const pathname = usePathname();
+  const captureSettingsOrigin = useSettingsOrigin((s) => s.capture);
 
   return (
     <SidebarGroup {...props}>
@@ -30,10 +29,12 @@ export function SidebarSecondary({
               <SidebarMenuButton
                 render={
                   <Link
-                    href={
-                      item.isTracked
-                        ? (`${item.url}?from=${encodeURIComponent(pathname)}` as Route)
-                        : item.url
+                    href={item.url}
+                    // Tracked items remember where they were opened from so
+                    // closing returns there. SPA navigations only, by design:
+                    // a new tab has no origin and closes to home.
+                    onNavigate={
+                      item.isTracked ? captureSettingsOrigin : undefined
                     }
                   />
                 }

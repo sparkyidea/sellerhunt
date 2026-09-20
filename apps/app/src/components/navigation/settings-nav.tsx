@@ -11,6 +11,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useSettingsNavConfig } from "@/configs/settings-nav.config";
 import type { SettingsNavItem } from "@/types/settings-nav.type";
+
 export function SettingsSidebar({ className }: { className?: string }) {
   const pathname = usePathname();
   const { items } = useSettingsNavConfig();

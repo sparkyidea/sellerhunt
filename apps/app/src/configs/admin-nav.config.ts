@@ -15,12 +15,6 @@ export function AdminNavConfig() {
       url: "mailto:help@turboitem.com",
       icon: Icons.help,
     },
-    {
-      title: "Settings",
-      url: "/settings",
-      icon: Icons.settings,
-      isTracked: true,
-    },
   ];
   return { appNavMain, appNavSecondary };
 }

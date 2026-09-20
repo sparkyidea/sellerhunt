@@ -1,6 +1,6 @@
 "use client";
 
-import { Panel, PanelProvider } from "@sparkyidea/ui/components/panel";
+import { Panel } from "@sparkyidea/ui/components/panel";
 import {
   Sheet,
   SheetContent,
@@ -8,8 +8,11 @@ import {
 } from "@sparkyidea/ui/components/sheet";
 import type { Route } from "next";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { SettingsSidebar } from "@/components/navigation/settings-nav";
+import { PanelRoute } from "@/components/panels/panel-route";
+import { useSettingsOrigin } from "@/hooks/use-settings-origin";
+import { SETTINGS_HOME } from "@/lib/navigation-area";
 
 interface SettingsLayoutProps {
   children: React.ReactNode;
@@ -17,27 +20,40 @@ interface SettingsLayoutProps {
 
 export default function Settings({ children }: SettingsLayoutProps) {
   const router = useRouter();
+  const returnTo = useSettingsOrigin((s) => s.returnTo);
   const [isOpen, setIsOpen] = useState(true);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
+  useEffect(() => {
+    setIsOpen(true);
+    return () => {
+      if (closeTimer.current !== null) {
+        clearTimeout(closeTimer.current);
+      }
+    };
+  }, []);
+
+  // Let the sheet animate out, then return to where settings was opened from.
   const handleClose = () => {
     setIsOpen(false);
-    const history = new URLSearchParams(window.location.search).get("from");
-    setTimeout(() => {
-      router.push((history || "/products") as Route);
+    if (closeTimer.current !== null) {
+      clearTimeout(closeTimer.current);
+    }
+    closeTimer.current = setTimeout(() => {
+      router.push((returnTo ?? SETTINGS_HOME) as Route);
     }, 200);
   };
 
   return (
     <>
-      {/* Surface panel behind the sheet: the Sheet portals to <body>, so this
-          route renders nothing in the app content area on its own. Without a
-          panel here the area falls back to the dark app shell
-          (bg-header-background), which flashes through during the sheet's
-          open/close animation. An empty Panel gives it the same white surface
-          every other page uses. */}
-      <PanelProvider>
+      {/* Settings is an ordinary route: it publishes an empty panel, so the
+          page it was opened from unmounts instead of living on under a URL
+          without its query. Closing returns to the origin URL and the page
+          remounts from the query cache. The panel also keeps the content area
+          white behind the sheet while it animates. */}
+      <PanelRoute>
         <Panel className="max-w-none" />
-      </PanelProvider>
+      </PanelRoute>
       <Sheet onOpenChange={handleClose} open={isOpen}>
         <SheetContent
           className="flex flex-row gap-2 overflow-hidden rounded-t-xl data-[side=bottom]:h-[calc(100vh-3.5rem)]"

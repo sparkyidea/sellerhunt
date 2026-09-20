@@ -6,14 +6,12 @@ import { SidebarTrigger } from "@sparkyidea/ui/components/sidebar";
 import { Icons } from "@sparkyidea/ui/icons";
 import { ContextualSaveBar } from "@/components/navigation/contextual-save-bar";
 import { getUserMenuLinks } from "@/configs/user-menu.config";
+import { useNavigationArea } from "@/hooks/use-navigation-area";
 import { authClient } from "@/lib/auth-client";
 import NotificationDropdown from "./notification-dropdown";
 
-export function AppHeader({
-  navigation = "app",
-}: {
-  navigation?: "app" | "admin";
-}) {
+export function AppHeader() {
+  const navigation = useNavigationArea();
   const { data: session } = authClient.useSession();
   return (
     <header className="sticky top-0 z-40 flex h-14 w-full shrink-0 items-center gap-2 bg-header-background px-2 text-header-foreground">

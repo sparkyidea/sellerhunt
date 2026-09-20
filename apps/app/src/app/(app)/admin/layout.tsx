@@ -1,6 +1,5 @@
 import { hasAdminRole } from "@dashseller/auth/lib/auth/roles";
 import { notFound } from "next/navigation";
-import { AppShell } from "@/components/layout/app-shell";
 import { WidgetProvider } from "@/components/providers/wrappers/widget-provider";
 import { getServerSession } from "@/lib/session.server";
 
@@ -15,9 +14,9 @@ export default async function AdminLayout({
     notFound();
   }
   return (
-    <AppShell navigation="admin">
+    <>
       {children}
       <WidgetProvider />
-    </AppShell>
+    </>
   );
 }

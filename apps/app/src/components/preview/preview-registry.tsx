@@ -1,18 +1,8 @@
-import dynamic from "next/dynamic";
 import type { ComponentType } from "react";
 import { ScanListingPreviewView } from "@/modules/explorer/views/scan-listing/scan-listing-panel";
 import { ScanListingPreviewViewSkeleton } from "@/modules/explorer/views/scan-listing/scan-listing-panel-skeleton";
-
-const MobileProfilePreviewView = dynamic(() =>
-  import(
-    "@/modules/mobile-profiles/views/mobile-profile/mobile-profile-panel"
-  ).then((mod) => mod.MobileProfilePreviewView)
-);
-const MobileProfilePreviewViewSkeleton = dynamic(() =>
-  import(
-    "@/modules/mobile-profiles/views/mobile-profile/mobile-profile-panel-skeleton"
-  ).then((mod) => mod.MobileProfilePreviewViewSkeleton)
-);
+import { MobileProfilePreviewView } from "@/modules/mobile-profiles/views/mobile-profile/mobile-profile-panel";
+import { MobileProfilePreviewViewSkeleton } from "@/modules/mobile-profiles/views/mobile-profile/mobile-profile-panel-skeleton";
 
 interface PreviewEntry {
   /** Route this kind falls back to on mobile, where there is no side panel. */
@@ -25,7 +15,7 @@ interface PreviewEntry {
 
 /**
  * Every preview kind, in one place. A new kind is one entry here and nothing
- * else: `PreviewKind` is the key set, `PreviewPanel` renders `View`/`Skeleton`,
+ * else: `PreviewKind` is the key set, `PreviewContent` renders `View`/`Skeleton`,
  * and `useOpenPreview` navigates to `page` on mobile. `satisfies` makes a
  * half-filled entry a type error, so no kind can reach the panel without a view.
  */

@@ -39,7 +39,7 @@ move.
 - `apps/app/src/app/(app)/` — authenticated user routes: `explorer/listings`
   (+ `[listingId]`), `settings/{account,security,appearance}`. `(app)/page.tsx`
   redirects to `/explorer/listings`.
-- `apps/app/src/app/admin/` — admin routes: `mobile-profiles`
+- `apps/app/src/app/(app)/admin/` — admin routes: `mobile-profiles`
   (+ `[profileId]`; module `apps/app/src/modules/mobile-profiles/`).
   `admin/layout.tsx` is the server-side role gate; `admin/page.tsx`
   redirects to `/admin/mobile-profiles`.
