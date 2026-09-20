@@ -6,8 +6,8 @@ import { SidebarTrigger } from "@sparkyidea/ui/components/sidebar";
 import { Icons } from "@sparkyidea/ui/icons";
 import { ContextualSaveBar } from "@/components/navigation/contextual-save-bar";
 import { getUserMenuLinks } from "@/configs/user-menu.config";
+import { useNavigationArea } from "@/hooks/use-navigation-area";
 import { authClient } from "@/lib/auth-client";
-import { useNavigationArea } from "./navigation-area";
 import NotificationDropdown from "./notification-dropdown";
 
 export function AppHeader() {

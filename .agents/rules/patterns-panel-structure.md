@@ -10,9 +10,10 @@ The shared `(app)/layout.tsx` mounts one `AppPanels` adapter around the reusable
 UI `PanelRoot` for Explorer, admin and settings. The nested `admin/layout.tsx`
 retains the server role gate and admin dialogs, without a second shell.
 Routes declare content with `PanelRoute`; they do not own panel surfaces.
-`NavigationAreaProvider` derives the dashboard from the route. Settings routes
-use the origin captured in memory when a settings link was clicked
-(`openSettings` via `Link onNavigate`); `closeSettings` returns there, or to
+`useNavigationArea()` derives the dashboard from the pathname; settings is part
+of the app area and admin has no settings entry. The page settings was opened
+from is captured in the `useSettingsOrigin` store when the settings link is
+clicked (`Link onNavigate`); the settings layout returns there on close, or to
 `/explorer/listings` after a reload or in a fresh tab. `AppPanels` keeps a stable root;
 route declarations replace the main content when navigating between areas,
 while settings preserves the underlying panels. Previews from another area are cleared,
@@ -24,9 +25,9 @@ The `(app)` layout prerenders as static HTML. Search params do not exist at
 build time, so a component that calls `useSearchParams()` during a static
 render bails out to the client up to the nearest `Suspense`, and a bare
 boundary at the layout leaves an empty shell in the HTML. Never read search
-params in shell-wide components (layout, `NavigationAreaProvider`, header,
-sidebar). State that must survive a route change, such as the settings origin,
-lives in a client provider in memory, never in `?from=`. Verify with
+params in shell-wide components (layout, header, sidebar). State that must
+survive a route change, such as the settings origin, lives in a client store in
+memory (`hooks/use-settings-origin.ts`), never in `?from=`. Verify with
 `next build`: app routes stay `○` and
 `.next/server/app/explorer/listings.html` contains the header.
 

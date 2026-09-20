@@ -5,16 +5,20 @@ import {
   SheetContent,
   SheetTitle,
 } from "@sparkyidea/ui/components/sheet";
+import type { Route } from "next";
+import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { useSettingsNavigation } from "@/components/navigation/navigation-area";
 import { SettingsSidebar } from "@/components/navigation/settings-nav";
+import { useSettingsOrigin } from "@/hooks/use-settings-origin";
+import { SETTINGS_HOME } from "@/lib/navigation-area";
 
 interface SettingsLayoutProps {
   children: React.ReactNode;
 }
 
 export default function Settings({ children }: SettingsLayoutProps) {
-  const { closeSettings } = useSettingsNavigation();
+  const router = useRouter();
+  const returnTo = useSettingsOrigin((s) => s.returnTo);
   const [isOpen, setIsOpen] = useState(true);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -33,7 +37,9 @@ export default function Settings({ children }: SettingsLayoutProps) {
     if (closeTimer.current !== null) {
       clearTimeout(closeTimer.current);
     }
-    closeTimer.current = setTimeout(closeSettings, 200);
+    closeTimer.current = setTimeout(() => {
+      router.push((returnTo ?? SETTINGS_HOME) as Route);
+    }, 200);
   };
 
   return (

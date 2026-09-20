@@ -16,19 +16,18 @@ describe("admin navigation", () => {
     expect(urls.some((url) => url?.startsWith("/admin"))).toBe(false);
   });
 
-  it("gives admin its own list and independently defined footer links", () => {
+  it("gives admin its own list and footer links, without app settings", () => {
     const { appNavMain, appNavSecondary } = AdminNavConfig();
     expect(appNavMain.map((item) => item.url)).toEqual([
       "/admin/mobile-profiles",
     ]);
-    expect(appNavSecondary.map((item) => item.title)).toEqual([
-      "Help",
-      "Settings",
-    ]);
+    expect(appNavSecondary.map((item) => item.title)).toEqual(["Help"]);
     expect(appNavSecondary.map((item) => item.url)).toEqual([
       "mailto:help@turboitem.com",
-      "/settings",
     ]);
+    expect(appNavSecondary.some((item) => item.url === "/settings")).toBe(
+      false
+    );
   });
 
   it("replaces the admin dashboard entry with Back to app inside admin", () => {

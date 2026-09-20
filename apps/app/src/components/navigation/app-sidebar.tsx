@@ -11,8 +11,8 @@ import { cn } from "@sparkyidea/ui/lib/utils";
 import type * as React from "react";
 import { AdminNavConfig } from "@/configs/admin-nav.config";
 import { AppNavConfig } from "@/configs/app-nav.config";
+import { useNavigationArea } from "@/hooks/use-navigation-area";
 import { SidebarSecondary } from "./app-sidebar-secondary";
-import { useNavigationArea } from "./navigation-area";
 import { SidebarMain } from "./sidebar-main";
 
 export function AppSidebar({

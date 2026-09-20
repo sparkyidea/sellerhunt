@@ -3,10 +3,6 @@ export type NavigationArea = "app" | "admin";
 /** Where closing settings goes when no origin is known (reload, fresh tab). */
 export const SETTINGS_HOME = "/explorer/listings";
 
-export function isSettingsPath(pathname: string) {
-  return pathname === "/settings" || pathname.startsWith("/settings/");
-}
-
 export function getNavigationArea(pathname: string): NavigationArea {
   return pathname === "/admin" || pathname.startsWith("/admin/")
     ? "admin"
