@@ -60,6 +60,7 @@ The package only exports:
 - `EbayScanClient` — concrete class (rare; prefer the interface)
 - `ScanRequestError` — typed error for routing 401/403 vs 5xx
 - All result + options types per method (for downstream typing)
+- `/listing-observation` — normalized observation validation and current price ranges
 
 Standalone adapter functions are **not** exported. Callers go through the
 factory. Sandbox scripts use relative imports (`../../src/adapters/ebay/...`)

@@ -5,16 +5,7 @@ import {
   CardTitle,
 } from "@sparkyidea/ui/components/card";
 import type { ScanListingData } from "../types";
-
-function formatPrice(cents: number | null, currency: string | null) {
-  if (cents == null) {
-    return "—";
-  }
-  return (cents / 100).toLocaleString("en-US", {
-    style: "currency",
-    currency: currency ?? "USD",
-  });
-}
+import { formatScanPriceRange } from "./scan-price";
 
 function Row({ label, value }: { label: string; value: React.ReactNode }) {
   return (
@@ -40,7 +31,7 @@ export function ScanListingPricingCard({
           label="Price"
           value={
             <span className="font-semibold">
-              {formatPrice(listing.price, listing.currency)}
+              {formatScanPriceRange(listing)}
             </span>
           }
         />

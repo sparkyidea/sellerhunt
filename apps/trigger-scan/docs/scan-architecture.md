@@ -46,7 +46,7 @@ parents, and leaves:
 
 | Entity | Cooldown | Timestamp means |
 | --- | --- | --- |
-| Listing | 6 hours | Fitting titled detail persisted |
+| Listing | 6 hours | Completed full scan saved (`scan_listing.last_scanned_at`) |
 | Seller | 24 hours | Stats and catalog checks complete, or confirmed seller gone |
 | Keyword | 7 days | Configured search and all required listing/seller work complete |
 
@@ -54,16 +54,29 @@ Freshness checks include marketplace identity. Parents prefilter before enqueuei
 leaves check again before loading a persona. `forceRefresh` bypasses only the
 keyword/seller parent's freshness gate; listing freshness still applies.
 
-Only titled listings passing the current thresholds are persisted. Missing titles
-and threshold rejections complete a check without storing a row. Stored metrics
+New listings must have titles and pass the current thresholds. Existing listings
+retain valid full observations even below thresholds. Invalid titles or partial
+variant sets fail the scan without changing current data/history. Stored metrics
 are re-evaluated against current thresholds while fresh; reused verdicts perform
 no write, snapshot, HTTP request, or inline extraction. Listing-detail 404s complete
 the current check but create no negative-cache row and do not delete existing data.
 
-Inline LLM extraction runs only for newly inserted fitting listings. Existing rows
-with unresolved keywords and remaining attempts can use the manual catch-up task.
-Extraction failures never fail a scan. Persistence of unqualified observations and
-qualification-aware catch-up selection are a later stage.
+Inline LLM extraction runs only for newly inserted qualifying listings, using ID
+and title. Phrases enter the independent keyword pool; extraction does not link or
+update listings, track attempts, or support manual catch-up. Failures never fail a scan.
+
+Current values and listing sales history follow the
+[listing observation contract](../../../.agents/knowledge-base.md#listing-observations).
+Each saved full scan atomically updates the listing and current variants and
+appends one listing sales snapshot, even when counters are unchanged. Its save
+timestamp is shared by listing `last_scanned_at`, observed/changed variant `updated_at`,
+and snapshot `created_at`. Failed scans and cache hits change none of these.
+There is no sequence or scan-start tracking; overlapping completed scans can
+both save under a row lock, with the last transaction determining current values.
+
+Task verdicts contain only qualifying listings and carry no `fit` or `persisted`
+flag. `isNew` controls first-time keyword extraction. Below-threshold existing
+listings can record history without appearing in returned verdicts.
 
 ## Best-effort duplicate suppression
 
@@ -116,7 +129,9 @@ retain three attempts. Persona-level request failures retry after 20 minutes,
 longer than the 15-minute cooldown. Other errors use the task's normal backoff.
 After attempts are exhausted, scans remain visibly failed and stale for recovery.
 Successful leaf output includes `mode: scanned`, `triggered`, `fresh`, `scanned`,
-`notFound`, `unfit`, and `verdicts`; no successful output represents an abort.
+`notFound`, and qualifying `verdicts`; no successful output represents an abort.
+Fresh/scanned counts include completed nonqualifying checks, even though these
+listings are omitted from verdicts. There is no `unfit` output count.
 
 ## Persona selection and queues
 
@@ -160,8 +175,9 @@ cooldown or dead promotion. Each leaf processes its IDs sequentially;
 this does not establish physical placement or request serialization across runs.
 
 Cron queries visible in-flight work and removes busy references from its selected
-batch before dispatch. Selection orders stale rows by
-`last_scanned_at ASC NULLS FIRST, id ASC`, includes never-scanned rows, filters retired
+batch before dispatch. Selection orders stale rows by listing `last_scanned_at` or
+seller/keyword `last_scanned_at`, then `id ASC`. It includes never-scanned
+seller/keyword rows, filters retired
 keywords, and isolates marketplaces. Suppressed rows can consume the selection
 budget until the later fairness stage moves exclusion before SQL LIMIT and caps
 first scans. Overlapping cron listing sweeps are suppressed while earlier cron

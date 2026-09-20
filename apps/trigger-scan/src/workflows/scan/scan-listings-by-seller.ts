@@ -99,7 +99,7 @@ export const scanListingsBySeller = schemaTask({
       totalItemsSold: seller.totalItemsSold,
     });
     const catalog = await collectListingIds(client, manager, sellerId, config);
-    const { verdicts, stale } = await partitionFreshListings(
+    const { stale } = await partitionFreshListings(
       marketplace,
       [...catalog.listingIds],
       config
@@ -112,7 +112,7 @@ export const scanListingsBySeller = schemaTask({
     );
     metadata
       .set("listingsDiscovered", catalog.listingIds.size)
-      .set("listingsFresh", verdicts.length)
+      .set("listingsFresh", catalog.listingIds.size - stale.length)
       .set("listingBatches", children.batches);
     if (catalog.error) {
       throw catalog.error;
@@ -130,7 +130,7 @@ export const scanListingsBySeller = schemaTask({
       status: "completed",
       sellerId,
       listingsDiscovered: catalog.listingIds.size,
-      listingsFresh: verdicts.length,
+      listingsFresh: catalog.listingIds.size - stale.length,
       listingBatches: children.batches,
     } as const;
   },

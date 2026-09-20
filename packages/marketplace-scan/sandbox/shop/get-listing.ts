@@ -72,11 +72,12 @@ console.log(`  marketplace:           ${l.marketplace}`);
 console.log(`  reference:             ${l.reference}`);
 console.log(`  title:                 ${l.title.slice(0, 70)}`);
 console.log(`  sellerReference:       ${l.sellerReference ?? "—"}`);
-console.log(`  price/currency:        ${l.price ?? "—"} ${l.currency ?? ""}`);
+console.log(
+  `  price/currency:        ${l.variants[0]?.price ?? "—"} ${l.variants[0]?.currency ?? ""}`
+);
 console.log(`  soldLast30Days:        ${l.soldLast30Days ?? "—"}`);
 console.log(`  imageUrls:             ${l.imageUrls?.length ?? 0}`);
 console.log(`  url:                   ${l.url ?? "—"}`);
-console.log(`  variant flag:          ${l.variant}`);
 console.log(`  variants count:        ${l.variants.length}`);
 const adjacentPagesLen = result.raw.adjacentPages?.length ?? 0;
 console.log(`  adjacency calls fired: ${adjacentPagesLen}`);

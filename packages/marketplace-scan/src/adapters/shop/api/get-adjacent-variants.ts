@@ -170,9 +170,12 @@ export async function getAdjacentVariants(
 
   const nodes =
     raw.data?.storefrontProductAdjacentVariants?.adjacentVariants ?? [];
-  const adjacentVariants = nodes
-    .filter((v): v is ShopAdjacentVariantNode => Boolean(v?.id))
-    .map(parseVariant);
+  const adjacentVariants = nodes.map((v) => {
+    if (!v?.id) {
+      throw new Error("Missing Shop variant identity");
+    }
+    return parseVariant(v);
+  });
 
   return {
     adjacentVariants,

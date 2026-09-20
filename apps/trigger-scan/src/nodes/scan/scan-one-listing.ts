@@ -1,8 +1,12 @@
-/** Fetch detail, apply shared thresholds, and persist fitting titled observations.
+/** Fetch complete detail; thresholds gate discovery, not existing listing history.
  * Fitting listings ensure a seller row and newly inserted rows feed the LLM.
  * Freshness is partitioned once by the leaf, before persona loading.
  */
-import { logger } from "@trigger.dev/sdk";
+import {
+  validateListingObservation,
+  variantPriceRange,
+} from "@dashseller/marketplace-scan/listing-observation";
+import { db } from "../../utils/db";
 import type { MobileProfileTokenManager } from "../../utils/mobile-profile-manager";
 import type { ScanConfig } from "../../utils/scan-config";
 import { extractListingId } from "./extract-listing-id";
@@ -10,11 +14,7 @@ import { checkListingThresholds, type ListingVerdict } from "./listing-verdict";
 import { upsertScanListing } from "./upsert-scan-listing";
 import { upsertScanSeller } from "./upsert-scan-seller";
 
-export type {
-  FitListingVerdict,
-  ListingVerdict,
-  UnfitListingVerdict,
-} from "./listing-verdict";
+export type { ListingVerdict } from "./listing-verdict";
 
 type ScanClient = Awaited<
   ReturnType<MobileProfileTokenManager["createScanClient"]>
@@ -31,11 +31,11 @@ export interface ScanOneListingParams {
 
 /**
  * Scan a single listing with a caller-owned client. Throws on a `getListing`
- * failure (the caller classifies + routes); returns a verdict otherwise.
+ * failure (the caller classifies + routes); returns null for a nonqualifying listing.
  */
 export async function scanOneListing(
   params: ScanOneListingParams
-): Promise<ListingVerdict> {
+): Promise<ListingVerdict | null> {
   const { client, config, manager, marketplace } = params;
   const listingId = extractListingId(params.listingId);
 
@@ -48,45 +48,25 @@ export async function scanOneListing(
   const listing = result.listing;
   const sellerReference = listing.sellerReference ?? null;
 
-  if (!listing.title) {
-    logger.warn("Listing detail missing title; skipping persist", {
-      marketplace,
-      listingId,
-    });
-    return { listingId, fit: false, sellerReference };
+  if (listing.reference !== listingId || listing.marketplace !== marketplace) {
+    throw new Error("Unexpected listing identity");
   }
-
-  if (checkListingThresholds(listing, marketplace, config)) {
-    return { listingId, fit: false, sellerReference };
-  }
-  if (sellerReference) {
+  validateListingObservation(listing);
+  const fit = !checkListingThresholds(
+    { ...listing, price: variantPriceRange(listing.variants).priceMin },
+    marketplace,
+    config
+  );
+  if (fit && sellerReference) {
     await upsertScanSeller({ marketplace, reference: sellerReference });
   }
-  const upserted = await upsertScanListing({
-    marketplace,
-    reference: listingId,
-    sellerReference: listing.sellerReference,
-    title: listing.title,
-    description: listing.description,
-    condition: listing.condition,
-    marketplaceCategoryReference: listing.marketplaceCategoryReference,
-    categoryPath: listing.categoryPath,
-    imageUrls: listing.imageUrls,
-    url: listing.url,
-    variant: listing.variant,
-    goodTillCancelled: listing.goodTillCancelled,
-    startedAt: listing.startedAt,
-    endedAt: listing.endedAt,
-    price: listing.price,
-    currency: listing.currency,
-    itemSold: listing.itemSold,
-    soldLast24h: listing.soldLast24h,
-    soldLast30Days: listing.soldLast30Days,
-  });
+  const upserted = await upsertScanListing(db, listing, fit);
+  if (!(fit && upserted.id)) {
+    return null;
+  }
 
   return {
     listingId,
-    fit: true,
     sellerReference,
     scanListingId: upserted.id,
     isNew: upserted.isNew,

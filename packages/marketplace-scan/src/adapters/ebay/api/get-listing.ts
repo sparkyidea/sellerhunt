@@ -10,6 +10,7 @@
  * JSON shape can change without notice, bearer-token auth is unofficial.
  */
 import { convert } from "html-to-text";
+import { validateListingObservation } from "../../../listing-observation";
 import type { ScanListing } from "../../../types";
 import { ebayFetch } from "../http";
 import type {
@@ -138,6 +139,7 @@ export interface Listing {
   endedAt: string | null;
   /** True if the listing is Good Till Cancelled. */
   goodTillCancelled: boolean | null;
+  hasVariations: boolean | null;
   /** All listing image URLs in display order. */
   imageUrls: string[];
   /** Lifetime items sold for this listing (the key scanner metric). */
@@ -150,6 +152,8 @@ export interface Listing {
   price: number | null;
   /** Seller — username, feedback, store info. Null if VLS omitted seller. */
   seller: ListingSeller | null;
+  /** eBay's sold-out flag for single-SKU listings (`SEMANTIC_DATA_V2`). Null when the module is absent. */
+  singleSkuOutOfStock: boolean | null;
   /**
    * Items sold in the last 24h. Best-effort: pulled from a "sold in last 24"
    * hotness signal if eBay surfaces one for this listing; null otherwise.
@@ -252,12 +256,16 @@ export async function getListing(
   options: GetListingOptions
 ): Promise<GetListingResult> {
   const raw = await fetchListingDetail(options);
+  if (raw.modules?.VLS?.listing?.listingId !== options.listingId) {
+    throw new Error("Unexpected eBay listing identity");
+  }
   const parsed = parseListing(raw);
   const listing = mapListing({
     listingId: options.listingId,
     parsed,
   });
 
+  validateListingObservation(listing);
   return {
     listingId: options.listingId,
     listing,
@@ -281,6 +289,7 @@ function parseListing(raw: EbayListingDetailResponse): Listing {
   const buyBox = raw.modules?.BUY_BOX?.binModel?.price;
 
   return {
+    hasVariations: vls?.multipleVariationsListed ?? null,
     categoryPath: extractCategoryPath(vls),
     condition:
       vls?.listingClassification?.generalCondition?.condition?.name?.content ??
@@ -298,6 +307,10 @@ function parseListing(raw: EbayListingDetailResponse): Listing {
     listingFormat: vls?.format ? vls.format.toLowerCase() : null,
     price: typeof buyBox?.value?.value === "number" ? buyBox.value.value : null,
     seller: extractSeller(vls),
+    singleSkuOutOfStock:
+      typeof raw.modules?.SEMANTIC_DATA_V2?.singleSkuOutOfStock === "boolean"
+        ? raw.modules.SEMANTIC_DATA_V2.singleSkuOutOfStock
+        : null,
     soldIn24h: extractSoldIn24h(signals),
     startedAt: vls?.listingLifecycle?.scheduledStartDate?.value ?? null,
     title: vls?.title?.content ?? null,
@@ -332,10 +345,19 @@ function extractVariations(
     return [];
   }
   const out: ParsedListingVariant[] = [];
+  const identities = new Set<number>();
   for (const entry of raw) {
-    if (typeof entry?.variationId !== "number") {
-      continue;
+    if (
+      typeof entry?.variationId !== "number" ||
+      !Number.isSafeInteger(entry.variationId) ||
+      entry.variationId <= 0
+    ) {
+      throw new Error("Invalid eBay variation identity");
     }
+    if (identities.has(entry.variationId)) {
+      throw new Error("Duplicate eBay variation identity");
+    }
+    identities.add(entry.variationId);
     out.push(parseVariation(entry));
   }
   return out;
@@ -350,7 +372,7 @@ function parseVariation(entry: RawItemVariation): ParsedListingVariant {
     availableQuantity:
       typeof availability?.remainingQuantity === "number"
         ? availability.remainingQuantity
-        : (availability?.availableQuantity ?? null),
+        : null,
     attributes: extractAspectAttributes(entry.aspects),
     currency: basePrice?.currency ?? null,
     imageUrls: extractAspectImageUrls(entry.aspects),

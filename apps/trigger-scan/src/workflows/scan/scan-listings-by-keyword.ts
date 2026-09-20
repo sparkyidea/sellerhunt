@@ -98,7 +98,7 @@ export const scanListingsByKeyword = schemaTask({
     );
     metadata
       .set("listingsDiscovered", search.listingIds.size)
-      .set("listingsFresh", verdicts.length)
+      .set("listingsFresh", search.listingIds.size - stale.length)
       .set("sellersDeferred", sellers.deferred);
     if (search.error) {
       throw search.error;
@@ -122,7 +122,7 @@ export const scanListingsByKeyword = schemaTask({
       status: "completed",
       keyword,
       listingsDiscovered: search.listingIds.size,
-      listingsFresh: verdicts.length,
+      listingsFresh: search.listingIds.size - stale.length,
       sellersLaunched: sellers.launched,
       sellersSkippedFresh: sellers.fresh,
     } as const;
@@ -168,7 +168,7 @@ async function launchSellers(
 ) {
   const candidates = new Set<string>();
   for (const verdict of verdicts) {
-    if (verdict.fit && verdict.sellerReference) {
+    if (verdict.sellerReference) {
       candidates.add(verdict.sellerReference);
     }
   }

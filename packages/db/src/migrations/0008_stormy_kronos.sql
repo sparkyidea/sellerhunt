@@ -1,0 +1,2 @@
+ALTER TABLE "scan_listing" ADD COLUMN "last_scanned_at" timestamp;--> statement-breakpoint
+CREATE INDEX "scan_listing_marketplace_last_scanned_at_idx" ON "scan_listing" USING btree ("marketplace","last_scanned_at","id");

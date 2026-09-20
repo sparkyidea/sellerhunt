@@ -2,6 +2,7 @@ import { createDbClient } from "@dashseller/db/client";
 import { scanKeyword, scanListing, scanSeller } from "@dashseller/db/schema";
 import { migrateTestDb, TEST_DATABASE_URL } from "@dashseller/db/testing";
 import { afterAll, beforeAll, beforeEach, expect, it, vi } from "vitest";
+import { dbKeywordStore } from "../keyword-store";
 import { pickStale } from "../scan-dispatch";
 import { registerScanKeywords } from "../upsert-scan-keyword";
 
@@ -57,6 +58,98 @@ beforeEach(async () => {
 });
 afterAll(() => connection.close());
 const old = new Date("2020-01-01");
+
+it("selects stale listings by lastScannedAt, ordered oldest first and scoped to marketplace", async () => {
+  const cutoff = new Date(Date.now() - 6 * 60 * 60 * 1000);
+  await connection.db.insert(scanListing).values([
+    {
+      id: "old",
+      marketplace: "ebay",
+      reference: "old",
+      title: "Old scan",
+      lastScannedAt: old,
+    },
+    {
+      id: "boundary",
+      marketplace: "ebay",
+      reference: "boundary",
+      title: "At cutoff",
+      lastScannedAt: cutoff,
+    },
+    {
+      id: "fresh",
+      marketplace: "ebay",
+      reference: "fresh",
+      title: "Fresh scan",
+      lastScannedAt: new Date(),
+    },
+    {
+      id: "other",
+      marketplace: "shop",
+      reference: "other",
+      title: "Other marketplace",
+      lastScannedAt: old,
+    },
+  ]);
+  expect(await pickStale("listing", "ebay", 10)).toEqual(["old", "boundary"]);
+  expect(await pickStale("listing", "ebay", 1)).toEqual(["old"]);
+  expect(await pickStale("listing", "ebay", 0)).toEqual([]);
+});
+
+it("keyword extraction writes only the pool and never refreshes listings", async () => {
+  await connection.db.insert(scanListing).values({
+    marketplace: "ebay",
+    reference: "old",
+    title: "Camera",
+    lastScannedAt: old,
+  });
+  await connection.db.insert(scanKeyword).values({
+    id: "manual",
+    marketplace: "ebay",
+    keyword: "camera",
+    source: "manual",
+    firstSeenAt: old,
+    lastSeenAt: old,
+    lastScannedAt: old,
+    deadAt: old,
+  });
+  const before = await connection.db.select().from(scanListing);
+  await dbKeywordStore.saveKeyword({ marketplace: "ebay", keyword: "camera" });
+  await dbKeywordStore.saveKeyword({ marketplace: "shop", keyword: "camera" });
+  expect(await connection.db.select().from(scanListing)).toEqual(before);
+  expect(await pickStale("listing", "ebay", 10)).toEqual(["old"]);
+  const keywords = await connection.db.select().from(scanKeyword);
+  expect(keywords).toHaveLength(2);
+  expect(keywords.find((row) => row.id === "manual")).toMatchObject({
+    source: "manual",
+    firstSeenAt: old,
+    lastScannedAt: old,
+    deadAt: old,
+  });
+  expect(keywords.find((row) => row.marketplace === "shop")).toMatchObject({
+    source: "llm",
+    lastScannedAt: null,
+    deadAt: null,
+  });
+});
+
+it("keeps seller freshness based on lastScannedAt", async () => {
+  await connection.db.insert(scanSeller).values([
+    {
+      marketplace: "ebay",
+      reference: "stale",
+      lastScannedAt: old,
+      updatedAt: new Date(),
+    },
+    {
+      marketplace: "ebay",
+      reference: "fresh",
+      lastScannedAt: new Date(),
+      updatedAt: old,
+    },
+  ]);
+  expect(await pickStale("seller", "ebay", 10)).toEqual(["stale"]);
+});
 
 it("preserves existing keyword source, timestamps, retirement, and marketplace identity", async () => {
   await connection.db.insert(scanKeyword).values({

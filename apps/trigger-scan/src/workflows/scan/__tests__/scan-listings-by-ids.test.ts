@@ -90,7 +90,6 @@ const ids = ["123456789012", "123456789013", "123456789014"];
 function verdict(listingId: string, isNew: boolean): ListingVerdict {
   return {
     listingId,
-    fit: true,
     sellerReference: "seller-1",
     isNew,
     scanListingId: `row-${listingId}`,
@@ -106,7 +105,6 @@ interface ScannedResult {
   notFound: number;
   scanned: number;
   triggered: number;
-  unfit: number;
   verdicts: ListingVerdict[];
 }
 
@@ -170,7 +168,6 @@ it("answers fresh ids from the store and paces only the stale ids", async () => 
     notFound: 0,
     scanned: 2,
     triggered: 3,
-    unfit: 0,
   });
   expect(result.verdicts).toHaveLength(3);
   expect(result.fresh + result.scanned + result.notFound).toBe(
@@ -183,7 +180,6 @@ it("answers fresh ids from the store and paces only the stale ids", async () => 
     [ids[1], ids[2]].map((id) => ({
       id: `row-${id}`,
       title: "Camera",
-      categoryPath: null,
     }))
   );
 });
@@ -206,6 +202,50 @@ it("loads no persona when every id is fresh", async () => {
   expect(result.fresh + result.scanned + result.notFound).toBe(
     result.triggered
   );
+});
+
+it("returns only qualifying listings without fit or persistence reporting", async () => {
+  mocks.partitionFreshListings.mockResolvedValue({
+    verdicts: [],
+    stale: ids.slice(1),
+  });
+  mocks.scanOneListing
+    .mockResolvedValueOnce(null)
+    .mockResolvedValueOnce(verdict(ids[2] ?? "", true));
+  const result = await runLeaf(ids);
+  expect(result).toEqual({
+    marketplace: "ebay",
+    mode: "scanned",
+    triggered: 3,
+    fresh: 1,
+    scanned: 2,
+    notFound: 0,
+    verdicts: [verdict(ids[2] ?? "", true)],
+  });
+  expect(result).not.toHaveProperty("unfit");
+  for (const item of result.verdicts) {
+    expect(item).not.toHaveProperty("fit");
+    expect(item).not.toHaveProperty("persisted");
+  }
+  expect(mocks.resolveKeywordsWithLlm).toHaveBeenCalledWith("ebay", config, [
+    { id: `row-${ids[2]}`, title: "Camera" },
+  ]);
+});
+
+it("counts cached nonqualifying listings as fresh without fetching or extracting keywords", async () => {
+  mocks.partitionFreshListings.mockResolvedValue({ verdicts: [], stale: [] });
+  expect(await runLeaf(ids)).toEqual({
+    marketplace: "ebay",
+    mode: "scanned",
+    triggered: 3,
+    fresh: 3,
+    scanned: 0,
+    notFound: 0,
+    verdicts: [],
+  });
+  expect(mocks.loadForThisBox).not.toHaveBeenCalled();
+  expect(mocks.scanOneListing).not.toHaveBeenCalled();
+  expect(mocks.resolveKeywordsWithLlm).not.toHaveBeenCalled();
 });
 
 it("keeps the failing and untouched IDs in a persona error and uses a 20-minute retry", async () => {

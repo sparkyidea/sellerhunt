@@ -17,7 +17,7 @@ Layer 0  config, dataview, env, marketplace-scan, ui   (no internal deps)
 Layer 1  db                                            → env
 Layer 2  auth                                          → db, env, ui
 Layer 3  trigger-scan                                  → db, env, marketplace-scan
-         trpc                                          → auth, db, dataview
+         trpc                                          → auth, db, dataview, marketplace-scan
 Layer 4  apps/app                                      → auth, db, env, trpc, dataview, ui
          apps/api                                      → auth, db, env, trpc
 ```

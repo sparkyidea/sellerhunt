@@ -4,9 +4,10 @@ import {
   scanListingVariant,
   scanSeller,
 } from "@dashseller/db/schema";
+import { variantPriceRange } from "@dashseller/marketplace-scan/listing-observation";
 import { getCursorParams } from "@sparkyidea/dataview/types";
 import { TRPCError } from "@trpc/server";
-import { and, count, eq } from "drizzle-orm";
+import { and, count, eq, sql } from "drizzle-orm";
 import { z } from "zod";
 import { publicProcedure, router } from "../index";
 import { buildWhere, type RelationMap } from "../lib/build-filter";
@@ -18,6 +19,10 @@ import {
 import { buildRollupExtras, flattenRelationArrays } from "../lib/build-rollup";
 import { buildSearchFilter } from "../lib/build-search";
 import { buildCursor } from "../lib/build-sort";
+import {
+  listingHistoryInput,
+  readListingHistory,
+} from "../lib/scan-listing-history";
 import { getGroupInput, getManyInput } from "../lib/schemas";
 
 /**
@@ -39,6 +44,9 @@ const scanListingRelations: RelationMap = {
 };
 
 export const scanListingRouter = router({
+  getListingHistory: publicProcedure
+    .input(listingHistoryInput)
+    .query(async ({ input }) => await readListingHistory(db, input)),
   get: publicProcedure
     .input(z.object({ id: z.string() }))
     .query(async ({ input }) => {
@@ -46,7 +54,9 @@ export const scanListingRouter = router({
         where: eq(scanListing.id, input.id),
         with: {
           seller: true,
-          variants: true,
+          variants: {
+            where: sql`${scanListingVariant.status} IS DISTINCT FROM 'removed'`,
+          },
         },
       });
 
@@ -57,7 +67,7 @@ export const scanListingRouter = router({
         });
       }
 
-      return result;
+      return { ...result, ...variantPriceRange(result.variants) };
     }),
 
   getMany: publicProcedure
@@ -138,7 +148,9 @@ export const scanListingRouter = router({
         extras,
         with: {
           seller: true,
-          variants: true,
+          variants: {
+            where: sql`${scanListingVariant.status} IS DISTINCT FROM 'removed'`,
+          },
         },
       });
 
@@ -151,13 +163,17 @@ export const scanListingRouter = router({
         items.reverse();
       }
 
-      flattenRelationArrays(items, ["seller", "variants"]);
+      const enriched = items.map((item) => ({
+        ...item,
+        ...variantPriceRange(item.variants),
+      }));
+      flattenRelationArrays(enriched, ["seller", "variants"]);
 
       const startCursor = items[0]?.id ?? null;
       const endCursor = items.at(-1)?.id ?? null;
 
       return {
-        items,
+        items: enriched,
         startCursor,
         endCursor,
         hasNextPage: direction === "forward" ? hasExtra : !!before,
