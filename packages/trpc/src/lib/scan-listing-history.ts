@@ -4,7 +4,7 @@ import {
   scanListingSnapshot as snapshot,
 } from "@dashseller/db/schema";
 import { TRPCError } from "@trpc/server";
-import { and, desc, eq, gte, lt, lte, or } from "drizzle-orm";
+import { and, desc, eq, lt, lte, or } from "drizzle-orm";
 import { z } from "zod";
 
 export const listingHistoryInput = z
@@ -44,13 +44,14 @@ export async function readListingHistory(
     throw new TRPCError({ code: "NOT_FOUND", message: "Listing not found" });
   }
   const cursor = input.cursor;
+  // The lower bound is applied after the query so the oldest returned
+  // snapshot can still take its delta from the scan just before the bound.
   const rows = await database
     .select()
     .from(snapshot)
     .where(
       and(
         eq(snapshot.listingId, input.listingId),
-        input.from ? gte(snapshot.createdAt, input.from) : undefined,
         input.to ? lte(snapshot.createdAt, input.to) : undefined,
         cursor
           ? or(
@@ -65,15 +66,20 @@ export async function readListingHistory(
     )
     .orderBy(desc(snapshot.createdAt), desc(snapshot.id))
     .limit(input.limit + 1);
-  const items = rows.slice(0, input.limit).map((row, index) => ({
-    ...row,
-    salesDelta: salesDelta(row.itemSold, rows[index + 1]?.itemSold),
-  }));
+  const from = input.from;
+  const below = from ? rows.findIndex((row) => row.createdAt < from) : -1;
+  const inRange = below === -1 ? rows.length : below;
+  const items = rows
+    .slice(0, Math.min(input.limit, inRange))
+    .map((row, index) => ({
+      ...row,
+      salesDelta: salesDelta(row.itemSold, rows[index + 1]?.itemSold),
+    }));
   const last = items.at(-1);
   return {
     items,
     nextCursor:
-      rows.length > input.limit && last
+      inRange > input.limit && last
         ? { createdAt: last.createdAt, id: last.id }
         : null,
   };

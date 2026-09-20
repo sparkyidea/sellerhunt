@@ -295,3 +295,25 @@ it("derives Shop stock from the purchasable flag", async () => {
     Object.fromEntries(listing.variants.map((v) => [v.reference, v.status]))
   ).toEqual({ "1": "in_stock", "2": "in_stock", "3": "out_of_stock" });
 });
+
+it("marks the default unit of a sold-out simple eBay listing out of stock", async () => {
+  const raw = ebayRaw(false);
+  vi.stubGlobal(
+    "fetch",
+    vi.fn(async () =>
+      Response.json({
+        modules: {
+          ...raw.modules,
+          SEMANTIC_DATA_V2: { singleSkuOutOfStock: true },
+        },
+      })
+    )
+  );
+  const { listing } = await getEbayListing(ebayOptions);
+  expect(listing.variants).toEqual([
+    expect.objectContaining({
+      reference: "__default__",
+      status: "out_of_stock",
+    }),
+  ]);
+});

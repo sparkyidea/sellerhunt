@@ -60,8 +60,8 @@ function mapSingleVariant(parsed: ParsedListing): ScanListingVariant {
     imageUrls: parsed.imageUrls.length > 0 ? parsed.imageUrls : null,
     price: toCents(parsed.price),
     currency: parsed.currency,
-    // Simple listings expose no unit quantity; an active listing is purchasable.
-    status: "in_stock",
+    // Simple listings carry no per-unit quantity; eBay flags sold-out single SKUs.
+    status: parsed.singleSkuOutOfStock ? "out_of_stock" : "in_stock",
   };
 }
 

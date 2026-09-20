@@ -183,6 +183,13 @@ it("paginates history newest-first without overlap and applies date bounds", asy
   expect(
     (await caller.getListingHistory({ listingId, from: at(4) })).items
   ).toEqual([]);
+  // The oldest row inside the bound still takes its delta from the scan below it.
+  const bounded = await caller.getListingHistory({ listingId, from: at(2) });
+  expect(bounded.items.map((row) => [row.id, row.salesDelta])).toEqual([
+    [`${listingId}-3`, 5],
+    [`${listingId}-2`, 5],
+  ]);
+  expect(bounded.nextCursor).toBeNull();
   expect(
     (await caller.getListingHistory({ listingId, to: at(0) })).items
   ).toHaveLength(1);

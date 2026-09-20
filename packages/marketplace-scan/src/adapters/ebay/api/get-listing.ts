@@ -152,6 +152,8 @@ export interface Listing {
   price: number | null;
   /** Seller — username, feedback, store info. Null if VLS omitted seller. */
   seller: ListingSeller | null;
+  /** eBay's sold-out flag for single-SKU listings (`SEMANTIC_DATA_V2`). Null when the module is absent. */
+  singleSkuOutOfStock: boolean | null;
   /**
    * Items sold in the last 24h. Best-effort: pulled from a "sold in last 24"
    * hotness signal if eBay surfaces one for this listing; null otherwise.
@@ -305,6 +307,10 @@ function parseListing(raw: EbayListingDetailResponse): Listing {
     listingFormat: vls?.format ? vls.format.toLowerCase() : null,
     price: typeof buyBox?.value?.value === "number" ? buyBox.value.value : null,
     seller: extractSeller(vls),
+    singleSkuOutOfStock:
+      typeof raw.modules?.SEMANTIC_DATA_V2?.singleSkuOutOfStock === "boolean"
+        ? raw.modules.SEMANTIC_DATA_V2.singleSkuOutOfStock
+        : null,
     soldIn24h: extractSoldIn24h(signals),
     startedAt: vls?.listingLifecycle?.scheduledStartDate?.value ?? null,
     title: vls?.title?.content ?? null,
