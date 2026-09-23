@@ -86,6 +86,15 @@ export function mapListing(input: MapListingInput): ScanListing {
     imageUrls: product.imageUrls.length > 0 ? product.imageUrls : null,
     url: product.onlineStoreUrl,
 
+    // Shopify's `vendor` is the brand and `metafields` hold the rest, but the
+    // shop.app query doesn't request either yet — a follow-up fills these.
+    brand: null,
+    manufacturer: null,
+    specifics: null,
+
+    // Shopify products have no listing format.
+    type: null,
+
     // Shopify products don't have eBay-style auction lifecycle.
     startedAt: null,
     endedAt: null,

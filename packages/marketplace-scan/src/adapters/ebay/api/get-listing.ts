@@ -144,6 +144,8 @@ export interface Listing {
   imageUrls: string[];
   /** Lifetime items sold for this listing (the key scanner metric). */
   itemSold: number | null;
+  /** eBay's leaf category id for this listing, e.g. "183454". */
+  leafCategoryId: string | null;
   /** Listing format from eBay, normalized to lowercase ("fixed_price" / "auction"). */
   listingFormat: string | null;
   /** Marketplace identifier from VLS, e.g. "EBAY_US". */
@@ -166,6 +168,13 @@ export interface Listing {
    * Most listings don't have this signal — only high-velocity ones do.
    */
   soldIn24h: number | null;
+  /**
+   * Listing-wide item specifics, name → value, from
+   * `listingClassification.sellerSpecifiedAspect[]` entries flagged
+   * `sameValueForAllItemVariations`. Null when eBay surfaced none. Names are
+   * seller-typed free text ("Brand", "MPN", "UPC", "Character", …).
+   */
+  specifics: Record<string, string> | null;
   /** Listing start date, ISO-8601. */
   startedAt: string | null;
   /** Listing title. */
@@ -309,6 +318,7 @@ function parseListing(raw: EbayListingDetailResponse): Listing {
     goodTillCancelled: vls?.listingLifecycle?.goodTillCancelled ?? null,
     imageUrls: extractImageUrls(vls),
     itemSold: extractItemSold(vls),
+    leafCategoryId: extractLeafCategoryId(vls),
     marketplaceListedOn: vls?.marketplaceListedOn ?? null,
     listingFormat: vls?.format ? vls.format.toLowerCase() : null,
     price: typeof buyBox?.value?.value === "number" ? buyBox.value.value : null,
@@ -319,6 +329,7 @@ function parseListing(raw: EbayListingDetailResponse): Listing {
         : null,
     singleSkuRemainingQuantity: extractSingleSkuRemainingQuantity(vls),
     soldIn24h: extractSoldIn24h(signals),
+    specifics: extractSpecifics(vls),
     startedAt: vls?.listingLifecycle?.scheduledStartDate?.value ?? null,
     title: vls?.title?.content ?? null,
     variations: extractVariations(vls),
@@ -528,6 +539,62 @@ function extractCategoryPath(vls: VlsListing | undefined): string[] {
   return ids
     .map((c) => c.name?.content?.trim() ?? "")
     .filter((s) => s.length > 0);
+}
+
+/**
+ * eBay's leaf category id — the deepest `categoryIdentifier` entry of the
+ * best-ranked leaf category. `level` orders the breadcrumb, so the highest
+ * level is the leaf; ties fall back to the last entry, which is the order
+ * `extractCategoryPath` already relies on.
+ */
+function extractLeafCategoryId(vls: VlsListing | undefined): string | null {
+  const ids =
+    vls?.listingClassification?.leafCategories?.[0]?.categoryPathFromRoot
+      ?.categoryIdentifier;
+  const leaf = ids?.reduce(
+    (deepest, candidate) =>
+      (candidate?.level ?? 0) >= (deepest?.level ?? 0) ? candidate : deepest,
+    undefined as (typeof ids)[number] | undefined
+  );
+  return typeof leaf?.categoryId === "number" ? String(leaf.categoryId) : null;
+}
+
+/**
+ * Listing-wide item specifics (Brand, MPN, UPC, Model, Character, …).
+ *
+ * `sellerSpecifiedAspect[]` mixes two kinds of entry: the option axes of an
+ * MSKU listing (`sameValueForAllItemVariations: false`, already captured per
+ * unit as `ParsedListingVariant.attributes`) and the descriptive specifics
+ * that hold for the whole listing. Only the latter belong here — a "Color"
+ * axis is not a property of the listing.
+ *
+ * Multi-valued aspects are joined with ", " so the bag stays a flat string
+ * map; the raw response is still available to callers that need the array.
+ */
+function extractSpecifics(
+  vls: VlsListing | undefined
+): Record<string, string> | null {
+  const aspects = vls?.listingClassification?.sellerSpecifiedAspect;
+  if (!Array.isArray(aspects)) {
+    return null;
+  }
+  const out: Record<string, string> = {};
+  for (const aspect of aspects) {
+    if (aspect?.sameValueForAllItemVariations === false) {
+      continue;
+    }
+    const name = aspect?.name?.content?.trim();
+    if (!name) {
+      continue;
+    }
+    const values = (aspect.aspectValues ?? [])
+      .map((entry) => entry?.value?.content?.trim() ?? "")
+      .filter((value) => value.length > 0);
+    if (values.length > 0) {
+      out[name] = values.join(", ");
+    }
+  }
+  return Object.keys(out).length > 0 ? out : null;
 }
 
 function extractImageUrls(vls: VlsListing | undefined): string[] {

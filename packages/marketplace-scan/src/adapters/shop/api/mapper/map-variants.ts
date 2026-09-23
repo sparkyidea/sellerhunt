@@ -24,6 +24,15 @@ function toScanVariant(v: ParsedVariant): ScanListingVariant {
       : Object.fromEntries(v.selectedOptions.map((o) => [o.name, o.value])),
     imageUrls: v.imageUrl ? [v.imageUrl] : null,
     price: toCents(v.price),
+    // Shopify carries `barcode` (GTIN/UPC) and `vendor` on the product, but
+    // the shop.app query doesn't request them yet — wiring that is its own
+    // change, in the query and the parser as well as here.
+    model: null,
+    mpn: null,
+    upc: null,
+    ean: null,
+    isbn: null,
+    gtin: null,
   };
 }
 
