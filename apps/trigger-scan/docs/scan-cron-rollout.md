@@ -1,6 +1,7 @@
 # Scan pipeline rollout
 
-`scan-cron` declares no schedule. Keep full production fan-out disabled until all
+`scan-keyword-cron`, `scan-seller-cron`, and `scan-listing-cron` declare no
+schedule. Keep full production fan-out disabled until all
 three stages below and the deployed checks pass. Worker deployment and database
 migration are separate actions.
 
@@ -64,11 +65,13 @@ until observed on the deployed server; local SDK tests cannot establish them.
 - Measure cold and warm startup behavior separately. Do not infer warm starts from
   checkpoint behavior or infer physical placement from queue concurrency.
 
-Activate exactly one production schedule for `scan-cron`, `*/5 * * * *`, only after
-all stages and these checks pass. Confirm legacy schedules for
-`ebay-listings-scanner`, `scan-listings-cron`, `scan-sellers-cron`, and
-`scan-keywords-cron` are retired. Deleting a task from source does not prove an
-external schedule was removed. Development should have no schedule by default.
+Activate exactly one production schedule per entity cron — `scan-keyword-cron`,
+`scan-seller-cron`, and `scan-listing-cron` — only after all stages and these
+checks pass. The crons are independent, so set each entity's cadence on its own;
+`*/5 * * * *` is a reasonable starting point for all three. Deleting a task
+from source does not prove an external schedule was removed: check the dashboard
+for schedules pointing at retired task IDs. Development should have no schedule by
+default.
 
 Monitor queue age, completion/failure counts, actual detail fetch rate, deferred
 seller references, persona cooldown/death events, and per-marketplace freshness.
