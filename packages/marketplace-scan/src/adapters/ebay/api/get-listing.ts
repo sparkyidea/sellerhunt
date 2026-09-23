@@ -330,16 +330,22 @@ function parseListing(raw: EbayListingDetailResponse): Listing {
  *   - `aspects[].name.content` + `aspects[].aspectValues[*].value.content` →
  *     option name → value (multi-axis listings have multiple aspects entries)
  *
- * Single-item listings have no `itemVariations` block (or it's empty); the
- * mapper layer falls back to `mapSingleVariant` in that case.
+ * Only listings with `multipleVariationsListed: true` enumerate real
+ * variations. Simple listings still ship one synthetic `itemVariations` entry
+ * (`itemVariationId: "<listingId>_0"`, no `variationId`/`aspects`/SKU), so we
+ * ignore the block entirely unless eBay says the listing is multi-variation;
+ * the mapper layer then falls back to `mapSingleVariant`. Confirmed against
+ * live view_item captures on 2026-09-20.
  *
- * The `vls` type from the autogen file doesn't include `itemVariations`, so
- * we cast through a small local interface — same pattern used elsewhere when
- * the autogen lags behind a real-world payload field.
+ * The autogen `ItemVariation` type describes that synthetic simple-listing
+ * entry, not the MSKU shape, so we cast through a small local interface.
  */
 function extractVariations(
   vls: VlsListing | undefined
 ): ParsedListingVariant[] {
+  if (vls?.multipleVariationsListed !== true) {
+    return [];
+  }
   const raw = (vls as VlsWithItemVariations | undefined)?.itemVariations;
   if (!Array.isArray(raw)) {
     return [];

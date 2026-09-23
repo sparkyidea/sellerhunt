@@ -296,6 +296,33 @@ it("derives Shop stock from the purchasable flag", async () => {
   ).toEqual({ "1": "in_stock", "2": "in_stock", "3": "out_of_stock" });
 });
 
+it("ignores the synthetic variation entry eBay attaches to simple listings", async () => {
+  // Live view_item payloads for simple listings carry one itemVariations entry
+  // keyed by itemVariationId "<listingId>_0" with no numeric variationId.
+  const synthetic = {
+    itemVariationId: "123_0",
+    priceSettings: {
+      computations: { price: { basePrice: { value: 20, currency: "USD" } } },
+    },
+    quantityAndAvailabilityByLogisticsPlans: [
+      { quantityAndAvailability: { remainingQuantity: 5, soldQuantity: 0 } },
+    ],
+  };
+  vi.stubGlobal(
+    "fetch",
+    vi.fn(async () => Response.json(ebayRaw(false, [synthetic])))
+  );
+  const { listing } = await getEbayListing(ebayOptions);
+  expect(listing.variants.map((v) => [v.reference, v.status])).toEqual([
+    ["__default__", "in_stock"],
+  ]);
+  vi.stubGlobal(
+    "fetch",
+    vi.fn(async () => Response.json(ebayRaw(true, [synthetic])))
+  );
+  await expect(getEbayListing(ebayOptions)).rejects.toThrow("identity");
+});
+
 it("marks the default unit of a sold-out simple eBay listing out of stock", async () => {
   const raw = ebayRaw(false);
   vi.stubGlobal(
