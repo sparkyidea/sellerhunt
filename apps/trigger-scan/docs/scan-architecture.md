@@ -9,9 +9,9 @@ shop supports listing detail only. Capability checks precede persona acquisition
 
 ```mermaid
 flowchart TD
-  Cron[scan-cron] -->|dispatch| Bulk[scan-listings-by-keywords]
-  Cron -->|dispatch| Seller[scan-listings-by-seller]
-  Cron -->|dispatch chunks| Leaf[scan-listings-by-ids]
+  KeywordCron[scan-keyword-cron] -->|dispatch| Bulk[scan-listings-by-keywords]
+  SellerCron[scan-seller-cron] -->|dispatch| Seller[scan-listings-by-seller]
+  ListingCron[scan-listing-cron] -->|dispatch chunks| Leaf[scan-listings-by-ids]
   Bulk -->|dispatch| Keyword[scan-listings-by-keyword]
   Keyword -->|await listing batches| Leaf
   Keyword -->|then await fitting sellers| Seller
@@ -163,9 +163,11 @@ and logged instead of killing the process with an uncaught exception, and the ne
 query opens a fresh connection. Nothing is rotated or drained on resume. API and app
 processes keep the pg defaults.
 
-Keyword, seller, and cron orchestration queues remain separate. Only `scan-cron`
-caps concurrency (1); keyword, seller, and listing leaves have no cap and run at
-the environment limit. Throughput is therefore bounded by the live persona pool,
+Keyword, seller, and cron orchestration queues remain separate. Each of the three
+entity crons has its own queue (`scan-cron-keyword`, `scan-cron-seller`,
+`scan-cron-listing`) capped at concurrency 1, so a cron never overlaps itself but
+the three sweeps can run concurrently; keyword, seller, and listing leaves have no
+cap and run at the environment limit. Throughput is therefore bounded by the live persona pool,
 not by the queues: runs that land on the same box share that box's one
 `mobile_profile`, so a box can drive its persona with more than one run at a time.
 Persona failure bookkeeping is last-write-wins (`markSoftFailure` computes the next
@@ -174,7 +176,7 @@ against it), so overlapping runs on one persona can lose failure counts and dela
 cooldown or dead promotion. Each leaf processes its IDs sequentially;
 this does not establish physical placement or request serialization across runs.
 
-Cron queries visible in-flight work and removes busy references from its selected
+Each cron queries visible in-flight work for its entity and removes busy references from its selected
 batch before dispatch. Selection orders stale rows by listing `last_scanned_at` or
 seller/keyword `last_scanned_at`, then `id ASC`. It includes never-scanned
 seller/keyword rows, filters retired

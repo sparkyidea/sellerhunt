@@ -53,7 +53,8 @@ move.
 
 ### Trigger.dev scan workflows (in `apps/trigger-scan/src/workflows/`)
 
-- `scan/scan-crons.ts` — one scheduled task sweeping listings, sellers, and keywords across enabled marketplaces.
+- `scan/scan-{keyword,seller,listing}-cron.ts` — one scheduled task per saved entity, each sweeping its entity across enabled marketplaces on its own queue.
+- `scan/scan-sweep.ts` — the shared sweep body those three crons call (`runEntityCron`).
 - `scan/scan-listings-by-{ids,keyword,seller}.ts` — listing discovery phases.
 
 ### Notable client setup

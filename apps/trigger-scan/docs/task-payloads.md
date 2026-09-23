@@ -7,7 +7,9 @@ persistence contracts, and [rollout](scan-cron-rollout.md) before scheduling.
 
 ## Pipeline
 
-Cron dispatches listing chunks, sellers, and the bulk keyword launcher asynchronously.
+Three entity crons dispatch asynchronously: `scan-listing-cron` sends listing
+chunks, `scan-seller-cron` sends sellers, `scan-keyword-cron` sends the bulk
+keyword launcher.
 The bulk launcher dispatches singular keywords asynchronously. Keywords await listing
 batches and then fitting sellers; sellers await their catalog's listing batches.
 Leaves process sequentially, never self-fan, and finish inline keyword extraction
@@ -29,7 +31,7 @@ been removed. Duplicate suppression uses paginated run lookup and is best effort
 ## Optional scan configuration
 
 Every scan workflow accepts optional `config: ScanConfig`. Omit it to use the
-marketplace's `scan_config` row. Cron loads config once and passes it to children;
+marketplace's `scan_config` row. Each cron loads config once and passes it to children;
 inline overrides remain useful for one-off runs. Payload marketplace determines
 adapter/DB identity even when an override names another marketplace.
 
@@ -41,13 +43,15 @@ Money uses integer cents. Cooldowns, LLM model/request
 size are code constants. K is caller chunk size; a larger manual leaf payload logs
 a warning and runs sequentially on its assigned box.
 
-## `scan-cron`
+## `scan-keyword-cron`, `scan-seller-cron`, `scan-listing-cron`
 
 Trigger.dev provides the schedule payload; there is no custom marketplace/config
-payload. Each tick sweeps listings, sellers, then keywords across configured
-marketplaces. It checks capability/enablement and in-flight work before selecting
-eligible stale references and suppresses busy references before launch. It does not
-wait or advance scan timestamps.
+payload. Each cron owns one entity — saved keywords, saved sellers, or saved
+listings — and each tick sweeps that entity across every configured marketplace.
+A cron checks capability/enablement and in-flight work before selecting eligible
+stale references and suppresses busy references before launch. It does not wait or
+advance scan timestamps. The three share one sweep body in
+`workflows/scan/scan-sweep.ts`.
 
 Output: `{ results: [{ entity, marketplace, status, triggered?, reason? }] }`.
 Statuses include `completed`, `disabled`, `unsupported`, `incomplete` for dispatch

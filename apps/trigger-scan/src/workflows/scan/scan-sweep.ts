@@ -1,5 +1,13 @@
-/** Five-minute heartbeat (schedule managed in the dashboard). No waits or timestamps. */
-import { logger, metadata, schedules } from "@trigger.dev/sdk";
+/**
+ * Shared sweep body for the three entity crons (`scan-keyword-cron`,
+ * `scan-seller-cron`, `scan-listing-cron`). Each cron owns one entity and
+ * sweeps every configured marketplace for it; this module holds the
+ * per-marketplace guard chain and the per-entity dispatch so the three task
+ * files stay declarations only.
+ *
+ * No waits or timestamps here — schedules are managed in the dashboard.
+ */
+import { logger, metadata } from "@trigger.dev/sdk";
 import { pickStale } from "../../nodes/scan/scan-dispatch";
 import { chunk } from "../../utils/chunk";
 import { setMachineMetadata } from "../../utils/machine-metadata";
@@ -19,42 +27,32 @@ import { scanListingsByIds } from "./scan-listings-by-ids";
 import { scanListingsByKeywords } from "./scan-listings-by-keywords";
 import { scanListingsBySeller } from "./scan-listings-by-seller";
 
-const SWEEPS: readonly ScanEntity[] = ["listing", "seller", "keyword"];
-interface DispatchResult {
+export interface DispatchResult {
   entity: ScanEntity;
   marketplace: string;
   reason?: "in-flight" | "in-flight-unknown";
   status: "disabled" | "unsupported" | "completed" | "incomplete" | "skipped";
   triggered?: number;
 }
-export const scanCron = schedules.task({
-  id: "scan-cron",
-  machine: "micro",
-  queue: { concurrencyLimit: 1 },
-  retry: {
-    maxAttempts: 2,
-    outOfMemory: { machine: "small-1x" },
-  },
-  run: async () => {
-    await setMachineMetadata();
-    const configs = await loadAllScanConfigs();
-    const results: DispatchResult[] = [];
-    for (const entity of SWEEPS) {
-      metadata.set("status", `sweeping-${entity}`);
-      for (const config of configs) {
-        results.push(await sweep(entity, config));
-      }
-    }
-    metadata.set(
-      "status",
-      results.some((r) => r.status === "incomplete")
-        ? "incomplete"
-        : "completed"
-    );
-    logger.info("Scan cron completed", { results });
-    return { results };
-  },
-});
+
+/** One cron tick: sweep `entity` across every configured marketplace. */
+export async function runEntityCron(
+  entity: ScanEntity
+): Promise<{ results: DispatchResult[] }> {
+  await setMachineMetadata();
+  metadata.set("status", `sweeping-${entity}`);
+  const configs = await loadAllScanConfigs();
+  const results: DispatchResult[] = [];
+  for (const config of configs) {
+    results.push(await sweep(entity, config));
+  }
+  metadata.set(
+    "status",
+    results.some((r) => r.status === "incomplete") ? "incomplete" : "completed"
+  );
+  logger.info("Scan cron completed", { entity, results });
+  return { results };
+}
 
 async function sweep(
   entity: ScanEntity,
@@ -99,39 +97,65 @@ async function sweep(
     return { ...base, status: "incomplete" };
   }
 }
+
 async function dispatch(
   entity: ScanEntity,
   references: string[],
   config: ScanConfig
 ): Promise<void> {
-  const { marketplace } = config;
   if (entity === "listing") {
-    for (const wave of batchWaves(
-      chunk(references, Math.max(1, config.listingScanBatchSize))
-    )) {
-      if (wave.length === 0) {
-        continue;
-      }
-      await scanListingsByIds.batchTrigger(
-        wave.map((listingIds) => ({
-          payload: { marketplace, listingIds, config },
-          options: { tags: [marketplaceTag(marketplace), SOURCE_CRON_TAG] },
-        }))
-      );
+    await dispatchListings(references, config);
+    return;
+  }
+  if (entity === "seller") {
+    await dispatchSellers(references, config);
+    return;
+  }
+  await dispatchKeywords(references, config);
+}
+
+async function dispatchListings(
+  listingIdList: string[],
+  config: ScanConfig
+): Promise<void> {
+  const { marketplace } = config;
+  for (const wave of batchWaves(
+    chunk(listingIdList, Math.max(1, config.listingScanBatchSize))
+  )) {
+    if (wave.length === 0) {
+      continue;
     }
-  } else if (entity === "seller") {
-    for (const wave of batchWaves(references)) {
-      await scanListingsBySeller.batchTrigger(
-        wave.map((sellerId) => ({
-          payload: { marketplace, sellerId, config },
-          options: { tags: launchTags(marketplace, "seller", sellerId) },
-        }))
-      );
-    }
-  } else {
-    await scanListingsByKeywords.trigger(
-      { marketplace, keywords: references, config },
-      { tags: [marketplaceTag(marketplace)] }
+    await scanListingsByIds.batchTrigger(
+      wave.map((listingIds) => ({
+        payload: { marketplace, listingIds, config },
+        options: { tags: [marketplaceTag(marketplace), SOURCE_CRON_TAG] },
+      }))
     );
   }
+}
+
+async function dispatchSellers(
+  sellerIds: string[],
+  config: ScanConfig
+): Promise<void> {
+  const { marketplace } = config;
+  for (const wave of batchWaves(sellerIds)) {
+    await scanListingsBySeller.batchTrigger(
+      wave.map((sellerId) => ({
+        payload: { marketplace, sellerId, config },
+        options: { tags: launchTags(marketplace, "seller", sellerId) },
+      }))
+    );
+  }
+}
+
+async function dispatchKeywords(
+  keywords: string[],
+  config: ScanConfig
+): Promise<void> {
+  const { marketplace } = config;
+  await scanListingsByKeywords.trigger(
+    { marketplace, keywords, config },
+    { tags: [marketplaceTag(marketplace)] }
+  );
 }
