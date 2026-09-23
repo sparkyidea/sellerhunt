@@ -1,4 +1,8 @@
 import type { ScanListing, ScanListingVariant } from "../../../../types";
+import {
+  extractProductIdentifiers,
+  type ProductIdentifiers,
+} from "../../../../utils/product-identifiers";
 import { toCents } from "../../../../utils/to-cents";
 import type { Listing as ParsedListing } from "../get-listing";
 import { mapVariants } from "./map-variants";
@@ -13,7 +17,8 @@ export interface MapListingInput {
 
 export function mapListing(input: MapListingInput): ScanListing {
   const { listingId, parsed } = input;
-  const enumerated = mapVariants(parsed);
+  const identifiers = extractProductIdentifiers(parsed.specifics);
+  const enumerated = mapVariants(parsed, identifiers);
   if (
     parsed.hasVariations === null ||
     (parsed.hasVariations && enumerated.length === 0) ||
@@ -22,7 +27,9 @@ export function mapListing(input: MapListingInput): ScanListing {
     throw new Error("Incomplete or contradictory eBay variant enumeration");
   }
   const hasRealVariations = parsed.hasVariations;
-  const variants = hasRealVariations ? enumerated : [mapSingleVariant(parsed)];
+  const variants = hasRealVariations
+    ? enumerated
+    : [mapSingleVariant(parsed, identifiers)];
 
   return {
     marketplace: MARKETPLACE_ID,
@@ -33,12 +40,17 @@ export function mapListing(input: MapListingInput): ScanListing {
     title: parsed.title ?? "",
     description: parsed.description,
     condition: parsed.condition,
-    // eBay's leaf category id isn't currently extracted from VLS; flag for
-    // a future pass through the listing classification block.
-    marketplaceCategoryReference: null,
+    marketplaceCategoryReference: parsed.leafCategoryId,
     categoryPath: parsed.categoryPath.length > 0 ? parsed.categoryPath : null,
     imageUrls: parsed.imageUrls.length > 0 ? parsed.imageUrls : null,
     url: `${ITEM_URL_PREFIX}${listingId}`,
+
+    brand: identifiers.brand,
+    manufacturer: identifiers.manufacturer,
+    specifics: parsed.specifics,
+
+    type: parsed.listingFormat,
+
     startedAt: parseIsoDate(parsed.startedAt),
     endedAt: parseIsoDate(parsed.endedAt),
 
@@ -52,7 +64,10 @@ export function mapListing(input: MapListingInput): ScanListing {
 }
 
 /** Stable default identity only for a confirmed simple listing. */
-function mapSingleVariant(parsed: ParsedListing): ScanListingVariant {
+function mapSingleVariant(
+  parsed: ParsedListing,
+  identifiers: ProductIdentifiers
+): ScanListingVariant {
   return {
     reference: "__default__",
     sku: null,
@@ -60,6 +75,12 @@ function mapSingleVariant(parsed: ParsedListing): ScanListingVariant {
     imageUrls: parsed.imageUrls.length > 0 ? parsed.imageUrls : null,
     price: toCents(parsed.price),
     currency: parsed.currency,
+    model: identifiers.model,
+    mpn: identifiers.mpn,
+    upc: identifiers.upc,
+    ean: identifiers.ean,
+    isbn: identifiers.isbn,
+    gtin: identifiers.gtin,
     // eBay flags sold-out single SKUs in SEMANTIC_DATA_V2; when that module is
     // absent the synthetic itemVariations entry still reports remainingQuantity.
     status:

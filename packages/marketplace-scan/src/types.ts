@@ -68,6 +68,8 @@ export interface ScanTokenResult {
  * `variants`, the children of one).
  */
 export interface ScanListing {
+  /** Manufacturer brand, from the marketplace's item specifics. Null when not surfaced. */
+  brand: string | null;
   /** Category breadcrumb names, root → leaf. */
   categoryPath: string[] | null;
   /** Human-readable condition string (e.g. "New/Factory Sealed"). Null when the marketplace doesn't surface condition. */
@@ -78,6 +80,8 @@ export interface ScanListing {
   imageUrls: string[] | null;
   /** Lifetime sold count. eBay surfaces this; shop.app does not. */
   itemSold: number | null;
+  /** Manufacturer, when the marketplace surfaces it apart from brand. */
+  manufacturer: string | null;
   /** Marketplace discriminator (e.g. "ebay", "shop"). */
   marketplace: string;
   /** Marketplace's leaf category id. Null when not surfaced (shop.app, etc). */
@@ -97,9 +101,16 @@ export interface ScanListing {
   soldLast24h: number | null;
   /** Shop-only: approximate quantity sold in last 30 days. Null on eBay. */
   soldLast30Days: number | null;
+  /**
+   * Every listing-wide item specific, name → value, exactly as the
+   * marketplace named it. Null when the marketplace surfaced none.
+   */
+  specifics: Record<string, string> | null;
   startedAt: Date | null;
 
   title: string;
+  /** Listing format, lowercase: "fixed_price" | "auction". Null when not surfaced. */
+  type: string | null;
   url: string | null;
 
   /** Complete nonempty set, including native or synthetic defaults and out-of-stock units. */
@@ -111,8 +122,14 @@ export interface ScanListingVariant {
   /** Option name → value, e.g. {"Color": "Red", "Size": "M"}. Null when the variant has no options. */
   attributes: Record<string, string> | null;
   currency: string | null;
+  ean: string | null;
+  gtin: string | null;
   /** Variant images (typically 0 or 1). Null when the variant has no image. */
   imageUrls: string[] | null;
+  isbn: string | null;
+  model: string | null;
+  /** Manufacturer Part Number. */
+  mpn: string | null;
   /** Display price in **integer cents** (e.g. $5.99 → 599). */
   price: number | null;
   /** Marketplace's variant identifier (Shopify variant gid, eBay variationId, etc.). */
@@ -120,6 +137,8 @@ export interface ScanListingVariant {
   sku: string | null;
   /** Removal is a persistence decision; adapters report only observed stock state. */
   status: "in_stock" | "out_of_stock";
+  /** UPC, as printed. Never normalized to GTIN-14 here. */
+  upc: string | null;
 }
 
 /**

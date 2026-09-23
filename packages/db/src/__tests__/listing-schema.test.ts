@@ -8,13 +8,13 @@ const models = [
   {
     table: schema.scanListing,
     columns:
-      "id marketplace reference seller_id title description condition marketplace_category_reference category_path image_urls url started_at ended_at item_sold sold_last_24h sold_last_30_days created_at last_scanned_at",
+      "id marketplace reference seller_id title description condition marketplace_category_reference category_path image_urls url brand manufacturer specifics type started_at ended_at item_sold sold_last_24h sold_last_30_days created_at last_scanned_at search",
     required: "id marketplace reference title created_at last_scanned_at",
   },
   {
     table: schema.scanListingVariant,
     columns:
-      "id listing_id reference sku attributes image_urls price currency status created_at updated_at",
+      "id listing_id reference sku attributes model mpn upc ean isbn gtin image_urls price currency status created_at updated_at",
     required: "id listing_id reference status created_at updated_at",
   },
   {
@@ -22,6 +22,11 @@ const models = [
     columns:
       "id listing_id item_sold sold_last_24h sold_last_30_days created_at",
     required: "id listing_id created_at",
+  },
+  {
+    table: schema.scanListingVariantSnapshot,
+    columns: "id variant_id price currency status created_at",
+    required: "id variant_id status created_at",
   },
 ];
 
@@ -69,9 +74,16 @@ it("retains unique identities and indexed freshness/history", () => {
     "scan_listing_marketplace_reference_unique",
     "scan_listing_seller_id_idx",
     "scan_listing_marketplace_last_scanned_at_idx",
+    "scan_listing_brand_idx",
+    "scan_listing_search_idx",
   ]);
   expect(variant.indexes.map((index) => index.config.name)).toEqual([
     "scan_listing_variant_listing_id_reference_unique",
+    "scan_listing_variant_upc_idx",
+    "scan_listing_variant_ean_idx",
+    "scan_listing_variant_gtin_idx",
+    "scan_listing_variant_isbn_idx",
+    "scan_listing_variant_mpn_idx",
   ]);
   expect(snapshot.indexes.map((index) => index.config.name)).toEqual([
     "scan_listing_snapshot_history_idx",
@@ -105,6 +117,12 @@ it("retains unique identities and indexed freshness/history", () => {
 });
 
 it("owns variants and history through the listing with cascading deletion", () => {
+  const variantHistory = getTableConfig(schema.scanListingVariantSnapshot);
+  expect(variantHistory.foreignKeys).toHaveLength(1);
+  expect(variantHistory.foreignKeys[0]?.onDelete).toBe("cascade");
+  expect(variantHistory.foreignKeys[0]?.reference().foreignTable).toBe(
+    schema.scanListingVariant
+  );
   for (const table of [schema.scanListingVariant, schema.scanListingSnapshot]) {
     const { foreignKeys } = getTableConfig(table);
     expect(foreignKeys).toHaveLength(1);
@@ -139,10 +157,15 @@ it("exposes listing history without keyword links or variant history", () => {
     "snapshots",
     "variants",
   ]);
-  expect(Object.keys(variant)).toEqual(["listing"]);
+  expect(Object.keys(variant).sort()).toEqual(["listing", "snapshots"]);
   expect(Object.keys(snapshot)).toEqual(["listing"]);
-  expect(schema).not.toHaveProperty("scanListingVariantSnapshot");
-  expect(schema).not.toHaveProperty("scanListingVariantSnapshotRelations");
+  expect(
+    Object.keys(
+      schema.scanListingVariantSnapshotRelations.config(
+        createTableRelationsHelpers(schema.scanListingVariantSnapshot)
+      )
+    )
+  ).toEqual(["variant"]);
   expect(schema).not.toHaveProperty("scanObservationSequence");
   expect(schema).not.toHaveProperty("scanKeywordRelations");
 });

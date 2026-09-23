@@ -4,6 +4,7 @@ import {
   scanListing,
   scanListingSnapshot,
   scanListingVariant,
+  scanListingVariantSnapshot,
 } from "@dashseller/db/schema";
 import { migrateTestDb, TEST_DATABASE_URL } from "@dashseller/db/testing";
 import { variantPriceRange } from "@dashseller/marketplace-scan/listing-observation";
@@ -33,7 +34,7 @@ async function observe(input = listing(), fit = true) {
   return await upsertScanListing(database, input, fit);
 }
 
-it("saves listing sales, current variants and unchanged-history snapshots with one save time", async () => {
+it("saves listing sales and current variants, writing history only on a change", async () => {
   vi.useFakeTimers({ toFake: ["Date"] });
   vi.setSystemTime(new Date("2026-09-01T10:00:00Z"));
   const first = await observe(listing({ soldLast24h: 4, soldLast30Days: 30 }));
@@ -50,32 +51,84 @@ it("saves listing sales, current variants and unchanged-history snapshots with o
   expect(current?.createdAt).toEqual(listingBefore?.createdAt);
   expect(current?.lastScannedAt).toEqual(new Date());
   expect(after?.updatedAt).toEqual(current?.lastScannedAt);
+  // The second scan measured what the first already recorded, so history
+  // still holds one row — stamped with the first scan, not this one.
   const snapshots = await database
     .select()
     .from(scanListingSnapshot)
     .orderBy(scanListingSnapshot.createdAt);
-  expect(snapshots).toHaveLength(2);
-  for (const snapshot of snapshots) {
-    expect(snapshot).toMatchObject({
-      listingId: first.id,
-      itemSold: 200,
-      soldLast24h: 4,
-      soldLast30Days: 30,
-    });
-    expect(snapshot).not.toHaveProperty("price");
-  }
-  expect(snapshots[1]?.createdAt).toEqual(current?.lastScannedAt);
+  expect(snapshots).toHaveLength(1);
+  expect(snapshots[0]).toMatchObject({
+    listingId: first.id,
+    itemSold: 200,
+    soldLast24h: 4,
+    soldLast30Days: 30,
+    createdAt: new Date("2026-09-01T10:00:00Z"),
+  });
+  expect(snapshots[0]).not.toHaveProperty("price");
+  expect(current?.lastScannedAt).not.toEqual(snapshots[0]?.createdAt);
+  expect(await database.select().from(scanListingVariantSnapshot)).toEqual([
+    expect.objectContaining({
+      variantId: before?.id,
+      price: 2000,
+      currency: "USD",
+      status: "in_stock",
+      createdAt: new Date("2026-09-01T10:00:00Z"),
+    }),
+  ]);
 });
 
-it("allows unchanged scans at the same timestamp to append separate snapshots", async () => {
-  vi.useFakeTimers({ toFake: ["Date"] });
-  vi.setSystemTime(new Date("2026-09-01T10:00:00Z"));
+it("appends a second listing row once a counter moves, and none while it holds", async () => {
   await observe();
   await observe();
-  const snapshots = await database.select().from(scanListingSnapshot);
-  expect(snapshots).toHaveLength(2);
-  expect(snapshots[0]?.createdAt).toEqual(snapshots[1]?.createdAt);
-  expect(snapshots[0]?.id).not.toBe(snapshots[1]?.id);
+  await observe(listing({ itemSold: 201 }));
+  await observe(listing({ itemSold: 201 }));
+  expect(
+    (await database.select().from(scanListingSnapshot)).map((s) => s.itemSold)
+  ).toEqual([200, 201]);
+});
+
+it("tracks a unit's price and stock changes without a row per scan", async () => {
+  await observe();
+  await observe();
+  await observe(listing({ variants: [unit({ price: 1799 })] }));
+  await observe(listing({ variants: [unit({ price: 1799 })] }));
+  await observe(
+    listing({ variants: [unit({ price: 1799, status: "out_of_stock" })] })
+  );
+  const [variant] = await database.select().from(scanListingVariant);
+  const history = await database
+    .select()
+    .from(scanListingVariantSnapshot)
+    .orderBy(scanListingVariantSnapshot.createdAt);
+  expect(history.map((row) => [row.price, row.status])).toEqual([
+    [2000, "in_stock"],
+    [1799, "in_stock"],
+    [1799, "out_of_stock"],
+  ]);
+  expect(history.every((row) => row.variantId === variant?.id)).toBe(true);
+});
+
+it("closes a unit's history with the removal that ended it", async () => {
+  await observe(
+    listing({ variants: [unit(), unit({ reference: "blue", price: 3000 })] })
+  );
+  const [blue] = await database
+    .select()
+    .from(scanListingVariant)
+    .where(eq(scanListingVariant.reference, "blue"));
+  await observe();
+  await observe();
+  const history = await database
+    .select()
+    .from(scanListingVariantSnapshot)
+    .where(eq(scanListingVariantSnapshot.variantId, blue?.id ?? ""))
+    .orderBy(scanListingVariantSnapshot.createdAt);
+  // Removed once, not on every later scan that also failed to see it.
+  expect(history.map((row) => [row.price, row.status])).toEqual([
+    [3000, "in_stock"],
+    [3000, "removed"],
+  ]);
 });
 
 it("stores a simple listing's current price in its stable default variant", async () => {
@@ -97,7 +150,13 @@ it("stores a simple listing's current price in its stable default variant", asyn
       price: 2500,
     }),
   ]);
-  expect(await database.select().from(scanListingSnapshot)).toHaveLength(2);
+  // Sales counters never moved, so only the price produced history.
+  expect(await database.select().from(scanListingSnapshot)).toHaveLength(1);
+  expect(
+    (await database.select().from(scanListingVariantSnapshot)).map(
+      (row) => row.price
+    )
+  ).toEqual([2000, 2500]);
 });
 
 it("appends one sales snapshot per listing, not per variant, and reuses removed variant identities", async () => {
@@ -177,6 +236,7 @@ it("rolls back listing, variant and history writes when snapshot persistence fai
     listings: await database.select().from(scanListing),
     variants: await database.select().from(scanListingVariant),
     snapshots: await database.select().from(scanListingSnapshot),
+    variantSnapshots: await database.select().from(scanListingVariantSnapshot),
   };
   // Test-only failure injection after the current rows have been written.
   await database.execute(
@@ -192,6 +252,9 @@ it("rolls back listing, variant and history writes when snapshot persistence fai
     );
     expect(await database.select().from(scanListingSnapshot)).toEqual(
       before.snapshots
+    );
+    expect(await database.select().from(scanListingVariantSnapshot)).toEqual(
+      before.variantSnapshots
     );
   } finally {
     await database.execute(
@@ -235,6 +298,9 @@ it.each([
   expect(await database.select().from(scanListing)).toEqual(before);
   expect(await database.select().from(scanListingVariant)).toEqual(variants);
   expect(await database.select().from(scanListingSnapshot)).toHaveLength(1);
+  expect(await database.select().from(scanListingVariantSnapshot)).toHaveLength(
+    1
+  );
 });
 
 it("cached SQL prices match fetched prices for unknown, mixed-currency and removed units", async () => {

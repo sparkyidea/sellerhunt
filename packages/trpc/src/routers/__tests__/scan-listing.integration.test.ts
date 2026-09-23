@@ -3,6 +3,7 @@ import {
   scanListing,
   scanListingSnapshot,
   scanListingVariant,
+  scanListingVariantSnapshot,
 } from "@dashseller/db/schema";
 import { migrateTestDb } from "@dashseller/db/testing";
 import { eq } from "drizzle-orm";
@@ -193,6 +194,68 @@ it("paginates history newest-first without overlap and applies date bounds", asy
   expect(
     (await caller.getListingHistory({ listingId, to: at(0) })).items
   ).toHaveLength(1);
+});
+
+it("pages variant price history newest-first with signed deltas and date bounds", async () => {
+  const base = new Date("2026-09-01T00:00:00Z");
+  const at = (seconds: number) => new Date(base.getTime() + seconds * 1000);
+  await db.insert(scanListingVariantSnapshot).values(
+    [
+      { price: 2000, status: "in_stock" as const, createdAt: at(0) },
+      { price: 2500, status: "in_stock" as const, createdAt: at(1) },
+      { price: 1799, status: "in_stock" as const, createdAt: at(2) },
+      { price: 1799, status: "removed" as const, createdAt: at(3) },
+    ].map((row, index) => ({
+      id: `${variantId}-${index}`,
+      variantId,
+      currency: "USD",
+      ...row,
+    }))
+  );
+  const first = await caller.getVariantHistory({ variantId, limit: 2 });
+  expect(first.items.map((row) => [row.id, row.price, row.priceDelta])).toEqual(
+    [
+      [`${variantId}-3`, 1799, 0],
+      [`${variantId}-2`, 1799, -701],
+    ]
+  );
+  expect(first.items[0]?.status).toBe("removed");
+  const second = await caller.getVariantHistory({
+    variantId,
+    limit: 2,
+    cursor: first.nextCursor,
+  });
+  expect(second.items.map((row) => [row.id, row.priceDelta])).toEqual([
+    [`${variantId}-1`, 500],
+    [`${variantId}-0`, null],
+  ]);
+  expect(second.nextCursor).toBeNull();
+  // The oldest row inside the bound still takes its delta from the change below it.
+  const bounded = await caller.getVariantHistory({ variantId, from: at(2) });
+  expect(bounded.items.map((row) => [row.id, row.priceDelta])).toEqual([
+    [`${variantId}-3`, 0],
+    [`${variantId}-2`, -701],
+  ]);
+  expect(
+    (await caller.getVariantHistory({ variantId, to: at(0) })).items
+  ).toHaveLength(1);
+});
+
+it("returns empty variant history but rejects unknown variants and invalid input", async () => {
+  expect((await caller.getVariantHistory({ variantId })).items).toEqual([]);
+  await expect(
+    caller.getVariantHistory({ variantId: "other" })
+  ).rejects.toMatchObject({ code: "NOT_FOUND" });
+  await expect(
+    caller.getVariantHistory({ variantId, limit: 501 })
+  ).rejects.toMatchObject({ code: "BAD_REQUEST" });
+  await expect(
+    caller.getVariantHistory({
+      variantId,
+      from: new Date("2026-09-02"),
+      to: new Date("2026-09-01"),
+    })
+  ).rejects.toMatchObject({ code: "BAD_REQUEST" });
 });
 
 it("returns empty history for an unscanned listing but rejects unknown listings and invalid input", async () => {

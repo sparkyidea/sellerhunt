@@ -130,6 +130,58 @@ function ebayRaw(
 }
 const ebayOptions = { listingId: "123", authToken: "test" };
 
+function aspect(
+  name: string,
+  value: string,
+  sameValueForAllItemVariations = true
+) {
+  return {
+    name: { content: name },
+    aspectValues: [{ value: { content: value } }],
+    sameValueForAllItemVariations,
+  };
+}
+
+it("carries listing item specifics onto the listing and its units", async () => {
+  const raw = ebayRaw(false);
+  Object.assign(raw.modules.VLS.listing, {
+    listingClassification: {
+      sellerSpecifiedAspect: [
+        aspect("Brand", "Nintendo"),
+        aspect("UPC", "045496883414"),
+        aspect("MPN", "HAC-001"),
+        // An option axis, not a property of the listing.
+        aspect("Color", "White", false),
+      ],
+      leafCategories: [
+        {
+          categoryPathFromRoot: {
+            categoryIdentifier: [
+              { categoryId: 1249, name: { content: "Video Games" }, level: 1 },
+              { categoryId: 139_973, name: { content: "Consoles" }, level: 2 },
+            ],
+          },
+        },
+      ],
+    },
+  });
+  vi.stubGlobal(
+    "fetch",
+    vi.fn(async () => Response.json(raw))
+  );
+
+  const { listing } = await getEbayListing(ebayOptions);
+  expect(listing.brand).toBe("Nintendo");
+  expect(listing.specifics).toEqual({
+    Brand: "Nintendo",
+    UPC: "045496883414",
+    MPN: "HAC-001",
+  });
+  expect(listing.marketplaceCategoryReference).toBe("139973");
+  expect(listing.variants[0]?.upc).toBe("045496883414");
+  expect(listing.variants[0]?.mpn).toBe("HAC-001");
+});
+
 it("deduplicates identical Shop overlaps but rejects conflicting units", async () => {
   for (const quantity of [1, 0]) {
     vi.stubGlobal(

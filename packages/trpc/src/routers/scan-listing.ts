@@ -23,6 +23,10 @@ import {
   listingHistoryInput,
   readListingHistory,
 } from "../lib/scan-listing-history";
+import {
+  readVariantHistory,
+  variantHistoryInput,
+} from "../lib/scan-variant-history";
 import { getGroupInput, getManyInput } from "../lib/schemas";
 
 /**
@@ -47,6 +51,9 @@ export const scanListingRouter = router({
   getListingHistory: publicProcedure
     .input(listingHistoryInput)
     .query(async ({ input }) => await readListingHistory(db, input)),
+  getVariantHistory: publicProcedure
+    .input(variantHistoryInput)
+    .query(async ({ input }) => await readVariantHistory(db, input)),
   get: publicProcedure
     .input(z.object({ id: z.string() }))
     .query(async ({ input }) => {
