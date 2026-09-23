@@ -320,7 +320,48 @@ it("ignores the synthetic variation entry eBay attaches to simple listings", asy
     "fetch",
     vi.fn(async () => Response.json(ebayRaw(true, [synthetic])))
   );
+  await expect(getEbayListing(ebayOptions)).rejects.toThrow("contradictory");
+});
+
+it("still rejects real variations under a false multi-variation flag", async () => {
+  vi.stubGlobal(
+    "fetch",
+    vi.fn(async () => Response.json(ebayRaw(false, [{ variationId: 12 }])))
+  );
+  await expect(getEbayListing(ebayOptions)).rejects.toThrow("contradictory");
+  // A `_0` entry belonging to some other listing isn't the synthetic one.
+  vi.stubGlobal(
+    "fetch",
+    vi.fn(async () =>
+      Response.json(ebayRaw(false, [{ itemVariationId: "9_0" }]))
+    )
+  );
   await expect(getEbayListing(ebayOptions)).rejects.toThrow("identity");
+});
+
+it("takes the default unit's stock from the synthetic entry", async () => {
+  vi.stubGlobal(
+    "fetch",
+    vi.fn(async () =>
+      Response.json(
+        ebayRaw(false, [
+          {
+            itemVariationId: "123_0",
+            quantityAndAvailabilityByLogisticsPlans: [
+              { quantityAndAvailability: { remainingQuantity: 0 } },
+            ],
+          },
+        ])
+      )
+    )
+  );
+  const { listing } = await getEbayListing(ebayOptions);
+  expect(listing.variants).toEqual([
+    expect.objectContaining({
+      reference: "__default__",
+      status: "out_of_stock",
+    }),
+  ]);
 });
 
 it("marks the default unit of a sold-out simple eBay listing out of stock", async () => {

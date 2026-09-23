@@ -155,6 +155,12 @@ export interface Listing {
   /** eBay's sold-out flag for single-SKU listings (`SEMANTIC_DATA_V2`). Null when the module is absent. */
   singleSkuOutOfStock: boolean | null;
   /**
+   * `remainingQuantity` from the synthetic `itemVariations` entry a simple
+   * listing carries. Null when eBay omits it (or on a multi-variation
+   * listing). Backs up `singleSkuOutOfStock` for the `__default__` unit.
+   */
+  singleSkuRemainingQuantity: number | null;
+  /**
    * Items sold in the last 24h. Best-effort: pulled from a "sold in last 24"
    * hotness signal if eBay surfaces one for this listing; null otherwise.
    * Most listings don't have this signal — only high-velocity ones do.
@@ -311,6 +317,7 @@ function parseListing(raw: EbayListingDetailResponse): Listing {
       typeof raw.modules?.SEMANTIC_DATA_V2?.singleSkuOutOfStock === "boolean"
         ? raw.modules.SEMANTIC_DATA_V2.singleSkuOutOfStock
         : null,
+    singleSkuRemainingQuantity: extractSingleSkuRemainingQuantity(vls),
     soldIn24h: extractSoldIn24h(signals),
     startedAt: vls?.listingLifecycle?.scheduledStartDate?.value ?? null,
     title: vls?.title?.content ?? null,
@@ -330,12 +337,12 @@ function parseListing(raw: EbayListingDetailResponse): Listing {
  *   - `aspects[].name.content` + `aspects[].aspectValues[*].value.content` →
  *     option name → value (multi-axis listings have multiple aspects entries)
  *
- * Only listings with `multipleVariationsListed: true` enumerate real
- * variations. Simple listings still ship one synthetic `itemVariations` entry
- * (`itemVariationId: "<listingId>_0"`, no `variationId`/`aspects`/SKU), so we
- * ignore the block entirely unless eBay says the listing is multi-variation;
- * the mapper layer then falls back to `mapSingleVariant`. Confirmed against
- * live view_item captures on 2026-09-20.
+ * Simple listings still ship one synthetic `itemVariations` entry
+ * (`itemVariationId: "<listingId>_0"`, no `variationId`/`aspects`/SKU).
+ * Only that confirmed synthetic entry is skipped — every other entry stays in
+ * the enumeration so `mapListing` can still reject a listing whose
+ * `multipleVariationsListed` flag contradicts what the block contains.
+ * Confirmed against live view_item captures on 2026-09-20.
  *
  * The autogen `ItemVariation` type describes that synthetic simple-listing
  * entry, not the MSKU shape, so we cast through a small local interface.
@@ -343,16 +350,12 @@ function parseListing(raw: EbayListingDetailResponse): Listing {
 function extractVariations(
   vls: VlsListing | undefined
 ): ParsedListingVariant[] {
-  if (vls?.multipleVariationsListed !== true) {
-    return [];
-  }
-  const raw = (vls as VlsWithItemVariations | undefined)?.itemVariations;
-  if (!Array.isArray(raw)) {
-    return [];
-  }
   const out: ParsedListingVariant[] = [];
   const identities = new Set<number>();
-  for (const entry of raw) {
+  for (const entry of rawItemVariations(vls)) {
+    if (isSyntheticSimpleEntry(entry, vls?.listingId)) {
+      continue;
+    }
     if (
       typeof entry?.variationId !== "number" ||
       !Number.isSafeInteger(entry.variationId) ||
@@ -367,6 +370,49 @@ function extractVariations(
     out.push(parseVariation(entry));
   }
   return out;
+}
+
+function rawItemVariations(vls: VlsListing | undefined): RawItemVariation[] {
+  const raw = (vls as VlsWithItemVariations | undefined)?.itemVariations;
+  return Array.isArray(raw) ? raw : [];
+}
+
+/**
+ * The placeholder entry eBay attaches to a simple listing: keyed
+ * `"<listingId>_0"` and carrying no numeric `variationId`. Anything else — a
+ * real numeric identity, or a `_0` entry on some other listing id — is left in
+ * the enumeration so the shape checks downstream still see it.
+ */
+function isSyntheticSimpleEntry(
+  entry: RawItemVariation,
+  listingId: string | undefined
+): boolean {
+  return (
+    typeof entry?.variationId !== "number" &&
+    typeof listingId === "string" &&
+    entry?.itemVariationId === `${listingId}_0`
+  );
+}
+
+/**
+ * Stock for the `__default__` unit of a simple listing. The synthetic entry is
+ * the only place a simple listing reports `remainingQuantity`, and it is
+ * observed even when `SEMANTIC_DATA_V2.singleSkuOutOfStock` is absent, so keep
+ * it as a second sold-out signal for `mapSingleVariant`.
+ */
+function extractSingleSkuRemainingQuantity(
+  vls: VlsListing | undefined
+): number | null {
+  for (const entry of rawItemVariations(vls)) {
+    if (!isSyntheticSimpleEntry(entry, vls?.listingId)) {
+      continue;
+    }
+    const remaining =
+      entry.quantityAndAvailabilityByLogisticsPlans?.[0]
+        ?.quantityAndAvailability?.remainingQuantity;
+    return typeof remaining === "number" ? remaining : null;
+  }
+  return null;
 }
 
 function parseVariation(entry: RawItemVariation): ParsedListingVariant {
@@ -432,6 +478,8 @@ interface VlsWithItemVariations {
 
 interface RawItemVariation {
   aspects?: RawAspect[];
+  /** Present on every entry; `"<listingId>_0"` marks the synthetic simple-listing one. */
+  itemVariationId?: string;
   priceSettings?: {
     computations?: {
       price?: { basePrice?: { currency?: string; value?: number } };

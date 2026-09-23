@@ -60,8 +60,12 @@ function mapSingleVariant(parsed: ParsedListing): ScanListingVariant {
     imageUrls: parsed.imageUrls.length > 0 ? parsed.imageUrls : null,
     price: toCents(parsed.price),
     currency: parsed.currency,
-    // Simple listings carry no per-unit quantity; eBay flags sold-out single SKUs.
-    status: parsed.singleSkuOutOfStock ? "out_of_stock" : "in_stock",
+    // eBay flags sold-out single SKUs in SEMANTIC_DATA_V2; when that module is
+    // absent the synthetic itemVariations entry still reports remainingQuantity.
+    status:
+      parsed.singleSkuOutOfStock || parsed.singleSkuRemainingQuantity === 0
+        ? "out_of_stock"
+        : "in_stock",
   };
 }
 
