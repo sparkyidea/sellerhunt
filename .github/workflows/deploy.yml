@@ -1,0 +1,120 @@
+# Deploys the data layer on push to main. Follows Trigger.dev's CI guide
+# (deploy with --external-id, TRIGGER_ACCESS_TOKEN) plus its
+# build-then-promote split so the DB and the worker change together:
+#
+#   1. build    — `trigger deploy --skip-promotion`: builds and uploads the
+#                 new worker version, but does not make it current
+#   2. migrate  — apply committed drizzle migrations to the remote DB
+#   3. promote  — `trigger promote <version>`: instant switch to new code
+#
+# New runs pick the current version when they START (Trigger.dev version
+# locking), so after promote every new run is on new code within seconds
+# of the migration. Runs already executing stay on the old version until
+# they finish; retries and triggerAndWait children stay with them. Keep
+# migrations tolerant of that overlap, or cancel in-flight runs in the
+# dashboard before merging a destructive one — the cron re-picks stale
+# entities on its next tick.
+#
+# `drizzle-kit migrate` is idempotent, so migrate runs on every matching
+# push, not only when migration files change. `--external-id <sha>`
+# makes a re-run of the same commit reuse the built version instead of
+# building again; promote of an already-current version is a no-op.
+#
+# The api/app deploy independently (Dokploy); this workflow does not
+# gate them.
+#
+# Self-hosted deploys build the image on the runner and push it to the
+# instance's registry. The CLI reuses the runner's existing docker login
+# (same as `docker login` on a dev machine), hence the login step.
+#
+# Secrets:
+#   DATABASE_URL           remote DB; used by migrate and synced to the worker
+#   TRIGGER_ACCESS_TOKEN   Personal Access Token (tr_pat_...) from
+#                          https://trigger.sparkyidea.com/account/tokens
+#   TRIGGER_REGISTRY_USERNAME / TRIGGER_REGISTRY_PASSWORD
+#                          docker login for registry.trigger.sparkyidea.com
+#   ENCRYPTION_SECRET, OPENAI_API_KEY
+#                          uploaded to the worker (with DATABASE_URL) by
+#                          syncEnvVars in trigger.config.ts, read from env
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "apps/trigger-scan/**"
+      - "packages/db/**"
+      - "packages/env/**"
+      - "packages/marketplace-scan/**"
+      - "bun.lock"
+      - ".github/workflows/deploy.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# One deploy at a time, never cancelled: concurrent `drizzle-kit migrate`
+# runs race on the migrations ledger, and a build promoted out of order
+# would put old code in front of a newer schema.
+concurrency:
+  group: deploy-main
+  cancel-in-progress: false
+
+env:
+  TRIGGER_API_URL: https://trigger.sparkyidea.com
+  TRIGGER_REGISTRY: registry.trigger.sparkyidea.com
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    defaults:
+      run:
+        working-directory: apps/trigger-scan
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: ./.github/actions/setup-tools
+
+      - name: Log in to Trigger.dev image registry
+        uses: docker/login-action@dbcb813823bdd20940b903addbd779551569679f # v4.6.0
+        with:
+          registry: ${{ env.TRIGGER_REGISTRY }}
+          username: ${{ secrets.TRIGGER_REGISTRY_USERNAME }}
+          password: ${{ secrets.TRIGGER_REGISTRY_PASSWORD }}
+
+      # Writes `deploymentVersion` to GITHUB_OUTPUT (also on the
+      # already-deployed short-circuit).
+      - name: Build worker version
+        id: build
+        run: >-
+          bunx trigger.dev deploy
+          --skip-promotion
+          --api-url "$TRIGGER_API_URL"
+          --external-id "${{ github.sha }}"
+          --skip-update-check
+          --skip-telemetry
+        env:
+          TRIGGER_ACCESS_TOKEN: ${{ secrets.TRIGGER_ACCESS_TOKEN }}
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          ENCRYPTION_SECRET: ${{ secrets.ENCRYPTION_SECRET }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+
+      - name: Apply migrations
+        working-directory: .
+        run: bun db:migrate
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
+      - name: Promote worker version
+        env:
+          TRIGGER_ACCESS_TOKEN: ${{ secrets.TRIGGER_ACCESS_TOKEN }}
+          VERSION: ${{ steps.build.outputs.deploymentVersion }}
+        run: |
+          if [ -z "$VERSION" ]; then
+            echo "::error::deploy step produced no deploymentVersion output"
+            exit 1
+          fi
+          bunx trigger.dev promote "$VERSION" \
+            --api-url "$TRIGGER_API_URL" \
+            --skip-update-check \
+            --skip-telemetry
